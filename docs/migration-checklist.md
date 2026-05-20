@@ -18,11 +18,11 @@
 | **5** | Редиректы, sitemap, `/upload` → static | ✅ |
 | **6** | `/demo` + BFF → lk | ✅ |
 | **7** | Юридические страницы `/legal/*` | ✅ |
-| **8** | Docker, CI, smoke-тест, `/api/health` | ✅ |
+| **8** | Docker, CI (шаблон `docs/ci-workflow.yml.example`), smoke, `/api/health` | ✅ |
 | **9** | Полный smoke, compare:sitemap, nginx example, порт 3001 | ✅ |
 | **10** | Форма контактов, новости (img/embed), YouTube на лендинге | ✅ |
 | **11** | Метрика 54591493, юр. нормализация, YouTube на 14 лендингах | ✅ |
-| **12** | Зеркало картинок новостей, spec lk contact API, staging в deploy | ✅ |
+| **12** | Зеркало картинок новостей, SMTP-форма, staging в deploy | ✅ |
 | **13** | Полный page-audit, scrape:all, визуал UI, тексты модулей | ✅ |
 | **14** | FAQ Датагон, scrape:tariffs, audit:pages, группы в TariffCard | ✅ |
 

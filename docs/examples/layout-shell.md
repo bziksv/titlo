@@ -9,7 +9,8 @@
 | Элемент | Файл |
 |---------|------|
 | Header + меню | `components/Header.tsx` |
-| Footer | `components/Footer.tsx` |
+| Footer (копирайт из даты) | `components/Footer.tsx`, `getCopyrightText()` в `lib/site.ts` |
+| Карта офиса на контактах | `components/OfficeYandexMap.tsx` |
 | Cookie banner | `components/CookieBanner.tsx` |
 | Карточка модуля | `components/ModuleCard.tsx` |
 | Навигация / константы | `lib/site.ts` |

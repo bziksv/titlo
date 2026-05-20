@@ -58,7 +58,51 @@ BASE_URL=http://localhost:3001 npm run compare:sitemap
 
 ### Nginx
 
-Пример прокси на порт 3001: [nginx-redbox.example.conf](./nginx-redbox.example.conf)
+Пример прокси на порт 3001: [nginx-redbox.example.conf](./nginx-redbox.example.conf) (подставьте `datagon.ru` или `redbox.su` в `server_name`).
+
+## VPS: git + PM2 (production)
+
+Репозиторий: [github.com/bziksv/site_seo_datagon](https://github.com/bziksv/site_seo_datagon).
+
+**Путь на сервере:** `/var/www/datagon_ru_usr/data/www/datagon.ru`
+
+### Первый деплой
+
+```bash
+cd /var/www/datagon_ru_usr/data/www/datagon.ru
+git clone https://github.com/bziksv/site_seo_datagon.git .
+cp .env.example .env.local
+nano .env.local   # SMTP, LK, PORT=3001
+npm ci
+npm run build
+pm2 start npm --name datagon-site -- start
+pm2 save
+curl http://127.0.0.1:3001/api/health/
+```
+
+### Обновление после `git push`
+
+```bash
+cd /var/www/datagon_ru_usr/data/www/datagon.ru
+git fetch origin
+git checkout main
+git reset --hard origin/main
+npm ci
+npm run build
+pm2 restart datagon-site
+pm2 status
+```
+
+На Mac перед этим:
+
+```bash
+cd /Users/stanislav/Documents/projects/redbox.su
+git add -A
+git commit -m "update all files"
+git push origin main
+```
+
+**Важно:** нужен полный `npm ci` и `npm run build` (не только `npm ci --omit=dev`). Секреты — только в `.env.local` на сервере, не в git.
 
 ## Vercel / аналог
 
@@ -68,9 +112,9 @@ BASE_URL=http://localhost:3001 npm run compare:sitemap
 
 ## CI
 
-GitHub Actions: `.github/workflows/ci.yml` — `lint` + `build` на push/PR.
+Шаблон workflow: [ci-workflow.yml.example](./ci-workflow.yml.example) — скопировать в `.github/workflows/ci.yml` при необходимости (`lint` + `build`). Для push через PAT нужен scope **workflow** (или добавить файл вручную на GitHub).
 
-## Переключение домена redbox.su
+## Переключение домена (redbox.su / datagon.ru)
 
 1. Поднять staging (`docker compose` или preview), выполнить `BASE_URL=… npm run smoke`.
 2. DNS `redbox.su` → новый хост (A/CNAME), SSL на edge.

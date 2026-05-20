@@ -26,13 +26,12 @@ LK_API_BASE_URL=https://lk.redbox.su
 
 ### Форма контактов
 
-`POST /api/contact/` (Next) пробует `POST {LK_API_BASE_URL}/api/public/contact` с телом:
+`POST /api/contact/` — см. [lk-contact-api.md](./lk-contact-api.md).
 
-```json
-{ "name": "", "email": "", "phone": "", "message": "", "source": "redbox.su/contact" }
-```
-
-Если lk недоступен — опционально `CONTACT_WEBHOOK_URL` в env. Иначе в dev лог в консоль; в production — 503 и подсказка написать на `info@redbox.su`.
+1. **SMTP** (если задан `SMTP_HOST` / `SMTP_USER` / `SMTP_PASS`) → письмо на `info@datagon.ru` и `sv6@list.ru`.
+2. Иначе `POST {LK_API_BASE_URL}/api/public/contact`.
+3. Иначе `CONTACT_WEBHOOK_URL`.
+4. Dev без SMTP — лог в консоль; production — 503.
 
 ### Когда появится guest API в Laravel
 

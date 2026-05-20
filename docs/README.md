@@ -8,8 +8,13 @@
 |----------|--------|
 | [architecture.md](./architecture.md) | Стек, домены, границы Next vs Laravel |
 | [pages.md](./pages.md) | Маршруты, SEO, редиректы с Битрикса |
-| [api-lk.md](./api-lk.md) | Прокси Next → lk, демо-сессия, env |
+| [api-lk.md](./api-lk.md) | Прокси Next → lk, env |
+| [lk-contact-api.md](./lk-contact-api.md) | Форма контактов: SMTP, lk, webhook |
+| [deploy.md](./deploy.md) | Docker, VPS `/var/www/datagon_ru_usr/...`, PM2, smoke |
+| [migration-checklist.md](./migration-checklist.md) | Чеклист миграции с Битрикса |
 | [examples/README.md](./examples/README.md) | **Эталонные** UI и паттерны (обязательно смотреть перед версткой) |
+
+Репозиторий: [github.com/bziksv/site_seo_datagon](https://github.com/bziksv/site_seo_datagon).
 
 ## Как вести документацию
 

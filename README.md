@@ -4,6 +4,10 @@
 
 Бренд: логотип и favicon — `public/favicon.svg` (из [p.datagon.ru](../p.datagon.ru/public/favicon.svg)).
 
+## Репозиторий
+
+[github.com/bziksv/site_seo_datagon](https://github.com/bziksv/site_seo_datagon)
+
 ## Документация
 
 | Раздел | Файл |
@@ -12,7 +16,8 @@
 | Архитектура | [docs/architecture.md](docs/architecture.md) |
 | Страницы и URL | [docs/pages.md](docs/pages.md) |
 | API к lk | [docs/api-lk.md](docs/api-lk.md) |
-| Деплой | [docs/deploy.md](docs/deploy.md) |
+| Форма контактов (SMTP) | [docs/lk-contact-api.md](docs/lk-contact-api.md) |
+| Деплой (VPS datagon.ru, PM2) | [docs/deploy.md](docs/deploy.md) |
 | Эталоны UI | [docs/examples/README.md](docs/examples/README.md) |
 
 ## Быстрый старт
