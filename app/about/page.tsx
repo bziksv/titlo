@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ContentSections } from "@/components/ContentSections";
 import { PageShell } from "@/components/PageShell";
 import { getSitePage } from "@/lib/content/site-pages.generated";
+import { publicCopy } from "@/lib/public-copy";
 
 export const metadata: Metadata = {
   title: "О сервисе Датагон — история развития",
@@ -19,7 +20,7 @@ type TimelineItem = {
 
 export default function AboutPage() {
   const page = getSitePage("about");
-  const lead = page?.lead ?? "";
+  const lead = page?.lead ? publicCopy(page.lead) : "";
   const timeline = (page?.extra?.timeline as TimelineItem[] | undefined) ?? [];
 
   return (
@@ -39,7 +40,7 @@ export default function AboutPage() {
             {item.title ? (
               <h3 className="mt-2 text-lg font-semibold text-slate-900">{item.title}</h3>
             ) : null}
-            <p className="mt-2 text-sm text-slate-600">{item.description}</p>
+            <p className="mt-2 text-sm text-slate-600">{publicCopy(item.description)}</p>
             <Link href={item.href} className="mt-3 inline-block text-sm font-medium text-brand-600">
               Подробнее →
             </Link>

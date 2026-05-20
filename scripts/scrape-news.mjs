@@ -134,6 +134,17 @@ function pickLazySrc($, $root) {
   return absUrl(lazy);
 }
 
+function imageFromNewsLink($, $a) {
+  const inside =
+    $a.find(".bg-img[data-src], .lazyload[data-src]").first().attr("data-src") ||
+    $a.find("[data-src*='iblock'], [data-src*='resize_cache'], [data-src*='medialibrary']").first().attr("data-src") ||
+    $a.find("img[src*='iblock'], img[src*='resize_cache']").first().attr("src");
+  if (inside && !isDecorativeImg(inside)) return absUrl(inside);
+
+  const card = $a.closest(".wrap-element, .element, .col-md-4, .col-sm-6, .news-item, li, article");
+  return pickLazySrc($, card.length ? card : $a);
+}
+
 function buildImageMapFromHtml(html) {
   const $ = cheerio.load(html);
   const imageMap = {};
@@ -143,25 +154,11 @@ function buildImageMapFromHtml(html) {
     const m = href.match(/detail\/([^/]+)/);
     if (!m) return;
     const slug = m[1];
-
-    let $walk = $(a);
-    for (let i = 0; i < 12 && $walk.length; i++) {
-      const src = pickLazySrc($, $walk);
-      if (src) {
-        imageMap[slug] = src;
-        break;
-      }
-      $walk = $walk.parent();
-    }
-  });
-
-  $("[data-src*='iblock'], [data-src*='resize_cache'], [data-src*='medialibrary']").each((_, el) => {
-    const src = pickLazySrc($, $(el));
+    const $a = $(a);
+    const src = imageFromNewsLink($, $a);
     if (!src) return;
-    const link = $(el).closest("div, article, li").find("a[href*='/news/detail/']").first();
-    const href = link.attr("href") || "";
-    const m = href.match(/detail\/([^/]+)/);
-    if (m && !imageMap[m[1]]) imageMap[m[1]] = src;
+    const hasPreview = $a.find(".bg-img[data-src], .lazyload[data-src]").length > 0;
+    if (!imageMap[slug] || hasPreview) imageMap[slug] = src;
   });
 
   return imageMap;
@@ -215,8 +212,9 @@ for (const slug of SLUGS) {
   const html = await res.text();
   const parsed = parseArticle(html);
   const date = dateMap[slug] || ABOUT_DATES[slug] || "";
-  let imageUrl = imageMap[slug] || parsed.imageUrl || "";
-  if (!imageUrl) imageUrl = "/news/assets/placeholder.svg";
+  // Превью со списка /news/ важнее картинки из тела статьи
+  let imageUrl = imageMap[slug] || "";
+  if (!imageUrl && parsed.imageUrl) imageUrl = parsed.imageUrl;
   items.push({ slug, ...parsed, date, imageUrl });
   console.log("ok", slug, parsed.blocks.length, imageUrl ? "img" : "-");
   await new Promise((r) => setTimeout(r, 200));

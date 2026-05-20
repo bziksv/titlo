@@ -9,6 +9,7 @@
 | `/` | ✅ |
 | `/about/`, `/contact/`, `/tarify/`, `/services/`, `/faq/` | ✅ фаза 2 |
 | 18 модулей, 30 новостей | ✅ |
+| `/analiz-relevantnosti/` | ✅ кастомный лендинг; термины — `RelevancePlainSection` (4 пункта 2×2, без дубля 3+2 карточек) |
 | `/demo/` | ✅ виджет + BFF `/api/lk/*` |
 | `/legal/personal-data/`, `/legal/privacy/`, `/legal/offer/` | ✅ |
 | `sitemap.xml`, `robots.txt` | ✅ |

@@ -7,16 +7,16 @@ import path from "path";
 
 const UPLOAD_RE = /https:\/\/redbox\.su\/upload\/[^"'`\s)]+/gi;
 
-export function localPathForUrl(url) {
+export function localPathForUrl(url, assetDir = "news") {
   const { pathname } = new URL(url);
   let ext = path.extname(pathname).toLowerCase();
   if (!ext || ext.length > 6) ext = ".jpg";
   const hash = crypto.createHash("sha1").update(url).digest("hex").slice(0, 16);
-  return `/news/assets/${hash}${ext}`;
+  return `/${assetDir}/assets/${hash}${ext}`;
 }
 
-export async function mirrorOne(url, publicRoot) {
-  const local = localPathForUrl(url);
+export async function mirrorOne(url, publicRoot, assetDir = "news") {
+  const local = localPathForUrl(url, assetDir);
   const disk = path.join(publicRoot, local);
   if (fs.existsSync(disk)) return local;
   fs.mkdirSync(path.dirname(disk), { recursive: true });
@@ -44,8 +44,9 @@ export async function mirrorOne(url, publicRoot) {
   return local;
 }
 
-/** Заменить все upload-URL в файле на локальные пути в public/news/assets/ */
-export async function mirrorFileUploadUrls(tsFilePath, publicRoot) {
+/** Заменить все upload-URL в файле на локальные пути в public/{assetDir}/assets/ */
+export async function mirrorFileUploadUrls(tsFilePath, publicRoot, options = {}) {
+  const assetDir = options.assetDir ?? "news";
   let content = fs.readFileSync(tsFilePath, "utf8");
   const urls = [...new Set(content.match(UPLOAD_RE) ?? [])];
   if (!urls.length) {
@@ -56,7 +57,7 @@ export async function mirrorFileUploadUrls(tsFilePath, publicRoot) {
   const map = {};
   for (const url of urls) {
     try {
-      map[url] = await mirrorOne(url, publicRoot);
+      map[url] = await mirrorOne(url, publicRoot, assetDir);
       console.log("ok", path.basename(map[url]), "←", url.slice(-48));
     } catch (e) {
       console.warn("skip", url, e.message);
@@ -67,11 +68,8 @@ export async function mirrorFileUploadUrls(tsFilePath, publicRoot) {
   for (const [url, local] of Object.entries(map)) {
     content = content.split(url).join(local);
   }
-  // Битые upload-URL → placeholder
-  content = content.replace(
-    /\n    imageUrl: "https:\/\/redbox\.su\/[^"]+",/g,
-    '\n    imageUrl: "/news/assets/placeholder.svg",',
-  );
+  // Битые upload-URL в превью — убираем строку (карточка без картинки)
+  content = content.replace(/\n    imageUrl: "https:\/\/redbox\.su\/[^"]+",/g, "");
 
   fs.writeFileSync(tsFilePath, content);
   console.log("mirrored", Object.keys(map).length, "of", urls.length, "→", tsFilePath);

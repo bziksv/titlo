@@ -25,6 +25,19 @@
 ```bash
 npm install
 npm run dev          # http://localhost:3001
+```
+
+Если `EADDRINUSE` (порт занят) или ошибка `Cannot find module './873.js'`:
+
+```bash
+npm run dev:stop
+rm -rf .next
+npm run dev
+```
+
+Комментарии в той же строке после `npm run …` не вставляйте — zsh/npm могут передать `#` в скрипт. Одной командой: `npm run dev:fresh`
+
+```bash
 npm run build && npm run start
 npm run smoke        # после start — все ~57 URL
 npm run compare:sitemap  # сверка с sitemap Битрикса

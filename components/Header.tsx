@@ -19,8 +19,9 @@ const navItemClass =
 const navItemActiveClass =
   "rounded-lg border border-brand-300 bg-brand-50 px-3 py-2 text-brand-700 shadow-sm";
 
-const dropdownPanelClass =
-  "absolute left-0 z-[70] mt-2 rounded-xl border border-slate-200 bg-white shadow-lg";
+const dropdownAnchorClass = "absolute left-0 top-full z-[70] pt-2";
+
+const dropdownPanelClass = "rounded-xl border border-slate-200 bg-white shadow-lg";
 
 export function Header() {
   const [modulesOpen, setModulesOpen] = useState(false);
@@ -67,71 +68,108 @@ export function Header() {
         </Link>
 
         <nav className="relative hidden items-center gap-1 overflow-visible text-sm font-medium text-slate-700 lg:flex">
-          <div ref={companyRef} className={`relative ${companyOpen ? "z-[60]" : ""}`}>
+          <div
+            ref={companyRef}
+            className={`relative ${companyOpen ? "z-[60]" : ""}`}
+            onMouseEnter={() => {
+              setCompanyOpen(true);
+              setModulesOpen(false);
+            }}
+            onMouseLeave={() => setCompanyOpen(false)}
+          >
             <button
               type="button"
               className={companyOpen ? navItemActiveClass : navItemClass}
               aria-expanded={companyOpen}
-              onClick={() => {
-                setCompanyOpen((v) => !v);
+              aria-haspopup="true"
+              onFocus={() => {
+                setCompanyOpen(true);
                 setModulesOpen(false);
+              }}
+              onBlur={(e) => {
+                if (!companyRef.current?.contains(e.relatedTarget)) setCompanyOpen(false);
               }}
             >
               Компания
             </button>
             {companyOpen && (
-              <div className={`${dropdownPanelClass} min-w-[180px] py-2`}>
-                {NAV_COMPANY.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className={menuLinkClass}
-                    onClick={() => setCompanyOpen(false)}
-                  >
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-base" aria-hidden>
-                      {COMPANY_ICONS[item.href] ?? "📌"}
-                    </span>
-                    {item.label}
-                  </Link>
-                ))}
+              <div className={`${dropdownAnchorClass} min-w-[180px]`}>
+                <div className={`${dropdownPanelClass} py-2`}>
+                  {NAV_COMPANY.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className={menuLinkClass}
+                      onClick={() => setCompanyOpen(false)}
+                    >
+                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-base" aria-hidden>
+                        {COMPANY_ICONS[item.href] ?? "📌"}
+                      </span>
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
               </div>
             )}
           </div>
 
-          <div ref={modulesRef} className={`relative ${modulesOpen ? "z-[60]" : ""}`}>
+          <div
+            ref={modulesRef}
+            className={`relative ${modulesOpen ? "z-[60]" : ""}`}
+            onMouseEnter={() => {
+              setModulesOpen(true);
+              setCompanyOpen(false);
+            }}
+            onMouseLeave={() => setModulesOpen(false)}
+          >
             <button
               type="button"
               className={modulesOpen ? navItemActiveClass : navItemClass}
               aria-expanded={modulesOpen}
-              onClick={() => {
-                setModulesOpen((v) => !v);
+              aria-haspopup="true"
+              onFocus={() => {
+                setModulesOpen(true);
                 setCompanyOpen(false);
+              }}
+              onBlur={(e) => {
+                if (!modulesRef.current?.contains(e.relatedTarget)) setModulesOpen(false);
               }}
             >
               Модули сервиса
             </button>
             {modulesOpen && (
-              <div
-                className={`${dropdownPanelClass} max-h-[70vh] w-[min(100vw-2rem,380px)] overflow-y-auto p-1.5`}
-              >
-                {NAV_MODULES.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className={menuLinkClass}
-                    onClick={() => setModulesOpen(false)}
-                  >
-                    <NavMenuIcon href={item.href} />
-                    <span className="min-w-0 leading-snug">{item.label}</span>
-                  </Link>
-                ))}
+              <div className={`${dropdownAnchorClass} w-[min(100vw-2rem,380px)]`}>
+                <div
+                  className={`${dropdownPanelClass} max-h-[70vh] overflow-y-auto p-1.5`}
+                >
+                  {NAV_MODULES.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className={menuLinkClass}
+                      onClick={() => setModulesOpen(false)}
+                    >
+                      <NavMenuIcon href={item.href} />
+                      <span className="min-w-0 leading-snug">{item.label}</span>
+                    </Link>
+                  ))}
+                  <div className="mt-1 border-t border-slate-100 pt-1">
+                    <Link
+                      href="/services/"
+                      className={`${menuLinkClass} text-brand-600`}
+                      onClick={() => setModulesOpen(false)}
+                    >
+                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-base" aria-hidden>
+                        ⊞
+                      </span>
+                      Все модули — обзор
+                    </Link>
+                  </div>
+                </div>
               </div>
             )}
           </div>
 
-          <Link href="/services/" className={navItemClass}>
-            Сервисы
-          </Link>
           <Link href="/tarify/" className={navItemClass}>
             Тарифы
           </Link>
@@ -183,10 +221,10 @@ export function Header() {
               <span className="min-w-0">{item.label}</span>
             </Link>
           ))}
+          <Link href="/services/" className={`${menuLinkClass} mt-1 text-brand-600`} onClick={() => setMobileOpen(false)}>
+            Все модули — обзор
+          </Link>
           <div className="mt-4 flex flex-col gap-1 border-t border-slate-200 pt-4">
-            <Link href="/services/" className="rounded-lg px-2 py-2 hover:bg-brand-50" onClick={() => setMobileOpen(false)}>
-              Сервисы
-            </Link>
             <Link href="/tarify/" className="rounded-lg px-2 py-2 hover:bg-brand-50" onClick={() => setMobileOpen(false)}>
               Тарифы
             </Link>

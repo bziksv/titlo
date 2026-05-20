@@ -36,6 +36,16 @@ npm run smoke
 
 Перед `npm run build` остановите `npm run dev` (иначе возможны ошибки сборки).
 
+### Локальный dev: типичные проблемы
+
+| Симптом | Решение |
+|--------|---------|
+| `EADDRINUSE :::3001` | Уже запущен старый dev/PM2: `npm run dev:stop`, затем `npm run dev` |
+| `Cannot find module './873.js'` | Битый `.next`: `npm run dev:stop`, `rm -rf .next`, `npm run dev` или `npm run dev:fresh` |
+| Страница 500 после правок | Hard refresh; при необходимости `dev:fresh` |
+
+`npm run dev` и `npm run start` — **разные режимы** (hot reload vs production standalone). Не держите оба на порту 3001.
+
 ## Smoke-тест URL
 
 После `npm run build && npm run start` или деплоя:
@@ -131,6 +141,7 @@ git push origin main
 | Только зеркало картинок новостей | `npm run mirror:news-images` |
 | Юр. тексты | `npm run scrape:legal` |
 | YouTube на лендингах | `npm run scrape:module-videos` |
+| Тексты и скриншоты модулей | `npm run scrape:modules` → `public/modules/assets/` |
 
 После скрапа — commit `*.generated.ts`, `public/news/assets/*` и redeploy.
 

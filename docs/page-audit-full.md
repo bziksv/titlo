@@ -31,10 +31,12 @@
 
 ## Модули (18)
 
+План и статус: **[modules-migration-plan.md](./modules-migration-plan.md)**. Контент: `npm run scrape:modules` → `modules.generated.ts`, картинки `public/modules/assets/`.
+
 | URL | Текст (sections) | Видео | Визуал |
 |-----|------------------|-------|--------|
-| `/analiz-relevantnosti/` | modules.generated | 4 | ModuleLanding |
-| `/analiz-konkurentov/` | ✓ | — | ✓ |
+| `/analiz-relevantnosti/` | 8 секций + img | 4 | ModuleLanding + ContentSections |
+| `/analiz-konkurentov/` | 12 секций + img | — | 🔄 |
 | `/monitoring-pozicii-sayta/` | ✓ | 4 | ✓ |
 | `/monitoring-saytov/` | проверить | 1 | ✓ |
 | `/proverka-meta-tegov-online/` | ✓ | 1 | ✓ |
