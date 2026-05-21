@@ -9,7 +9,20 @@
 | `/` | ✅ |
 | `/about/`, `/contact/`, `/tarify/`, `/services/`, `/faq/` | ✅ фаза 2 |
 | 18 модулей, 30 новостей | ✅ |
-| `/analiz-relevantnosti/` | ✅ кастомный лендинг; термины — `RelevancePlainSection` (4 пункта 2×2, без дубля 3+2 карточек) |
+| `/analiz-relevantnosti/` | ✅ эталон #1 — [module-landing-relevance.md](./examples/module-landing-relevance.md) |
+| `/monitoring-pozicii-sayta/` | ✅ [module-landing-monitoring.md](./examples/module-landing-monitoring.md) |
+| `/analiz-konkurentov/` | ✅ [module-landing-competitors.md](./examples/module-landing-competitors.md) |
+| `/html-redaktor/` | ✅ [module-landing-html-editor.md](./examples/module-landing-html-editor.md) |
+| `/http-headers/` | ✅ [module-landing-http-headers.md](./examples/module-landing-http-headers.md) |
+| `/kalkulyator-roi/` | ✅ [module-landing-roi.md](./examples/module-landing-roi.md) |
+| `/utm-metki/` | ✅ [module-landing-utm.md](./examples/module-landing-utm.md) |
+| `/sravnenie-spiskov-klyuchevykh-fraz/` | ✅ [module-landing-list-compare.md](./examples/module-landing-list-compare.md) |
+| `/generator-paroley/` | ✅ [module-landing-password-gen.md](./examples/module-landing-password-gen.md) |
+| `/podschet-dliny-teksta/` | ✅ [module-landing-text-length.md](./examples/module-landing-text-length.md) |
+| `/generator_slov/` | ✅ [module-landing-word-gen.md](./examples/module-landing-word-gen.md) |
+| `/proverka-meta-tegov-online/` | ✅ [module-landing-meta-mon.md](./examples/module-landing-meta-mon.md) |
+| `/monitoring-saytov/` | ✅ [module-landing-site-mon.md](./examples/module-landing-site-mon.md) |
+| `/udalenie-dublikatov/` | ✅ [module-landing-dedup.md](./examples/module-landing-dedup.md) |
 | `/demo/` | ✅ виджет + BFF `/api/lk/*` |
 | `/legal/personal-data/`, `/legal/privacy/`, `/legal/offer/` | ✅ |
 | `sitemap.xml`, `robots.txt` | ✅ |

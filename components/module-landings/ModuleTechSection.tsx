@@ -1,14 +1,32 @@
 "use client";
 
 import { useRef, type CSSProperties } from "react";
-import { RELEVANCE_TECH_LAYERS, RELEVANCE_TECH_SECTION } from "@/lib/content/analiz-relevantnosti-page";
 import { useParallaxOffset } from "@/lib/hooks/useParallaxOffset";
 
 const CARD_SPEEDS = [0.05, 0.09, 0.13, 0.17] as const;
 
-type Layer = (typeof RELEVANCE_TECH_LAYERS)[number];
+export type ModuleTechLayer = {
+  id: string;
+  title: string;
+  short: string;
+  text: string;
+  detail?: string;
+};
 
-function TechLayerCard({ layer, speed }: { layer: Layer; speed: number }) {
+export type ModuleTechSectionContent = {
+  eyebrow: string;
+  title: string;
+  lead: string;
+  footer: string;
+};
+
+type Props = {
+  section: ModuleTechSectionContent;
+  layers: readonly ModuleTechLayer[];
+  titleId: string;
+};
+
+function TechLayerCard({ layer, speed }: { layer: ModuleTechLayer; speed: number }) {
   const ref = useRef<HTMLLIElement>(null);
   const y = useParallaxOffset(ref, speed);
 
@@ -35,8 +53,8 @@ function TechLayerCard({ layer, speed }: { layer: Layer; speed: number }) {
   );
 }
 
-/** Как устроена технология — parallax сетки, декора и карточек без второй колонки */
-export function RelevanceTechSection() {
+/** Тёмная секция «как устроено» с parallax — общий паттерн лендинга модуля */
+export function ModuleTechSection({ section, layers, titleId }: Props) {
   const sectionRef = useRef<HTMLElement>(null);
   const gridY = useParallaxOffset(sectionRef, 0.24);
   const orbY = useParallaxOffset(sectionRef, 0.38);
@@ -55,7 +73,7 @@ export function RelevanceTechSection() {
     <section
       ref={sectionRef}
       className="relative overflow-hidden bg-brand-800 py-16 text-white md:py-20"
-      aria-labelledby="relevance-tech-title"
+      aria-labelledby={titleId}
     >
       <div className="pointer-events-none absolute inset-0 opacity-[0.06] will-change-transform" aria-hidden style={gridStyle} />
 
@@ -71,22 +89,20 @@ export function RelevanceTechSection() {
       />
 
       <div className="relative z-10 mx-auto max-w-6xl px-4">
-        <p className="text-sm font-semibold uppercase tracking-widest text-brand-200">
-          {RELEVANCE_TECH_SECTION.eyebrow}
-        </p>
-        <h2 id="relevance-tech-title" className="mt-2 max-w-3xl text-2xl font-bold md:text-3xl lg:text-4xl">
-          {RELEVANCE_TECH_SECTION.title}
+        <p className="text-sm font-semibold uppercase tracking-widest text-brand-200">{section.eyebrow}</p>
+        <h2 id={titleId} className="mt-2 max-w-3xl text-2xl font-bold md:text-3xl lg:text-4xl">
+          {section.title}
         </h2>
-        <p className="mt-4 max-w-3xl text-lg leading-relaxed text-brand-100">{RELEVANCE_TECH_SECTION.lead}</p>
+        <p className="mt-4 max-w-3xl text-lg leading-relaxed text-brand-100">{section.lead}</p>
 
         <ol className="mt-12 grid gap-5 md:grid-cols-2">
-          {RELEVANCE_TECH_LAYERS.map((layer, i) => (
+          {layers.map((layer, i) => (
             <TechLayerCard key={layer.id} layer={layer} speed={CARD_SPEEDS[i] ?? 0.1} />
           ))}
         </ol>
 
         <p className="mt-10 max-w-3xl border-t border-white/15 pt-8 text-sm leading-relaxed text-brand-100/90">
-          {RELEVANCE_TECH_SECTION.footer}
+          {section.footer}
         </p>
       </div>
     </section>

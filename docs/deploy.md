@@ -103,6 +103,54 @@ pm2 restart datagon-site
 pm2 status
 ```
 
+### Если на сайте «старая» страница модуля
+
+Симптом: на https://datagon.ru/analiz-relevantnosti/ видны блоки **«Инструкция по работе с модулем»** / **«Принцип работы сервиса»** (скрап), а не **«Как устроена технология»** и кастомный hero.
+
+На **сервере** по шагам:
+
+```bash
+cd /var/www/datagon_ru_usr/data/www/datagon.ru
+
+# 1. Тот ли коммит (должен быть с AnalizRelevantnostiLanding)
+git rev-parse HEAD
+git log -1 --oneline
+grep AnalizRelevantnosti app/\[slug\]/page.tsx || echo "НЕТ в page.tsx — git pull не доехал"
+
+# 2. Чистая сборка (обязательно после pull)
+npm run dev:stop 2>/dev/null || true
+rm -rf .next
+npm ci
+npm run build
+
+# 3. Перезапуск standalone (не next dev)
+pm2 delete datagon-site 2>/dev/null || true
+pm2 start npm --name datagon-site -- start
+pm2 save
+
+# 4. Сначала localhost — без nginx
+curl -s http://127.0.0.1:3001/analiz-relevantnosti/ | grep -o "Как устроена технология" | head -1
+# должна быть строка; если пусто — build/PM2 всё ещё старые
+
+# 5. С Mac после деплоя
+BASE_URL=https://datagon.ru npm run verify:relevance
+BASE_URL=https://datagon.ru npm run verify:monitoring
+BASE_URL=https://datagon.ru npm run verify:competitor
+BASE_URL=https://datagon.ru npm run verify:html-editor
+BASE_URL=https://datagon.ru npm run verify:http-headers
+BASE_URL=https://datagon.ru npm run verify:roi
+BASE_URL=https://datagon.ru npm run verify:utm
+BASE_URL=https://datagon.ru npm run verify:list-compare
+BASE_URL=https://datagon.ru npm run verify:password-gen
+BASE_URL=https://datagon.ru npm run verify:text-length
+BASE_URL=https://datagon.ru npm run verify:dedup
+BASE_URL=https://datagon.ru npm run verify:word-gen
+BASE_URL=https://datagon.ru npm run verify:meta-mon
+BASE_URL=https://datagon.ru npm run verify:site-mon
+```
+
+Частые причины: **сборка не запускали** или упала с ошибкой; **PM2 крутит dev** или старый процесс на `:3001`; **не тот каталог** (не `datagon.ru`); на порту 3001 **два процесса** — nginx попадает не в тот.
+
 На Mac перед этим:
 
 ```bash

@@ -2,6 +2,19 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ModuleLanding } from "@/components/ModuleLanding";
 import { AnalizRelevantnostiLanding } from "@/components/module-landings/AnalizRelevantnostiLanding";
+import { AnalizKonkurentovLanding } from "@/components/module-landings/AnalizKonkurentovLanding";
+import { HttpHeadersLanding } from "@/components/module-landings/HttpHeadersLanding";
+import { KalkulyatorRoiLanding } from "@/components/module-landings/KalkulyatorRoiLanding";
+import { UtmMetkiLanding } from "@/components/module-landings/UtmMetkiLanding";
+import { SravnenieSpiskovLanding } from "@/components/module-landings/SravnenieSpiskovLanding";
+import { GeneratorParoleyLanding } from "@/components/module-landings/GeneratorParoleyLanding";
+import { PodschetDlinyTekstaLanding } from "@/components/module-landings/PodschetDlinyTekstaLanding";
+import { GeneratorSlovLanding } from "@/components/module-landings/GeneratorSlovLanding";
+import { ProverkaMetaTegovLanding } from "@/components/module-landings/ProverkaMetaTegovLanding";
+import { UdalenieDublikatovLanding } from "@/components/module-landings/UdalenieDublikatovLanding";
+import { HtmlRedaktorLanding } from "@/components/module-landings/HtmlRedaktorLanding";
+import { MonitoringPoziciiLanding } from "@/components/module-landings/MonitoringPoziciiLanding";
+import { MonitoringSaytovLanding } from "@/components/module-landings/MonitoringSaytovLanding";
 import { getAllModuleSlugs, getModuleBySlug } from "@/lib/content/modules";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -26,6 +39,45 @@ export default async function ModulePage({ params }: Props) {
   if (!mod) notFound();
   if (slug === "analiz-relevantnosti") {
     return <AnalizRelevantnostiLanding module={mod} />;
+  }
+  if (slug === "monitoring-pozicii-sayta") {
+    return <MonitoringPoziciiLanding module={mod} />;
+  }
+  if (slug === "monitoring-saytov") {
+    return <MonitoringSaytovLanding module={mod} />;
+  }
+  if (slug === "analiz-konkurentov") {
+    return <AnalizKonkurentovLanding module={mod} />;
+  }
+  if (slug === "html-redaktor") {
+    return <HtmlRedaktorLanding module={mod} />;
+  }
+  if (slug === "http-headers") {
+    return <HttpHeadersLanding module={mod} />;
+  }
+  if (slug === "kalkulyator-roi") {
+    return <KalkulyatorRoiLanding module={mod} />;
+  }
+  if (slug === "utm-metki") {
+    return <UtmMetkiLanding module={mod} />;
+  }
+  if (slug === "sravnenie-spiskov-klyuchevykh-fraz") {
+    return <SravnenieSpiskovLanding module={mod} />;
+  }
+  if (slug === "generator-paroley") {
+    return <GeneratorParoleyLanding module={mod} />;
+  }
+  if (slug === "podschet-dliny-teksta") {
+    return <PodschetDlinyTekstaLanding module={mod} />;
+  }
+  if (slug === "generator_slov") {
+    return <GeneratorSlovLanding module={mod} />;
+  }
+  if (slug === "proverka-meta-tegov-online") {
+    return <ProverkaMetaTegovLanding module={mod} />;
+  }
+  if (slug === "udalenie-dublikatov") {
+    return <UdalenieDublikatovLanding module={mod} />;
   }
   return <ModuleLanding module={mod} />;
 }

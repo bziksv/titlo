@@ -37,6 +37,13 @@ export const RELEVANCE_REPORT = {
   lead: "Сначала — сравнение с ТОПом выдачи. На выходе — конкретные правки для роста позиций и расширения семантики страницы.",
 } as const;
 
+/** Для ModuleInsightsSection */
+export const RELEVANCE_INSIGHTS = {
+  ...RELEVANCE_REPORT,
+  intro:
+    "Сравнение с ТОПом — только старт. Отчёт ведёт к правкам, LSI-семантике и росту позиций и трафика.",
+} as const;
+
 /** Четыре зоны отчёта (сетка 2×2 внутри одной карточки) */
 export const RELEVANCE_REPORT_GRID = [
   {

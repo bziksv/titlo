@@ -54,7 +54,7 @@ export const MODULE_PAGES: ModulePage[] = [
     description: "Сервис проверки доступности и корректности работы сайта или страниц.",
     lead:
       "Автоматический контроль метрик и доступности: уведомления на почту и в Telegram при сбоях.",
-    features: ["Проверка заголовков и фраз в коде", "Уведомления при ошибках", "Несколько проектов"],
+    features: ["Email и Telegram", "Несколько проектов", "Uptime и время ответа"],
   },
   {
     slug: "proverka-meta-tegov-online",
@@ -64,7 +64,7 @@ export const MODULE_PAGES: ModulePage[] = [
     description: "Проверка title, description, canonical, H1–H3 и отслеживание изменений.",
     lead:
       "Фиксируйте мета-теги и получайте уведомления при изменениях. Сравнение с сохранённой версией.",
-    features: ["Title, Description, Keywords", "Canonical, noindex", "История изменений"],
+    features: ["До 500 URL", "История изменений"],
   },
   {
     slug: "generator_slov",
@@ -74,7 +74,7 @@ export const MODULE_PAGES: ModulePage[] = [
     description: "Генератор словосочетаний из двух колонок для SEO и контекста.",
     lead:
       "Скрещивание запросов и генерация фраз из двух списков — для семантики и контекстной рекламы.",
-    features: ["Две колонки запросов", "Без лимитов на тарифе Free", "Экспорт результатов"],
+    features: ["Несколько блоков слов", "Комбинации за минуту"],
   },
   {
     slug: "podschet-dliny-teksta",
@@ -84,6 +84,7 @@ export const MODULE_PAGES: ModulePage[] = [
     description: "Подсчёт символов, слов, с пробелами и без.",
     lead:
       "Мгновенный подсчёт символов с пробелами и без, количества слов в тексте.",
+    features: ["До 38 600 символов", "Мгновенный отчёт"],
   },
   {
     slug: "generator-paroley",
@@ -92,6 +93,7 @@ export const MODULE_PAGES: ModulePage[] = [
     h1: "Генератор паролей",
     description: "Надёжные пароли в несколько кликов.",
     lead: "Генерация взломостойких паролей из букв, цифр и спецсимволов.",
+    features: ["До 50 символов", "История генерации"],
   },
   {
     slug: "sravnenie-spiskov-klyuchevykh-fraz",
@@ -101,6 +103,7 @@ export const MODULE_PAGES: ModulePage[] = [
     description: "Поиск совпадающих ключевых фраз в двух списках.",
     lead:
       "Сравните два списка фраз и найдите пересечения — удобно при кластеризации и чистке семантики.",
+    features: ["2 столбца · 4 режима", "Копирование и выгрузка"],
   },
   {
     slug: "udalenie-dublikatov",
@@ -109,6 +112,7 @@ export const MODULE_PAGES: ModulePage[] = [
     h1: "Удаление дубликатов",
     description: "Удаление повторяющихся слов и строк из текста и списков.",
     lead: "Уберите дубликаты из текста или списка ключевых фраз за один проход.",
+    features: ["9+ фильтров очистки", "Списки построчно"],
   },
   {
     slug: "utm-metki",
@@ -118,6 +122,7 @@ export const MODULE_PAGES: ModulePage[] = [
     description: "Создание UTM-меток для Яндекс, Google, VK, myTarget.",
     lead:
       "Соберите корректные UTM-метки для рекламных кампаний: campaign, source, medium и другие параметры.",
+    features: ["Яндекс · Google · VK", "Подсказки по площадкам"],
   },
   {
     slug: "kalkulyator-roi",
@@ -127,12 +132,13 @@ export const MODULE_PAGES: ModulePage[] = [
     description: "Расчёт окупаемости инвестиций в интернет-маркетинг.",
     lead:
       "ROI — ключевой показатель кампании. Калькулятор помогает быстро оценить эффективность вложений.",
+    features: ["ROI и метрики РК", "Прогноз трафика"],
   },
   {
     slug: "http-headers",
     path: "/http-headers/",
-    title: "HTTP headers",
-    h1: "HTTP Headers",
+    title: "Проверка HTTP-заголовков",
+    h1: "Проверка HTTP-заголовков",
     description: "Проверка HTTP-заголовков ответа страницы.",
     lead:
       "Просмотр заголовков ответа сервера — полезно для диагностики, кэширования и безопасности.",
@@ -146,6 +152,7 @@ export const MODULE_PAGES: ModulePage[] = [
     description: "Визуальное оформление текста и преобразование в HTML.",
     lead:
       "Оформите текст для сайта и получите HTML-код. Можно сохранять промежуточные версии.",
+    features: ["Визуальное редактирование", "Экспорт HTML", "До 20 проектов"],
   },
   {
     slug: "vydelenie-unikalnykh-slov-v-tekste",

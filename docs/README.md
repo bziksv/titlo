@@ -13,6 +13,7 @@
 | [deploy.md](./deploy.md) | Docker, VPS `/var/www/datagon_ru_usr/...`, PM2, smoke |
 | [migration-checklist.md](./migration-checklist.md) | Чеклист миграции с Битрикса |
 | [examples/README.md](./examples/README.md) | **Эталонные** UI и паттерны (обязательно смотреть перед версткой) |
+| [examples/module-landing-relevance.md](./examples/module-landing-relevance.md) | Эталон лендинга модуля: `/analiz-relevantnosti/` |
 
 Репозиторий: [github.com/bziksv/site_seo_datagon](https://github.com/bziksv/site_seo_datagon).
 
