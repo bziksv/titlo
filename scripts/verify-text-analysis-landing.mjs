@@ -14,6 +14,10 @@ const MUST_NOT = [
   "FAQ по анализу текста",
   "/modules/assets/deb8c7e59ef3d695.png",
   "/modules/assets/b991cbf83bd5f087.png",
+  "/modules/assets/0d20bf0152839075.jpg",
+  "/modules/assets/a2c300ca36c2ea27.jpg",
+  "/modules/assets/474da29ee76c785b.jpg",
+  "/modules/assets/824317ec89c0b1a0.jpg",
 ];
 
 async function main() {

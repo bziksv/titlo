@@ -150,7 +150,14 @@ export function Header() {
                       onClick={() => setModulesOpen(false)}
                     >
                       <NavMenuIcon href={item.href} />
-                      <span className="min-w-0 leading-snug">{item.label}</span>
+                      <span className="min-w-0 leading-snug">
+                        {item.label}
+                        {item.badge && (
+                          <span className="ml-2 inline-flex rounded bg-brand-600 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white">
+                            {item.badge}
+                          </span>
+                        )}
+                      </span>
                     </Link>
                   ))}
                   <div className="mt-1 border-t border-slate-100 pt-1">
@@ -218,7 +225,14 @@ export function Header() {
           {NAV_MODULES.map((item) => (
             <Link key={item.href} href={item.href} className={menuLinkClass} onClick={() => setMobileOpen(false)}>
               <NavMenuIcon href={item.href} size="sm" />
-              <span className="min-w-0">{item.label}</span>
+              <span className="min-w-0">
+                {item.label}
+                {item.badge && (
+                  <span className="ml-1.5 inline-flex rounded bg-brand-600 px-1 py-0.5 text-[9px] font-bold uppercase text-white">
+                    {item.badge}
+                  </span>
+                )}
+              </span>
             </Link>
           ))}
           <Link href="/services/" className={`${menuLinkClass} mt-1 text-brand-600`} onClick={() => setMobileOpen(false)}>

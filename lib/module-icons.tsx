@@ -3,6 +3,7 @@ const ICONS: Record<string, string> = {
   "analiz-relevantnosti": "📊",
   "analiz-konkurentov": "🔍",
   "monitoring-pozicii-sayta": "📈",
+  "monitoring-pozicii-v2": "📈",
   "monitoring-saytov": "🛡️",
   "proverka-meta-tegov-online": "🏷️",
   generator_slov: "✨",

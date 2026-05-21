@@ -9,6 +9,6 @@
 
 Акцент: **частотность, словоформы, URL, облака, закон Ципфа, стоп-слова**.
 
-Скрины LK (зеркало redbox iblock, до 800px): hero — `0d20bf0152839075.jpg`; сетка — `a2c300ca36c2ea27.jpg`, `474da29ee76c785b.jpg`, `824317ec89c0b1a0.jpg`.
+Скрины LK без сайдбара: `text-anal-shot-*.jpg` (`node scripts/capture-analiz-teksta-screenshots.mjs` — граница сайдбара по пикселям, не фиксированные 168px; исходники `0d20bf…`, `a2c300…`, `474da29…`, график — `db844d36…`, кроп только блока Ципфа).
 
 Проверка: `npm run verify:text-analysis` (порт **3001**)

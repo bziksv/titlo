@@ -10,6 +10,7 @@
 |--------|----------|-----|--------|
 | **Лендинг модуля (полный)** | [module-landing-relevance.md](./module-landing-relevance.md) | `AnalizRelevantnostiLanding` | ✅ |
 | **Лендинг модуля: мониторинг** | [module-landing-monitoring.md](./module-landing-monitoring.md) | `MonitoringPoziciiLanding` | ✅ |
+| **Лендинг: мониторинг v2 (NEW)** | [module-landing-monitoring-v2.md](./module-landing-monitoring-v2.md) | `MonitoringPoziciiV2Landing` — концепция «Центр управления» | ✅ |
 | **Лендинг модуля: конкуренты** | [module-landing-competitors.md](./module-landing-competitors.md) | `AnalizKonkurentovLanding` | ✅ |
 | **Лендинг модуля: HTML-редактор** | [module-landing-html-editor.md](./module-landing-html-editor.md) | `HtmlRedaktorLanding` | ✅ |
 | **Лендинг: HTTP headers** | [module-landing-http-headers.md](./module-landing-http-headers.md) | `HttpHeadersLanding` | ✅ |
@@ -27,7 +28,7 @@
 | **Лендинг: срок регистрации доменов** | [module-landing-domain-expiry.md](./module-landing-domain-expiry.md) | `OtslezhivanieSrokaRegistratsiiDomenovLanding` | ✅ |
 | **Лендинг: анализ текста** | [module-landing-text-analysis.md](./module-landing-text-analysis.md) | `AnalizTekstaLanding` | ✅ |
 | **Лендинг: кластеризатор** | [module-landing-clusterizer.md](./module-landing-clusterizer.md) | `KlasterizatorKlyuchevykhSlovLanding` | ✅ |
-| **Справочник UI-эффектов (референсы)** | [visual-effects-agency-reference.md](./visual-effects-agency-reference.md) | агентства, Bitrix24 | 📋 |
+| **Справочник UI-эффектов (референсы)** | [visual-effects-agency-reference.md](./visual-effects-agency-reference.md) | 9 агентств + **30+ кейсов** (прогон 2), волны внедрения | 📋 |
 | Оболочка (header, footer, cookie) | [layout-shell.md](./layout-shell.md) | `components/`, `app/layout.tsx` | ✅ |
 | Демо-виджет `/demo` | [demo-widget.md](./demo-widget.md) | `components/demo/` | ✅ |
 | Скелет модуля (скрап) | — | `ModuleLanding.tsx` | fallback, не эталон |

@@ -12,6 +12,7 @@
     "smoke": "node scripts/smoke-urls.mjs",
     "verify:relevance": "node scripts/verify-relevance-landing.mjs",
     "verify:monitoring": "node scripts/verify-monitoring-landing.mjs",
+    "verify:monitoring-v2": "node scripts/verify-monitoring-v2-landing.mjs",
     "verify:competitor": "node scripts/verify-competitor-landing.mjs",
     "verify:html-editor": "node scripts/verify-html-editor-landing.mjs",
     "verify:http-headers": "node scripts/verify-http-headers-landing.mjs",

@@ -26,6 +26,19 @@ a {
   @apply transition-colors;
 }
 
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 36s linear infinite;
+}
+
 .legal-content {
   @apply max-w-3xl text-sm leading-relaxed text-slate-700;
 }

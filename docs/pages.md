@@ -11,6 +11,7 @@
 | 18 модулей, 30 новостей | ✅ |
 | `/analiz-relevantnosti/` | ✅ эталон #1 — [module-landing-relevance.md](./examples/module-landing-relevance.md) |
 | `/monitoring-pozicii-sayta/` | ✅ [module-landing-monitoring.md](./examples/module-landing-monitoring.md) |
+| `/monitoring-pozicii-v2/` | ✅ [module-landing-monitoring-v2.md](./examples/module-landing-monitoring-v2.md) (NEW, улучшенный дизайн) |
 | `/analiz-konkurentov/` | ✅ [module-landing-competitors.md](./examples/module-landing-competitors.md) |
 | `/html-redaktor/` | ✅ [module-landing-html-editor.md](./examples/module-landing-html-editor.md) |
 | `/http-headers/` | ✅ [module-landing-http-headers.md](./examples/module-landing-http-headers.md) |

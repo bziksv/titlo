@@ -23,7 +23,7 @@ export function getCopyrightText(name: string = SITE.name): string {
   return `© ${years} ${name}`;
 }
 
-export type NavLink = { href: string; label: string };
+export type NavLink = { href: string; label: string; badge?: string };
 
 export const NAV_COMPANY: NavLink[] = [
   { href: "/about/", label: "О компании" },
@@ -34,6 +34,11 @@ export const NAV_MODULES: NavLink[] = [
   { href: "/analiz-relevantnosti/", label: "Анализ релевантности" },
   { href: "/analiz-konkurentov/", label: "Анализ конкурентов" },
   { href: "/monitoring-pozicii-sayta/", label: "Мониторинг позиций сайта" },
+  {
+    href: "/monitoring-pozicii-v2/",
+    label: "Мониторинг позиций сайта",
+    badge: "NEW",
+  },
   { href: "/monitoring-saytov/", label: "Мониторинг корректной работы сайтов" },
   { href: "/proverka-meta-tegov-online/", label: "Мониторинг мета-тегов" },
   { href: "/generator_slov/", label: "Генератор слов" },

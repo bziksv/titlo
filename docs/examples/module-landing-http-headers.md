@@ -11,4 +11,4 @@
 
 Проверка: `npm run verify:http-headers` (порт **3001**)
 
-Скрины: `fca23ef04bd3b647.png` (tablet LK), кропы `http-headers-capture-*.png`, `72df8fd054adc563.png` (отчёт). Иконки `3efa6f…` / `ad4110…` — resize 470×470, не использовать.
+Скрины: `http-headers-shot-*.png` (`node scripts/capture-http-headers-screenshots.mjs` — границы по пикселям из `fca23ef04bd3b647.png`, без сайдбара; пакет — коллаж иконок). Не `276b48fc…` / `72df8fd…` (A/文), resize 470×470.

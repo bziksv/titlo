@@ -16,6 +16,10 @@ const MUST_NOT = [
   "/modules/assets/ad4110fce10be168.png",
   "/modules/assets/2616d92c00483f20.png",
   "/modules/assets/5489a727f723a16f.png",
+  "/modules/assets/72df8fd054adc563.png",
+  "/modules/assets/276b48fc81e3a050.png",
+  "/modules/assets/http-headers-capture-form.png",
+  "/modules/assets/http-headers-capture-url.png",
 ];
 
 async function main() {

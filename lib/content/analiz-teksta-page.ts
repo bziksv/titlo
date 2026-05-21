@@ -171,22 +171,22 @@ export const TEXT_ANAL_INSIGHTS_OUTCOMES = [
   },
 ] as const;
 
-/** Скрины LK (зеркало redbox iblock, до 800px), не иконки 50×50. */
+/** Скрины LK без сайдбара (кроп `text-anal-shot-*.jpg` из iblock). */
 export const TEXT_ANAL_SCREENSHOTS = [
   {
-    src: "/modules/assets/0d20bf0152839075.jpg",
+    src: "/modules/assets/text-anal-shot-table.jpg",
     caption: "Таблица статистики: слова, словоформы, частотность",
   },
   {
-    src: "/modules/assets/a2c300ca36c2ea27.jpg",
+    src: "/modules/assets/text-anal-shot-input.jpg",
     caption: "Ввод текста и кнопка «Анализировать»",
   },
   {
-    src: "/modules/assets/474da29ee76c785b.jpg",
+    src: "/modules/assets/text-anal-shot-settings.jpg",
     caption: "Настройки: теги, стоп-слова, исключения",
   },
   {
-    src: "/modules/assets/824317ec89c0b1a0.jpg",
+    src: "/modules/assets/text-anal-shot-zipf.jpg",
     caption: "График по закону Ципфа",
   },
 ] as const;
