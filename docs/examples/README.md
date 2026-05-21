@@ -22,6 +22,12 @@
 | **Лендинг: мета-теги** | [module-landing-meta-mon.md](./module-landing-meta-mon.md) | `ProverkaMetaTegovLanding` | ✅ |
 | **Лендинг: мониторинг сайтов** | [module-landing-site-mon.md](./module-landing-site-mon.md) | `MonitoringSaytovLanding` | ✅ |
 | **Лендинг: удаление дубликатов** | [module-landing-dedup.md](./module-landing-dedup.md) | `UdalenieDublikatovLanding` | ✅ |
+| **Лендинг: уникальные слова** | [module-landing-unique-words.md](./module-landing-unique-words.md) | `VydelenieUnikalnykhSlovLanding` | ✅ |
+| **Лендинг: отслеживание ссылок** | [module-landing-link-track.md](./module-landing-link-track.md) | `OtslezhivanieSsylokLanding` | ✅ |
+| **Лендинг: срок регистрации доменов** | [module-landing-domain-expiry.md](./module-landing-domain-expiry.md) | `OtslezhivanieSrokaRegistratsiiDomenovLanding` | ✅ |
+| **Лендинг: анализ текста** | [module-landing-text-analysis.md](./module-landing-text-analysis.md) | `AnalizTekstaLanding` | ✅ |
+| **Лендинг: кластеризатор** | [module-landing-clusterizer.md](./module-landing-clusterizer.md) | `KlasterizatorKlyuchevykhSlovLanding` | ✅ |
+| **Справочник UI-эффектов (референсы)** | [visual-effects-agency-reference.md](./visual-effects-agency-reference.md) | агентства, Bitrix24 | 📋 |
 | Оболочка (header, footer, cookie) | [layout-shell.md](./layout-shell.md) | `components/`, `app/layout.tsx` | ✅ |
 | Демо-виджет `/demo` | [demo-widget.md](./demo-widget.md) | `components/demo/` | ✅ |
 | Скелет модуля (скрап) | — | `ModuleLanding.tsx` | fallback, не эталон |

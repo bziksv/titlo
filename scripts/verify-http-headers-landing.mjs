@@ -8,7 +8,15 @@ const MUST_HAVE = [
   "HTTP-заголовки простым языком",
 ];
 
-const MUST_NOT = ["Понятие заголовков", "Сервис проверки заголовков HTTP", "Преимущества сервиса RedBox"];
+const MUST_NOT = [
+  "Понятие заголовков",
+  "Сервис проверки заголовков HTTP",
+  "Преимущества сервиса RedBox",
+  "/modules/assets/3efa6f436b2d89b1.png",
+  "/modules/assets/ad4110fce10be168.png",
+  "/modules/assets/2616d92c00483f20.png",
+  "/modules/assets/5489a727f723a16f.png",
+];
 
 async function main() {
   const url = `${BASE}${PATH}`;

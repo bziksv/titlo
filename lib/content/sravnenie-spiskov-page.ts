@@ -172,21 +172,22 @@ export const LIST_COMPARE_INSIGHTS_OUTCOMES = [
   },
 ] as const;
 
+/** Скрины LK с redbox. Не использовать 9564df8825f713fc.jpg — баннер ошибки 300×53. */
 export const LIST_COMPARE_SCREENSHOTS = [
   {
     src: "/modules/assets/d4b9a26742a695f2.jpg",
     caption: "Два столбца для списков ключевых фраз",
   },
   {
-    src: "/modules/assets/9564df8825f713fc.jpg",
-    caption: "Выбор типа сравнения",
+    src: "/modules/assets/9477ce6ca4e29a36.jpg",
+    caption: "Выбор типа сравнения и список в «Результат»",
   },
   {
     src: "/modules/assets/c1eb5619a6fd54b8.jpg",
-    caption: "Окно «Результат» и индикатор 100%",
+    caption: "Оба списка заполнены — готово к обработке",
   },
   {
-    src: "/modules/assets/359df3ebedd0b839.jpg",
+    src: "/modules/assets/2888d0f5fda76796.jpg",
     caption: "Режимы пересечения и уникальных фраз",
   },
 ] as const;

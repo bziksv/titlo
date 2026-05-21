@@ -172,18 +172,19 @@ export const TEXT_LENGTH_INSIGHTS_OUTCOMES = [
   },
 ] as const;
 
+/** Скрины LK (tablet с redbox af060603). Иконки 1–3 в upload — 41–50 px, не использовать. */
 export const TEXT_LENGTH_SCREENSHOTS = [
   {
-    src: "/modules/assets/b936643aa505395c.png",
-    caption: "Поле ввода и статистика по тексту",
+    src: "/modules/assets/a5f1bfd79fcdf76a.png",
+    caption: "Поле ввода и кнопки «Посчитать» / «Очистить»",
   },
   {
-    src: "/modules/assets/c09f2e3b1767ef06.png",
-    caption: "Символы с пробелами и без",
+    src: "/modules/assets/text-length-capture-form.png",
+    caption: "Интерфейс модуля в личном кабинете",
   },
   {
-    src: "/modules/assets/554245b4c9301717.png",
-    caption: "Слова и пробелы в отчёте",
+    src: "/modules/assets/text-length-capture-input.png",
+    caption: "Введите текст — до 38 600 символов за проверку",
   },
 ] as const;
 

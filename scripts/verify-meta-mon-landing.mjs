@@ -12,6 +12,9 @@ const MUST_NOT = [
   "Зачем нужны метатеги",
   "Как пользоваться онлайн мониторингом метатегов",
   "В результатах Вы сможете посмотреть:",
+  "/modules/assets/803f3f2fa5f042d2.png",
+  "/modules/assets/39499f5c4e7539e5.png",
+  "/modules/assets/68ed1cae2b48b275.png",
 ];
 
 async function main() {

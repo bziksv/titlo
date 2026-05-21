@@ -23,6 +23,13 @@
 | `/proverka-meta-tegov-online/` | ✅ [module-landing-meta-mon.md](./examples/module-landing-meta-mon.md) |
 | `/monitoring-saytov/` | ✅ [module-landing-site-mon.md](./examples/module-landing-site-mon.md) |
 | `/udalenie-dublikatov/` | ✅ [module-landing-dedup.md](./examples/module-landing-dedup.md) |
+| `/vydelenie-unikalnykh-slov-v-tekste/` | ✅ [module-landing-unique-words.md](./examples/module-landing-unique-words.md) |
+| `/otslezhivanie-ssylok/` | ✅ [module-landing-link-track.md](./examples/module-landing-link-track.md) |
+| `/otslezhivanie-sroka-registratsii-domenov/` | ✅ [module-landing-domain-expiry.md](./examples/module-landing-domain-expiry.md) |
+| `/analiz-teksta/` | ✅ [module-landing-text-analysis.md](./examples/module-landing-text-analysis.md) |
+| `/klasterizator-klyuchevykh-slov/` | ✅ [module-landing-clusterizer.md](./examples/module-landing-clusterizer.md) |
+
+Справочник визуальных приёмов с референс-сайтов: [examples/visual-effects-agency-reference.md](./examples/visual-effects-agency-reference.md).
 | `/demo/` | ✅ виджет + BFF `/api/lk/*` |
 | `/legal/personal-data/`, `/legal/privacy/`, `/legal/offer/` | ✅ |
 | `sitemap.xml`, `robots.txt` | ✅ |

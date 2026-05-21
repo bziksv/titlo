@@ -162,6 +162,7 @@ export const MODULE_PAGES: ModulePage[] = [
     description: "Список уникальных слов и словосочетаний из текста или списка фраз.",
     lead:
       "Быстро получите уникальные слова из текста или из списка ключевых фраз.",
+    features: ["Слова и словоформы", "Экспорт CSV"],
   },
   {
     slug: "otslezhivanie-ssylok",
@@ -181,6 +182,7 @@ export const MODULE_PAGES: ModulePage[] = [
     description: "Уведомления об окончании регистрации домена и смене DNS.",
     lead:
       "Следите за сроком регистрации доменов и изменениями DNS — уведомления на почту и в Telegram.",
+    features: ["DNS и дата регистрации", "Email и Telegram"],
   },
   {
     slug: "analiz-teksta",

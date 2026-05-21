@@ -8,7 +8,14 @@ const MUST_HAVE = [
   "Подсчёт простым языком",
 ];
 
-const MUST_NOT = ["Описание сервиса", "Предназначение сервиса", "Особенности подсчёта символов"];
+const MUST_NOT = [
+  "Описание сервиса",
+  "Предназначение сервиса",
+  "Особенности подсчёта символов",
+  "/modules/assets/b936643aa505395c.png",
+  "/modules/assets/c09f2e3b1767ef06.png",
+  "/modules/assets/554245b4c9301717.png",
+];
 
 async function main() {
   const url = `${BASE}${PATH}`;

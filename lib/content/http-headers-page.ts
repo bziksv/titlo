@@ -170,22 +170,23 @@ export const HTTP_HEADERS_INSIGHTS_OUTCOMES = [
   },
 ] as const;
 
+/** Скрины LK (tablet redbox) + отчёт. Не использовать resize 720×470 — иконки на пустом поле. */
 export const HTTP_HEADERS_SCREENSHOTS = [
   {
-    src: "/modules/assets/3efa6f436b2d89b1.png",
+    src: "/modules/assets/fca23ef04bd3b647.png",
     caption: "Проверка одного URL: заголовки ответа",
   },
   {
-    src: "/modules/assets/ad4110fce10be168.png",
-    caption: "Пакетный список адресов",
+    src: "/modules/assets/http-headers-capture-form.png",
+    caption: "Интерфейс модуля: поле URL и Check URL",
   },
   {
-    src: "/modules/assets/2616d92c00483f20.png",
-    caption: "Коды состояния и сводка",
+    src: "/modules/assets/72df8fd054adc563.png",
+    caption: "Таблица заголовков ответа сервера",
   },
   {
-    src: "/modules/assets/5489a727f723a16f.png",
-    caption: "Детализация заголовков",
+    src: "/modules/assets/http-headers-capture-url.png",
+    caption: "Пакетная проверка — ввод списка URL",
   },
 ] as const;
 

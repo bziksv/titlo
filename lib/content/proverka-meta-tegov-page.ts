@@ -172,22 +172,23 @@ export const META_MON_INSIGHTS_OUTCOMES = [
   },
 ] as const;
 
+/** Скрины LK: форма URL (мониторинг), анализ текста (noindex/title), отчёт, проекты. Оригиналы redbox upload — 404. */
 export const META_MON_SCREENSHOTS = [
   {
-    src: "/modules/assets/803f3f2fa5f042d2.png",
-    caption: "Ввод списка URL для проверки",
+    src: "/modules/assets/956daf9669b58ce5.png",
+    caption: "Добавление проекта и URL для проверки",
   },
   {
-    src: "/modules/assets/39499f5c4e7539e5.png",
+    src: "/modules/assets/474da29ee76c785b.jpg",
+    caption: "Отслеживание noindex, title и alt в анализе",
+  },
+  {
+    src: "/modules/assets/0d20bf0152839075.jpg",
+    caption: "Плотность слов и зоны текста в отчёте",
+  },
+  {
+    src: "/modules/assets/518ec5eeb1bee67f.jpg",
     caption: "Сводка по проектам мониторинга",
-  },
-  {
-    src: "/modules/assets/68ed1cae2b48b275.png",
-    caption: "Детализация мета-тегов по странице",
-  },
-  {
-    src: "/modules/assets/bbab71af76140dcd.png",
-    caption: "Title, description и заголовки",
   },
 ] as const;
 

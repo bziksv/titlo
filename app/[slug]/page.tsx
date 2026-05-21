@@ -12,6 +12,11 @@ import { PodschetDlinyTekstaLanding } from "@/components/module-landings/Podsche
 import { GeneratorSlovLanding } from "@/components/module-landings/GeneratorSlovLanding";
 import { ProverkaMetaTegovLanding } from "@/components/module-landings/ProverkaMetaTegovLanding";
 import { UdalenieDublikatovLanding } from "@/components/module-landings/UdalenieDublikatovLanding";
+import { VydelenieUnikalnykhSlovLanding } from "@/components/module-landings/VydelenieUnikalnykhSlovLanding";
+import { OtslezhivanieSsylokLanding } from "@/components/module-landings/OtslezhivanieSsylokLanding";
+import { OtslezhivanieSrokaRegistratsiiDomenovLanding } from "@/components/module-landings/OtslezhivanieSrokaRegistratsiiDomenovLanding";
+import { AnalizTekstaLanding } from "@/components/module-landings/AnalizTekstaLanding";
+import { KlasterizatorKlyuchevykhSlovLanding } from "@/components/module-landings/KlasterizatorKlyuchevykhSlovLanding";
 import { HtmlRedaktorLanding } from "@/components/module-landings/HtmlRedaktorLanding";
 import { MonitoringPoziciiLanding } from "@/components/module-landings/MonitoringPoziciiLanding";
 import { MonitoringSaytovLanding } from "@/components/module-landings/MonitoringSaytovLanding";
@@ -78,6 +83,21 @@ export default async function ModulePage({ params }: Props) {
   }
   if (slug === "udalenie-dublikatov") {
     return <UdalenieDublikatovLanding module={mod} />;
+  }
+  if (slug === "vydelenie-unikalnykh-slov-v-tekste") {
+    return <VydelenieUnikalnykhSlovLanding module={mod} />;
+  }
+  if (slug === "otslezhivanie-ssylok") {
+    return <OtslezhivanieSsylokLanding module={mod} />;
+  }
+  if (slug === "otslezhivanie-sroka-registratsii-domenov") {
+    return <OtslezhivanieSrokaRegistratsiiDomenovLanding module={mod} />;
+  }
+  if (slug === "analiz-teksta") {
+    return <AnalizTekstaLanding module={mod} />;
+  }
+  if (slug === "klasterizator-klyuchevykh-slov") {
+    return <KlasterizatorKlyuchevykhSlovLanding module={mod} />;
   }
   return <ModuleLanding module={mod} />;
 }
