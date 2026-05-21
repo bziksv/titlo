@@ -36,6 +36,7 @@
 - **Метрика / GA** — только после «Принять» в `CookieBanner` (`lib/cookie-consent.ts`, `components/Analytics.tsx`); webvisor по умолчанию выкл (`NEXT_PUBLIC_YM_WEBVISOR=1` чтобы включить).
 - **YouTube** — `ModuleVideoGallery`: превью + iframe по клику (без ~600 KiB player на первой загрузке).
 - Секции story/orbit и галерея — `next/dynamic` (отдельные чанки).
+- Hero: `MonitoringV2CommandHero` — SSR для h1/lead; `MonitoringV2CommandHeroPanel` — client (скрины, tilt).
 - Шрифт Inter: `display: "swap"` в `app/layout.tsx`; `browserslist` в `package.json` — меньше legacy polyfills.
 
 ## Проверка
