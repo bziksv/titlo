@@ -1,7 +1,11 @@
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { ModulePlainSection } from "@/components/module-landings/ModulePlainSection";
 import { ModuleLeadCta } from "@/components/ModuleLeadCta";
-import { ModuleVideoGallery } from "@/components/ModuleVideoGallery";
+
+const ModuleVideoGallery = dynamic(() =>
+  import("@/components/ModuleVideoGallery").then((m) => ({ default: m.ModuleVideoGallery }))
+);
 import { RevealOnScroll } from "@/components/module-landings/RevealOnScroll";
 import { MonitoringV2SectionHeader } from "@/components/module-landings/monitoring-v2/MonitoringV2SectionHeader";
 import type { ModulePlainContent } from "@/components/module-landings/ModulePlainSection";

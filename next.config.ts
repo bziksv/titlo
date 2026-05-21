@@ -16,11 +16,6 @@ const nextConfig: NextConfig = {
         hostname: "redbox.su",
         pathname: "/upload/**",
       },
-      {
-        protocol: "https",
-        hostname: "i.ytimg.com",
-        pathname: "/vi/**",
-      },
     ],
   },
   async redirects() {

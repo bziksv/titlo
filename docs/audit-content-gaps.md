@@ -22,7 +22,7 @@
 
 | Пункт | Live | Next | Вердикт |
 |-------|------|------|---------|
-| **Аналитика (Метрика/GA)** | В Kraken JS: **ym(54591493)** | `components/Analytics.tsx` в layout; GA через `NEXT_PUBLIC_GA_ID` | ✅ Метрика; GA опционально |
+| **Аналитика (Метрика/GA)** | В Kraken JS: **ym(54591493)** | `components/Analytics.tsx` — после согласия cookies; webvisor off по умолчанию | ✅ Метрика; GA опционально |
 | **Форма на контактах** | Форма Bitrix **«Задать вопрос»** | `ContactForm` + `POST /api/contact/` (lk / webhook / dev) | ✅ |
 | **Картинки в новостях** | Превью `data-src` на `/news/` | `public/news/assets/` + `npm run scrape:news` | ✅ (2 статьи без превью — файлы 404 на [redbox.su](https://redbox.su), карточка без фото) |
 | **Тело новостей** | YouTube iframe в статьях | `blocks[]` (p / img / embed) + `NewsArticle` | ✅ |

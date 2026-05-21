@@ -1,9 +1,22 @@
+import dynamic from "next/dynamic";
 import { MonitoringV2CommandHero } from "@/components/module-landings/monitoring-v2/MonitoringV2CommandHero";
 import { MonitoringV2PainGain } from "@/components/module-landings/monitoring-v2/MonitoringV2PainGain";
-import { MonitoringV2StoryActs } from "@/components/module-landings/monitoring-v2/MonitoringV2StoryActs";
 import { MonitoringV2MetricWall } from "@/components/module-landings/monitoring-v2/MonitoringV2MetricWall";
-import { MonitoringV2Orbit } from "@/components/module-landings/monitoring-v2/MonitoringV2Orbit";
 import { MonitoringV2Footer } from "@/components/module-landings/monitoring-v2/MonitoringV2Footer";
+
+const MonitoringV2StoryActs = dynamic(
+  () =>
+    import("@/components/module-landings/monitoring-v2/MonitoringV2StoryActs").then(
+      (m) => m.MonitoringV2StoryActs
+    ),
+  { loading: () => <div className="min-h-[28rem]" aria-hidden /> }
+);
+
+const MonitoringV2Orbit = dynamic(
+  () =>
+    import("@/components/module-landings/monitoring-v2/MonitoringV2Orbit").then((m) => m.MonitoringV2Orbit),
+  { loading: () => <div className="min-h-[20rem]" aria-hidden /> }
+);
 import {
   MONITORING_V2_ACTS,
   MONITORING_V2_CONCEPT,

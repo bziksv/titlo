@@ -2,15 +2,13 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-
-const STORAGE_KEY = "datagon-cookie-consent";
+import { acceptCookieConsent, hasCookieConsent } from "@/lib/cookie-consent";
 
 export function CookieBanner() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
-    if (!localStorage.getItem(STORAGE_KEY)) setVisible(true);
+    if (!hasCookieConsent()) setVisible(true);
   }, []);
 
   if (!visible) return null;
@@ -38,7 +36,7 @@ export function CookieBanner() {
           type="button"
           className="shrink-0 rounded-lg bg-brand-600 px-4 py-2 text-sm font-medium text-white hover:bg-brand-700"
           onClick={() => {
-            localStorage.setItem(STORAGE_KEY, "1");
+            acceptCookieConsent();
             setVisible(false);
           }}
         >

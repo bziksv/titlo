@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 import {
   youtubeEmbedUrl,
@@ -21,6 +20,14 @@ type Props = {
   items: GalleryVideo[];
 };
 
+function PlayIcon() {
+  return (
+    <svg className="h-14 w-14 text-white drop-shadow-md" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+      <path d="M8 5v14l11-7z" />
+    </svg>
+  );
+}
+
 export function ModuleVideoGallery({
   title = "Обучающие видео",
   lead,
@@ -34,9 +41,13 @@ export function ModuleVideoGallery({
     .filter((x): x is GalleryVideo & { id: string } => x != null);
 
   const [activeId, setActiveId] = useState(parsed[0]?.id ?? "");
+  const [playingId, setPlayingId] = useState<string | null>(null);
+
   const active = parsed.find((v) => v.id === activeId) ?? parsed[0];
 
   if (!parsed.length || !active) return null;
+
+  const showEmbed = playingId === active.id;
 
   return (
     <section>
@@ -47,14 +58,36 @@ export function ModuleVideoGallery({
         <div className="min-w-0">
           <div className="overflow-hidden rounded-2xl bg-slate-900 shadow-lg ring-1 ring-slate-200">
             <div className="relative aspect-video w-full">
-              <iframe
-                key={active.id}
-                src={youtubeEmbedUrl(active.id)}
-                title={active.title}
-                className="absolute inset-0 h-full w-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              />
+              {showEmbed ? (
+                <iframe
+                  key={active.id}
+                  src={youtubeEmbedUrl(active.id)}
+                  title={active.title}
+                  className="absolute inset-0 h-full w-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => setPlayingId(active.id)}
+                  className="group absolute inset-0 flex h-full w-full items-center justify-center bg-slate-900"
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={youtubeThumbUrl(active.id)}
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                    className="absolute inset-0 h-full w-full object-cover opacity-90 transition group-hover:opacity-100"
+                    width={480}
+                    height={360}
+                  />
+                  <span className="absolute inset-0 bg-black/30 transition group-hover:bg-black/20" aria-hidden />
+                  <PlayIcon />
+                  <span className="sr-only">Воспроизвести: {active.title}</span>
+                </button>
+              )}
             </div>
             <div className="border-t border-slate-700/50 bg-slate-800 px-4 py-3 text-white sm:px-5 sm:py-4">
               <p className="font-semibold">{active.title}</p>
@@ -80,7 +113,12 @@ export function ModuleVideoGallery({
               <li key={video.id} className="w-[min(100%,240px)] shrink-0 lg:w-full">
                 <button
                   type="button"
-                  onClick={() => setActiveId(video.id)}
+                  onClick={() => {
+                    setActiveId(video.id);
+                    if (playingId !== null && playingId !== video.id) {
+                      setPlayingId(null);
+                    }
+                  }}
                   className={`flex w-full gap-3 rounded-xl border p-2 text-left transition ${
                     isActive
                       ? "border-brand-500 bg-brand-50 ring-2 ring-brand-200"
@@ -88,12 +126,15 @@ export function ModuleVideoGallery({
                   }`}
                 >
                   <span className="relative block h-16 w-28 shrink-0 overflow-hidden rounded-lg bg-slate-200">
-                    <Image
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
                       src={youtubeThumbUrl(video.id)}
                       alt=""
-                      fill
-                      className="object-cover"
-                      sizes="112px"
+                      loading="lazy"
+                      decoding="async"
+                      width={112}
+                      height={64}
+                      className="h-full w-full object-cover"
                     />
                     <span
                       className="absolute inset-0 flex items-center justify-center bg-black/25 text-white"
