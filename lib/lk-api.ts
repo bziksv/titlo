@@ -19,7 +19,8 @@ export function isAllowedLkPath(path: string): boolean {
 
 export async function proxyToLk(
   path: string,
-  init?: RequestInit
+  init?: RequestInit,
+  incomingRequest?: Request
 ): Promise<Response> {
   if (!isAllowedLkPath(path)) {
     return new Response(JSON.stringify({ error: "Path not allowed" }), {
@@ -29,13 +30,20 @@ export async function proxyToLk(
   }
 
   const url = `${getLkApiBase()}/${path.replace(/^\/+/, "")}`;
+  const headers = new Headers(init?.headers);
+  headers.set("Accept", headers.get("Accept") ?? "application/json");
+
+  if (incomingRequest) {
+    const cookie = incomingRequest.headers.get("Cookie");
+    if (cookie) headers.set("Cookie", cookie);
+    const forwarded = incomingRequest.headers.get("X-Forwarded-For");
+    if (forwarded) headers.set("X-Forwarded-For", forwarded);
+  }
+
   try {
     return await fetch(url, {
       ...init,
-      headers: {
-        Accept: "application/json",
-        ...(init?.headers ?? {}),
-      },
+      headers,
       cache: "no-store",
     });
   } catch {
@@ -44,4 +52,16 @@ export async function proxyToLk(
       headers: { "Content-Type": "application/json" },
     });
   }
+}
+
+/** Проброс Set-Cookie из ответа lk в ответ Next */
+export function appendLkSetCookies(lkResponse: Response, outHeaders: Headers): void {
+  const anyHeaders = lkResponse.headers as Headers & { getSetCookie?: () => string[] };
+  const list = typeof anyHeaders.getSetCookie === "function" ? anyHeaders.getSetCookie() : [];
+  if (list.length > 0) {
+    for (const c of list) outHeaders.append("Set-Cookie", c);
+    return;
+  }
+  const single = lkResponse.headers.get("set-cookie");
+  if (single) outHeaders.append("Set-Cookie", single);
 }

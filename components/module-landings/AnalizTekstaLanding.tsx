@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { TextAnalyzerDemoWidget } from "@/components/demo/TextAnalyzerDemoWidget";
 import { ParallaxMonoScene } from "@/components/module-landings/ParallaxMonoScene";
 import { HeroParallaxMedia } from "@/components/module-landings/HeroParallaxMedia";
 import { ModuleTechSection } from "@/components/module-landings/ModuleTechSection";
@@ -137,6 +138,12 @@ export function AnalizTekstaLanding({ module }: Props) {
               <p className="mt-2 text-sm text-slate-600">{s.label}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="border-b border-slate-200 bg-slate-50 py-14 md:py-16">
+        <div className="mx-auto max-w-6xl px-4">
+          <TextAnalyzerDemoWidget />
         </div>
       </section>
 

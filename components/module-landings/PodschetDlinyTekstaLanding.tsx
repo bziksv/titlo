@@ -5,6 +5,7 @@ import { HeroParallaxMedia } from "@/components/module-landings/HeroParallaxMedi
 import { ModuleTechSection } from "@/components/module-landings/ModuleTechSection";
 import { ModuleInsightsSection } from "@/components/module-landings/ModuleInsightsSection";
 import { ModulePlainSection } from "@/components/module-landings/ModulePlainSection";
+import { TextLengthDemoWidget } from "@/components/demo/TextLengthDemoWidget";
 import { ModuleLeadCta } from "@/components/ModuleLeadCta";
 import { ModuleVideoGallery } from "@/components/ModuleVideoGallery";
 import { ModuleIcon } from "@/lib/module-icons";
@@ -84,8 +85,9 @@ export function PodschetDlinyTekstaLanding({ module }: Props) {
                 <ModuleLeadCta
                   variant="hero"
                   idPrefix="text-length-hero"
-                  title="Посчитать текст"
-                  hint="Укажите email — откроется регистрация в личном кабинете с доступом к модулю."
+                  moduleSlug="podschet-dliny-teksta"
+                  title="Полный доступ в кабинете"
+                  hint="Укажите email — регистрация с модулем подсчёта длины текста."
                 />
               </div>
 
@@ -136,6 +138,12 @@ export function PodschetDlinyTekstaLanding({ module }: Props) {
               <p className="mt-2 text-sm text-slate-600">{s.label}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="border-b border-slate-200 bg-slate-50 py-14 md:py-16">
+        <div className="mx-auto max-w-6xl px-4">
+          <TextLengthDemoWidget />
         </div>
       </section>
 
@@ -321,6 +329,7 @@ export function PodschetDlinyTekstaLanding({ module }: Props) {
             <ModuleLeadCta
               variant="card"
               idPrefix="text-length-footer"
+              moduleSlug="podschet-dliny-teksta"
               title="Начать бесплатно"
               hint="Укажите email — откроется страница регистрации в личном кабинете."
             />

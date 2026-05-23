@@ -7,6 +7,7 @@ import { MODULE_V2_SECTION_ENRICHMENT } from "@/lib/content/module-v2/sections-e
 import { MODULE_V2_VIDEOS } from "@/lib/content/module-v2/videos-by-slug";
 import type {
   ModuleV2Act,
+  ModuleV2DemoWidget,
   ModuleV2FooterUi,
   ModuleV2HeroUi,
   ModuleV2Metric,
@@ -18,6 +19,12 @@ import type {
 
 const DEFAULT_SHOT = "/modules/assets/3d7d72c85b4af88c.jpg";
 const DEFAULT_SHOT_ALT = "/modules/assets/518ec5eeb1bee67f.jpg";
+
+/** Публичные v2-лендинги с демо-виджетом (как в classic landing) */
+const DEMO_WIDGET_BY_BASE: Partial<Record<string, ModuleV2DemoWidget>> = {
+  "analiz-teksta": "text-analyzer",
+  "podschet-dliny-teksta": "text-length",
+};
 
 const DEFAULT_ORBIT: readonly ModuleV2OrbitNode[] = [
   { label: "Анализ релевантности", href: "/analiz-relevantnosti/", role: "ТОП и релевантность страницы" },
@@ -251,5 +258,6 @@ export function buildModuleV2Config(
     videos,
     faq: source.faq,
     footerUi,
+    demoWidget: DEMO_WIDGET_BY_BASE[baseSlug],
   };
 }

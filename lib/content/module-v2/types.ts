@@ -63,6 +63,9 @@ export type ModuleV2FooterUi = {
 
 export type ModuleV2OrbitUi = ModuleV2SectionCopy & { hubTitle: string };
 
+/** Виджет «Попробовать бесплатно» на публичном v2-лендинге */
+export type ModuleV2DemoWidget = "text-analyzer" | "text-length";
+
 export type ModuleV2PageConfig = {
   slug: string;
   baseSlug: string;
@@ -81,4 +84,6 @@ export type ModuleV2PageConfig = {
   videos: readonly { id: string; title: string; description: string }[];
   faq: readonly { q: string; a: string }[];
   footerUi: ModuleV2FooterUi;
+  /** Секция демо после metric wall (если задано) */
+  demoWidget?: ModuleV2DemoWidget;
 };

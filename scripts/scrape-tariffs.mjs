@@ -37,7 +37,7 @@ $(".tarif-item").each((_, item) => {
   const features = [];
   $item.find("li").each((__, li) => {
     const t = $(li).text().replace(/\s+/g, " ").trim();
-    if (t.length > 8) features.push(t);
+    if (t.length > 8 && !/репутац|поведенческ/i.test(t)) features.push(t);
   });
 
   plans.push({

@@ -1,18 +1,21 @@
 ---
-description: Базовые принципы проекта redbox.su (Next.js)
+description: Базовые принципы маркетинга datagon.ru (Next.js)
 alwaysApply: true
 ---
 
-# Датагон (redbox.su) — общие правила
+# Датагон (datagon.ru) — общие правила
+
+Локальная папка: **`datagon.ru`**. Прод-домен: **datagon.ru** (Next **:3001**). Кабинет: прод **lk.redbox.su**; **cabinet.datagon.ru** на `155.212.171.103`, порт **:3002**, БД на `178.250.157.140` — `docs/cabinet-servers.md`.
 
 ## Перед работой
 
 1. Прочитать **`.cursor/rules/`** (все `.mdc` с `alwaysApply` и релевантные по glob).
-2. Прочитать **`docs/README.md`** и профильные разделы в `docs/` по задаче.
+2. Прочитать **`docs/README.md`** и профильные разделы в `docs/` по задаче. **Кабинет** — сначала **`docs/cabinet-agent-map.md`**, затем `cabinet-reference` / `cabinet-performance-audit` по задаче.
 3. Для UI, API, демо — смотреть **зафиксированные примеры** в `docs/examples/` (и код, на который они ссылаются).
 4. Лендинг модуля / новые подложки — **сначала** `docs/examples/module-landing-relevance.md` и http://localhost:3001/analiz-relevantnosti/, потом код.
+5. **Кабинет (:3002 / cabinet.datagon.ru)** — UI из шаблона http://localhost:3002/html/ (`public/html/`, AdminLTE 4): подобрать демо-страницу и перенести разметку в Blade; см. `docs/cabinet-reference.md` → «Эталон UI».
 
-Не начинать реализацию «с нуля», если в проекте уже есть эталон для той же задачи (`ModuleLanding` — fallback со скрапа, не образец для нового дизайна).
+Не начинать реализацию «с нуля», если в проекте уже есть эталон для той же задачи (`ModuleLanding` — fallback со скрапа, не образец для нового дизайна; кабинет — не выдумывать UI, если есть аналог в `/html/`).
 
 ## Стиль ответов агенту
 
@@ -23,12 +26,14 @@ alwaysApply: true
 ## Локальный запуск
 
 - Порт **3001**: `npm run dev` / `npm run start` → http://localhost:3001
+- Порт **3002**: кабинет Laravel — см. **`redbox-cabinet-dev.mdc`**: после правок кабинета агент **сам** перезапускает `./scripts/dev-serve.sh`
+- Оба: `npm run dev:all` в `datagon.ru`
 - Проверка: `npm run smoke` (после start), `npm run compare:sitemap` (сверка с sitemap Битрикса)
 
 ## Стек (не менять без согласования)
 
-- **redbox.su** — Next.js (маркетинг + вживое демо).
-- **lk.redbox.su** — Laravel (продукт, авторизация, бизнес-логика).
+- **datagon.ru** — Next.js (маркетинг + демо на сайте).
+- **cabinet.datagon.ru** / **lk.redbox.su** — Laravel (продукт, авторизация, бизнес-логика).
 - Демо на основном сайте: UI на Next, данные и лимиты — через API **Laravel**, не дублировать логику в Next.
 
 ## Документация обязательна

@@ -34,8 +34,9 @@
 
 | URL | Назначение | Статус |
 |-----|------------|--------|
-| `https://lk.redbox.su/login` | Вход | ⏭ |
+| `https://lk.redbox.su/login` | Вход (прод, БД на `178.250.157.140`) | ⏭ |
 | `https://lk.redbox.su/register` | Регистрация | ⏭ |
+| `https://cabinet.datagon.ru` | Целевой кабинет; файлы на `155.212.171.103`, БД пока на старом VPS | 🔄 см. [cabinet-servers.md](./cabinet-servers.md) |
 
 ---
 

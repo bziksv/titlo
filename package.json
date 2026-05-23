@@ -1,10 +1,14 @@
 {
-  "name": "redbox-su",
+  "name": "datagon-marketing",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev -p 3001",
     "dev:fresh": "node scripts/kill-dev-port.mjs && rm -rf .next && next dev -p 3001",
+    "dev:all": "bash scripts/dev-all.sh",
+    "dev:all:fresh": "bash scripts/dev-all.sh --fresh",
+    "dev:cabinet": "bash -c 'cd \"${CABINET_ROOT:-../cabinet.datagon.ru}\" && ./scripts/dev-parallel.sh'",
+    "dev:cabinet:stop": "bash -c 'cd \"${CABINET_ROOT:-../cabinet.datagon.ru}\" && ./scripts/dev-parallel.sh stop'",
     "dev:stop": "node scripts/kill-dev-port.mjs",
     "build": "next build",
     "start": "node scripts/start-standalone.mjs",

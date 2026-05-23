@@ -1,4 +1,4 @@
-import { proxyToLk } from "@/lib/lk-api";
+import { appendLkSetCookies, proxyToLk } from "@/lib/lk-api";
 
 type Props = { params: Promise<{ path: string[] }> };
 
@@ -23,14 +23,17 @@ async function handle(request: Request, { params }: Props) {
     init.body = await request.text();
   }
 
-  const res = await proxyToLk(target, init);
+  const res = await proxyToLk(target, init, request);
   const body = await res.text();
+
+  const outHeaders = new Headers();
+  const ct = res.headers.get("Content-Type");
+  if (ct) outHeaders.set("Content-Type", ct);
+  appendLkSetCookies(res, outHeaders);
 
   return new Response(body, {
     status: res.status,
-    headers: {
-      "Content-Type": res.headers.get("Content-Type") ?? "application/json",
-    },
+    headers: outHeaders,
   });
 }
 

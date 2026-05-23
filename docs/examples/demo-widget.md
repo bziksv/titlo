@@ -1,22 +1,41 @@
-# Эталон: демо-виджет на /demo
+# Эталон: демо-виджет модуля
 
 ## Назначение
 
-Интерактив на маркетинговом сайте без БД; полный продукт — в lk.
+Частичный результат на лендинге → регистрация в lk за полным доступом.
 
-## Файлы
+**Пилоты:**
+- [подсчёт длины текста](http://localhost:3001/podschet-dliny-teksta/) — секция «Попробовать бесплатно»
+- [анализ текста](http://localhost:3001/analiz-teksta/) — KPI + топ слов, остальное в кабинете
+
+## Файлы (пилот)
 
 | Часть | Путь |
 |-------|------|
-| UI | `components/demo/TextLengthTool.tsx` |
-| Логика | `lib/demo/text-stats.ts` |
-| Страница | `app/demo/page.tsx` |
+| UI | `components/demo/TextLengthDemoWidget.tsx`, `components/demo/DemoWidgetShell.tsx` |
+| Секция на v2-лендинге | `components/module-landings/ModuleV2DemoSection.tsx` — тёмный фон, белая карточка виджета |
+| Панель CTA | `components/demo/DemoUpgradePanel.tsx` |
+| Клиент API | `lib/demo/run-text-length-client.ts` |
+| Контракт / лимиты | `lib/demo/text-length-demo.ts`, `lib/demo/types.ts` |
+| Fallback API (Next) | `app/api/demo/podschet-dliny-teksta/run/route.ts` |
+| **Анализ текста — UI** | `TextAnalyzerDemoWidget.tsx`, `TextAnalyzerSpiralCloud.tsx` (спиральное облако как в кабинете) |
+| **Анализ текста — клиент** | `lib/demo/run-text-analyzer-client.ts` |
+| **Анализ текста — прокси lk** | `app/api/demo/analiz-teksta/run/route.ts`, `lib/demo/proxy-cabinet-demo.ts` |
+| **Анализ текста — lk** | `cabinet…/Api/Demo/TextAnalyzerDemoController`, `Services/Demo/TextAnalyzerDemoService` |
 | BFF к lk | `app/api/lk/[...path]/route.ts`, `lib/lk-api.ts` |
+| Guest cookie | `lib/demo/guest-session.ts` |
 
-## BFF
+Старый виджет `/demo` (локальный подсчёт): `components/demo/TextLengthTool.tsx` — `/demo` редиректит на `/`.
 
-Браузер → `/api/lk/...` → Laravel. Разрешённые префиксы — в `lib/lk-api.ts` (`ALLOWED_PREFIXES`).
+## Поток
+
+1. Пользователь жмёт «Посчитать в демо».
+2. `POST /api/lk/api/demo/podschet-dliny-teksta/run` → lk; иначе fallback Next.
+3. Показаны 5 базовых метрик; SEO/extended — blur + CTA.
+4. `upgrade.register_url` → `lk…/register?module=…&from=demo&guest=…`
+
+Контракт: [api-lk.md](../api-lk.md#demo-api-пилот-подсчёт-длины-текста).
 
 ## Расширение
 
-Новый демо-модуль: компонент в `components/demo/`, при необходимости эндпоинт в allowlist.
+Новый модуль: тип в `lib/demo/types.ts`, виджет в `components/demo/`, endpoint в lk + строка в `ALLOWED_PREFIXES`.

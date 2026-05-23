@@ -1,6 +1,6 @@
 # Деплой marketing-сайта (Next.js)
 
-Продукт остаётся на **lk.redbox.su** (Laravel). Этот репозиторий — статический/SSR фронт без БД.
+Продукт (Laravel) — **lk.redbox.su** (прод, БД на `178.250.157.140`); **cabinet.datagon.ru** на `155.212.171.103`, порт **3002** — деплой **отдельно**: [cabinet-deploy.md](./cabinet-deploy.md). Этот файл — только маркетинг (Next), порт **3001**.
 
 ## Сборка
 
@@ -154,7 +154,7 @@ BASE_URL=https://datagon.ru npm run verify:site-mon
 На Mac перед этим:
 
 ```bash
-cd /Users/stanislav/Documents/projects/redbox.su
+cd /Users/stanislav/Documents/projects/datagon.ru
 git add -A
 git commit -m "update all files"
 git push origin main

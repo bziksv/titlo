@@ -31,6 +31,7 @@
 | **Лендинг: срок регистрации доменов** | [module-landing-domain-expiry.md](./module-landing-domain-expiry.md) | `OtslezhivanieSrokaRegistratsiiDomenovLanding` | ✅ |
 | **Лендинг: анализ текста** | [module-landing-text-analysis.md](./module-landing-text-analysis.md) | `AnalizTekstaLanding` | ✅ |
 | **Лендинг: кластеризатор** | [module-landing-clusterizer.md](./module-landing-clusterizer.md) | `KlasterizatorKlyuchevykhSlovLanding` | ✅ |
+| **PDF-отчёт кабинета (mPDF)** | [cabinet-pdf-report-template.md](../cabinet-pdf-report-template.md) | `TextAnalyzerPdfService`, `TextAnalyzerPdfBranding`, `pdf-body.blade.php` | ✅ v6.9s |
 | **Справочник UI-эффектов (референсы)** | [visual-effects-agency-reference.md](./visual-effects-agency-reference.md) | 9 агентств + **30+ кейсов** (прогон 2), волны внедрения | 📋 |
 | Оболочка (header, footer, cookie) | [layout-shell.md](./layout-shell.md) | `components/`, `app/layout.tsx` | ✅ |
 | Демо-виджет `/demo` | [demo-widget.md](./demo-widget.md) | `components/demo/` | ✅ |

@@ -1,6 +1,8 @@
-# redbox.su → Датагон (маркетинг)
+# datagon.ru — Датагон (маркетинг)
 
-Маркетинговый сайт **Датагон** на **Next.js**. Продукт и кабинет — **lk.redbox.su** (Laravel).
+Локальная папка проекта: **`datagon.ru`** (кабинет — **`cabinet.datagon.ru`**, см. [docs/cabinet-servers.md](./docs/cabinet-servers.md)).
+
+Маркетинговый сайт **Датагон** на **Next.js**. Кабинет (Laravel): прод **lk.redbox.su** + БД на `178.250.157.140`; файлы **cabinet.datagon.ru** на `155.212.171.103`, БД пока на старом сервере.
 
 Бренд: логотип и favicon — `public/favicon.svg` (из [p.datagon.ru](../p.datagon.ru/public/favicon.svg)).
 
@@ -22,20 +24,33 @@
 
 ## Быстрый старт
 
+**Оба проекта одной командой** (маркетинг :3001 + кабинет :3002):
+
 ```bash
-npm install
-npm run dev          # http://localhost:3001
+cd /Users/stanislav/Documents/projects/datagon.ru
+npm run dev:all
 ```
 
-Если `EADDRINUSE` (порт занят) или ошибка `Cannot find module './873.js'`:
+С очисткой `.next` (ошибки чанков): `npm run dev:all:fresh`. Остановка: `Ctrl+C` (кабинет на :3002 тоже гасится).
+
+**Только маркетинг:**
 
 ```bash
+cd /Users/stanislav/Documents/projects/datagon.ru
 npm run dev:stop
-rm -rf .next
-npm run dev
+rm -rf .next          # если была ошибка с чанками
+npm run dev           # http://localhost:3001
 ```
 
-Комментарии в той же строке после `npm run …` не вставляйте — zsh/npm могут передать `#` в скрипт. Одной командой: `npm run dev:fresh`
+**Только кабинет:** [cabinet.datagon.ru/README.md](../cabinet.datagon.ru/README.md) → `./scripts/dev-serve.sh` → http://127.0.0.1:3002
+
+Если `EADDRINUSE` или `Cannot find module './873.js'` — то же: `dev:stop`, `rm -rf .next`, `npm run dev`. Короче: `npm run dev:fresh`.
+
+**В терминале не пишите `# комментарий` в той же строке** после `npm run` — zsh ломает команду. Комментарий — отдельной строкой выше.
+
+**3001 «не обновляется»:** дождитесь `Ready` в терминале, затем Hard Refresh (Cmd+Shift+R). Первый заход на `/contact/` компилируется 3–10 с.
+
+**3002 «висит»:** закройте все вкладки `127.0.0.1:3002` и Cursor preview, потом только `dev:all` или `./scripts/dev-serve.sh`.
 
 ```bash
 npm run build && npm run start

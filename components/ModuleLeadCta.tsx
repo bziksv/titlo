@@ -10,6 +10,8 @@ type Props = {
   hint?: string;
   /** Уникальный префикс id полей (если на странице несколько форм) */
   idPrefix?: string;
+  /** Slug модуля для UTM в регистрации lk */
+  moduleSlug?: string;
 };
 
 export function ModuleLeadCta({
@@ -17,13 +19,19 @@ export function ModuleLeadCta({
   title = "Попробовать модуль бесплатно",
   hint = "Регистрация в личном кабинете — доступ к анализу и другим инструментам.",
   idPrefix = "module-cta",
+  moduleSlug,
 }: Props) {
   const emailId = `${idPrefix}-email`;
   const [email, setEmail] = useState("");
 
   const goRegister = () => {
-    const q = email.trim() ? `?email=${encodeURIComponent(email.trim())}` : "";
-    window.location.href = `${LK_URL}/register${q}`;
+    const u = new URL(`${LK_URL}/register`);
+    if (email.trim()) u.searchParams.set("email", email.trim());
+    if (moduleSlug) {
+      u.searchParams.set("module", moduleSlug);
+      u.searchParams.set("from", "landing");
+    }
+    window.location.href = u.toString();
   };
 
   const inputClass =

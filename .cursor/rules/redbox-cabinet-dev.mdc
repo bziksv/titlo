@@ -1,0 +1,47 @@
+---
+description: Локальный кабинет cabinet.datagon.ru — перезапуск и проверка
+globs:
+  - "**/cabinet.datagon.ru/**"
+alwaysApply: true
+---
+
+# Кабинет (cabinet.datagon.ru) — локальная разработка
+
+Путь: `/Users/stanislav/Documents/projects/cabinet.datagon.ru`. Порт **3002** (маркетинг datagon.ru — только **3001**).  
+Карта кода и «куда писать docs»: `datagon.ru/docs/cabinet-agent-map.md`.
+
+## После изменений в кабинете — агент перезапускает сам
+
+Локально кабинет — **`./scripts/dev-local.sh`** → nginx + **php-fpm** (16 воркеров, много вкладок). Нужен `brew install nginx`.
+
+```bash
+export PATH="/opt/homebrew/opt/php@7.4/bin:/opt/homebrew/opt/php@7.4/sbin:$PATH"
+cd /Users/stanislav/Documents/projects/cabinet.datagon.ru
+bash scripts/dev-local.sh stop 2>/dev/null || true
+bash scripts/dev-local.sh detach
+curl -sS --max-time 15 -o /dev/null -w "cabinet :3002 → %{http_code}\n" http://localhost:3002/login
+```
+
+Ожидается **200** на `/login`. Логи: `/tmp/cabinet-proxy.log`, `/tmp/cabinet-worker-*.log`, `storage/logs/laravel-*.log`.
+
+## Не смешивать порты
+
+- На **3002** только кабинет (прокси + PHP-воркеры). **Next на 3002** → 419 и поломка логина.
+- Перед стартом кабинета при необходимости: `cd datagon.ru && npm run dev:stop` (освобождает только 3001, но проверить `lsof -i :3002`).
+
+## Локальный `.env` (напоминание)
+
+- `APP_URL=http://127.0.0.1:3002` (не localhost)
+- `DB_HOST=178.250.157.140`
+- `HTTP_HEADERS_CLEANUP_ON_REQUEST=false`
+- `SKIP_HEAVY_WEB_MIDDLEWARE=true`
+- `SKIP_EMAIL_VERIFICATION=true`
+- `SESSION_DRIVER=file`
+
+## UI кабинета — эталон `/html/`
+
+**cabinet.datagon.ru** (:3002) — при любой вёрстке/новых экранах в Blade **элементы UI берём из шаблона** http://localhost:3002/html/ (`public/html/`, AdminLTE 4.0.0): открыть подходящую демо-страницу (`forms/`, `tables/`, `widgets/`, `layout/`, …), подобрать блок, перенести разметку в `resources/views/`. Не изобретать компоненты с нуля.
+
+Подробно: `datagon.ru/docs/cabinet-reference.md` → «Эталон UI кабинета». Рабочий layout пока AdminLTE 3 — при переносе из v4 сверять migration guide или адаптировать классы.
+
+Документация: `docs/cabinet-git.md`, `docs/cabinet-servers.md`, `docs/cabinet-deploy.md`, `docs/cabinet-reference.md`.

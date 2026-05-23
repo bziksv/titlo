@@ -3,6 +3,7 @@ import { MonitoringV2CommandHero } from "@/components/module-landings/monitoring
 import { MonitoringV2PainGain } from "@/components/module-landings/monitoring-v2/MonitoringV2PainGain";
 import { MonitoringV2MetricWall } from "@/components/module-landings/monitoring-v2/MonitoringV2MetricWall";
 import { MonitoringV2Footer } from "@/components/module-landings/monitoring-v2/MonitoringV2Footer";
+import { ModuleV2DemoSection } from "@/components/module-landings/ModuleV2DemoSection";
 
 const MonitoringV2StoryActs = dynamic(
   () =>
@@ -50,6 +51,7 @@ export function ModuleV2Landing({ module, config, isLabRoute = false }: Props) {
         heroUi={heroUi}
       />
       <MonitoringV2PainGain data={c.painGain} />
+      {c.demoWidget ? <ModuleV2DemoSection kind={c.demoWidget} /> : null}
       <MonitoringV2StoryActs
         acts={c.acts}
         section={{

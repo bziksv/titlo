@@ -11,7 +11,8 @@ alwaysApply: true
 - **API Routes** Next (`app/api/**`) — прокси к `lk`, контракт, ошибки;
 - интеграция **демо** с Laravel (URL, лимиты, сессия guest);
 - новые **компоненты-эталоны** или изменение существующих — обновить `docs/examples/`;
-- env-переменные, деплой, скрипты `package.json`.
+- env-переменные, деплой, скрипты `package.json`;
+- **кабинет** (`cabinet.datagon.ru`): контроллер, роут, composer, Blade, Vue/Mix, скрипты `scripts/` — см. таблицу ниже и `docs/cabinet-agent-map.md`.
 
 Внутренний хелпер без внешнего контракта — документация не обязательна.
 
@@ -24,6 +25,13 @@ alwaysApply: true
 | Прокси / fetch к lk | `docs/api-lk.md` |
 | UI-эталоны | `docs/examples/*.md` + код-пример |
 | Быстрый старт | `README.md` |
+| **Кабинет:** где код / куда смотреть агенту | `docs/cabinet-agent-map.md` |
+| **Кабинет:** роуты, middleware, composers, dev | `docs/cabinet-reference.md` |
+| **Кабинет:** SQL-аудит, чек-лист страниц, цифры прогонов | `docs/cabinet-performance-audit.md` |
+| **Кабинет:** VPS, БД, пути | `docs/cabinet-servers.md` |
+| **Кабинет:** деплой | `docs/cabinet-deploy.md` |
+| **Кабинет:** `scripts/profile-*.sh`, `dev-local.sh` | `cabinet-performance-audit.md` (методология) + `cabinet-agent-map.md` §6 |
+| **Кабинет:** правки в `cabinet.datagon.ru` (код) | доки в репо **datagon.ru** `docs/cabinet-*` в той же задаче |
 
 ## Формат
 
