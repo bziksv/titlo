@@ -12,9 +12,9 @@ const PLACEHOLDER = `Вставьте текст — в демо до ${DEMO_MAX
 const DEMO_FEATURES = [
   "Символы с пробелами и без",
   "Количество слов и строк",
-  "Подсчёт пробелов",
-  "Title и Description (в кабинете)",
-  "Время чтения и структура текста",
+  "Длина Title, Description и H1",
+  "Предложения, абзацы, время чтения",
+  "До 38 600 символов в кабинете",
 ] as const;
 
 type StatCard = { label: string; value: number | string };
@@ -35,31 +35,32 @@ function StatGrid({ stats }: { stats: StatCard[] }) {
   );
 }
 
-function LockedMetricsBlock() {
-  const rows = [
-    { label: "Длина Title", hint: "рекомендация до 60 знаков" },
-    { label: "Длина Description", hint: "рекомендация до 160 знаков" },
-    { label: "Длина H1", hint: "контроль заголовка страницы" },
-    { label: "Предложения и абзацы", hint: "структура текста" },
-    { label: "Время чтения", hint: "оценка для лонгридов" },
-  ];
-
+function SeoRow({
+  label,
+  chars,
+  ok,
+  recommended,
+}: {
+  label: string;
+  chars: number | null;
+  ok: boolean | null;
+  recommended: string;
+}) {
+  if (chars === null) {
+    return (
+      <div className="flex justify-between gap-4 text-sm">
+        <span className="font-medium text-slate-700">{label}</span>
+        <span className="text-slate-500">—</span>
+      </div>
+    );
+  }
+  const tone = ok ? "text-emerald-700" : "text-amber-800";
   return (
-    <div className="relative overflow-hidden rounded-xl border border-dashed border-slate-300 bg-slate-50/80 p-4">
-      <div className="pointer-events-none space-y-3 blur-[6px] select-none" aria-hidden>
-        {rows.map((r) => (
-          <div key={r.label} className="flex justify-between gap-4 text-sm">
-            <span className="font-medium text-slate-700">{r.label}</span>
-            <span className="font-mono text-brand-600">•••</span>
-          </div>
-        ))}
-      </div>
-      <div className="absolute inset-0 flex flex-col items-center justify-center bg-white/60 px-4 text-center backdrop-blur-[2px]">
-        <p className="text-sm font-semibold text-slate-900">Расширенный отчёт в личном кабинете</p>
-        <p className="mt-1 max-w-md text-xs text-slate-600">
-          Title, Description, H1, предложения, абзацы и время чтения — после регистрации.
-        </p>
-      </div>
+    <div className="flex flex-wrap items-baseline justify-between gap-2 text-sm">
+      <span className="font-medium text-slate-700">{label}</span>
+      <span className={`font-mono font-semibold tabular-nums ${tone}`}>
+        {chars} <span className="text-xs font-normal text-slate-500">({recommended})</span>
+      </span>
     </div>
   );
 }
@@ -69,6 +70,7 @@ export function TextLengthDemoWidget() {
   const [text, setText] = useState("");
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [h1, setH1] = useState("");
   const [result, setResult] = useState<TextLengthDemoResult | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
@@ -84,6 +86,7 @@ export function TextLengthDemoWidget() {
         text,
         title: title.trim() || undefined,
         description: description.trim() || undefined,
+        h1: h1.trim() || undefined,
       });
       if (!res.ok) {
         setError(res.error.message ?? "Не удалось выполнить подсчёт");
@@ -96,9 +99,12 @@ export function TextLengthDemoWidget() {
     } finally {
       setLoading(false);
     }
-  }, [text, title, description, result]);
+  }, [text, title, description, h1, result]);
 
   const summary = result?.result.summary;
+  const seo = result?.result.seo;
+  const extended = result?.result.extended;
+
   const stats: StatCard[] = summary
     ? [
         { label: "Символов с пробелами", value: summary.chars_with_spaces },
@@ -112,7 +118,7 @@ export function TextLengthDemoWidget() {
   return (
     <DemoWidgetShell
       title="Вставьте текст для подсчёта"
-      lead="Базовая статистика — сразу. SEO-поля и расширенный отчёт — после регистрации в кабинете."
+      lead="Полный отчёт — символы, SEO-поля и структура текста. В демо лимит 2 000 символов и 5 проверок в сутки."
       features={DEMO_FEATURES}
       badge={
         result ? (
@@ -140,9 +146,10 @@ export function TextLengthDemoWidget() {
         {charCount.toLocaleString("ru-RU")} / {DEMO_MAX_CHARS.toLocaleString("ru-RU")} символов в демо
       </p>
 
-      <div className="mt-4 grid gap-4 sm:grid-cols-2">
+      <p className="mt-4 text-xs font-medium text-slate-600">SEO-поля (необязательно)</p>
+      <div className="mt-2 grid gap-4 sm:grid-cols-3">
         <div>
-          <label className="text-xs font-medium text-slate-600">Title (опционально)</label>
+          <label className="text-xs font-medium text-slate-600">Title</label>
           <input
             type="text"
             className="mt-1 w-full rounded-lg border border-slate-200 px-3 py-2 text-sm"
@@ -152,7 +159,7 @@ export function TextLengthDemoWidget() {
           />
         </div>
         <div>
-          <label className="text-xs font-medium text-slate-600">Description (опционально)</label>
+          <label className="text-xs font-medium text-slate-600">Description</label>
           <input
             type="text"
             className="mt-1 w-full rounded-lg border border-slate-200 px-3 py-2 text-sm"
@@ -161,8 +168,17 @@ export function TextLengthDemoWidget() {
             onChange={(e) => setDescription(e.target.value)}
           />
         </div>
+        <div>
+          <label className="text-xs font-medium text-slate-600">H1</label>
+          <input
+            type="text"
+            className="mt-1 w-full rounded-lg border border-slate-200 px-3 py-2 text-sm"
+            placeholder="Заголовок на странице"
+            value={h1}
+            onChange={(e) => setH1(e.target.value)}
+          />
+        </div>
       </div>
-      <p className="mt-1 text-xs text-slate-500">Длина title и description считается в полной версии модуля.</p>
 
       <div className="mt-6 flex flex-wrap items-center gap-3">
         <button
@@ -179,6 +195,7 @@ export function TextLengthDemoWidget() {
             setText("");
             setTitle("");
             setDescription("");
+            setH1("");
             setResult(null);
             setError(null);
           }}
@@ -202,7 +219,37 @@ export function TextLengthDemoWidget() {
               <StatGrid stats={stats} />
             </div>
           </div>
-          <LockedMetricsBlock />
+
+          {seo && (
+            <div className="rounded-xl border border-slate-200 bg-white p-4">
+              <h3 className="text-sm font-semibold text-slate-900">SEO-мета</h3>
+              <div className="mt-3 space-y-2">
+                <SeoRow label="Title" chars={seo.title_chars} ok={seo.title_ok} recommended="до 60" />
+                <SeoRow label="Description" chars={seo.description_chars} ok={seo.description_ok} recommended="до 160" />
+                <SeoRow label="H1" chars={seo.h1_chars} ok={null} recommended="контроль заголовка" />
+              </div>
+            </div>
+          )}
+
+          {extended && (
+            <div className="rounded-xl border border-slate-200 bg-white p-4">
+              <h3 className="text-sm font-semibold text-slate-900">Структура текста</h3>
+              <dl className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-3">
+                <div>
+                  <dt className="text-xs text-slate-500">Предложений</dt>
+                  <dd className="text-xl font-bold tabular-nums text-brand-700">{extended.sentences}</dd>
+                </div>
+                <div>
+                  <dt className="text-xs text-slate-500">Абзацев</dt>
+                  <dd className="text-xl font-bold tabular-nums text-brand-700">{extended.paragraphs}</dd>
+                </div>
+                <div>
+                  <dt className="text-xs text-slate-500">Время чтения</dt>
+                  <dd className="text-xl font-bold tabular-nums text-brand-700">{extended.reading_time_min} мин</dd>
+                </div>
+              </dl>
+            </div>
+          )}
         </div>
       )}
 
@@ -214,6 +261,7 @@ export function TextLengthDemoWidget() {
             maxRuns={result.limits.max_runs_per_day}
             fullMaxChars={result.limits.full_max_chars}
             moduleTitle="подсчёта длины текста"
+            upgradeHint={`В кабинете — до ${FULL_MAX_CHARS.toLocaleString("ru-RU")} символов за проверку, те же SEO-поля и отчёт без лимита демо.`}
           />
         </div>
       )}

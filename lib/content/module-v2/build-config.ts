@@ -26,6 +26,10 @@ const DEMO_WIDGET_BY_BASE: Partial<Record<string, ModuleV2DemoWidget>> = {
   "analiz-konkurentov": "competitor-analysis",
   "podschet-dliny-teksta": "text-length",
   "udalenie-dublikatov": "duplicates",
+  "sravnenie-spiskov-klyuchevykh-fraz": "list-comparison",
+  "vydelenie-unikalnykh-slov-v-tekste": "unique-words",
+  "html-redaktor": "html-editor",
+  "klasterizator-klyuchevykh-slov": "cluster",
 };
 
 const DEFAULT_ORBIT: readonly ModuleV2OrbitNode[] = [

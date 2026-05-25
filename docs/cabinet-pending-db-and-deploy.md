@@ -36,6 +36,8 @@ php artisan migrate:status | grep 2026_05_22
 | Тикеты поддержки | `2026_05_22_140000_create_support_tickets_tables.php` | `support_tickets`, `support_ticket_messages` | применялась в dev-сессии* | ⏳ |
 | Telegram prompt snooze | `2026_05_22_120000_add_telegram_prompt_snoozed_until_to_users_table.php` | `users.telegram_prompt_snoozed_until` (модалка подключения бота) | local ✓ | ⏳ |
 | Публичный шаринг анализа текста | `2026_05_23_200000_create_text_analyzer_public_shares_table.php` | `text_analyzer_public_shares` (token, payload JSON, 30 дней) | local ✓ | ⏳ |
+| HTML-редактор: пресеты пользователя | `2026_05_25_220000_create_html_editor_presets_table.php` | `html_editor_presets` (user_id, name, html) | local ✓ | ⏳ |
+| HTML-редактор: публичные ссылки | `2026_05_25_223000_create_html_editor_public_shares_table.php` | `html_editor_public_shares` (description_id, token, payload, 30 дней) | local ✓ | ⏳ |
 
 \* В отдельных сессиях агента миграции уже гоняли на `DB_HOST` из local `.env` — **перед продом** сверить `migrate:status` на сервере и в локали.
 

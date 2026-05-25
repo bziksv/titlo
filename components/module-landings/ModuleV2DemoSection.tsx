@@ -1,5 +1,9 @@
+import { ClusterDemoWidget } from "@/components/demo/ClusterDemoWidget";
 import { CompetitorAnalysisDemoWidget } from "@/components/demo/CompetitorAnalysisDemoWidget";
 import { DuplicatesDemoWidget } from "@/components/demo/DuplicatesDemoWidget";
+import { HtmlEditorDemoWidget } from "@/components/demo/HtmlEditorDemoWidget";
+import { ListComparisonDemoWidget } from "@/components/demo/ListComparisonDemoWidget";
+import { UniqueWordsDemoWidget } from "@/components/demo/UniqueWordsDemoWidget";
 import { TextAnalyzerDemoWidget } from "@/components/demo/TextAnalyzerDemoWidget";
 import { TextLengthDemoWidget } from "@/components/demo/TextLengthDemoWidget";
 import type { ModuleV2DemoWidget } from "@/lib/content/module-v2/types";
@@ -23,6 +27,22 @@ const SECTION_COPY: Record<
   duplicates: {
     title: "Уберите дубликаты из списка без регистрации",
     lead: "7 базовых фильтров и KPI — как в кабинете. Сортировка, пресеты, сравнение до/после и большие списки — после регистрации.",
+  },
+  "list-comparison": {
+    title: "Сравните два списка фраз без регистрации",
+    lead: "Все 4 режима и опции — как в кабинете. В демо лимит только по символам в каждом списке.",
+  },
+  "unique-words": {
+    title: "Выделите уникальные слова без регистрации",
+    lead: "Морфология, словоформы и ключевые фразы — как в кабинете. В демо лимит только по символам.",
+  },
+  "html-editor": {
+    title: "Попробуйте HTML-редактор без регистрации",
+    lead: "CKEditor и split-view как в кабинете — без лимита по символам. Сохранение, проекты и публичная ссылка — после регистрации.",
+  },
+  cluster: {
+    title: "Попробуйте кластеризатор без регистрации",
+    lead: "До 10 фраз без сохранения. В кабинете — проекты, Wordstat, большие ядра, конкуренты и экспорт XLS.",
   },
 };
 
@@ -65,6 +85,14 @@ export function ModuleV2DemoSection({ kind }: Props) {
             <CompetitorAnalysisDemoWidget />
           ) : kind === "duplicates" ? (
             <DuplicatesDemoWidget />
+          ) : kind === "list-comparison" ? (
+            <ListComparisonDemoWidget />
+          ) : kind === "unique-words" ? (
+            <UniqueWordsDemoWidget />
+          ) : kind === "html-editor" ? (
+            <HtmlEditorDemoWidget />
+          ) : kind === "cluster" ? (
+            <ClusterDemoWidget />
           ) : (
             <TextLengthDemoWidget />
           )}

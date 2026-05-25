@@ -14,6 +14,10 @@
 | Служба поддержки | `/support` | `config/cabinet-support.php` | [cabinet-support-changelog.md](./cabinet-support-changelog.md) | `support/layout` |
 | Кластеризатор | `/cluster`, `/cluster-v2` | `config/cabinet-cluster.php` | [cabinet-cluster-changelog.md](./cabinet-cluster-changelog.md) | шапка карточки |
 | Удаление дубликатов | `/duplicates` | `config/cabinet-duplicates.php` | [cabinet-duplicates-changelog.md](./cabinet-duplicates-changelog.md) | шапка карточки |
+| Сравнение списков | `/list-comparison` | `config/cabinet-list-comparison.php` | [cabinet-list-comparison-changelog.md](./cabinet-list-comparison-changelog.md) | шапка карточки |
+| Уникальные слова | `/unique` | `config/cabinet-unique.php` | [cabinet-unique-changelog.md](./cabinet-unique-changelog.md) | шапка карточки (**v1.1s**) |
+| Подсчёт длины текста | `/counting-text-length` | `config/cabinet-text-length.php` | [cabinet-text-length-changelog.md](./cabinet-text-length-changelog.md) | шапка карточки (**v1.0s**) |
+| HTML-редактор | `/html-editor` | `config/cabinet-html-editor.php` | [cabinet-html-editor-changelog.md](./cabinet-html-editor-changelog.md) | шапка карточки (**v1.5.3s**) |
 
 ## Шаблон нового модуля
 

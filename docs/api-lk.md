@@ -189,6 +189,38 @@ UI: `CompetitorAnalysisDemoWidget.tsx` на `/analiz-konkurentov/` (ModuleV2Demo
 
 Проверка кабинета: `php scripts/verify-competitor-analysis-demo.php`.
 
+### Demo API: кластеризатор
+
+Клиент: `lib/demo/run-cluster-demo-client.ts` — `POST /api/demo/klasterizator-klyuchevykh-slov/run` + poll `/poll`, прокси на кабинет (`CABINET_DEMO_API_URL` / `127.0.0.1:3002`).
+
+Логика в Laravel: `ClusterDemoService` → очереди `main_cluster` / `child_cluster` (classic, ТОП-10, без Wordstat).
+
+#### `POST /api/demo/klasterizator-klyuchevykh-slov/run`
+
+Тело:
+
+```json
+{
+  "phrases": "фраза1\nфраза2\nфраза3",
+  "region_id": "213",
+  "clustering_level": "soft"
+}
+```
+
+Ответ **200** (фрагмент): `{ "demo": true, "status": "pending", "progress_id": "…", "progress": { "phrases_total": 8, … }, "remaining": 1, "limits": { … } }`.
+
+#### `POST /api/demo/klasterizator-klyuchevykh-slov/poll`
+
+Тело: `{ "progress_id": "…" }`. Ответ: `status: pending|complete`, при complete — `result.groups[]`, `result.singles[]`.
+
+Лимиты (`config/cabinet-cluster.demo`): 2 запуска/сутки, 3–10 фраз, classic Soft/Light, регионы `213,2,193,65,54`.
+
+**Локально:** кабинет `:3002` + `bash scripts/dev-cluster-queue.sh status` (воркеры очередей).
+
+UI: `ClusterDemoWidget.tsx` на http://localhost:3001/klasterizator-klyuchevykh-slov/
+
+Проверка: `php scripts/verify-cluster-demo.php` (cabinet.datagon.ru).
+
 ### Demo API: удаление дубликатов
 
 Клиент: `lib/demo/run-dedup-demo-client.ts` — `POST /api/lk/api/demo/udalenie-dublikatov/run`, fallback `POST /api/demo/udalenie-dublikatov/run`.
@@ -218,7 +250,7 @@ UI: `CompetitorAnalysisDemoWidget.tsx` на `/analiz-konkurentov/` (ModuleV2Demo
 
 Лимиты демо: **20 000** символов, **1000** непустых строк, **10** запусков/сутки (cookie `datagon_demo_*`).
 
-В демо **нет**: dedup без учёта регистра, сортировка, символы начала/конца, пресеты, загрузка .txt — только в кабинете (`/duplicates`). **Сравнение до/после** (две колонки) — в демо после обработки.
+В демо **нет**: dedup без учёта регистра, сортировка, символы начала/конца, пресеты, split до/после, .txt — только в кабинете (`/duplicates`).
 
 UI: `DuplicatesDemoWidget.tsx` на `/udalenie-dublikatov/`.
 

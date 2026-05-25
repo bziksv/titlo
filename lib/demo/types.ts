@@ -37,7 +37,7 @@ export type TextLengthDemoResult = {
   };
   result: {
     summary: TextLengthSummary;
-    /** В демо всегда null — значения только в кабинете */
+    /** SEO и extended — те же метрики, что в кабинете; в демо лимит по символам и числу запусков */
     seo: TextLengthSeoPreview | null;
     extended: TextLengthExtendedPreview | null;
     locked: readonly string[];
@@ -288,4 +288,61 @@ export type DedupDemoResult = {
 export type DedupDemoRunBody = {
   text: string;
   options?: DedupDemoOptionsInput;
+};
+
+export type ClusterDemoRegion = { id: string; label: string };
+
+export type ClusterDemoLevel = { value: string; label: string };
+
+export type ClusterDemoGroup = {
+  name: string;
+  phrases: string[];
+  size: number;
+};
+
+export type ClusterDemoProgress = {
+  phrases_total: number;
+  phrases_done: number;
+  phrases_pending: number;
+  waiting_in_queue?: boolean;
+};
+
+export type ClusterDemoResultPayload = {
+  summary: {
+    phrases: number;
+    clusters: number;
+    singles: number;
+  };
+  groups: ClusterDemoGroup[];
+  singles: string[];
+  locked: readonly string[];
+};
+
+export type ClusterDemoResponse = {
+  demo: true;
+  module: "klasterizator-klyuchevykh-slov";
+  remaining: number;
+  status: "pending" | "complete";
+  progress_id?: string;
+  limits: {
+    max_phrases: number;
+    min_phrases: number;
+    max_runs_per_day: number;
+    top_count: number;
+    regions: ClusterDemoRegion[];
+    clustering_levels: ClusterDemoLevel[];
+  };
+  progress?: ClusterDemoProgress;
+  result?: ClusterDemoResultPayload;
+  upgrade: DemoUpgrade;
+};
+
+export type ClusterDemoRunBody = {
+  phrases: string;
+  region_id: string;
+  clustering_level?: string;
+};
+
+export type ClusterDemoPollBody = {
+  progress_id: string;
 };

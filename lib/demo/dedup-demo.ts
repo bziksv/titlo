@@ -27,6 +27,7 @@ export const DEMO_LOCKED_FEATURES = [
   "sort",
   "char_filters",
   "presets",
+  "compare",
   "file_upload",
   "unlimited",
 ] as const;

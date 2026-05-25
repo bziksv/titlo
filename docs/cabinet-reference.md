@@ -52,6 +52,7 @@ bash scripts/dev-local.sh detach
 | `bash scripts/dev-fpm.sh status` | health, режим |
 | `bash scripts/dev-fpm.sh stop` | остановка |
 | `bash scripts/dev-local.sh logs` | логи |
+| `bash scripts/dev-cluster-queue.sh status` | воркеры кластера (`local_*`, по умолчанию **4** шт.) — **нужны для частотности** на :3002 |
 | `CABINET_DEV_SERVE=1 … detach` | fallback: `artisan serve` |
 
 **Не использовать** Next на :3002.
@@ -269,6 +270,7 @@ SKIP_EMAIL_VERIFICATION=true
 | `public/share/relevance/{token}` | RelevancePublicShareController | публичный просмотр проекта анализа релевантности (30 дней, только чтение) |
 | `public/share/relevance/{token}/history/{id}` | RelevancePublicShareController | детальный просмотр проверки по публичной ссылке |
 | `public/share/text-analyzer/{token}` | TextAnalyzerPublicShareController | публичный отчёт анализа текста (30 дней, read-only) |
+| `public/share/html-editor/{token}` | HtmlEditorPublicShareController | публичный HTML-текст (30 дней, превью + код) |
 | `support/*` | SupportTicketController | тикеты поддержки |
 | `ideas/*` | FeatureIdeaController | доска идей: предложения, модерация, голоса |
 | `balance-add/result` | BalanceAddController | callback оплаты |
@@ -283,17 +285,18 @@ SKIP_EMAIL_VERIFICATION=true
 | `monitoring/*` | мониторинг позиций (крупнейший блок) |
 | `analyze-relevance`, `history`, … | анализ релевантности — TF/IDF/score: `App\Support\TfidfMetrics`, расчёт в `App\Relevance` (агрегат конкурентов, IDF = log₁₀(N/df), облака «TF‑IDF score» по `weight = score`; «TF clouds» — частота через `TextAnalyzer::prepareCloud`) |
 | `meta-tags/*` | мета-теги |
-| `cluster/*` | кластеризатор — `/cluster-v2` (новый UI: `cabinet-cluster-v2.css/js`, `cluster-v2/`), legacy `/cluster`; `cabinet-cluster.css`, `cluster/partials/module-nav`; `/cluster-configuration` — KPI |
+| `cluster/*` | кластеризатор — `/cluster-v2` (новый UI: `cabinet-cluster-v2.css/js`, `cluster-v2/`), legacy `/cluster`; ручное редактирование: **`/edit-clusters-v2/{id}`** (v2, select) и `/edit-clusters/{id}` (classic); `cabinet-cluster.css`, `cluster/partials/module-nav`; `/cluster-configuration` — KPI |
 | `competitor-analysis` | анализ конкурентов — `public/css/cabinet-competitor-analysis.css`, nav pills; `/competitors-config` — KPI месяца + уникальные user_id за 30/60/90 дн. (`SearchCompetitors::countUniqueUsersSinceDays`) |
-| `counting-text-length` | подсчёт длины текста |
-| `list-comparison` | сравнение списков |
+| `counting-text-length` | подсчёт длины текста — `cabinet-text-length.css/js`, badge **v1.0s**; changelog: [cabinet-text-length-changelog.md](./cabinet-text-length-changelog.md) |
+| `list-comparison` | сравнение списков — `cabinet-list-comparison.css/js`, badge **v1.0s**; changelog: [cabinet-list-comparison-changelog.md](./cabinet-list-comparison-changelog.md) |
+| `unique` | уникальные слова — `cabinet-unique.css/js`, phpMorphy + shingles, badge **v1.0s**; changelog: [cabinet-unique-changelog.md](./cabinet-unique-changelog.md) |
 | `http-headers/{url?}` | HTTP-заголовки |
 | `utm-marks`, `roi-calculator` | UTM, ROI |
 | `password-generator` | генератор паролей |
 | `duplicates` | удаление дубликатов — `cabinet-duplicates.css/js`, badge **v1.2s**; changelog: [cabinet-duplicates-changelog.md](./cabinet-duplicates-changelog.md) |
 | `unique-words`, `unique` | уникальные слова |
 | `text-analyzer` | анализ текста — badge **vX.Y**; **сравнение с конкурентом** (toggle + URL); публичная ссылка: `POST text-analyzer/public-share`, `GET public/share/text-analyzer/{token}`; **PDF:** эталон v6.9s → [cabinet-pdf-report-template.md](./cabinet-pdf-report-template.md); changelog: [cabinet-text-analyzer-changelog.md](./cabinet-text-analyzer-changelog.md); smoke: `scripts/smoke-text-analyzer.sh` |
-| `html-editor` | HTML-редактор |
+| `html-editor` | HTML-редактор — поиск, пресеты, split, публичная ссылка, badge **v1.5.3s**; `POST html-editor/public-share`; changelog: [cabinet-html-editor-changelog.md](./cabinet-html-editor-changelog.md) |
 | `site-monitoring` | мониторинг сайтов |
 | `domain-information` | срок регистрации доменов |
 | `backlink` | отслеживание ссылок |
@@ -315,19 +318,19 @@ SKIP_EMAIL_VERIFICATION=true
 |--------------------|----------------|---------------------|
 | `analiz-relevantnosti` | `/analyze-relevance` | релевантность |
 | `monitoring-pozicii-sayta` | `/monitoring` | Monitoring |
-| `podschet-dliny-teksta` | `/counting-text-length` | Counting text length |
+| `podschet-dliny-teksta` | `/counting-text-length` | Counting text length · `cabinet-text-length` v1.0s |
 | `proverka-meta-tegov-online` | `/meta-tags` | Meta tags |
 | `klasterizator-klyuchevykh-slov` | `/cluster` | Cluster |
 | `analiz-konkurentov` | `/competitor-analysis` | Competitor |
 | `analiz-teksta` | `/text-analyzer` | Text analyzer |
-| `html-redaktor` | `/html-editor` | HTML editor |
+| `html-redaktor` | `/html-editor` | HTML editor · `cabinet-html-editor` v1.5.3s |
 | `http-headers` | `/http-headers` | Http headers |
 | `utm-metki` | `/utm-marks` | Utm marks |
 | `kalkulyator-roi` | `/roi-calculator` | Roi calculator |
 | `generator-paroley` | `/password-generator` | — |
-| `sravnenie-spiskov-klyuchevykh-fraz` | `/list-comparison` | — |
+| `sravnenie-spiskov-klyuchevykh-fraz` | `/list-comparison` | List comparison |
 | `udalenie-dublikatov` | `/duplicates` | Duplicates |
-| `vydelenie-unikalnykh-slov-v-tekste` | `/unique-words` | — |
+| `vydelenie-unikalnykh-slov-v-tekste` | `/unique` | `cabinet-unique` v1.0s, demo API |
 | `otslezhivanie-ssylok` | `/backlink` | — |
 | `monitoring-saytov` | `/site-monitoring` | — |
 | `otslezhivanie-sroka-registratsii-domenov` | `/domain-information` | — |

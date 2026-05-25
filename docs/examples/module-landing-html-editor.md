@@ -9,4 +9,6 @@
 
 Модуль про **визуальный редактор → HTML**, не SEO-аналитику: акцент на проекты, экспорт кода, обучение разметке.
 
-Проверка: `npm run verify:html-editor`
+**Демо:** `HtmlEditorDemoWidget` — CKEditor + split-view как в кабинете, пресеты, без лимита символов; единственное ограничение — нет сохранения (регистрация → `/html-editor`).
+
+Проверка: `npm run verify:html-editor` · http://localhost:3001/html-redaktor/

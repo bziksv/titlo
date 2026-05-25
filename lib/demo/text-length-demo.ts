@@ -30,9 +30,8 @@ export function buildTextLengthDemoResponse(
   guestId?: string
 ): TextLengthDemoResult {
   const summary = analyzeTextSummary(body.text);
-  // SEO/extended считаем на сервере, но в демо не отдаём — только в lk после регистрации
-  void analyzeTextSeo(body);
-  void analyzeTextExtended(body.text);
+  const seo = analyzeTextSeo(body);
+  const extended = analyzeTextExtended(body.text);
 
   return {
     demo: true,
@@ -45,9 +44,9 @@ export function buildTextLengthDemoResponse(
     },
     result: {
       summary,
-      seo: null,
-      extended: null,
-      locked: ["seo", "extended"],
+      seo,
+      extended,
+      locked: [],
     },
     upgrade: {
       register_url: buildRegisterUrl(guestId),

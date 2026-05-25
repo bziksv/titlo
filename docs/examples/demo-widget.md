@@ -5,10 +5,13 @@
 Частичный результат на лендинге → регистрация в lk за полным доступом.
 
 **Пилоты:**
-- [подсчёт длины текста](http://localhost:3001/podschet-dliny-teksta/) — секция «Попробовать бесплатно»
+- [подсчёт длины текста](http://localhost:3001/podschet-dliny-teksta/) — полный отчёт (символы, SEO, структура); лимит 2k символов и 5 запусков/сутки в демо
 - [анализ текста](http://localhost:3001/analiz-teksta/) — KPI + топ слов, остальное в кабинете
 - [анализ конкурентов](http://localhost:3001/analiz-konkurentov/) — ТОП-10 Яндекса по одной фразе
+- [кластеризатор](http://localhost:3001/klasterizator-klyuchevykh-slov/) — до 10 фраз, classic Soft, живые кластеры
 - [удаление дубликатов](http://localhost:3001/udalenie-dublikatov/) — 7 фильтров + KPI; расширенные опции в кабинете
+- [сравнение списков](http://localhost:3001/sravnenie-spiskov-klyuchevykh-fraz/) — 4 режима + опции; лимит только по символам (3k на список)
+- [HTML-редактор](http://localhost:3001/html-redaktor/) — CKEditor + split-view как в кабинете; лимит только на сохранение (проекты, шаринг — после регистрации)
 
 ## Файлы (пилот)
 
@@ -28,10 +31,20 @@
 | **Анализ конкурентов — клиент** | `lib/demo/run-competitor-analysis-client.ts` |
 | **Анализ конкурентов — прокси** | `app/api/demo/analiz-konkurentov/run/route.ts` |
 | **Анализ конкурентов — lk** | `CompetitorAnalysisDemoController`, `CompetitorAnalysisDemoService` |
+| **Кластеризатор — UI** | `ClusterDemoWidget.tsx`, `ClusterDemoReport.tsx`, `ClusterDemoCapabilities.tsx` |
+| **Кластеризатор — клиент** | `lib/demo/run-cluster-demo-client.ts` |
+| **Кластеризатор — прокси** | `app/api/demo/klasterizator-klyuchevykh-slov/run|poll/route.ts` |
+| **Кластеризатор — lk** | `ClusterDemoController`, `ClusterDemoService` |
 | **Удаление дубликатов — UI** | `DuplicatesDemoWidget.tsx` |
 | **Удаление дубликатов — клиент** | `lib/demo/run-dedup-demo-client.ts` |
 | **Удаление дубликатов — логика** | `lib/demo/dedup-process.ts`, `lib/demo/dedup-demo.ts` |
 | **Удаление дубликатов — API** | `app/api/demo/udalenie-dublikatov/run/route.ts` |
+| **Сравнение списков — UI** | `ListComparisonDemoWidget.tsx` |
+| **Сравнение списков — логика** | `lib/demo/list-comparison-process.ts`, `lib/demo/list-comparison-demo.ts` (клиент, без API) |
+| **Уникальные слова — UI** | `UniqueWordsDemoWidget.tsx` |
+| **Уникальные слова — клиент** | `lib/demo/run-unique-words-demo-client.ts`, `lib/demo/unique-words-demo.ts` |
+| **Уникальные слова — прокси** | `app/api/demo/vydelenie-unikalnykh-slov-v-tekste/run/route.ts` |
+| **Уникальные слова — lk** | `UniqueWordsDemoController`, `UniqueWordsAnalysisService` |
 | BFF к lk | `app/api/lk/[...path]/route.ts`, `lib/lk-api.ts` |
 | Guest cookie | `lib/demo/guest-session.ts` |
 

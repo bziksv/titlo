@@ -19,7 +19,6 @@ const DEMO_FEATURES = [
   "Trim и пустые строки",
   "Нижний регистр и ё→е",
   "Пробелы и табы",
-  "Сравнение до и после",
   "KPI: было / стало / удалено",
 ] as const;
 
@@ -28,6 +27,7 @@ const LOCKED_ROWS = [
   { label: "Сортировка А→Я", hint: "после обработки" },
   { label: "Символы в начале/конце слова", hint: "свой набор +-! .!?" },
   { label: "Пресеты SEO-списка", hint: "одним кликом" },
+  { label: "Сравнение до и после", hint: "split-view" },
   { label: "Загрузка .txt", hint: "drag & drop" },
 ] as const;
 
@@ -75,28 +75,14 @@ function StatGrid({ metrics }: { metrics: DedupDemoResult["result"]["metrics"] }
   );
 }
 
-function BeforeAfterPanels({ before, after }: { before: string; after: string }) {
+function ResultOutput({ text }: { text: string }) {
   return (
-    <div className="grid gap-4 lg:grid-cols-2">
-      <div>
-        <p className="text-xs font-semibold uppercase tracking-widest text-slate-500">До обработки</p>
-        <textarea
-          readOnly
-          className="mt-2 min-h-[180px] w-full resize-y rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 font-mono text-sm text-slate-700"
-          value={before}
-          aria-label="Список до обработки"
-        />
-      </div>
-      <div>
-        <p className="text-xs font-semibold uppercase tracking-widest text-brand-600">После обработки</p>
-        <textarea
-          readOnly
-          className="mt-2 min-h-[180px] w-full resize-y rounded-xl border border-brand-200 bg-brand-50/40 px-4 py-3 font-mono text-sm text-slate-800"
-          value={after}
-          aria-label="Список после обработки"
-        />
-      </div>
-    </div>
+    <textarea
+      readOnly
+      className="mt-3 min-h-[180px] w-full resize-y rounded-xl border border-brand-200 bg-brand-50/40 px-4 py-3 font-mono text-sm text-slate-800"
+      value={text}
+      aria-label="Очищенный список"
+    />
   );
 }
 
@@ -114,7 +100,7 @@ function LockedCabinetBlock() {
       </div>
       <div className="absolute inset-x-0 bottom-0 flex items-end justify-center bg-gradient-to-t from-white via-white/90 to-transparent px-4 pb-4 pt-10">
         <p className="max-w-md text-center text-xs text-slate-600">
-          Регистрация бесплатна — расширенные фильтры, пресеты SEO и загрузка .txt без лимитов демо.
+          Регистрация бесплатна — все фильтры, пресеты, сравнение до/после и загрузка файлов.
         </p>
       </div>
     </div>
@@ -126,7 +112,6 @@ export function DuplicatesDemoWidget() {
   const [text, setText] = useState("");
   const [options, setOptions] = useState<DedupDemoOptionsInput>(DEFAULT_OPTIONS);
   const [result, setResult] = useState<DedupDemoResult | null>(null);
-  const [beforeText, setBeforeText] = useState<string | null>(null);
   const [afterText, setAfterText] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
@@ -154,7 +139,6 @@ export function DuplicatesDemoWidget() {
         return;
       }
       setResult(res.data);
-      setBeforeText(snapshot);
       setAfterText(res.data.result.text);
     } finally {
       setLoading(false);
@@ -175,7 +159,6 @@ export function DuplicatesDemoWidget() {
     setText("");
     setOptions(DEFAULT_OPTIONS);
     setResult(null);
-    setBeforeText(null);
     setAfterText(null);
     setError(null);
   };
@@ -183,7 +166,7 @@ export function DuplicatesDemoWidget() {
   return (
     <DemoWidgetShell
       title="Вставьте список и уберите дубликаты"
-      lead="7 базовых фильтров и сравнение до/после — сразу в браузере. Расширенные опции и большие списки — в кабинете после регистрации."
+      lead="7 базовых фильтров — сразу в браузере. Сравнение до/после, расширенные опции и большие списки — в кабинете после регистрации."
       features={DEMO_FEATURES}
       badge={
         result ? (
@@ -208,8 +191,7 @@ export function DuplicatesDemoWidget() {
         value={text}
         onChange={(e) => {
           setText(e.target.value);
-          if (beforeText !== null || afterText !== null) {
-            setBeforeText(null);
+          if (afterText !== null) {
             setAfterText(null);
             setResult(null);
           }
@@ -270,7 +252,7 @@ export function DuplicatesDemoWidget() {
         </p>
       )}
 
-      {result?.result.metrics && beforeText !== null && afterText !== null && (
+      {result?.result.metrics && afterText !== null && (
         <div className="mt-8 space-y-6">
           <div>
             <h3 className="text-sm font-semibold text-slate-900">Сводка</h3>
@@ -280,13 +262,11 @@ export function DuplicatesDemoWidget() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-slate-900">Сравнение до и после</h3>
+            <h3 className="text-sm font-semibold text-slate-900">Результат</h3>
             <p className="mt-1 text-sm text-slate-600">
-              Исходный список слева, очищенный — справа. Как в модуле кабинета.
+              Очищенный список — скопируйте или измените исходник и запустите снова.
             </p>
-            <div className="mt-4">
-              <BeforeAfterPanels before={beforeText} after={afterText} />
-            </div>
+            <ResultOutput text={afterText} />
           </div>
         </div>
       )}
@@ -299,7 +279,7 @@ export function DuplicatesDemoWidget() {
             maxRuns={result.limits.max_runs_per_day}
             fullMaxChars={DEMO_MAX_CHARS}
             moduleTitle="удаления дубликатов"
-            upgradeHint="В кабинете — все 9+ фильтров, пресеты SEO, загрузка .txt и списки без лимита демо."
+            upgradeHint="В кабинете — все 9+ фильтров, пресеты SEO, сравнение до/после, загрузка .txt и списки без лимита демо."
           />
         </div>
       )}

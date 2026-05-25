@@ -3,6 +3,63 @@
 Config: `cabinet.datagon.ru/config/cabinet-cluster.php`  
 Проверка: http://localhost:3002/cluster-v2 (новый UI), http://localhost:3002/cluster (classic)
 
+## 2.27 — 2026-05-25
+
+- **Демо на datagon.ru:** `POST /api/demo/klasterizator-klyuchevykh-slov/run|poll` — до 10 фраз, classic Soft/Light, без Wordstat; jobs в очереди кластера, `demo=true` без списания лимитов.
+- **Проверка:** `php scripts/verify-cluster-demo.php`, лендинг http://localhost:3001/klasterizator-klyuchevykh-slov/, badge **v2.27**.
+
+## 2.26 — 2026-05-25
+
+- **Редактор v2 (fix DnD):** при перетаскивании фраз — зеркало-клон вместо `position:absolute` на `<tr>`; исчезли смещения таблицы и большие синие «дыры» между группами.
+- **Проверка:** `/edit-clusters-v2/915` — drag за ⋮⋮, placeholder по высоте строки, badge **v2.26**.
+
+## 2.25 — 2026-05-25
+
+- **Редактор v2:** drag-and-drop фраз за ⋮⋮ на группу в sidebar слева (подсветка цели при наведении).
+- **Проверка:** `/edit-clusters-v2/915` — перетащить фразу на название кластера в «Группы», badge **v2.25**.
+
+## 2.24 — 2026-05-25
+
+- **Редактор v2:** боковая панель «Группы» — sticky при прокрутке (как рабочая область в v1), список групп с внутренним скроллом.
+- **Проверка:** `/edit-clusters-v2/915` — прокрутить таблицы вниз, sidebar «Группы» остаётся на экране, badge **v2.24**.
+
+## 2.23 — 2026-05-25
+
+- **Редактор v2:** боковая панель «Группы» (как v1) — оглавление, релевантность, чекбоксы + «Объединить выбранные»; drag-and-drop фраз за ⋮⋮ между группами.
+- **Проверка:** `/edit-clusters-v2/915` — sidebar, перетаскивание, merge 2+ групп, badge **v2.23**.
+
+## 2.22 — 2026-05-25
+
+- **Нейминг:** ручное редактирование — **v1** (`/edit-clusters/`, classic) и **v2** (`/edit-clusters-v2/`); в навигации и «Мои проекты» две кнопки с подсказками.
+- **Проверка:** вкладки и title карточки, badge **v2.22**.
+
+## 2.21 — 2026-05-25
+
+- **Редактор v2:** Select2 на «Переместить в…» — поиск по вводу в выпадающем списке; верхний поиск фильтрует фразы/кластеры/URL по `input`, счётчик «Найдено: N».
+- **Проверка:** `/edit-clusters-v2/915` — в select начать вводить название кластера; в шапке — фильтр таблицы, badge **v2.21**.
+
+## 2.20 — 2026-05-25
+
+- **Ручное редактирование v2:** `/edit-clusters-v2/{id}` — таблицы по кластерам, перемещение фраз через `<select>` (без «рабочей области» и стрелок). Переименование группы в шапке карточки. Классический `/edit-clusters/` сохранён.
+- **Проверка:** http://localhost:3002/edit-clusters-v2/915 — выбрать другой кластер в списке → toast + перезагрузка, badge **v2.20**.
+
+## 2.19 — 2026-05-25
+
+- **Прогресс (fix):** `queue_count=0` при ожидании воркера — jobs уже в `local_child_cluster`, но фраза ещё не обработана. `ClusterProgress`: `phrases_done/pending/total`, UI «Ожидание воркера N / 61».
+- **Dev:** 4 параллельных queue worker (`CLUSTER_QUEUE_WORKERS`, default 4) — один воркер ~25 с/фраза → 61 фраза ~25 мин.
+- **Проверка:** debug-log `phrases_pending>0`, прогресс-бар не застревает на 0, badge **v2.19**.
+
+## 2.18 — 2026-05-25
+
+- **Частотность (fix local):** при `APP_ENV=local` jobs уходят в очереди `local_main_cluster`, `local_child_cluster`, `local_cluster_wait` — прод-воркер lk.redbox.su их не забирает. `ClusterQueues` + префикс в `config/cabinet-cluster.php` (`CLUSTER_QUEUE_PREFIX` для переопределения).
+- **Проверка:** `dev-local.sh detach` → `dev-cluster-queue.sh status` (очереди с префиксом `local_`) → новый анализ (не #915) → ненулевая частотность, badge **v2.18**.
+
+## 2.17 — 2026-05-25
+
+- **Частотность (fix dev):** jobs из :3002 уходили в БД на `178.250.157.140`, их забирал **прод-воркер** со старым `/wordstat/json` → нули. Локально: `scripts/dev-cluster-queue.sh` (очереди `main_cluster,child_cluster,cluster_wait`), автостарт из `dev-fpm.sh`.
+- **RiverFacade:** retry 101/110/115/500 ([Wordstat New](https://xmlriver.com/apiwordstatnew/apiwn-errors/)), лог `river.wordstat.*` в admin debug, пауза между запросами в `ClusterQueue`.
+- **Проверка:** перезапуск `dev-local.sh detach` → пресет KAWE → анализ → в логе `job.phrase.done` with `based>0`, badge **v2.17**.
+
 ## 2.16 — 2026-05-25
 
 - **Частотность (fix):** `RiverFacade` переведён на XMLRiver **Wordstat New** (`/wordstat/new/json`, `pagetype=history`, `totalValue`); старый `/wordstat/json` отдавал code 101 «Сбор старого вордстата больше не доступен» → нули при включённых галочках.

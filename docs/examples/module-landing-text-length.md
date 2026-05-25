@@ -9,7 +9,7 @@
 
 Акцент: **символы с/без пробелов, слова, до 38 600 знаков, title/description**.
 
-**Демо:** секция `TextLengthDemoWidget` после полосы статистики — `POST /api/demo/podschet-dliny-teksta/run` (см. [demo-widget.md](./demo-widget.md)).
+**Демо:** секция `TextLengthDemoWidget` — тот же отчёт, что в кабинете `/counting-text-length` (v1.0s); лимит 2k символов в демо, 38 600 в кабинете.
 
 Проверка: `npm run verify:text-length` (порт **3001**); демо вручную — вставить текст → «Посчитать в демо».
 
