@@ -2,16 +2,18 @@
 
 Правило для агентов: `.cursor/rules/redbox-cabinet-module-version.mdc`.
 
-При изменении UI/JS/поведения страницы модуля — **bump `version`**, строка в **changelog**, **badge** в шапке.
+При изменении UI/JS/поведения страницы модуля — **bump `version`**, строка в **changelog**, **badge** в шапке. Суффикс **`s`** (как `2.9.1s`, `6.9s`) — зафиксированная stable-линия; следующие правки — +0.1 или `-dev`.
 
 ## Реестр
 
 | Модуль | URI | Config | Changelog | Badge |
 |--------|-----|--------|-----------|-------|
 | Анализ текста | `/text-analyzer` | `cabinet.datagon.ru/config/cabinet-text-analyzer.php` | [cabinet-text-analyzer-changelog.md](./cabinet-text-analyzer-changelog.md) | шапка карточки |
-| Анализ конкурентов | `/competitor-analysis` | `config/cabinet-competitor-analysis.php` | [cabinet-competitor-analysis-changelog.md](./cabinet-competitor-analysis-changelog.md) | `competitors/partials/module-nav` |
+| Анализ конкурентов | `/competitor-analysis` | `config/cabinet-competitor-analysis.php` | [cabinet-competitor-analysis-changelog.md](./cabinet-competitor-analysis-changelog.md) | шапка карточки (`vX.Ys` = stable) |
 | Доска идей | `/ideas` | `config/cabinet-ideas.php` | [cabinet-ideas-changelog.md](./cabinet-ideas-changelog.md) | hero / заголовок |
 | Служба поддержки | `/support` | `config/cabinet-support.php` | [cabinet-support-changelog.md](./cabinet-support-changelog.md) | `support/layout` |
+| Кластеризатор | `/cluster`, `/cluster-v2` | `config/cabinet-cluster.php` | [cabinet-cluster-changelog.md](./cabinet-cluster-changelog.md) | шапка карточки |
+| Удаление дубликатов | `/duplicates` | `config/cabinet-duplicates.php` | [cabinet-duplicates-changelog.md](./cabinet-duplicates-changelog.md) | шапка карточки |
 
 ## Шаблон нового модуля
 

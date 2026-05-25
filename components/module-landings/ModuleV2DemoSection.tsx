@@ -1,4 +1,5 @@
 import { CompetitorAnalysisDemoWidget } from "@/components/demo/CompetitorAnalysisDemoWidget";
+import { DuplicatesDemoWidget } from "@/components/demo/DuplicatesDemoWidget";
 import { TextAnalyzerDemoWidget } from "@/components/demo/TextAnalyzerDemoWidget";
 import { TextLengthDemoWidget } from "@/components/demo/TextLengthDemoWidget";
 import type { ModuleV2DemoWidget } from "@/lib/content/module-v2/types";
@@ -18,6 +19,10 @@ const SECTION_COPY: Record<
   "text-length": {
     title: "Посчитайте длину текста прямо здесь",
     lead: "Базовая статистика символов и слов — сразу. SEO-поля и расширенный отчёт — после регистрации.",
+  },
+  duplicates: {
+    title: "Уберите дубликаты из списка без регистрации",
+    lead: "7 базовых фильтров и KPI — как в кабинете. Сортировка, пресеты, сравнение до/после и большие списки — после регистрации.",
   },
 };
 
@@ -58,6 +63,8 @@ export function ModuleV2DemoSection({ kind }: Props) {
             <TextAnalyzerDemoWidget />
           ) : kind === "competitor-analysis" ? (
             <CompetitorAnalysisDemoWidget />
+          ) : kind === "duplicates" ? (
+            <DuplicatesDemoWidget />
           ) : (
             <TextLengthDemoWidget />
           )}

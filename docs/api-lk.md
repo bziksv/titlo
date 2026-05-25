@@ -189,6 +189,39 @@ UI: `CompetitorAnalysisDemoWidget.tsx` на `/analiz-konkurentov/` (ModuleV2Demo
 
 Проверка кабинета: `php scripts/verify-competitor-analysis-demo.php`.
 
+### Demo API: удаление дубликатов
+
+Клиент: `lib/demo/run-dedup-demo-client.ts` — `POST /api/lk/api/demo/udalenie-dublikatov/run`, fallback `POST /api/demo/udalenie-dublikatov/run`.
+
+Обработка на Next (та же логика, что `cabinet-duplicates.js`); lk-endpoint опционален.
+
+#### `POST /api/demo/udalenie-dublikatov/run`
+
+Тело:
+
+```json
+{
+  "text": "строка1\nстрока1\nстрока2",
+  "options": {
+    "removeDuplicates": true,
+    "trim": true,
+    "removeEmptyRows": false,
+    "lowerCase": false,
+    "removeExtraSpace": false,
+    "replaceTabWithSpace": false,
+    "replaceUmlaut": false
+  }
+}
+```
+
+Ответ **200**: `result.text`, `result.metrics` (`before`, `after`, `dupRemoved`, `emptyRemoved`), `remaining`, `upgrade.register_url`.
+
+Лимиты демо: **20 000** символов, **1000** непустых строк, **10** запусков/сутки (cookie `datagon_demo_*`).
+
+В демо **нет**: dedup без учёта регистра, сортировка, символы начала/конца, пресеты, загрузка .txt — только в кабинете (`/duplicates`). **Сравнение до/после** (две колонки) — в демо после обработки.
+
+UI: `DuplicatesDemoWidget.tsx` на `/udalenie-dublikatov/`.
+
 ## Документировать при изменениях
 
 - путь Laravel-эндпоинта;

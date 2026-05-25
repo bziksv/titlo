@@ -1,7 +1,13 @@
 # Анализ конкурентов — журнал версий
 
-Config: `cabinet.datagon.ru/config/cabinet-competitor-analysis.php`  
+Badge в шапке карточки: **vX.Y** или **vX.Ys** (stable). Config: `config/cabinet-competitor-analysis.php`.  
 Проверка: http://localhost:3002/competitor-analysis
+
+## 2.9.1s — 2026-05-25 (stable)
+
+- **Зафиксирована стабильная база** после 2.9.1: демо datagon.ru (Яндекс + Google, геозависимость, ТОП 30/20/10), геоблоки по ПС, Google только города, порог геонезависимости 40%.
+- Следующие эксперименты — **2.9.2** или **2.9.1s-dev**, не правки поверх stable без bump.
+- **Проверка:** badge **v2.9.1s** в шапке «Анализ конкурентов».
 
 ## 2.9.1 — 2026-05-25
 

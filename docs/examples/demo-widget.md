@@ -8,6 +8,7 @@
 - [подсчёт длины текста](http://localhost:3001/podschet-dliny-teksta/) — секция «Попробовать бесплатно»
 - [анализ текста](http://localhost:3001/analiz-teksta/) — KPI + топ слов, остальное в кабинете
 - [анализ конкурентов](http://localhost:3001/analiz-konkurentov/) — ТОП-10 Яндекса по одной фразе
+- [удаление дубликатов](http://localhost:3001/udalenie-dublikatov/) — 7 фильтров + KPI; расширенные опции в кабинете
 
 ## Файлы (пилот)
 
@@ -27,6 +28,10 @@
 | **Анализ конкурентов — клиент** | `lib/demo/run-competitor-analysis-client.ts` |
 | **Анализ конкурентов — прокси** | `app/api/demo/analiz-konkurentov/run/route.ts` |
 | **Анализ конкурентов — lk** | `CompetitorAnalysisDemoController`, `CompetitorAnalysisDemoService` |
+| **Удаление дубликатов — UI** | `DuplicatesDemoWidget.tsx` |
+| **Удаление дубликатов — клиент** | `lib/demo/run-dedup-demo-client.ts` |
+| **Удаление дубликатов — логика** | `lib/demo/dedup-process.ts`, `lib/demo/dedup-demo.ts` |
+| **Удаление дубликатов — API** | `app/api/demo/udalenie-dublikatov/run/route.ts` |
 | BFF к lk | `app/api/lk/[...path]/route.ts`, `lib/lk-api.ts` |
 | Guest cookie | `lib/demo/guest-session.ts` |
 

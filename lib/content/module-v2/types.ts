@@ -64,7 +64,7 @@ export type ModuleV2FooterUi = {
 export type ModuleV2OrbitUi = ModuleV2SectionCopy & { hubTitle: string };
 
 /** Виджет «Попробовать бесплатно» на публичном v2-лендинге */
-export type ModuleV2DemoWidget = "text-analyzer" | "text-length" | "competitor-analysis";
+export type ModuleV2DemoWidget = "text-analyzer" | "text-length" | "competitor-analysis" | "duplicates";
 
 export type ModuleV2PageConfig = {
   slug: string;

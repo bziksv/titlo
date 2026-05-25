@@ -250,3 +250,42 @@ export type CompetitorAnalysisDemoRunBody = {
   compare_region_id?: string;
   search_engine?: "yandex" | "google";
 };
+
+export type DedupDemoOptionsInput = {
+  removeExtraSpace?: boolean;
+  trim?: boolean;
+  replaceTabWithSpace?: boolean;
+  removeEmptyRows?: boolean;
+  lowerCase?: boolean;
+  removeDuplicates?: boolean;
+  replaceUmlaut?: boolean;
+};
+
+export type DedupDemoMetrics = {
+  before: number;
+  after: number;
+  dupRemoved: number;
+  emptyRemoved: number;
+};
+
+export type DedupDemoResult = {
+  demo: true;
+  module: "udalenie-dublikatov";
+  remaining: number;
+  limits: {
+    max_chars: number;
+    max_lines: number;
+    max_runs_per_day: number;
+  };
+  result: {
+    text: string;
+    metrics: DedupDemoMetrics;
+    locked: readonly string[];
+  };
+  upgrade: DemoUpgrade;
+};
+
+export type DedupDemoRunBody = {
+  text: string;
+  options?: DedupDemoOptionsInput;
+};

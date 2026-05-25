@@ -158,7 +158,7 @@ bash scripts/dev-local.sh detach
 
 **Служба поддержки (тикеты):** эталон `public/html/mailbox/` — layout `resources/views/support/layout.blade.php` (без лишней обёртки `component.card`). Маршруты `support/*`, `SupportTicketController`, CSS `public/css/cabinet-support.css`. Пользователь создаёт тикет и дописывает в открытом; ответ поддержки — `admin` / `Super Admin`. Статусы: `open` → `answered` → `closed`; **повторно открыть** — `PATCH support/{ticket}/reopen` (владелец тикета или staff). Поиск по теме, тексту сообщений и (для staff) email. **Бейдж в шапке** (`SupportInboxBadgeComposer`): staff — число тикетов `open`; пользователь — `answered` (есть ответ поддержки). Проверка: http://localhost:3002/support
 
-**Анализ конкурентов (`/competitor-analysis`):** версия **2.4** — рекомендации по кластерам SERP (`CompetitorMetaRecommendations`); v2.3 параллельный curl; XMLStock v2.1+. — журнал [cabinet-competitor-analysis-changelog.md](./cabinet-competitor-analysis-changelog.md). **1.3+:** обе ПС, лимиты в шапке/баннере, `byRegion['engine|id']`. **1.4–1.5:** прогресс-бар; на local job после ответа HTTP (`dispatch_now`), ошибки XML в toast. Config: `cabinet-competitor-analysis.php`; API `GET /competitor-analysis/regions?engine=…`.
+**Анализ конкурентов (`/competitor-analysis`):** стабильная **v2.9.1s** (badge в шапке; демо, геозависимость, ТОП 30, Google-города) — журнал [cabinet-competitor-analysis-changelog.md](./cabinet-competitor-analysis-changelog.md). Config: `cabinet-competitor-analysis.php`; API `GET /competitor-analysis/regions?engine=…`.
 
 **Версионирование модулей (общее):** [cabinet-module-versioning.md](./cabinet-module-versioning.md) — config + changelog + badge для каждого модуля с UI.
 
@@ -283,14 +283,14 @@ SKIP_EMAIL_VERIFICATION=true
 | `monitoring/*` | мониторинг позиций (крупнейший блок) |
 | `analyze-relevance`, `history`, … | анализ релевантности — TF/IDF/score: `App\Support\TfidfMetrics`, расчёт в `App\Relevance` (агрегат конкурентов, IDF = log₁₀(N/df), облака «TF‑IDF score» по `weight = score`; «TF clouds» — частота через `TextAnalyzer::prepareCloud`) |
 | `meta-tags/*` | мета-теги |
-| `cluster/*` | кластеризатор |
+| `cluster/*` | кластеризатор — `/cluster-v2` (новый UI: `cabinet-cluster-v2.css/js`, `cluster-v2/`), legacy `/cluster`; `cabinet-cluster.css`, `cluster/partials/module-nav`; `/cluster-configuration` — KPI |
 | `competitor-analysis` | анализ конкурентов — `public/css/cabinet-competitor-analysis.css`, nav pills; `/competitors-config` — KPI месяца + уникальные user_id за 30/60/90 дн. (`SearchCompetitors::countUniqueUsersSinceDays`) |
 | `counting-text-length` | подсчёт длины текста |
 | `list-comparison` | сравнение списков |
 | `http-headers/{url?}` | HTTP-заголовки |
 | `utm-marks`, `roi-calculator` | UTM, ROI |
 | `password-generator` | генератор паролей |
-| `duplicates` | удаление дубликатов |
+| `duplicates` | удаление дубликатов — `cabinet-duplicates.css/js`, badge **v1.2s**; changelog: [cabinet-duplicates-changelog.md](./cabinet-duplicates-changelog.md) |
 | `unique-words`, `unique` | уникальные слова |
 | `text-analyzer` | анализ текста — badge **vX.Y**; **сравнение с конкурентом** (toggle + URL); публичная ссылка: `POST text-analyzer/public-share`, `GET public/share/text-analyzer/{token}`; **PDF:** эталон v6.9s → [cabinet-pdf-report-template.md](./cabinet-pdf-report-template.md); changelog: [cabinet-text-analyzer-changelog.md](./cabinet-text-analyzer-changelog.md); smoke: `scripts/smoke-text-analyzer.sh` |
 | `html-editor` | HTML-редактор |

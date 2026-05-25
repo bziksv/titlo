@@ -5,6 +5,7 @@ import { HeroParallaxMedia } from "@/components/module-landings/HeroParallaxMedi
 import { ModuleTechSection } from "@/components/module-landings/ModuleTechSection";
 import { ModuleInsightsSection } from "@/components/module-landings/ModuleInsightsSection";
 import { ModulePlainSection } from "@/components/module-landings/ModulePlainSection";
+import { DuplicatesDemoWidget } from "@/components/demo/DuplicatesDemoWidget";
 import { ModuleLeadCta } from "@/components/ModuleLeadCta";
 import { ModuleIcon } from "@/lib/module-icons";
 import {
@@ -135,6 +136,12 @@ export function UdalenieDublikatovLanding({ module }: Props) {
               <p className="mt-2 text-sm text-slate-600">{s.label}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="border-b border-slate-200 bg-slate-50 py-14 md:py-16">
+        <div className="mx-auto max-w-6xl px-4">
+          <DuplicatesDemoWidget />
         </div>
       </section>
 
