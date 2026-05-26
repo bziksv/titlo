@@ -271,6 +271,7 @@ SKIP_EMAIL_VERIFICATION=true
 | `public/share/relevance/{token}/history/{id}` | RelevancePublicShareController | детальный просмотр проверки по публичной ссылке |
 | `public/share/text-analyzer/{token}` | TextAnalyzerPublicShareController | публичный отчёт анализа текста (30 дней, read-only) |
 | `public/share/html-editor/{token}` | HtmlEditorPublicShareController | публичный HTML-текст (30 дней, превью + код) |
+| `public/share/site-monitoring/{token}` | SiteMonitoringPublicShareController | публичный отчёт мониторинга сайта (30 дней, read-only) |
 | `support/*` | SupportTicketController | тикеты поддержки |
 | `ideas/*` | FeatureIdeaController | доска идей: предложения, модерация, голоса |
 | `balance-add/result` | BalanceAddController | callback оплаты |
@@ -285,7 +286,7 @@ SKIP_EMAIL_VERIFICATION=true
 | `monitoring/*` | мониторинг позиций (крупнейший блок) |
 | `analyze-relevance`, `history`, … | анализ релевантности — TF/IDF/score: `App\Support\TfidfMetrics`, расчёт в `App\Relevance` (агрегат конкурентов, IDF = log₁₀(N/df), облака «TF‑IDF score» по `weight = score`; «TF clouds» — частота через `TextAnalyzer::prepareCloud`) |
 | `meta-tags/*` | мета-теги |
-| `cluster/*` | кластеризатор — `/cluster-v2` (новый UI: `cabinet-cluster-v2.css/js`, `cluster-v2/`), legacy `/cluster`; ручное редактирование: **`/edit-clusters-v2/{id}`** (v2, select) и `/edit-clusters/{id}` (classic); `cabinet-cluster.css`, `cluster/partials/module-nav`; `/cluster-configuration` — KPI |
+| `cluster/*` | кластеризатор — **`/cluster`** (анализатор), `/cluster/regions`, `/show-cluster-result/{id}`, `/edit-clusters/{id}`, `/cluster-projects`; views в `cluster-v2/`; редиректы с `*-v2` URL; описание модуля — `descriptions.code=cluster`; `/cluster-configuration` — KPI |
 | `competitor-analysis` | анализ конкурентов — `public/css/cabinet-competitor-analysis.css`, nav pills; `/competitors-config` — KPI месяца + уникальные user_id за 30/60/90 дн. (`SearchCompetitors::countUniqueUsersSinceDays`) |
 | `counting-text-length` | подсчёт длины текста — `cabinet-text-length.css/js`, badge **v1.0s**; changelog: [cabinet-text-length-changelog.md](./cabinet-text-length-changelog.md) |
 | `list-comparison` | сравнение списков — `cabinet-list-comparison.css/js`, badge **v1.0s**; changelog: [cabinet-list-comparison-changelog.md](./cabinet-list-comparison-changelog.md) |
@@ -297,7 +298,7 @@ SKIP_EMAIL_VERIFICATION=true
 | `unique-words`, `unique` | уникальные слова |
 | `text-analyzer` | анализ текста — badge **vX.Y**; **сравнение с конкурентом** (toggle + URL); публичная ссылка: `POST text-analyzer/public-share`, `GET public/share/text-analyzer/{token}`; **PDF:** эталон v6.9s → [cabinet-pdf-report-template.md](./cabinet-pdf-report-template.md); changelog: [cabinet-text-analyzer-changelog.md](./cabinet-text-analyzer-changelog.md); smoke: `scripts/smoke-text-analyzer.sh` |
 | `html-editor` | HTML-редактор — поиск, пресеты, split, публичная ссылка, badge **v1.5.3s**; `POST html-editor/public-share`; changelog: [cabinet-html-editor-changelog.md](./cabinet-html-editor-changelog.md) |
-| `site-monitoring` | мониторинг сайтов |
+| `site-monitoring` | мониторинг сайтов — LTE4, badge **v1.4.0s**; stats modal: PDF + публичная ссылка (`POST site-monitoring-export-pdf`, `POST site-monitoring-public-share`, `GET public/share/site-monitoring/{token}`); PDF эталон: [cabinet-pdf-report-template.md](./cabinet-pdf-report-template.md); админка `/site-monitoring-config`; changelog: [cabinet-site-monitoring-changelog.md](./cabinet-site-monitoring-changelog.md) |
 | `domain-information` | срок регистрации доменов |
 | `backlink` | отслеживание ссылок |
 | `keyword-generator` | генератор слов |
@@ -332,7 +333,7 @@ SKIP_EMAIL_VERIFICATION=true
 | `udalenie-dublikatov` | `/duplicates` | Duplicates |
 | `vydelenie-unikalnykh-slov-v-tekste` | `/unique` | `cabinet-unique` v1.0s, demo API |
 | `otslezhivanie-ssylok` | `/backlink` | — |
-| `monitoring-saytov` | `/site-monitoring` | — |
+| `monitoring-saytov` | `/site-monitoring` | Site monitoring · `cabinet-site-monitoring` v1.1s |
 | `otslezhivanie-sroka-registratsii-domenov` | `/domain-information` | — |
 | `generator_slov` | `/keyword-generator` | Keyword generator |
 

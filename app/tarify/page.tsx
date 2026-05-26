@@ -16,7 +16,7 @@ export default function TarifyPage() {
   return (
     <PageShell
       title={page?.h1 ?? "Тарифы"}
-      lead="Выберите план под объём задач. Все утилиты (генераторы, UTM, ROI) — без лимитов на любом тарифе."
+      lead="Выберите план под объём задач. На бесплатном тарифе — по 3 проверки в месяц на анализ релевантности, текста и конкурентов; кластеризатор — 50 условных запросов (см. таблицу). Утилиты без лимитов. Мониторинг сайтов на Free: кабинет и Telegram; email — на платных."
     >
       <div className="mb-10 rounded-2xl border border-amber-200 bg-amber-50 px-5 py-4 text-sm text-amber-950">
         <strong className="font-semibold">Скидка за длительность:</strong> {TARIFF_DISCOUNT_NOTE}
@@ -35,7 +35,8 @@ export default function TarifyPage() {
       <section className="mt-16">
         <h2 className="text-xl font-bold text-slate-900 md:text-2xl">Сравнение лимитов по модулям</h2>
         <p className="mt-2 text-slate-600">
-          Наглядная таблица — чем отличаются тарифы по ключевым инструментам.
+          Наглядная таблица — чем отличаются тарифы по ключевым инструментам. На Free — по{" "}
+          <strong className="font-medium text-slate-800">3 проверки</strong> в месяц на SEO-модули вверху таблицы.
         </p>
         <div className="mt-6">
           <TariffComparison />

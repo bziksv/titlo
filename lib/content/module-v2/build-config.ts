@@ -30,6 +30,7 @@ const DEMO_WIDGET_BY_BASE: Partial<Record<string, ModuleV2DemoWidget>> = {
   "vydelenie-unikalnykh-slov-v-tekste": "unique-words",
   "html-redaktor": "html-editor",
   "klasterizator-klyuchevykh-slov": "cluster",
+  "monitoring-saytov": "site-monitoring",
 };
 
 const DEFAULT_ORBIT: readonly ModuleV2OrbitNode[] = [

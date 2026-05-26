@@ -346,3 +346,29 @@ export type ClusterDemoRunBody = {
 export type ClusterDemoPollBody = {
   progress_id: string;
 };
+
+export type SiteMonitoringDemoResult = {
+  broken: boolean;
+  status: string;
+  status_key: string;
+  code: number;
+  response_time_ms: number;
+  phrase_used: boolean;
+};
+
+export type SiteMonitoringDemoResponse = {
+  demo: true;
+  module: "monitoring-saytov";
+  remaining: number;
+  limits: {
+    max_runs_per_day: number;
+  };
+  result: SiteMonitoringDemoResult;
+  upgrade: DemoUpgrade;
+};
+
+export type SiteMonitoringDemoRunBody = {
+  url: string;
+  phrase?: string;
+  waiting_time?: number;
+};

@@ -70,7 +70,7 @@ Changelog модуля: [cabinet-text-analyzer-changelog.md](./cabinet-text-anal
 
 ### B. Support-класс брендинга
 
-**Вариант 1 (быстро):** переиспользовать `TextAnalyzerPdfBranding` — методы `coverPageImagePath()`, `logoIconPath()`, `viewData()`, `ensureCoverAssets()`. В `$payload` обложки передать свой `cover_rev` и мета (источник, дата, версия модуля).
+**Вариант 1 (быстро):** переиспользовать `TextAnalyzerPdfBranding` — методы `coverPageImagePath()`, `logoIconPath()`, `viewData()`, `ensureCoverAssets()`. В `$meta` передать свой **`cover_rev`** (иначе подтянется кэш чужого модуля) и тексты обложки: `cover_kicker`, `cover_title`, `cover_lead`, `cover_footer` + `source_label`, `generated_at`, `version`. Эталон: `SiteMonitoringPdfService::renderBinary()`.
 
 **Вариант 2 (отдельный модуль):** скопировать класс → `{Module}PdfBranding`, оставить общие константы `BRAND_*`, `coverPageImagePath` / `writeCoverPagePng` без изменений логики.
 

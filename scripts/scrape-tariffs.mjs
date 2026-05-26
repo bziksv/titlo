@@ -13,7 +13,7 @@ const SITE = "https://redbox.su/tarify/";
 const html = await (await fetch(SITE)).text();
 const $ = cheerio.load(html);
 
-const PRICES = { Free: "0 ₽", Optimal: "1 500 ₽", Ultimate: "3 000 ₽", Maximum: "5 000 ₽" };
+const PRICES = { Free: "0 ₽", Optimal: "2 000 ₽", Ultimate: "4 000 ₽", Maximum: "6 000 ₽" };
 const NAMES_RU = {
   Free: "Бесплатный",
   Optimal: "Оптимальный",
@@ -91,8 +91,8 @@ for (const plan of plans) {
       const n = f.match(/(\d[\d\s]*)\s*запрос/i)?.[1];
       compare.competitors[plan.id] = n ? formatNum(n) : "—";
     }
-    if (low.includes("мониторинг позиций") || (low.includes("позиц") && low.includes("ключ"))) {
-      const n = f.match(/(\d[\d\s]*)\s*ключ/i)?.[1];
+    if (low.includes("мониторинг позиций") || (low.includes("позиц") && (low.includes("провер") || low.includes("ключ")))) {
+      const n = f.match(/(\d[\d\s]*)\s*(?:провер|ключ)/i)?.[1];
       compare.positions[plan.id] = n ? formatNum(n) : "—";
     }
     if (low.includes("мониторинг сайтов") || (low.includes("доступност") && low.includes("мониторинг"))) {
@@ -154,7 +154,7 @@ lines.push(
   '  { label: "Анализ релевантности, запросов/мес", key: "relevance" as const },',
   '  { label: "Анализ текста, запросов/мес", key: "text" as const },',
   '  { label: "Анализ конкурентов, запросов/мес", key: "competitors" as const },',
-  '  { label: "Мониторинг позиций, ключей", key: "positions" as const },',
+  '  { label: "Мониторинг позиций, проверок/мес", key: "positions" as const },',
   '  { label: "Мониторинг сайтов, проектов", key: "sites" as const },',
   '  { label: "Мета-теги, проектов / страниц", key: "meta" as const },',
   '  { label: "Отслеживание ссылок, проектов / ссылок", key: "links" as const },',

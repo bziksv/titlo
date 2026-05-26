@@ -1,4 +1,5 @@
 import { ClusterDemoWidget } from "@/components/demo/ClusterDemoWidget";
+import { SiteMonitoringDemoWidget } from "@/components/demo/SiteMonitoringDemoWidget";
 import { CompetitorAnalysisDemoWidget } from "@/components/demo/CompetitorAnalysisDemoWidget";
 import { DuplicatesDemoWidget } from "@/components/demo/DuplicatesDemoWidget";
 import { HtmlEditorDemoWidget } from "@/components/demo/HtmlEditorDemoWidget";
@@ -43,6 +44,10 @@ const SECTION_COPY: Record<
   cluster: {
     title: "Попробуйте кластеризатор без регистрации",
     lead: "До 10 фраз без сохранения. В кабинете — проекты, Wordstat, большие ядра, конкуренты и экспорт XLS.",
+  },
+  "site-monitoring": {
+    title: "Проверьте доступность сайта без регистрации",
+    lead: "Разовая HTTP-проверка как в кабинете. Расписание, uptime и оповещения — после регистрации.",
   },
 };
 
@@ -93,6 +98,8 @@ export function ModuleV2DemoSection({ kind }: Props) {
             <HtmlEditorDemoWidget />
           ) : kind === "cluster" ? (
             <ClusterDemoWidget />
+          ) : kind === "site-monitoring" ? (
+            <SiteMonitoringDemoWidget />
           ) : (
             <TextLengthDemoWidget />
           )}

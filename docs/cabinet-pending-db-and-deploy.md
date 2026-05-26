@@ -5,6 +5,18 @@
 
 **Сейчас:** работаем **в локали** (`:3002`, БД `178.250.157.140` из `.env`). Прод **cabinet.datagon.ru** — отдельный шаг по [cabinet-deploy.md](./cabinet-deploy.md).
 
+### Мониторинг позиций — формулировка лимита — 2026-05-26
+
+Лимит `monitoring` в `tariff_setting_values` — **число проверок в месяц** (счётчик `monitoring_limits`), не ключевых фраз. В БД: `tariff_settings.name` → «Мониторинг позиций (проверок/мес)»; Free = **50**, Optimal 20 000, Ultimate 50 000, Maximum 120 000. Маркетинг: `/tarify/`, сноска в `TariffComparison.tsx`.
+
+### Цены платных тарифов — 2026-05-26
+
+В `tariff_setting_values` (`code = price`, **₽/день**): Optimal **65**, Ultimate **129**, Maximum **194** (оплата за 1 календарный месяц ≈ 2 015 / 3 999 / 6 014 ₽). Маркетинг — округлённые **2 000 / 4 000 / 6 000 ₽/мес**: `lib/content/tariffs.generated.ts`, http://localhost:3001/tarify/
+
+### Лимиты Free (SEO-модули) — 2026-05-26
+
+На общей БД для тарифа `Free` в `tariff_setting_values` выставлено **3** для `RelevanceAnalysis`, `TextAnalyzer`, `CompetitorAnalysisPhrases` (было 10). `Clusters` для Free — **50** (было 20). Маркетинг: http://localhost:3001/tarify/ (`lib/content/tariffs.generated.ts`). **Прод:** при необходимости повторить те же `UPDATE` на `178.250.157.140` или через админку «Настройки тарифов».
+
 **Когда спросить «что делаем с БД»** — читать этот файл целиком: §2 (миграции), §3 (удаление behavior), §4 (чеклисты).
 
 ---
@@ -38,6 +50,11 @@ php artisan migrate:status | grep 2026_05_22
 | Публичный шаринг анализа текста | `2026_05_23_200000_create_text_analyzer_public_shares_table.php` | `text_analyzer_public_shares` (token, payload JSON, 30 дней) | local ✓ | ⏳ |
 | HTML-редактор: пресеты пользователя | `2026_05_25_220000_create_html_editor_presets_table.php` | `html_editor_presets` (user_id, name, html) | local ✓ | ⏳ |
 | HTML-редактор: публичные ссылки | `2026_05_25_223000_create_html_editor_public_shares_table.php` | `html_editor_public_shares` (description_id, token, payload, 30 дней) | local ✓ | ⏳ |
+| Мониторинг сайтов: настройки уведомлений | `2026_05_26_120000_create_site_monitoring_configs_table.php` | `site_monitoring_configs` (интервал повтора, каналы) | local ⏳ | ⏳ |
+| Лог проверок мониторинга сайтов | `2026_05_26_140000_create_domain_monitoring_check_logs_table.php` | `domain_monitoring_check_logs` (история проверок, модалка на `/site-monitoring`) | local ⏳ | ⏳ |
+| Free: интервал мониторинга 60 мин | `2026_05_26_150000_set_free_tariff_domain_monitoring_timing_to_60.php` | `domain_monitoring.timing = 60` для пользователей с ролью Free | local ⏳ | ⏳ |
+| Мониторинг сайтов: публичные ссылки | `2026_05_26_160000_create_site_monitoring_public_shares_table.php` | `site_monitoring_public_shares` (domain_monitoring_id, token, payload) | local ⏳ | ⏳ |
+| Мониторинг сайтов: срок ссылки nullable | `2026_05_26_170000_make_site_monitoring_public_shares_expires_at_nullable.php` | `expires_at` NULL = бессрочно | local ⏳ | ⏳ |
 
 \* В отдельных сессиях агента миграции уже гоняли на `DB_HOST` из local `.env` — **перед продом** сверить `migrate:status` на сервере и в локали.
 

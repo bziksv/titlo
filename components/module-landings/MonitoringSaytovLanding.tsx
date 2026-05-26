@@ -5,6 +5,7 @@ import { HeroParallaxMedia } from "@/components/module-landings/HeroParallaxMedi
 import { ModuleTechSection } from "@/components/module-landings/ModuleTechSection";
 import { ModuleInsightsSection } from "@/components/module-landings/ModuleInsightsSection";
 import { ModulePlainSection } from "@/components/module-landings/ModulePlainSection";
+import { SiteMonitoringDemoWidget } from "@/components/demo/SiteMonitoringDemoWidget";
 import { ModuleLeadCta } from "@/components/ModuleLeadCta";
 import { ModuleVideoGallery } from "@/components/ModuleVideoGallery";
 import { ModuleIcon } from "@/lib/module-icons";
@@ -139,6 +140,20 @@ export function MonitoringSaytovLanding({ module }: Props) {
         </div>
       </section>
 
+      <section className="border-b border-slate-200 bg-slate-50 py-14 md:py-16">
+        <div className="mx-auto max-w-6xl px-4">
+          <p className="mb-6 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-950">
+            <strong className="font-semibold">Тариф «Бесплатный»:</strong> проверки и статус в кабинете, оповещения в{" "}
+            <span className="whitespace-nowrap">Telegram</span> при подключённом боте. Письма о сбоях на email — на{" "}
+            <Link href="/tarify/" className="font-medium text-brand-700 underline-offset-2 hover:underline">
+              платных тарифах
+            </Link>
+            .
+          </p>
+          <SiteMonitoringDemoWidget />
+        </div>
+      </section>
+
       <ModuleTechSection
         section={SITE_MON_TECH_SECTION}
         layers={SITE_MON_TECH_LAYERS}
@@ -154,7 +169,7 @@ export function MonitoringSaytovLanding({ module }: Props) {
             <h2 className="mt-2 text-center text-2xl font-bold text-slate-900 md:text-3xl">
               От проекта до оповещения о сбое
             </h2>
-            <ol className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <ol className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
               {SITE_MON_STEPS.map((item) => (
                 <li
                   key={item.step}
@@ -171,7 +186,7 @@ export function MonitoringSaytovLanding({ module }: Props) {
           <section className="mt-20">
             <h2 className="text-2xl font-bold text-slate-900">Что отслеживаем</h2>
             <p className="mt-3 max-w-2xl text-slate-600">
-              Четыре направления — от uptime до SEO-контроля и настроек интервала.
+              Uptime, лог проверок, управление проектами и отчёты для клиента.
             </p>
             <div className="mt-10 grid gap-6 sm:grid-cols-2">
               {SITE_MON_SLICES.map((z, i) => (

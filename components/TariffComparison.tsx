@@ -1,5 +1,28 @@
 import { TARIFF_COMPARE, TARIFF_COMPARE_ROWS, TARIFF_PLANS } from "@/lib/content/tariffs";
 
+function renderSitesAlertsCell(planId: string) {
+  if (planId === "Free") {
+    return (
+      <span className="inline-block text-center text-sm leading-snug text-slate-600">
+        Только Telegram
+        <span className="text-brand-600" title="После подключения бота в профиле">
+          *
+        </span>
+      </span>
+    );
+  }
+
+  return <span className="text-sm font-medium text-emerald-700">Email и Telegram</span>;
+}
+
+function renderCompareCell(rowKey: string, planId: string, raw: string) {
+  if (rowKey === "sitesAlerts") {
+    return renderSitesAlertsCell(planId);
+  }
+
+  return raw;
+}
+
 export function TariffComparison() {
   const columns = TARIFF_PLANS.map((p) => ({ id: p.id, name: p.name, highlighted: p.highlighted }));
 
@@ -40,7 +63,7 @@ export function TariffComparison() {
                     col.highlighted ? "bg-brand-50/50 font-semibold" : "font-medium"
                   }`}
                 >
-                  {TARIFF_COMPARE[row.key][col.id]}
+                  {renderCompareCell(row.key, col.id, TARIFF_COMPARE[row.key][col.id])}
                 </td>
               ))}
             </tr>
@@ -55,6 +78,23 @@ export function TariffComparison() {
           </tr>
         </tbody>
       </table>
+      <p className="border-t border-slate-100 px-4 py-3 text-xs leading-relaxed text-slate-600">
+        <span className="font-medium text-slate-700">Мониторинг позиций:</span> лимит — число{" "}
+        <strong className="font-medium text-slate-700">проверок</strong> в месяц (списаний из тарифа). Одна
+        проверка ≈ фраза × регион; при съёме частотности Wordstat — × число типов запроса. В кабинете перед
+        запуском показывается, сколько проверок будет списано.
+      </p>
+      <p className="border-t border-slate-100 px-4 py-3 text-xs leading-relaxed text-slate-600">
+        <span className="font-medium text-slate-700">Кластеризатор:</span> лимит считается в{" "}
+        <strong className="font-medium text-slate-700">условных запросах</strong> за календарный месяц — число
+        уникальных фраз в списке, умноженное на коэффициент (1 + каждый включённый тип поиска: базовый,
+        релевантность, фразы, целевые). Пример: 5 фраз и два типа поиска → 5 × 3 = 15 из месячного лимита.
+      </p>
+      <p className="border-t border-slate-100 px-4 py-3 text-xs leading-relaxed text-slate-600">
+        <span className="font-medium text-slate-700">Мониторинг сайтов:</span> на Free письма о сбоях не
+        отправляются — статус в кабинете и Telegram после подключения бота в профиле (
+        <span className="whitespace-nowrap">*</span>).
+      </p>
     </div>
   );
 }

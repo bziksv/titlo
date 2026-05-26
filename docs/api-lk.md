@@ -221,6 +221,16 @@ UI: `ClusterDemoWidget.tsx` на http://localhost:3001/klasterizator-klyuchevykh
 
 Проверка: `php scripts/verify-cluster-demo.php` (cabinet.datagon.ru).
 
+### Demo API: мониторинг сайтов
+
+Клиент: `lib/demo/run-site-monitoring-demo-client.ts` — `POST /api/demo/monitoring-saytov/run` → кабинет `api/demo/monitoring-saytov/run`.
+
+Тело: `{ "url": "https://example.com/", "phrase": "", "waiting_time": 15 }`.
+
+Лимиты (`config/cabinet-site-monitoring.demo`): 5 проверок/сутки; без сохранения проекта.
+
+UI: `SiteMonitoringDemoWidget.tsx` на http://localhost:3001/monitoring-saytov/
+
 ### Demo API: удаление дубликатов
 
 Клиент: `lib/demo/run-dedup-demo-client.ts` — `POST /api/lk/api/demo/udalenie-dublikatov/run`, fallback `POST /api/demo/udalenie-dublikatov/run`.

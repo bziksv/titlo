@@ -250,7 +250,7 @@ export const MONITORING_V3_OUTRO = {
     { n: "2", title: "Проект и ключи", text: "Домен, регион поиска, список запросов." },
     { n: "3", title: "Проверка позиций", text: "Яндекс и Google — место в выдаче и URL по каждому ключу." },
   ],
-  freeNote: "На бесплатном тарифе — до 500 проверок ключей в месяц.",
+  freeNote: "На бесплатном тарифе — до 50 проверок в месяц (см. тарифы).",
   links: [
     { href: "/monitoring-pozicii-sayta/", label: "Классический лендинг" },
     { href: "/monitoring-pozicii-v2/", label: "Версия v2" },

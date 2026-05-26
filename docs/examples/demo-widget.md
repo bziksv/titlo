@@ -11,7 +11,8 @@
 - [кластеризатор](http://localhost:3001/klasterizator-klyuchevykh-slov/) — до 10 фраз, classic Soft, живые кластеры
 - [удаление дубликатов](http://localhost:3001/udalenie-dublikatov/) — 7 фильтров + KPI; расширенные опции в кабинете
 - [сравнение списков](http://localhost:3001/sravnenie-spiskov-klyuchevykh-fraz/) — 4 режима + опции; лимит только по символам (3k на список)
-- [HTML-редактор](http://localhost:3001/html-redaktor/) — CKEditor + split-view как в кабинете; лимит только на сохранение (проекты, шаринг — после регистрации)
+- [HTML-редактор](http://localhost:3001/html-redaktor/) — CKEditor + split-view; лимит только на сохранение
+- [мониторинг сайтов](http://localhost:3001/monitoring-saytov/) — разовая HTTP-проверка в демо; проекты и оповещения в кабинете
 
 ## Файлы (пилот)
 
