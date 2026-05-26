@@ -1,4 +1,5 @@
 import { ClusterDemoWidget } from "@/components/demo/ClusterDemoWidget";
+import { DomainInformationDemoWidget } from "@/components/demo/DomainInformationDemoWidget";
 import { SiteMonitoringDemoWidget } from "@/components/demo/SiteMonitoringDemoWidget";
 import { CompetitorAnalysisDemoWidget } from "@/components/demo/CompetitorAnalysisDemoWidget";
 import { DuplicatesDemoWidget } from "@/components/demo/DuplicatesDemoWidget";
@@ -7,6 +8,7 @@ import { ListComparisonDemoWidget } from "@/components/demo/ListComparisonDemoWi
 import { UniqueWordsDemoWidget } from "@/components/demo/UniqueWordsDemoWidget";
 import { TextAnalyzerDemoWidget } from "@/components/demo/TextAnalyzerDemoWidget";
 import { TextLengthDemoWidget } from "@/components/demo/TextLengthDemoWidget";
+import { MetaTagsDemoWidget } from "@/components/demo/MetaTagsDemoWidget";
 import type { ModuleV2DemoWidget } from "@/lib/content/module-v2/types";
 
 const SECTION_COPY: Record<
@@ -48,6 +50,14 @@ const SECTION_COPY: Record<
   "site-monitoring": {
     title: "Проверьте доступность сайта без регистрации",
     lead: "Разовая HTTP-проверка как в кабинете. Расписание, uptime и оповещения — после регистрации.",
+  },
+  "domain-information": {
+    title: "Проверьте домен без регистрации",
+    lead: "Разовая WHOIS-проверка как в кабинете. Мониторинг по расписанию, DNS и оповещения — после регистрации.",
+  },
+  "meta-tags": {
+    title: "Проверьте мета-теги без регистрации",
+    lead: "Разовая проверка одной страницы. В кабинете — мониторинг до 500 URL, снимки раз в сутки и уведомления в Telegram, если кто-то изменил title, description или canonical.",
   },
 };
 
@@ -100,6 +110,10 @@ export function ModuleV2DemoSection({ kind }: Props) {
             <ClusterDemoWidget />
           ) : kind === "site-monitoring" ? (
             <SiteMonitoringDemoWidget />
+          ) : kind === "domain-information" ? (
+            <DomainInformationDemoWidget />
+          ) : kind === "meta-tags" ? (
+            <MetaTagsDemoWidget />
           ) : (
             <TextLengthDemoWidget />
           )}

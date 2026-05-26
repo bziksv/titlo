@@ -275,6 +275,16 @@ cd /var/www/cabinet_data_usr/data/www/cabinet.datagon.ru
 
 `schedule:run` в crontab с `>> /dev/null` **ничего не выводит**; в лог пишется строка, если есть кандидаты или удаления. Вне 02:15 задача через `schedule:run` **не запустится** — для теста используйте `users:prune-unverified`.
 
+**Кластеризатор — автоудаление `cluster_results`:** ежедневно в **03:10** (`ClusterCleaningResults`), срок — `cluster_configuration.cleaning_interval` (страница `/cluster-configuration` → «Настройка автоудаления»). Ручная проверка:
+
+```bash
+cd /var/www/cabinet_data_usr/data/www/cabinet.datagon.ru
+/opt/php74/bin/php artisan cluster:prune-results --dry-run
+/opt/php74/bin/php artisan cluster:prune-results
+```
+
+В лог (`storage/logs/laravel-*.log`, уровень **info**) попадёт строка вида `ClusterCleaningResults: removed N of M cluster_results…`. Старый код писал только `Log::debug` — на проде с `LOG_LEVEL=info` удаление могло идти, но в логах было не видно.
+
 ---
 
 ## Troubleshooting после деплоя

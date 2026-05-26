@@ -5,6 +5,7 @@ import { HeroParallaxMedia } from "@/components/module-landings/HeroParallaxMedi
 import { ModuleTechSection } from "@/components/module-landings/ModuleTechSection";
 import { ModuleInsightsSection } from "@/components/module-landings/ModuleInsightsSection";
 import { ModulePlainSection } from "@/components/module-landings/ModulePlainSection";
+import { DomainInformationDemoWidget } from "@/components/demo/DomainInformationDemoWidget";
 import { ModuleLeadCta } from "@/components/ModuleLeadCta";
 import { ModuleVideoGallery } from "@/components/ModuleVideoGallery";
 import { ModuleIcon } from "@/lib/module-icons";
@@ -19,6 +20,7 @@ import {
   DOMAIN_REG_INSIGHTS_OUTCOMES,
   DOMAIN_REG_OPTIONS,
   DOMAIN_REG_PLAIN,
+  DOMAIN_REG_POST_REG,
   DOMAIN_REG_SCREENSHOTS,
   DOMAIN_REG_SLICES,
   DOMAIN_REG_STATS,
@@ -137,6 +139,42 @@ export function OtslezhivanieSrokaRegistratsiiDomenovLanding({ module }: Props) 
               <p className="mt-2 text-sm text-slate-600">{s.label}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="border-b border-slate-200 bg-slate-50 py-14 md:py-16">
+        <div className="mx-auto max-w-6xl px-4">
+          <p className="mb-6 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-950">
+            <strong className="font-semibold">Тариф «Бесплатный»:</strong> мониторинг и таблица в кабинете, оповещения в{" "}
+            <span className="whitespace-nowrap">Telegram</span> при подключённом боте. Письма о смене срока или DNS на
+            email — на{" "}
+            <Link href="/tarify/" className="font-medium text-brand-700 underline-offset-2 hover:underline">
+              платных тарифах
+            </Link>
+            .
+          </p>
+          <DomainInformationDemoWidget />
+        </div>
+      </section>
+
+      <section className="border-b border-slate-200 bg-white py-14 md:py-16">
+        <div className="mx-auto max-w-6xl px-4">
+          <p className="text-center text-sm font-semibold uppercase tracking-widest text-brand-600">
+            {DOMAIN_REG_POST_REG.eyebrow}
+          </p>
+          <h2 className="mt-2 text-center text-2xl font-bold text-slate-900 md:text-3xl">{DOMAIN_REG_POST_REG.title}</h2>
+          <p className="mx-auto mt-4 max-w-2xl text-center text-slate-600">{DOMAIN_REG_POST_REG.lead}</p>
+          <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {DOMAIN_REG_POST_REG.items.map((item) => (
+              <li
+                key={item.title}
+                className="rounded-2xl border border-slate-200 bg-slate-50/80 p-6 shadow-sm transition hover:border-brand-200 hover:bg-white"
+              >
+                <h3 className="text-lg font-bold text-slate-900">{item.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate-600">{item.text}</p>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 

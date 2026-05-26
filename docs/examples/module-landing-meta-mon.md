@@ -7,6 +7,8 @@
 
 `ProverkaMetaTegovLanding` · `lib/content/proverka-meta-tegov-page.ts`.
 
+**Демо:** `MetaTagsDemoWidget` после полосы статистики — `POST /api/demo/proverka-meta-tegov-online/run` (см. [demo-widget.md](./demo-widget.md)).
+
 Акцент: **title, description, canonical, noindex, H1, до 500 URL, история изменений**.
 
 Проверка: `npm run verify:meta-mon` (порт **3001**)

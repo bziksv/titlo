@@ -1,6 +1,6 @@
 import { TARIFF_COMPARE, TARIFF_COMPARE_ROWS, TARIFF_PLANS } from "@/lib/content/tariffs";
 
-function renderSitesAlertsCell(planId: string) {
+function renderTariffAlertsCell(planId: string) {
   if (planId === "Free") {
     return (
       <span className="inline-block text-center text-sm leading-snug text-slate-600">
@@ -16,8 +16,8 @@ function renderSitesAlertsCell(planId: string) {
 }
 
 function renderCompareCell(rowKey: string, planId: string, raw: string) {
-  if (rowKey === "sitesAlerts") {
-    return renderSitesAlertsCell(planId);
+  if (rowKey === "sitesAlerts" || rowKey === "domainsAlerts") {
+    return renderTariffAlertsCell(planId);
   }
 
   return raw;
@@ -91,9 +91,9 @@ export function TariffComparison() {
         релевантность, фразы, целевые). Пример: 5 фраз и два типа поиска → 5 × 3 = 15 из месячного лимита.
       </p>
       <p className="border-t border-slate-100 px-4 py-3 text-xs leading-relaxed text-slate-600">
-        <span className="font-medium text-slate-700">Мониторинг сайтов:</span> на Free письма о сбоях не
-        отправляются — статус в кабинете и Telegram после подключения бота в профиле (
-        <span className="whitespace-nowrap">*</span>).
+        <span className="font-medium text-slate-700">Мониторинг сайтов и отслеживание срока регистрации доменов:</span>{" "}
+        на Free email-оповещения (о сбое сайта, смене DNS, сроке регистрации) не отправляются — данные в
+        кабинете и Telegram после подключения бота в профиле (<span className="whitespace-nowrap">*</span>).
       </p>
     </div>
   );

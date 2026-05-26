@@ -64,7 +64,25 @@ export type ModuleV2FooterUi = {
 export type ModuleV2OrbitUi = ModuleV2SectionCopy & { hubTitle: string };
 
 /** Виджет «Попробовать бесплатно» на публичном v2-лендинге */
-export type ModuleV2DemoWidget = "text-analyzer" | "text-length" | "competitor-analysis" | "duplicates" | "list-comparison" | "unique-words" | "html-editor" | "cluster" | "site-monitoring";
+export type ModuleV2DemoWidget =
+  | "text-analyzer"
+  | "text-length"
+  | "competitor-analysis"
+  | "duplicates"
+  | "list-comparison"
+  | "unique-words"
+  | "html-editor"
+  | "cluster"
+  | "site-monitoring"
+  | "domain-information"
+  | "meta-tags";
+
+export type ModuleV2PostReg = {
+  eyebrow: string;
+  title: string;
+  lead: string;
+  items: readonly { title: string; text: string }[];
+};
 
 export type ModuleV2PageConfig = {
   slug: string;
@@ -84,6 +102,8 @@ export type ModuleV2PageConfig = {
   videos: readonly { id: string; title: string; description: string }[];
   faq: readonly { q: string; a: string }[];
   footerUi: ModuleV2FooterUi;
-  /** Секция демо после metric wall (если задано) */
+  /** Секция демо после pain/gain (если задано) */
   demoWidget?: ModuleV2DemoWidget;
+  /** Преимущества кабинета после демо */
+  postReg?: ModuleV2PostReg;
 };

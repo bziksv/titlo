@@ -7,6 +7,7 @@ import { ModuleInsightsSection } from "@/components/module-landings/ModuleInsigh
 import { ModulePlainSection } from "@/components/module-landings/ModulePlainSection";
 import { ModuleLeadCta } from "@/components/ModuleLeadCta";
 import { ModuleVideoGallery } from "@/components/ModuleVideoGallery";
+import { MetaTagsDemoWidget } from "@/components/demo/MetaTagsDemoWidget";
 import { ModuleIcon } from "@/lib/module-icons";
 import {
   META_MON_ADVANTAGES,
@@ -136,6 +137,12 @@ export function ProverkaMetaTegovLanding({ module }: Props) {
               <p className="mt-2 text-sm text-slate-600">{s.label}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="border-b border-slate-200 bg-slate-50 py-14 md:py-16">
+        <div className="mx-auto max-w-6xl px-4">
+          <MetaTagsDemoWidget />
         </div>
       </section>
 

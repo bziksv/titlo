@@ -3,9 +3,9 @@ const PATH = "/proverka-meta-tegov-online/";
 
 const MUST_HAVE = [
   "Мониторинг мета-тегов",
-  "Что проверяем в отчёте",
-  "История изменений",
-  "Мета-теги простым языком",
+  "Проверьте мета-теги",
+  "Попробовать бесплатно",
+  "Title, description",
 ];
 
 const MUST_NOT = [
@@ -29,7 +29,7 @@ async function main() {
   const stale = MUST_NOT.filter((s) => html.includes(s));
 
   if (missing.length === 0 && stale.length === 0) {
-    console.log(`OK ${url} — кастомный лендинг`);
+    console.log(`OK ${url} — лендинг с демо`);
     process.exit(0);
   }
   console.error(`FAIL ${url}`);

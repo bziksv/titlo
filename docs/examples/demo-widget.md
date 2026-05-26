@@ -13,6 +13,8 @@
 - [сравнение списков](http://localhost:3001/sravnenie-spiskov-klyuchevykh-fraz/) — 4 режима + опции; лимит только по символам (3k на список)
 - [HTML-редактор](http://localhost:3001/html-redaktor/) — CKEditor + split-view; лимит только на сохранение
 - [мониторинг сайтов](http://localhost:3001/monitoring-saytov/) — разовая HTTP-проверка в демо; проекты и оповещения в кабинете
+- [отслеживание срока регистрации доменов](http://localhost:3001/otslezhivanie-sroka-registratsii-domenov/) — разовая WHOIS в демо; мониторинг и оповещения в кабинете
+- [мониторинг мета-тегов](http://localhost:3001/proverka-meta-tegov-online/) — разовая проверка title/description/H1 в демо; проекты и история в кабинете
 
 ## Файлы (пилот)
 
@@ -48,6 +50,14 @@
 | **Уникальные слова — lk** | `UniqueWordsDemoController`, `UniqueWordsAnalysisService` |
 | BFF к lk | `app/api/lk/[...path]/route.ts`, `lib/lk-api.ts` |
 | Guest cookie | `lib/demo/guest-session.ts` |
+| **Домены — UI** | `DomainInformationDemoWidget.tsx` |
+| **Домены — клиент** | `lib/demo/run-domain-information-demo-client.ts`, `lib/demo/domain-information-demo.ts` |
+| **Домены — прокси** | `app/api/demo/otslezhivanie-sroka-registratsii-domenov/run/route.ts` |
+| **Домены — lk** | `DomainInformationDemoController`, `DomainInformationDemoService`, `DomainInformation::probe` |
+| **Мета-теги — UI** | `MetaTagsDemoWidget.tsx` |
+| **Мета-теги — клиент** | `lib/demo/run-meta-tags-demo-client.ts`, `lib/demo/meta-tags-demo.ts` |
+| **Мета-теги — прокси** | `app/api/demo/proverka-meta-tegov-online/run/route.ts` |
+| **Мета-теги — lk** | `MetaTagsDemoController`, `MetaTagsDemoService` |
 
 Старый виджет `/demo` (локальный подсчёт): `components/demo/TextLengthTool.tsx` — `/demo` редиректит на `/`.
 

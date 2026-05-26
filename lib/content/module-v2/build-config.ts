@@ -5,6 +5,7 @@ import { MODULE_V2_ENRICHMENT } from "@/lib/content/module-v2/enrichment";
 import { MODULE_V2_OVERRIDES, type ModuleV2Override } from "@/lib/content/module-v2/overrides";
 import { MODULE_V2_SECTION_ENRICHMENT } from "@/lib/content/module-v2/sections-enrichment";
 import { MODULE_V2_VIDEOS } from "@/lib/content/module-v2/videos-by-slug";
+import { DOMAIN_REG_POST_REG } from "@/lib/content/otslezhivanie-sroka-registratsii-domenov-page";
 import type {
   ModuleV2Act,
   ModuleV2DemoWidget,
@@ -13,6 +14,7 @@ import type {
   ModuleV2Metric,
   ModuleV2OrbitNode,
   ModuleV2PageConfig,
+  ModuleV2PostReg,
   ModuleV2PainGain,
   ModuleV2SectionCopy,
 } from "@/lib/content/module-v2/types";
@@ -31,6 +33,12 @@ const DEMO_WIDGET_BY_BASE: Partial<Record<string, ModuleV2DemoWidget>> = {
   "html-redaktor": "html-editor",
   "klasterizator-klyuchevykh-slov": "cluster",
   "monitoring-saytov": "site-monitoring",
+  "otslezhivanie-sroka-registratsii-domenov": "domain-information",
+  "proverka-meta-tegov-online": "meta-tags",
+};
+
+const POST_REG_BY_BASE: Partial<Record<string, ModuleV2PostReg>> = {
+  "otslezhivanie-sroka-registratsii-domenov": DOMAIN_REG_POST_REG,
 };
 
 const DEFAULT_ORBIT: readonly ModuleV2OrbitNode[] = [
@@ -266,5 +274,6 @@ export function buildModuleV2Config(
     faq: source.faq,
     footerUi,
     demoWidget: DEMO_WIDGET_BY_BASE[baseSlug],
+    postReg: POST_REG_BY_BASE[baseSlug],
   };
 }

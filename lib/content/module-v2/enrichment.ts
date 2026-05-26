@@ -210,7 +210,7 @@ export const MODULE_V2_ENRICHMENT: Record<string, ModuleV2Override> = {
     },
     heroUi: {
       ...chips({ label: "WHOIS" }, { label: "N доменов" }, { label: "30 дн." }),
-      ctaHint: "Список доменов → сроки → напоминание до просрочки.",
+      ctaHint: "Демо — разовая WHOIS; мониторинг и оповещения — в кабинете после регистрации.",
     },
   },
 

@@ -26,7 +26,7 @@ export const TARIFF_PLANS: TariffPlan[] = [
       "Анализ конкурентов по ключевым словам: 3 проверки в месяц",
       "Кластеризатор ключевых слов: 50 условных запросов в месяц",
       "Мониторинг сайтов: 1 проект (без email-оповещений; Telegram при подключении бота)",
-      "Отслеживание срока регистрации доменов: 1 проект",
+      "Отслеживание срока регистрации доменов: 1 домен (без email-оповещений; Telegram при подключении бота)",
       "Мониторинг Мета-Тегов: 1 проект, 10 страниц",
       "Генератор слов: без ограничений",
       "Генератор паролей: без ограничений",
@@ -133,6 +133,8 @@ export const TARIFF_COMPARE_ROWS = [
   { label: "Мониторинг позиций, проверок/мес", key: "positions" as const },
   { label: "Мониторинг сайтов, проектов", key: "sites" as const },
   { label: "Мониторинг сайтов: оповещения", key: "sitesAlerts" as const },
+  { label: "Отслеживание срока регистрации, доменов", key: "domains" as const },
+  { label: "Отслеживание срока регистрации: оповещения", key: "domainsAlerts" as const },
   { label: "Мета-теги, проектов / страниц", key: "meta" as const },
   { label: "Отслеживание ссылок, проектов / ссылок", key: "links" as const },
 ] as const;
@@ -145,6 +147,8 @@ export const TARIFF_COMPARE: Record<string, Record<string, string>> = {
   positions: { Free: "50", Optimal: "20 000", Ultimate: "50 000", Maximum: "120 000" },
   sites: { Free: "1", Optimal: "10", Ultimate: "30", Maximum: "100" },
   sitesAlerts: { Free: "telegram-only", Optimal: "email-telegram", Ultimate: "email-telegram", Maximum: "email-telegram" },
+  domains: { Free: "1", Optimal: "10", Ultimate: "30", Maximum: "100" },
+  domainsAlerts: { Free: "telegram-only", Optimal: "email-telegram", Ultimate: "email-telegram", Maximum: "email-telegram" },
   meta: { Free: "1 / 10", Optimal: "10 / 1 000", Ultimate: "20 / 2 000", Maximum: "50 / 5 000" },
   links: { Free: "1 / 20", Optimal: "10 / 200", Ultimate: "20 / 400", Maximum: "50 / 5 000" },
 };

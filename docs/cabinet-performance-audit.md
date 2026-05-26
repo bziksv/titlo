@@ -161,7 +161,7 @@ cd /Users/stanislav/Documents/projects/cabinet.datagon.ru
 | ☐ | Путь | Назначение |
 |---|------|------------|
 | ☑ | `/meta-tags/settings` | admin settings | 6 SQL §G |
-| ☑ | `/meta-tags/statistic` | admin statistic | 8 SQL §G |
+| `/meta-tags/statistic` | admin redirect → settings#registry | 301 на `/meta-tags/settings#cabinet-mt-admin-registry` |
 | ☑ | `/meta-tags/history/{id}` | история | HTML без `data`; JSON — `GET …/history/{id}/data` |
 | ☑ | `/meta-tags/history/{id}/compare/{id2}` | сравнение | 1 SQL владелец; ~15s / 9 SQL при 2× BLOB (user 4) |
 | ☑ | `/competitors-config` | 7 SQL | ☑ |

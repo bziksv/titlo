@@ -55,6 +55,8 @@ php artisan migrate:status | grep 2026_05_22
 | Free: интервал мониторинга 60 мин | `2026_05_26_150000_set_free_tariff_domain_monitoring_timing_to_60.php` | `domain_monitoring.timing = 60` для пользователей с ролью Free | local ⏳ | ⏳ |
 | Мониторинг сайтов: публичные ссылки | `2026_05_26_160000_create_site_monitoring_public_shares_table.php` | `site_monitoring_public_shares` (domain_monitoring_id, token, payload) | local ⏳ | ⏳ |
 | Мониторинг сайтов: срок ссылки nullable | `2026_05_26_170000_make_site_monitoring_public_shares_expires_at_nullable.php` | `expires_at` NULL = бессрочно | local ⏳ | ⏳ |
+| Срок доменов: лог проверок | `2026_05_26_180000_create_domain_information_check_logs_table.php` | `domain_information_check_logs` (`/domain-information`) | local ✓ | ⏳ |
+| Срок доменов: публичные ссылки | `2026_05_26_180100_create_domain_information_public_shares_table.php` | `domain_information_public_shares` | local ✓ | ⏳ |
 
 \* В отдельных сессиях агента миграции уже гоняли на `DB_HOST` из local `.env` — **перед продом** сверить `migrate:status` на сервере и в локали.
 

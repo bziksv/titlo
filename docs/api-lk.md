@@ -231,6 +231,26 @@ UI: `ClusterDemoWidget.tsx` на http://localhost:3001/klasterizator-klyuchevykh
 
 UI: `SiteMonitoringDemoWidget.tsx` на http://localhost:3001/monitoring-saytov/
 
+### Demo API: отслеживание срока регистрации доменов
+
+Клиент: `lib/demo/run-domain-information-demo-client.ts` — `POST /api/demo/otslezhivanie-sroka-registratsii-domenov/run` → кабинет `api/demo/otslezhivanie-sroka-registratsii-domenov/run`.
+
+Тело: `{ "domain": "example.ru" }`.
+
+Лимиты (`config/cabinet-domain-information.demo`): 5 проверок/сутки; без сохранения в БД.
+
+UI: `DomainInformationDemoWidget.tsx` на http://localhost:3001/otslezhivanie-sroka-registratsii-domenov/
+
+### Demo API: мониторинг мета-тегов
+
+Клиент: `lib/demo/run-meta-tags-demo-client.ts` — `POST /api/demo/proverka-meta-tegov-online/run` → кабинет `api/demo/proverka-meta-tegov-online/run`.
+
+Тело: `{ "url": "https://example.com/page/" }`.
+
+Лимиты (`config/cabinet-meta-tags.demo`): 5 проверок/сутки, 1 URL за запуск; title, description, H1, canonical, noindex, robots.
+
+UI: `MetaTagsDemoWidget.tsx` на http://localhost:3001/proverka-meta-tegov-online/
+
 ### Demo API: удаление дубликатов
 
 Клиент: `lib/demo/run-dedup-demo-client.ts` — `POST /api/lk/api/demo/udalenie-dublikatov/run`, fallback `POST /api/demo/udalenie-dublikatov/run`.

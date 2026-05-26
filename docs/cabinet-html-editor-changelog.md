@@ -1,6 +1,11 @@
 # Кабинет — HTML-редактор (changelog)
 
-Модуль: `/html-editor` · config `cabinet-html-editor.php` · badge **v1.5.3s**
+Модуль: `/html-editor` · config `cabinet-html-editor.php` · badge **v1.5.4s**
+
+## 1.5.4s — 2026-05-26
+
+- **HTML-код:** подсветка синтаксиса (CodeMirror, тема neo) — номера строк, перенос, сворачивание тегов, автозакрытие, активная строка; синхронизация с CKEditor без изменений.
+- **Проверка:** http://localhost:3002/edit-description/{id} — панель «HTML-код».
 
 ## 1.5.3s — 2026-05-25
 

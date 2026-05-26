@@ -372,3 +372,66 @@ export type SiteMonitoringDemoRunBody = {
   phrase?: string;
   waiting_time?: number;
 };
+
+export type DomainInformationDemoResult = {
+  ok: boolean;
+  domain: string;
+  broken: boolean;
+  status: string;
+  status_key: string;
+  message?: string;
+  dns: string;
+  dns_servers: string[];
+  registered_at: string | null;
+  expires_at: string | null;
+  days_until_expiry: number | null;
+  registration_summary: string;
+};
+
+export type DomainInformationDemoResponse = {
+  demo: true;
+  module: "otslezhivanie-sroka-registratsii-domenov";
+  remaining: number;
+  limits: {
+    max_runs_per_day: number;
+  };
+  result: DomainInformationDemoResult;
+  upgrade: DemoUpgrade;
+};
+
+export type DomainInformationDemoRunBody = {
+  domain: string;
+};
+
+export type MetaTagsDemoField = {
+  tag: string;
+  label: string;
+  values: string[];
+  status: "ok" | "issue" | "missing";
+  messages: string[];
+};
+
+export type MetaTagsDemoResult = {
+  requested_url: string;
+  final_url: string;
+  redirect: string;
+  fields: MetaTagsDemoField[];
+  issues_count: number;
+  locked: string[];
+};
+
+export type MetaTagsDemoResponse = {
+  demo: true;
+  module: "proverka-meta-tegov-online";
+  remaining: number;
+  limits: {
+    max_runs_per_day: number;
+    max_urls_per_run: number;
+  };
+  result: MetaTagsDemoResult;
+  upgrade: DemoUpgrade;
+};
+
+export type MetaTagsDemoRunBody = {
+  url: string;
+};
