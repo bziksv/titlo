@@ -12,6 +12,8 @@
 | **Путь на диске** | `/var/www/redbox.su/data/www/lk.redbox.su` | `/var/www/cabinet_data_usr/data/www/cabinet.datagon.ru` |
 | **Файлы приложения** | источник (был live) | скопированы с `178.250.157.140` (`rsync`) |
 | **MySQL / БД** | **здесь** — работаем с БД отсюда | **нет** — подключение к БД на `178.250.157.140` |
+| **Панель / ОС** | панель не указана; ОС в снимке не снята | **FASTPANEL**, Ubuntu **24.04.3 LTS** |
+| **CPU / RAM / диск** | **4 vCPU**, **~7.6 GiB RAM**, **180 GiB** `/` (**62%**) — § «Железо lk» | **8 vCPU**, **~10 GiB RAM**, **138 GiB** `/` (**85%**) — § «Железо s3» |
 
 Пока БД не переехала:
 
@@ -45,6 +47,64 @@ curl -sI https://cabinet.datagon.ru/ | head -5
 ```
 
 Nginx для поддомена проксирует на `127.0.0.1:3002` (PM2 / `php artisan serve` / unit — как поднято на s3). Пример: [nginx-cabinet.example.conf](./nginx-cabinet.example.conf).
+
+## Железо lk (`178.250.157.140`, lk.redbox.su + MySQL)
+
+**SSH:** `root@178.250.157.140` (промпт `root@server`). **Прод для пользователей**, локальная **MySQL**, **supervisor + cron** (очереди, мониторинг, кластер).
+
+Снимок **`root@server`**, **2026-05-30** (время сессии не указано):
+
+| Параметр | Значение |
+|----------|----------|
+| **CPU** | **4** vCPU, Intel Core **i9-10900K** @ 3.70 GHz, 4 cores / socket, 1 thread/core |
+| **RAM** | **7.6 GiB** total; used **6.0 GiB**, free **786 MiB**, available **~1.1 GiB** |
+| **Swap** | **5.9 GiB** total; used **3.4 GiB**, free **2.5 GiB** |
+| **Диск /** | **180 GiB**, **111 GiB** used, **69 GiB** free (**62%**) — `/dev/vda2` |
+
+Повторная проверка:
+
+```bash
+ssh root@178.250.157.140
+lscpu | grep -E 'Model name|CPU\(s\)|Thread|Core'
+free -h
+df -h /
+uptime
+```
+
+## Железо VPS s3 (`155.212.171.103`, cabinet.datagon.ru)
+
+**SSH:** `root@s3` (алиас в доках деплоя). Панель: **FASTPANEL** — конфиги nginx/apache **не править руками** (`/etc/nginx/fastpanel2-available`, `/etc/apache2/fastpanel2-available`).
+
+Снимок **`root@s3`**, **2026-05-30 ~13:28** (uptime ~23 сут):
+
+| Параметр | Значение |
+|----------|----------|
+| **ОС** | Ubuntu 24.04.3 LTS |
+| **CPU** | **8** vCPU, AMD EPYC 7763 (вирт. @ 2.0 GHz), 8 cores / socket, 1 thread/core |
+| **RAM** | **9.6 GiB** total; used **7.7 GiB**, available **~2.0 GiB** (с учётом cache) |
+| **Swap** | **4.0 GiB** — на снимке **заполнен** (~4.0 GiB used, ~72 KiB free) |
+| **Диск /** | **138 GiB**, **112 GiB** used, **20 GiB** free (**85%**) — `/dev/vda3` |
+| **Load avg** | 1.34, 1.25, 1.38 (1 / 5 / 15 min) |
+
+Повторная проверка:
+
+```bash
+ssh root@155.212.171.103   # или root@s3
+lscpu | grep -E 'Model name|CPU\(s\)|Thread|Core'
+free -h
+df -h /
+uptime
+```
+
+## Сравнение снимков (май 2026)
+
+| | **lk** `178.250.157.140` | **s3** `155.212.171.103` |
+|--|--------------------------|---------------------------|
+| CPU | 4 vCPU (i9-10900K) | 8 vCPU (EPYC 7763) |
+| RAM | 7.6 GiB | 9.6 GiB |
+| Swap used | ~3.4 / 5.9 GiB | ~4.0 / 4.0 GiB (**полный**) |
+| Диск `/` | 62% (111 / 180 GiB) | 85% (112 / 138 GiB) |
+| Роль | прод + MySQL + очереди | cabinet.datagon.ru, БД удалённо |
 
 ## Что сделано
 

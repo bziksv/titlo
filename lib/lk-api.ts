@@ -1,4 +1,4 @@
-const LK_API_BASE = process.env.LK_API_BASE_URL ?? process.env.NEXT_PUBLIC_LK_URL ?? "https://lk.redbox.su";
+const LK_API_BASE = process.env.LK_API_BASE_URL ?? process.env.NEXT_PUBLIC_LK_URL ?? "https://cabinet.titlo.ru";
 
 /** Префиксы API lk, разрешённые для BFF-прокси с маркетингового сайта */
 const ALLOWED_PREFIXES = [

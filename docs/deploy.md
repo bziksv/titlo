@@ -74,7 +74,9 @@ BASE_URL=http://localhost:3001 npm run compare:sitemap
 
 Репозиторий: [github.com/bziksv/site_seo_datagon](https://github.com/bziksv/site_seo_datagon).
 
-**Путь на сервере:** `/var/www/datagon_ru_usr/data/www/datagon.ru`
+**titlo.ru** (целевой маркетинг): [titlo-deploy.md](./titlo-deploy.md), git [bziksv/titlo](https://github.com/bziksv/titlo).
+
+Репозиторий legacy **datagon.ru**: [github.com/bziksv/site_seo_datagon](https://github.com/bziksv/site_seo_datagon).
 
 ### Первый деплой
 

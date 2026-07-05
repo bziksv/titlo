@@ -5,6 +5,6 @@ services:
       - "3001:3001"
     environment:
       PORT: "3001"
-      NEXT_PUBLIC_LK_URL: https://lk.redbox.su
-      LK_API_BASE_URL: https://lk.redbox.su
+      NEXT_PUBLIC_LK_URL: https://cabinet.titlo.ru
+      LK_API_BASE_URL: https://cabinet.titlo.ru
     restart: unless-stopped

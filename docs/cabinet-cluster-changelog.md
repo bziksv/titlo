@@ -3,6 +3,12 @@
 Config: `cabinet.datagon.ru/config/cabinet-cluster.php`  
 Проверка: http://localhost:3002/cluster · `/show-cluster-result/{id}` · `/edit-clusters/{id}` · badge в шапке
 
+## 2.37 — 2026-05-30
+
+- **Защита от вечного `cluster_wait`:** если нет новых строк в `cluster_queue_array` дольше **30 мин** (`CLUSTER_WAIT_STALE_MINUTES`) или анализ идёт дольше **6 ч** (`CLUSTER_WAIT_MAX_HOURS`) — wait job останавливается, прогресс помечается failed, poll UI показывает ошибку.
+- **Админ:** `/admin/queues` — отмена зависшей кластеризации одной кнопкой.
+- **Проверка:** http://localhost:3002/admin/queues , http://localhost:3002/cluster — badge **v2.37**.
+
 ## 2.36 — 2026-05-26
 
 - **Telegram:** плашка «Без Телеграм оповещения не придут» вверху `/cluster`, если бот не подключён (рядом с чекбоксом уведомления по завершении).

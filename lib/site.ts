@@ -1,4 +1,4 @@
-export const LK_URL = process.env.NEXT_PUBLIC_LK_URL ?? "https://lk.redbox.su";
+export const LK_URL = process.env.NEXT_PUBLIC_LK_URL ?? "https://cabinet.titlo.ru";
 
 /** Бренд после ребрендинга RedBox → Датагон */
 export const SITE = {
@@ -8,9 +8,9 @@ export const SITE = {
   description:
     "Платформа Датагон для анализа и отслеживания сайта. Мониторинг, релевантность, позиции и другие инструменты для SEO и маркетинга.",
   phone: "+7-960-134-03-03",
-  email: "info@datagon.ru",
+  email: "info@titlo.ru",
   supportHours: "Пн–Пт, 9:30–19:00",
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://datagon.ru",
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://titlo.ru",
   /** Первый год в подвале: © {since} – {текущий} */
   copyrightSince: 2023,
 } as const;

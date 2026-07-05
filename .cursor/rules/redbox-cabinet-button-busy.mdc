@@ -1,0 +1,54 @@
+---
+description: Кабинет — обратная связь на кнопках при AJAX/POST (спиннер, блокировка)
+globs:
+  - "**/cabinet.datagon.ru/public/js/**"
+  - "**/cabinet.datagon.ru/resources/views/**"
+alwaysApply: true
+---
+
+# Кабинет — кнопки с действием (POST/AJAX)
+
+Пользователь **должен сразу видеть**, что клик сработал. Без этого кажется, что «не нажал».
+
+## Обязательно для любой кнопки, которая:
+
+- отправляет `fetch` / `$.ajax` / `form.submit()`;
+- открывает модалку с подтверждением и затем удаляет/сохраняет;
+- запускает долгую задачу (очередь, отчёт, очистка БД).
+
+## Паттерн
+
+1. **Сразу после клика** (до ответа сервера):
+   - `disabled` + `aria-busy="true"`;
+   - спиннер + короткий текст («Сохранение…», «Удаление…»);
+   - повторный клик невозможен.
+2. **Модалка подтверждения** — на время запроса блокировать и **Отмена**, и **×** (не только красную кнопку).
+3. **После ответа** — вернуть исходный HTML (`clear`), закрыть модалку или показать ошибку.
+4. **Ошибка** — `alert`/toast + разблокировать кнопку; не оставлять «мёртвую» кнопку.
+
+## Хелпер (не дублировать спиннер в каждом файле)
+
+`public/js/cabinet-button-busy.js`:
+
+```javascript
+window.cabinetButtonBusy.set($btn, { label: 'Удаление…', blockModal: true });
+// … ajax …
+window.cabinetButtonBusy.clear($btn, { blockModal: true });
+```
+
+Спиннер — классы **`cabinet-mon-loader`** / **`cabinet-mon-loader--sm`** (уже в `cabinet-monitoring-show.css` и др.).
+
+## Эталоны в коде
+
+- `cabinet-monitoring-competitors-dynamics.js` — удаление отчёта, «Получить отчёт» (`setSubmitting`);
+- `cabinet-configuration-menu.js` — `setSaveButtonState` / `setRestoreButtonState` (idle | loading | done).
+
+## Запрещено
+
+- AJAX без визуального состояния на кнопке;
+- только `confirm()` без блокировки кнопки после «ОК»;
+- двойная отправка одной формы из‑за отсутствия `disabled`.
+
+## Документация
+
+При новом модуле с AJAX-кнопками — bump версии модуля + строка в соответствующем `docs/cabinet-*-changelog.md`.

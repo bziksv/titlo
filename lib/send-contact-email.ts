@@ -9,7 +9,7 @@ export type ContactEmailPayload = {
 };
 
 /** Получатели заявок с формы «Задать вопрос» */
-export const CONTACT_MAIL_TO = ["info@datagon.ru", "sv6@list.ru"] as const;
+export const CONTACT_MAIL_TO = ["info@titlo.ru", "sv6@list.ru"] as const;
 
 export function getContactRecipients(): string[] {
   const fromEnv = process.env.CONTACT_TO?.split(/[,;]+/).map((e) => e.trim()).filter(Boolean);

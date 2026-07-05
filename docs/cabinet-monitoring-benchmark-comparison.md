@@ -9,7 +9,7 @@
 | | SE Ranking | Topvisor | Datagon `/monitoring-v2` |
 |---|------------|----------|---------------------------|
 | Хаб (все проекты) | `admin.dashboard` — график + таблица | `/projects/` — таблица TOP buckets | Сводка Chart.js + таблица/плитки |
-| Позиции проекта | `rankings#/detailed` | `project/dynamics/{id}/` | `/monitoring/{id}` (классика) |
+| Позиции проекта | `rankings#/detailed` | `project/dynamics/{id}/` | `/monitoring/{id}` (**3.5.0-dev:** обзор + detailed, KPI, toolbar) |
 | Семантика | wizard / keywords | `project/keywords/{id}/` | ключи в проекте |
 | Регионы в списке | expand child-rows | — | «Регионы и дни» (child-rows) |
 

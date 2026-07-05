@@ -57,9 +57,12 @@ php artisan migrate:status | grep 2026_05_22
 | Мониторинг сайтов: срок ссылки nullable | `2026_05_26_170000_make_site_monitoring_public_shares_expires_at_nullable.php` | `expires_at` NULL = бессрочно | local ⏳ | ⏳ |
 | Срок доменов: лог проверок | `2026_05_26_180000_create_domain_information_check_logs_table.php` | `domain_information_check_logs` (`/domain-information`) | local ✓ | ⏳ |
 | Срок доменов: публичные ссылки | `2026_05_26_180100_create_domain_information_public_shares_table.php` | `domain_information_public_shares` | local ✓ | ⏳ |
+| Мониторинг позиций v2: публичные ссылки | `2026_05_28_120000_create_monitoring_public_shares_table.php` | `monitoring_public_shares` (monitoring_project_id, token, payload JSON, TTL) | local ⏳ | ⏳ |
 | **Удаление модуля чеклистов** | `2026_05_27_180000_drop_checklist_module.php` | DROP 7 таблиц (`checklist_*`, `check_lists_labels`); код `/checklist` удалён | local ✓ | ⏳ |
+| **Заглушка связки мониторинг↔чеклист (legacy lk)** | `2026_06_01_120000_restore_checklist_relation_with_monitoring_stub.php` | Пустая `checklist_relation_with_monitoring` без FK — пока на **lk.redbox.su** старый `MonitoringController` | общая БД ✓ | ✓ (lk) |
+| **Заглушка checklist_projects (legacy lk)** | `2026_06_01_121000_restore_checklist_projects_stub.php` | Пустая `checklist_projects` — `monitoring/show.blade.php` (модалка чеклиста) | общая БД ✓ | ✓ (lk) |
 | **Меню: мониторинг v2** | `2026_05_27_190000_add_monitoring_v2_main_project_menu.php` | `main_projects` id≈38 + вставка в `menu_items_position` под id=32 | local ✓ | ⏳ |
-| **Фавиконки проектов мониторинга** | `2026_05_27_230000_add_favicon_to_monitoring_projects_table.php` | `monitoring_projects.favicon_path`, `favicon_host`, `favicon_updated_at`; файлы `storage/.../monitoring-favicons/{id}.png` | local ✓ | ⏳ |
+| **Фавиконки проектов мониторинга** | `2026_05_27_230000_add_favicon_to_monitoring_projects_table.php` | `monitoring_projects.favicon_path`, `favicon_host`, `favicon_updated_at`; файлы `storage/.../monitoring-favicons/{id}.png` | local ✓ | ⏳ cutover: `monitoring:import-favicons-from-legacy --from=https://lk.redbox.su` (один раз, **без** `CABINET_STORAGE_URL` в `.env`) |
 | **Настройки столбцов monitoring-v2** | `2026_05_27_231500_create_monitoring_v2_user_preferences_table.php` | `monitoring_v2_user_preferences` (`user_id`, `list_columns` JSON) | ⏳ | ⏳ |
 
 \* В отдельных сессиях агента миграции уже гоняли на `DB_HOST` из local `.env` — **перед продом** сверить `migrate:status` на сервере и в локали.

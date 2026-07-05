@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev -p 3001",
+    "dev:titlo": "next dev -p 3003",
+    "dev:titlo:stop": "node scripts/kill-dev-port.mjs 3003",
     "dev:fresh": "node scripts/kill-dev-port.mjs && rm -rf .next && next dev -p 3001",
     "dev:all": "bash scripts/dev-all.sh",
     "dev:all:fresh": "bash scripts/dev-all.sh --fresh",

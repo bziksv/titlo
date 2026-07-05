@@ -13,7 +13,7 @@
 | **Порт local** | **3001** (Next) | **3002** (nginx + php-fpm) |
 | **Роль** | Маркетинг, демо UI, BFF `app/api/lk`, `app/api/demo` | Продукт: auth, модули, БД, лимиты |
 | **Документация** | `docs/` (в т.ч. этот файл) | Код; описание — в `datagon.ru/docs/cabinet-*` |
-| **Git** | site_seo_datagon | [bziksv/cabinet.datagon.ru](https://github.com/bziksv/cabinet.datagon.ru) |
+| **Git** | [bziksv/titlo](https://github.com/bziksv/titlo) (legacy: site_seo_datagon) | [bziksv/cabinet.datagon.ru](https://github.com/bziksv/cabinet.datagon.ru) |
 
 **Правило:** бизнес-логику модулей **не дублировать в Next** — только прокси и UI демо ([architecture.md](./architecture.md), [api-lk.md](./api-lk.md)).
 
@@ -34,6 +34,8 @@
 | **Лендинг модуля (Next)** | `docs/examples/module-landing-relevance.md` | `components/module-landings/`, `app/**/page.tsx` |
 | **Telegram / прокси на prod** | [cabinet-telegram-proxy.md](./cabinet-telegram-proxy.md), [cabinet-telegram-proxy-changelog.md](./cabinet-telegram-proxy-changelog.md) | `/admin/telegram-proxy` (**v1.1.0s**), `telegram_proxies` (БД), `TelegramProxyRegistry`, `TelegramBotService` |
 | **Инвентаризация MySQL (админ)** | [cabinet-database-admin-changelog.md](./cabinet-database-admin-changelog.md) | `/admin/database`, `DatabaseInventoryService`, `config/cabinet-database-admin.php` |
+| **Очереди Laravel (админ)** | [cabinet-queue-admin-changelog.md](./cabinet-queue-admin-changelog.md) | `/admin/queues`, `QueueInventoryService`, `config/cabinet-queue-admin.php`, `ClusterProgress::cancelProgress` |
+| **Рассылки / уведомления (админ)** | [cabinet-notifications-admin-changelog.md](./cabinet-notifications-admin-changelog.md) · правило **`redbox-cabinet-notifications-registry.mdc`** | `/admin/notifications`, `NotificationAdminTestService`, `config/cabinet-users-notifications.php` |
 | **Где локаль / lk / cabinet / общая БД** | [cabinet-servers.md](./cabinet-servers.md) § «Окружения» | `jobs`, `failed_jobs`, cron, supervisor |
 | **Деплой кабинета** | [cabinet-deploy.md](./cabinet-deploy.md) (§ **FastPanel** / Troubleshooting), [cabinet-servers.md](./cabinet-servers.md) | VPS s3: **FastPanel**, PHP **7.4** (`/opt/php74/bin/php`), FPM; PM2 — только если vhost на :3002 |
 | **БД / что на прод, миграции** | **[cabinet-pending-db-and-deploy.md](./cabinet-pending-db-and-deploy.md)** | журнал: local vs prod, `migrate`, удаление behavior, support |
@@ -105,7 +107,8 @@ cabinet.datagon.ru/
 | Источник | Файл | Local (`SKIP_HEAVY_WEB_MIDDLEWARE=true`) |
 |----------|------|------------------------------------------|
 | Меню | `MenuComposer` | кэш сессии после 1-го захода |
-| Лимиты шапки | `LimitsComposer` | **выключен** |
+| Лимиты шапки (dropdown) | `LimitsComposer` | **выключен** в local |
+| Остаток лимита модуля в шапке | `HeaderModuleLimitComposer`, `ModuleHeaderLimitResolver` | работает в local |
 | Счётчик новостей | `CountUnreadNewsComposer` | **выключен** |
 | Тариф в панели | `UserPanelComposer` | облегчён |
 

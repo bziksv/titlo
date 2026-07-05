@@ -33,6 +33,7 @@ alwaysApply: true
 | **Кабинет:** `scripts/profile-*.sh`, `dev-local.sh` | `cabinet-performance-audit.md` (методология) + `cabinet-agent-map.md` §6 |
 | **Кабинет:** правки в `cabinet.datagon.ru` (код) | доки в репо **datagon.ru** `docs/cabinet-*` в той же задаче |
 | **Кабинет:** UI/JS модуля (версия) | `config/cabinet-<slug>.php`, `docs/cabinet-<slug>-changelog.md`, [cabinet-module-versioning.md](./docs/cabinet-module-versioning.md) |
+| **Кабинет:** новые/изменённые TG, email, модалки, in-app бейджи | `config/cabinet-users-notifications.php`, `NotificationAdminTestService`, [cabinet-notifications-admin-changelog.md](./docs/cabinet-notifications-admin-changelog.md) — см. `.cursor/rules/redbox-cabinet-notifications-registry.mdc` |
 
 ## Формат
 

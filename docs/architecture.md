@@ -4,18 +4,20 @@
 
 | Домен | Назначение | Стек |
 |-------|------------|------|
-| **datagon.ru** (маркетинг) | Визитка, новости, **демо на сайте** | Next.js |
-| **lk.redbox.su** | Кабинет, модули, API, аккаунты (**прод**, БД) | Laravel на `178.250.157.140` |
-| **cabinet.datagon.ru** | Кабинет на `155.212.171.103`, порт **3002**, **БД пока на старом сервере** | Laravel — [cabinet-servers.md](./cabinet-servers.md) |
+| **titlo.ru** (маркетинг, целевой) | Визитка, новости, демо | Next.js, PM2 `:3003` — [titlo-deploy.md](./titlo-deploy.md) |
+| **cabinet.titlo.ru** (кабинет, целевой) | Модули, API, аккаунты | Laravel — деплой позже |
+| **datagon.ru** (маркетинг, переходный) | Будет снят после cutover | Next.js `:3001` |
+| **lk.redbox.su** | Кабинет legacy (**прод**, БД) | Laravel на `178.250.157.140` |
+| **cabinet.datagon.ru** | Кабинет переходный, `:3002` | Laravel — [cabinet-servers.md](./cabinet-servers.md) |
 
 ## Потоки
 
 ```text
-Пользователь → redbox.su (Next)
+Пользователь → titlo.ru (Next)
                  ├─ статические/SSR страницы
-                 └─ /demo → UI Next → app/api/* → lk.redbox.su (Laravel)
+                 └─ демо → app/api/* → cabinet.titlo.ru (Laravel)
 
-Вход / полный продукт → редирект на lk.redbox.su (пока cutover — cabinet.datagon.ru)
+Вход / полный продукт → cabinet.titlo.ru
 ```
 
 **Переходный деплой кабинета (май 2026):** код скопирован на новый VPS, MySQL остаётся на `178.250.157.140`. Подробно: [cabinet-servers.md](./cabinet-servers.md).

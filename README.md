@@ -8,7 +8,9 @@
 
 ## Репозиторий
 
-[github.com/bziksv/site_seo_datagon](https://github.com/bziksv/site_seo_datagon)
+**titlo.ru (маркетинг, целевой):** [github.com/bziksv/titlo](https://github.com/bziksv/titlo) — деплой [docs/titlo-deploy.md](docs/titlo-deploy.md), локально `npm run dev:titlo` → :3003.
+
+**datagon.ru (legacy):** [github.com/bziksv/site_seo_datagon](https://github.com/bziksv/site_seo_datagon) — `npm run dev` → :3001.
 
 ## Документация
 
@@ -19,7 +21,8 @@
 | Страницы и URL | [docs/pages.md](docs/pages.md) |
 | API к lk | [docs/api-lk.md](docs/api-lk.md) |
 | Форма контактов (SMTP) | [docs/lk-contact-api.md](docs/lk-contact-api.md) |
-| Деплой (VPS datagon.ru, PM2) | [docs/deploy.md](docs/deploy.md) |
+| Деплой titlo.ru (PM2 :3003) | [docs/titlo-deploy.md](docs/titlo-deploy.md) |
+| Деплой datagon.ru legacy (PM2 :3001) | [docs/deploy.md](docs/deploy.md) |
 | Эталоны UI | [docs/examples/README.md](docs/examples/README.md) |
 
 ## Быстрый старт

@@ -54,7 +54,7 @@ async function forwardLk(payload: ContactPayload): Promise<boolean> {
       email: payload.email,
       phone: payload.phone ?? "",
       message: payload.message,
-      source: "redbox.su/contact",
+      source: `${new URL(SITE.siteUrl).host}/contact`,
     }),
   });
   return res.ok;

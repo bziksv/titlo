@@ -79,6 +79,8 @@ bash scripts/dev-local.sh detach
 
 **Фавиконки v2:** клик по иконке/букве → `POST /monitoring-v2/favicons/fill` с `project_id`; «Обновить» догружает пропущенные. **Один домен в портфеле:** при сборке `list` и в `favicons/fill` вызывается `ProjectFaviconService::propagateMissingFromBatch` — PNG копируется с любого проекта с тем же хостом (не ждать фоновой очереди).
 
+**Публичная статистика v2:** меню проекта → «Статистика для клиента»; `GET monitoring-v2/project-stats`, `POST monitoring-v2/public-share`, `POST monitoring-v2/public-share/revoke`; гостевой просмотр `GET /public/share/monitoring-v2/{token}` (без auth). Таблица `monitoring_public_shares`, cron `MonitoringPublicSharesDelete`.
+
 **Свёрнутый сайдбар (кнопка «гамбургер»):** в `layouts/partials/app-sidebar.blade.php` — `data-enable-persistence="true"` (AdminLTE `localStorage` ключ `lte.sidebar.state`). Без этого при каждом F5 PushMenu сбрасывал состояние и разворачивал меню. В `layouts/app.blade.php` — inline-скрипт сразу после `<body>` добавляет `sidebar-collapse`, если в storage сохранён свёрнутый режим (без «мигания» развёрнутого меню).
 
 **Бренд в UI:** сайдбар — `public/img/logo-icon.svg` + текст «Датагон» в `layouts/app.blade.php`; фавикон — `public/img/favicon.svg` (как на datagon.ru).
@@ -229,10 +231,12 @@ LOG_CHANNEL=stderr
 HTTP_HEADERS_CLEANUP_ON_REQUEST=false
 SKIP_HEAVY_WEB_MIDDLEWARE=true
 SKIP_EMAIL_VERIFICATION=true
+DEBUGBAR_ENABLED=false
 ```
 
 | Переменная | Зачем |
 |------------|--------|
+| `DEBUGBAR_ENABLED=false` | нижняя панель Laravel Debugbar (Queries, Views…) — по умолчанию выкл.; `true` только для отладки SQL |
 | `DB_HOST=178.250.157.140` | не `127.0.0.1` — БД на старом VPS |
 | `LOG_CHANNEL=stderr` | иначе 500 «Operation not permitted» на `storage/logs` |
 | `HTTP_HEADERS_CLEANUP_ON_REQUEST=false` | иначе `DELETE` по `http_headers` на **каждый** запрос (минуты) |
@@ -289,7 +293,8 @@ SKIP_EMAIL_VERIFICATION=true
 |-----|--------|
 | `/` | HomeController — плитки `main_projects` |
 | `main-projects` | каталог/статистика модулей |
-| `monitoring/*` | мониторинг позиций (крупнейший блок) |
+| `monitoring/*` | мониторинг позиций (крупнейший блок); админ: `/monitoring/admin` (**зависшие расписания**, `MonitoringStaleScheduleReport`), `/monitoring/stat`, **`/monitoring/permissions`**, **`/monitoring/set-positions`**, `/monitoring/offset-positions` |
+| `users` | админ пользователей; **зависшие расписания мониторинга** — тот же partial/API, что на `/monitoring/admin` (`monitoring.admin.stale-schedules.*`) |
 | `analyze-relevance`, `history`, … | анализ релевантности — TF/IDF/score: `App\Support\TfidfMetrics`, расчёт в `App\Relevance` (агрегат конкурентов, IDF = log₁₀(N/df), облака «TF‑IDF score» по `weight = score`; «TF clouds» — частота через `TextAnalyzer::prepareCloud`) |
 | `meta-tags/*` | мониторинг мета-тегов · UI `cabinet-meta-tags.css`, badge `cabinet-meta-tags`; админка `/meta-tags/settings` — KPI + реестр (`MetaTagsAdminStats`, partial `admin-registry`) |
 | `cluster/*` | кластеризатор — **`/cluster`** (анализатор), `/cluster/regions`, `/show-cluster-result/{id}`, `/edit-clusters/{id}`, `/cluster-projects`; views в `cluster-v2/`; редиректы с `*-v2` URL; описание модуля — `descriptions.code=cluster`; `/cluster-configuration` — KPI |
@@ -313,11 +318,12 @@ SKIP_EMAIL_VERIFICATION=true
 | `news` | новости; шапка: жёлтый бейдж — новые посты, синий (admin) — новые комментарии → `#comment-{id}`; блокировка комментариев `users.news_comments_blocked_at` (иконка у комментария) |
 | `tariff`, `balance` | тарифы, баланс |
 | `profile/` | профиль |
-| `users`, `manage-access` | админка; `/users` — график активности `UsersActivityDashboard::snapshotCached()` (10 мин), **не** отключается `SKIP_HEAVY_WEB_MIDDLEWARE`; фильтр **тарифа** — по Spatie-роли (`Maximum` / `Optimal` / `Ultimate`), с fallback на `tariff_pays.status=1`; `none` — без платных ролей; легенда **Верифицирован** / **Письмо прочитано**; cron `DeleteUnverifiedUsers`; `/users/{id}/edit`; визиты; `/manage-access` |
+| `users`, `manage-access` | админка; `/users`; **рассылки** → `/admin/notifications` (**v1.2.0s**: таблица, тест TG/email, предпросмотр модалок и писем); `/users/{id}/edit`; `/manage-access` |
 | `main-projects` | модули главной и сайдбара; `/main-projects/statistics/{id}` — KPI, сравнение с прошлым периодом, doughnut/будни, динамика Chart.js, топ со ссылкой на `visit.statistics`, аккордеон (фильтр, развернуть/пик), клики по кнопкам (`ModuleVisitStatisticsReport`, `cabinet-module-statistics.css`) (2026-05) |
 | `tariff-settings` | лимиты тарифов — `public/css/cabinet-tariff-settings.css`, карточки по свойствам; значения — **карандаш**; справочник кодов `App\Support\TariffLimitRegistry` (нет в БД → обычно безлимит в модуле) (2026-05) |
 | `ai-generation/*` | AI-генерация |
 | `monitoring-v2/` | мониторинг позиций — список проектов (UI v2, API как `monitoring/`); блок уроков — `descriptions.code=monitoring` (alias в `DescriptionComposer`) |
+| `/monitoring/{id}` графики | палитра `MonitoringChartPalette` + `cabinet-monitoring-chart-scales.js`; **не** близкие цвета серий — см. `.cursor/rules/redbox-cabinet-charts.mdc` |
 
 Полный список — в файле `routes/web.php` (~550 строк).
 
@@ -376,6 +382,7 @@ Throttle: `60` запросов/мин на группу `api`.
 | `navigation.menu-right` | UserPanelComposer, LimitsComposer | user, лимиты тарифа |
 | `layouts.app` | StatisticsComposer | статистика |
 | `layouts.partials.app-header` | LimitsComposer | **в local пропущен** (`SKIP_HEAVY…`) |
+| `layouts.partials.app-header` | HeaderModuleLimitComposer | «Осталось N от M» для текущего модуля (`ModuleHeaderLimitResolver`) |
 | `layouts.partials.app-header` | CountUnreadNewsComposer, UserPanelComposer | новости, баланс/тариф |
 
 **Главная `/`** тянет меню + проекты (+ лимиты на prod). В **local** dropdown «Ваши лимиты» отключён (`LimitsComposer`); **баланс и название тарифа** в шапке показываются. На **prod** в `.env`: `SKIP_HEAVY_WEB_MIDDLEWARE=false`, иначе нет блока лимитов.
@@ -390,7 +397,7 @@ Throttle: `60` запросов/мин на группу `api`.
 
 ### 8.2 Верхнее меню (шапка)
 
-Файлы: `navigation/menu.blade.php` (слева), `menu-right.blade.php` (чипы баланс/тариф/лимиты), стили `.cabinet-header-*` в `public/css/custom.css`. Слева — ссылки с иконками; справа — чипы + toolbar (fullscreen, выход). Таблица лимитов — `.cabinet-header-limits-menu`; подсказка `#cabinet-header-limits-hint` скрыта до заполнения JS (`cabinet-layout-scripts.blade.php`).
+Файлы: `layouts/partials/app-header.blade.php`, `HeaderModuleLimitComposer`, `ModuleHeaderLimitResolver`, стили `.cabinet-header-*` в `public/css/custom.css`. Слева — новости, поддержка, идеи; справа на `lg+` — **баланс**, **тариф**, на страницах модулей (`xl+`) — **остаток лимита** текущего модуля (`#cabinet-header-module-limit`), dropdown «Ваши лимиты» (prod, `LimitsComposer`). Подсказка `#cabinet-header-limits-hint` — только если нет inline-лимита и есть таблица в dropdown (`cabinet-layout-scripts.blade.php`).
 
 ---
 
@@ -490,7 +497,8 @@ Local: CSRF отключён в `VerifyCsrfToken` при `APP_ENV=local`.
 | | |
 |---|---|
 | Прод UI | https://lk.redbox.su |
-| Новый VPS | 155.212.171.103, :3002, [cabinet-deploy.md](./cabinet-deploy.md) |
+| Прод сервер (lk) | `178.250.157.140` — **4 vCPU**, **~7.6 GiB RAM**, MySQL + supervisor — [cabinet-servers.md](./cabinet-servers.md) § «Железо lk» |
+| Новый VPS | `155.212.171.103` (**s3**), :3002, **8 vCPU**, **~10 GiB RAM** — [cabinet-deploy.md](./cabinet-deploy.md) |
 | Git | [cabinet-git.md](./cabinet-git.md) |
 
 На проде **не** отключать CSRF; `HTTP_HEADERS_CLEANUP_ON_REQUEST` — по согласованию (на VPS часто `false`).

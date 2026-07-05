@@ -1,0 +1,46 @@
+---
+description: Кабинет — новые TG/email/модалки → реестр /admin/notifications + тесты
+alwaysApply: true
+---
+
+# Кабинет — реестр рассылок `/admin/notifications`
+
+Эталон страницы: http://localhost:3002/admin/notifications (шестерёнка → «Управление рассылками»).
+
+## Когда обновлять (в той же задаче, что и код)
+
+Любое **новое или изменённое** внешнее оповещение пользователю:
+
+- **Telegram** (`TelegramBot`, `TelegramBotService`, cron → `sendMsg`);
+- **Email** (`app/Notifications/*`, `->notify(` по событию модуля);
+- **Модалка** (`CabinetModalQueue`, `*-prompt.blade.php`, composer «показать модалку»);
+- **In-app** (бейдж/счётчик в меню без TG/email — тоже строка в таблице).
+
+Рефакторинг без смены текста/канала/условий — реестр не трогать.
+
+## Обязательные шаги
+
+1. **`config/cabinet-users-notifications.php`**
+   - `events[]` → новая строка `items[]`: `id`, `title`, `trigger`, `audience`, `channels`, `tariff`, `cron`, `code_ref` (ключи → `ru.json`).
+   - при новом модуле — строка в `modules[]` (галочки каналов).
+
+2. **`resources/lang/ru.json`** — переводы `Users notify event …` (когда, кому, название).
+
+3. **`app/Services/NotificationAdminTestService.php`**
+   - `TELEGRAM_EVENTS` / `EMAIL_EVENTS` / `MODAL_EVENTS` — добавить `id` события;
+   - `sendTelegram` / `sendEmail` / `renderEmailPreview` / `renderModalPreview` — **реальный вызов** тех же классов, что прод (демо-данные, префикс `[TEST]` для TG).
+
+4. **Превью модалки** (если канал `modal`) — `resources/views/admin/notifications/partials/previews/*.blade.php` (разметка как в кабинете, без автопоказа скриптов).
+
+5. **Версия админки** — `config/cabinet-notifications-admin.php` (`version`), `docs/cabinet-notifications-admin-changelog.md`, badge на странице уже есть.
+
+6. **Telegram-модуль** (если новый TG из cron) — при необходимости строка в `config/cabinet-telegram.php` → `modules`.
+
+## Проверка
+
+- http://localhost:3002/admin/notifications — строка в таблице;
+- TG: кнопка → сообщение в бот админа (профиль `#telegram`);
+- Email: конверт → предпросмотр; самолётик → письмо на email админа;
+- Модалка: кнопка «окно» → предпросмотр.
+
+Документация: [cabinet-notifications-admin-changelog.md](../docs/cabinet-notifications-admin-changelog.md), карта — [cabinet-agent-map.md](../docs/cabinet-agent-map.md) §2.

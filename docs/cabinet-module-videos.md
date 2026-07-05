@@ -40,10 +40,11 @@ bash scripts/download-module-videos.sh
 - `app/Support/ModuleVideos.php` — постер/URL, перепись HTML описания
 - `config/cabinet-module-videos.php` — `CABINET_MODULE_VIDEOS_ENABLED` (по умолчанию `true`)
 - `resources/views/description/main.blade.php` — вывод через `rewriteDescriptionHtml`
-- `layouts/app.blade.php` — клик: сначала `data-local` → `<video>`, иначе YouTube API подгружается только по клику
+- `layouts/app.blade.php` — клик по превью → `<video>`; повторный клик по плееру не пересоздаёт элемент (пауза/seek — нативные controls)
 
 ## Проверка
 
 1. Скачать хотя бы `H_wcnUFxHRw.mp4` (модуль «Анализ текста»).
 2. http://localhost:3002/text-analyzer — клик по превью → плеер с `/media/module-videos/…`, без запросов к youtube.com.
-3. Удалить один mp4 — для этого ID снова fallback на YouTube по клику.
+3. Воспроизведение → клик по области видео ставит на паузу (не сбрасывает в начало).
+4. Удалить один mp4 — для этого ID снова fallback на YouTube по клику.

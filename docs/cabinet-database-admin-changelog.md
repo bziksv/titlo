@@ -2,7 +2,21 @@
 
 **Модуль:** `/admin/database`  
 **Config:** `cabinet.datagon.ru/config/cabinet-database-admin.php`  
-**Версия:** `1.1.1s`
+**Версия:** `1.1.3s`
+
+## 1.1.3s — 2026-05-30
+
+- **Просмотр** `search_indices` и других гигантских таблиц: `ORDER BY id DESC` (~1 с), не `created_at` (~70 с на 17M строк). Отдельное превью `search_indices` без url/snippet/title.
+- **Проверка:** `/admin/database` → `search_indices` → «Просмотр» — панель за ~1–2 с, подсказка про id.
+
+## 1.1.2s — 2026-05-29
+
+- Кнопка **Очистить** только для `failed_jobs`: `TRUNCATE` + `OPTIMIZE`, затем обновление снимка инвентаризации. Whitelist `clearable_tables` в config — другие таблицы не трогаем.
+
+### Проверка
+
+1. http://localhost:3002/admin/database → фильтр по `failed_jobs`.
+2. **Очистить** → подтверждение → 0 строк, размер ~0 MB.
 
 ## 1.1.1s — 2026-05-27
 

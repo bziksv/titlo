@@ -1,0 +1,31 @@
+---
+description: Кабинет — цвета и контраст линий на графиках мониторинга
+globs:
+  - "**/cabinet.datagon.ru/**/MonitoringChartPalette.php"
+  - "**/cabinet.datagon.ru/**/cabinet-monitoring-chart-scales.js"
+  - "**/cabinet.datagon.ru/**/cabinet-monitoring-show-charts.js"
+  - "**/cabinet.datagon.ru/**/cabinet-monitoring-show-compare.js"
+  - "**/cabinet.datagon.ru/**/MonitoringChartsController.php"
+  - "**/cabinet.datagon.ru/resources/views/monitoring/**"
+alwaysApply: false
+---
+
+# Графики кабинета — цвета серий
+
+## Обязательно
+
+1. **Несколько линий на одном графике** (регионы, сравнение проектов, несколько ТОП) — **разные насыщенные цвета**, визуально различимые с первого взгляда.
+2. **Запрещено:** две серии одного оттенка (два синих, два серых), пастельные/полупрозрачные линии (`#1971c222`, бледный `backgroundColor`), `mt_rand` для цвета.
+3. **Единая палитра** — только `MonitoringChartPalette` (PHP) и `cabinet-monitoring-chart-scales.js` (`LINE_PALETTE`). Менять в **обоих** файлах синхронно.
+4. После merge/filter серий (сравнение, пресет TOP-10) — вызывать **`applyDistinctLineColors`** по индексу dataset, не по номеру ТОП.
+5. Сравнение проектов (`cabinet-monitoring-show-compare.js`): в `mergeChartPayloads` уже есть `applyDistinctLineColors`; не перезатирать цветом ТОП в `applyTopPreset`, если `datasets.length > 1`.
+
+## Эталон
+
+- Палитра: синий → оранжевый → зелёный → фиолетовый → красный → бирюза → янтарь → графит.
+- `borderWidth` ≥ 2.5, точки с белой обводкой (`pointBorderColor: #fff`).
+- Проверка: `/monitoring/{id}` → один регион → сравнить с другим проектом → TOP-10 → линии **разных** цветов в легенде.
+
+## Документация
+
+При смене палитры или логики перекраски — `docs/cabinet-monitoring-changelog.md` + bump `config/cabinet-monitoring.php`.

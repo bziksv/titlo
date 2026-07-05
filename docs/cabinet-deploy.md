@@ -1,6 +1,6 @@
 # Деплой cabinet.datagon.ru (Laravel)
 
-**Сервер:** `155.212.171.103`  
+**Сервер:** `155.212.171.103` (**s3**, FASTPANEL, Ubuntu 24.04) — **8 vCPU**, **~10 GiB RAM**, диск **138 GiB** (снимок 2026-05-30: swap заполнен, `/` **85%**) — [cabinet-servers.md](./cabinet-servers.md) § «Железо VPS s3»  
 **Путь:** `/var/www/cabinet_data_usr/data/www/cabinet.datagon.ru`  
 **Git:** [github.com/bziksv/cabinet.datagon.ru](https://github.com/bziksv/cabinet.datagon.ru)  
 **Порт приложения:** `3002` (nginx → `127.0.0.1:3002`)  
@@ -481,8 +481,43 @@ sudo -u cabinet_data_usr $PHP "$APP/artisan" config:cache
 
 ```bash
 sudo -u cabinet_data_usr $PHP "$APP/artisan" storage:link
+mkdir -p "$APP/storage/app/public/monitoring-favicons"
 chmod -R ug+rwx "$APP/storage"
+# Проверка: файл из storage отдаётся через PHP (обход 403 на /storage/ в nginx)
+curl -sS -o /dev/null -w "%{http_code}\n" -b /tmp/cabinet.cookie \
+  "https://cabinet.datagon.ru/monitoring-v2/favicon?project=ID"
 ```
+
+**Мониторинг v2 — фавиконки:** в списке URL `/monitoring-v2/favicon?project={id}` (не `/storage/monitoring-favicons/` — на FastPanel часто **403**). PNG с lk на диск cabinet **один раз** (в `.env` ничего не оставляем).
+
+**Важно:** не `php artisan` от root — системный `php` часто **8.3** → fatal `Collection::offsetExists` на Laravel 6. Только **`/opt/php74/bin/php`** от пользователя сайта:
+
+```bash
+APP=/var/www/cabinet_data_usr/data/www/cabinet.datagon.ru
+PHP=/opt/php74/bin/php
+cd "$APP"
+
+sudo -u cabinet_data_usr $PHP -v   # должно быть PHP 7.4.x
+
+sudo -u cabinet_data_usr $PHP artisan monitoring:import-favicons-from-legacy --from=https://lk.redbox.su --probe -v
+# если probe → http_403: HTTP с lk не отдаёт /storage/ (как на cabinet). Копировать файлы по SSH/rsync:
+
+# на сервере lk (путь уточнить), затем на s3:
+# rsync -avz USER@LK_HOST:/var/www/.../storage/app/public/monitoring-favicons/ \
+#   "$APP/storage/app/public/monitoring-favicons/"
+
+sudo -u cabinet_data_usr $PHP artisan monitoring:import-favicons-from-legacy --from-disk="$APP/storage/app/public" --dry-run
+# --from-disk = каталог storage/app/public *после* rsync (не URL)
+
+# 211 проектов: в БД есть favicon_path, файла нет — не --missing, а --no-file:
+sudo -u cabinet_data_usr $PHP artisan monitoring:refresh-favicons --no-file --limit=20
+sudo -u cabinet_data_usr $PHP artisan monitoring:refresh-favicons --no-file
+
+# --missing = только где favicon_path IS NULL (редкие кириллические домены)
+sudo -u cabinet_data_usr $PHP artisan monitoring:refresh-favicons --missing
+```
+
+`CABINET_STORAGE_URL` — только для **аватаров/прочего** storage, не для фавиконок мониторинга.
 
 После cutover и полного переноса `storage/` — убрать `CABINET_STORAGE_URL` или указать `https://cabinet.datagon.ru`.
 

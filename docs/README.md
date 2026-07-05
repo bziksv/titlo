@@ -34,11 +34,14 @@
 | [api-lk.md](./api-lk.md) | Прокси Next → lk, env |
 | [lk-contact-api.md](./lk-contact-api.md) | Форма контактов: SMTP, lk, webhook |
 | [deploy.md](./deploy.md) | Docker, VPS `/var/www/datagon_ru_usr/...`, PM2, smoke |
+| **[titlo-deploy.md](./titlo-deploy.md)** | **titlo.ru** на том же VPS, PM2 `titlo-site`, порт **3003** |
+| [nginx-titlo.example.conf](./nginx-titlo.example.conf) | Nginx: titlo.ru → **:3003** |
 | [migration-checklist.md](./migration-checklist.md) | Чеклист миграции с Битрикса |
 | [examples/README.md](./examples/README.md) | **Эталонные** UI и паттерны (обязательно смотреть перед версткой) |
 | [examples/module-landing-relevance.md](./examples/module-landing-relevance.md) | Эталон лендинга модуля: `/analiz-relevantnosti/` |
 
-Репозиторий: [github.com/bziksv/site_seo_datagon](https://github.com/bziksv/site_seo_datagon).
+Репозиторий **titlo.ru:** [github.com/bziksv/titlo](https://github.com/bziksv/titlo).  
+Legacy **datagon.ru:** [site_seo_datagon](https://github.com/bziksv/site_seo_datagon).
 
 ## Как вести документацию
 

@@ -28,13 +28,15 @@
 | UTM-метки | `/utm-marks` | `config/cabinet-utm-marks.php` | [cabinet-utm-marks-changelog.md](./cabinet-utm-marks-changelog.md) | шапка карточки (**v1.0.1s**) |
 | Калькулятор ROI | `/roi-calculator` | `config/cabinet-roi-calculator.php` | [cabinet-roi-calculator-changelog.md](./cabinet-roi-calculator-changelog.md) | шапка карточки (**v1.1**) |
 | Управление прокси Telegram (админ) | `/admin/telegram-proxy` | `config/cabinet-telegram-proxy.php` | [cabinet-telegram-proxy-changelog.md](./cabinet-telegram-proxy-changelog.md) | заголовок (**v1.1.2s**) |
-| Пользователи (админ) | `/users` | `config/cabinet-users.php` | [cabinet-users-changelog.md](./cabinet-users-changelog.md) | заголовок (**v1.0.0s**) |
+| Управление рассылками (админ) | `/admin/notifications` | `config/cabinet-notifications-admin.php` | [cabinet-notifications-admin-changelog.md](./cabinet-notifications-admin-changelog.md) | заголовок (**v1.2.1s**) |
+| Пользователи (админ) | `/users` | `config/cabinet-users.php` | [cabinet-users-changelog.md](./cabinet-users-changelog.md) | заголовок (**v1.2.2s**) |
 | Управление меню (админ) | `/main-projects` | `config/cabinet-main-projects.php` | [cabinet-main-projects-changelog.md](./cabinet-main-projects-changelog.md) | заголовок (**v1.0.0s**) |
 | Управление доступами (админ) | `/manage-access` | `config/cabinet-manage-access.php` | [cabinet-manage-access-changelog.md](./cabinet-manage-access-changelog.md) | заголовок (**v1.0.0s**) |
 | Управление политиками (админ) | `/edit-policy-files` | `config/cabinet-policy-files.php` | [cabinet-policy-files-changelog.md](./cabinet-policy-files-changelog.md) | card-title (**v1.0.0s**) |
 | Тарифы и ограничения (админ) | `/tariff-settings` | `config/cabinet-tariff-settings.php` | [cabinet-tariff-settings-changelog.md](./cabinet-tariff-settings-changelog.md) | заголовок (**v1.0.0s**) |
 | Управление XML (админ) | `/admin/xml-providers` | `config/cabinet-xml-providers.php` | [cabinet-xml-providers-changelog.md](./cabinet-xml-providers-changelog.md) | заголовок (**v1.0.0s**) |
-| Управление БД (админ) | `/admin/database` | `config/cabinet-database-admin.php` | [cabinet-database-admin-changelog.md](./cabinet-database-admin-changelog.md) | заголовок (**v1.1.1s**) |
+| Управление БД (админ) | `/admin/database` | `config/cabinet-database-admin.php` | [cabinet-database-admin-changelog.md](./cabinet-database-admin-changelog.md) | заголовок (**v1.1.3s**) |
+| Управление очередями (админ) | `/admin/queues` | `config/cabinet-queue-admin.php` | [cabinet-queue-admin-changelog.md](./cabinet-queue-admin-changelog.md) | заголовок (**v1.0.0s**) |
 
 **Не версионируем:** «Шаблон LTE» (`/html/`, демо AdminLTE) — статический каталог, не продуктовая страница кабинета.
 
