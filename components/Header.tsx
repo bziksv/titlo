@@ -14,10 +14,10 @@ const menuLinkClass =
   "flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition hover:bg-brand-50 hover:text-brand-700";
 
 const navItemClass =
-  "rounded-lg border border-transparent px-3 py-2 transition-all hover:border-brand-300 hover:bg-brand-50 hover:text-brand-700 hover:shadow-sm";
+  "rounded-lg border border-transparent px-3 py-1.5 text-sm transition-all hover:border-brand-300 hover:bg-brand-50 hover:text-brand-700 hover:shadow-sm";
 
 const navItemActiveClass =
-  "rounded-lg border border-brand-300 bg-brand-50 px-3 py-2 text-brand-700 shadow-sm";
+  "rounded-lg border border-brand-300 bg-brand-50 px-3 py-1.5 text-sm text-brand-700 shadow-sm";
 
 const dropdownAnchorClass = "absolute left-0 top-full z-[70] pt-2";
 
@@ -57,14 +57,14 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 overflow-visible border-b border-slate-200 bg-white/95 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 overflow-visible px-4 py-3">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 overflow-visible px-4 py-2">
         <Link
           href="/"
-          className="flex shrink-0 items-center gap-2.5 rounded-lg border border-transparent p-1 transition hover:border-brand-200 hover:bg-brand-50/50"
+          className="flex shrink-0 items-center gap-2 rounded-lg border border-transparent p-0.5 transition hover:border-brand-200 hover:bg-brand-50/50"
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/favicon.svg" alt="" width={36} height={36} className="h-9 w-9" />
-          <span className="text-xl font-bold text-brand-600">{SITE.name}</span>
+          <img src="/favicon.svg" alt="" width={32} height={32} className="h-8 w-8" />
+          <span className="text-lg font-bold leading-none text-brand-600">{SITE.name}</span>
         </Link>
 
         <nav className="relative hidden items-center gap-1 overflow-visible text-sm font-medium text-slate-700 lg:flex">
@@ -185,7 +185,7 @@ export function Header() {
           </Link>
         </nav>
 
-        <div className="hidden shrink-0 items-center gap-3 lg:flex">
+        <div className="hidden shrink-0 items-center gap-2 lg:flex">
           <a
             href={`${LK_URL}/login`}
             className={`${navItemClass} text-slate-700`}
@@ -194,7 +194,7 @@ export function Header() {
           </a>
           <a
             href={`${LK_URL}/register`}
-            className="rounded-lg bg-brand-600 px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:bg-brand-700 hover:shadow-md"
+            className="rounded-lg bg-brand-600 px-4 py-1.5 text-sm font-medium text-white shadow-sm transition hover:bg-brand-700 hover:shadow-md"
           >
             Регистрация
           </a>
@@ -203,7 +203,7 @@ export function Header() {
         <div className="flex shrink-0 items-center gap-2 lg:hidden">
           <a
             href={`${LK_URL}/login`}
-            className="rounded-lg px-2.5 py-1.5 text-sm font-medium text-slate-700 transition hover:bg-brand-50 hover:text-brand-700"
+            className="rounded-lg px-2 py-1.5 text-sm font-medium text-slate-700 transition hover:bg-brand-50 hover:text-brand-700"
           >
             Вход
           </a>
@@ -215,7 +215,7 @@ export function Header() {
           </a>
           <button
             type="button"
-            className="rounded-lg border border-slate-300 px-2.5 py-1.5 text-sm transition hover:border-brand-300 hover:bg-brand-50"
+            className="rounded-lg border border-slate-300 px-2 py-1.5 text-sm transition hover:border-brand-300 hover:bg-brand-50"
             onClick={() => setMobileOpen((v) => !v)}
             aria-expanded={mobileOpen}
             aria-label={mobileOpen ? "Закрыть меню" : "Открыть меню"}

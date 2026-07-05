@@ -34,7 +34,7 @@ export function HomeEcosystemOrbit() {
   const [top, right, bottom, left] = NODES;
 
   return (
-    <section className="overflow-hidden bg-slate-50 py-20 md:py-28">
+    <section className="overflow-hidden bg-slate-50 py-14 md:py-20">
       <div className="mx-auto max-w-6xl px-4">
         <RevealOnScroll>
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-600">Связка модулей</p>
@@ -46,8 +46,8 @@ export function HomeEcosystemOrbit() {
           </p>
         </RevealOnScroll>
 
-        <div ref={wrapRef} className={`relative mx-auto mt-14 max-w-3xl ${active ? "home-orbit-active" : ""}`}>
-          <div className="relative hidden min-h-[400px] lg:block">
+        <div ref={wrapRef} className={`relative mx-auto mt-10 max-w-2xl ${active ? "home-orbit-active" : ""}`}>
+          <div className="relative hidden min-h-[280px] lg:block">
             <svg
               className="pointer-events-none absolute inset-0 h-full w-full"
               viewBox="0 0 100 100"
@@ -73,22 +73,22 @@ export function HomeEcosystemOrbit() {
               <circle cx="50" cy="50" r="6" className="home-orbit-hub" />
             </svg>
 
-            <div className="absolute left-1/2 top-0 w-[200px] -translate-x-1/2">
+            <div className="absolute left-1/2 top-0 w-[168px] -translate-x-1/2">
               <OrbitCard node={top} delay={0} />
             </div>
-            <div className="absolute right-0 top-1/2 w-[200px] -translate-y-1/2">
+            <div className="absolute right-0 top-1/2 w-[168px] -translate-y-1/2">
               <OrbitCard node={right} delay={100} />
             </div>
-            <div className="absolute bottom-0 left-1/2 w-[200px] -translate-x-1/2">
+            <div className="absolute bottom-0 left-1/2 w-[168px] -translate-x-1/2">
               <OrbitCard node={bottom} delay={200} />
             </div>
-            <div className="absolute left-0 top-1/2 w-[200px] -translate-y-1/2">
+            <div className="absolute left-0 top-1/2 w-[168px] -translate-y-1/2">
               <OrbitCard node={left} delay={300} />
             </div>
 
-            <div className="absolute left-1/2 top-1/2 z-20 -translate-x-1/2 -translate-y-1/2 rounded-2xl border-2 border-brand-500 bg-white px-6 py-4 text-center shadow-lg">
-              <span className="text-xs font-bold uppercase tracking-wider text-brand-600">Хаб</span>
-              <p className="mt-1 font-bold text-slate-900">Титло</p>
+            <div className="absolute left-1/2 top-1/2 z-20 -translate-x-1/2 -translate-y-1/2 rounded-xl border-2 border-brand-500 bg-white px-4 py-2 text-center shadow-md">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-brand-600">Хаб</span>
+              <p className="text-sm font-bold text-slate-900">Титло</p>
             </div>
           </div>
 
@@ -115,11 +115,11 @@ function OrbitCard({ node, delay }: { node: (typeof NODES)[number]; delay: numbe
   return (
     <Link
       href={node.href}
-      className="home-orbit-card block rounded-xl border border-slate-200 bg-white p-4 text-center shadow-sm transition hover:border-brand-400 hover:shadow-md"
+      className="home-orbit-card block rounded-lg border border-slate-200 bg-white p-2.5 text-center shadow-sm transition hover:border-brand-400 hover:shadow-md"
       style={{ animationDelay: `${delay}ms` }}
     >
-      <span className="font-bold text-brand-700">{node.label}</span>
-      <p className="mt-1 text-sm text-slate-600">{node.role}</p>
+      <span className="text-sm font-bold text-brand-700">{node.label}</span>
+      <p className="mt-0.5 text-xs leading-snug text-slate-600">{node.role}</p>
     </Link>
   );
 }

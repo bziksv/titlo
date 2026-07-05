@@ -1,119 +1,135 @@
-# Деплой cabinet.titlo.ru (Laravel)
+# Деплой cabinet.titlo.ru (Laravel, FastPanel s3)
 
-**VPS:** `155.212.171.103` (тот же, что titlo.ru / cabinet.datagon.ru).  
-**Путь:** `/var/www/cabinet_titl_usr/data/www/cabinet.titlo.ru`  
-**Порт приложения:** **3004** (cabinet.datagon.ru — 3002, titlo.ru — 3003, datagon.ru — 3001).  
-**БД:** пока на **`178.250.157.140`** — [cabinet-servers.md](./cabinet-servers.md).
+**VPS:** `155.212.171.103` (**FastPanel**).  
+**Путь к коду:** `/var/www/cabinet_titl_usr/data/www/cabinet.titlo.ru`  
+**Git:** [github.com/bziksv/cabinet.titlo](https://github.com/bziksv/cabinet.titlo)  
+**БД:** пока `178.250.157.140` — [cabinet-servers.md](./cabinet-servers.md)
 
-**Git:** [github.com/bziksv/cabinet.titlo](https://github.com/bziksv/cabinet.titlo).  
-Legacy: [cabinet.datagon.ru](https://github.com/bziksv/cabinet.datagon.ru).
+Маркетинг **titlo.ru** (Next, PM2 :3003) — [titlo-deploy.md](./titlo-deploy.md).
 
-Маркетинг **titlo.ru** → `LK_API_BASE_URL=https://cabinet.titlo.ru` — [titlo-deploy.md](./titlo-deploy.md).
+---
 
-## Порты на s3
+## FastPanel — как у cabinet.datagon.ru (без PM2)
 
-| Домен | PM2 / процесс | Порт |
-|-------|---------------|------|
-| datagon.ru | `datagon-site` | 3001 |
-| cabinet.datagon.ru | `cabinet-datagon` | 3002 |
-| titlo.ru | `titlo-site` | 3003 |
-| **cabinet.titlo.ru** | **`cabinet-titlo`** | **3004** |
+На **s3** кабинет отдаёт **nginx → PHP-FPM 7.4**, не `artisan serve` и **не PM2**.
 
-## Первый push (Mac)
+| Параметр в панели | Значение |
+|-------------------|----------|
+| Домен | `cabinet.titlo.ru` |
+| Пользователь | `cabinet_titl_usr` |
+| **PHP version** | **7.4** (php74) |
+| **PHP mode** | **PHP-FPM** |
+| **Document root** | `/var/www/cabinet_titl_usr/data/www/cabinet.titlo.ru/public` ← **`/public`** |
+| SSL | Let's Encrypt в панели |
 
-```bash
-cd /Users/stanislav/Documents/projects/cabinet.datagon.ru
-git remote add titlo https://github.com/bziksv/cabinet.titlo.git   # если ещё нет
-git push -u titlo main
-```
+Полная инструкция FastPanel: [cabinet-deploy.md](./cabinet-deploy.md) § FastPanel.
 
-## Первый деплой на сервере
+---
 
-```bash
-ssh root@155.212.171.103
-cd /var/www/cabinet_titl_usr/data/www/cabinet.titlo.ru
-
-git clone https://github.com/bziksv/cabinet.titlo.git .
-cp /var/www/cabinet_data_usr/data/www/cabinet.datagon.ru/.env .env
-nano .env
-```
-
-Минимум в `.env`:
-
-```env
-APP_NAME=Титло
-APP_URL=https://cabinet.titlo.ru
-DB_HOST=178.250.157.140
-HTTP_HEADERS_CLEANUP_ON_REQUEST=false
-SKIP_HEAVY_WEB_MIDDLEWARE=false
-```
-
-Сборка:
+## Первый деплой (SSH root@s3)
 
 ```bash
-composer install --no-dev --optimize-autoloader
-npm ci && npm run production   # при смене CSS/JS
+APP=/var/www/cabinet_titl_usr/data/www/cabinet.titlo.ru
+PHP=/opt/php74/bin/php
+USER=cabinet_titl_usr
 
-php artisan config:cache
-php artisan route:cache
-php artisan view:cache
+cd "$APP"
+git config --global --add safe.directory "$APP"
 
-chown -R cabinet_titl_usr:cabinet_titl_usr storage bootstrap/cache
-chmod -R ug+rwx storage bootstrap/cache
+# если ещё не клонировали:
+# git clone https://github.com/bziksv/cabinet.titlo.git .
+
+cp /var/www/cabinet_data_usr/data/www/cabinet.datagon.ru/.env "$APP/.env"
+sed -i 's|APP_URL=.*|APP_URL=https://cabinet.titlo.ru|' "$APP/.env"
+sed -i 's|APP_NAME=.*|APP_NAME=Титло|' "$APP/.env"
+
+COMPOSER_ALLOW_SUPERUSER=1 $PHP "$(which composer)" install --no-dev --optimize-autoloader --no-interaction
+
+cd "$APP" && npm ci && NODE_OPTIONS=--openssl-legacy-provider npm run production
+
+chown -R $USER:$USER "$APP"
+chmod -R ug+rwx "$APP/storage" "$APP/bootstrap/cache"
+
+# storage/ не в git — скопировать с cabinet.datagon (или mkdir skeleton)
+rsync -a /var/www/cabinet_data_usr/data/www/cabinet.datagon.ru/storage/ "$APP/storage/" \
+  --exclude='logs/*.log' --exclude='debugbar'
+mkdir -p "$APP/storage/framework/"{cache,sessions,views} "$APP/storage/logs"
+
+sudo -u $USER $PHP "$APP/artisan" storage:link
+sudo -u $USER $PHP "$APP/artisan" config:clear
+sudo -u $USER $PHP "$APP/artisan" config:cache
+sudo -u $USER $PHP "$APP/artisan" route:clear
+sudo -u $USER $PHP "$APP/artisan" view:cache
 ```
 
-PM2 (порт **3004**):
+**Убрать ошибочный PM2** (если запускали по старой инструкции):
 
 ```bash
-sudo -u cabinet_titl_usr bash -lc '
-  cd /var/www/cabinet_titl_usr/data/www/cabinet.titlo.ru
-  pm2 delete cabinet-titlo 2>/dev/null || true
-  pm2 start php --name cabinet-titlo -- artisan serve --host=127.0.0.1 --port=3004
-  pm2 save
-'
-
-curl -sI http://127.0.0.1:3004/login | head -5
+pm2 delete cabinet-titlo 2>/dev/null || true
+pm2 save
 ```
 
-Nginx: [nginx-cabinet-titlo.example.conf](./nginx-cabinet-titlo.example.conf) → upstream **3004**, SSL для `cabinet.titlo.ru`.
+Проверка (через vhost панели, не порт 3004):
 
-Cron (как на cabinet.datagon):
+```bash
+curl -sI https://cabinet.titlo.ru/login | head -5
+# или до SSL:
+curl -sI -H "Host: cabinet.titlo.ru" http://127.0.0.1/login | head -5
+```
+
+Cron (в панели или crontab пользователя сайта):
 
 ```cron
 * * * * * cd /var/www/cabinet_titl_usr/data/www/cabinet.titlo.ru && /opt/php74/bin/php artisan schedule:run >> /dev/null 2>&1
 ```
 
+---
+
 ## Обновление после `git push`
 
 ```bash
-cd /var/www/cabinet_titl_usr/data/www/cabinet.titlo.ru
+APP=/var/www/cabinet_titl_usr/data/www/cabinet.titlo.ru
+PHP=/opt/php74/bin/php
+USER=cabinet_titl_usr
+cd "$APP"
+
 git fetch origin && git checkout main && git reset --hard origin/main
-composer install --no-dev --optimize-autoloader
-npm ci && npm run production   # если менялся фронт
-php artisan config:cache && php artisan route:cache && php artisan view:cache
-pm2 restart cabinet-titlo
-curl -sI http://127.0.0.1:3004/login | head -3
+
+COMPOSER_ALLOW_SUPERUSER=1 $PHP "$(which composer)" install --no-dev --optimize-autoloader --no-interaction
+
+# если менялись resources/js|sass:
+NODE_OPTIONS=--openssl-legacy-provider npm run production
+
+chown -R $USER:$USER "$APP"
+
+sudo -u $USER $PHP artisan config:clear
+sudo -u $USER $PHP artisan config:cache
+sudo -u $USER $PHP artisan route:clear
+sudo -u $USER $PHP artisan view:cache
+
+curl -sI https://cabinet.titlo.ru/login | head -3
 ```
+
+---
+
+## Частые ошибки на s3
+
+| Симптом | Решение |
+|---------|---------|
+| `php ^7.4 but 8.3.6` | Только `$PHP=/opt/php74/bin/php`, не `php` |
+| `digital envelope routines::unsupported` | `NODE_OPTIONS=--openssl-legacy-provider npm run production` |
+| `vendor/autoload.php` missing | composer не прошёл — повторить с php74 |
+| 500 / белая страница | Document root в панели → **`.../public`**, PHP **7.4 FPM** |
+| PM2 `cabinet-titlo` | **Удалить** — на FastPanel не нужен |
+| `route:cache` → Closure | Использовать **`route:clear`**, не `route:cache` |
+| `storage/` missing | `rsync` с cabinet.datagon или `mkdir -p storage/framework/...` |
+
+---
 
 ## Локально (Mac)
 
-Кабинет по-прежнему на **:3002** (`./scripts/dev-serve.sh`). В `.env`:
+`./scripts/dev-serve.sh` → http://localhost:3002, `DB_HOST=178.250.157.140`.
 
-```env
-APP_URL=http://localhost:3002
-DB_HOST=178.250.157.140
-```
+## Cutover
 
-Маркетинг titlo (:3003) → `NEXT_PUBLIC_LK_URL=http://localhost:3002`.
-
-## FastPanel
-
-Если сайт отдаётся через **PHP-FPM** панели (без PM2) — см. [cabinet-deploy.md](./cabinet-deploy.md) § FastPanel: PHP **7.4**, document root `public/`, `.env` как выше.
-
-## Cutover (позже)
-
-1. DNS `cabinet.titlo.ru` → `155.212.171.103`, SSL.
-2. Проверить login/register с titlo.ru.
-3. Остановить `cabinet-datagon`, когда datagon.ru снимут.
-
-Подробнее: [cabinet-deploy.md](./cabinet-deploy.md), [cabinet-servers.md](./cabinet-servers.md).
+DNS + SSL для `cabinet.titlo.ru`, проверка входа с titlo.ru.
