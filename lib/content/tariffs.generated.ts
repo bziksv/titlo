@@ -2,7 +2,10 @@
 export type TariffPlan = {
   id: string;
   name: string;
+  /** @deprecated Используйте pricePerDay — оставлено для обратной совместимости */
   price: string;
+  /** Стоимость тарифа в рублях за календарный день (как в ЛК) */
+  pricePerDay: number;
   priceNote?: string;
   tagline: string;
   features: string[];
@@ -10,13 +13,15 @@ export type TariffPlan = {
   badge?: string;
 };
 
-export const TARIFF_DISCOUNT_NOTE = "Получите скидку на оплату тарифа при подключении на несколько месяцев — чем больше срок, тем больше скидка.";
+export const TARIFF_DISCOUNT_NOTE =
+  "Итоговая сумма зависит от периода оплаты. Скидки при оплате на 3 месяца — 10%, на 6 месяцев — 20%, на 12 месяцев — 35%.";
 
 export const TARIFF_PLANS: TariffPlan[] = [
   {
     id: "Free",
     name: "Бесплатный",
     price: "0 ₽",
+    pricePerDay: 0,
     priceNote: "навсегда бесплатно",
     tagline: "Попробовать платформу и утилиты",
     highlighted: false,
@@ -44,8 +49,8 @@ export const TARIFF_PLANS: TariffPlan[] = [
   {
     id: "Optimal",
     name: "Оптимальный",
-    price: "2 000 ₽",
-    priceNote: "в месяц",
+    price: "65 ₽",
+    pricePerDay: 65,
     tagline: "Фрилансер или небольшой проект",
     highlighted: false,
     features: [
@@ -71,8 +76,8 @@ export const TARIFF_PLANS: TariffPlan[] = [
   {
     id: "Ultimate",
     name: "Ультимат",
-    price: "4 000 ₽",
-    priceNote: "в месяц",
+    price: "129 ₽",
+    pricePerDay: 129,
     tagline: "Агентство и несколько клиентов",
     highlighted: true,
     badge: "Популярный",
@@ -99,8 +104,8 @@ export const TARIFF_PLANS: TariffPlan[] = [
   {
     id: "Maximum",
     name: "Максимум",
-    price: "6 000 ₽",
-    priceNote: "в месяц",
+    price: "194 ₽",
+    pricePerDay: 194,
     tagline: "Крупные объёмы и много проектов",
     highlighted: false,
     features: [

@@ -43,11 +43,27 @@ function escape(str) {
   return str.replace(/\\/g, "\\\\").replace(/`/g, "\\`").replace(/\$/g, "\\$");
 }
 
+const SITE_HOST = "titlo.ru";
+const LK_HOST = "cabinet.titlo.ru";
+const SITE_EMAIL = "info@titlo.ru";
+
 function normalizeLegalHtml(html) {
   return html
     .replace(/redbox\.su\.ru/gi, "redbox.su")
-    .replace(/info@kargo24\.su/gi, "info@redbox.su")
-    .replace(/href="mailto:info@kargo24\.su"/gi, 'href="mailto:info@redbox.su"');
+    .replace(/info@kargo24\.su/gi, SITE_EMAIL)
+    .replace(/href="mailto:info@kargo24\.su"/gi, `href="mailto:${SITE_EMAIL}"`)
+    .replace(
+      /размещенный в сети Интернет по адресу redbox\.su, а также любые сайты в доменной зоне \*\.redbox\.su \(где \* - любое имя\)/gi,
+      `размещённый в сети Интернет на сайте ${SITE_HOST} и в личном кабинете ${LK_HOST}, а также на любых поддоменах указанных доменов`,
+    )
+    .replace(/https:\/\/redbox\.su\/tarify\//gi, `https://${SITE_HOST}/tarify/`)
+    .replace(/https:\/\/redbox\.su\//gi, `https://${SITE_HOST}/`)
+    .replace(/https:\/\/redbox\.su/gi, `https://${SITE_HOST}`)
+    .replace(/href="mailto:info@redbox\.su"/gi, `href="mailto:${SITE_EMAIL}"`)
+    .replace(/info@redbox\.su/gi, SITE_EMAIL)
+    .replace(/lk\.redbox\.su/gi, LK_HOST)
+    .replace(/\*\.redbox\.su/gi, `*.${SITE_HOST} и *.${LK_HOST}`)
+    .replace(/redbox\.su/gi, SITE_HOST);
 }
 
 function cleanHtml($, root) {

@@ -61,8 +61,19 @@ export function TariffCard({ plan, highlighted }: Props) {
       <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">{plan.tagline}</p>
       <h3 className="mt-2 text-2xl font-bold text-slate-900">{plan.name}</h3>
       <div className="mt-3 border-b border-slate-100 pb-4">
-        <p className="text-3xl font-bold text-brand-600">{plan.price}</p>
-        {plan.priceNote && <p className="mt-1 text-sm text-slate-500">{plan.priceNote}</p>}
+        {plan.pricePerDay === 0 ? (
+          <>
+            <p className="text-3xl font-bold text-brand-600">
+              0 <span className="text-lg font-normal text-slate-500">₽</span>
+            </p>
+            {plan.priceNote && <p className="mt-1 text-sm text-slate-500">{plan.priceNote}</p>}
+          </>
+        ) : (
+          <p className="text-3xl font-bold text-brand-600">
+            {plan.pricePerDay.toLocaleString("ru-RU")}{" "}
+            <span className="text-lg font-normal text-slate-500">₽ / день</span>
+          </p>
+        )}
       </div>
 
       <div className="mt-5 flex-1 space-y-5">

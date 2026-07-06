@@ -1,5 +1,6 @@
 /**
- * Тарифы с redbox.su/tarify/ → lib/content/tariffs.generated.ts
+ * Лимиты с redbox.su/tarify/ + цены ₽/день из ЛК (tariff_setting_values.code = price)
+ * → lib/content/tariffs.generated.ts
  */
 import fs from "fs";
 import path from "path";
@@ -10,10 +11,15 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const OUT = path.join(__dirname, "../lib/content/tariffs.generated.ts");
 const SITE = "https://redbox.su/tarify/";
 
+/** ₽ за календарный день — как в cabinet.titlo.ru /tariff */
+const PRICE_PER_DAY = { Free: 0, Optimal: 65, Ultimate: 129, Maximum: 194 };
+
+const DISCOUNT_NOTE =
+  "Итоговая сумма зависит от периода оплаты. Скидки при оплате на 3 месяца — 10%, на 6 месяцев — 20%, на 12 месяцев — 35%.";
+
 const html = await (await fetch(SITE)).text();
 const $ = cheerio.load(html);
 
-const PRICES = { Free: "0 ₽", Optimal: "2 000 ₽", Ultimate: "4 000 ₽", Maximum: "6 000 ₽" };
 const NAMES_RU = {
   Free: "Бесплатный",
   Optimal: "Оптимальный",
@@ -43,8 +49,9 @@ $(".tarif-item").each((_, item) => {
   plans.push({
     id: name,
     name: NAMES_RU[name],
-    price: PRICES[name],
-    priceNote: name === "Free" ? "навсегда бесплатно" : "в месяц",
+    pricePerDay: PRICE_PER_DAY[name],
+    price: `${PRICE_PER_DAY[name].toLocaleString("ru-RU")} ₽`,
+    priceNote: name === "Free" ? "навсегда бесплатно" : undefined,
     tagline: TAGLINES[name],
     highlighted: name === "Ultimate",
     badge: name === "Ultimate" ? "Популярный" : undefined,
@@ -52,13 +59,7 @@ $(".tarif-item").each((_, item) => {
   });
 });
 
-const discount =
-  $(".text-wrap, .descriptive")
-    .text()
-    .match(/скидк[^.]{10,120}/i)?.[0]
-    ?.replace(/\s+/g, " ")
-    .trim() ||
-  "Получите скидку на оплату тарифа при подключении на несколько месяцев — чем больше срок, тем больше скидка.";
+const discount = DISCOUNT_NOTE;
 
 function formatNum(n) {
   const num = Number(String(n).replace(/\s/g, ""));
@@ -119,7 +120,10 @@ const lines = [
   "export type TariffPlan = {",
   "  id: string;",
   "  name: string;",
+  "  /** @deprecated Используйте pricePerDay — оставлено для обратной совместимости */",
   "  price: string;",
+  "  /** Стоимость тарифа в рублях за календарный день (как в ЛК) */",
+  "  pricePerDay: number;",
   "  priceNote?: string;",
   "  tagline: string;",
   "  features: string[];",
@@ -134,11 +138,12 @@ const lines = [
 
 for (const p of plans) {
   const featLines = p.features.map((f) => `      ${JSON.stringify(f)},`).join("\n");
+  const priceNoteLine = p.priceNote ? `\n    priceNote: ${JSON.stringify(p.priceNote)},` : "";
   lines.push(`  {
     id: ${JSON.stringify(p.id)},
     name: ${JSON.stringify(p.name)},
     price: ${JSON.stringify(p.price)},
-    priceNote: ${JSON.stringify(p.priceNote)},
+    pricePerDay: ${p.pricePerDay},${priceNoteLine}
     tagline: ${JSON.stringify(p.tagline)},
     highlighted: ${p.highlighted ? "true" : "false"},${p.badge ? `\n    badge: ${JSON.stringify(p.badge)},` : ""}
     features: [

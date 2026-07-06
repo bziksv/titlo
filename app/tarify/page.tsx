@@ -16,10 +16,10 @@ export default function TarifyPage() {
   return (
     <PageShell
       title={page?.h1 ?? "Тарифы"}
-      lead="Выберите план под объём задач. На бесплатном тарифе — по 3 проверки в месяц на анализ релевантности, текста и конкурентов; кластеризатор — 50 условных запросов (см. таблицу). Утилиты без лимитов. Мониторинг сайтов, доменов и отслеживание ссылок на Free: кабинет и Telegram; email — на платных."
+      lead="Выберите тариф под ваши задачи. Стоимость платных планов указана за календарный день; итог при оплате зависит от выбранного периода. На бесплатном — по 3 проверки в месяц на анализ релевантности, текста и конкурентов; кластеризатор — 50 условных запросов (см. таблицу). Утилиты без лимитов. Мониторинг сайтов, доменов и отслеживание ссылок на Free: кабинет и Telegram; email — на платных."
     >
       <div className="mb-10 rounded-2xl border border-amber-200 bg-amber-50 px-5 py-4 text-sm text-amber-950">
-        <strong className="font-semibold">Скидка за длительность:</strong> {TARIFF_DISCOUNT_NOTE}
+        <strong className="font-semibold">Период оплаты:</strong> {TARIFF_DISCOUNT_NOTE}
       </div>
 
       <p className="mb-6 text-center text-sm font-medium text-slate-500">

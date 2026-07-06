@@ -48,6 +48,19 @@ export function TariffComparison() {
           </tr>
         </thead>
         <tbody>
+          <tr className="bg-brand-50/40">
+            <td className="border-t border-slate-200 px-4 py-3 font-semibold text-slate-700">Стоимость, ₽ / день</td>
+            {TARIFF_PLANS.map((plan) => (
+              <td
+                key={plan.id}
+                className={`border-t border-slate-200 px-4 py-3 text-center tabular-nums text-slate-900 ${
+                  plan.highlighted ? "bg-brand-50 font-bold text-brand-700" : "font-semibold"
+                }`}
+              >
+                {plan.pricePerDay === 0 ? "0" : plan.pricePerDay.toLocaleString("ru-RU")}
+              </td>
+            ))}
+          </tr>
           {TARIFF_COMPARE_ROWS.map((row, i) => (
             <tr
               key={row.key}
