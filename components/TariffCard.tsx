@@ -15,7 +15,7 @@ function groupFeatures(features: string[]) {
     const low = f.toLowerCase();
     if (low.includes("без ограничений") || low.includes("генератор") || low.includes("utm") || low.includes("roi") || low.includes("html") || low.includes("дубликат") || low.includes("длин")) {
       utils.push(f);
-    } else if (low.includes("анализ") || low.includes("мониторинг") || low.includes("отслеж") || low.includes("позиц")) {
+    } else if (low.includes("анализ") || low.includes("мониторинг") || low.includes("отслеж") || low.includes("позиц") || low.includes("индексац")) {
       modules.push(f);
     } else {
       other.push(f);

@@ -92,6 +92,11 @@ export function TariffComparison() {
         </tbody>
       </table>
       <p className="border-t border-slate-100 px-4 py-3 text-xs leading-relaxed text-slate-600">
+        <span className="font-medium text-slate-700">Проверка индексации:</span> 1 URL в одной поисковой системе
+        (Яндекс или Google) = <strong className="font-medium text-slate-700">1 проверка</strong> из месячного лимита.
+        Пакет до 500 URL за один запуск в кабинете.
+      </p>
+      <p className="border-t border-slate-100 px-4 py-3 text-xs leading-relaxed text-slate-600">
         <span className="font-medium text-slate-700">Мониторинг позиций:</span> лимит — число{" "}
         <strong className="font-medium text-slate-700">проверок</strong> в месяц (списаний из тарифа). Одна
         проверка ≈ фраза × регион; при съёме частотности Wordstat — × число типов запроса. В кабинете перед
