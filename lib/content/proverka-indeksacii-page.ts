@@ -8,14 +8,14 @@ export const INDEX_CHECK_HERO = {
 };
 
 export const INDEX_CHECK_STATS = [
-  { value: "2 ПС", label: "Яндекс и Google" },
+  { value: "2 проверки", label: "Яндекс и Google за один URL" },
   { value: "500", label: "URL в одной проверке" },
   { value: "CSV", label: "Выгрузка результатов" },
   { value: "1", label: "Лимит за URL × ПС" },
 ] as const;
 
 export const INDEX_CHECK_TARIFF_LIMITS = [
-  { name: "Бесплатный", value: "3" },
+  { name: "Бесплатный", value: "5" },
   { name: "Оптимальный", value: "600" },
   { name: "Ультимат", value: "1500" },
   { name: "Максимум", value: "2400" },
