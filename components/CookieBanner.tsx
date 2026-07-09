@@ -23,12 +23,16 @@ export function CookieBanner() {
         <p className="text-sm text-slate-600">
           Мы используем cookie для оптимизации работы сайта и анализа посещаемости. Используя сайт, вы
           соглашаетесь с{" "}
-          <Link href="/legal/privacy/" className="text-brand-600 hover:text-brand-700">
-            политикой конфиденциальности
+          <Link href="/legal/doc/cookies-policy/" className="text-brand-600 hover:text-brand-700">
+            политикой cookie-файлов
+          </Link>
+          ,{" "}
+          <Link href="/legal/doc/privacy-policy/" className="text-brand-600 hover:text-brand-700">
+            политикой обработки персональных данных
           </Link>{" "}
           и{" "}
           <Link href="/legal/personal-data/" className="text-brand-600 hover:text-brand-700">
-            обработкой персональных данных
+            согласием на обработку персональных данных
           </Link>
           .
         </p>

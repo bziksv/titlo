@@ -1,4 +1,6 @@
 import { LEGAL_DOCS, type LegalDoc } from "@/lib/content/legal.generated";
+import { LEGAL_SERVICE_SCOPE_OFFER_PHRASE } from "@/lib/content/legal-scope";
+import { LEGAL_PDF_NAV } from "@/lib/content/legal-pdfs";
 import { LK_URL, SITE } from "@/lib/site";
 
 export type { LegalDoc };
@@ -12,7 +14,11 @@ export function localizeLegalHtml(html: string): string {
   return html
     .replace(
       /размещенный в сети Интернет по адресу redbox\.su, а также любые сайты в доменной зоне \*\.redbox\.su \(где \* - любое имя\)/gi,
-      `размещённый в сети Интернет на сайте ${siteHost} и в личном кабинете ${lkHost}, а также на любых поддоменах указанных доменов`,
+      LEGAL_SERVICE_SCOPE_OFFER_PHRASE,
+    )
+    .replace(
+      /размещённый в сети Интернет на сайте titlo\.ru и в личном кабинете cabinet\.titlo\.ru, а также на любых поддоменах указанных доменов/gi,
+      LEGAL_SERVICE_SCOPE_OFFER_PHRASE,
     )
     .replace(/https:\/\/redbox\.su\/tarify\//gi, `${siteUrl}/tarify/`)
     .replace(/https:\/\/redbox\.su\//gi, `${siteUrl}/`)
@@ -55,7 +61,10 @@ export function getLegalBySlug(slug: string): LegalDoc | undefined {
   return { ...doc, bodyHtml };
 }
 
-export const LEGAL_NAV = LEGAL_DOCS.map((d) => ({
-  href: `/legal/${d.slug}/`,
-  label: d.title,
-}));
+export const LEGAL_NAV = [
+  ...LEGAL_DOCS.map((d) => ({
+    href: `/legal/${d.slug}/`,
+    label: d.title,
+  })),
+  ...LEGAL_PDF_NAV,
+];

@@ -16,6 +16,7 @@ const ICONS: Record<string, string> = {
   "kalkulyator-roi": "💰",
   "http-headers": "🌐",
   "proverka-indeksacii": "🔎",
+  "proverka-teksta-esenin": "🛡️",
   "html-redaktor": "⌨️",
   "vydelenie-unikalnykh-slov-v-tekste": "💬",
   "otslezhivanie-ssylok": "🔗",

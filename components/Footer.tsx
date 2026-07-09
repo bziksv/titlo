@@ -37,9 +37,6 @@ export function Footer() {
               {link.label}
             </Link>
           ))}
-          <a href="/legal/cookies.png" className="hover:text-white" target="_blank" rel="noopener noreferrer">
-            Политика cookies
-          </a>
         </div>
         <p className="mt-8 text-xs text-slate-400">{getCopyrightText()}</p>
       </div>

@@ -2,21 +2,18 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ModuleIcon } from "@/lib/module-icons";
 import { PageShell } from "@/components/PageShell";
-import { getSitePage } from "@/lib/content/site-pages.generated";
 import { SERVICE_ITEMS, SERVICES_INTRO } from "@/lib/content/services";
 import { LK_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Продукты и услуги",
-  description: "Бесплатные и платные SEO-сервисы Титло в одном месте.",
+  title: "Модули сервиса",
+  description: "SEO-инструменты платформы Титло: описание модулей, демо и доступ в личном кабинете.",
 };
 
 export default function ServicesPage() {
-  const page = getSitePage("services");
-
   return (
     <PageShell
-      title={page?.h1 ?? "Воспользуйтесь нашими сервисами"}
+      title="Модули сервиса"
       lead={SERVICES_INTRO}
     >
       <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

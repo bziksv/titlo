@@ -22,7 +22,12 @@ const CORE_200 = [
   "/sitemap.xml",
   "/robots.txt",
   "/api/health/",
-  "/legal/cookies.png",
+  "/legal/doc/cookies-policy/",
+  "/legal/doc/privacy-policy/",
+  "/legal/doc/recommendation-rules/",
+  "/legal/privacy-policy.pdf",
+  "/legal/cookies-policy.pdf",
+  "/legal/recommendation-rules.pdf",
 ];
 
 const REDIRECTS = [
@@ -34,8 +39,9 @@ const REDIRECTS = [
   { path: "/404.php", expect: "/" },
   {
     path: "/upload/politika-ispolzovanija-cookies-redbox.png",
-    expect: "/legal/cookies.png",
+    expect: "/legal/doc/cookies-policy/",
   },
+  { path: "/legal/cookies.png", expect: "/legal/doc/cookies-policy/" },
 ];
 
 function buildPages200() {

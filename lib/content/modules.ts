@@ -191,6 +191,16 @@ export const BASE_MODULE_PAGES: ModulePage[] = [
     features: ["Яндекс и Google", "Пакет до 500 URL", "CSV-выгрузка", "Лимиты по тарифу"],
   },
   {
+    slug: "proverka-teksta-esenin",
+    path: "/proverka-teksta-esenin/",
+    title: "Проверка текста Есенин",
+    h1: "Проверка текста Есенин",
+    description: "Оценка SEO-риска «Баден-Баден»: повторы, стилистика, запросы, водность и удобочитаемость.",
+    lead:
+      "Локальный анализ SEO-текста с подсветкой проблем и итоговым баллом риска. Поддержка HTML и проверки страницы по URL.",
+    features: ["Риск «Баден-Баден»", "HTML и URL", "Автосохранение версий", "Лимиты по тарифу"],
+  },
+  {
     slug: "html-redaktor",
     path: "/html-redaktor/",
     title: "HTML-редактор",

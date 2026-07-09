@@ -6,6 +6,7 @@ import { AnalizRelevantnostiLanding } from "@/components/module-landings/AnalizR
 import { AnalizKonkurentovLanding } from "@/components/module-landings/AnalizKonkurentovLanding";
 import { HttpHeadersLanding } from "@/components/module-landings/HttpHeadersLanding";
 import { ProverkaIndeksaciiLanding } from "@/components/module-landings/ProverkaIndeksaciiLanding";
+import { ProverkaTekstaEseninLanding } from "@/components/module-landings/ProverkaTekstaEseninLanding";
 import { KalkulyatorRoiLanding } from "@/components/module-landings/KalkulyatorRoiLanding";
 import { UtmMetkiLanding } from "@/components/module-landings/UtmMetkiLanding";
 import { SravnenieSpiskovLanding } from "@/components/module-landings/SravnenieSpiskovLanding";
@@ -44,6 +45,8 @@ export function renderModuleLanding(baseSlug: string, module: ModulePage) {
       return wrapClassic(<HttpHeadersLanding module={module} />);
     case "proverka-indeksacii":
       return wrapClassic(<ProverkaIndeksaciiLanding module={module} />);
+    case "proverka-teksta-esenin":
+      return wrapClassic(<ProverkaTekstaEseninLanding module={module} />);
     case "kalkulyator-roi":
       return wrapClassic(<KalkulyatorRoiLanding module={module} />);
     case "utm-metki":

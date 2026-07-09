@@ -549,3 +549,52 @@ export type BacklinkDemoRunBody = {
   check_nofollow?: boolean;
   check_noindex?: boolean;
 };
+
+export type EseninTextCheckDetail = {
+  block: string;
+  label?: string;
+  sum: number;
+};
+
+export type EseninTextCheckParam = {
+  name: string;
+  value?: string | number | null;
+  score?: number;
+};
+
+export type EseninTextCheckDemoResult = {
+  risk: number;
+  level?: string;
+  details?: EseninTextCheckDetail[];
+  params?: EseninTextCheckParam[];
+  highlighted_html?: string;
+  highlights?: Record<string, string>;
+  stats?: {
+    chars?: number;
+    chars_no_spaces?: number;
+    words?: number;
+  };
+};
+
+export type EseninTextCheckDemoResponse = {
+  demo: true;
+  module: "proverka-teksta-esenin";
+  remaining: number;
+  limits: {
+    max_runs_per_day: number;
+    max_chars: number;
+    min_chars?: number;
+    full_max_chars?: number;
+    cost_per_check?: number;
+  };
+  result: EseninTextCheckDemoResult;
+  upgrade: DemoUpgrade;
+};
+
+export type EseninTextCheckDemoRunBody = {
+  source?: "text" | "url";
+  text?: string;
+  url?: string;
+  tbclass?: string;
+  mode?: string;
+};

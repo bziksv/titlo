@@ -37,7 +37,12 @@ const nextConfig: NextConfig = {
       { source: "/demo/", destination: "/", permanent: true },
       {
         source: "/upload/politika-ispolzovanija-cookies-redbox.png",
-        destination: "/legal/cookies.png",
+        destination: "/legal/doc/cookies-policy/",
+        permanent: true,
+      },
+      {
+        source: "/legal/cookies.png",
+        destination: "/legal/doc/cookies-policy/",
         permanent: true,
       },
     ];

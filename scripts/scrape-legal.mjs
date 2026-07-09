@@ -46,6 +46,8 @@ function escape(str) {
 const SITE_HOST = "titlo.ru";
 const LK_HOST = "cabinet.titlo.ru";
 const SITE_EMAIL = "info@titlo.ru";
+const SERVICE_SCOPE_OFFER_PHRASE =
+  "размещённый в сети Интернет на сайте titlo.ru и в личном кабинете cabinet.titlo.ru, а также на иных поддоменах основного домена titlo.ru вида *.titlo.ru (* — иные возможные поддомены в рамках основного доменного имени)";
 
 function normalizeLegalHtml(html) {
   return html
@@ -54,7 +56,7 @@ function normalizeLegalHtml(html) {
     .replace(/href="mailto:info@kargo24\.su"/gi, `href="mailto:${SITE_EMAIL}"`)
     .replace(
       /размещенный в сети Интернет по адресу redbox\.su, а также любые сайты в доменной зоне \*\.redbox\.su \(где \* - любое имя\)/gi,
-      `размещённый в сети Интернет на сайте ${SITE_HOST} и в личном кабинете ${LK_HOST}, а также на любых поддоменах указанных доменов`,
+      SERVICE_SCOPE_OFFER_PHRASE,
     )
     .replace(/https:\/\/redbox\.su\/tarify\//gi, `https://${SITE_HOST}/tarify/`)
     .replace(/https:\/\/redbox\.su\//gi, `https://${SITE_HOST}/`)

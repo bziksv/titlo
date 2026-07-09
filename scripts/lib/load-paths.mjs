@@ -16,5 +16,8 @@ export function loadNewsDetailPaths() {
 
 export function loadLegalPaths() {
   const src = fs.readFileSync(path.join(ROOT, "lib/content/legal.generated.ts"), "utf8");
-  return [...src.matchAll(/slug: "([^"]+)"/g)].map((m) => `/legal/${m[1]}/`);
+  const html = [...src.matchAll(/slug: "([^"]+)"/g)].map((m) => `/legal/${m[1]}/`);
+  const pdfSrc = fs.readFileSync(path.join(ROOT, "lib/content/legal-pdfs.ts"), "utf8");
+  const pdf = [...pdfSrc.matchAll(/slug: "([^"]+)"/g)].map((m) => `/legal/doc/${m[1]}/`);
+  return [...html, ...pdf];
 }
