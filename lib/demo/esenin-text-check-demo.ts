@@ -2,7 +2,7 @@ import { LK_URL } from "@/lib/site";
 
 export const ESENIN_TEXT_CHECK_DEMO_MODULE = "proverka-teksta-esenin" as const;
 
-export const ESENIN_TEXT_CHECK_DEMO_MAX_RUNS = 3;
+export const ESENIN_TEXT_CHECK_DEMO_MAX_RUNS = 2;
 
 export const ESENIN_TEXT_CHECK_DEMO_MAX_CHARS = 5000;
 
@@ -24,5 +24,5 @@ export const ESENIN_TEXT_CHECK_CABINET_FEATURES = [
   "Подсветка проблем по вкладкам: повторы, стилистика, запросы",
   "Редактор, правки в результатах и автосохранение до 3 версий",
   "Проверка текста и страницы по URL",
-  "Лимиты: Бесплатный 5 · Оптимальный 200 · Ультимат 500 · Максимум 1000",
+  "Лимиты: Бесплатный 5 · Оптимальный 100 · Ультимат 300 · Максимум 700",
 ] as const;

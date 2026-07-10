@@ -73,7 +73,7 @@ export function ProverkaTekstaEseninLanding({ module }: Props) {
         <div className="mx-auto max-w-6xl px-4">
           <h2 className="text-2xl font-bold text-slate-900">Попробуйте без регистрации</h2>
           <p className="mt-2 max-w-2xl text-slate-600">
-            Демо на этой странице: до 5 000 символов и 3 проверки в сутки. В кабинете — полный функционал с HTML и
+            Демо на этой странице: до 5 000 символов и 2 проверки в сутки. В кабинете — полный функционал с HTML и
             историей правок.
           </p>
           <div className="mt-8">

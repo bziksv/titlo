@@ -6,6 +6,7 @@ export const TARIFF_CARD_MODULE_ROWS = [
   { key: "text", label: "Анализ текста" },
   { key: "competitors", label: "Анализ конкурентов" },
   { key: "indexCheck", label: "Проверка индексации" },
+  { key: "eseninTextCheck", label: "Проверка текста Есенин" },
   { key: "cluster", label: "Кластеризатор" },
   { key: "positions", label: "Мониторинг позиций" },
   { key: "sites", label: "Мониторинг сайтов" },
@@ -35,6 +36,7 @@ export function formatTariffCardModuleValue(key: string, raw: string | undefined
     case "competitors":
       return `${raw} запросов/мес`;
     case "indexCheck":
+    case "eseninTextCheck":
     case "positions":
       return `${raw} проверок/мес`;
     case "cluster":

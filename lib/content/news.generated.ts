@@ -17,6 +17,32 @@ export type NewsItem = {
 
 export const NEWS_ITEMS: NewsItem[] = [
   {
+    slug: "novyy-modul-proverka-teksta-esenin",
+    title: "Новый модуль: проверка текста Есенин",
+    date: "10 июля 2026",
+    excerpt:
+      "Оценка SEO-риска «Баден-Баден»: повторы, стилистика, HTML-редактор, Тургенев и демо на titlo.ru.",
+    blocks: [
+      {
+        type: "p",
+        text: "Запустили модуль «Проверка текста Есенин» — локальная оценка риска SEO-текста с подсветкой проблем и итоговым баллом.",
+      },
+      {
+        type: "p",
+        text: "Редактор с HTML, автосохранение версий, проверка по URL, интеграция с Тургеневым. Лимиты: Бесплатный 5 · Оптимальный 100 · Ультимат 300 · Максимум 700 проверок в месяц.",
+      },
+      {
+        type: "p",
+        text: "Кабинет: cabinet.titlo.ru/esenin-text-check · описание и демо (2 проверки в сутки): titlo.ru/proverka-teksta-esenin/ · версия модуля 1.3.0.",
+      },
+    ],
+    body: [
+      "Запустили модуль «Проверка текста Есенин» — оценка риска SEO-текста с подсветкой.",
+      "HTML-редактор, URL, Тургенев. Лимиты по тарифу; демо 2 проверки/сутки на titlo.ru.",
+      "cabinet.titlo.ru/esenin-text-check · titlo.ru/proverka-teksta-esenin/",
+    ],
+  },
+  {
     slug: "novyy-modul-proverka-indeksacii-stranits-yandeks-i-google",
     title: "Новый модуль: проверка индексации страниц (Яндекс и Google)",
     date: "8 июля 2026",

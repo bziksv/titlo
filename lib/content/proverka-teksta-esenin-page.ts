@@ -16,9 +16,9 @@ export const ESENIN_TEXT_CHECK_STATS = [
 
 export const ESENIN_TEXT_CHECK_TARIFF_LIMITS = [
   { name: "Бесплатный", value: "5" },
-  { name: "Оптимальный", value: "200" },
-  { name: "Ультимат", value: "500" },
-  { name: "Максимум", value: "1000" },
+  { name: "Оптимальный", value: "100" },
+  { name: "Ультимат", value: "300" },
+  { name: "Максимум", value: "700" },
 ] as const;
 
 export const ESENIN_TEXT_CHECK_FAQ = [
@@ -32,6 +32,6 @@ export const ESENIN_TEXT_CHECK_FAQ = [
   },
   {
     q: "Сколько текста в демо?",
-    a: "На этой странице — до 5 000 символов и 3 проверки в сутки. В кабинете — до 20 000 символов, HTML-редактор и история версий.",
+    a: "На этой странице — до 5 000 символов и 2 проверки в сутки. В кабинете — до 20 000 символов, HTML-редактор и история версий.",
   },
 ] as const;

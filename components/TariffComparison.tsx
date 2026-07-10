@@ -92,6 +92,11 @@ export function TariffComparison() {
         </tbody>
       </table>
       <p className="border-t border-slate-100 px-4 py-3 text-xs leading-relaxed text-slate-600">
+        <span className="font-medium text-slate-700">Проверка текста Есенин:</span> 1 текст или страница по URL ={" "}
+        <strong className="font-medium text-slate-700">1 проверка</strong> из месячного лимита. Демо на titlo.ru — 2
+        проверки в сутки без регистрации.
+      </p>
+      <p className="border-t border-slate-100 px-4 py-3 text-xs leading-relaxed text-slate-600">
         <span className="font-medium text-slate-700">Проверка индексации:</span> 1 URL в одной поисковой системе
         (Яндекс или Google) = <strong className="font-medium text-slate-700">1 проверка</strong> из месячного лимита.
         Пакет до 500 URL за один запуск в кабинете.
