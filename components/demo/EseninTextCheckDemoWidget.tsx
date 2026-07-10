@@ -1,6 +1,7 @@
 "use client";
 
-import { useCallback, useId, useMemo, useState } from "react";
+import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
+import { attachEseninMarkTooltips } from "@/lib/demo/esenin-mark-tooltips";
 import { DemoModuleLinks } from "@/components/demo/DemoModuleLinks";
 import { DemoUpgradePanel } from "@/components/demo/DemoUpgradePanel";
 import { DemoWidgetShell } from "@/components/demo/DemoWidgetShell";
@@ -22,9 +23,14 @@ function riskBadgeClass(score: number): string {
 }
 
 function EseninTextCheckDemoReport({ result }: { result: EseninTextCheckDemoResult }) {
+  const highlightRef = useRef<HTMLDivElement>(null);
   const highlightHtml = useMemo(() => {
     return result.highlights?.risk || result.highlighted_html || "";
   }, [result]);
+
+  useEffect(() => {
+    return attachEseninMarkTooltips(highlightRef.current);
+  }, [highlightHtml]);
 
   const details = result.details ?? [];
   const params = (result.params ?? []).slice(0, 8);
@@ -85,6 +91,7 @@ function EseninTextCheckDemoReport({ result }: { result: EseninTextCheckDemoResu
             Подсветка проблем
           </div>
           <div
+            ref={highlightRef}
             className="esenin-demo-highlight px-4 py-3 text-sm leading-relaxed text-slate-800"
             dangerouslySetInnerHTML={{ __html: highlightHtml }}
           />
@@ -146,6 +153,9 @@ export function EseninTextCheckDemoWidget() {
         .esenin-demo-highlight mark.esenin-mark--keywords { background: rgba(13, 110, 253, 0.18); }
         .esenin-demo-highlight mark.esenin-mark--readability { background: rgba(25, 135, 84, 0.18); }
         .esenin-demo-highlight mark .esenin-mark__icon { display: inline-flex; align-items: center; justify-content: center; width: 0.85em; height: 0.85em; margin-left: 0.12em; border-radius: 50%; background: #dc3545; color: #fff; font-size: 0.62em; font-weight: 700; vertical-align: super; }
+        .esenin-demo-highlight mark[data-esenin-tip] { cursor: pointer; }
+        .esenin-tip-popover { position: absolute; z-index: 1080; max-width: 20rem; padding: 0.45rem 0.65rem; font-size: 0.8125rem; line-height: 1.4; color: #fff; background: rgba(33, 37, 41, 0.94); border-radius: 0.45rem; box-shadow: 0 0.35rem 1rem rgba(0, 0, 0, 0.18); pointer-events: none; opacity: 0; transition: opacity 0.08s ease; }
+        .esenin-tip-popover.is-visible { opacity: 1; }
       `}</style>
 
       <div className="space-y-4">
