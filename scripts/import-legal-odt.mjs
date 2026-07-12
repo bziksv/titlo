@@ -186,9 +186,30 @@ function applyWebsiteScope(html) {
   return out;
 }
 
-function convertOdt(odtPath) {
+/** Правки списка сторонних сервисов в rules-recommendation-titlo.odt */
+function patchRecommendationRules(html) {
+  let out = html;
+
+  out = out.replace(
+    /<li><a href="https:\/\/unpkg\.com\/">https:\/\/unpkg\.com\/<\/a>\s*[-—]\s*глобальная сеть доставки контента\.<\/li>/gi,
+    "<li><a href=\"https://unpkg.com/\">https://unpkg.com/</a> — глобальная сеть доставки контента; в личном кабинете cabinet.titlo.ru используется для подгрузки библиотеки иконок Ionicons (отображение пиктограмм в интерфейсе).</li>",
+  );
+
+  out = out.replace(
+    /<li><a href="https:\/\/www\.googletagmanager\.com\/">https:\/\/www\.googletagmanager\.com\/<\/a>\s*[-—]\s*Google Tag Manager \(GTM\)\.<\/li>/gi,
+    "",
+  );
+
+  return out;
+}
+
+function convertOdt(odtPath, slug) {
   const raw = hasTextutil() ? odtToHtmlTextutil(odtPath) : odtToHtmlPython(odtPath);
-  return normalizeBodyHtml(raw);
+  let html = normalizeBodyHtml(raw);
+  if (slug === "recommendation-rules") {
+    html = patchRecommendationRules(html);
+  }
+  return html;
 }
 
 function main() {
@@ -203,7 +224,7 @@ function main() {
       throw new Error(`Missing ODT: ${odtPath}`);
     }
     console.log(`Converting ${spec.file}…`);
-    const bodyHtml = convertOdt(odtPath);
+    const bodyHtml = convertOdt(odtPath, spec.slug);
     docs.push({ ...spec, bodyHtml });
     console.log(`  ${spec.slug}: ${bodyHtml.length} chars`);
   }
