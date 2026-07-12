@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { LegalHtml } from "@/components/LegalHtml";
 import { PageShell } from "@/components/PageShell";
 import {
   getAllLegalPdfSlugs,
@@ -41,33 +42,18 @@ export default async function LegalPdfPage({ params }: Props) {
         </div>
 
         <div className="flex flex-wrap items-center gap-3 text-sm">
-          <a
-            href={doc.pdfPath}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center rounded-lg bg-brand-600 px-4 py-2 font-medium text-white hover:bg-brand-700"
-          >
-            Открыть PDF
-          </a>
-          <a
-            href={doc.pdfPath}
-            download
-            className="inline-flex items-center rounded-lg border border-slate-300 px-4 py-2 font-medium text-slate-700 hover:bg-slate-50"
-          >
-            Скачать PDF
-          </a>
           <Link href="/legal/offer/" className="text-brand-600 hover:text-brand-700">
             Договор-оферта
           </Link>
+          <Link href="/legal/privacy/" className="text-brand-600 hover:text-brand-700">
+            Политика конфиденциальности
+          </Link>
+          <Link href="/legal/personal-data/" className="text-brand-600 hover:text-brand-700">
+            Согласие на обработку ПДн
+          </Link>
         </div>
 
-        <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
-          <iframe
-            src={doc.pdfPath}
-            title={doc.title}
-            className="h-[min(80vh,56rem)] w-full"
-          />
-        </div>
+        <LegalHtml html={doc.bodyHtml} />
       </div>
     </PageShell>
   );

@@ -1,34 +1,9 @@
+import { LEGAL_PDF_DOC_CONTENT, type LegalPdfDocContent } from "@/lib/content/legal-pdf.generated";
 import { LEGAL_SERVICE_SCOPE_SENTENCE } from "@/lib/content/legal-scope";
 
-export type LegalPdfDoc = {
-  slug: string;
-  title: string;
-  metaTitle: string;
-  pdfPath: string;
-  version?: string;
-};
+export type LegalPdfDoc = LegalPdfDocContent;
 
-export const LEGAL_PDF_DOCS: LegalPdfDoc[] = [
-  {
-    slug: "privacy-policy",
-    title: "Политика обработки персональных данных",
-    metaTitle: "Политика обработки персональных данных",
-    pdfPath: "/legal/privacy-policy.pdf",
-    version: "21.04.2026",
-  },
-  {
-    slug: "cookies-policy",
-    title: "Политика использования cookie-файлов",
-    metaTitle: "Политика использования cookie-файлов",
-    pdfPath: "/legal/cookies-policy.pdf",
-  },
-  {
-    slug: "recommendation-rules",
-    title: "Правила применения рекомендательных технологий",
-    metaTitle: "Правила применения рекомендательных технологий",
-    pdfPath: "/legal/recommendation-rules.pdf",
-  },
-];
+export const LEGAL_PDF_DOCS: LegalPdfDoc[] = LEGAL_PDF_DOC_CONTENT;
 
 export const LEGAL_PDF_SCOPE_NOTE = LEGAL_SERVICE_SCOPE_SENTENCE;
 

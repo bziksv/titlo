@@ -469,6 +469,14 @@ a {
   @apply max-w-3xl text-sm leading-relaxed text-slate-700;
 }
 
+.legal-content h1 {
+  @apply mb-4 text-center text-xl font-bold text-slate-900 md:text-2xl;
+}
+
+.legal-content .legal-doc-version {
+  @apply mb-6 text-center text-sm text-slate-500;
+}
+
 .legal-content h2,
 .legal-content h3 {
   @apply mt-8 mb-4 font-semibold text-slate-900;
@@ -486,8 +494,26 @@ a {
   @apply my-3;
 }
 
+.legal-content ul,
+.legal-content ol {
+  @apply my-4 space-y-1 pl-6;
+}
+
 .legal-content ul {
-  @apply my-4 list-disc space-y-1 pl-6;
+  @apply list-disc;
+}
+
+.legal-content ol {
+  @apply list-decimal;
+}
+
+.legal-content table.legal-doc-table {
+  @apply my-6 w-full border-collapse text-sm;
+}
+
+.legal-content table.legal-doc-table td,
+.legal-content table.legal-doc-table th {
+  @apply border border-slate-200 px-3 py-2 align-top;
 }
 
 .legal-content a {

@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getAllLegalSlugs } from "@/lib/content/legal";
+import { getAllLegalPdfSlugs } from "@/lib/content/legal-pdfs";
 import { getPublicModuleSlugs } from "@/lib/content/modules";
 import { NEWS_ITEMS } from "@/lib/content/news";
 import { SITE } from "@/lib/site";
@@ -34,12 +35,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  const legal = getAllLegalSlugs().map((slug) => ({
-    url: `${BASE}/legal/${slug}/`,
-    lastModified: now,
-    changeFrequency: "yearly" as const,
-    priority: 0.3,
-  }));
+  const legal = [
+    ...getAllLegalSlugs().map((slug) => ({
+      url: `${BASE}/legal/${slug}/`,
+      lastModified: now,
+      changeFrequency: "yearly" as const,
+      priority: 0.3,
+    })),
+    ...getAllLegalPdfSlugs().map((slug) => ({
+      url: `${BASE}/legal/doc/${slug}/`,
+      lastModified: now,
+      changeFrequency: "yearly" as const,
+      priority: 0.3,
+    })),
+  ];
 
   const news = NEWS_ITEMS.map((n) => ({
     url: `${BASE}/news/detail/${n.slug}/`,
