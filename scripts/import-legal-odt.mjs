@@ -200,6 +200,19 @@ function patchRecommendationRules(html) {
     "",
   );
 
+  const thirdPartyExtras = [
+    '<li><a href="https://mc.yandex.ru/">https://mc.yandex.ru/</a> — сервис Яндекс Метрики; используется на сайте titlo.ru и в личном кабинете cabinet.titlo.ru для сбора и анализа статистики посещений, действий пользователей и достижения целей.</li>',
+    '<li><a href="https://mc.yandex.com/">https://mc.yandex.com/</a> — международный домен сервиса Яндекс Метрики (зеркало mc.yandex.ru); используется для тех же целей сбора и анализа статистики посещений.</li>',
+    '<li><a href="https://cdnjs.cloudflare.com/">https://cdnjs.cloudflare.com/</a> — CDN проекта cdnjs (Cloudflare); используется для подгрузки сторонних библиотек с открытым исходным кодом (в т.ч. JSZip, pdfmake, Font Awesome, CKEditor) на сайте titlo.ru и в личном кабинете cabinet.titlo.ru.</li>',
+  ].join("");
+
+  if (!out.includes("https://mc.yandex.ru/")) {
+    out = out.replace(
+      /(<li><a href="https:\/\/img\.youtube\.com\/">https:\/\/img\.youtube\.com\/<\/a>\s*[-—]\s*CDN Youtube\.<\/li>)/gi,
+      `$1${thirdPartyExtras}`,
+    );
+  }
+
   return out;
 }
 
