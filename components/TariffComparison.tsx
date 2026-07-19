@@ -103,19 +103,22 @@ export function TariffComparison() {
       </p>
       <p className="border-t border-slate-100 px-4 py-3 text-xs leading-relaxed text-slate-600">
         <span className="font-medium text-slate-700">Мониторинг позиций:</span> лимит — число{" "}
-        <strong className="font-medium text-slate-700">проверок</strong> в месяц (списаний из тарифа). Одна
-        проверка ≈ фраза × регион; при съёме частотности Wordstat — × число типов запроса. В кабинете перед
-        запуском показывается, сколько проверок будет списано.
+        <strong className="font-medium text-slate-700">проверок</strong> в месяц. Одна проверка ≈ фраза × регион; при
+        съёме частотности Wordstat — × число типов запроса. Перед запуском в кабинете видно, сколько спишется.
       </p>
       <p className="border-t border-slate-100 px-4 py-3 text-xs leading-relaxed text-slate-600">
-        <span className="font-medium text-slate-700">Кластеризатор:</span> лимит считается в{" "}
-        <strong className="font-medium text-slate-700">условных запросах</strong> за календарный месяц — число
-        уникальных фраз в списке, умноженное на коэффициент (1 + каждый включённый тип поиска: базовый,
-        релевантность, фразы, целевые). Пример: 5 фраз и два типа поиска → 5 × 3 = 15 из месячного лимита.
+        <span className="font-medium text-slate-700">Кластеризатор:</span> списание в{" "}
+        <strong className="font-medium text-slate-700">проверках</strong> = число уникальных фраз × коэффициент типов
+        поиска (базовый + каждый включённый режим). Пример: 5 фраз и два типа → 5 × 3 = 15.
       </p>
       <p className="border-t border-slate-100 px-4 py-3 text-xs leading-relaxed text-slate-600">
-        <span className="font-medium text-slate-700">Мониторинг сайтов, срок регистрации доменов и отслеживание ссылок:</span> на
-        Free email не отправляется — данные в кабинете и Telegram после подключения бота в профиле (
+        <span className="font-medium text-slate-700">Анализ текста, подсказки, типы сайтов, записи домена, коммерция фраз:</span>{" "}
+        в таблице <strong className="font-medium text-slate-700">проверки / сохранения</strong> — месячный лимит запусков
+        и лимит сохранённых результатов в истории. У анализа текста сохранения — история уникальности/прогонов из модуля.
+      </p>
+      <p className="border-t border-slate-100 px-4 py-3 text-xs leading-relaxed text-slate-600">
+        <span className="font-medium text-slate-700">Мониторинг сайтов, срок регистрации доменов и отслеживание ссылок:</span>{" "}
+        на Free email не отправляется — данные в кабинете и Telegram после подключения бота в профиле (
         <span className="whitespace-nowrap">*</span>).
       </p>
     </div>

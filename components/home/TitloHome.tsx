@@ -8,7 +8,7 @@ import { NewsCard } from "@/components/NewsCard";
 import { RevealOnScroll } from "@/components/module-landings/RevealOnScroll";
 import { HomeEcosystemOrbit } from "@/components/home/HomeEcosystemOrbit";
 import type { NewsItem } from "@/lib/content/news";
-import { HOME_MODULES, LK_URL, SITE } from "@/lib/site";
+import { HOME_MODULES, LK_URL, NAV_MODULES, SITE } from "@/lib/site";
 
 const ROTATOR = [
   "SEO-специалиста",
@@ -70,56 +70,75 @@ const BENTO = [
     title: "Анализ релевантности",
     desc: "ТОП, облака слов и список правок для копирайтера.",
     chips: ["ТОП‑10/20", "TLP"],
-    span: "lg:col-span-2 lg:row-span-2",
     image: "/modules/assets/9980661a65746246.png",
-    featured: true,
   },
   {
     href: "/monitoring-pozicii-sayta/",
     title: "Мониторинг позиций",
     desc: "Яндекс и Google, история срезов.",
     chips: ["2 ПС", "отчёт"],
-    span: "",
     image: "/modules/assets/3d7d72c85b4af88c.jpg",
-    featured: false,
   },
   {
     href: "/klasterizator-klyuchevykh-slov/",
     title: "Кластеризатор",
     desc: "Группировка по пересечению URL в выдаче.",
     chips: ["CSV", "ТОП"],
-    span: "",
     image: "/modules/assets/7ba8fc0938346394.png",
-    featured: false,
   },
   {
     href: "/analiz-konkurentov/",
     title: "Анализ конкурентов",
     desc: "Матрица доменов по ключам и региону.",
     chips: ["ТОП‑10", "мета"],
-    span: "lg:col-span-2",
     image: "/modules/assets/1bf0b32d708e156e.png",
-    featured: false,
   },
   {
     href: "/monitoring-saytov/",
     title: "Мониторинг сайтов",
     desc: "Uptime и оповещения в Telegram.",
     chips: ["24/7", "алерт"],
-    span: "",
     image: null,
-    featured: false,
   },
   {
     href: "/analiz-teksta/",
     title: "Анализ текста",
     desc: "Тошнота, вода и список слов.",
     chips: ["10+ метрик"],
-    span: "",
     image: null,
-    featured: false,
+  },
+  {
+    href: "/proverka-meta-tegov-online/",
+    title: "Мониторинг мета-тегов",
+    desc: "Title, description и контроль изменений.",
+    chips: ["проекты", "страницы"],
+    image: null,
+  },
+  {
+    href: "/otslezhivanie-ssylok/",
+    title: "Отслеживание ссылок",
+    desc: "Проверка размещения и алерты, если ссылка пропала.",
+    chips: ["ежедневно", "алерт"],
+    image: null,
   },
 ] as const;
+
+const BENTO_HREFS = new Set<string>(BENTO.map((item) => item.href));
+
+/** Нижний ряд — остальные модули из меню, без дублей «Популярного». */
+const HOME_MODULES_MORE = [
+  ...HOME_MODULES.filter((mod) => !BENTO_HREFS.has(mod.href)),
+  ...NAV_MODULES.filter(
+    (mod) =>
+      !BENTO_HREFS.has(mod.href) &&
+      !HOME_MODULES.some((h) => h.href === mod.href)
+  ).map((mod) => ({
+    href: mod.href,
+    title: mod.label,
+    description: "Открыть модуль на сайте",
+  })),
+].slice(0, 8);
+
 
 const PAIN_GAIN = {
   painTitle: "Без единой платформы",
@@ -476,20 +495,20 @@ export function TitloHome({ heroTitle, aboutTitle, aboutLead, ctaTitle, ctaLead,
               </h2>
             </div>
             <Link href="/services/" className="font-semibold text-brand-600 hover:text-brand-700">
-              Каталог 18 →
+              Все модули →
             </Link>
           </div>
         </RevealOnScroll>
 
-        <div className="mt-12 grid auto-rows-[minmax(160px,auto)] gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {BENTO.map((item, i) => (
             <RevealOnScroll key={item.href} delayMs={i * 60}>
               <Link
                 href={item.href}
-                className={`home-bento-card group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-sm transition hover:-translate-y-1 hover:border-brand-200 hover:shadow-xl ${item.span}`}
+                className="home-bento-card group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-sm transition hover:-translate-y-1 hover:border-brand-200 hover:shadow-xl"
               >
                 {item.image && (
-                  <div className="relative h-32 overflow-hidden bg-slate-900 lg:h-40">
+                  <div className="relative h-32 overflow-hidden bg-slate-900 lg:h-36">
                     <Image
                       src={item.image}
                       alt=""
@@ -500,32 +519,22 @@ export function TitloHome({ heroTitle, aboutTitle, aboutLead, ctaTitle, ctaLead,
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent" />
                   </div>
                 )}
-                <div className={`relative flex flex-1 flex-col p-5 ${item.featured && item.image ? "-mt-16" : ""}`}>
-                  {item.featured && item.image && (
-                    <ModuleIcon href={item.href} className="mb-3 h-10 w-10 text-xl drop-shadow" />
-                  )}
-                  {!item.image && (
-                    <ModuleIcon href={item.href} className="h-11 w-11 text-2xl" />
-                  )}
-                  <h3
-                    className={`font-bold text-slate-900 group-hover:text-brand-700 ${item.featured ? "text-xl text-white drop-shadow-sm" : "mt-3 text-lg"}`}
-                  >
+                <div className="relative flex flex-1 flex-col p-5">
+                  <ModuleIcon
+                    href={item.href}
+                    className={`mb-3 ${item.image ? "h-9 w-9 text-lg" : "h-11 w-11 text-2xl"}`}
+                  />
+                  <h3 className="text-lg font-bold text-slate-900 group-hover:text-brand-700">
                     {item.title}
                   </h3>
-                  <p
-                    className={`mt-2 flex-1 text-sm leading-relaxed ${item.featured && item.image ? "text-slate-200" : "text-slate-600"}`}
-                  >
+                  <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-600">
                     {item.desc}
                   </p>
                   <div className="mt-3 flex flex-wrap gap-1.5">
                     {item.chips.map((c) => (
                       <span
                         key={c}
-                        className={`rounded-md px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide ${
-                          item.featured && item.image
-                            ? "bg-white/20 text-white"
-                            : "bg-brand-50 text-brand-700"
-                        }`}
+                        className="rounded-md bg-brand-50 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-brand-700"
                       >
                         {c}
                       </span>
@@ -537,25 +546,32 @@ export function TitloHome({ heroTitle, aboutTitle, aboutLead, ctaTitle, ctaLead,
           ))}
         </div>
 
-        <RevealOnScroll delayMs={200}>
-          <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {HOME_MODULES.map((mod) => (
-              <Link
-                key={mod.href}
-                href={mod.href}
-                className="home-module-tile group rounded-xl border border-slate-100 bg-slate-50/90 p-5 transition hover:border-brand-200 hover:bg-white hover:shadow-md"
-              >
-                <ModuleIcon href={mod.href} className="h-9 w-9 text-lg" />
-                <p className="mt-3 text-sm font-bold text-slate-900 group-hover:text-brand-700">
-                  {mod.title}
-                </p>
-                <p className="mt-2 line-clamp-2 text-xs leading-relaxed text-slate-500">
-                  {mod.description}
-                </p>
-              </Link>
-            ))}
-          </div>
-        </RevealOnScroll>
+        {HOME_MODULES_MORE.length > 0 && (
+          <RevealOnScroll delayMs={200}>
+            <div className="mt-14">
+              <p className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-slate-400">
+                Ещё из каталога
+              </p>
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                {HOME_MODULES_MORE.map((mod) => (
+                  <Link
+                    key={mod.href}
+                    href={mod.href}
+                    className="home-module-tile group rounded-xl border border-slate-100 bg-slate-50/90 p-5 transition hover:border-brand-200 hover:bg-white hover:shadow-md"
+                  >
+                    <ModuleIcon href={mod.href} className="h-9 w-9 text-lg" />
+                    <p className="mt-3 text-sm font-bold text-slate-900 group-hover:text-brand-700">
+                      {mod.title}
+                    </p>
+                    <p className="mt-2 line-clamp-2 text-xs leading-relaxed text-slate-500">
+                      {mod.description}
+                    </p>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </RevealOnScroll>
+        )}
       </section>
 
       {aboutTitle && (

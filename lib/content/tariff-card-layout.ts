@@ -1,15 +1,19 @@
 import { TARIFF_COMPARE } from "@/lib/content/tariffs";
 
-/** Строки «Платные модули» в карточках — один порядок и высота на всех тарифах. */
+/** Строки «Платные модули» в карточках — порядок как в таблице сравнения / ЛК. */
 export const TARIFF_CARD_MODULE_ROWS = [
   { key: "relevance", label: "Анализатор релевантности" },
   { key: "text", label: "Анализ текста" },
   { key: "competitors", label: "Анализ конкурентов" },
-  { key: "indexCheck", label: "Проверка индексации" },
+  { key: "siteTypes", label: "Типы сайтов в выдаче" },
+  { key: "domainRecords", label: "Записи домена" },
+  { key: "searchSuggestions", label: "Сбор поисковых подсказок" },
+  { key: "phraseCommerce", label: "Гео / локализация / коммерция фраз" },
   { key: "eseninTextCheck", label: "Проверка текста Есенин" },
+  { key: "indexCheck", label: "Проверка индексации" },
   { key: "cluster", label: "Кластеризатор" },
-  { key: "positions", label: "Мониторинг позиций" },
   { key: "sites", label: "Мониторинг сайтов" },
+  { key: "positions", label: "Мониторинг позиций" },
   { key: "domains", label: "Срок регистрации доменов" },
   { key: "meta", label: "Мета-теги" },
   { key: "links", label: "Отслеживание ссылок" },
@@ -25,6 +29,7 @@ export const TARIFF_CARD_UTILS = [
   "Удаление дубликатов",
   "UTM-метки",
   "Калькулятор ROI",
+  "Проверка заголовков HTTP",
 ] as const;
 
 export function formatTariffCardModuleValue(key: string, raw: string | undefined): string | null {
@@ -32,21 +37,25 @@ export function formatTariffCardModuleValue(key: string, raw: string | undefined
 
   switch (key) {
     case "relevance":
-    case "text":
     case "competitors":
-      return `${raw} запросов/мес`;
     case "indexCheck":
     case "eseninTextCheck":
     case "positions":
-      return `${raw} проверок/мес`;
     case "cluster":
-      return `${raw} усл. запросов/мес`;
+      return `${raw} проверок/мес`;
+    case "text":
+    case "siteTypes":
+    case "domainRecords":
+    case "searchSuggestions":
+    case "phraseCommerce":
+      return `${raw.replace(/\s+\/\s+/g, " / ")} (проверки / сохранения)`;
     case "sites":
     case "domains":
       return `${raw} ${raw === "1" ? "проект" : "проектов"}`;
     case "meta":
+      return `${raw.replace(/\s+\/\s+/g, " / ")} (проекты / страницы)`;
     case "links":
-      return raw.replace(/\s+\/\s+/g, " / ");
+      return `${raw.replace(/\s+\/\s+/g, " / ")} (проекты / ссылки)`;
     default:
       return raw;
   }
