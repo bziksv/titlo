@@ -15,10 +15,11 @@ export function buildIndexCheckRegisterUrl(): string {
 
 export const INDEX_CHECK_CABINET_FEATURES = [
   "Пакет до 500 URL — Яндекс и Google в одной таблице",
+  "Сохранение title и сниппета из выдачи для анализа",
   "Выбор домена Google (google.ru, .com и др.)",
   "Опция объединения www/http/https",
-  "CSV-выгрузка для отчёта заказчику",
-  "Лимиты: Бесплатный 5 · Оптимальный 600 · Ультимат 1500 · Максимум 2400",
+  "CSV-выгрузка с title и сниппетами",
+  "Лимиты: Бесплатный 5 · Оптимальный 30 · Ультимат 50 · Максимум 100",
 ] as const;
 
 export const INDEX_CHECK_GOOGLE_DOMAINS = [

@@ -97,9 +97,9 @@ export function TariffComparison() {
         проверки в сутки без регистрации.
       </p>
       <p className="border-t border-slate-100 px-4 py-3 text-xs leading-relaxed text-slate-600">
-        <span className="font-medium text-slate-700">Проверка индексации:</span> 1 URL в одной поисковой системе
-        (Яндекс или Google) = <strong className="font-medium text-slate-700">1 проверка</strong> из месячного лимита.
-        Пакет до 500 URL за один запуск в кабинете.
+        <span className="font-medium text-slate-700">Проверка индексации и сниппетов:</span> 1 URL в одной поисковой
+        системе (Яндекс или Google) = <strong className="font-medium text-slate-700">1 проверка</strong>; title и сниппет
+        сохраняются. Лимиты: Free 5 / Optimal 30 / Ultimate 50 / Maximum 100. Пакет до 500 URL за запуск.
       </p>
       <p className="border-t border-slate-100 px-4 py-3 text-xs leading-relaxed text-slate-600">
         <span className="font-medium text-slate-700">Мониторинг позиций:</span> лимит — число{" "}

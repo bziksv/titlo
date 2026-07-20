@@ -10,7 +10,7 @@ export const TARIFF_CARD_MODULE_ROWS = [
   { key: "searchSuggestions", label: "Сбор поисковых подсказок" },
   { key: "phraseCommerce", label: "Гео / локализация / коммерция фраз" },
   { key: "eseninTextCheck", label: "Проверка текста Есенин" },
-  { key: "indexCheck", label: "Проверка индексации" },
+  { key: "indexCheck", label: "Проверка индексации и сниппетов" },
   { key: "cluster", label: "Кластеризатор" },
   { key: "sites", label: "Мониторинг сайтов" },
   { key: "positions", label: "Мониторинг позиций" },

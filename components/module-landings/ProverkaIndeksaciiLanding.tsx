@@ -51,8 +51,8 @@ export function ProverkaIndeksaciiLanding({ module }: Props) {
               variant="hero"
               idPrefix="index-check-hero"
               moduleSlug="proverka-indeksacii"
-              title="Проверить индексацию в кабинете"
-              hint="Регистрация — пакет до 500 URL, Яндекс и Google, CSV и учёт лимитов по тарифу."
+              title="Проверить индексацию и сниппеты в кабинете"
+              hint="Регистрация — пакет до 500 URL, сохранение title/сниппета, Яндекс и Google, CSV и лимиты по тарифу."
             />
           </div>
         </div>
@@ -73,7 +73,7 @@ export function ProverkaIndeksaciiLanding({ module }: Props) {
         <div className="mx-auto max-w-6xl px-4">
           <h2 className="text-2xl font-bold text-slate-900">Попробуйте на одном URL</h2>
           <p className="mt-2 max-w-2xl text-slate-600">
-            Демо без регистрации. В кабинете — список до 500 URL, выбор ПС, домен Google и выгрузка CSV.
+            Демо без регистрации. В кабинете — список до 500 URL, сниппеты из выдачи, выбор ПС и выгрузка CSV.
           </p>
           <div className="mt-8">
             <IndexCheckDemoWidget />
@@ -84,7 +84,9 @@ export function ProverkaIndeksaciiLanding({ module }: Props) {
       <section className="py-12">
         <div className="mx-auto max-w-6xl px-4">
           <h2 className="text-2xl font-bold text-slate-900">Лимиты по тарифам (в месяц)</h2>
-          <p className="mt-2 text-slate-600">1 URL в одной поисковой системе = 1 лимит.</p>
+          <p className="mt-2 text-slate-600">
+            1 URL в одной поисковой системе = 1 лимит. Title и сниппет сохраняются для анализа.
+          </p>
           <div className="mt-6 overflow-hidden rounded-xl border border-slate-200">
             <table className="w-full text-left text-sm">
               <thead className="bg-slate-50">

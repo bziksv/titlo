@@ -96,7 +96,7 @@ export function IndexCheckDemoWidget() {
 
   return (
     <DemoWidgetShell
-      title="Проверка индексации без регистрации"
+      title="Проверка индексации и сниппетов без регистрации"
       lead="1 URL за запуск · до 5 демо-проверок в сутки. В кабинете — пакет до 500 URL, выбор ПС и CSV."
       features={["Яндекс", "Google", "site:", "Лимиты по тарифу в кабинете"]}
     >
