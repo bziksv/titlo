@@ -9,7 +9,7 @@ type Props = {
   upgradeHint?: string;
   /** Дополнительные пункты «что в кабинете» */
   details?: readonly string[];
-  /** Скрыть счётчик «N из M проверок» (демо только с лимитом символов) */
+  /** Скрыть счётчик демо-запусков */
   showRemaining?: boolean;
 };
 
@@ -26,17 +26,21 @@ export function DemoUpgradePanel({
   const hint =
     upgradeHint ??
     `В кабинете — до ${fullMaxChars.toLocaleString("ru-RU")} символов за проверку, SEO-поля title/description и расширенная статистика для ${moduleTitle}.`;
+
+  let remainingLabel = "Полный доступ в кабинете";
+  if (showRemaining) {
+    if (remaining <= 0) {
+      remainingLabel = "Демо на сегодня закончилось — полный доступ после регистрации";
+    } else if (remaining >= maxRuns) {
+      remainingLabel = `Демо без регистрации: до ${maxRuns} запусков в сутки`;
+    } else {
+      remainingLabel = `Демо: сегодня ещё ${remaining} из ${maxRuns} запусков`;
+    }
+  }
+
   return (
     <div className="rounded-xl border border-brand-200 bg-brand-50/80 p-4 md:p-5">
-      {showRemaining ? (
-        <p className="text-sm font-semibold text-brand-900">
-          {remaining > 0
-            ? `Демо: осталось ${remaining} из ${maxRuns} проверок сегодня`
-            : "Демо на сегодня закончилось"}
-        </p>
-      ) : (
-        <p className="text-sm font-semibold text-brand-900">Полный доступ в кабинете</p>
-      )}
+      <p className="text-sm font-semibold text-brand-900">{remainingLabel}</p>
       <p className="mt-1 text-sm text-slate-600">{hint}</p>
       {details && details.length > 0 ? (
         <ul className="mt-3 space-y-1.5">

@@ -187,6 +187,12 @@ export function Header() {
 
         <div className="hidden shrink-0 items-center gap-2 lg:flex">
           <a
+            href={`${LK_URL}/demo-cabinet`}
+            className="rounded-lg border border-brand-300 bg-white px-3 py-1.5 text-sm font-medium text-brand-800 shadow-sm transition hover:bg-brand-50"
+          >
+            Демо кабинет
+          </a>
+          <a
             href={`${LK_URL}/login`}
             className={`${navItemClass} text-slate-700`}
           >
@@ -201,6 +207,12 @@ export function Header() {
         </div>
 
         <div className="flex shrink-0 items-center gap-2 lg:hidden">
+          <a
+            href={`${LK_URL}/demo-cabinet`}
+            className="rounded-lg border border-brand-300 bg-white px-2 py-1.5 text-sm font-medium text-brand-800"
+          >
+            Демо
+          </a>
           <a
             href={`${LK_URL}/login`}
             className="rounded-lg px-2 py-1.5 text-sm font-medium text-slate-700 transition hover:bg-brand-50 hover:text-brand-700"
@@ -254,6 +266,13 @@ export function Header() {
             Все модули — обзор
           </Link>
           <div className="mt-4 flex flex-col gap-1 border-t border-slate-200 pt-4">
+            <a
+              href={`${LK_URL}/demo-cabinet`}
+              className="rounded-lg border border-brand-300 bg-brand-50 px-2 py-2 font-medium text-brand-800"
+              onClick={() => setMobileOpen(false)}
+            >
+              Демо кабинет
+            </a>
             <Link href="/tarify/" className="rounded-lg px-2 py-2 hover:bg-brand-50" onClick={() => setMobileOpen(false)}>
               Тарифы
             </Link>

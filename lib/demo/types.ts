@@ -512,6 +512,196 @@ export type IndexCheckDemoRunBody = {
   google_domain?: string;
 };
 
+export type SearchSuggestionsDemoRow = {
+  seed: string;
+  query: string;
+  suggest: string;
+  engine: string;
+  level: number;
+  words: number;
+  type?: string;
+};
+
+export type SearchSuggestionsDemoResult = {
+  seed: string;
+  engine: string;
+  rows: SearchSuggestionsDemoRow[];
+  results_count: number;
+  total_found: number;
+  cost: number;
+  truncated: boolean;
+};
+
+export type SearchSuggestionsDemoResponse = {
+  demo: true;
+  module: "sbor-poiskovykh-podskazok";
+  remaining: number;
+  limits: {
+    max_runs_per_day: number;
+    max_seeds_per_run: number;
+    max_rows: number;
+    depth: number;
+  };
+  result: SearchSuggestionsDemoResult;
+  upgrade: DemoUpgrade;
+};
+
+export type SearchSuggestionsDemoRunBody = {
+  seed: string;
+  engine?: "yandex" | "google";
+};
+
+export type DomainRecordsDemoIp = {
+  ip: string | null;
+  neighbors: string[];
+  neighbors_count: number;
+  neighbors_truncated: boolean;
+};
+
+export type DomainRecordsDemoResult = {
+  domain: string;
+  punycode?: string | null;
+  summary: {
+    registered?: boolean;
+    status_key?: string | null;
+    expires_at?: string | null;
+    days_until_expiry?: number | null;
+    ns?: string[];
+    a_count?: number;
+    mx_count?: number;
+  };
+  whois: {
+    status_key?: string | null;
+    registered_at?: string | null;
+    expires_at?: string | null;
+    days_until_expiry?: number | null;
+    dns_servers?: string[];
+    broken?: boolean;
+  };
+  dns_counts: Record<string, number>;
+  ips: DomainRecordsDemoIp[];
+};
+
+export type DomainRecordsDemoResponse = {
+  demo: true;
+  module: "zapisi-domena";
+  remaining: number;
+  limits: {
+    max_runs_per_day: number;
+    max_domains_per_run: number;
+  };
+  result: DomainRecordsDemoResult;
+  upgrade: DemoUpgrade;
+};
+
+export type DomainRecordsDemoRunBody = {
+  domain: string;
+};
+
+export type SiteTypesDemoMixItem = {
+  type: string;
+  share: number;
+  count: number;
+};
+
+export type SiteTypesDemoRow = {
+  position: number;
+  domain: string;
+  url: string;
+  type: string;
+  in_catalog: boolean;
+};
+
+export type SiteTypesDemoHost = {
+  host: string;
+  count: number;
+  type: string;
+};
+
+export type SiteTypesDemoCategory = {
+  label: string;
+  short: string;
+  color: string;
+};
+
+export type SiteTypesDemoResult = {
+  phrase: string;
+  engine: string;
+  depth: number;
+  verdict: { code: string; label: string; hint: string };
+  total_positions: number;
+  mix: SiteTypesDemoMixItem[];
+  rows: SiteTypesDemoRow[];
+  rows_shown: number;
+  rows_total: number;
+  truncated: boolean;
+  frequent_hosts: SiteTypesDemoHost[];
+  categories: Record<string, SiteTypesDemoCategory>;
+  error: boolean;
+};
+
+export type SiteTypesDemoResponse = {
+  demo: true;
+  module: "tipy-saitov-v-vydache";
+  remaining: number;
+  limits: {
+    max_runs_per_day: number;
+    max_phrases_per_run: number;
+    depth: number;
+    max_rows: number;
+  };
+  result: SiteTypesDemoResult;
+  upgrade: DemoUpgrade;
+};
+
+export type SiteTypesDemoRunBody = {
+  phrase: string;
+  engine?: "yandex" | "google";
+};
+
+export type PhraseCommerceDemoMetric = {
+  code: string;
+  label: string;
+  pct?: number;
+  overlap_pct?: number;
+  shared?: number;
+  incomplete?: boolean;
+  local?: number;
+  commercial?: number;
+  total?: number;
+};
+
+export type PhraseCommerceDemoResult = {
+  phrase: string;
+  engine: string;
+  depth: number;
+  region_name: string;
+  region_contrast_name: string;
+  geo: PhraseCommerceDemoMetric;
+  localization: PhraseCommerceDemoMetric;
+  commerce: PhraseCommerceDemoMetric;
+  positions: number;
+  error: boolean;
+};
+
+export type PhraseCommerceDemoResponse = {
+  demo: true;
+  module: "geo-lokalizaciya-kommerciya";
+  remaining: number;
+  limits: {
+    max_runs_per_day: number;
+    max_phrases_per_run: number;
+    depth: number;
+  };
+  result: PhraseCommerceDemoResult;
+  upgrade: DemoUpgrade;
+};
+
+export type PhraseCommerceDemoRunBody = {
+  phrase: string;
+  engine?: "yandex" | "google";
+};
+
 export type BacklinkDemoCheck = {
   key: string;
   label: string;

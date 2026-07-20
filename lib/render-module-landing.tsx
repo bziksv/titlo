@@ -7,6 +7,10 @@ import { AnalizKonkurentovLanding } from "@/components/module-landings/AnalizKon
 import { HttpHeadersLanding } from "@/components/module-landings/HttpHeadersLanding";
 import { ProverkaIndeksaciiLanding } from "@/components/module-landings/ProverkaIndeksaciiLanding";
 import { ProverkaTekstaEseninLanding } from "@/components/module-landings/ProverkaTekstaEseninLanding";
+import { SborPoiskovykhPodskazokLanding } from "@/components/module-landings/SborPoiskovykhPodskazokLanding";
+import { ZapisiDomenaLanding } from "@/components/module-landings/ZapisiDomenaLanding";
+import { TipySaitovVVydacheLanding } from "@/components/module-landings/TipySaitovVVydacheLanding";
+import { GeoLokalizaciyaKommerciyaLanding } from "@/components/module-landings/GeoLokalizaciyaKommerciyaLanding";
 import { KalkulyatorRoiLanding } from "@/components/module-landings/KalkulyatorRoiLanding";
 import { UtmMetkiLanding } from "@/components/module-landings/UtmMetkiLanding";
 import { SravnenieSpiskovLanding } from "@/components/module-landings/SravnenieSpiskovLanding";
@@ -47,6 +51,14 @@ export function renderModuleLanding(baseSlug: string, module: ModulePage) {
       return wrapClassic(<ProverkaIndeksaciiLanding module={module} />);
     case "proverka-teksta-esenin":
       return wrapClassic(<ProverkaTekstaEseninLanding module={module} />);
+    case "sbor-poiskovykh-podskazok":
+      return wrapClassic(<SborPoiskovykhPodskazokLanding module={module} />);
+    case "zapisi-domena":
+      return wrapClassic(<ZapisiDomenaLanding module={module} />);
+    case "tipy-saitov-v-vydache":
+      return wrapClassic(<TipySaitovVVydacheLanding module={module} />);
+    case "geo-lokalizaciya-kommerciya":
+      return wrapClassic(<GeoLokalizaciyaKommerciyaLanding module={module} />);
     case "kalkulyator-roi":
       return wrapClassic(<KalkulyatorRoiLanding module={module} />);
     case "utm-metki":
