@@ -85,14 +85,14 @@ export function ProverkaIndeksaciiLanding({ module }: Props) {
         <div className="mx-auto max-w-6xl px-4">
           <h2 className="text-2xl font-bold text-slate-900">Лимиты по тарифам (в месяц)</h2>
           <p className="mt-2 text-slate-600">
-            1 URL в одной поисковой системе = 1 лимит. Title и сниппет сохраняются для анализа.
+            Проверки: 1 URL × 1 ПС = 1. Сохранения: сколько результатов с title и сниппетом хранится в истории.
           </p>
           <div className="mt-6 overflow-hidden rounded-xl border border-slate-200">
             <table className="w-full text-left text-sm">
               <thead className="bg-slate-50">
                 <tr>
                   <th className="px-4 py-3 font-semibold">Тариф</th>
-                  <th className="px-4 py-3 font-semibold">Лимит</th>
+                  <th className="px-4 py-3 font-semibold">Проверки / сохранения</th>
                 </tr>
               </thead>
               <tbody>

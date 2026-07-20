@@ -37,8 +37,9 @@ export default function TarifyPage() {
         <p className="mt-2 text-slate-600">
           Наглядная таблица — чем отличаются тарифы по ключевым инструментам. На Free — по{" "}
           <strong className="font-medium text-slate-800">3 проверки</strong> в месяц на анализ релевантности, текста и
-          конкурентов; проверка индексации и сниппетов — <strong className="font-medium text-slate-800">5</strong>{" "}
-          (Optimal 30 / Ultimate 50 / Maximum 100).
+          конкурентов; проверка индексации и сниппетов —{" "}
+          <strong className="font-medium text-slate-800">5 / 5</strong> (проверки / сохранения; Optimal 600 / 30 ·
+          Ultimate 1 500 / 50 · Maximum 2 400 / 100).
         </p>
         <div className="mt-6">
           <TariffComparison />

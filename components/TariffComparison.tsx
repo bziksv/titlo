@@ -98,8 +98,8 @@ export function TariffComparison() {
       </p>
       <p className="border-t border-slate-100 px-4 py-3 text-xs leading-relaxed text-slate-600">
         <span className="font-medium text-slate-700">Проверка индексации и сниппетов:</span> 1 URL в одной поисковой
-        системе (Яндекс или Google) = <strong className="font-medium text-slate-700">1 проверка</strong>; title и сниппет
-        сохраняются. Лимиты: Free 5 / Optimal 30 / Ultimate 50 / Maximum 100. Пакет до 500 URL за запуск.
+        системе (Яндекс или Google) = <strong className="font-medium text-slate-700">1 проверка</strong>. В таблице —
+        проверки / сохранения (сколько результатов с title и сниппетом хранится). Пакет до 500 URL за запуск.
       </p>
       <p className="border-t border-slate-100 px-4 py-3 text-xs leading-relaxed text-slate-600">
         <span className="font-medium text-slate-700">Мониторинг позиций:</span> лимит — число{" "}

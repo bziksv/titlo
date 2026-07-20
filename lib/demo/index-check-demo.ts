@@ -19,7 +19,7 @@ export const INDEX_CHECK_CABINET_FEATURES = [
   "Выбор домена Google (google.ru, .com и др.)",
   "Опция объединения www/http/https",
   "CSV-выгрузка с title и сниппетами",
-  "Лимиты: Бесплатный 5 · Оптимальный 30 · Ультимат 50 · Максимум 100",
+  "Лимиты проверки / сохранения: Бесплатный 5 / 5 · Оптимальный 600 / 30 · Ультимат 1 500 / 50 · Максимум 2 400 / 100",
 ] as const;
 
 export const INDEX_CHECK_GOOGLE_DOMAINS = [

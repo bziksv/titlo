@@ -38,7 +38,6 @@ export function formatTariffCardModuleValue(key: string, raw: string | undefined
   switch (key) {
     case "relevance":
     case "competitors":
-    case "indexCheck":
     case "eseninTextCheck":
     case "positions":
     case "cluster":
@@ -48,6 +47,7 @@ export function formatTariffCardModuleValue(key: string, raw: string | undefined
     case "domainRecords":
     case "searchSuggestions":
     case "phraseCommerce":
+    case "indexCheck":
       return `${raw.replace(/\s+\/\s+/g, " / ")} (проверки / сохранения)`;
     case "sites":
     case "domains":
