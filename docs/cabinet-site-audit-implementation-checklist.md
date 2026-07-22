@@ -469,7 +469,7 @@ Cabinet = UI + dispatch + чтение отчётов.
 | Страницы с тегом noindex | A | [x] | [x] | [x] | [x] | [x] | |
 | Тошнота слов на страницах | B | [x] | [x] | [x] | [x] | [x] | `text_nausea` (classic/academic lite) |
 | Тощие страницы | B | [x] | [x] | [x] | [x] | [x] | |
-| Поиск плагиата на посадочных | C | [x] | [x] | [x] | [x] | [x] | `landing_plagiarism_suspect` — internal duplicate/simhash only; внешний API позже |
+| Поиск плагиата на посадочных | C | [x] | [x] | [x] | [x] | [x] | lite internal + вкладка «Антиплагиат» (внешний SERP/шинглы, выборочно) |
 | Потерянные посадочные | B | [x] | [x] | [x] | [x] | [x] | `landing_not_crawled` ← monitoring.page |
 | Изменения URL посадочных | B | [x] | [x] | [x] | [x] | [x] | `landing_url_changed` ← diff monitoring.page между краулами |
 | «Взрослый» контент | C | [x] | [x] | [x] | [x] | [x] | `adult_content` keyword lite |
@@ -537,7 +537,7 @@ Cabinet = UI + dispatch + чтение отчётов.
 - [ ] CrUX field data / полный audit pack — позже
 
 ### 11.4. Content risk
-- [x] Plagiarism pipeline (посадочные) — lite internal: `landing_plagiarism_suspect` (duplicate_content / similar_pages); внешний API позже
+- [x] Plagiarism pipeline (посадочные) — lite internal + вкладка внешнего (Titlo TextUniqueness, выборочный запуск); сторонний Text.ru API — не нужен
 - [x] Adult / negative classifiers — `adult_content` / `negative_content` (`SiteAuditContentRisk`, keyword lists)
 - [x] False-positive review UX — через существующий ignore findings (+ help texts)
 - [x] Word repeats in sentence — `word_repeat_in_sentence` (optional thresholds)
@@ -716,4 +716,5 @@ Cabinet = UI + dispatch + чтение отчётов.
 | 2026-07-22 | **Beta banner** | баннер на UI: поддержка + CRM для замечаний |
 | 2026-07-22 | **Index-check deep-link + unchanged UI** | `site_index_check` → `/index-check`; «без изменений N стр.»; v0.3.14 |
 | 2026-07-22 | **Module deep-links pack** | meta / Есенин / HTTP headers + баннеры; §15 ✅; v0.3.15 |
+| 2026-07-22 | **External plagiarism tab** | вкладка «Антиплагиат»: выборочные URL → TextUniqueness SERP; finding `landing_plagiarism_external`; v0.3.16 |
 | 2026-07-22 | **Next (Волна 5)** | HTML-мониторинг ⏸ (html.gz/proxy2) · обкатка prod |
