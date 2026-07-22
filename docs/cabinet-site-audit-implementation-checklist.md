@@ -505,7 +505,7 @@ Cabinet = UI + dispatch + чтение отчётов.
 | Подсветка источника сниппета | C | [x] | [x] | [x] | [x] | [x] | `serp_snippet_source` (title/h1/description ← SERP); gate SERP_SNIPPETS |
 | Вероятные аффилиаты | C | [x] | [x] | [x] | [x] | [x] | `probable_affiliate` — исходящие на affiliate-сети |
 | Телефон / адрес на коммерческих | C | [x] | [x] | [x] | [x] | [x] | `commercial_missing_contacts` (эвристика commercial + phone/address) |
-| Соответствие запросов посадочным | D | [x] | [x] | [x] | [x] | [x] | `landing_query_mismatch` lite: query tokens vs title/h1/description; полный TF позже |
+| Соответствие запросов посадочным | D | [x] | [x] | [x] | [x] | [x] | lite `landing_query_mismatch` + вкладка «Релевантность» → история/prefill анализатора (полный TF в модуле) |
 | Коммерческие факторы | D | [x] | [x] | [x] | [x] | [x] | lite pack `commercial_factors` на своих страницах ✅; vs ТОП — ✖ не делаем (размыто, lite хватает) |
 
 **Критерий этапа 10:** все **B** из §10.1 + ключевые B из §10.2 = ✅; A-дубли уже закрыты в этапе 6.
@@ -724,4 +724,5 @@ Cabinet = UI + dispatch + чтение отчётов.
 | 2026-07-22 | **Headless JS** | решение ✖: не рендерим JS / не парсим код; static HTML |
 | 2026-07-22 | **Body tempfile** | sink на диск + finally delete; prune TTL/caps; v0.3.19 |
 | 2026-07-22 | **Global cap=1** | `queued_wait` + FIFO promote; `SITE_AUDIT_GLOBAL_MAX_ACTIVE`; v0.3.20 |
-| 2026-07-22 | **Next (Волна 5)** | HTML-мониторинг ⏸ (html.gz/proxy2) · склейка релевантности с посадочными · обкатка prod |
+| 2026-07-22 | **Relevance bridge** | вкладка «Релевантность»: lookup history + prefill `/analyze-relevance`; v0.3.21 |
+| 2026-07-22 | **Next (Волна 5)** | HTML-мониторинг ⏸ (html.gz/proxy2) · обкатка prod |
