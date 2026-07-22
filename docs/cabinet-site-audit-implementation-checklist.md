@@ -282,13 +282,14 @@ Cabinet = UI + dispatch + чтение отчётов.
 - [x] Queue `site_audit` (+ aggregate jobs)
 - [x] Supervisor 2 procs **на cabinet**: `cabinet-titlo-site-audit` в `deploy/supervisor/cabinet-titlo.conf.example` + restart в `deploy-titlo.sh`; local `scripts/dev-site-audit-queue.sh`
 - [x] Max 1 crawl/user, per-host throttle (базово)
+- [x] Global cap / backpressure — `SITE_AUDIT_GLOBAL_MAX_ACTIVE` (default 1): лишние → `queued_wait`, FIFO promote; cron `site-audit:promote-waiting`
 - [x] Failed jobs monitoring — `php artisan site-audit:failed` (+ `--json`)
 
 ### 5b — перенос на proxy2 · Волна 3–4 `🖥️`
 - [ ] Supervisor 2–4 procs **на proxy2**
 - [ ] Cabinet больше не обрабатывает `site_audit` (или standby=0)
 - [ ] В `deploy-titlo.sh` / docs: restart **proxy2** site_audit
-- [ ] Global cap, backpressure
+- [x] Global cap, backpressure — на cabinet (default 1 active); на proxy2 поднять env
 - [ ] Проверка: краул не идёт через 3proxy/LTE
 
 **Критерий 5a:** малый crawl A проходит на cabinet.  
@@ -722,4 +723,5 @@ Cabinet = UI + dispatch + чтение отчётов.
 | 2026-07-22 | **PSI sample 20** | default `SITE_AUDIT_PSI_MAX_URLS=20` (было 3); v0.3.18 |
 | 2026-07-22 | **Headless JS** | решение ✖: не рендерим JS / не парсим код; static HTML |
 | 2026-07-22 | **Body tempfile** | sink на диск + finally delete; prune TTL/caps; v0.3.19 |
+| 2026-07-22 | **Global cap=1** | `queued_wait` + FIFO promote; `SITE_AUDIT_GLOBAL_MAX_ACTIVE`; v0.3.20 |
 | 2026-07-22 | **Next (Волна 5)** | HTML-мониторинг ⏸ (html.gz/proxy2) · склейка релевантности с посадочными · обкатка prod |
