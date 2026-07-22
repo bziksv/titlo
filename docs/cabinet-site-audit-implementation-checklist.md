@@ -107,7 +107,7 @@ Cabinet = UI + dispatch + чтение отчётов.
 |-----|------|-----|--------|
 | SEO lite отчёты B | 10 | cabinet | ✅ B закрыт (SERP-сниппеты gate); C/D в дереве с v0.3.9 |
 | UX parity (share, schedule, xlsx, …) | 14 | cabinet | 🟡 почти ✅; HTML-мониторинг ⏸ (нужен html.gz/proxy2) |
-| Тяжёлое C (links, PSI, plagiarism…) | 11 | cabinet→позже proxy2 | 🟡 11.1–11.4 + 11.6 ✅; 11.5 headless ⏸ (решение: не MVP) |
+| Тяжёлое C (links, PSI, plagiarism…) | 11 | cabinet→позже proxy2 | 🟡 11.1–11.4 + 11.6 ✅; 11.5 headless ✖ (не делаем) |
 | Маркетинг / демо | 13 | titlo.ru + demo | 🟡 rich landing + tariff + demo seed ✅ |
 | Склейка модулей Titlo | 15 | cabinet | ✅ deep-links: конкуренты · индекс · meta · Есенин · HTTP headers; HTML-мониторинг ⏸ |
 
@@ -543,9 +543,9 @@ Cabinet = UI + dispatch + чтение отчётов.
 - [x] Word repeats in sentence — `word_repeat_in_sentence` (optional thresholds)
 
 ### 11.5. JS rendering
-- [x] Нужен ли headless — **решение:** не на MVP/Волне 5; static HTML crawl достаточен для большинства сайтов; revisit при запросах SPA-клиентов
-- [ ] Отдельная очередь / лимиты CPU на proxy2 — после решения «нужен headless»
-- [ ] Не ломать Kraken RAM — N/A пока нет headless
+- [x] Нужен ли headless — **решение ✖:** не делаем; static HTML crawl; JS-код / Chrome-рендер не смотрим
+- [x] Отдельная очередь / лимиты CPU — N/A (headless out of scope)
+- [x] Kraken RAM — N/A
 
 ### 11.6. Security report pack
 - [x] Lite: HSTS / X-Frame-Options / X-Content-Type-Options (`missing_*` + virtual `security_headers`); mixed_content уже есть
@@ -720,4 +720,5 @@ Cabinet = UI + dispatch + чтение отчётов.
 | 2026-07-22 | **SERP snippet cannibalization** | `serp_snippet_cannibalization`: ≥2 своих URL в ТОП по запросу мониторинга; v0.3.17 |
 | 2026-07-22 | **Commercial vs TOP** | решение: не делаем; lite `commercial_factors` по своим страницам достаточно |
 | 2026-07-22 | **PSI sample 20** | default `SITE_AUDIT_PSI_MAX_URLS=20` (было 3); v0.3.18 |
+| 2026-07-22 | **Headless JS** | решение ✖: не рендерим JS / не парсим код; static HTML |
 | 2026-07-22 | **Next (Волна 5)** | HTML-мониторинг ⏸ (html.gz/proxy2) · склейка релевантности с посадочными · обкатка prod |
