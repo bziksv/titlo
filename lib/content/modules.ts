@@ -181,6 +181,22 @@ export const BASE_MODULE_PAGES: ModulePage[] = [
     features: ["Пакетная проверка URL", "Выгрузка в CSV"],
   },
   {
+    slug: "audit-sajta",
+    path: "/audit-sajta/",
+    title: "Аудит сайта — технический и SEO",
+    h1: "Аудит сайта",
+    description:
+      "Краулер Titlo: технические ошибки, SEO-дубли, битые ссылки, robots/sitemap, посадочные и отчёт с шарингом клиенту.",
+    lead:
+      "Запустите полный обход домена: доступность, HTML, META, ссылки, изображения, безопасность и SEO-факторы в одном отчёте с приоритетами.",
+    features: [
+      "До 50 000 URL на краул (по тарифу)",
+      "Тех + SEO отчёты и корзины приоритета",
+      "Шаринг HTML-отчёта клиенту",
+      "Расписание и экспорт XLSX/DOCX",
+    ],
+  },
+  {
     slug: "proverka-indeksacii",
     path: "/proverka-indeksacii/",
     title: "Проверка индексации и сниппетов (Яндекс и Google)",

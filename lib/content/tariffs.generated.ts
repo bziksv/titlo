@@ -79,6 +79,8 @@ export const TARIFF_COMPARE_ROWS = [
   { label: "Мониторинг Мета-Тегов (проекты / страницы)", key: "meta" as const },
   { label: "Отслеживание размещенных ссылок на сайтах (проекты / ссылки)", key: "links" as const },
   { label: "Отслеживание ссылок: оповещения", key: "linksAlerts" as const },
+  { label: "Аудит сайта (страниц/краул)", key: "siteAudit" as const },
+  { label: "Аудит сайта (краулов/мес)", key: "siteAuditCrawls" as const },
 ] as const;
 
 export const TARIFF_COMPARE: Record<string, Record<string, string>> = {
@@ -115,4 +117,6 @@ export const TARIFF_COMPARE: Record<string, Record<string, string>> = {
     Ultimate: "email-telegram",
     Maximum: "email-telegram",
   },
+  siteAudit: { Free: "500", Optimal: "5 000", Ultimate: "20 000", Maximum: "50 000" },
+  siteAuditCrawls: { Free: "1", Optimal: "4", Ultimate: "8", Maximum: "12" },
 };

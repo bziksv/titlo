@@ -15,6 +15,7 @@ const ICONS: Record<string, string> = {
   "utm-metki": "📎",
   "kalkulyator-roi": "💰",
   "http-headers": "🌐",
+  "audit-sajta": "🧭",
   "proverka-indeksacii": "🔎",
   "proverka-teksta-esenin": "🛡️",
   "sbor-poiskovykh-podskazok": "💡",

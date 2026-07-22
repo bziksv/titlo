@@ -50,21 +50,24 @@
 | Что | Этап | Где | Статус |
 |-----|------|-----|--------|
 | Миграции `site_audit_*` (временно можно в **основной** MySQL) | 3 | cabinet DB | 🟡 3a ✅ |
-| Ядро краула discover/fetch/parse/aggregate | 4 | local/cabinet workers | 🟡 parse signals ✅; tempfile/HTML → Wave 4 |
-| Очередь `site_audit` + supervisor **на cabinet** (2 proc) | 5a | cabinet | ✅ conf+deploy+local script |
-| UI shell + отчёты фазы **A** | 7 + 6(A) | cabinet | ✅ UI + DoD A |
+| Ядро краула discover/fetch/parse/aggregate | 4 | local/cabinet workers | 🟡 parse signals ✅; robots+virtual robots ✅; tempfile/HTML → Wave 4 |
+| Очередь `site_audit` + supervisor **на cabinet** (2 proc) | 5a | cabinet | ✅ conf+deploy+prod restart |
+| UI shell + отчёты фазы **A** | 7 + 6(A) | cabinet | ✅ UI + DoD A; batch domains + virtual robots |
 | Тарифные лимиты / письма | 8 | cabinet | ✅ |
 | Smoke ≤1–2k URL | 12a | cabinet | ✅ |
 
-**Выход волны 2 (MVP A):** ✅ закрыт по коду/UI/smoke. Осталось: tempfile/HTML → Wave 4; на prod — задеплоить `cabinet-titlo-site-audit` в supervisor conf.
+**Выход волны 2 (MVP A):** ✅ закрыт. Prod: supervisor `cabinet-titlo-site-audit` работает. tempfile/HTML → Wave 4.  
+**Сейчас (2026-07-22):** обкатка **Волны 5** на cabinet (B/C / UX / маркетинг).  
+**proxy2: ЗАМОРОЖЕН** — не готовим, не cutover, не HTML.gz; гоняем краул на cabinet как есть и наблюдаем. Волны 3–4 не стартуем, пока явно не снимем freeze.
 
 **proxy2:** не используем (или только SSH «лежит и ждёт»).  
 **HTML.gz:** выключен или пишется во временный local path (не прод-хранилище).
 
 ## Волна 3 — Подготовка внешнего сервера ⏸ `🖥️` · **в самую последнюю очередь**
 
-> **Решение 2026-07-21:** remote/proxy2 **не трогаем**, пока модуль не обкатан на local/cabinet.  
-> Сначала допиливаем UX/отчёты/стабильность тут → потом одним заходом заводим infra на proxy2 (волны 3–4).  
+> **Решение 2026-07-22:** proxy2 **заморожен полностью** — только local/cabinet, наблюдаем.  
+> Remote/SSH/MySQL audit/HTML.gz **не трогаем**, пока модуль не обкатан и freeze не снят явно.  
+> Сначала допиливаем UX/отчёты/стабильность тут → потом одним заходом infra (волны 3–4).  
 > Не начинать этап 2/3b/5b/9 «потому что сервер уже есть».
 
 > Делаем **только когда** волна 2 обкатана и явно решено «пора remote».
@@ -98,15 +101,15 @@
 Cabinet = UI + dispatch + чтение отчётов.  
 **Сейчас (2026-07-21):** не стартуем — обкатка только local/cabinet.
 
-## Волна 5 — Расширение продукта ⬜ `💻+🖥️`
+## Волна 5 — Расширение продукта 🟡 `💻` (proxy2 не нужен пока)
 
-| Что | Этап | Где |
-|-----|------|-----|
-| SEO lite отчёты B | 10 | detector на proxy2, UI cabinet |
-| UX parity (share, schedule, xlsx) | 14 | cabinet (+files на proxy2) |
-| Тяжёлое C (links, PSI, plagiarism…) | 11 | в основном proxy2 |
-| Маркетинг / демо | 13 | titlo.ru + demo |
-| Склейка модулей Titlo | 15 | cabinet |
+| Что | Этап | Где | Статус |
+|-----|------|-----|--------|
+| SEO lite отчёты B | 10 | cabinet | ✅ B закрыт (SERP-сниппеты gate); C/D в дереве с v0.3.9 |
+| UX parity (share, schedule, xlsx, …) | 14 | cabinet | 🟡 почти ✅; HTML-мониторинг ⏸ (нужен html.gz/proxy2) |
+| Тяжёлое C (links, PSI, plagiarism…) | 11 | cabinet→позже proxy2 | 🟡 11.1–11.4 + 11.6 ✅; 11.5 headless ⏸ (решение: не MVP) |
+| Маркетинг / демо | 13 | titlo.ru + demo | 🟡 rich landing + tariff + demo seed ✅ |
+| Склейка модулей Titlo | 15 | cabinet | 🟡 lite уже; конкуренты ✅ deep-link; полный Есенин — нет; AI ✅ |
 
 ```
 Волна1 spec ──► Волна2 код+A на cabinet ──► Волна3 готовим proxy2
@@ -152,7 +155,7 @@ Cabinet = UI + dispatch + чтение отчётов.
 | 10 | SEO B | 5 | 💻+🖥️ | 🟡 shell SEO + simhash (волна 2) |
 | 11 | Тяжёлое C | 5 | 🖥️ | ⬜ |
 | 14 | UX parity | 5 | 💻+🖥️ | ⬜ |
-| 13 | Маркетинг / демо | 5 | 📄+💻 | ⬜ |
+| 13 | Маркетинг / демо | 5 | 📄+💻 | 🟡 ✅ landing |
 | 15 | Интеграции модулей Titlo | 5 | 💻 | ⬜ |
 
 Отчёты подробно — **Часть II**.
@@ -238,11 +241,12 @@ Cabinet = UI + dispatch + чтение отчётов.
 
 ### Discovery
 - [x] URL normalize
-- [x] robots.txt (fetch + sanity + Disallow check per URL)
+- [x] robots.txt (fetch + sanity + Disallow check; стартовая очередь + links)
 - [x] sitemap (+ index) + дообход по внутренним ссылкам до лимита (всегда, без флага)
 - [x] CSV/textarea import (seed_urls)
 - [x] tariff truncate
-- [x] exclude patterns
+- [x] exclude patterns (legacy в API; UI → виртуальный robots)
+- [x] виртуальный robots.txt (подмена живого файла на краул)
 
 ### Fetch
 - [x] Guzzle timeout/retry/UA (`SiteAuditFetcher` + UA session rotate)
@@ -298,8 +302,8 @@ Cabinet = UI + dispatch + чтение отчётов.
 
 - [x] Убрать «В разработке»
 - [x] Routes + ACL + demo read-only
-- [x] Project CRUD + settings (delete + exclude_patterns; name/firstOrCreate)
-- [x] Start crawl + progress
+- [x] Project CRUD + settings (delete; firstOrCreate; virtual_robots / legacy exclude)
+- [x] Start crawl + progress (**batch:** несколько доменов, по одному на строку)
 - [x] **Сводный тех. аудит** shell (4 корзины)
 - [x] **Сводный SEO-аудит** shell (4 корзины) — вкладка SEO
 - [x] График динамики по датам crawl
@@ -347,11 +351,11 @@ Cabinet = UI + dispatch + чтение отчётов.
 
 ---
 
-## Этап 13 — Маркетинг / демо ⬜
+## Этап 13 — Маркетинг / демо 🟡
 
-- [ ] Landing модуля
-- [ ] Demo dataset
-- [ ] Tariff copy
+- [x] Landing модуля — `/audit-sajta/` (`AuditSajtaLanding` + тарифы/FAQ/CTA демо)
+- [x] Demo dataset — `DemoCabinetModuleSeeder::seedSiteAudit` + share `demo-site-audit-showcase`
+- [x] Tariff copy — `siteAudit` / `siteAuditCrawls` в `tariffs.generated.ts` + card layout
 
 ---
 
@@ -382,19 +386,19 @@ Cabinet = UI + dispatch + чтение отчётов.
 | Ошибки 5xx | A | [x] | [x] | [x] | [x] | [x] | |
 | Недоступные страницы | A | [x] | [x] | [x] | [x] | [x] | timeout/DNS/connect |
 | Страницы, содержащие битые ссылки | C | [x] | [x] | [x] | [x] | [x] | lite: crawl 4xx + sample HEAD (`page_has_broken_links`) |
-| Плохие ссылки | C | [ ] | [ ] | [ ] | [ ] | [ ] | уточнить taxonomy vs битые; есть `broken_internal_link` |
-| Выбросы ошибок | C | [ ] | [ ] | [ ] | [ ] | [ ] | аномалии по времени/кодам |
+| Плохие ссылки | C | [x] | [x] | [x] | [x] | [x] | `page_has_bad_links`: empty/#/javascript:/unresolvable; ≠ HTTP-битые |
+| Выбросы ошибок | C | [x] | [x] | [x] | [x] | [x] | `error_spike`: status/path cluster + delta vs прошлый краул |
 
 ### 6.2. HTML / разметка
 
 | Отчёт | Фаза | Spec | Detector | API/UI | CSV | Сводка | Заметки |
 |-------|------|------|----------|--------|-----|--------|---------|
-| Критические ошибки HTML | C | [ ] | [ ] | [ ] | [ ] | [ ] | validator/сэмпл; не на 20k full |
+| Критические ошибки HTML | C | [x] | [x] | [x] | [x] | [x] | `html_critical_errors`: libxml ERROR/FATAL + эвристики; сэмпл |
 | Неверный HTML DOCTYPE | B | [x] | [x] | [x] | [x] | [x] | sniff |
 | Страницы с frame/iframe | B | [x] | [x] | [x] | [x] | [x] | |
 | Несколько title / description | A | [x] | [x] | [x] | [x] | [x] | count>1 |
 | Ошибки robots.txt | B | [x] | [x] | [x] | [x] | [x] | parse + sanity |
-| Потерянные файлы | C | [ ] | [ ] | [ ] | [ ] | [ ] | ресурсы 404 с referrer |
+| Потерянные файлы | C | [x] | [x] | [x] | [x] | [x] | `lost_file`: CSS/JS HEAD + referrer; `asset_srcs_json` |
 | Страницы с rel=canonical | A | [x] | [x] | [x] | [x] | [x] | список + target |
 | Canonical на чужой / пустой / конфликт | A | [x] | [x] | [x] | [x] | [x] | findings + `canonical_not_self` (B) |
 | Очень большие страницы | A | [x] | [x] | [x] | [x] | [x] | порог bytes |
@@ -407,19 +411,19 @@ Cabinet = UI + dispatch + чтение отчётов.
 
 | Отчёт | Фаза | Spec | Detector | API/UI | CSV | Сводка | Заметки |
 |-------|------|------|----------|--------|-----|--------|---------|
-| Все изображения | C | [ ] | [ ] | [ ] | [ ] | — | **не** 100k rows; агрегат/топ/экспорт сэмпла |
+| Все изображения | C | [~] | [~] | [~] | [~] | — | page-level: alt + broken + heavy; без 100k rows |
 | Страницы без уникальных изображений | B | [x] | [x] | [x] | [x] | [x] | `no_unique_images` |
 | Изображения без alt | B | [x] | [x] | [x] | [x] | [x] | из parse (фаза A code) |
-| Слишком тяжёлые изображения | C | [ ] | [ ] | [ ] | [ ] | [ ] | HEAD/size; сэмпл |
-| Битые изображения | C | [ ] | [ ] | [ ] | [ ] | [ ] | |
+| Слишком тяжёлые изображения | C | [x] | [x] | [x] | [x] | [x] | `heavy_image` HEAD Content-Length; порог `heavy_image_bytes` |
+| Битые изображения | C | [x] | [x] | [x] | [x] | [x] | `broken_image` HEAD-сэмпл; `img_srcs_json` |
 
 ### 6.4. Скорость / UX / безопасность
 
 | Отчёт | Фаза | Spec | Detector | API/UI | CSV | Сводка | Заметки |
 |-------|------|------|----------|--------|-----|--------|---------|
-| Мобильные устройства (PSI-like) | C | [ ] | [ ] | [ ] | [ ] | [ ] | сэмпл / посадочные |
-| Компьютеры (PSI-like) | C | [ ] | [ ] | [ ] | [ ] | [ ] | |
-| Безопасность | C | [x] | [x] | [x] | [x] | [x] | lite: `security_headers` / HSTS / XFO / XCTO; mixed уже ✅; полный pack позже |
+| Мобильные устройства (PSI-like) | C | [x] | [x] | [x] | [x] | [x] | `psi_mobile`; Google PSI v5; gate `SITE_AUDIT_PSI` |
+| Компьютеры (PSI-like) | C | [x] | [x] | [x] | [x] | [x] | `psi_desktop`; strategy=desktop |
+| Безопасность | C | [x] | [x] | [x] | [x] | [x] | `security_headers` + HSTS/XFO/XCTO/CSP/RP/PP + COOP/COEP/CORP; mixed/insecure_form |
 | Sitemap (ветка) | B | [x] | [x] | [x] | [x] | [x] | `sitemap_*` / `not_in_sitemap` |
 
 ### 6.5. Доп. tech-факторы с витрины / типичный краул (если нет отдельного пункта UI — всё равно finding)
@@ -456,7 +460,7 @@ Cabinet = UI + dispatch + чтение отчётов.
 
 | Отчёт (Labrika) | Фаза | Spec | Detector | API/UI | CSV | Сводка | Заметки |
 |-----------------|------|------|----------|--------|-----|--------|---------|
-| Конкуренты сайта → сводные / Яндекс | D | [ ] | [ ] | [ ] | [ ] | — | отдельный контур (уже есть анализ конкурентов) |
+| Конкуренты сайта → сводные / Яндекс | D | [x] | [x] | [x] | — | — | deep-link `site_competitors` → `/competitor-analysis` (не краул) |
 | SEO-ошибки META тегов | B | [x] | [x] | [x] | [x] | [x] | virtual `seo_meta_errors` + `multiple_canonical`; без MetaTagsController |
 | Дубли TITLE | A | [x] | [x] | [x] | [x] | [x] | можно закрыть в этапе 6/A |
 | Дубли Description | A | [x] | [x] | [x] | [x] | [x] | |
@@ -465,13 +469,13 @@ Cabinet = UI + dispatch + чтение отчётов.
 | Страницы с тегом noindex | A | [x] | [x] | [x] | [x] | [x] | |
 | Тошнота слов на страницах | B | [x] | [x] | [x] | [x] | [x] | `text_nausea` (classic/academic lite) |
 | Тощие страницы | B | [x] | [x] | [x] | [x] | [x] | |
-| Поиск плагиата на посадочных | C | [ ] | [ ] | [ ] | [ ] | [ ] | только посадочные |
+| Поиск плагиата на посадочных | C | [x] | [x] | [x] | [x] | [x] | `landing_plagiarism_suspect` — internal duplicate/simhash only; внешний API позже |
 | Потерянные посадочные | B | [x] | [x] | [x] | [x] | [x] | `landing_not_crawled` ← monitoring.page |
 | Изменения URL посадочных | B | [x] | [x] | [x] | [x] | [x] | `landing_url_changed` ← diff monitoring.page между краулами |
-| «Взрослый» контент | C | [ ] | [ ] | [ ] | [ ] | [ ] | |
-| Негативный контент | C | [ ] | [ ] | [ ] | [ ] | [ ] | |
-| Каннибализация | C | [ ] | [ ] | [ ] | [ ] | [ ] | beta у Labrika |
-| Каннибализация рекламой | C/D | [ ] | [ ] | [ ] | [ ] | [ ] | |
+| «Взрослый» контент | C | [x] | [x] | [x] | [x] | [x] | `adult_content` keyword lite |
+| Негативный контент | C | [x] | [x] | [x] | [x] | [x] | `negative_content` keyword lite |
+| Каннибализация | C | [x] | [x] | [x] | [x] | [x] | `keyword_cannibalization` ← monitoring query в title/h1 чужих URL |
+| Каннибализация рекламой | C | [x] | [x] | [x] | [x] | [x] | `ad_cannibalization` lite: promo/PPC-URL vs SEO-посадочная; Директ/SERP-ads позже |
 | Каннибализация по сниппетам | B | [x] | [x] | [x] | [x] | [x] | lite: `duplicate_title` (title); live SERP-сниппеты — позже |
 
 ### 10.2. SEO-факторы с публичной витрины (часто отдельные отчёты/подпункты)
@@ -491,17 +495,17 @@ Cabinet = UI + dispatch + чтение отчётов.
 | Переспам в META / H1 | B | [x] | [x] | [x] | [x] | [x] | `meta_spam` / `h1_spam` |
 | Переспам в тексте / биграммы / триграммы | B | [x] | [x] | [x] | [x] | [x] | `text_bigram_spam` (триграммы позже) |
 | Много strong / спам заголовками | B | [x] | [x] | [x] | [x] | [x] | `too_many_strong` (порог `strong_max`) |
-| Повторы слова в предложении | C | [ ] | [ ] | [ ] | [ ] | [ ] | |
-| Внутренние ссылки на посадочные | C | [ ] | [ ] | [ ] | [ ] | [ ] | |
+| Повторы слова в предложении | C | [x] | [x] | [x] | [x] | [x] | `word_repeat_in_sentence` |
+| Внутренние ссылки на посадочные | C | [x] | [x] | [x] | [x] | [x] | `landing_no_inbound_internal` (0 inbound из краула) |
 | Дубли одной ссылки на странице | B | [x] | [x] | [x] | [x] | [x] | `duplicate_links` |
 | Исходящие на другие сайты | B | [x] | [x] | [x] | [x] | [x] | `external_links` (info) |
 | Страницы без исходящих внутренних | C | [x] | [x] | [x] | [x] | [x] | `no_outbound_internal` | |
-| Сниппеты Яндекс / Google | B | [ ] | [ ] | [ ] | [ ] | [ ] | index-check reuse; gate позже (`SITE_AUDIT_SERP_SNIPPETS`) |
-| Подсветка источника сниппета | C | [ ] | [ ] | [ ] | [ ] | [ ] | |
-| Вероятные аффилиаты | C | [ ] | [ ] | [ ] | [ ] | [ ] | |
-| Телефон / адрес на коммерческих | C | [ ] | [ ] | [ ] | [ ] | [ ] | |
-| Соответствие запросов посадочным | D | [ ] | [ ] | [ ] | [ ] | [ ] | ядро + релевантность |
-| Коммерческие факторы | D | [ ] | [ ] | [ ] | [ ] | [ ] | отдельный инструмент? |
+| Сниппеты Яндекс / Google | B | [x] | [x] | [x] | [x] | [x] | `serp_snippets` + mismatch/not_indexed; gate `SITE_AUDIT_SERP_SNIPPETS` |
+| Подсветка источника сниппета | C | [x] | [x] | [x] | [x] | [x] | `serp_snippet_source` (title/h1/description ← SERP); gate SERP_SNIPPETS |
+| Вероятные аффилиаты | C | [x] | [x] | [x] | [x] | [x] | `probable_affiliate` — исходящие на affiliate-сети |
+| Телефон / адрес на коммерческих | C | [x] | [x] | [x] | [x] | [x] | `commercial_missing_contacts` (эвристика commercial + phone/address) |
+| Соответствие запросов посадочным | D | [x] | [x] | [x] | [x] | [x] | `landing_query_mismatch` lite: query tokens vs title/h1/description; полный TF позже |
+| Коммерческие факторы | D | [x] | [x] | [x] | [x] | [x] | lite pack `commercial_factors`: price/CTA/delivery/payment/stock/reviews + contacts; vs ТОП конкурентов — позже |
 
 **Критерий этапа 10:** все **B** из §10.1 + ключевые B из §10.2 = ✅; A-дубли уже закрыты в этапе 6.
 
@@ -516,33 +520,39 @@ Cabinet = UI + dispatch + чтение отчётов.
 - [x] Extract on parse (lite)
 - [x] Broken link checker lite (crawl status + sample HEAD, budget)
 - [x] Отчёты lite: битые (`page_has_broken_links` / `broken_internal_link`), orphans; depth — `click_depth` / `deep_pages`
+- [x] Плохие ссылки (`page_has_bad_links`) — empty/#/javascript:/unresolvable
 - [ ] Пилот на ≤5k URL / полный graph queue
 
 ### 11.2. Images subsystem
-- [ ] Page-level agg only в MVP+
-- [ ] Optional sample asset HEAD
-- [ ] UI без «104927 rows»
+- [x] Page-level agg: alt + broken + heavy (без 100k rows)
+- [x] Optional sample asset HEAD (`broken_image_head_max`)
+- [x] UI через findings-отчёты (не гигантская таблица всех img)
+- [ ] Полный каталог изображений / CDN-отчёт — позже
 
 ### 11.3. PSI / performance
-- [ ] Provider (PageSpeed API / свой)
-- [ ] Sample strategy
-- [ ] Mobile + Desktop reports
-- [ ] Budget лимитов API
+- [x] Provider: Google PageSpeed Insights API v5 (`SiteAuditPsiProbe`)
+- [x] Sample strategy: посадочные → home → crawl (cap `psi_max_urls`)
+- [x] Mobile + Desktop reports (`psi_mobile` / `psi_desktop`)
+- [x] Budget: gate `SITE_AUDIT_PSI` + optional API key; timeout/max URLs
+- [ ] CrUX field data / полный audit pack — позже
 
 ### 11.4. Content risk
-- [ ] Plagiarism pipeline (посадочные)
-- [ ] Adult / negative classifiers
-- [ ] False-positive review UX
+- [x] Plagiarism pipeline (посадочные) — lite internal: `landing_plagiarism_suspect` (duplicate_content / similar_pages); внешний API позже
+- [x] Adult / negative classifiers — `adult_content` / `negative_content` (`SiteAuditContentRisk`, keyword lists)
+- [x] False-positive review UX — через существующий ignore findings (+ help texts)
+- [x] Word repeats in sentence — `word_repeat_in_sentence` (optional thresholds)
 
 ### 11.5. JS rendering
-- [ ] Нужен ли headless (решение)
-- [ ] Отдельная очередь / лимиты CPU на proxy2
-- [ ] Не ломать Kraken RAM
+- [x] Нужен ли headless — **решение:** не на MVP/Волне 5; static HTML crawl достаточен для большинства сайтов; revisit при запросах SPA-клиентов
+- [ ] Отдельная очередь / лимиты CPU на proxy2 — после решения «нужен headless»
+- [ ] Не ломать Kraken RAM — N/A пока нет headless
 
 ### 11.6. Security report pack
 - [x] Lite: HSTS / X-Frame-Options / X-Content-Type-Options (`missing_*` + virtual `security_headers`); mixed_content уже есть
 - [x] HTTPS forms → `insecure_form` (form action=http на HTTPS-странице)
-- [ ] CSP / Referrer-Policy / полный pack
+- [x] CSP / Referrer-Policy — `missing_csp` / `missing_referrer_policy` (+ virtual pack)
+- [x] Permissions-Policy — `missing_permissions_policy` (+ Feature-Policy fallback)
+- [x] Полный security audit pack — `missing_coop` / `missing_coep` / `missing_corp` (+ virtual pack)
 
 ---
 
@@ -560,13 +570,13 @@ Cabinet = UI + dispatch + чтение отчётов.
 | Экспорт DOCX | C | [x] | [x] | [x] | сводка краула (buckets + counts) |
 | Печать | C | [x] | [x] | [x] | `@media print` + кнопка на сводке/отчёте/share |
 | Расписание полного аудита | B | [x] | [x] | [x] | weekly…monthly; paid only |
-| Задачи/to-do из аудита (ИИ) | D | [ ] | [ ] | [ ] | |
+| Задачи/to-do из аудита (ИИ) | D | [x] | [x] | [x] | `SiteAuditActionPlanBuilder`; modal «План работ»; optional DeepSeek резюме (paid) |
 | Мониторинг изменений страниц (HTML+diff+screenshot) | D | [ ] | [ ] | [ ] | рядом с html.gz |
 | Сравнение двух crawl (diff findings) | B | [x] | [x] | [x] | `SiteAuditCrawlDiff`; `/crawl/{id}/diff` |
-| Комментарии/статус «исправлено» на finding | C | [ ] | [ ] | [ ] | |
+| Комментарии/статус «исправлено» на finding | C | [x] | [x] | [x] | `site_audit_finding_notes`; fixed скрывается из counts |
 | Игнор finding / false positive | B | [x] | [x] | [x] | project-level `site_audit_ignores`; URL или весь код |
-| Мультидомен / поддомены в одном project | C | [ ] | [ ] | [ ] | |
-| White-label отчёт | D | [ ] | [ ] | [ ] | |
+| Мультидомен / поддомены в одном project | C | [x] | [x] | [x] | `extra_hosts` в settings + seed/internal; batch доменов = отдельные projects |
+| White-label отчёт | D | [x] | [x] | [x] | публичный share без Titlo; brand_name/url; paid only; логотип-файл позже |
 
 ---
 
@@ -575,12 +585,12 @@ Cabinet = UI + dispatch + чтение отчётов.
 | Модуль | Что встроить в аудит | Статус |
 |--------|----------------------|--------|
 | Index check (title+snippet) | сниппеты, каннибализация | [~] | title-каннибализация = `duplicate_title`; `siteIndexCount` для индекса; сниппеты SERP — нет |
-| HTTP Headers | сигналы headers / security | [x] | lite: `missing_hsts` / XFO / XCTO + virtual `security_headers`; без модуля HttpHeader |
+| HTTP Headers | сигналы headers / security | [x] | pack: HSTS/XFO/XCTO/CSP/RP/PP/COOP/COEP/CORP + virtual `security_headers` |
 | Meta tags monitoring | SEO META ошибки | [x] | virtual `seo_meta_errors` по данным краула (не вызов модуля) |
 | Мониторинг / ядро | потерянные посадочные, URL changes | [x] | `landing_not_*` + `landing_url_changed` |
 | Есенин / text tools | тошнота, тощие, переспам | [~] | lite: `SiteAuditTextMetrics` (`text_nausea` / thin / spam); полный Есенин не подключали |
-| Анализ конкурентов | ветка «Конкуренты сайта» | [ ] |
-| AI generation | задачи из findings (D) | [ ] |
+| Анализ конкурентов | ветка «Конкуренты сайта» | [x] | deep-link `site_competitors` + баннер на SEO-сводке → `/competitor-analysis` |
+| AI generation | задачи из findings (D) | [x] | план работ + optional DeepSeek резюме (`SITE_AUDIT_ACTION_PLAN_AI`) |
 
 ---
 
@@ -677,4 +687,26 @@ Cabinet = UI + dispatch + чтение отчётов.
 | 2026-07-21 | **META virtual + URL risks** | `seo_meta_errors` + `multiple_canonical`; `no_outbound_internal`; `risky_query_params` / `pagination_param` |
 | 2026-07-21 | **Security headers lite + печать** | `missing_hsts`/XFO/XCTO + virtual `security_headers`; `missing_charset`; `@media print` + кнопка |
 | 2026-07-21 | **canonical_not_self + insecure_form** | self≠canonical; form action=http на HTTPS; Есенин §15 = [~] lite |
-| | | |
+| 2026-07-22 | **Prod deploy MVP A** | site-audit на cabinet.titlo; supervisor `cabinet-titlo-site-audit`; Blade foreach fix |
+| 2026-07-22 | **Batch domains** | textarea «Домены» — N краулов за запуск; лимит месяца поштучно |
+| 2026-07-22 | **Virtual robots.txt** | UI вместо exclude; probe+Disallow на queue/links; живой robots по умолчанию |
+| 2026-07-22 | **Волна 5 фокус** | B почти закрыт; next candidates: SERP snippets · этап 11 C · маркетинг 13 |
+| 2026-07-22 | **SERP snippets B** | `SiteAuditSerpSnippetsProbe` + `serp_snippets` / title_mismatch / not_indexed; `SITE_AUDIT_SERP_SNIPPETS`; §10.2 ✅ |
+| 2026-07-22 | **C: bad links + images** | `page_has_bad_links`; `broken_image`/`heavy_image` + `img_srcs_json`; §6.1/6.3/11.1–11.2 |
+| 2026-07-22 | **C: PSI mobile/desktop** | `SiteAuditPsiProbe` + `psi_mobile`/`psi_desktop`; `SITE_AUDIT_PSI` (+ API key); §6.4/11.3 |
+| 2026-07-22 | **C: error spikes** | `error_spike` status/path cluster + crawl_delta; §6.1 |
+| 2026-07-22 | **C: HTML + lost files** | `html_critical_errors`; `lost_file` + `asset_srcs_json`; §6.2 |
+| 2026-07-22 | **C: content risk 11.4** | `adult_content` / `negative_content` / `word_repeat_in_sentence` / `landing_plagiarism_suspect`; v0.2.8 |
+| 2026-07-22 | **§13 маркетинг lite + 11.6 CSP** | `/audit-sajta/`; tariff rows; demo seed+share; `missing_csp`/`missing_referrer_policy`; v0.2.9 |
+| 2026-07-22 | **§14 notes + landing inbound** | `site_audit_finding_notes` (comment/fixed); `landing_no_inbound_internal`; v0.3.0 |
+| 2026-07-22 | **Cannibal + contacts + rich landing** | `keyword_cannibalization`; `commercial_missing_contacts`; `AuditSajtaLanding`; 11.5 decision; v0.3.1 |
+| 2026-07-22 | **Affiliates + snippet source + multi-host** | `probable_affiliate`; `serp_snippet_source`; `missing_permissions_policy`; `extra_hosts`; v0.3.2 |
+| 2026-07-22 | **Ad cannibalization lite** | `ad_cannibalization` (promo/PPC vs SEO landing); v0.3.3 |
+| 2026-07-22 | **Security pack COOP/COEP/CORP** | `missing_coop` / `missing_coep` / `missing_corp`; §11.6 ✅; v0.3.4 |
+| 2026-07-22 | **White-label share lite** | публичный отчёт без Titlo; brand_name/url; paid; v0.3.5 |
+| 2026-07-22 | **AI to-do / план работ** | `SiteAuditActionPlanBuilder` + modal; optional DeepSeek; v0.3.6 |
+| 2026-07-22 | **Landing↔query match** | `landing_query_mismatch` (meta tokens); v0.3.7 |
+| 2026-07-22 | **proxy2 freeze** | волны 3–4 / HTML.gz — заморожены; только cabinet + наблюдение |
+| 2026-07-22 | **Commercial factors lite** | virtual `commercial_factors` + price/CTA/delivery/payment/stock/reviews; v0.3.8 |
+| 2026-07-22 | **Tree C/D + competitors link** | дерево A–D (раньше C/D скрывались); `site_competitors` → `/competitor-analysis`; v0.3.9 |
+| 2026-07-22 | **Next (Волна 5)** | HTML-мониторинг ⏸ (html.gz/proxy2) · polish UX tips · обкатка prod |

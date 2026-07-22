@@ -27,6 +27,7 @@ import { KlasterizatorKlyuchevykhSlovLanding } from "@/components/module-landing
 import { HtmlRedaktorLanding } from "@/components/module-landings/HtmlRedaktorLanding";
 import { MonitoringPoziciiLanding } from "@/components/module-landings/MonitoringPoziciiLanding";
 import { MonitoringSaytovLanding } from "@/components/module-landings/MonitoringSaytovLanding";
+import { AuditSajtaLanding } from "@/components/module-landings/AuditSajtaLanding";
 
 function wrapClassic(page: ReactNode) {
   return <ModuleLandingShell>{page}</ModuleLandingShell>;
@@ -47,6 +48,8 @@ export function renderModuleLanding(baseSlug: string, module: ModulePage) {
       return wrapClassic(<HtmlRedaktorLanding module={module} />);
     case "http-headers":
       return wrapClassic(<HttpHeadersLanding module={module} />);
+    case "audit-sajta":
+      return wrapClassic(<AuditSajtaLanding module={module} />);
     case "proverka-indeksacii":
       return wrapClassic(<ProverkaIndeksaciiLanding module={module} />);
     case "proverka-teksta-esenin":

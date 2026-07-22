@@ -17,6 +17,7 @@ export const TARIFF_CARD_MODULE_ROWS = [
   { key: "domains", label: "Срок регистрации доменов" },
   { key: "meta", label: "Мета-теги" },
   { key: "links", label: "Отслеживание ссылок" },
+  { key: "siteAudit", label: "Аудит сайта" },
 ] as const;
 
 export const TARIFF_CARD_UTILS = [
@@ -56,6 +57,10 @@ export function formatTariffCardModuleValue(key: string, raw: string | undefined
       return `${raw.replace(/\s+\/\s+/g, " / ")} (проекты / страницы)`;
     case "links":
       return `${raw.replace(/\s+\/\s+/g, " / ")} (проекты / ссылки)`;
+    case "siteAudit":
+      return `${raw} стр./краул`;
+    case "siteAuditCrawls":
+      return `${raw} ${raw === "1" ? "краул/мес" : "краулов/мес"}`;
     default:
       return raw;
   }
