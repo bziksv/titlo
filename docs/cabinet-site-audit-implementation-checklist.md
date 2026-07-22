@@ -345,9 +345,9 @@ Cabinet = UI + dispatch + чтение отчётов.
 - [ ] Pilot 1–2k / 5–20k
 - [ ] 10 crawls queued stress
 - [ ] Kraken regression
-- [ ] Incremental by content_hash
+- [x] Incremental by content_hash — `content_unchanged` + skip/copy HEAD images/assets; `SITE_AUDIT_INCREMENTAL`
 - [ ] Runbook deploy workers
-- [ ] Update this checklist continuously
+- [x] Update this checklist continuously
 
 ---
 
@@ -711,4 +711,5 @@ Cabinet = UI + dispatch + чтение отчётов.
 | 2026-07-22 | **Tree C/D + competitors link** | дерево A–D (раньше C/D скрывались); `site_competitors` → `/competitor-analysis`; v0.3.9 |
 | 2026-07-22 | **Trigram spam + bucket fix** | `text_trigram_spam`; UI-корзины без double-count virtual; v0.3.10 |
 | 2026-07-22 | **Heading hierarchy** | `heading_hierarchy` (до H1 / skip уровня h1–h6); v0.3.11 |
+| 2026-07-22 | **Incremental content_hash** | `content_unchanged`; skip HEAD img/assets + copy findings; v0.3.12 |
 | 2026-07-22 | **Next (Волна 5)** | HTML-мониторинг ⏸ (html.gz/proxy2) · обкатка prod |
