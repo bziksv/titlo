@@ -50,7 +50,7 @@
 | Что | Этап | Где | Статус |
 |-----|------|-----|--------|
 | Миграции `site_audit_*` (временно можно в **основной** MySQL) | 3 | cabinet DB | 🟡 3a ✅ |
-| Ядро краула discover/fetch/parse/aggregate | 4 | local/cabinet workers | 🟡 parse signals ✅; robots+virtual robots ✅; tempfile/HTML → Wave 4 |
+| Ядро краула discover/fetch/parse/aggregate | 4 | local/cabinet workers | 🟡 parse ✅; body tempfile ✅; HTML.gz → Wave 4 |
 | Очередь `site_audit` + supervisor **на cabinet** (2 proc) | 5a | cabinet | ✅ conf+deploy+prod restart |
 | UI shell + отчёты фазы **A** | 7 + 6(A) | cabinet | ✅ UI + DoD A; batch domains + virtual robots |
 | Тарифные лимиты / письма | 8 | cabinet | ✅ |
@@ -253,7 +253,7 @@ Cabinet = UI + dispatch + чтение отчётов.
 - [x] redirect chain + limit
 - [x] per-host throttle (`SiteAuditHostThrottle`)
 - [x] headers + size (`size_bytes`, `page_too_large`)
-- [ ] body tempfile only — ⏸ Wave 2: body in memory, discard after parse; tempfile/HTML sink → Wave 4
+- [x] body tempfile only — Guzzle sink → parse → delete; TTL 30м + caps 200MB/200 files; `site-audit:prune-body-tmp` every 15m; HTML.gz storage → Wave 4
 
 ### Parse signals (база для многих отчётов)
 - [x] title, description, h1(+count), h2 count
@@ -721,4 +721,5 @@ Cabinet = UI + dispatch + чтение отчётов.
 | 2026-07-22 | **Commercial vs TOP** | решение: не делаем; lite `commercial_factors` по своим страницам достаточно |
 | 2026-07-22 | **PSI sample 20** | default `SITE_AUDIT_PSI_MAX_URLS=20` (было 3); v0.3.18 |
 | 2026-07-22 | **Headless JS** | решение ✖: не рендерим JS / не парсим код; static HTML |
+| 2026-07-22 | **Body tempfile** | sink на диск + finally delete; prune TTL/caps; v0.3.19 |
 | 2026-07-22 | **Next (Волна 5)** | HTML-мониторинг ⏸ (html.gz/proxy2) · склейка релевантности с посадочными · обкатка prod |
