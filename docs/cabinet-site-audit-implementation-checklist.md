@@ -505,7 +505,7 @@ Cabinet = UI + dispatch + чтение отчётов.
 | Вероятные аффилиаты | C | [x] | [x] | [x] | [x] | [x] | `probable_affiliate` — исходящие на affiliate-сети |
 | Телефон / адрес на коммерческих | C | [x] | [x] | [x] | [x] | [x] | `commercial_missing_contacts` (эвристика commercial + phone/address) |
 | Соответствие запросов посадочным | D | [x] | [x] | [x] | [x] | [x] | `landing_query_mismatch` lite: query tokens vs title/h1/description; полный TF позже |
-| Коммерческие факторы | D | [x] | [x] | [x] | [x] | [x] | lite pack `commercial_factors`: price/CTA/delivery/payment/stock/reviews + contacts; vs ТОП конкурентов — позже |
+| Коммерческие факторы | D | [x] | [x] | [x] | [x] | [x] | lite pack `commercial_factors` на своих страницах ✅; vs ТОП — ✖ не делаем (размыто, lite хватает) |
 
 **Критерий этапа 10:** все **B** из §10.1 + ключевые B из §10.2 = ✅; A-дубли уже закрыты в этапе 6.
 
@@ -718,4 +718,5 @@ Cabinet = UI + dispatch + чтение отчётов.
 | 2026-07-22 | **Module deep-links pack** | meta / Есенин / HTTP headers + баннеры; §15 ✅; v0.3.15 |
 | 2026-07-22 | **External plagiarism tab** | вкладка «Антиплагиат»: выборочные URL → TextUniqueness SERP; finding `landing_plagiarism_external`; v0.3.16 |
 | 2026-07-22 | **SERP snippet cannibalization** | `serp_snippet_cannibalization`: ≥2 своих URL в ТОП по запросу мониторинга; v0.3.17 |
-| 2026-07-22 | **Next (Волна 5)** | HTML-мониторинг ⏸ (html.gz/proxy2) · обкатка prod |
+| 2026-07-22 | **Commercial vs TOP** | решение: не делаем; lite `commercial_factors` по своим страницам достаточно |
+| 2026-07-22 | **Next (Волна 5)** | HTML-мониторинг ⏸ (html.gz/proxy2) · склейка релевантности с посадочными · обкатка prod |
