@@ -476,7 +476,7 @@ Cabinet = UI + dispatch + чтение отчётов.
 | Негативный контент | C | [x] | [x] | [x] | [x] | [x] | `negative_content` keyword lite |
 | Каннибализация | C | [x] | [x] | [x] | [x] | [x] | `keyword_cannibalization` ← monitoring query в title/h1 чужих URL |
 | Каннибализация рекламой | C | [x] | [x] | [x] | [x] | [x] | `ad_cannibalization` lite: promo/PPC-URL vs SEO-посадочная; Директ/SERP-ads позже |
-| Каннибализация по сниппетам | B | [x] | [x] | [x] | [x] | [x] | lite: `duplicate_title` (title); live SERP-сниппеты — позже |
+| Каннибализация по сниппетам | B | [x] | [x] | [x] | [x] | [x] | `serp_snippet_cannibalization`: ТОП выдачи по запросу мониторинга, ≥2 своих URL; gate SERP_CANNIBALIZATION/SNIPPETS |
 
 ### 10.2. SEO-факторы с публичной витрины (часто отдельные отчёты/подпункты)
 
@@ -717,4 +717,5 @@ Cabinet = UI + dispatch + чтение отчётов.
 | 2026-07-22 | **Index-check deep-link + unchanged UI** | `site_index_check` → `/index-check`; «без изменений N стр.»; v0.3.14 |
 | 2026-07-22 | **Module deep-links pack** | meta / Есенин / HTTP headers + баннеры; §15 ✅; v0.3.15 |
 | 2026-07-22 | **External plagiarism tab** | вкладка «Антиплагиат»: выборочные URL → TextUniqueness SERP; finding `landing_plagiarism_external`; v0.3.16 |
+| 2026-07-22 | **SERP snippet cannibalization** | `serp_snippet_cannibalization`: ≥2 своих URL в ТОП по запросу мониторинга; v0.3.17 |
 | 2026-07-22 | **Next (Волна 5)** | HTML-мониторинг ⏸ (html.gz/proxy2) · обкатка prod |
