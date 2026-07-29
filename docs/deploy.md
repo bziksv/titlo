@@ -10,7 +10,7 @@ npm run build
 npm run start   # standalone, http://localhost:3001 (после build)
 ```
 
-Переменные окружения — см. `.env.example` (`NEXT_PUBLIC_LK_URL`, `LK_API_BASE_URL` для BFF, `NEXT_PUBLIC_YM_ID` для Метрики; по умолчанию в коде `54591493` с live Kraken).
+Переменные окружения — см. `.env.example` (`NEXT_PUBLIC_LK_URL`, `LK_API_BASE_URL` для BFF, `NEXT_PUBLIC_YM_ID` для Метрики; по умолчанию в коде `89500732`, как в кабинете).
 
 В `next.config.ts` включён **`output: "standalone"`** — один `server.js` для Docker/VPS.
 

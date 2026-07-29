@@ -4,8 +4,8 @@ import Script from "next/script";
 import { useEffect, useState } from "react";
 import { COOKIE_CONSENT_EVENT, hasCookieConsent } from "@/lib/cookie-consent";
 
-/** ID с live Kraken (ym(54591493)); отключить: NEXT_PUBLIC_YM_ID= */
-const YM_ID = process.env.NEXT_PUBLIC_YM_ID ?? "54591493";
+/** Счётчик Titlo (как в cabinet.titlo.ru). Отключить: NEXT_PUBLIC_YM_ID= */
+const YM_ID = process.env.NEXT_PUBLIC_YM_ID ?? "89500732";
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 const YM_WEBVISOR = process.env.NEXT_PUBLIC_YM_WEBVISOR === "1";
 

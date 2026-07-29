@@ -57,8 +57,8 @@ SMTP_PASS=...
 SMTP_FROM=noreply@titlo.ru
 CONTACT_TO=info@titlo.ru,sv6@list.ru
 
-# Метрика — новый счётчик или тот же на переходный период
-# NEXT_PUBLIC_YM_ID=54591493
+# Метрика — тот же счётчик, что у cabinet.titlo.ru
+NEXT_PUBLIC_YM_ID=89500732
 ```
 
 Сборка и PM2:
