@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   },
   description: SITE.description,
   metadataBase: new URL(SITE.siteUrl),
+  verification: {
+    yandex: "a1e8231df3ac5b9d",
+  },
   icons: {
     icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
   },
