@@ -56,31 +56,32 @@ export const TARIFF_PLANS: TariffPlan[] = [
   },
 ];
 
-/** Подписи как в ЛК /tariff (единицы в скобках). */
+/** Подписи как в ЛК /tariff (единицы в скобках). short — для узких экранов. */
 export const TARIFF_COMPARE_ROWS = [
-  { label: "Анализатор Релевантности Страницы (проверки)", key: "relevance" as const },
-  { label: "Анализ текста страницы (проверки / сохранения)", key: "text" as const },
-  { label: "Анализ конкурентов (проверки)", key: "competitors" as const },
-  { label: "Типы сайтов в выдаче (проверки / сохранения)", key: "siteTypes" as const },
-  { label: "Записи домена (проверки / сохранения)", key: "domainRecords" as const },
-  { label: "Сбор поисковых подсказок (проверки / сохранения)", key: "searchSuggestions" as const },
+  { label: "Анализатор Релевантности Страницы (проверки)", short: "Релевантность", key: "relevance" as const },
+  { label: "Анализ текста страницы (проверки / сохранения)", short: "Анализ текста", key: "text" as const },
+  { label: "Анализ конкурентов (проверки)", short: "Конкуренты", key: "competitors" as const },
+  { label: "Типы сайтов в выдаче (проверки / сохранения)", short: "Типы сайтов", key: "siteTypes" as const },
+  { label: "Записи домена (проверки / сохранения)", short: "Записи домена", key: "domainRecords" as const },
+  { label: "Сбор поисковых подсказок (проверки / сохранения)", short: "Подсказки", key: "searchSuggestions" as const },
   {
     label: "Проверка фраз на ГЕОзависимость, локализацию и коммерциализацию (проверки / сохранения)",
+    short: "ГЕО / коммерция",
     key: "phraseCommerce" as const,
   },
-  { label: "Проверка текста Есенин (проверки)", key: "eseninTextCheck" as const },
-  { label: "Проверка индексации и сниппетов (проверки / сохранения)", key: "indexCheck" as const },
-  { label: "Кластеризатор (проверки)", key: "cluster" as const },
-  { label: "Мониторинг сайтов на доступность (проекты)", key: "sites" as const },
-  { label: "Мониторинг сайтов: оповещения", key: "sitesAlerts" as const },
-  { label: "Мониторинг позиций (проверки)", key: "positions" as const },
-  { label: "Отслеживание срока регистрации доменов (проекты)", key: "domains" as const },
-  { label: "Отслеживание срока регистрации доменов: оповещения", key: "domainsAlerts" as const },
-  { label: "Мониторинг Мета-Тегов (проекты / страницы)", key: "meta" as const },
-  { label: "Отслеживание размещенных ссылок на сайтах (проекты / ссылки)", key: "links" as const },
-  { label: "Отслеживание ссылок: оповещения", key: "linksAlerts" as const },
-  { label: "Аудит сайта (страниц/краул)", key: "siteAudit" as const },
-  { label: "Аудит сайта (краулов/мес)", key: "siteAuditCrawls" as const },
+  { label: "Проверка текста Есенин (проверки)", short: "Есенин", key: "eseninTextCheck" as const },
+  { label: "Проверка индексации и сниппетов (проверки / сохранения)", short: "Индексация", key: "indexCheck" as const },
+  { label: "Кластеризатор (проверки)", short: "Кластеризатор", key: "cluster" as const },
+  { label: "Мониторинг сайтов на доступность (проекты)", short: "Мониторинг сайтов", key: "sites" as const },
+  { label: "Мониторинг сайтов: оповещения", short: "Сайты: алерты", key: "sitesAlerts" as const },
+  { label: "Мониторинг позиций (проверки)", short: "Позиции", key: "positions" as const },
+  { label: "Отслеживание срока регистрации доменов (проекты)", short: "Срок доменов", key: "domains" as const },
+  { label: "Отслеживание срока регистрации доменов: оповещения", short: "Домены: алерты", key: "domainsAlerts" as const },
+  { label: "Мониторинг Мета-Тегов (проекты / страницы)", short: "Мета-теги", key: "meta" as const },
+  { label: "Отслеживание размещенных ссылок на сайтах (проекты / ссылки)", short: "Ссылки", key: "links" as const },
+  { label: "Отслеживание ссылок: оповещения", short: "Ссылки: алерты", key: "linksAlerts" as const },
+  { label: "Аудит сайта (страниц/краул)", short: "Аудит: страницы", key: "siteAudit" as const },
+  { label: "Аудит сайта (краулов/мес)", short: "Аудит: краулы", key: "siteAuditCrawls" as const },
 ] as const;
 
 export const TARIFF_COMPARE: Record<string, Record<string, string>> = {

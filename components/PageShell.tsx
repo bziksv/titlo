@@ -11,10 +11,10 @@ type Props = {
 export function PageShell({ title, lead, children, compact }: Props) {
   if (compact) {
     return (
-      <div className="mx-auto max-w-6xl px-4 py-10 md:py-14">
+      <div className="mx-auto max-w-6xl px-4 py-6 md:py-8">
         <h1 className="text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">{title}</h1>
-        {lead && <p className="mt-4 max-w-3xl text-lg leading-relaxed text-slate-600">{lead}</p>}
-        <div className="mt-10">{children}</div>
+        {lead && <p className="mt-3 max-w-3xl text-base leading-relaxed text-slate-600 md:text-lg">{lead}</p>}
+        <div className="mt-6">{children}</div>
       </div>
     );
   }

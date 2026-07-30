@@ -61,24 +61,25 @@ export function MonitoringV2CommandHeroPanel({
 
   return (
     <div
-      className="relative mx-auto min-w-0 w-full max-w-xl overflow-hidden lg:mx-0 lg:max-w-none lg:overflow-visible lg:perspective-[1200px]"
+      className="relative mx-auto min-w-0 w-full max-w-xl lg:mx-0 lg:max-w-none lg:overflow-visible lg:pl-16 lg:perspective-[1200px] xl:pl-20"
       style={{
         transform: panelTransform,
         transition: reduceMotion || !canTiltPanel ? undefined : "transform 0.15s ease-out",
       }}
     >
-      <div className="pointer-events-none absolute left-0 top-6 z-30 hidden flex-col gap-2 sm:flex lg:-left-2 lg:top-8">
+      {/* <lg: чипы над мокапом — иначе overflow обрезает и они наезжают на карточку */}
+      <div className="mb-3 flex flex-wrap gap-2 lg:hidden">
         {panelChips.map((c) => (
-          <span
-            key={c.label}
-            className={`rounded-lg border px-2.5 py-1 text-xs font-semibold shadow-lg backdrop-blur-md ${
-              c.tone === "emerald"
-                ? "border-emerald-400/30 bg-emerald-500/25 text-emerald-100"
-                : c.tone === "sky"
-                  ? "border-sky-400/30 bg-sky-500/25 text-sky-100"
-                  : "border-amber-400/30 bg-amber-500/25 text-amber-100"
-            }`}
-          >
+          <span key={c.label} className={chipClass(c.tone)}>
+            {c.label}
+          </span>
+        ))}
+      </div>
+
+      {/* lg+: стикеры слева от мокапа, вне карточки */}
+      <div className="pointer-events-none absolute left-0 top-5 z-30 hidden w-max flex-col gap-2.5 lg:flex xl:left-1">
+        {panelChips.map((c) => (
+          <span key={c.label} className={chipClass(c.tone)}>
             {c.label}
           </span>
         ))}
@@ -121,4 +122,16 @@ export function MonitoringV2CommandHeroPanel({
       )}
     </div>
   );
+}
+
+function chipClass(tone: "emerald" | "sky" | "amber"): string {
+  const base =
+    "inline-flex items-center rounded-lg border px-2.5 py-1 text-xs font-bold tracking-wide shadow-md";
+  if (tone === "emerald") {
+    return `${base} border-emerald-300/80 bg-emerald-100 text-emerald-950`;
+  }
+  if (tone === "sky") {
+    return `${base} border-sky-300/80 bg-sky-100 text-sky-950`;
+  }
+  return `${base} border-amber-300/80 bg-amber-100 text-amber-950`;
 }

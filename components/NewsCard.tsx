@@ -10,15 +10,18 @@ export function NewsCard({ item }: Props) {
     <li>
       <article className="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:border-brand-300 hover:shadow-md sm:flex-row">
         {item.imageUrl && (
-          <Link href={href} className="block h-40 w-full shrink-0 overflow-hidden sm:h-36 sm:w-52">
+          <Link
+            href={href}
+            className="relative block h-44 w-full shrink-0 overflow-hidden bg-slate-100 sm:h-auto sm:w-56 sm:self-stretch"
+          >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={item.imageUrl}
               alt=""
-              className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+              className="absolute inset-0 h-full w-full object-contain object-center p-1 transition duration-300 group-hover:scale-[1.02]"
               loading="lazy"
-              width={400}
-              height={300}
+              width={448}
+              height={280}
             />
           </Link>
         )}

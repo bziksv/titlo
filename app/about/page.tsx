@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { CompanyTimeline } from "@/components/CompanyTimeline";
 import { ContentSections } from "@/components/ContentSections";
 import { PageShell } from "@/components/PageShell";
 import { getSitePage } from "@/lib/content/site-pages.generated";
@@ -30,23 +31,7 @@ export default function AboutPage() {
       )}
 
       <h2 className="text-2xl font-bold text-slate-900">Краткая история компании</h2>
-      <ol className="mt-8 space-y-6">
-        {timeline.map((item) => (
-          <li
-            key={item.href}
-            className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm"
-          >
-            <time className="text-sm font-medium text-brand-600">{item.date}</time>
-            {item.title ? (
-              <h3 className="mt-2 text-lg font-semibold text-slate-900">{item.title}</h3>
-            ) : null}
-            <p className="mt-2 text-sm text-slate-600">{publicCopy(item.description)}</p>
-            <Link href={item.href} className="mt-3 inline-block text-sm font-medium text-brand-600">
-              Подробнее →
-            </Link>
-          </li>
-        ))}
-      </ol>
+      <CompanyTimeline items={timeline} transformDescription={publicCopy} />
 
       <Link
         href="/news/istoriya-kompanii/"
