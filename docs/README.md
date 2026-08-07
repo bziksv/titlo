@@ -20,6 +20,7 @@
 | [cabinet-reference.md](./cabinet-reference.md) | **Кабинет:** роуты, middleware, логи, troubleshooting |
 | [cabinet-module-versioning.md](./cabinet-module-versioning.md) | **Кабинет:** версии модулей (config + changelog + badge) |
 | [cabinet-pending-db-and-deploy.md](./cabinet-pending-db-and-deploy.md) | **Кабинет:** что не на проде, миграции БД, журнал между диалогами |
+| **[cabinet-crypto-payments.md](./cabinet-crypto-payments.md)** | **Кабинет:** крипто-оплата / подписки — Inqud, Cryptomus (исследование, не в коде) |
 | [cabinet-performance-audit.md](./cabinet-performance-audit.md) | **Кабинет:** чек-лист страниц, SQL-аудит, страницы вне меню |
 | [seranking-product-map.md](./seranking-product-map.md) | **Бенчмарк:** карта страниц SE Ranking (online.seranking.com), URL и меню |
 | [seranking-pages-visited.md](./seranking-pages-visited.md) | **Бенчмарк:** журнал посещения каждого URL SER в демо (Playwright) |

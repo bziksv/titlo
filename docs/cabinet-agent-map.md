@@ -28,6 +28,7 @@
 | **Медленная страница / SQL** | [cabinet-performance-audit.md](./cabinet-performance-audit.md) §D–G | контроллер + composers (§8 reference) |
 | **Меню / плитки модулей** | §3 ниже | `main_projects` (БД), `MenuComposer`, `MenuItemsPosition` |
 | **Лимиты тарифа (prod)** | `LimitsComposer`, `profile-limits-composer.sh` | `app/Classes/Tariffs/`, `app/Http/ViewComposers/LimitsComposer.php` |
+| **Крипто-оплата / подписки** | **[cabinet-crypto-payments.md](./cabinet-crypto-payments.md)** (Inqud, Cryptomus) | пока только Robokassa: `config/payment.php`, `app/Classes/Pay/` |
 | **Демо на datagon.ru** | [api-lk.md](./api-lk.md), `docs/examples/demo-widget.md` | Next: `app/api/demo/`, `lib/lk-api.ts` |
 | **Доска идей (голосование)** | [cabinet-reference.md](./cabinet-reference.md) § support + ideas | `FeatureIdeaController`, `resources/views/ideas/`, `feature_ideas` |
 | **PDF-отчёт модуля (mPDF)** | **[cabinet-pdf-report-template.md](./cabinet-pdf-report-template.md)** — эталон v6.9s, не пересобирать layout | `TextAnalyzerPdfService`, `TextAnalyzerPdfBranding`, `resources/views/*/export/pdf-body.blade.php` |
