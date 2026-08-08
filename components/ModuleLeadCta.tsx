@@ -78,7 +78,7 @@ export function ModuleLeadCta({
           type="email"
           name="email"
           autoComplete="email"
-          placeholder="Ваш email для регистрации"
+          placeholder="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           className={inputClass}

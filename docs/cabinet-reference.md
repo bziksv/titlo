@@ -332,7 +332,7 @@ DEBUGBAR_ENABLED=false
 | Slug на datagon.ru | URL в кабинете | Permission (пример) |
 |--------------------|----------------|---------------------|
 | `analiz-relevantnosti` | `/analyze-relevance` | релевантность |
-| `monitoring-pozicii-sayta` | `/monitoring` | Monitoring |
+| `monitoring-pozicii-sayta` | `/monitoring-v2` | Monitoring · демо: `/demo-cabinet?to=/monitoring-v2` |
 | `podschet-dliny-teksta` | `/counting-text-length` | Counting text length · `cabinet-text-length` v1.0s |
 | `proverka-meta-tegov-online` | `/meta-tags` | Мониторинг мета-тегов (`Meta tags`) |
 | `klasterizator-klyuchevykh-slov` | `/cluster` | Cluster |
@@ -352,6 +352,8 @@ DEBUGBAR_ENABLED=false
 | `generator_slov` | `/keyword-generator` | Keyword generator |
 
 Точные `permission:` — в `routes/web.php` у каждого `Route::get`. Меню пользователя фильтруется по ролям Spatie (`MenuComposer`).
+
+**Демо-кабинет с маркетинга:** кнопка «Демо кабинет» в шапке строит `/demo-cabinet?to=<путь>` по текущему slug (`lib/demo-cabinet.ts`). Кабинет после логина демо редиректит на `to`, если путь в `config/cabinet-demo-cabinet.php` → `entry_paths` (`DemoCabinet::resolveEntryPath`). Без `to` — на `home_path` (`/`).
 
 ---
 

@@ -17,6 +17,8 @@ export type GalleryVideo = {
 type Props = {
   title?: string;
   lead?: string;
+  /** Короткая ремарка под лидом (устаревший дизайн и т.п.) */
+  note?: string;
   items: GalleryVideo[];
 };
 
@@ -31,6 +33,7 @@ function PlayIcon() {
 export function ModuleVideoGallery({
   title = "Обучающие видео",
   lead,
+  note,
   items,
 }: Props) {
   const parsed = items
@@ -53,6 +56,11 @@ export function ModuleVideoGallery({
     <section>
       <h2 className="text-2xl font-bold text-slate-900">{title}</h2>
       {lead && <p className="mt-2 max-w-2xl text-slate-600">{lead}</p>}
+      {note && (
+        <p className="mt-3 max-w-2xl rounded-xl border border-amber-200/80 bg-amber-50 px-3.5 py-2.5 text-sm leading-relaxed text-amber-950">
+          {note}
+        </p>
+      )}
 
       <div className="mt-8 grid gap-8 lg:grid-cols-[minmax(0,1fr)_300px]">
         <div className="min-w-0">

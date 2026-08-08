@@ -64,6 +64,7 @@ export function MonitoringV2Footer({ options, optionsSection, plain, videos, faq
             <ModuleVideoGallery
               title={fu.videoTitle ?? "Разбор модуля в видео"}
               lead={fu.videoLead ?? "Короткие уроки по интерфейсу и сценарию."}
+              note={fu.videoNote}
               items={videos.map((v) => ({
                 embedUrl: `https://www.youtube.com/embed/${v.id}`,
                 title: v.title,

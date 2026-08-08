@@ -20,7 +20,13 @@ function actImageClass(image: string) {
   return image.includes("518ec") ? "aspect-[1024/260] min-h-[200px]" : "aspect-[739/385] min-h-[240px]";
 }
 
-type StorySection = { id: string; eyebrow: string; title: string; lead: string };
+type StorySection = {
+  id: string;
+  eyebrow: string;
+  title: string;
+  lead: string;
+  midCta?: { title: string; lead?: string };
+};
 
 export function MonitoringV2StoryActs({
   acts,
@@ -34,6 +40,10 @@ export function MonitoringV2StoryActs({
   acts: readonly Act[];
   section?: StorySection;
 }) {
+  const midCta = section.midCta ?? {
+    title: "Готовы к первому срезу?",
+    lead: "Создайте проект и загрузите ядро — проверка займёт минуты.",
+  };
   const [active, setActive] = useState(0);
   const refs = useRef<(HTMLElement | null)[]>([]);
 
@@ -163,8 +173,8 @@ export function MonitoringV2StoryActs({
 
           <div className="rounded-2xl border border-brand-200 bg-brand-50 p-6 md:flex md:items-center md:justify-between md:gap-8">
             <div>
-              <p className="text-sm font-semibold text-brand-700">Готовы к первому срезу?</p>
-              <p className="mt-1 text-slate-600">Создайте проект и загрузите ядро — проверка займёт минуты.</p>
+              <p className="text-sm font-semibold text-brand-700">{midCta.title}</p>
+              {midCta.lead ? <p className="mt-1 text-slate-600">{midCta.lead}</p> : null}
             </div>
             <div className="mt-4 shrink-0 md:mt-0 md:min-w-[260px]">
               <ModuleLeadCta variant="card" idPrefix="monitoring-v2-acts" title="Открыть панель" hint="Бесплатный старт после регистрации." />

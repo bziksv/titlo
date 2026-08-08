@@ -1,7 +1,6 @@
 import dynamic from "next/dynamic";
 import { MonitoringV2CommandHero } from "@/components/module-landings/monitoring-v2/MonitoringV2CommandHero";
 import { MonitoringV2PainGain } from "@/components/module-landings/monitoring-v2/MonitoringV2PainGain";
-import { MonitoringV2MetricWall } from "@/components/module-landings/monitoring-v2/MonitoringV2MetricWall";
 import { MonitoringV2Footer } from "@/components/module-landings/monitoring-v2/MonitoringV2Footer";
 
 const MonitoringV2StoryActs = dynamic(
@@ -17,17 +16,27 @@ const MonitoringV2Orbit = dynamic(
     import("@/components/module-landings/monitoring-v2/MonitoringV2Orbit").then((m) => m.MonitoringV2Orbit),
   { loading: () => <div className="min-h-[20rem]" aria-hidden /> }
 );
+
+const MonitoringV2CapabilityDeck = dynamic(
+  () =>
+    import("@/components/module-landings/monitoring-v2/MonitoringV2CapabilityDeck").then(
+      (m) => m.MonitoringV2CapabilityDeck
+    ),
+  { loading: () => <div className="min-h-[24rem]" aria-hidden /> }
+);
 import {
   MONITORING_V2_ACTS,
+  MONITORING_V2_CAPABILITIES,
   MONITORING_V2_CONCEPT,
   MONITORING_V2_FAQ,
-  MONITORING_V2_METRIC_WALL,
   MONITORING_V2_OPTIONS,
   MONITORING_V2_OPTIONS_SECTION,
   MONITORING_V2_ORBIT,
+  MONITORING_V2_ORBIT_SECTION,
   MONITORING_V2_PAIN_GAIN,
   MONITORING_V2_PLAIN,
   MONITORING_V2_SCREENSHOTS,
+  MONITORING_V2_STORY_SECTION,
   MONITORING_V2_VIDEOS,
 } from "@/lib/content/monitoring-pozicii-v2-page";
 import type { ModulePage } from "@/lib/content/modules";
@@ -52,9 +61,9 @@ export function MonitoringPoziciiV2Landing({ module, isLabRoute = false }: Props
         }}
       />
       <MonitoringV2PainGain data={MONITORING_V2_PAIN_GAIN} />
-      <MonitoringV2StoryActs acts={MONITORING_V2_ACTS} />
-      <MonitoringV2MetricWall metrics={MONITORING_V2_METRIC_WALL} />
-      <MonitoringV2Orbit nodes={MONITORING_V2_ORBIT} />
+      <MonitoringV2StoryActs acts={MONITORING_V2_ACTS} section={MONITORING_V2_STORY_SECTION} />
+      <MonitoringV2Orbit nodes={MONITORING_V2_ORBIT} section={MONITORING_V2_ORBIT_SECTION} />
+      <MonitoringV2CapabilityDeck data={MONITORING_V2_CAPABILITIES} />
       <MonitoringV2Footer
         options={MONITORING_V2_OPTIONS}
         optionsSection={MONITORING_V2_OPTIONS_SECTION}
@@ -64,11 +73,14 @@ export function MonitoringPoziciiV2Landing({ module, isLabRoute = false }: Props
         footerUi={{
           idPrefix: "monitoring-v2",
           finalTitle: "Запустите панель мониторинга",
-          finalLead: "",
+          finalLead:
+            "Пройдите бесплатную регистрацию и откройте панель проверки позиций в личном кабинете.",
           classicHref: "/monitoring-pozicii-sayta/",
           faqTitle: "Вопросы по мониторингу",
           videoTitle: "Разбор модуля в видео",
           videoLead: "Четыре урока — от первого проекта до выгрузки отчёта.",
+          videoNote:
+            "На роликах — прежний интерфейс модуля. Сейчас панель сильно переработана: удобнее и выглядит совсем иначе.",
           isLabRoute,
         }}
       />

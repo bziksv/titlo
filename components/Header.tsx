@@ -1,7 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { demoCabinetHref } from "@/lib/demo-cabinet";
 import { NavMenuIcon } from "@/lib/module-icons";
 import { LK_URL, NAV_COMPANY, NAV_MODULES, SITE } from "@/lib/site";
 
@@ -24,6 +26,8 @@ const dropdownAnchorClass = "absolute left-0 top-full z-[70] pt-2";
 const dropdownPanelClass = "rounded-xl border border-slate-200 bg-white shadow-lg";
 
 export function Header() {
+  const pathname = usePathname();
+  const demoHref = demoCabinetHref(pathname);
   const [modulesOpen, setModulesOpen] = useState(false);
   const [companyOpen, setCompanyOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -222,7 +226,7 @@ export function Header() {
 
         <div className="hidden shrink-0 items-center gap-2 lg:flex">
           <a
-            href={`${LK_URL}/demo-cabinet`}
+            href={demoHref}
             className="rounded-lg border border-brand-300 bg-white px-3 py-1.5 text-sm font-medium text-brand-800 shadow-sm transition hover:bg-brand-50"
           >
             Демо кабинет
@@ -306,7 +310,7 @@ export function Header() {
                   Вход
                 </a>
                 <a
-                  href={`${LK_URL}/demo-cabinet`}
+                  href={demoHref}
                   className="rounded-lg border border-brand-300 bg-brand-50 px-3 py-2 text-center text-sm font-medium text-brand-800"
                   onClick={() => setMobileOpen(false)}
                 >

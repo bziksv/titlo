@@ -158,12 +158,11 @@ function OrbitDiagram({ nodes, hubTitle }: { nodes: readonly Node[]; hubTitle: s
           </div>
 
           <div
-            className="relative z-10 flex w-[13.5rem] flex-col items-center rounded-2xl border-2 border-brand-600 bg-brand-50 px-6 py-8 text-center shadow-lg transition-[box-shadow,border-color] duration-300 hover:border-brand-700 hover:shadow-xl"
+            className="col-start-2 row-start-2 relative z-10 flex w-[13.5rem] flex-col items-center justify-center self-center rounded-2xl border-2 border-brand-600 bg-brand-50 px-5 py-6 text-center shadow-lg transition-[box-shadow,border-color] duration-300 hover:border-brand-700 hover:shadow-xl"
             onMouseEnter={() => setHoveredLine("center")}
             onMouseLeave={() => setHoveredLine(null)}
           >
-            <span className="text-xs font-bold uppercase tracking-widest text-brand-600">Центр</span>
-            <span className="mt-2 text-lg font-bold leading-tight text-slate-900">{hubTitle}</span>
+            <span className="text-lg font-bold leading-tight text-slate-900">{hubTitle}</span>
           </div>
 
           <div className="col-start-3 row-start-2 flex justify-start self-center pl-2">
@@ -227,8 +226,7 @@ export function MonitoringV2Orbit({
 
         <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:hidden">
           <li className="col-span-full rounded-2xl border-2 border-brand-600 bg-brand-50 p-6 text-center">
-            <span className="text-xs font-bold uppercase tracking-widest text-brand-600">Центр</span>
-            <span className="mt-2 block text-xl font-bold text-slate-900">{section.hubTitle}</span>
+            <span className="block text-xl font-bold text-slate-900">{section.hubTitle}</span>
           </li>
           {nodes.map((n) => (
             <li key={n.href} className="min-w-0">

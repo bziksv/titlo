@@ -57,6 +57,8 @@ export type ModuleV2FooterUi = {
   faqTitle: string;
   videoTitle?: string;
   videoLead?: string;
+  /** Пояснение под лидом (например, устаревший UI на роликах) */
+  videoNote?: string;
   /** URL *-v2 / *-v3 — иначе публичная страница */
   isLabRoute?: boolean;
 };
