@@ -8,8 +8,11 @@ import {
   SITE_AUDIT_STATS,
   SITE_AUDIT_TARIFF_LIMITS,
 } from "@/lib/content/audit-sajta-page";
+import { demoCabinetHref } from "@/lib/demo-cabinet";
 import { LK_URL } from "@/lib/site";
 import type { ModulePage } from "@/lib/content/modules";
+
+const SITE_AUDIT_DEMO_HREF = demoCabinetHref("/audit-sajta/");
 
 type Props = { module: ModulePage };
 
@@ -56,7 +59,7 @@ export function AuditSajtaLanding({ module }: Props) {
               hint="Регистрация — краул домена, tech+SEO отчёты, шаринг клиенту, расписание и экспорт."
             />
             <a
-              href={`${LK_URL}/demo-cabinet`}
+              href={SITE_AUDIT_DEMO_HREF}
               className="inline-flex items-center rounded-xl border-2 border-white/35 px-6 py-3.5 font-semibold transition hover:bg-white/10"
             >
               Демо-кабинет
@@ -148,7 +151,7 @@ export function AuditSajtaLanding({ module }: Props) {
               Регистрация
             </a>
             <a
-              href={`${LK_URL}/demo-cabinet`}
+              href={SITE_AUDIT_DEMO_HREF}
               className="rounded-xl border-2 border-brand-200 px-7 py-3.5 font-semibold text-brand-800 transition hover:bg-brand-50"
             >
               Демо

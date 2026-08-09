@@ -8,20 +8,20 @@ export function NewsCard({ item }: Props) {
 
   return (
     <li>
-      <article className="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:border-brand-300 hover:shadow-md sm:flex-row">
+      <article className="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:border-brand-300 hover:shadow-md sm:flex-row sm:items-stretch">
         {item.imageUrl && (
           <Link
             href={href}
-            className="relative block h-44 w-full shrink-0 overflow-hidden bg-slate-100 sm:h-auto sm:w-56 sm:self-stretch"
+            className="relative block aspect-[3/2] w-full shrink-0 self-stretch overflow-hidden bg-slate-200 sm:w-72 sm:self-center lg:w-80"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={item.imageUrl}
               alt=""
-              className="absolute inset-0 h-full w-full object-contain object-center p-1 transition duration-300 group-hover:scale-[1.02]"
+              className="absolute inset-0 h-full w-full object-cover object-left transition duration-300 group-hover:scale-[1.02]"
               loading="lazy"
-              width={448}
-              height={280}
+              width={640}
+              height={400}
             />
           </Link>
         )}

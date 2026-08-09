@@ -525,7 +525,95 @@ a {
   @apply text-brand-600 underline hover:text-brand-700;
 }
 
-/* ——— Главная: showcase (лучшее от лендингов, без привязки к v1/v2/v3) ——— */
+/* ——— Главная: человеческая версия ——— */
+
+.home-human-hero__bg {
+  background:
+    radial-gradient(ellipse 70% 55% at 15% 20%, rgba(47, 93, 224, 0.45), transparent 55%),
+    radial-gradient(ellipse 50% 45% at 85% 10%, rgba(30, 63, 158, 0.35), transparent 50%),
+    radial-gradient(ellipse 40% 40% at 70% 80%, rgba(16, 185, 129, 0.12), transparent 45%),
+    linear-gradient(165deg, #05070f 0%, #0a1228 42%, #0f1a33 100%);
+}
+
+.home-human-hero__grid {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(180deg, #000 20%, transparent 95%);
+}
+
+.home-human-brand {
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+}
+
+.home-human-copy {
+  animation: home-human-rise 0.7s ease-out both;
+}
+
+.home-human-shot {
+  animation: home-human-rise 0.95s ease-out 0.12s both;
+}
+
+.home-hero-live {
+  animation: home-hero-live 1.6s ease-in-out infinite;
+}
+
+@keyframes home-hero-live {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.55);
+  }
+  50% {
+    opacity: 0.65;
+    box-shadow: 0 0 0 6px rgba(52, 211, 153, 0);
+  }
+}
+
+.home-hero-stage__float {
+  animation: home-human-rise 1.05s ease-out 0.28s both;
+}
+
+.home-human-card {
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.home-human-card:hover {
+  transform: translateY(-2px);
+}
+
+.home-human-aside {
+  background-image: linear-gradient(145deg, #f8fafc 0%, #eef4ff 100%);
+}
+
+@keyframes home-human-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-human-copy,
+  .home-human-shot,
+  .home-hero-stage__float,
+  .home-hero-live {
+    animation: none !important;
+  }
+
+  .home-human-card:hover {
+    transform: none;
+  }
+}
+
+/* ——— Главная: showcase (legacy, если что-то ещё ссылается) ——— */
 
 .home-hero-grid {
   background-image:
