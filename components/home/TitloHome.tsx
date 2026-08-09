@@ -60,7 +60,7 @@ const FEATURED = [
   },
 ] as const;
 
-const FEATURED_HREFS = new Set(FEATURED.map((item) => item.href));
+const FEATURED_HREFS = new Set<string>(FEATURED.map((item) => item.href));
 
 const MORE_MODULES = [
   ...HOME_MODULES.filter((mod) => !FEATURED_HREFS.has(mod.href)),
