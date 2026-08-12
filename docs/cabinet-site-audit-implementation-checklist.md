@@ -357,6 +357,9 @@ Cabinet = UI + dispatch + чтение отчётов.
 - [x] Landing модуля — `/audit-sajta/` (`AuditSajtaLanding` + тарифы/FAQ/CTA демо)
 - [x] Demo dataset — `DemoCabinetModuleSeeder::seedSiteAudit` + share `demo-site-audit-showcase`
 - [x] Tariff copy — `siteAudit` / `siteAuditCrawls` в `tariffs.generated.ts` + card layout
+- [ ] **Живой тестовый сайт** `test.titlo.ru` — контролируемые косяки под матрицу отчётов  
+      Док: `docs/cabinet-site-audit-test-fixture-site.md` · файлы **только** на сервере: `/var/www/titlo_ru_usr/data/www/test.titlo.ru` · этап 0 (плашка + index)  
+      Не путать с demo-фикстурой БД; не травить meta реальных краулов demo-текстами.
 
 ---
 
@@ -470,7 +473,7 @@ Cabinet = UI + dispatch + чтение отчётов.
 | Страницы с тегом noindex | A | [x] | [x] | [x] | [x] | [x] | |
 | Тошнота слов на страницах | B | [x] | [x] | [x] | [x] | [x] | `text_nausea` (classic/academic lite) |
 | Тощие страницы | B | [x] | [x] | [x] | [x] | [x] | |
-| Поиск плагиата на посадочных | C | [x] | [x] | [x] | [x] | [x] | lite internal + вкладка «Антиплагиат» (внешний SERP/шинглы, выборочно) |
+| Поиск плагиата на посадочных | C | [x] | [x] | [x] | [x] | [x] | внутренние → `similar_pages` / `duplicate_content`; внешний — вкладка «Антиплагиат» (`landing_plagiarism_external`). Lite-дубль `landing_plagiarism_suspect` убран (2026-08-12) |
 | Потерянные посадочные | B | [x] | [x] | [x] | [x] | [x] | `landing_not_crawled` ← monitoring.page |
 | Изменения URL посадочных | B | [x] | [x] | [x] | [x] | [x] | `landing_url_changed` ← diff monitoring.page между краулами |
 | «Взрослый» контент | C | [x] | [x] | [x] | [x] | [x] | `adult_content` keyword lite |
@@ -649,6 +652,30 @@ Cabinet = UI + dispatch + чтение отчётов.
 
 | Дата | Что | Комментарий |
 |------|-----|-------------|
+| 2026-08-13 | **test.titlo.ru deep_pages** | с `/map/` убраны прямые ссылки на `/seo/deep/2…5/` — иначе глубина < 4 |
+| 2026-08-13 | **test.titlo.ru orphan** | убран `<a href=/seo/orphan/>` с `/map/` — иначе граф не сирота |
+| 2026-08-13 | **robots_blocked при skip** | Disallow-URL не качаем, но finding пишем на discover/link; фикс потери `robots_skipped`; не дублировать в `sitemap_not_crawled` |
+| 2026-08-13 | **multiple_canonical: все href** | в meta `canonicals[]` + детали списком; дозапрос HTML для старых findings |
+| 2026-08-12 | **content-risk: словоформы** | negative/adult: наркотиков←наркотик, терроризма←терроризм (префикс+хвост); v0.3.152 |
+| 2026-08-12 | **Битые/4xx: детали компактнее** | статус-pill без «ссылаются (колонка справа)»; path в «Страница со ссылкой»; v0.3.151 |
+| 2026-08-12 | **test.titlo.ru стенд** | док+чеклист; этап 0 на `/var/www/titlo_ru_usr/.../test.titlo.ru` (не в репо); rule не травить demo-meta |
+| 2026-08-12 | **insecure_form: По формам** | вид groups по id/action; общая форма на многих URL; v0.3.150 |
+| 2026-08-12 | **dup TITLE: цитата со страницы** | не показывать демо-текст; sync title/label с page; починка #119; v0.3.149 |
+| 2026-08-12 | **4xx: страница со ссылкой** | не затирать meta.referrers; демо out_links→/missing/; v0.3.148 |
+| 2026-08-12 | **insecure_form: id/name** | детали формы: id/name/class/method + snippet; demo; v0.3.147 |
+| 2026-08-12 | **www/http: куда 301** | детали зеркал: статус / остаётся на www|apex; варианты 301; demo meta; v0.3.146 |
+| 2026-08-12 | **Действия: pinned end** | столбец в «Столбцы» (вкл/выкл), без DnD, всегда в конце; v0.3.129 |
+| 2026-08-12 | **Картинки: код/размер** | Content-Range вместо «1 байт»; бюджет HEAD 8 000 + чанки; «—»+?; #119 добран; v0.3.128 |
+| 2026-08-12 | **Инвентарь: DnD столбцов** | crawl_images + crawl_pages: порядок/сброс как в отчётах; v0.3.127 |
+| 2026-08-12 | **Отчёты: столбцы DnD + сброс** | свободный порядок между группами; «По умолчанию»; meta/page/H*; v0.3.126 |
+| 2026-08-12 | **crawl_pages: H1–H6 текст + столбцы** | текст заголовков / `<ОТСУТСТВУЕТ>`; пресеты+вкл/выкл; meta robots/keywords/длины/size/type; `headings_json` |
+| 2026-08-11 | **nofollow + external 404** | nofollow: анкор/URL + вид По ссылкам/По страницам; битые внешние ссылки (HEAD); v0.3.101 |
+| 2026-08-11 | **resume after stop** | cancel больше не сносит engine-файл; rebuild очереди из sitemap; v0.3.97 |
+| 2026-08-11 | **deep_pages help** | тексты: JS-листинг vs HTML-ссылки; перелинковка + sitemap; v0.3.96 |
+| 2026-08-11 | **not_in_sitemap HTML-only** | csv/pdf/doc не «нет в sitemap»; `isHtmlDocument` сначала по расширению; v0.3.95 |
+| 2026-08-11 | **Админка модуля** | `/site-audit/admin`: KPI + реестр проверок; Super Admin/admin; v0.3.92 |
+| 2026-08-11 | **HTML-only page findings** | `from_pages`/`deep_pages`/`isHtmlDocument`: webp/csv не «нет картинок» / глубина; v0.3.91 |
+| 2026-08-11 | **no_outbound HTML-only** | `isHtmlDocument`: webp/csv/pdf/jpg не тупики/сироты; purge + recount; v0.3.90 |
 | 2026-07-20 | v1 чеклист | платформа + MVP A |
 | 2026-07-20 | v2 полный | матрица ~100+ отчётов Labrika |
 | 2026-07-20 | v2.1 этапность | волны 0–5; proxy2 с волны 3–4 |
@@ -726,3 +753,4 @@ Cabinet = UI + dispatch + чтение отчётов.
 | 2026-07-22 | **Global cap=1** | `queued_wait` + FIFO promote; `SITE_AUDIT_GLOBAL_MAX_ACTIVE`; v0.3.20 |
 | 2026-07-22 | **Relevance bridge** | вкладка «Релевантность»: lookup history + prefill `/analyze-relevance`; v0.3.21 |
 | 2026-07-22 | **Next (Волна 5)** | HTML-мониторинг ⏸ (html.gz/proxy2) · обкатка prod |
+| 2026-08-12 | **Drop landing_plagiarism_suspect** | дубль `similar_pages`/`duplicate_content` только по посадочным — убран; внутренние дубли → similar_pages; v0.3.111 |
