@@ -8,6 +8,8 @@ import { COOKIE_CONSENT_EVENT, hasCookieConsent } from "@/lib/cookie-consent";
 const YM_ID = process.env.NEXT_PUBLIC_YM_ID ?? "89500732";
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 const YM_WEBVISOR = process.env.NEXT_PUBLIC_YM_WEBVISOR === "1";
+/** Top.Mail.Ru / VK Ads. Отключить: NEXT_PUBLIC_TOP_MAIL_RU_ID= */
+const TOP_MAIL_RU_ID = process.env.NEXT_PUBLIC_TOP_MAIL_RU_ID ?? "3787377";
 
 export function Analytics() {
   const [enabled, setEnabled] = useState(false);
@@ -41,6 +43,33 @@ ym(${YM_ID}, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true,
               <img
                 src={`https://mc.yandex.ru/watch/${YM_ID}`}
                 alt=""
+                style={{ position: "absolute", left: "-9999px" }}
+              />
+            </div>
+          </noscript>
+        </>
+      )}
+      {TOP_MAIL_RU_ID && (
+        <>
+          <Script id="top-mail-ru" strategy="lazyOnload">
+            {`
+var _tmr = window._tmr || (window._tmr = []);
+_tmr.push({id: "${TOP_MAIL_RU_ID}", type: "pageView", start: (new Date()).getTime()});
+(function (d, w, id) {
+  if (d.getElementById(id)) return;
+  var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true; ts.id = id;
+  ts.src = "https://top-fwz1.mail.ru/js/code.js";
+  var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+  if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+})(document, window, "tmr-code");
+`}
+          </Script>
+          <noscript>
+            <div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={`https://top-fwz1.mail.ru/counter?id=${TOP_MAIL_RU_ID};js=na`}
+                alt="Top.Mail.Ru"
                 style={{ position: "absolute", left: "-9999px" }}
               />
             </div>
