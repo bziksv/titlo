@@ -44,7 +44,7 @@ import type { ModulePage } from "@/lib/content/modules";
 type Props = { module: ModulePage; isLabRoute?: boolean };
 
 /**
- * v2 — концепция «Центр управления выдачей».
+ * v2 — лендинг мониторинга позиций.
  * Публичный URL: /monitoring-pozicii-sayta/; LAB: /monitoring-pozicii-v2/.
  */
 export function MonitoringPoziciiV2Landing({ module, isLabRoute = false }: Props) {
@@ -58,6 +58,9 @@ export function MonitoringPoziciiV2Landing({ module, isLabRoute = false }: Props
         heroUi={{
           classicHref: "/monitoring-pozicii-sayta/",
           labBadge: isLabRoute ? "LAB v2" : undefined,
+          keysFooter: "Проект · ключи",
+          dynamicsFooter: "Динамика · отчёт",
+          ctaHint: "Регистрация → проект, ядро и первый съём в кабинете.",
         }}
       />
       <MonitoringV2PainGain data={MONITORING_V2_PAIN_GAIN} />
@@ -72,15 +75,15 @@ export function MonitoringPoziciiV2Landing({ module, isLabRoute = false }: Props
         faq={MONITORING_V2_FAQ}
         footerUi={{
           idPrefix: "monitoring-v2",
-          finalTitle: "Запустите панель мониторинга",
+          finalTitle: "Запустить мониторинг позиций",
           finalLead:
-            "Пройдите бесплатную регистрацию и откройте панель проверки позиций в личном кабинете.",
+            "Создайте проект, загрузите ядро и снимайте позиции по расписанию — после регистрации в кабинете.",
           classicHref: "/monitoring-pozicii-sayta/",
-          faqTitle: "Вопросы по мониторингу",
+          faqTitle: "Частые вопросы про мониторинг позиций",
           videoTitle: "Разбор модуля в видео",
           videoLead: "Четыре урока — от первого проекта до выгрузки отчёта.",
           videoNote:
-            "На роликах — прежний интерфейс модуля. Сейчас панель сильно переработана: удобнее и выглядит совсем иначе.",
+            "На роликах — прежний интерфейс. Сейчас панель обновлена: удобнее и выглядит иначе.",
           isLabRoute,
         }}
       />

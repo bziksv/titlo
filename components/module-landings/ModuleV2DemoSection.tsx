@@ -15,6 +15,12 @@ import { UtmMarksDemoWidget } from "@/components/demo/UtmMarksDemoWidget";
 import { PasswordGeneratorDemoWidget } from "@/components/demo/PasswordGeneratorDemoWidget";
 import { KeywordGeneratorDemoWidget } from "@/components/demo/KeywordGeneratorDemoWidget";
 import { RoiCalculatorDemoWidget } from "@/components/demo/RoiCalculatorDemoWidget";
+import { PhraseCommerceDemoWidget } from "@/components/demo/PhraseCommerceDemoWidget";
+import { SiteTypesDemoWidget } from "@/components/demo/SiteTypesDemoWidget";
+import { DomainRecordsDemoWidget } from "@/components/demo/DomainRecordsDemoWidget";
+import { SearchSuggestionsDemoWidget } from "@/components/demo/SearchSuggestionsDemoWidget";
+import { IndexCheckDemoWidget } from "@/components/demo/IndexCheckDemoWidget";
+import { EseninTextCheckDemoWidget } from "@/components/demo/EseninTextCheckDemoWidget";
 import type { ModuleV2DemoWidget } from "@/lib/content/module-v2/types";
 
 const SECTION_COPY: Record<
@@ -47,15 +53,15 @@ const SECTION_COPY: Record<
   },
   "html-editor": {
     title: "Попробуйте HTML-редактор без регистрации",
-    lead: "CKEditor и split-view как в кабинете — без лимита по символам. Сохранение, проекты и публичная ссылка — после регистрации.",
+    lead: "Визуал и HTML рядом — как в кабинете, без лимита по символам. Сохранение, проекты и публичная ссылка — после регистрации.",
   },
   cluster: {
     title: "Попробуйте кластеризатор без регистрации",
-    lead: "До 10 фраз без сохранения. В кабинете — проекты, Wordstat, большие ядра, конкуренты и экспорт XLS.",
+    lead: "До 10 фраз, Soft/Light. В кабинете — большие ядра, Hard, проекты, частотность и экспорт XLS.",
   },
   "site-monitoring": {
-    title: "Проверьте доступность сайта без регистрации",
-    lead: "Разовая HTTP-проверка как в кабинете. Расписание, uptime и оповещения — после регистрации.",
+    title: "Проверьте доступность без регистрации",
+    lead: "Разовая HTTP-проверка URL. Расписание, uptime, лог и PDF — в кабинете после регистрации.",
   },
   "domain-information": {
     title: "Проверьте домен без регистрации",
@@ -63,7 +69,7 @@ const SECTION_COPY: Record<
   },
   "meta-tags": {
     title: "Проверьте мета-теги без регистрации",
-    lead: "Разовая проверка одной страницы. В кабинете — мониторинг до 500 URL, снимки раз в сутки и уведомления в Telegram, если кто-то изменил title, description или canonical.",
+    lead: "Одна страница в демо. В кабинете — до 500 URL, снимки, сравнение и уведомления при изменениях.",
   },
   backlink: {
     title: "Проверьте ссылку на странице донора",
@@ -71,23 +77,47 @@ const SECTION_COPY: Record<
   },
   "http-headers": {
     title: "Проверьте HTTP-заголовки без регистрации",
-    lead: "Разовая проверка одного URL: редиректы, код ответа, кэш и заголовки безопасности. В кабинете — пакеты до 500 URL и CSV.",
+    lead: "Один URL: код ответа, таблица заголовков и HTML. В кабинете — пакет до 500 адресов, пауза между запросами и выгрузка результатов.",
   },
   "utm-marks": {
     title: "Соберите UTM-ссылку без регистрации",
-    lead: "Полный генератор — шаблоны под Яндекс.Директ, Google Ads, VK и myTarget, динамические параметры и Openstat. Без лимитов на этой странице.",
+    lead: "Шаблоны Директ, Ads, VK и myTarget, подсказки по полям и готовый URL. Без лимитов на этой странице — как в кабинете.",
   },
   "password-generator": {
     title: "Сгенерируйте пароль без регистрации",
-    lead: "Цифры, регистр, спецсимволы и длина до 50 — пять вариантов за клик, без лимитов. В кабинете — сохранение с комментариями, остальные модули и доска идей.",
+    lead: "Цифры, регистр, спецсимволы и длина до 50 — пять вариантов за клик, без лимитов. История с комментариями — в кабинете.",
   },
   "keyword-generator": {
     title: "Соберите ключевые фразы без регистрации",
-    lead: "Несколько списков слов, перемножение, операторы «» и [], стоп-слова — без лимитов на этой странице. В кабинете — полный модуль и остальные SEO-инструменты платформы.",
+    lead: "Несколько списков слов, перемножение, операторы «» и [], стоп-слова — без лимитов на этой странице. Полный модуль — в кабинете.",
   },
   "roi-calculator": {
-    title: "Посчитайте ROI рекламной кампании без регистрации",
-    lead: "ROI, CTR, CPC, CPA и прогноз трафика по бюджету — без лимитов. В кабинете — тот же калькулятор и десятки модулей: семантика, UTM, мониторинг, анализ конкурентов.",
+    title: "Посчитайте ROI без регистрации",
+    lead: "Факт РК или прогноз по бюджету — без лимитов на странице. В кабинете — тот же калькулятор рядом с UTM, семантикой и мониторингом.",
+  },
+  "phrase-commerce": {
+    title: "Проверьте фразу без регистрации",
+    lead: "Геозависимость, локализация и коммерция по ТОПу. В демо — одна фраза; список, регионы и история — в кабинете.",
+  },
+  "site-types": {
+    title: "Посмотрите типы сайтов в топе без регистрации",
+    lead: "Срез выдачи по 9 типам. В демо — одна фраза; пакет и обе ПС — после регистрации.",
+  },
+  "domain-records": {
+    title: "Проверьте домен без регистрации",
+    lead: "Срок, DNS и часть соседей по IP. Полный список, история и сравнение — в кабинете.",
+  },
+  "search-suggestions": {
+    title: "Соберите подсказки без регистрации",
+    lead: "Одна фраза и одна ПС в демо. Алфавит, пресеты и выгрузка — в кабинете.",
+  },
+  "index-check": {
+    title: "Проверьте индексацию без регистрации",
+    lead: "Один URL в демо. Пакет до 500 и история сниппетов — после регистрации.",
+  },
+  "esenin-text-check": {
+    title: "Проверьте текст Есенин без регистрации",
+    lead: "Сводный отчёт с подсветкой. Полный HTML-редактор и 6 вкладок — в кабинете.",
   },
 };
 
@@ -122,7 +152,10 @@ export function ModuleV2DemoSection({ kind }: Props) {
           <p className="mt-4 text-base leading-relaxed text-brand-100/95 md:text-lg">{copy.lead}</p>
         </div>
 
-        <div className="relative mt-10 rounded-2xl border border-white/20 bg-white shadow-2xl shadow-brand-800/40 ring-1 ring-black/5 md:mt-12">
+        <div
+          data-home-demo-card
+          className="relative mt-10 rounded-2xl border border-white/20 bg-white shadow-2xl shadow-brand-800/40 ring-1 ring-black/5 md:mt-12"
+        >
           <div className="h-1.5 rounded-t-2xl bg-gradient-to-r from-brand-500 via-emerald-400 to-brand-600" aria-hidden />
           {kind === "text-analyzer" ? (
             <TextAnalyzerDemoWidget />
@@ -156,6 +189,18 @@ export function ModuleV2DemoSection({ kind }: Props) {
             <KeywordGeneratorDemoWidget nested />
           ) : kind === "roi-calculator" ? (
             <RoiCalculatorDemoWidget nested />
+          ) : kind === "phrase-commerce" ? (
+            <PhraseCommerceDemoWidget />
+          ) : kind === "site-types" ? (
+            <SiteTypesDemoWidget />
+          ) : kind === "domain-records" ? (
+            <DomainRecordsDemoWidget />
+          ) : kind === "search-suggestions" ? (
+            <SearchSuggestionsDemoWidget />
+          ) : kind === "index-check" ? (
+            <IndexCheckDemoWidget />
+          ) : kind === "esenin-text-check" ? (
+            <EseninTextCheckDemoWidget />
           ) : (
             <TextLengthDemoWidget />
           )}

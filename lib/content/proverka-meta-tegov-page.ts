@@ -1,11 +1,11 @@
 /** Редакторский контент лендинга «Мониторинг мета-тегов» */
 
-export const META_MON_FEATURES = ["До 500 URL", "История изменений"] as const;
+export const META_MON_FEATURES = ["До 500 URL", "Снимки и сравнение", "Автопроверка", "Уведомления"] as const;
 
 export const META_MON_HERO = {
   badge: "SEO и разметка",
-  title: "Мониторинг мета-тегов",
-  lead: "Title, description, canonical, noindex и H1 по списку страниц — с историей изменений и уведомлениями, когда разметка на сайте поменялась.",
+  title: "Мета-теги по URL — и что изменилось с прошлой проверки",
+  lead: "Title, description, canonical и H1 по списку страниц. Сохраняете проверку — при следующем запуске видно, что поменялось, без ручного обхода каждой страницы.",
   sub: "title · description · canonical · noindex · H1",
 };
 
@@ -42,7 +42,7 @@ export const META_MON_STEPS = [
 export const META_MON_TECH_SECTION = {
   eyebrow: "Как устроен мониторинг",
   title: "От URL до снимка разметки страницы",
-  lead: "Парсинг head и видимых заголовков — единый отчёт для аудита SEO без ручного просмотра каждой страницы в DevTools.",
+  lead: "Парсинг head и видимых заголовков — единый отчёт для аудита SEO без ручного просмотра каждой страницы.",
   footer:
     "Мета-теги не видны пользователю на странице, но формируют сниппет в поиске и влияют на индексацию — их нужно контролировать пакетно.",
 } as const;
@@ -72,7 +72,7 @@ export const META_MON_TECH_LAYERS = [
   {
     id: "04",
     title: "История",
-    short: "проекты · diff",
+    short: "проекты · сравнение",
     text: "Сохранённые проверки и сравнение с предыдущим снимком.",
     detail: "Поймать случайную смену title после релиза.",
   },
@@ -146,7 +146,7 @@ export const META_MON_INSIGHTS_GRID = [
 
 export const META_MON_INSIGHTS_HIGHLIGHT = {
   title: "История изменений",
-  lead: "Сохраните проверку — при следующем запуске увидите diff по title, description и другим полям.",
+  lead: "Сохраните проверку — при следующем запуске видно, что изменилось в title, description и других полях.",
   bullets: [
     "Поймать смену мета после выкладки CMS",
     "Сверка с ТЗ копирайтера по длине title",
@@ -172,23 +172,19 @@ export const META_MON_INSIGHTS_OUTCOMES = [
   },
 ] as const;
 
-/** Скрины LK: форма URL (мониторинг), анализ текста (noindex/title), отчёт, проекты. Оригиналы redbox upload — 404. */
+/** Скрины реального UI кабинета (demo → form / history / compare). */
 export const META_MON_SCREENSHOTS = [
   {
-    src: "/modules/assets/956daf9669b58ce5.png",
-    caption: "Добавление проекта и URL для проверки",
+    src: "/modules/assets/meta-tags-shot-form.png",
+    caption: "Список URL и поля: title, description, canonical, H1…",
   },
   {
-    src: "/modules/assets/474da29ee76c785b.jpg",
-    caption: "Отслеживание noindex, title и alt в анализе",
+    src: "/modules/assets/meta-tags-shot-history.png",
+    caption: "Снимок: теги по URL, ошибки и фильтр",
   },
   {
-    src: "/modules/assets/0d20bf0152839075.jpg",
-    caption: "Плотность слов и зоны текста в отчёте",
-  },
-  {
-    src: "/modules/assets/518ec5eeb1bee67f.jpg",
-    caption: "Сводка по проектам мониторинга",
+    src: "/modules/assets/meta-tags-shot-compare.png",
+    caption: "Сравнение двух проверок: что изменилось в разметке",
   },
 ] as const;
 
@@ -231,8 +227,8 @@ export const META_MON_ADVANTAGES = [
   },
   {
     src: "/modules/assets/6092cc028cacc0c4.svg",
-    title: "История и diff",
-    text: "Видно, когда title или description изменились без ручной сверки.",
+    title: "История и сравнение",
+    text: "Видно, когда title или description изменились — без ручной сверки страниц.",
   },
   {
     src: "/modules/assets/a02422b314d1741d.png",
@@ -244,37 +240,37 @@ export const META_MON_ADVANTAGES = [
 export const META_MON_FAQ = [
   {
     q: "Сколько URL можно проверить?",
-    a: "До 500 адресов в одной отправке — укажите полные URL с https://.",
+    a: "До 500 адресов в одном прогоне — полные URL с https://, по одному на строку.",
   },
   {
-    q: "Какие поля в отчёте?",
-    a: "Title, description, keywords, canonical, noindex, H1 — и при необходимости анализ текста страницы.",
+    q: "Какие поля в снимке?",
+    a: "Title, description, keywords, canonical, noindex, robots, H1–H3 — отмечаете галочками перед запуском.",
   },
   {
-    q: "Зачем мониторинг, если есть Вебмастер?",
-    a: "Свой снимок по вашему списку URL, история в кабинете Титло и связка с другими SEO-модулями.",
+    q: "Чем демо отличается от кабинета?",
+    a: "В демо — одна страница без сохранения. В кабинете: пакет до 500 URL, история снимков, сравнение и уведомления.",
   },
   {
-    q: "Нужно ли забивать keywords?",
-    a: "Не обязательно для ранжирования, но модуль покажет, если тег задан — для аудита legacy-разметки.",
+    q: "Зачем сравнивать снимки?",
+    a: "Видно, что изменилось в title, description или canonical после правок на сайте — без ручной сверки страниц.",
   },
   {
-    q: "Как не переспамить мета?",
-    a: "Ориентир на читателя: релевантный title и description, без лишних тегов в коде — модуль помогает найти перебор.",
+    q: "Как узнать об изменении разметки?",
+    a: "В кабинете проект можно проверять по расписанию; при отличиях от эталона приходит уведомление.",
   },
 ] as const;
 
 export const META_MON_OPTIONS = [
-  "Title, Description, Keywords",
-  "Canonical и noindex",
-  "H1 на странице",
-  "Анализ текста и плотность слов",
+  "Title, description, keywords",
+  "Canonical, noindex, robots",
+  "H1–H3 на странице",
+  "История снимков и сравнение",
 ] as const;
 
 export const META_MON_VIDEOS = [
   {
     id: "VzRp5vZ26Fc",
-    title: "Мониторинг мета-тегов в Титло",
-    description: "Как отправить URL и прочитать отчёт.",
+    title: "Мониторинг мета-тегов",
+    description: "Как отправить URL и прочитать снимок разметки.",
   },
 ] as const;

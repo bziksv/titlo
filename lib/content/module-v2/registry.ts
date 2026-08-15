@@ -21,6 +21,15 @@ import * as linkTr from "@/lib/content/otslezhivanie-ssylok-page";
 import * as domainReg from "@/lib/content/otslezhivanie-sroka-registratsii-domenov-page";
 import * as textAn from "@/lib/content/analiz-teksta-page";
 import * as cluster from "@/lib/content/klasterizator-klyuchevykh-slov-page";
+import {
+  DOMAIN_RECORDS_V2_SOURCE,
+  ESENIN_V2_SOURCE,
+  INDEX_CHECK_V2_SOURCE,
+  PHRASE_COMMERCE_V2_SOURCE,
+  SEARCH_SUGGESTIONS_V2_SOURCE,
+  SITE_AUDIT_V2_SOURCE,
+  SITE_TYPES_V2_SOURCE,
+} from "@/lib/content/module-v2/classic-sources-extra";
 
 function cfg(
   getBase: (slug: string) => ModulePage | undefined,
@@ -275,6 +284,13 @@ function buildRegistry(getBase: (slug: string) => ModulePage | undefined): Modul
     faq: cluster.CLUSTER_FAQ,
     options: cluster.CLUSTER_OPTIONS,
   }),
+  cfg(getBase, "audit-sajta", SITE_AUDIT_V2_SOURCE),
+  cfg(getBase, "geo-lokalizaciya-kommerciya", PHRASE_COMMERCE_V2_SOURCE),
+  cfg(getBase, "tipy-saitov-v-vydache", SITE_TYPES_V2_SOURCE),
+  cfg(getBase, "zapisi-domena", DOMAIN_RECORDS_V2_SOURCE),
+  cfg(getBase, "sbor-poiskovykh-podskazok", SEARCH_SUGGESTIONS_V2_SOURCE),
+  cfg(getBase, "proverka-indeksacii", INDEX_CHECK_V2_SOURCE),
+  cfg(getBase, "proverka-teksta-esenin", ESENIN_V2_SOURCE),
   ];
 }
 

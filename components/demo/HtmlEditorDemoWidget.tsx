@@ -39,7 +39,7 @@ declare global {
 }
 
 const DEMO_FEATURES = [
-  "CKEditor — как в кабинете",
+  "Тот же редактор, что в кабинете",
   "Визуально слева, HTML справа",
   "Правка с любой стороны",
   "Готовые HTML-пресеты",
@@ -199,7 +199,7 @@ export function HtmlEditorDemoWidget() {
   return (
     <DemoWidgetShell
       title="Попробуйте HTML-редактор"
-      lead="Тот же CKEditor и split-view, что в кабинете: визуально и HTML в реальном времени. Ограничение одно — без регистрации текст не сохраняется."
+      lead="Тот же редактор, что в кабинете: визуал и HTML в реальном времени. Ограничение одно — без регистрации текст не сохраняется."
       features={DEMO_FEATURES}
     >
       <div className="rounded-xl border border-slate-200 bg-slate-50/80 p-3 md:p-4">
@@ -256,7 +256,7 @@ export function HtmlEditorDemoWidget() {
               tabIndex={-1}
             />
             {!editorReady && !loadError && (
-              <p className="p-4 text-sm text-slate-500">Загрузка CKEditor…</p>
+              <p className="p-4 text-sm text-slate-500">Загрузка редактора…</p>
             )}
             {loadError && (
               <p className="p-4 text-sm text-amber-800" role="alert">

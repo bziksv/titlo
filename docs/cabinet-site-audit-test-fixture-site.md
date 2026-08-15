@@ -86,7 +86,7 @@
 | `unreachable` | Недоступные | `https://test.titlo.ru:59999/dead/` (порт закрыт; в sitemap + ссылка) | 1 | ✅ |
 | `broken_internal_link` | Битые внутр. ссылки | ссылки с `/`, `/catalog/`, `/about/` на `/missing/…` | 1 | ✅ |
 | `page_has_broken_links` | Страницы с битыми | главная, каталог, о магазине | 1 | ✅ |
-| `soft_404` | Soft 404 | `/gone-soft/` → **200** + TITLE «Страница не найдена», мало текста | 1 | ✅ |
+| `soft_404` | Soft 404 | `/gone-soft/` → **200** + TITLE «Страница не найдена» (только title/H1-паттерн, не thin) | 1 | ✅ |
 | `empty_title` | Пустой TITLE | `/meta/empty-title/` без `<title>` | 2 | ✅ |
 | `empty_description` | Пустой Description | `/meta/empty-description/` без meta description | 2 | ✅ |
 | `duplicate_title` | Дубли TITLE | `/meta/dup-title-a/` + `/meta/dup-title-b/` | 2 | ✅ |
@@ -111,7 +111,7 @@
 
 | Код | Отчёт | Как воспроизвести | Этап | Сайт |
 |-----|-------|-------------------|------|------|
-| `duplicate_content` | Дубли контента | `/content/dup-a/` + `/content/dup-b/` | 4 | ✅ |
+| `duplicate_content` | Дубли контента | `/content/dup-a/` + `/content/dup-b/` (одинаковый body/H1; разные TITLE) | 4 | ✅ ⏳ рекраул |
 | `similar_pages` | Похожие | `/content/similar-a/` + `/content/similar-b/` | 4 | ✅ |
 | `heading_hierarchy` | Иерархия H | `/content/heading-skip/`, `/content/heading-before/` | 4 | ✅ |
 | `h1_equals_h2` | H1 = H2 | `/content/h1-eq-h2/` | 4 | ✅ |
@@ -119,11 +119,11 @@
 | `insecure_form` | Form action=http | `/media/insecure-form/` при крауле **https://** | 5 | ✅ |
 | `mixed_content` | Mixed content | `/media/mixed/` при крауле **https://** | 5 | ✅ |
 | `broken_image` / `heavy_image` / `no_unique_images` / `lost_file` | Картинки/файлы | `/media/broken-img/`, `heavy-img`, `no-imgs`, `lost-file` | 5 | ✅ |
-| `broken_external_link` | Битые внешние | `/media/broken-ext/` → httpstat.us/404 | 5 | ✅ |
-| `external_links` / `external_assets` / `links_nofollow` / `duplicate_links` | Ссылки | `/media/external/` | 5 | ✅ |
+| `broken_external_link` | Битые внешние | `/media/broken-ext/` → `cabinet.titlo.ru/sa-fixture/http/{404,410,500}.php` | 5 | ✅ |
+| `external_links` / `external_assets` / `links_nofollow` / `duplicate_links` | Ссылки | `/media/external/` — внешние + **два** `<a href="/catalog/">` в контенте (`duplicate_links` только internal) | 5 | ✅ |
 | `page_has_bad_links` | Плохие ссылки | `/media/bad-links/` | 5 | ✅ |
 | `robots_txt_closed` / `robots_txt_error` / `robots_blocked` | robots | error + blocked есть; `robots_txt_closed` (Disallow:/ на весь сайт) — ⏸ | 6 | 🟡 |
-| `sitemap_missing` / `sitemap_error` / `not_in_sitemap` / `sitemap_not_crawled` | Sitemap | error (`:59999` fetch_failed), not_in_sitemap, not_crawled (`/blocked-by-robots/listed/`); missing целиком — ⏸ | 6 | 🟡 |
+| `sitemap_missing` / `sitemap_error` / `not_in_sitemap` / `sitemap_not_crawled` | Sitemap | error (`:59999`); not_in_sitemap; `sitemap_not_crawled` — `/extra/sitemap-only/` + `sitemap-pad/1..25` (в карте > лимита 120); robots-Disallow → `robots_blocked`, не not_crawled; missing целиком — ⏸ | 6 | 🟡 |
 | `orphan_pages` / `deep_pages` / `no_outbound_internal` | Граф | `/seo/orphan/`, `/seo/deep/1…5/`, `/seo/dead-end/` | 6 | ✅ |
 | `text_in_noindex` | Текст в noindex | `/seo/text-noindex/` | 6 | ✅ |
 | `meta_nofollow` | Nofollow meta | `/seo/nofollow-meta/` | 6 | ✅ |
@@ -140,7 +140,7 @@
 | `adult_content` | ✅ только маркеры: `/risk/adult-markers/` (noindex; без «взрослого» контента) |
 | `negative_content` | ✅ только маркеры: `/risk/negative-markers/` (noindex; без инструкций/деталей) |
 | `probable_affiliate` / `ad_cannibalization` / `keyword_cannibalization` | `probable_affiliate` → `/extra/affiliate/`; cannibalization — ⏸ |
-| `commercial_missing_*` | этап 8 — `/shop/product-bare/`, `/uslugi/chertezhi/` |
+| `commercial_missing_*` | этап 8 — `/shop/product-bare/`, `/uslugi/chertezhi/`; контроль без находок — `/shop/product-full/` (=`product-ok`) |
 | `landing_plagiarism_external` | ✖ не копировать чужие сайты |
 | `psi_*` | 🟡 `/extra/psi-bait/` (тяжёлая страница); SERP — ⏸ |
 
@@ -227,7 +227,8 @@ Smoke (Apache `:81`, Host `test.titlo.ru`): `/` `/catalog/` `/about/` `/gone-sof
 | `/extra/unreachable/` | ссылка → `:59999` → `unreachable` |
 | `/error/spike/` | шесть 500 → `error_spike` (префикс `/error/spike`) |
 | `/variants/Twin/` + `/variants/twin/` | `duplicate_url_variants` (регистр пути) |
-| `/blocked-by-robots/listed/` | в sitemap + Disallow → `sitemap_not_crawled` |
+| `/blocked-by-robots/listed/` | в sitemap + Disallow → `robots_blocked` (не `sitemap_not_crawled`) |
+| `/extra/sitemap-only/` + `/extra/sitemap-pad/1..25/` | только в sitemap → `sitemap_not_crawled` при `pages_limit` 120 |
 
 `robots.txt`: кривая строка + bad Sitemap + рабочий sitemap + `Sitemap: https://test.titlo.ru:59999/sitemap-dead.xml` (`sitemap_error` / fetch_failed).
 
@@ -341,6 +342,7 @@ Sitemap пересобран (~103 URL, нормальные переводы с
 | URL | Отчёты |
 |-----|--------|
 | `/shop/product-bare/` | `commercial_missing_price/delivery/payment/stock/reviews` + contacts/cta |
+| `/shop/product-full/` · `/shop/product-ok/` | контроль: все коммерческие сигналы есть → не в `commercial_missing_*` |
 | `/shop/product-full/` | контроль (блоки есть) |
 | `/uslugi/chertezhi/` | `commercial_missing_contacts`, `commercial_missing_cta` |
 
@@ -394,3 +396,13 @@ cd /var/www/titlo_ru_usr/data/www/test.titlo.ru
 | 2026-08-12 | Risk-маркеры `/risk/adult-markers/` + `/risk/negative-markers/` (словарь, noindex) |
 | 2026-08-12 | `/risk/negative-markers/`: явный баннер — только тест детектора Site Audit `negative_content` |
 | 2026-08-13 | `/media/broken-ext/`: цели 404/410/500 → `cabinet.titlo.ru/sa-fixture/http/*.php` (httpstat.us нестабилен) |
+| 2026-08-13 | Fix SiteAuditUrlNormalizer: preserve non-default ports (`:59999`) so `unreachable` fixture works; force_https drops obsolete `:80` |
+| 2026-08-13 | Fix SiteAuditHostVariantProbe: `isLive($www)` вместо URL-строки — иначе TypeError сносил `www_both_available`/`http_https` |
+| 2026-08-13 | Soft 404: только title/H1-паттерны «не найдено»; ветка thin убрана (это thin_content) |
+| 2026-08-13 | `large.php`: паддинг без HTML-комментария (truncate тела больше не даёт ложный `html_critical`); soft 404 / www_both / port — см. выше |
+| 2026-08-13 | similar_pages: skip exact content_hash; жёстче unique shared на thin (min 4 / thin 10) — меньше шума шаблона |
+| 2026-08-13 | text_nausea: min_words=50; academic_max 10→25 (иначе короткий уникальный текст ≈100/√n всегда «болен») |
+| 2026-08-13 | `/media/external/`: два внутренних `<a href="/catalog/">` — эталон `duplicate_links` (раньше был только дубль example.com) |
+| 2026-08-13 | text_*gram_spam: min_words=40; count≥5; skip chrome n-gram (DF≥20%, бренд «северный чертёж…») |
+| 2026-08-13 | mixed_content: только img/script/css/iframe… — не http-canonical и не form action |
+| 2026-08-13 | `/shop/product-ok/` (=full); sitemap pad 1..25 + `/extra/sitemap-only/` → `sitemap_not_crawled` при limit 120; `heavy.php` CL=длине тела; text-noindex без «скидка» |

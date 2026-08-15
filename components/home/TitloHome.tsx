@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { ModuleIcon } from "@/lib/module-icons";
 import { NewsCard } from "@/components/NewsCard";
 import { RevealOnScroll } from "@/components/module-landings/RevealOnScroll";
@@ -14,49 +13,57 @@ const FEATURED = [
     href: "/analiz-relevantnosti/",
     title: "Анализ релевантности",
     desc: "Страница рядом с ТОП‑10: каких слов не хватает, где переспам, что отдать копирайтеру списком.",
-    image: "/modules/assets/442df9bc371ac5d8.png",
+    cta: "Сравнить с ТОП выдачи",
+    image: "/modules/assets/home-card-relevance-v2.png",
   },
   {
     href: "/monitoring-pozicii-sayta/",
     title: "Мониторинг позиций",
     desc: "Яндекс и Google по своим ключам, история срезов, выгрузка к созвону с клиентом.",
-    image: "/modules/assets/518ec5eeb1bee67f.jpg",
+    cta: "Смотреть динамику позиций",
+    image: "/modules/assets/home-card-positions-v2.png",
   },
   {
     href: "/klasterizator-klyuchevykh-slov/",
     title: "Кластеризатор",
     desc: "Ядро по пересечению URL в выдаче — структура сайта без ручной разметки в Excel.",
-    image: "/modules/assets/7ba8fc0938346394.png",
+    cta: "Собрать кластеры из ядра",
+    image: "/modules/assets/home-card-cluster-v2.png",
   },
   {
     href: "/analiz-konkurentov/",
     title: "Анализ конкурентов",
     desc: "Кто сидит в ТОП по вашим фразам, какие у них посадочные и мета.",
-    image: "/modules/assets/1bf0b32d708e156e.png",
+    cta: "Кто в ТОП по вашим фразам",
+    image: "/modules/assets/home-card-competitors-v2.png",
   },
   {
     href: "/analiz-teksta/",
     title: "Анализ текста",
     desc: "Тошнота, вода, уникальность — до публикации, а не после просадки.",
-    image: null,
+    cta: "Проверить текст до публикации",
+    image: "/modules/assets/home-card-text-v2.png",
   },
   {
     href: "/monitoring-saytov/",
     title: "Мониторинг сайтов",
     desc: "Uptime и алерт в Telegram, когда страница или весь сайт перестали отвечать.",
-    image: "/modules/assets/f8bb432c0ab8457f.png",
+    cta: "Поймать падение сайта",
+    image: "/modules/assets/home-card-sites-v2.png",
   },
   {
     href: "/proverka-meta-tegov-online/",
     title: "Мониторинг мета-тегов",
     desc: "Title и description по проекту: кто поменял и что уехало.",
-    image: null,
+    cta: "Кто поменял title",
+    image: "/modules/assets/home-card-meta-v2.png",
   },
   {
     href: "/otslezhivanie-ssylok/",
     title: "Отслеживание ссылок",
     desc: "Ежедневная проверка размещения: ссылка пропала — приходит уведомление.",
-    image: null,
+    cta: "Ссылка пропала — узнать сразу",
+    image: "/modules/assets/home-card-links-v2.png",
   },
 ] as const;
 
@@ -212,17 +219,25 @@ export function TitloHome({ news }: Props) {
                   className="home-human-card group flex h-full flex-col overflow-hidden rounded-xl border border-slate-200 bg-white transition hover:border-brand-300"
                 >
                   {item.image ? (
-                    <div className="relative h-36 overflow-hidden bg-slate-100">
-                      <Image
+                    <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
+                      <img
                         src={item.image}
                         alt=""
-                        width={400}
-                        height={240}
-                        className="h-full w-full object-cover object-top transition duration-500 group-hover:scale-[1.03]"
+                        width={800}
+                        height={500}
+                        loading="eager"
+                        decoding="async"
+                        className="absolute inset-0 h-full w-full object-cover object-[center_30%] transition duration-500 group-hover:scale-[1.03]"
                       />
+                      <span className="pointer-events-none absolute bottom-2.5 left-2.5 max-w-[calc(100%-1.25rem)] rounded-md bg-[#111827]/92 px-2.5 py-1.5 text-[11px] font-semibold leading-snug tracking-wide text-white shadow-sm backdrop-blur-[2px]">
+                        {item.cta}
+                        <span className="ml-1 opacity-80 transition-transform duration-300 group-hover:translate-x-0.5 inline-block">
+                          →
+                        </span>
+                      </span>
                     </div>
                   ) : (
-                    <div className="flex h-36 items-center justify-center bg-gradient-to-br from-brand-50 to-slate-100">
+                    <div className="flex h-40 items-center justify-center bg-gradient-to-br from-brand-50 to-slate-100">
                       <ModuleIcon href={item.href} className="h-12 w-12 text-2xl" />
                     </div>
                   )}
@@ -354,7 +369,7 @@ export function TitloHome({ news }: Props) {
           <ul className="mt-8 space-y-4">
             {news.slice(0, 5).map((item, i) => (
               <RevealOnScroll key={item.slug} delayMs={i * 40}>
-                <NewsCard item={item} />
+                <NewsCard item={item} priority={i === 0} />
               </RevealOnScroll>
             ))}
           </ul>

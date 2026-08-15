@@ -171,23 +171,28 @@ export const TEXT_ANAL_INSIGHTS_OUTCOMES = [
   },
 ] as const;
 
-/** Скрины LK без сайдбара (кроп `text-anal-shot-*.jpg` из iblock). */
+/** Скрины РЕАЛЬНОГО UI демо-кабинета: `/demo-cabinet?to=/text-analyzer`
+ *  (`node scripts/capture-text-analyzer-shots.mjs`). */
 export const TEXT_ANAL_SCREENSHOTS = [
   {
-    src: "/modules/assets/text-anal-shot-table.jpg",
-    caption: "Таблица статистики: слова, словоформы, частотность",
+    src: "/modules/assets/text-anal-shot-input.png",
+    caption: "Параметры анализа в кабинете: текст / URL / пакет",
   },
   {
-    src: "/modules/assets/text-anal-shot-input.jpg",
-    caption: "Ввод текста и кнопка «Анализировать»",
+    src: "/modules/assets/text-anal-shot-table.png",
+    caption: "Общий анализ слов: плотность и зоны",
   },
   {
-    src: "/modules/assets/text-anal-shot-settings.jpg",
-    caption: "Настройки: теги, стоп-слова, исключения",
+    src: "/modules/assets/text-anal-shot-zipf.png",
+    caption: "Закон Ципфа: факт и идеал",
   },
   {
-    src: "/modules/assets/text-anal-shot-zipf.jpg",
-    caption: "График по закону Ципфа",
+    src: "/modules/assets/text-anal-shot-settings.png",
+    caption: "Тогглы: noindex, alt/title, стоп-слова",
+  },
+  {
+    src: "/modules/assets/text-anal-shot-cloud.png",
+    caption: "Облака по зонам текста и ссылок",
   },
 ] as const;
 

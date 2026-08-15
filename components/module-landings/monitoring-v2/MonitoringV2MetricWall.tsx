@@ -4,8 +4,6 @@ import { MonitoringV2SectionHeader } from "@/components/module-landings/monitori
 
 type Metric = { value: string; unit: string; note: string };
 
-const BENTO_SPAN = [true, false, false, true] as const;
-
 type MetricSection = { eyebrow: string; title: string; lead?: string };
 
 export function MonitoringV2MetricWall({
@@ -31,32 +29,28 @@ export function MonitoringV2MetricWall({
           />
         </RevealOnScroll>
 
-        <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-12 lg:gap-6">
+        <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
           {metrics.map((m, i) => (
-            <RevealOnScroll
-              key={m.note}
-              delayMs={i * 100}
-              className={`${BENTO_SPAN[i] ? "lg:col-span-6" : "lg:col-span-3"} ${
-                BENTO_SPAN[i] ? "sm:col-span-2" : ""
-              }`}
-            >
+            <RevealOnScroll key={`${m.value}-${m.unit}-${m.note}`} delayMs={i * 80}>
               <div
-                className={`h-full border-l border-white/25 pl-6 ${
-                  BENTO_SPAN[i] ? "lg:pl-8" : ""
-                }`}
+                className={[
+                  "flex h-full flex-col items-center px-1 py-6 text-center sm:px-5 sm:py-8 lg:px-4 lg:py-2",
+                  i > 0 ? "border-t border-white/20 sm:border-t-0" : "",
+                  i % 2 === 1 ? "sm:border-l sm:border-white/20" : "",
+                  i >= 2 ? "sm:border-t sm:border-white/20 lg:border-t-0" : "",
+                  i > 0 ? "lg:border-l lg:border-white/20" : "",
+                ]
+                  .filter(Boolean)
+                  .join(" ")}
               >
-                <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                <div className="flex flex-wrap items-baseline justify-center gap-x-2 gap-y-0.5">
                   <MonitoringV2CountUp
                     value={m.value}
-                    className={`font-bold text-white ${BENTO_SPAN[i] ? "text-5xl md:text-6xl" : "text-4xl md:text-5xl"}`}
+                    className="text-4xl font-bold tabular-nums text-white md:text-5xl"
                   />
-                  <span className={`font-medium text-brand-200 ${BENTO_SPAN[i] ? "text-xl" : "text-lg"}`}>
-                    {m.unit}
-                  </span>
+                  <span className="text-base font-medium text-brand-200 md:text-lg">{m.unit}</span>
                 </div>
-                <p className={`mt-3 leading-relaxed text-brand-100/90 ${BENTO_SPAN[i] ? "text-base max-w-md" : "text-sm"}`}>
-                  {m.note}
-                </p>
+                <p className="mt-2 max-w-[12rem] text-sm leading-relaxed text-brand-100/85">{m.note}</p>
               </div>
             </RevealOnScroll>
           ))}

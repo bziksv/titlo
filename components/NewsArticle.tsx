@@ -1,5 +1,7 @@
 import Image from "next/image";
 import type { NewsBlock } from "@/lib/content/news";
+import { NewsLinkedText } from "@/lib/news-linkify";
+import { toNewsWebpUrl } from "@/lib/news-image";
 
 function isLocalSrc(src: string) {
   return src.startsWith("/");
@@ -22,15 +24,28 @@ export function NewsArticle({ blocks, fallback = [] }: Props) {
         if (block.type === "p") {
           return (
             <p key={`p-${i}`} className="leading-relaxed text-slate-700">
-              {block.text}
+              <NewsLinkedText text={block.text} id={`p-${i}`} />
             </p>
           );
         }
         if (block.type === "img") {
-          if (isLocalSrc(block.src)) {
+          const src = toNewsWebpUrl(block.src) || block.src;
+          if (isLocalSrc(src)) {
             return (
-              <div key={`img-${i}`} className="relative aspect-[16/10] w-full overflow-hidden rounded-xl border border-slate-200">
-                <Image src={block.src} alt={block.alt || ""} fill className="object-cover" sizes="768px" />
+              <div
+                key={`img-${i}`}
+                className="relative aspect-[16/10] w-full overflow-hidden rounded-xl border border-slate-200"
+              >
+                <Image
+                  src={src}
+                  alt={block.alt || ""}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 768px"
+                  quality={90}
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
             );
           }
@@ -42,6 +57,7 @@ export function NewsArticle({ blocks, fallback = [] }: Props) {
               alt={block.alt || ""}
               className="w-full rounded-xl border border-slate-200"
               loading="lazy"
+              decoding="async"
             />
           );
         }
@@ -53,6 +69,7 @@ export function NewsArticle({ blocks, fallback = [] }: Props) {
               className="h-full w-full"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
+              loading="lazy"
             />
           </div>
         );

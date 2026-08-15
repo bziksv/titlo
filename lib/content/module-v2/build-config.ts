@@ -12,6 +12,7 @@ import { UTM_POST_REG } from "@/lib/content/utm-metki-page";
 import { PW_GEN_POST_REG } from "@/lib/content/generator-paroley-page";
 import { WORD_GEN_POST_REG } from "@/lib/content/generator-slov-page";
 import { ROI_CALC_POST_REG } from "@/lib/content/kalkulyator-roi-page";
+import { DOMAIN_RECORDS_POST_REG } from "@/lib/demo/domain-records-demo";
 import type {
   ModuleV2Act,
   ModuleV2DemoWidget,
@@ -47,6 +48,12 @@ const DEMO_WIDGET_BY_BASE: Partial<Record<string, ModuleV2DemoWidget>> = {
   "generator-paroley": "password-generator",
   generator_slov: "keyword-generator",
   "kalkulyator-roi": "roi-calculator",
+  "geo-lokalizaciya-kommerciya": "phrase-commerce",
+  "tipy-saitov-v-vydache": "site-types",
+  "zapisi-domena": "domain-records",
+  "sbor-poiskovykh-podskazok": "search-suggestions",
+  "proverka-indeksacii": "index-check",
+  "proverka-teksta-esenin": "esenin-text-check",
 };
 
 const POST_REG_BY_BASE: Partial<Record<string, ModuleV2PostReg>> = {
@@ -57,6 +64,7 @@ const POST_REG_BY_BASE: Partial<Record<string, ModuleV2PostReg>> = {
   "generator-paroley": PW_GEN_POST_REG,
   generator_slov: WORD_GEN_POST_REG,
   "kalkulyator-roi": ROI_CALC_POST_REG,
+  "zapisi-domena": DOMAIN_RECORDS_POST_REG,
 };
 
 const DEFAULT_ORBIT: readonly ModuleV2OrbitNode[] = [
@@ -209,15 +217,15 @@ export function buildModuleV2Config(
   const painGain: ModuleV2PainGain = { ...defaultPainGain, ...o.painGain };
 
   const storyBase: ModuleV2SectionCopy = {
-    eyebrow: "Три акта",
-    title: "От ввода до отчёта — один сценарий",
-    lead: "Прокрутите сюжет или выберите этап — навигация синхронизирована со скроллом.",
+    eyebrow: "Как работает",
+    title: "От ввода до отчёта",
+    lead: "Три шага сценария — от запуска до результата в кабинете.",
   };
 
   const metricBase: ModuleV2SectionCopy = {
-    eyebrow: "Цифры без маркетингового шума",
-    title: "Параметры модуля в одном взгляде",
-    lead: "Лимиты и возможности — как в кабинете, без лишних обещаний.",
+    eyebrow: "Цифры",
+    title: "Параметры модуля",
+    lead: "Лимиты и возможности — как в кабинете.",
   };
 
   const optionsBase: ModuleV2SectionCopy = {
@@ -232,12 +240,12 @@ export function buildModuleV2Config(
     classicHref: `/${baseSlug}/`,
     storyAnchor: `module-v2-story-${baseSlug}`,
     idPrefix: `module-v2-${baseSlug}`,
-    showSearchEngines: false,
     panelChips: buildPanelChips(source, module.features),
     keysFooter: "Проект · задача",
     dynamicsFooter: "Результат · отчёт",
     ctaHint: "Email → регистрация и модуль в личном кабинете.",
     ...o.heroUi,
+    showSearchEngines: o.heroUi?.showSearchEngines ?? o.showSearchEngines ?? false,
   };
 
   const videosFromClassic = MODULE_V2_VIDEOS[baseSlug];
@@ -263,7 +271,7 @@ export function buildModuleV2Config(
     slug,
     baseSlug,
     concept: {
-      eyebrow: o.eyebrow ?? "Центр управления · LAB v2",
+      eyebrow: o.eyebrow ?? "Модуль Титло",
       headline: o.headline ?? splitHeadline(source.hero.title || module.h1),
       lead: o.lead ?? source.hero.lead,
       cta: o.cta ?? "Открыть в кабинете",
@@ -279,11 +287,11 @@ export function buildModuleV2Config(
       DEFAULT_ORBIT.filter((n) => !n.href.includes(`/${baseSlug}/`)).slice(0, 4),
     orbitSection: {
       hubTitle: hub,
-      eyebrow: o.orbitSection?.eyebrow ?? "Экосистема",
-      title: o.orbitSection?.title ?? `${hub} — узел, не остров`,
+      eyebrow: o.orbitSection?.eyebrow ?? "Рядом в кабинете",
+      title: o.orbitSection?.title ?? `С чем стыкуется «${hub}»`,
       lead:
         o.orbitSection?.lead ??
-        "Связанные модули Титло — переход без смены платформы и повторного входа.",
+        "Соседние модули в том же кабинете — без повторного входа.",
     },
     options: source.options ?? module.features ?? [],
     optionsSection: mergeSection(optionsBase, o.optionsSection),

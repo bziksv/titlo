@@ -59,7 +59,7 @@ function HeroActStrip({ acts, storyAnchor }: { acts: readonly ActPreview[]; stor
           </a>
         ))}
       </div>
-      <p className="text-xs text-slate-500">скролл — три акта сценария</p>
+      <p className="text-xs text-slate-500">ниже — три шага сценария</p>
       <span className="block h-7 w-px animate-bounce bg-brand-400/80 motion-reduce:animate-none" aria-hidden />
     </div>
   );

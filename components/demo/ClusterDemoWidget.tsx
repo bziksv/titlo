@@ -26,8 +26,8 @@ const DEMO_FEATURES = [
 
 const CABINET_UPGRADE_DETAILS = [
   "«Мои проекты» — сохранение прогонов, комментарии, возврат к результату",
-  "Hard и Pre-hard, частотность Wordstat, релевантность URL, конкуренты по фразам",
-  "ТОП до 50, classic / professional, экспорт CSV и XLS, Telegram",
+  "Hard и Pre-hard, частотность, релевантность URL, конкуренты по фразам",
+  "ТОП до 50, classic / pro, экспорт CSV и XLS, уведомления",
 ] as const;
 
 const FALLBACK_REGISTER_URL = `${LK_URL}/register?module=${CLUSTER_DEMO_MODULE}&from=demo`;

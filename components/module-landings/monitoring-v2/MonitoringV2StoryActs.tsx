@@ -17,7 +17,53 @@ type Act = {
 };
 
 function actImageClass(image: string) {
-  return image.includes("518ec") ? "aspect-[1024/260] min-h-[200px]" : "aspect-[739/385] min-h-[240px]";
+  if (image.includes("518ec")) return "aspect-[1024/260] min-h-[200px]";
+  // Кабинетные скрины — без фиксированного кропа (см. actFigure ниже)
+  if (
+    image.includes("text-anal-shot") ||
+    image.includes("site-audit-shot") ||
+    image.includes("relevance-shot") ||
+    image.includes("phrase-commerce-shot") ||
+    image.includes("pw-gen-shot") ||
+    image.includes("domain-records-shot") ||
+    image.includes("domain-reg-shot") ||
+    image.includes("link-track-shot") ||
+    image.includes("text-length-shot") ||
+    image.includes("list-compare-shot") ||
+    image.includes("dedup-shot") ||
+    image.includes("site-types-shot") ||
+    image.includes("html-editor-shot") ||
+    image.includes("http-headers-shot") ||
+    image.includes("utm-shot") ||
+    image.includes("cluster-shot") ||
+    image.includes("meta-tags-shot") ||
+    image.includes("monitoring-v2-shot")
+  )
+    return "";
+  return "aspect-[739/385] min-h-[240px]";
+}
+
+function isCabinetShot(image: string) {
+  return (
+    image.includes("text-anal-shot") ||
+    image.includes("site-audit-shot") ||
+    image.includes("relevance-shot") ||
+    image.includes("phrase-commerce-shot") ||
+    image.includes("pw-gen-shot") ||
+    image.includes("domain-records-shot") ||
+    image.includes("domain-reg-shot") ||
+    image.includes("link-track-shot") ||
+    image.includes("text-length-shot") ||
+    image.includes("list-compare-shot") ||
+    image.includes("dedup-shot") ||
+    image.includes("site-types-shot") ||
+    image.includes("html-editor-shot") ||
+    image.includes("http-headers-shot") ||
+    image.includes("utm-shot") ||
+    image.includes("cluster-shot") ||
+    image.includes("meta-tags-shot") ||
+    image.includes("monitoring-v2-shot")
+  );
 }
 
 type StorySection = {
@@ -40,10 +86,91 @@ export function MonitoringV2StoryActs({
   acts: readonly Act[];
   section?: StorySection;
 }) {
-  const midCta = section.midCta ?? {
-    title: "Готовы к первому срезу?",
-    lead: "Создайте проект и загрузите ядро — проверка займёт минуты.",
-  };
+  const midCta = section.midCta ?? (
+    acts.some(
+      (a) =>
+        a.image.includes("site-audit-shot") ||
+        a.image.includes("relevance-shot") ||
+        a.image.includes("phrase-commerce-shot") ||
+        a.image.includes("pw-gen-shot") ||
+        a.image.includes("domain-records-shot") ||
+        a.image.includes("domain-reg-shot") ||
+        a.image.includes("link-track-shot") ||
+        a.image.includes("text-length-shot") ||
+        a.image.includes("list-compare-shot") ||
+        a.image.includes("dedup-shot") ||
+        a.image.includes("site-types-shot") ||
+        a.image.includes("html-editor-shot") ||
+        a.image.includes("http-headers-shot") ||
+        a.image.includes("utm-shot") ||
+        a.image.includes("cluster-shot") ||
+        a.image.includes("meta-tags-shot")
+    )
+      ? {
+          title: acts.some((a) => a.image.includes("pw-gen-shot"))
+            ? "Попробовать генератор?"
+            : acts.some((a) => a.image.includes("cluster-shot"))
+              ? "Посмотреть готовые кластеры?"
+              : acts.some((a) => a.image.includes("meta-tags-shot"))
+                ? "Посмотреть готовый снимок?"
+              : acts.some((a) => a.image.includes("html-editor-shot"))
+              ? "Открыть HTML-редактор?"
+              : acts.some((a) => a.image.includes("http-headers-shot"))
+              ? "Посмотреть ответ сервера?"
+              : acts.some((a) => a.image.includes("utm-shot"))
+              ? "Собрать UTM-ссылку?"
+              : acts.some((a) => a.image.includes("dedup-shot"))
+              ? "Посмотреть готовую очистку?"
+              : acts.some((a) => a.image.includes("site-types-shot"))
+              ? "Посмотреть готовый срез типов?"
+              : acts.some((a) => a.image.includes("list-compare-shot"))
+              ? "Посмотреть готовую сверку?"
+              : acts.some((a) => a.image.includes("text-length-shot"))
+              ? "Посмотреть готовый подсчёт?"
+              : acts.some((a) => a.image.includes("link-track-shot"))
+              ? "Посмотреть демо-проект со ссылками?"
+              : acts.some((a) => a.image.includes("domain-reg-shot"))
+              ? "Посмотреть список доменов?"
+              : acts.some((a) => a.image.includes("domain-records-shot"))
+              ? "Посмотреть готовый снимок?"
+              : "Посмотреть готовый отчёт?",
+          lead: acts.some((a) => a.image.includes("pw-gen-shot"))
+            ? "На этой странице — без лимитов. История с комментариями — в кабинете после регистрации."
+            : acts.some((a) => a.image.includes("cluster-shot"))
+              ? "В демо кабинета уже есть разобранное ядро: таблица кластеров и ручной редактор."
+              : acts.some((a) => a.image.includes("meta-tags-shot"))
+                ? "В демо кабинета уже есть снимок titlo.ru и сравнение двух проверок."
+              : acts.some((a) => a.image.includes("html-editor-shot"))
+              ? "В демо уже есть текст посадочной: визуал, HTML и готовые пресеты."
+              : acts.some((a) => a.image.includes("http-headers-shot"))
+              ? "В демо уже есть ответ titlo.ru: код 200, заголовки и HTML без нового запроса."
+              : acts.some((a) => a.image.includes("utm-shot"))
+              ? "В демо уже заполнена посадочная demo-shop.ru — метки и готовая ссылка без сборки с нуля."
+              : acts.some((a) => a.image.includes("dedup-shot"))
+              ? "В демо уже есть список с повторами — результат и KPI без ручной чистки."
+              : acts.some((a) => a.image.includes("site-types-shot"))
+              ? "В демо уже есть разбор «купить диван»: вердикт, доли типов и таблица доменов."
+              : acts.some((a) => a.image.includes("list-compare-shot"))
+              ? "В демо уже есть два списка и пересечение — без ручного VLOOKUP."
+              : acts.some((a) => a.image.includes("text-length-shot"))
+              ? "В демо уже есть текст и SEO-поля — символы, слова и лимиты title/description."
+              : acts.some((a) => a.image.includes("link-track-shot"))
+              ? "В демо уже есть проект demo-shop.ru: таблица ссылок, статусы и сводка проблемных."
+              : acts.some((a) => a.image.includes("domain-reg-shot"))
+              ? "В демо уже есть titlo.ru и demo-shop.ru — сроки, DNS и сводка рисков."
+              : acts.some((a) => a.image.includes("domain-records-shot"))
+              ? "В демо кабинета уже есть карточка titlo.ru: WHOIS, DNS и соседи по IP."
+              : acts.some((a) => a.image.includes("phrase-commerce-shot"))
+              ? "В демо кабинета уже есть разбор по гео, локализации и коммерции — без нового прогона."
+              : acts.some((a) => a.image.includes("relevance-shot"))
+                ? "В демо уже есть разбор посадочной с облаками и TLP — без запуска анализа."
+                : "В демо уже есть проверка с ошибками по важности — без запуска обхода.",
+        }
+      : {
+          title: "Готовы к первому срезу?",
+          lead: "Создайте проект и загрузите ядро — проверка займёт минуты.",
+        }
+  );
   const [active, setActive] = useState(0);
   const refs = useRef<(HTMLElement | null)[]>([]);
 
@@ -156,16 +283,28 @@ export function MonitoringV2StoryActs({
                   ))}
                 </ul>
                 <figure className="mt-8 max-w-full overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl ring-1 ring-slate-900/5">
-                  <div className={`relative max-w-full bg-slate-100 ${actImageClass(a.image)}`}>
-                    <Image
+                  {isCabinetShot(a.image) ? (
+                    <img
                       src={a.image}
                       alt={a.imageAlt}
-                      fill
-                      className="object-cover p-0.5"
-                      style={{ objectPosition: a.imageFocus ?? "left top" }}
-                      sizes="(max-width: 1024px) 100vw, 720px"
+                      width={1600}
+                      height={900}
+                      className="block h-auto w-full"
+                      loading="eager"
+                      decoding="async"
                     />
-                  </div>
+                  ) : (
+                    <div className={`relative max-w-full bg-slate-100 ${actImageClass(a.image)}`}>
+                      <Image
+                        src={a.image}
+                        alt={a.imageAlt}
+                        fill
+                        className="object-cover p-0.5"
+                        style={{ objectPosition: a.imageFocus ?? "left top" }}
+                        sizes="(max-width: 1024px) 100vw, 720px"
+                      />
+                    </div>
+                  )}
                 </figure>
               </article>
             </RevealOnScroll>

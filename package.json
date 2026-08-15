@@ -48,11 +48,14 @@
     "scrape:tariffs": "node scripts/scrape-tariffs.mjs",
     "audit:pages": "node scripts/audit-pages.mjs",
     "scrape:all": "npm run scrape:modules && npm run scrape:site-pages && npm run scrape:services && npm run scrape:tariffs && npm run scrape:news && npm run scrape:legal && npm run scrape:module-videos",
-    "mirror:news-images": "node scripts/mirror-news-images.mjs",
+    "mirror:news-images": "node scripts/mirror-news-images.mjs && node scripts/optimize-news-images.mjs",
+    "optimize:news-images": "node scripts/optimize-news-images.mjs",
+    "sync:cabinet-news": "node scripts/sync-cabinet-news.mjs",
     "scrape:legal": "node scripts/scrape-legal.mjs",
     "scrape:module-videos": "node scripts/scrape-module-videos.mjs",
     "docker:build": "docker compose build",
-    "docker:up": "docker compose up --build -d"
+    "docker:up": "docker compose up --build -d",
+    "render:home-cards": "node scripts/render-home-device-cards.mjs"
   },
   "dependencies": {
     "next": "^15.5.0",

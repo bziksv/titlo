@@ -23,7 +23,7 @@ const DEMO_FEATURES = [
 ] as const;
 
 const LOCKED_ROWS = [
-  { label: "Без учёта регистра", hint: "Key = key при dedupe" },
+  { label: "Без учёта регистра", hint: "Key = key при удалении дублей" },
   { label: "Сортировка А→Я", hint: "после обработки" },
   { label: "Символы в начале/конце слова", hint: "свой набор +-! .!?" },
   { label: "Пресеты SEO-списка", hint: "одним кликом" },

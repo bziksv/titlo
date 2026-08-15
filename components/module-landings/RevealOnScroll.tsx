@@ -11,11 +11,21 @@ type Props = {
 /** Появление блока при скролле (волна 1, референсы ONY/Mish). */
 export function RevealOnScroll({ children, className = "", delayMs = 0 }: Props) {
   const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
+  // Start visible to avoid blank cards / lazy-img races; animate only if JS confirms offscreen.
+  const [visible, setVisible] = useState(true);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setVisible(true);
+      return;
+    }
+
+    // If already in view (or near), keep visible; otherwise hide then reveal on scroll.
+    const rect = el.getBoundingClientRect();
+    const inView = rect.top < window.innerHeight * 0.92 && rect.bottom > 0;
+    if (!inView) setVisible(false);
 
     const obs = new IntersectionObserver(
       ([entry]) => {

@@ -34,6 +34,7 @@ export type ModuleV2SectionCopy = {
   eyebrow: string;
   title: string;
   lead: string;
+  midCta?: { title: string; lead?: string };
 };
 
 export type ModuleV2HeroUi = {
@@ -83,7 +84,13 @@ export type ModuleV2DemoWidget =
   | "utm-marks"
   | "password-generator"
   | "keyword-generator"
-  | "roi-calculator";
+  | "roi-calculator"
+  | "phrase-commerce"
+  | "site-types"
+  | "domain-records"
+  | "search-suggestions"
+  | "index-check"
+  | "esenin-text-check";
 
 export type ModuleV2PostReg = {
   eyebrow: string;

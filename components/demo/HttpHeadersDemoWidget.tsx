@@ -21,7 +21,7 @@ const DEMO_FEATURES = [
 ] as const;
 
 const CABINET_NOTE =
-  "В кабинете — пакет до 500 URL, свои заголовки запроса, задержка между запросами и выгрузка CSV. Удобно для техаудита и отчётов команде или заказчику.";
+  "В кабинете — полный отчёт по URL (заголовки + HTML), пакет до 500 адресов со сводкой кодов, пауза между запросами и выгрузка таблицы.";
 
 function statusBadgeClass(status: number): string {
   if (status >= 200 && status < 300) return "bg-emerald-100 text-emerald-900 border-emerald-200";
@@ -159,7 +159,7 @@ export function HttpHeadersDemoWidget() {
   return (
     <DemoWidgetShell
       title="Проверьте HTTP-заголовки без регистрации"
-      lead="Разовая проверка одного URL — как первый шаг в кабинете: редиректы, код ответа, кэш и заголовки безопасности. После регистрации — пакеты до 500 URL и CSV."
+      lead="Разовая проверка одного URL: редиректы, код ответа, кэш и заголовки безопасности. В кабинете — полный отчёт с HTML, пакет до 500 и выгрузка."
       features={DEMO_FEATURES}
     >
       <p className="mb-6 rounded-xl border border-brand-200 bg-brand-50 px-4 py-3 text-sm leading-relaxed text-brand-950">
@@ -231,7 +231,7 @@ export function HttpHeadersDemoWidget() {
           fullMaxChars={0}
           moduleTitle="проверки HTTP-заголовков"
           showRemaining={false}
-          upgradeHint="Зарегистрируйтесь — сохраняйте проверки, гоняйте пакеты до 500 URL и выгружайте CSV для техаудита."
+          upgradeHint="Зарегистрируйтесь — полный отчёт с HTML, пакет до 500 URL и выгрузка таблицы для техаудита."
           details={HTTP_HEADERS_CABINET_FEATURES}
         />
       </div>

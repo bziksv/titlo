@@ -61,6 +61,7 @@ export function ModuleV2Landing({ module, config, isLabRoute = false }: Props) {
           eyebrow: c.storySection.eyebrow,
           title: c.storySection.title,
           lead: c.storySection.lead,
+          midCta: c.storySection.midCta,
         }}
       />
       <MonitoringV2MetricWall metrics={c.metrics} section={c.metricSection} />

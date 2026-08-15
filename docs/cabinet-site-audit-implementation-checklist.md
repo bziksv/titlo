@@ -656,6 +656,10 @@ Cabinet = UI + dispatch + чтение отчётов.
 | 2026-08-13 | **test.titlo.ru orphan** | убран `<a href=/seo/orphan/>` с `/map/` — иначе граф не сирота |
 | 2026-08-13 | **robots_blocked при skip** | Disallow-URL не качаем, но finding пишем на discover/link; фикс потери `robots_skipped`; не дублировать в `sitemap_not_crawled` |
 | 2026-08-13 | **multiple_canonical: все href** | в meta `canonicals[]` + детали списком; дозапрос HTML для старых findings |
+| 2026-08-13 | **text_nausea: меньше FP** | `nausea_min_words=50`; academic_max 10→25 (короткий уникальный текст ≈100/√n) |
+| 2026-08-13 | **text_*gram_spam: меньше FP** | min_words=40; count≥5; skip sitewide chrome n-gram (DF≥20%) |
+| 2026-08-13 | **mixed_content: только подресурсы** | не canonical / &lt;a&gt; / form action (forms → insecure_form) |
+| 2026-08-13 | **text_in_noindex: sample/links** | HtmlParser отдавал только len — теперь noindexInfo (sample + ссылки) |
 | 2026-08-12 | **content-risk: словоформы** | negative/adult: наркотиков←наркотик, терроризма←терроризм (префикс+хвост); v0.3.152 |
 | 2026-08-12 | **Битые/4xx: детали компактнее** | статус-pill без «ссылаются (колонка справа)»; path в «Страница со ссылкой»; v0.3.151 |
 | 2026-08-12 | **test.titlo.ru стенд** | док+чеклист; этап 0 на `/var/www/titlo_ru_usr/.../test.titlo.ru` (не в репо); rule не травить demo-meta |

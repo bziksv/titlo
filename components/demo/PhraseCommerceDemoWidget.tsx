@@ -111,8 +111,8 @@ export function PhraseCommerceDemoWidget() {
 
   return (
     <DemoWidgetShell
-      title="Проверьте характер фразы без регистрации"
-      lead="Сейчас — одна фраза и одна ПС: гео, локализация и коммерция. После регистрации — список фраз, обе системы, выбор регионов и история."
+      title="Проверьте фразу без регистрации"
+      lead="Сейчас — одна фраза и одна поисковая система: гео, локализация и коммерция. После регистрации — список фраз, обе системы, выбор регионов и история."
       features={PHRASE_COMMERCE_DEMO_FEATURES}
     >
       <div className="space-y-4">
@@ -158,7 +158,7 @@ export function PhraseCommerceDemoWidget() {
           disabled={loading || !phrase.trim()}
           className="rounded-lg bg-brand-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-brand-700 disabled:opacity-60"
         >
-          {loading ? "Считаем…" : "Оценить фразу"}
+          {loading ? "Считаем…" : "Проверить фразу"}
         </button>
 
         {remaining !== null && (

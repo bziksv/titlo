@@ -1,7 +1,6 @@
 export type { NewsBlock, NewsItem } from "./news.generated";
-export { getNewsBySlug } from "./news.generated";
-import { NEWS_ITEMS as RAW } from "./news.generated";
-import type { NewsItem } from "./news.generated";
+import { NEWS_ITEMS as SCRAPED, type NewsItem } from "./news.generated";
+import { CABINET_NEWS_ITEMS } from "./news.cabinet";
 
 const MONTHS: Record<string, number> = {
   января: 0,
@@ -26,7 +25,50 @@ function parseRuDate(date: string): number {
   return new Date(Number(m[3]), month, Number(m[1])).getTime();
 }
 
-/** Новости, новые сверху */
-export const NEWS_ITEMS: NewsItem[] = [...RAW].sort(
+const bySlug = new Map<string, NewsItem>();
+for (const item of [...CABINET_NEWS_ITEMS, ...SCRAPED]) {
+  if (!bySlug.has(item.slug)) bySlug.set(item.slug, item);
+}
+
+/** Новости сайта: кабинет + архив, новые сверху */
+export const NEWS_ITEMS: NewsItem[] = [...bySlug.values()].sort(
   (a, b) => parseRuDate(b.date) - parseRuDate(a.date)
 );
+
+/** Карточек на странице ленты `/news/`. */
+export const NEWS_PAGE_SIZE = 10;
+
+export function getNewsTotalPages(pageSize = NEWS_PAGE_SIZE): number {
+  return Math.max(1, Math.ceil(NEWS_ITEMS.length / pageSize));
+}
+
+export function getNewsPage(
+  page: number,
+  pageSize = NEWS_PAGE_SIZE
+): {
+  items: NewsItem[];
+  page: number;
+  totalPages: number;
+  total: number;
+} {
+  const totalPages = getNewsTotalPages(pageSize);
+  const safe = Number.isFinite(page) ? Math.trunc(page) : 1;
+  const current = Math.min(Math.max(1, safe), totalPages);
+  const start = (current - 1) * pageSize;
+  return {
+    items: NEWS_ITEMS.slice(start, start + pageSize),
+    page: current,
+    totalPages,
+    total: NEWS_ITEMS.length,
+  };
+}
+
+/** URL ленты: 1 → `/news/`, дальше → `/news/page/N/`. */
+export function newsListHref(page: number): string {
+  if (page <= 1) return "/news/";
+  return `/news/page/${page}/`;
+}
+
+export function getNewsBySlug(slug: string): NewsItem | undefined {
+  return NEWS_ITEMS.find((n) => n.slug === slug);
+}

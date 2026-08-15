@@ -87,12 +87,54 @@ export function MonitoringV2CommandHeroPanel({
 
       {keys && (
         <div className="relative z-10 overflow-hidden rounded-xl border border-white/20 bg-white shadow-2xl shadow-black/60 ring-1 ring-white/15">
-          <div className="relative aspect-[739/385] w-full min-h-[180px] bg-slate-100 sm:min-h-[200px]">
+          <div
+            className={`relative w-full bg-slate-100 ${
+              keys.src.includes("site-audit-shot") ||
+              keys.src.includes("relevance-shot") ||
+              keys.src.includes("phrase-commerce-shot") ||
+              keys.src.includes("pw-gen-shot") ||
+              keys.src.includes("domain-records-shot") ||
+              keys.src.includes("domain-reg-shot") ||
+              keys.src.includes("link-track-shot") ||
+              keys.src.includes("text-length-shot") ||
+              keys.src.includes("list-compare-shot") ||
+              keys.src.includes("dedup-shot") ||
+              keys.src.includes("site-types-shot") ||
+              keys.src.includes("html-editor-shot") ||
+              keys.src.includes("http-headers-shot") ||
+              keys.src.includes("utm-shot") ||
+              keys.src.includes("cluster-shot") ||
+              keys.src.includes("meta-tags-shot") ||
+              keys.src.includes("monitoring-v2-shot")
+                ? "aspect-[16/10] min-h-[200px]"
+                : "aspect-[739/385] min-h-[180px] sm:min-h-[200px]"
+            }`}
+          >
             <Image
               src={keys.src}
               alt={keys.caption}
               fill
-              className="object-cover object-left-top"
+              className={
+                keys.src.includes("site-audit-shot") ||
+                keys.src.includes("relevance-shot") ||
+                keys.src.includes("phrase-commerce-shot") ||
+                keys.src.includes("pw-gen-shot") ||
+                keys.src.includes("domain-records-shot") ||
+                keys.src.includes("domain-reg-shot") ||
+                keys.src.includes("link-track-shot") ||
+                keys.src.includes("text-length-shot") ||
+                keys.src.includes("list-compare-shot") ||
+                keys.src.includes("dedup-shot") ||
+                keys.src.includes("site-types-shot") ||
+                keys.src.includes("html-editor-shot") ||
+                keys.src.includes("http-headers-shot") ||
+                keys.src.includes("utm-shot") ||
+                keys.src.includes("cluster-shot") ||
+                keys.src.includes("meta-tags-shot") ||
+                keys.src.includes("monitoring-v2-shot")
+                  ? "object-contain object-top"
+                  : "object-cover object-left-top"
+              }
               priority
               sizes="(max-width: 1024px) 100vw, 560px"
             />
@@ -108,12 +150,54 @@ export function MonitoringV2CommandHeroPanel({
       )}
       {dynamics && (
         <div className="relative z-20 -mt-8 w-full max-w-full overflow-hidden rounded-xl border border-brand-400/50 bg-white shadow-2xl shadow-brand-900/50 sm:-mt-12 lg:-mt-20 lg:ml-12 lg:max-w-[92%]">
-          <div className="relative aspect-[1024/260] w-full min-h-[88px] bg-slate-50 sm:min-h-[110px]">
+          <div
+            className={`relative w-full bg-slate-50 ${
+              dynamics.src.includes("site-audit-shot") ||
+              dynamics.src.includes("relevance-shot") ||
+              dynamics.src.includes("phrase-commerce-shot") ||
+              dynamics.src.includes("pw-gen-shot") ||
+              dynamics.src.includes("domain-records-shot") ||
+              dynamics.src.includes("domain-reg-shot") ||
+              dynamics.src.includes("link-track-shot") ||
+              dynamics.src.includes("text-length-shot") ||
+              dynamics.src.includes("list-compare-shot") ||
+              dynamics.src.includes("dedup-shot") ||
+              dynamics.src.includes("site-types-shot") ||
+              dynamics.src.includes("html-editor-shot") ||
+              dynamics.src.includes("http-headers-shot") ||
+              dynamics.src.includes("utm-shot") ||
+              dynamics.src.includes("cluster-shot") ||
+              dynamics.src.includes("meta-tags-shot") ||
+              dynamics.src.includes("monitoring-v2-shot")
+                ? "aspect-[16/9] min-h-[120px]"
+                : "aspect-[1024/260] min-h-[88px] sm:min-h-[110px]"
+            }`}
+          >
             <Image
               src={dynamics.src}
               alt={dynamics.caption}
               fill
-              className="object-cover object-left-top"
+              className={
+                dynamics.src.includes("site-audit-shot") ||
+                dynamics.src.includes("relevance-shot") ||
+                dynamics.src.includes("phrase-commerce-shot") ||
+                dynamics.src.includes("pw-gen-shot") ||
+                dynamics.src.includes("domain-records-shot") ||
+                dynamics.src.includes("domain-reg-shot") ||
+                dynamics.src.includes("link-track-shot") ||
+                dynamics.src.includes("text-length-shot") ||
+                dynamics.src.includes("list-compare-shot") ||
+                dynamics.src.includes("dedup-shot") ||
+                dynamics.src.includes("site-types-shot") ||
+                dynamics.src.includes("html-editor-shot") ||
+                dynamics.src.includes("http-headers-shot") ||
+                dynamics.src.includes("utm-shot") ||
+                dynamics.src.includes("cluster-shot") ||
+                dynamics.src.includes("meta-tags-shot") ||
+                dynamics.src.includes("monitoring-v2-shot")
+                  ? "object-contain object-top"
+                  : "object-cover object-left-top"
+              }
               sizes="(max-width: 1024px) 90vw, 520px"
             />
           </div>

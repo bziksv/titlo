@@ -10,10 +10,10 @@ import {
 } from "@/lib/demo/utm-marks-demo";
 
 const DEMO_FEATURES = [
-  "Шаблоны: Яндекс.Директ, Google Ads, VK, myTarget",
+  "Шаблоны: Директ, Ads, VK, myTarget или вручную",
   "utm_source, medium, campaign, content, term",
-  "Динамические параметры площадок и Openstat",
-  "Один URL или пакет адресов",
+  "Быстрые значения, макросы и Openstat",
+  "Один URL или список посадочных",
   "Без лимитов на этой странице",
 ] as const;
 
@@ -93,7 +93,7 @@ export function UtmMarksDemoWidget({ nested }: Props) {
   return (
     <DemoWidgetShell
       title="Соберите UTM-ссылку прямо здесь"
-      lead="Полный генератор — как в кабинете: шаблоны под рекламные площадки, подсказки по полям и готовая ссылка для копирования. Регистрация не нужна, чтобы собрать URL."
+      lead="Как в кабинете: шаблон площадки, подсказки по полям и готовая ссылка. Регистрация не нужна, чтобы собрать URL."
       features={DEMO_FEATURES}
     >
       {content}

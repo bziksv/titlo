@@ -13,14 +13,14 @@ type Props = {
   titleId?: string;
 };
 
-/** Термины простым языком — 2×2 по эталону */
+/** Термины простым языком — сетка карточек */
 export function ModulePlainSection({ data, titleId = "module-plain-title" }: Props) {
   return (
     <section className="mt-20" aria-labelledby={titleId}>
-      <h2 id={titleId} className="text-2xl font-bold text-slate-900">
+      <h2 id={titleId} className="text-2xl font-bold text-slate-900 md:text-3xl">
         {data.title}
       </h2>
-      <p className="mt-3 max-w-2xl text-slate-600">{data.lead}</p>
+      <p className="mt-3 max-w-3xl text-slate-600 leading-relaxed">{data.lead}</p>
 
       <div className="mt-8 grid gap-4 md:grid-cols-2">
         {data.items.map((item, i) => (
@@ -39,11 +39,11 @@ export function ModulePlainSection({ data, titleId = "module-plain-title" }: Pro
               {"bullets" in item ? (
                 <ul className="mt-3 space-y-2">
                   {item.bullets.map((line) => (
-                    <li key={line} className="flex gap-2 text-sm text-slate-600">
-                      <span className="font-bold text-brand-600" aria-hidden>
-                        →
+                    <li key={line} className="flex gap-2 text-sm leading-relaxed text-slate-600">
+                      <span className="mt-0.5 font-bold text-brand-600" aria-hidden>
+                        —
                       </span>
-                      {line}
+                      <span>{line}</span>
                     </li>
                   ))}
                 </ul>
