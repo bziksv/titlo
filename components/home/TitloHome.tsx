@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { ModuleIcon } from "@/lib/module-icons";
 import { NewsCard } from "@/components/NewsCard";
 import { RevealOnScroll } from "@/components/module-landings/RevealOnScroll";
 import { HomeHeroStage } from "@/components/home/HomeHeroStage";
@@ -231,16 +230,12 @@ export function TitloHome({ news }: Props) {
                       />
                       <span className="pointer-events-none absolute bottom-2.5 left-2.5 max-w-[calc(100%-1.25rem)] rounded-md bg-[#111827]/92 px-2.5 py-1.5 text-[11px] font-semibold leading-snug tracking-wide text-white shadow-sm backdrop-blur-[2px]">
                         {item.cta}
-                        <span className="ml-1 opacity-80 transition-transform duration-300 group-hover:translate-x-0.5 inline-block">
+                        <span className="ml-1 inline-block opacity-80 transition-transform duration-300 group-hover:translate-x-0.5">
                           →
                         </span>
                       </span>
                     </div>
-                  ) : (
-                    <div className="flex h-40 items-center justify-center bg-gradient-to-br from-brand-50 to-slate-100">
-                      <ModuleIcon href={item.href} className="h-12 w-12 text-2xl" />
-                    </div>
-                  )}
+                  ) : null}
                   <div className="flex flex-1 flex-col p-5">
                     <h3 className="text-base font-bold text-slate-900 group-hover:text-brand-700">
                       {item.title}
