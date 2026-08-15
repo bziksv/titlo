@@ -26,6 +26,7 @@ export const MODULE_NAV_BASE = [
   { slug: "utm-metki", label: "UTM метки" },
   { slug: "kalkulyator-roi", label: "Калькулятор ROI" },
   { slug: "http-headers", label: "HTTP headers" },
+  { slug: "audit-sajta", label: "Аудит сайта" },
   { slug: "proverka-indeksacii", label: "Проверка индексации и сниппетов" },
   { slug: "proverka-teksta-esenin", label: "Проверка текста Есенин" },
   { slug: "sbor-poiskovykh-podskazok", label: "Сбор поисковых подсказок" },
