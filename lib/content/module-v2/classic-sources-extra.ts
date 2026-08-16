@@ -55,6 +55,7 @@ import {
   ESENIN_TEXT_CHECK_INSIGHTS_GRID,
   ESENIN_TEXT_CHECK_INSIGHTS_HIGHLIGHT,
   ESENIN_TEXT_CHECK_PLAIN,
+  ESENIN_TEXT_CHECK_SCREENSHOTS,
   ESENIN_TEXT_CHECK_STATS,
   ESENIN_TEXT_CHECK_STEPS,
 } from "@/lib/content/proverka-teksta-esenin-page";
@@ -355,7 +356,7 @@ export const ESENIN_V2_SOURCE: ClassicV3Source = {
     title: ESENIN_TEXT_CHECK_INSIGHTS.title,
     lead: ESENIN_TEXT_CHECK_INSIGHTS.lead,
   },
-  screenshots: shots("Проверка Есенин"),
+  screenshots: ESENIN_TEXT_CHECK_SCREENSHOTS,
   plain: ESENIN_TEXT_CHECK_PLAIN,
   faq: ESENIN_TEXT_CHECK_FAQ,
   options: ["6 категорий", "HTML / URL", "Автосохранение", "Подсветка"],

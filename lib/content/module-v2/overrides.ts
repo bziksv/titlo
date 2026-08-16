@@ -34,6 +34,7 @@ import { SITE_AUDIT_SCREENSHOTS } from "@/lib/content/audit-sajta-page";
 import { PHRASE_COMMERCE_SCREENSHOTS } from "@/lib/content/geo-lokalizaciya-kommerciya-page";
 import { DOMAIN_RECORDS_SCREENSHOTS } from "@/lib/content/zapisi-domena-page";
 import { SITE_TYPES_SCREENSHOTS } from "@/lib/content/tipy-saitov-v-vydache-page";
+import { ESENIN_TEXT_CHECK_SCREENSHOTS } from "@/lib/content/proverka-teksta-esenin-page";
 
 const S0 = "/modules/assets/3d7d72c85b4af88c.jpg";
 const S1 = "/modules/assets/518ec5eeb1bee67f.jpg";
@@ -1720,12 +1721,82 @@ export const MODULE_V2_OVERRIDES: Record<string, ModuleV2Override> = {
   },
 
   "proverka-teksta-esenin": {
-    eyebrow: "Центр риска текста",
+    eyebrow: "Риск «Баден-Баден»",
     headline: "Проверка текста Есенин — риск до публикации",
-    cta: "Открыть полный интерфейс в кабинете",
+    cta: "Проверить текст в кабинете",
     showSearchEngines: false,
+    painGain: {
+      painTitle: "Без разбора до публикации",
+      pains: [
+        "Переспам и штампы замечают уже после индексации",
+        "Автору пишут «перепишите целиком» — без конкретных мест",
+        "Частотность смотрят отдельно, риск переоптимизации — «на глаз»",
+      ],
+      gainTitle: "В Титло",
+      gains: [
+        "Шесть категорий риска с итоговым баллом и уровнем",
+        "Подсветка в тексте и подсказки — правки прямо в отчёте",
+        "HTML-редактор, задания и до 20 000 символов в кабинете",
+      ],
+    },
+    acts: [
+      act(
+        "01",
+        "Задание и текст",
+        "Имя проверки, HTML-редактор или URL — черновик до 20 000 символов.",
+        ESENIN_TEXT_CHECK_SCREENSHOTS[0].src,
+        ESENIN_TEXT_CHECK_SCREENSHOTS[0].caption,
+        ["Задание", "HTML · текст", "URL"]
+      ),
+      act(
+        "02",
+        "Подсветка проблем",
+        "Цветом — риски в тексте, красный «!» — подсказка при наведении или клике.",
+        ESENIN_TEXT_CHECK_SCREENSHOTS[1].src,
+        ESENIN_TEXT_CHECK_SCREENSHOTS[1].caption,
+        ["Повторы", "Стилистика", "Подсказки"]
+      ),
+      act(
+        "03",
+        "Отчёт по рискам",
+        "Шесть вкладок, параметры справа и правки с повторной проверкой.",
+        ESENIN_TEXT_CHECK_SCREENSHOTS[2].src,
+        ESENIN_TEXT_CHECK_SCREENSHOTS[2].caption,
+        ["6 категорий", "Параметры", "Проверить снова"]
+      ),
+    ],
+    metrics: [
+      m("6", "категорий", "риска в отчёте"),
+      m("20 000", "символов", "за проверку"),
+      m("3", "версии", "автосохранения"),
+      m("1", "лимит", "за запуск"),
+    ],
+    storySection: {
+      eyebrow: "Как работает",
+      title: "От текста до правок по рискам",
+      lead: "Вставили текст → увидели подсветку → правите и проверяете снова.",
+      midCta: {
+        title: "Посмотреть готовый разбор?",
+        lead: "В демо кабинета уже есть текст про ремонт фасада — баллы, подсветка и параметры без нового запуска.",
+      },
+    },
+    orbitSection: {
+      eyebrow: "Рядом в кабинете",
+      title: "С чем стыкуется проверка Есенин",
+      lead: "После разбора текста — частотность, релевантность посадочной, вёрстка и мета-теги.",
+    },
+    footerUi: {
+      finalTitle: "Проверить текст в кабинете",
+      finalLead: "Сводный отчёт — в демо на сайте. Редактор, шесть вкладок и правки — после регистрации.",
+      faqTitle: "Частые вопросы про проверку текста Есенин",
+    },
+    orbit: orbit(
+      { label: "Анализ текста", href: "/analiz-teksta/", role: "Частотность и облака" },
+      { label: "Релевантность", href: "/analiz-relevantnosti/", role: "Посадочная vs ТОП" },
+      { label: "HTML-редактор", href: "/html-redaktor/", role: "Вёрстка текста" },
+      { label: "Мета-теги", href: "/proverka-meta-tegov/", role: "Title · description" }
+    ),
     hubTitle: "Есенин",
-    storySection: { title: "От текста до правок по рискам" },
     heroUi: { keysFooter: "Текст · HTML", dynamicsFooter: "6 вкладок · балл" },
   },
 };

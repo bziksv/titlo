@@ -9,6 +9,20 @@ import {
 import { demoCabinetHref } from "@/lib/demo-cabinet";
 import { LK_URL } from "@/lib/site";
 
+function FlagshipBadge({ tone = "light" }: { tone?: "light" | "dark" }) {
+  return (
+    <span
+      className={
+        tone === "dark"
+          ? "inline-flex items-center rounded-full bg-brand-500/20 px-2.5 py-0.5 text-[11px] font-semibold text-brand-200"
+          : "inline-flex items-center rounded-full bg-brand-50 px-2.5 py-0.5 text-[11px] font-semibold text-brand-700"
+      }
+    >
+      флагман
+    </span>
+  );
+}
+
 function ModuleCard({ item }: { item: ServiceItem }) {
   return (
     <li className="min-h-0">
@@ -20,6 +34,11 @@ function ModuleCard({ item }: { item: ServiceItem }) {
           className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-400/50 to-transparent opacity-0 transition group-hover:opacity-100"
           aria-hidden
         />
+        {item.flagship ? (
+          <span className="absolute right-4 top-4 z-10">
+            <FlagshipBadge tone="dark" />
+          </span>
+        ) : null}
         <div className="flex items-start gap-3">
           <span
             className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-brand-600/20 text-xl shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]"
@@ -27,7 +46,7 @@ function ModuleCard({ item }: { item: ServiceItem }) {
           >
             {getModuleIcon(item.href)}
           </span>
-          <div className="min-w-0 flex-1 pt-0.5">
+          <div className={`min-w-0 flex-1 pt-0.5${item.flagship ? " pr-16" : ""}`}>
             <h3 className="min-h-[2.75rem] text-[0.98rem] font-semibold leading-snug text-white transition group-hover:text-brand-100">
               {item.title}
             </h3>
@@ -72,11 +91,8 @@ function FlagshipCard({ item }: { item: ServiceItem }) {
       <div className="relative grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
         <div>
           <div className="flex flex-wrap items-center gap-2">
-            <span className="inline-flex items-center gap-2 rounded-full border border-amber-400/40 bg-amber-500/15 px-3 py-1 text-[11px] font-extrabold uppercase tracking-[0.16em] text-amber-200">
-              <span className="h-1.5 w-1.5 rounded-full bg-amber-300 shadow-[0_0_10px_rgba(252,211,77,0.9)]" aria-hidden />
-              Флагман
-            </span>
-            <span className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-slate-300">
+            <FlagshipBadge tone="dark" />
+            <span className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[11px] font-semibold text-slate-300">
               Центр управления контентом
             </span>
           </div>

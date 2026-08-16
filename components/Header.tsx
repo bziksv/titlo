@@ -13,7 +13,7 @@ const COMPANY_ICONS: Record<string, string> = {
 };
 
 const menuLinkClass =
-  "flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition hover:bg-brand-50 hover:text-brand-700";
+  "flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm transition hover:bg-brand-50 hover:text-brand-700";
 
 const navItemClass =
   "rounded-lg border border-transparent px-3 py-1.5 text-sm transition-all hover:border-brand-300 hover:bg-brand-50 hover:text-brand-700 hover:shadow-sm";
@@ -24,6 +24,20 @@ const navItemActiveClass =
 const dropdownAnchorClass = "absolute left-0 top-full z-[70] pt-2";
 
 const dropdownPanelClass = "rounded-xl border border-slate-200 bg-white shadow-lg";
+
+function FlagshipNavBadge({ compact = false }: { compact?: boolean }) {
+  return (
+    <span
+      className={
+        compact
+          ? "inline-flex items-center rounded-full bg-brand-50 px-2 py-0.5 text-[10px] font-semibold text-brand-700"
+          : "inline-flex items-center rounded-full bg-brand-50 px-2.5 py-0.5 text-[11px] font-semibold text-brand-700"
+      }
+    >
+      флагман
+    </span>
+  );
+}
 
 export function Header() {
   const pathname = usePathname();
@@ -177,7 +191,7 @@ export function Header() {
               Модули сервиса
             </button>
             {modulesOpen && (
-              <div className={`${dropdownAnchorClass} w-[min(100vw-2rem,380px)]`}>
+              <div className={`${dropdownAnchorClass} w-[min(100vw-2rem,460px)]`}>
                 <div
                   className={`${dropdownPanelClass} max-h-[70vh] overflow-y-auto p-1.5`}
                 >
@@ -189,13 +203,9 @@ export function Header() {
                       onClick={() => setModulesOpen(false)}
                     >
                       <NavMenuIcon href={item.href} />
-                      <span className="min-w-0 leading-snug">
-                        {item.label}
-                        {item.badge && (
-                          <span className="ml-2 inline-flex rounded bg-brand-600 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white">
-                            {item.badge}
-                          </span>
-                        )}
+                      <span className="min-w-0 flex-1 leading-snug">{item.label}</span>
+                      <span className="flex w-[4.25rem] shrink-0 justify-end">
+                        {item.badge ? <FlagshipNavBadge /> : null}
                       </span>
                     </Link>
                   ))}
@@ -208,7 +218,8 @@ export function Header() {
                       <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-base" aria-hidden>
                         ⊞
                       </span>
-                      Все модули — обзор
+                      <span className="min-w-0 flex-1">Все модули — обзор</span>
+                      <span className="w-[4.25rem] shrink-0" aria-hidden />
                     </Link>
                   </div>
                 </div>
@@ -331,18 +342,15 @@ export function Header() {
             {NAV_MODULES.map((item) => (
               <Link key={item.href} href={item.href} className={menuLinkClass} onClick={() => setMobileOpen(false)}>
                 <NavMenuIcon href={item.href} size="sm" />
-                <span className="min-w-0">
-                  {item.label}
-                  {item.badge && (
-                    <span className="ml-1.5 inline-flex rounded bg-brand-600 px-1 py-0.5 text-[9px] font-bold uppercase text-white">
-                      {item.badge}
-                    </span>
-                  )}
+                <span className="min-w-0 flex-1 leading-snug">{item.label}</span>
+                <span className="flex w-[3.75rem] shrink-0 justify-end">
+                  {item.badge ? <FlagshipNavBadge compact /> : null}
                 </span>
               </Link>
             ))}
             <Link href="/services/" className={`${menuLinkClass} mt-1 text-brand-600`} onClick={() => setMobileOpen(false)}>
-              Все модули — обзор
+              <span className="min-w-0 flex-1">Все модули — обзор</span>
+              <span className="w-[3.75rem] shrink-0" aria-hidden />
             </Link>
             <div className="mt-4 flex flex-col gap-1 border-t border-slate-200 pt-4 pb-6">
               <Link href="/tarify/" className="rounded-lg px-2 py-2 hover:bg-brand-50" onClick={() => setMobileOpen(false)}>

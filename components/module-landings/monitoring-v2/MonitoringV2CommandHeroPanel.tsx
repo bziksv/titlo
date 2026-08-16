@@ -103,6 +103,7 @@ export function MonitoringV2CommandHeroPanel({
               keys.src.includes("html-editor-shot") ||
               keys.src.includes("http-headers-shot") ||
               keys.src.includes("utm-shot") ||
+              keys.src.includes("esenin-shot") ||
               keys.src.includes("cluster-shot") ||
               keys.src.includes("meta-tags-shot") ||
               keys.src.includes("monitoring-v2-shot")
@@ -129,6 +130,7 @@ export function MonitoringV2CommandHeroPanel({
                 keys.src.includes("html-editor-shot") ||
                 keys.src.includes("http-headers-shot") ||
                 keys.src.includes("utm-shot") ||
+              keys.src.includes("esenin-shot") ||
                 keys.src.includes("cluster-shot") ||
                 keys.src.includes("meta-tags-shot") ||
                 keys.src.includes("monitoring-v2-shot")
@@ -166,6 +168,7 @@ export function MonitoringV2CommandHeroPanel({
               dynamics.src.includes("html-editor-shot") ||
               dynamics.src.includes("http-headers-shot") ||
               dynamics.src.includes("utm-shot") ||
+              dynamics.src.includes("esenin-shot") ||
               dynamics.src.includes("cluster-shot") ||
               dynamics.src.includes("meta-tags-shot") ||
               dynamics.src.includes("monitoring-v2-shot")
@@ -192,6 +195,7 @@ export function MonitoringV2CommandHeroPanel({
                 dynamics.src.includes("html-editor-shot") ||
                 dynamics.src.includes("http-headers-shot") ||
                 dynamics.src.includes("utm-shot") ||
+              dynamics.src.includes("esenin-shot") ||
                 dynamics.src.includes("cluster-shot") ||
                 dynamics.src.includes("meta-tags-shot") ||
                 dynamics.src.includes("monitoring-v2-shot")

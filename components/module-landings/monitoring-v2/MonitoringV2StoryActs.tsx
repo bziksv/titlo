@@ -35,6 +35,7 @@ function actImageClass(image: string) {
     image.includes("html-editor-shot") ||
     image.includes("http-headers-shot") ||
     image.includes("utm-shot") ||
+    image.includes("esenin-shot") ||
     image.includes("cluster-shot") ||
     image.includes("meta-tags-shot") ||
     image.includes("monitoring-v2-shot")
@@ -60,6 +61,7 @@ function isCabinetShot(image: string) {
     image.includes("html-editor-shot") ||
     image.includes("http-headers-shot") ||
     image.includes("utm-shot") ||
+    image.includes("esenin-shot") ||
     image.includes("cluster-shot") ||
     image.includes("meta-tags-shot") ||
     image.includes("monitoring-v2-shot")
@@ -103,6 +105,7 @@ export function MonitoringV2StoryActs({
         a.image.includes("html-editor-shot") ||
         a.image.includes("http-headers-shot") ||
         a.image.includes("utm-shot") ||
+        a.image.includes("esenin-shot") ||
         a.image.includes("cluster-shot") ||
         a.image.includes("meta-tags-shot")
     )
@@ -119,6 +122,8 @@ export function MonitoringV2StoryActs({
               ? "Посмотреть ответ сервера?"
               : acts.some((a) => a.image.includes("utm-shot"))
               ? "Собрать UTM-ссылку?"
+              : acts.some((a) => a.image.includes("esenin-shot"))
+              ? "Посмотреть готовый разбор?"
               : acts.some((a) => a.image.includes("dedup-shot"))
               ? "Посмотреть готовую очистку?"
               : acts.some((a) => a.image.includes("site-types-shot"))
@@ -146,6 +151,8 @@ export function MonitoringV2StoryActs({
               ? "В демо уже есть ответ titlo.ru: код 200, заголовки и HTML без нового запроса."
               : acts.some((a) => a.image.includes("utm-shot"))
               ? "В демо уже заполнена посадочная demo-shop.ru — метки и готовая ссылка без сборки с нуля."
+              : acts.some((a) => a.image.includes("esenin-shot"))
+              ? "В демо уже есть текст про ремонт фасада — баллы, подсветка и параметры без нового запуска."
               : acts.some((a) => a.image.includes("dedup-shot"))
               ? "В демо уже есть список с повторами — результат и KPI без ручной чистки."
               : acts.some((a) => a.image.includes("site-types-shot"))
