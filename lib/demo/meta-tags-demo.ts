@@ -14,11 +14,11 @@ export function buildMetaTagsRegisterUrl(): string {
 }
 
 export const META_TAGS_CABINET_FEATURES = [
-  "Проект до 500 URL — проверка раз в сутки",
+  "Проект до 500 URL",
+  "Автоматическая проверка раз в сутки",
   "История снимков и сравнение с эталоном",
-  "Уведомление в Telegram, если title, description или canonical изменились",
-  "Сразу видно, если кто-то поменял разметку без вашего ведома",
-  "Экспорт CSV и Excel",
+  "Уведомления в Telegram",
+  "Экспорт Excel и CSV",
 ] as const;
 
 export const META_TAGS_DEMO_FIELD_LABELS: Record<string, string> = {

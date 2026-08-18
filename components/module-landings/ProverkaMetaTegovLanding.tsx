@@ -86,7 +86,8 @@ export function ProverkaMetaTegovLanding({ module }: Props) {
                   variant="hero"
                   idPrefix="meta-mon-hero"
                   title="Проверить мета-теги"
-                  hint="Укажите email — откроется регистрация в личном кабинете с доступом к модулю."
+                  hint="Проверка мета-тегов в кабинете после регистрации."
+                  moduleSlug="proverka-meta-tegov-online"
                 />
               </div>
 

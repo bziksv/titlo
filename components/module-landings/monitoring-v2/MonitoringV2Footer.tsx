@@ -23,9 +23,10 @@ type Props = {
   videos: readonly Video[];
   faq: readonly FaqItem[];
   footerUi: ModuleV2FooterUi;
+  moduleSlug?: string;
 };
 
-export function MonitoringV2Footer({ options, optionsSection, plain, videos, faq, footerUi }: Props) {
+export function MonitoringV2Footer({ options, optionsSection, plain, videos, faq, footerUi, moduleSlug }: Props) {
   const fu = footerUi;
   return (
     <div className="min-w-0 max-w-full overflow-x-clip bg-slate-50">
@@ -143,6 +144,7 @@ export function MonitoringV2Footer({ options, optionsSection, plain, videos, faq
                 idPrefix={`${fu.idPrefix}-final`}
                 title="Начать бесплатно"
                 hint="Регистрация в личном кабинете."
+                moduleSlug={moduleSlug}
               />
             </div>
 

@@ -73,6 +73,7 @@ export function ModuleV2Landing({ module, config, isLabRoute = false }: Props) {
         videos={c.videos}
         faq={c.faq}
         footerUi={footerUi}
+        moduleSlug={module.slug}
       />
     </div>
   );

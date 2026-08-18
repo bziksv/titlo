@@ -20,7 +20,7 @@ const DEMO_FEATURES = [
 ] as const;
 
 const CABINET_MONITORING_NOTE =
-  "В кабинете — полноценный мониторинг: проект на сотни страниц, автоматические снимки раз в сутки и сравнение с эталоном. Если кто-то изменил title, description, canonical или другие теги — придёт уведомление в Telegram (при подключённом боте). Вы будете в курсе, что разметку «подкрутили» без вашего ведома.";
+  "Полноценный мониторинг включает в себя проект на сотни страниц, автоматические снимки раз в сутки и сравнение с эталоном. Подключив Telegram-бота, вы сможете получать уведомления об изменениях title, description, H1 и canonical и быть в курсе правок, внесенных без вашего участия.";
 
 function statusTone(status: string): string {
   if (status === "issue") return "text-red-700 bg-red-50 border-red-200";
@@ -139,7 +139,7 @@ export function MetaTagsDemoWidget() {
   return (
     <DemoWidgetShell
       title="Проверьте мета-теги без регистрации"
-      lead="Сейчас — разовая проверка одной страницы, как первый шаг в кабинете. После регистрации — мониторинг по расписанию, история снимков и оповещения об изменениях разметки."
+      lead="Разовая проверка одной страницы. Проверка по списку URL, мониторинг по расписанию, история снимков и оповещения об изменениях доступны после регистрации."
       features={DEMO_FEATURES}
     >
       <p className="mb-6 rounded-xl border border-brand-200 bg-brand-50 px-4 py-3 text-sm leading-relaxed text-brand-950">
@@ -178,7 +178,7 @@ export function MetaTagsDemoWidget() {
             {loading ? "Снимаем теги…" : "Проверить страницу"}
           </button>
           <p className="mt-2 text-xs text-slate-500">
-            Демо: {remaining} из {META_TAGS_DEMO_MAX_RUNS} проверок сегодня · 1 URL за запуск
+            Демо: {remaining} из {META_TAGS_DEMO_MAX_RUNS} проверок сегодня · 1 URL за раз
           </p>
         </div>
 

@@ -69,17 +69,19 @@ export const MODULE_V2_SECTION_ENRICHMENT: Record<string, ModuleV2Override> = {
 
   "proverka-meta-tegov-online": sections(
     {
-      title: "Что снимаете за прогон",
-      lead: "До 500 URL, поля head и сравнение с прошлой проверкой — без ручного обхода каждой страницы.",
+      eyebrow: "В цифрах",
+      title: "Данные за один запуск",
+      lead: "Лимиты проверки, поля снимка и автоматический запуск в кабинете.",
     },
     {
       eyebrow: "В кабинете",
       title: "Поля и история",
-      lead: "Title, description, canonical, H1–H3, noindex — плюс автоснимки и уведомления.",
+      lead: "Title, description, canonical, H1–H3, noindex, автоматические снимки и уведомления.",
     },
     {
-      finalLead: "Пакет URL, история проверок и сравнение — после регистрации.",
+      finalLead: "Регистрация в личном кабинете.",
       faqTitle: "Частые вопросы про мониторинг мета-тегов",
+      videoLead: "Короткие уроки по интерфейсу и сценарию.",
     }
   ),
 

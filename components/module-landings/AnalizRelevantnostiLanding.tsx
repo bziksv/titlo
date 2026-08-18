@@ -86,6 +86,7 @@ export function AnalizRelevantnostiLanding({ module }: Props) {
                   idPrefix="relevance-hero"
                   title="Запустить первый анализ"
                   hint="Укажите email — перейдёте к регистрации в личном кабинете с доступом к модулю."
+                  moduleSlug="analiz-relevantnosti"
                 />
               </div>
 
@@ -292,6 +293,7 @@ export function AnalizRelevantnostiLanding({ module }: Props) {
               idPrefix="relevance-footer"
               title="Начать бесплатно"
               hint="Укажите email — откроется страница регистрации в личном кабинете."
+              moduleSlug="analiz-relevantnosti"
             />
           </section>
 

@@ -105,6 +105,7 @@ export function ModuleV3PulseIntro({ module, intro, heroVisual, showEngineLogos 
                 idPrefix={`${module.slug}-intro`}
                 title={intro.cta}
                 hint="Регистрация в личном кабинете."
+                moduleSlug={module.slug}
               />
             </div>
             <p className="mt-4 text-sm text-slate-600">

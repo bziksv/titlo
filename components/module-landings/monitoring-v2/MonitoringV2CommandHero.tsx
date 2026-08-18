@@ -156,6 +156,7 @@ export function MonitoringV2CommandHero({ module, concept, shots, acts, heroUi }
                 idPrefix={ui.idPrefix}
                 title={concept.cta}
                 hint={ui.ctaHint ?? "Email → регистрация в личном кабинете."}
+                moduleSlug={module.slug}
               />
             </div>
 
