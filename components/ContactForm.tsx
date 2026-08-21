@@ -6,23 +6,96 @@ import { SITE } from "@/lib/site";
 
 type FormState = "idle" | "loading" | "success" | "error";
 
+type FieldErrors = {
+  name?: string;
+  email?: string;
+  phone?: string;
+  message?: string;
+  agree?: string;
+};
+
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+/** Допускаем пустое; иначе цифры/пробелы/+()- , минимум 10 цифр */
+function isPhoneOk(phone: string): boolean {
+  if (!phone) return true;
+  const digits = phone.replace(/\D/g, "");
+  return digits.length >= 10 && digits.length <= 15;
+}
+
+function fieldClass(invalid: boolean): string {
+  const base =
+    "mt-1 w-full rounded-lg border px-3 py-2 text-slate-900 focus:outline-none focus:ring-1";
+  return invalid
+    ? `${base} border-red-400 focus:border-red-500 focus:ring-red-500`
+    : `${base} border-slate-300 focus:border-brand-500 focus:ring-brand-500`;
+}
+
 export function ContactForm() {
   const [state, setState] = useState<FormState>("idle");
   const [error, setError] = useState<string | null>(null);
+  const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
+
+  function clearField(key: keyof FieldErrors) {
+    setFieldErrors((prev) => {
+      if (!prev[key]) return prev;
+      const next = { ...prev };
+      delete next[key];
+      return next;
+    });
+  }
+
+  function validateClient(data: FormData): FieldErrors {
+    const name = String(data.get("name") ?? "").trim();
+    const email = String(data.get("email") ?? "").trim();
+    const phone = String(data.get("phone") ?? "").trim();
+    const message = String(data.get("message") ?? "").trim();
+    const agree = data.get("agreeConsent") === "on";
+
+    const errors: FieldErrors = {};
+    if (!name) errors.name = "Укажите имя";
+    else if (name.length < 2) errors.name = "Имя слишком короткое";
+
+    if (!email) errors.email = "Укажите e-mail";
+    else if (!EMAIL_RE.test(email)) errors.email = "Некорректный формат e-mail";
+
+    if (!isPhoneOk(phone)) errors.phone = "Укажите телефон полностью (не менее 10 цифр)";
+
+    if (!message) errors.message = "Напишите вопрос";
+    else if (message.length < 10) errors.message = "Вопрос слишком короткий (не менее 10 символов)";
+
+    if (!agree) errors.agree = "Нужно подтвердить согласие и политику персональных данных";
+
+    return errors;
+  }
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setState("loading");
     setError(null);
 
     const form = e.currentTarget;
     const data = new FormData(form);
+    const errors = validateClient(data);
+    setFieldErrors(errors);
+    if (Object.keys(errors).length > 0) {
+      setState("idle");
+      const firstKey = (["name", "email", "phone", "message", "agree"] as const).find((k) => errors[k]);
+      if (firstKey && firstKey !== "agree") {
+        document.getElementById(`contact-${firstKey}`)?.focus();
+      } else if (errors.agree) {
+        document.getElementById("contact-agree")?.focus();
+      }
+      return;
+    }
+
+    setState("loading");
+
     const payload = {
       name: String(data.get("name") ?? "").trim(),
       email: String(data.get("email") ?? "").trim(),
       phone: String(data.get("phone") ?? "").trim(),
       message: String(data.get("message") ?? "").trim(),
-      agree: data.get("agree") === "on",
+      agreeConsent: true,
+      agreePrivacy: true,
     };
 
     try {
@@ -46,6 +119,7 @@ export function ContactForm() {
       }
 
       setState("success");
+      setFieldErrors({});
       form.reset();
     } catch {
       setState("error");
@@ -70,7 +144,11 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="space-y-4 rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+    <form
+      noValidate
+      onSubmit={onSubmit}
+      className="space-y-4 rounded-xl border border-slate-200 bg-white p-6 shadow-sm"
+    >
       <h2 className="text-lg font-semibold text-slate-900">Задать вопрос</h2>
       <p className="text-sm text-slate-600">Заполните форму — мы свяжемся с вами по e-mail.</p>
 
@@ -82,10 +160,17 @@ export function ContactForm() {
           id="contact-name"
           name="name"
           type="text"
-          required
           autoComplete="name"
-          className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-slate-900 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+          aria-invalid={Boolean(fieldErrors.name)}
+          aria-describedby={fieldErrors.name ? "contact-name-error" : undefined}
+          onChange={() => clearField("name")}
+          className={fieldClass(Boolean(fieldErrors.name))}
         />
+        {fieldErrors.name ? (
+          <p id="contact-name-error" className="mt-1 text-sm text-red-600">
+            {fieldErrors.name}
+          </p>
+        ) : null}
       </div>
 
       <div>
@@ -96,10 +181,17 @@ export function ContactForm() {
           id="contact-email"
           name="email"
           type="email"
-          required
           autoComplete="email"
-          className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-slate-900 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+          aria-invalid={Boolean(fieldErrors.email)}
+          aria-describedby={fieldErrors.email ? "contact-email-error" : undefined}
+          onChange={() => clearField("email")}
+          className={fieldClass(Boolean(fieldErrors.email))}
         />
+        {fieldErrors.email ? (
+          <p id="contact-email-error" className="mt-1 text-sm text-red-600">
+            {fieldErrors.email}
+          </p>
+        ) : null}
       </div>
 
       <div>
@@ -111,8 +203,18 @@ export function ContactForm() {
           name="phone"
           type="tel"
           autoComplete="tel"
-          className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-slate-900 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+          inputMode="tel"
+          placeholder="+7 900 000-00-00"
+          aria-invalid={Boolean(fieldErrors.phone)}
+          aria-describedby={fieldErrors.phone ? "contact-phone-error" : undefined}
+          onChange={() => clearField("phone")}
+          className={fieldClass(Boolean(fieldErrors.phone))}
         />
+        {fieldErrors.phone ? (
+          <p id="contact-phone-error" className="mt-1 text-sm text-red-600">
+            {fieldErrors.phone}
+          </p>
+        ) : null}
       </div>
 
       <div>
@@ -122,23 +224,49 @@ export function ContactForm() {
         <textarea
           id="contact-message"
           name="message"
-          required
           rows={5}
-          className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-slate-900 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+          aria-invalid={Boolean(fieldErrors.message)}
+          aria-describedby={fieldErrors.message ? "contact-message-error" : undefined}
+          onChange={() => clearField("message")}
+          className={fieldClass(Boolean(fieldErrors.message))}
         />
+        {fieldErrors.message ? (
+          <p id="contact-message-error" className="mt-1 text-sm text-red-600">
+            {fieldErrors.message}
+          </p>
+        ) : null}
       </div>
 
-      <label className="flex gap-2 text-sm text-slate-600">
-        <input name="agree" type="checkbox" required defaultChecked className="mt-1" />
-        <span>
-          Согласен с{" "}
-          <Link href="/legal/doc/privacy-policy/" className="text-brand-600 hover:text-brand-700">
-            политикой обработки персональных данных
-          </Link>
-        </span>
-      </label>
+      <div>
+        <label className="flex gap-2 text-sm text-slate-600">
+          <input
+            id="contact-agree"
+            name="agreeConsent"
+            type="checkbox"
+            aria-invalid={Boolean(fieldErrors.agree)}
+            aria-describedby={fieldErrors.agree ? "contact-agree-error" : undefined}
+            onChange={() => clearField("agree")}
+            className={`mt-1 ${fieldErrors.agree ? "outline outline-1 outline-red-400" : ""}`}
+          />
+          <span>
+            Даю свое{" "}
+            <Link href="/legal/doc/personal-data-consent/" className="text-brand-600 hover:text-brand-700">
+              согласие
+            </Link>{" "}
+            на обработку и соглашаюсь с{" "}
+            <Link href="/legal/doc/privacy-policy/" className="text-brand-600 hover:text-brand-700">
+              политикой персональных данных
+            </Link>
+          </span>
+        </label>
+        {fieldErrors.agree ? (
+          <p id="contact-agree-error" className="mt-1 text-sm text-red-600">
+            {fieldErrors.agree}
+          </p>
+        ) : null}
+      </div>
 
-      {error && <p className="text-sm text-red-600">{error}</p>}
+      {error ? <p className="text-sm text-red-600">{error}</p> : null}
 
       <button
         type="submit"

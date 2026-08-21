@@ -7,11 +7,13 @@ type ContactPayload = {
   email?: string;
   phone?: string;
   message?: string;
-  agree?: boolean;
+  agreeConsent?: boolean;
+  agreePrivacy?: boolean;
 };
 
 function validate(body: ContactPayload): string | null {
-  if (!body.agree) return "Требуется согласие на обработку персональных данных";
+  if (!body.agreeConsent) return "Требуется согласие на обработку персональных данных";
+  if (!body.agreePrivacy) return "Требуется согласие с политикой персональных данных";
   const name = body.name?.trim();
   const email = body.email?.trim();
   const message = body.message?.trim();
