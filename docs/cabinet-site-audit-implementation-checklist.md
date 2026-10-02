@@ -761,3 +761,4 @@ Cabinet = UI + dispatch + чтение отчётов.
 | 2026-09-26 | **HTML checker libxml/HTML5** | UI после virtual robots; `html_checker` в settings; Nu vnu HTTP (`SITE_AUDIT_VNU_URL`); fallback libxml; docs `cabinet.titlo.ru/docs/site-audit-vnu.md`; v0.3.153 |
 | 2026-09-26 | **Parallel vnu + aggregate queue** | `validateMany` в волне; `SITE_AUDIT_VNU_CONCURRENCY`; `site_audit_aggregate` + supervisor `cabinet-titlo-site-audit-aggregate`×2; fetch не ждёт Aggregate #228 |
 | 2026-08-12 | **Drop landing_plagiarism_suspect** | дубль `similar_pages`/`duplicate_content` только по посадочным — убран; внутренние дубли → similar_pages; v0.3.111 |
+| 2026-10-02 | **orphan_pages: out_links cap** | ложные сироты на `/vendors/*`: мегаменю съедало лимит 400; store_max=2500 + приоритет того же раздела пути; `out_links_count` = полный count |
