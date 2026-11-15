@@ -157,7 +157,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                     <span className="mt-2 text-lg font-semibold text-slate-900 group-hover:text-brand-700">{m.title}</span>
                     <span className="mt-2 flex-1 text-sm leading-relaxed text-slate-600">{m.text}</span>
                     <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-600">
-                      Попробовать <span aria-hidden>→</span>
+                      Открыть <span aria-hidden>→</span>
                     </span>
                   </Link>
                 ))}
