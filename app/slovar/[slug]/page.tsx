@@ -51,7 +51,7 @@ export default async function GlossaryTermPage({ params }: Props) {
 
   const toc = [
     ...term.sections.map((s) => ({ id: s.id, label: s.tocLabel ?? s.title })),
-    { id: term.modules.id, label: "Инструменты Титло" },
+    { id: term.modules.id, label: "Сервисы" },
     { id: "svyazannye", label: "Связанные термины" },
     ...(term.faq.length ? [{ id: "faq", label: "Частые вопросы" }] : []),
   ];
@@ -115,7 +115,7 @@ export default async function GlossaryTermPage({ params }: Props) {
             </p>
 
             <div className="mt-6 rounded-2xl border border-brand-200 bg-brand-50/60 p-6 shadow-sm md:p-8">
-              <p className="text-xs font-semibold uppercase tracking-wide text-brand-700">Краткое определение</p>
+              <p className="text-xs font-semibold uppercase tracking-wide text-brand-700">Коротко</p>
               <p className="mt-3 text-[1.05rem] leading-relaxed text-slate-800">{term.definition}</p>
             </div>
 
@@ -153,11 +153,11 @@ export default async function GlossaryTermPage({ params }: Props) {
                     href={`/${m.slug}/`}
                     className="group flex flex-col rounded-2xl border border-slate-200/80 bg-slate-50 p-5 transition hover:border-brand-200 hover:bg-white hover:shadow-md"
                   >
-                    <span className="text-xs font-semibold uppercase tracking-wide text-brand-700">Модуль Титло</span>
+                    <span className="text-xs font-semibold uppercase tracking-wide text-brand-700">Сервис</span>
                     <span className="mt-2 text-lg font-semibold text-slate-900 group-hover:text-brand-700">{m.title}</span>
                     <span className="mt-2 flex-1 text-sm leading-relaxed text-slate-600">{m.text}</span>
                     <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-600">
-                      Открыть модуль <span aria-hidden>→</span>
+                      Попробовать <span aria-hidden>→</span>
                     </span>
                   </Link>
                 ))}
@@ -166,6 +166,7 @@ export default async function GlossaryTermPage({ params }: Props) {
 
             <section id="svyazannye" className="mt-8 scroll-mt-24">
               <h2 className={h2Class}>Связанные термины</h2>
+              <p className="mt-2 text-sm text-slate-500">Термины без ссылки ещё в работе — ссылки появятся после публикации.</p>
               <ul className="mt-4 grid gap-2 sm:grid-cols-2">
                 {term.related.map((name) => {
                   const href = findPublishedTermPath(name);
@@ -181,10 +182,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                           </span>
                         </Link>
                       ) : (
-                        <span className={`${cls} text-slate-700`}>
-                          {name}{" "}
-                          <span className="text-xs font-medium text-slate-400">скоро в словаре</span>
-                        </span>
+                        <span className={`${cls} text-slate-700`}>{name}</span>
                       )}
                     </li>
                   );
@@ -209,20 +207,8 @@ export default async function GlossaryTermPage({ params }: Props) {
               <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">На этой странице</p>
               {tocList("text-slate-700 hover:text-brand-700")}
             </nav>
-            <div className="mt-4 rounded-2xl border border-brand-200 bg-brand-50/60 p-4 shadow-sm">
-              <p className="text-xs font-semibold uppercase tracking-wide text-brand-700">Модули по теме</p>
-              <ul className="mt-3 space-y-1.5 text-sm">
-                {term.modules.items.map((m) => (
-                  <li key={m.slug}>
-                    <Link href={`/${m.slug}/`} className="font-medium text-slate-800 hover:text-brand-700">
-                      {m.title} <span aria-hidden className="text-brand-600">→</span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
             <Link href={GLOSSARY_PATH} className="mt-4 block text-sm font-semibold text-brand-600 hover:text-brand-700">
-              ← Все термины словаря
+              ← Ко всем терминам
             </Link>
           </aside>
         </div>
