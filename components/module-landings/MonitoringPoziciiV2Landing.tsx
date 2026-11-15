@@ -1,4 +1,6 @@
 import dynamic from "next/dynamic";
+import { ModuleJsonLd } from "@/components/seo/ModuleJsonLd";
+import { getRelatedOrbit } from "@/lib/content/module-related";
 import { MonitoringV2CommandHero } from "@/components/module-landings/monitoring-v2/MonitoringV2CommandHero";
 import { MonitoringV2PainGain } from "@/components/module-landings/monitoring-v2/MonitoringV2PainGain";
 import { MonitoringV2Footer } from "@/components/module-landings/monitoring-v2/MonitoringV2Footer";
@@ -50,6 +52,7 @@ type Props = { module: ModulePage; isLabRoute?: boolean };
 export function MonitoringPoziciiV2Landing({ module, isLabRoute = false }: Props) {
   return (
     <div className="module-v2-landing min-w-0 max-w-full overflow-x-clip">
+      {!isLabRoute && <ModuleJsonLd module={module} faq={MONITORING_V2_FAQ} />}
       <MonitoringV2CommandHero
         module={module}
         concept={MONITORING_V2_CONCEPT}
@@ -65,7 +68,7 @@ export function MonitoringPoziciiV2Landing({ module, isLabRoute = false }: Props
       />
       <MonitoringV2PainGain data={MONITORING_V2_PAIN_GAIN} />
       <MonitoringV2StoryActs acts={MONITORING_V2_ACTS} section={MONITORING_V2_STORY_SECTION} />
-      <MonitoringV2Orbit nodes={MONITORING_V2_ORBIT} section={MONITORING_V2_ORBIT_SECTION} />
+      <MonitoringV2Orbit nodes={getRelatedOrbit(module.slug) ?? MONITORING_V2_ORBIT} section={MONITORING_V2_ORBIT_SECTION} />
       <MonitoringV2CapabilityDeck data={MONITORING_V2_CAPABILITIES} />
       <MonitoringV2Footer
         options={MONITORING_V2_OPTIONS}

@@ -112,6 +112,7 @@ export function MonitoringV2CommandHero({ module, concept, shots, acts, heroUi }
             Модули
           </Link>
           <span aria-hidden>/</span>
+          <span aria-current="page" className="min-w-0 break-words text-slate-300">{module.title}</span>
           {ui.labBadge ? (
             <>
               <span className="rounded bg-violet-500/25 px-2 py-0.5 text-xs font-bold text-violet-200">

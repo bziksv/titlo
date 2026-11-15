@@ -43,7 +43,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: isLab ? mod.title : (mod.seoTitle ?? mod.title),
     description: isLab ? mod.description : (mod.seoDescription ?? mod.description),
-    ...canonicalMetadata(`/${canonicalSlug}/`),
+    ...canonicalMetadata(`/${canonicalSlug}/`, {
+      image: `/${canonicalSlug}/opengraph-image/`,
+      imageAlt: mod.seoTitle ?? mod.title,
+    }),
     ...(isLab
       ? { robots: { index: false, follow: false, googleBot: { index: false, follow: false } } }
       : {}),

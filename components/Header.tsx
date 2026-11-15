@@ -179,6 +179,7 @@ export function Header() {
               type="button"
               className={modulesOpen ? navItemActiveClass : navItemClass}
               aria-expanded={modulesOpen}
+              aria-controls="header-modules"
               aria-haspopup="true"
               onFocus={() => {
                 setModulesOpen(true);
@@ -190,8 +191,7 @@ export function Header() {
             >
               Модули сервиса
             </button>
-            {modulesOpen && (
-              <div className={`${dropdownAnchorClass} w-[min(100vw-2rem,460px)]`}>
+              <div id="header-modules" hidden={!modulesOpen} className={`${dropdownAnchorClass} w-[min(100vw-2rem,460px)]`}>
                 <div
                   className={`${dropdownPanelClass} max-h-[70vh] overflow-y-auto p-1.5`}
                 >
@@ -224,7 +224,6 @@ export function Header() {
                   </div>
                 </div>
               </div>
-            )}
           </div>
 
           <Link href="/tarify/" className={navItemClass}>
@@ -269,6 +268,7 @@ export function Header() {
             className="rounded-lg border border-slate-300 px-2.5 py-1.5 text-sm transition hover:border-brand-300 hover:bg-brand-50"
             onClick={() => setMobileOpen((v) => !v)}
             aria-expanded={mobileOpen}
+            aria-controls="header-mobile-menu"
             aria-label={mobileOpen ? "Закрыть меню" : "Открыть меню"}
           >
             {mobileOpen ? "✕" : "☰"}
@@ -277,9 +277,10 @@ export function Header() {
       </div>
     </header>
 
-      {mobileOpen && (
         <div
-          className="fixed inset-0 z-[100] flex flex-col bg-white lg:hidden"
+          id="header-mobile-menu"
+          className={`fixed inset-0 z-[100] flex-col bg-white lg:hidden ${mobileOpen ? "flex" : "hidden"}`}
+          aria-hidden={!mobileOpen}
           role="dialog"
           aria-modal="true"
           aria-label="Меню"
@@ -362,7 +363,6 @@ export function Header() {
             </div>
           </nav>
         </div>
-      )}
     </>
   );
 }

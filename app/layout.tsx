@@ -5,6 +5,7 @@ import { CookieBanner } from "@/components/CookieBanner";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { SITE } from "@/lib/site";
+import { SiteJsonLd } from "@/components/seo/SiteJsonLd";
 import "./globals.css";
 
 const inter = Inter({
@@ -31,6 +32,9 @@ export const metadata: Metadata = {
     locale: "ru_RU",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export default function RootLayout({
@@ -41,6 +45,7 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body className={`${inter.variable} min-h-screen font-sans`}>
+        <SiteJsonLd />
         <Analytics />
         <Header />
         <main className="overflow-x-clip">{children}</main>

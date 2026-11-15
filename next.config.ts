@@ -7,6 +7,10 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const nextConfig: NextConfig = {
   output: "standalone",
   outputFileTracingRoot: path.join(__dirname),
+  /** Шрифты для opengraph-image (ImageResponse читает их через fs). */
+  outputFileTracingIncludes: {
+    "/**/opengraph-image*": ["./lib/og/fonts/**"],
+  },
   trailingSlash: true,
   poweredByHeader: false,
   images: {

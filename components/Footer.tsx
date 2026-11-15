@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { LEGAL_NAV } from "@/lib/content/legal";
-import { getCopyrightText, SITE } from "@/lib/site";
+import { getCopyrightText, NAV_MODULES, SITE } from "@/lib/site";
 
 export function Footer() {
   return (
@@ -38,6 +38,14 @@ export function Footer() {
             </Link>
           ))}
         </div>
+        <nav aria-label="Инструменты" className="mt-8 border-t border-white/10 pt-6">
+          <p className="text-sm font-semibold uppercase tracking-wide text-white">Инструменты</p>
+          <ul className="mt-4 grid grid-cols-1 gap-x-6 gap-y-2 text-sm sm:grid-cols-2 lg:grid-cols-3">
+            {NAV_MODULES.map(({ href, label }) => (
+              <li key={href}><Link href={href} className="hover:text-white">{label}</Link></li>
+            ))}
+          </ul>
+        </nav>
         <p className="mt-8 text-xs text-slate-400">{getCopyrightText()}</p>
       </div>
     </footer>
