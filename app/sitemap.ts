@@ -15,11 +15,13 @@ const STATIC = [
   "faq/",
   "news/",
   "news/istoriya-kompanii/",
-  "demo/",
 ];
 
+/** Стабильная дата lastmod (обновлять при заметных изменениях контента). */
+const LAST_MODIFIED = new Date("2026-11-15T00:00:00+03:00");
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
+  const now = LAST_MODIFIED;
   const staticPages = STATIC.map((path) => ({
     url: `${BASE}/${path}`,
     lastModified: now,

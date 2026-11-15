@@ -16,6 +16,10 @@ export type ModulePage = {
   description: string;
   lead: string;
   features?: string[];
+  /** SEO: <title> без суффикса бренда (≤52 симв.). Если нет — title. */
+  seoTitle?: string;
+  /** SEO: meta description (≤160 симв.). Если нет — description. */
+  seoDescription?: string;
   /** YouTube embed URL с live-лендинга */
   videos?: string[];
 };
@@ -25,6 +29,9 @@ export const BASE_MODULE_PAGES: ModulePage[] = [
   {
     slug: "analiz-relevantnosti",
     path: "/analiz-relevantnosti/",
+    seoTitle: "Проверка релевантности страницы онлайн",
+    seoDescription:
+      "Сравните страницу с ТОП-10 Яндекса и Google: каких слов не хватает, где переспам, что исправить. Облака слов, рекомендации TLP и экспорт.",
     title: "Анализ релевантности страницы",
     h1: "Анализ релевантности страницы",
     description:
@@ -40,6 +47,9 @@ export const BASE_MODULE_PAGES: ModulePage[] = [
   {
     slug: "analiz-konkurentov",
     path: "/analiz-konkurentov/",
+    seoTitle: "Анализ конкурентов в выдаче по ключевым словам",
+    seoDescription:
+      "Кто в ТОП-10–20 Яндекса и Google по вашим запросам и регионам: домены, посадочные, мета-теги и вложенность. Отчёт для SEO-стратегии.",
     title: "Анализ конкурентов по ключевым словам",
     h1: "Анализ конкурентов по ключевым словам",
     description: "SEO-аналитика сайтов конкурентов по поисковым запросам и регионам.",
@@ -50,6 +60,9 @@ export const BASE_MODULE_PAGES: ModulePage[] = [
   {
     slug: "monitoring-pozicii-sayta",
     path: "/monitoring-pozicii-sayta/",
+    seoTitle: "Проверка позиций сайта в Яндексе и Google",
+    seoDescription:
+      "Съём позиций по ключам в Яндексе и Google с учётом региона: ТОП-100, история, конкуренты, отчёты XLS/PDF и ссылка для клиента.",
     title: "Мониторинг позиций сайта",
     h1: "Проверка позиций сайта по ключевым запросам",
     description: "Проверка позиций в Яндекс и Google по ключевым словам онлайн.",
@@ -81,6 +94,9 @@ export const BASE_MODULE_PAGES: ModulePage[] = [
   {
     slug: "monitoring-saytov",
     path: "/monitoring-saytov/",
+    seoTitle: "Мониторинг доступности сайта: uptime и алерты",
+    seoDescription:
+      "Проверка доступности сайта по HTTP/HTTPS по расписанию: uptime, лог инцидентов, уведомления в Telegram и email, PDF и публичная ссылка.",
     title: "Мониторинг сайтов",
     h1: "Uptime и алерты — до жалобы клиента",
     description:
@@ -96,6 +112,9 @@ export const BASE_MODULE_PAGES: ModulePage[] = [
   {
     slug: "proverka-meta-tegov-online",
     path: "/proverka-meta-tegov-online/",
+    seoTitle: "Проверка мета-тегов онлайн: title, description, H1",
+    seoDescription:
+      "Массовая проверка title, description, H1 и canonical до 500 URL. История снимков, подсветка изменений и уведомления при смене тегов.",
     title: "Мониторинг мета-тегов",
     h1: "Мониторинг мета-тегов вашего сайта с автоматическими проверками и историей изменений",
     description:
@@ -112,6 +131,9 @@ export const BASE_MODULE_PAGES: ModulePage[] = [
   {
     slug: "generator_slov",
     path: "/generator_slov/",
+    seoTitle: "Генератор ключевых фраз онлайн — комбинатор слов",
+    seoDescription:
+      "Склейте ключевые фразы из нескольких блоков слов: все комбинации, синонимы, стоп-слова, операторы «» и []. Без ручной склейки в Excel.",
     title: "Генератор ключевых слов",
     h1: "Генератор ключевых слов",
     description: "Комбинатор ключевых фраз из блоков слов: синонимы, стоп-слова, операторы «» и [].",
@@ -122,6 +144,9 @@ export const BASE_MODULE_PAGES: ModulePage[] = [
   {
     slug: "podschet-dliny-teksta",
     path: "/podschet-dliny-teksta/",
+    seoTitle: "Счётчик символов онлайн: с пробелами и без",
+    seoDescription:
+      "Посчитайте символы с пробелами и без, слова и длину title, description и H1. До 38 600 символов за раз, результат сразу.",
     title: "Подсчет длины текста",
     h1: "Подсчёт длины текста — с пробелами и без",
     description:
@@ -133,6 +158,9 @@ export const BASE_MODULE_PAGES: ModulePage[] = [
   {
     slug: "generator-paroley",
     path: "/generator-paroley/",
+    seoTitle: "Генератор паролей онлайн — надёжные пароли",
+    seoDescription:
+      "Надёжный случайный пароль до 50 символов: цифры, буквы, спецсимволы, пресеты. Пять вариантов за клик и история в кабинете.",
     title: "Генератор паролей",
     h1: "Генератор паролей",
     description: "Случайные пароли до 50 символов: пресеты, пять вариантов за клик, история в кабинете.",
@@ -142,6 +170,9 @@ export const BASE_MODULE_PAGES: ModulePage[] = [
   {
     slug: "sravnenie-spiskov-klyuchevykh-fraz",
     path: "/sravnenie-spiskov-klyuchevykh-fraz/",
+    seoTitle: "Сравнение двух списков онлайн: пересечение и разница",
+    seoDescription:
+      "Сравните два списка фраз или строк: пересечение, только в A, только в B, объединение. Копирование и выгрузка результата, без Excel.",
     title: "Сравнение списков ключевых фраз",
     h1: "Сравнение списков ключевых фраз",
     description:
@@ -153,6 +184,9 @@ export const BASE_MODULE_PAGES: ModulePage[] = [
   {
     slug: "udalenie-dublikatov",
     path: "/udalenie-dublikatov/",
+    seoTitle: "Удалить дубликаты строк онлайн — очистка списка",
+    seoDescription:
+      "Удалите повторы, пустые строки и лишние пробелы из списка фраз или URL. Учёт регистра, сортировка и счётчик «было / стало».",
     title: "Удаление дубликатов",
     h1: "Удаление дубликатов из списка фраз и URL",
     description:
@@ -164,6 +198,9 @@ export const BASE_MODULE_PAGES: ModulePage[] = [
   {
     slug: "utm-metki",
     path: "/utm-metki/",
+    seoTitle: "Генератор UTM-меток онлайн для Директа и VK",
+    seoDescription:
+      "Соберите ссылку с UTM за минуту: utm_source, utm_medium, utm_campaign, шаблоны для Яндекс Директа, Google Ads, VK и myTarget.",
     title: "Генератор UTM меток",
     h1: "Генератор UTM меток",
     description: "Создание UTM-меток для Яндекс, Google, VK, myTarget.",
@@ -174,6 +211,9 @@ export const BASE_MODULE_PAGES: ModulePage[] = [
   {
     slug: "kalkulyator-roi",
     path: "/kalkulyator-roi/",
+    seoTitle: "Калькулятор ROI рекламы онлайн: CTR, CPC, CPA",
+    seoDescription:
+      "Рассчитайте ROI кампании, CTR, CPC и CPA по факту или спрогнозируйте трафик по бюджету — онлайн, без Excel и формул.",
     title: "Калькулятор ROI",
     h1: "ROI кампании — до запуска и по факту",
     description:
@@ -185,6 +225,9 @@ export const BASE_MODULE_PAGES: ModulePage[] = [
   {
     slug: "http-headers",
     path: "/http-headers/",
+    seoTitle: "Проверка HTTP-заголовков и ответа сервера",
+    seoDescription:
+      "Проверьте ответ сервера онлайн: код ответа, HTTP-заголовки, кэш и HTML страницы. Пакетная проверка до 500 URL с выгрузкой в CSV.",
     title: "Проверка HTTP-заголовков",
     h1: "Проверка HTTP-заголовков",
     description: "Проверка HTTP-заголовков ответа страницы.",
@@ -195,6 +238,9 @@ export const BASE_MODULE_PAGES: ModulePage[] = [
   {
     slug: "audit-sajta",
     path: "/audit-sajta/",
+    seoTitle: "SEO-аудит сайта онлайн: технические ошибки и дубли",
+    seoDescription:
+      "Обход до 10 000 страниц: битые ссылки, дубли title и description, ошибки robots.txt и sitemap. Отчёт Excel/Word и ссылка клиенту.",
     title: "Аудит сайта — технический и SEO",
     h1: "Аудит сайта",
     description:
@@ -211,6 +257,9 @@ export const BASE_MODULE_PAGES: ModulePage[] = [
   {
     slug: "proverka-indeksacii",
     path: "/proverka-indeksacii/",
+    seoTitle: "Проверка индексации страниц в Яндексе и Google",
+    seoDescription:
+      "Массовая проверка индексации до 500 URL в Яндексе и Google: в индексе или нет, title и сниппет из выдачи, история в кабинете.",
     title: "Проверка индексации и сниппетов (Яндекс и Google)",
     h1: "Проверка индексации и сниппетов (Яндекс и Google)",
     description: "Массовая проверка индексации URL в Яндексе и Google с сохранением title и сниппета.",
@@ -221,6 +270,9 @@ export const BASE_MODULE_PAGES: ModulePage[] = [
   {
     slug: "proverka-teksta-esenin",
     path: "/proverka-teksta-esenin/",
+    seoTitle: "Проверка текста на Баден-Баден и переспам — Есенин",
+    seoDescription:
+      "Проверьте SEO-текст на риск «Баден-Баден»: переспам, водность, стилистика, удобочитаемость. Подсветка и балл риска до публикации.",
     title: "Проверка текста Есенин",
     h1: "Проверка текста Есенин — риск до публикации",
     description:
@@ -232,6 +284,9 @@ export const BASE_MODULE_PAGES: ModulePage[] = [
   {
     slug: "sbor-poiskovykh-podskazok",
     path: "/sbor-poiskovykh-podskazok/",
+    seoTitle: "Парсер поисковых подсказок Яндекса и Google",
+    seoDescription:
+      "Соберите подсказки Яндекса и Google по вашим фразам: перебор по алфавиту, глубина, пресеты и выгрузка таблицы для ядра.",
     title: "Сбор поисковых подсказок",
     h1: "Сбор поисковых подсказок Яндекс и Google",
     description:
@@ -243,6 +298,9 @@ export const BASE_MODULE_PAGES: ModulePage[] = [
   {
     slug: "zapisi-domena",
     path: "/zapisi-domena/",
+    seoTitle: "Проверка DNS-записей и WHOIS домена онлайн",
+    seoDescription:
+      "Срок регистрации, DNS-записи A, MX, NS, TXT, SOA и сайты на том же IP в одном отчёте. История и сравнение снимков в кабинете.",
     title: "Записи домена",
     h1: "Записи домена: срок, NS и соседи по IP",
     description:
@@ -254,6 +312,9 @@ export const BASE_MODULE_PAGES: ModulePage[] = [
   {
     slug: "tipy-saitov-v-vydache",
     path: "/tipy-saitov-v-vydache/",
+    seoTitle: "Анализ выдачи: типы сайтов в ТОПе Яндекса и Google",
+    seoDescription:
+      "Какие сайты в ТОПе по запросу: агрегаторы, магазины, информационные. Доли типов, вердикт и таблица доменов, Яндекс и Google.",
     title: "Типы сайтов в выдаче",
     h1: "Типы сайтов в топе — кто занимает выдачу",
     description:
@@ -265,6 +326,9 @@ export const BASE_MODULE_PAGES: ModulePage[] = [
   {
     slug: "geo-lokalizaciya-kommerciya",
     path: "/geo-lokalizaciya-kommerciya/",
+    seoTitle: "Геозависимость и коммерциализация запросов онлайн",
+    seoDescription:
+      "Проверьте запросы на геозависимость, локализацию и коммерциализацию по выдаче Яндекса и Google. Список фраз, регионы, история.",
     title: "Гео, локализация и коммерция фраз",
     h1: "Геозависимость, локализация и коммерция фраз",
     description:
@@ -276,6 +340,9 @@ export const BASE_MODULE_PAGES: ModulePage[] = [
   {
     slug: "html-redaktor",
     path: "/html-redaktor/",
+    seoTitle: "Визуальный HTML-редактор онлайн для текстов",
+    seoDescription:
+      "Оформите текст в визуальном редакторе и получите чистый HTML-код. Готовые пресеты, сохранение версий и до 20 проектов в кабинете.",
     title: "HTML-редактор",
     h1: "HTML-редактор",
     description: "Визуальное оформление текста и преобразование в HTML.",
@@ -286,6 +353,9 @@ export const BASE_MODULE_PAGES: ModulePage[] = [
   {
     slug: "vydelenie-unikalnykh-slov-v-tekste",
     path: "/vydelenie-unikalnykh-slov-v-tekste/",
+    seoTitle: "Выделение уникальных слов из текста онлайн",
+    seoDescription:
+      "Список уникальных слов и словоформ из текста или списка ключевых фраз за секунды. Подсветка, копирование и экспорт в CSV.",
     title: "Выделение уникальных слов в тексте",
     h1: "Выделение уникальных слов в тексте",
     description: "Список уникальных слов и словосочетаний из текста или списка фраз.",
@@ -296,6 +366,9 @@ export const BASE_MODULE_PAGES: ModulePage[] = [
   {
     slug: "otslezhivanie-ssylok",
     path: "/otslezhivanie-ssylok/",
+    seoTitle: "Мониторинг обратных ссылок и анкоров",
+    seoDescription:
+      "Ежедневная проверка размещённых ссылок: есть ли ссылка на доноре, анкор, nofollow и noindex. Уведомления в Telegram и email.",
     title: "Отслеживание ссылок",
     h1: "Ссылки на месте — до просадки в отчётах",
     description:
@@ -307,6 +380,9 @@ export const BASE_MODULE_PAGES: ModulePage[] = [
   {
     slug: "otslezhivanie-sroka-registratsii-domenov",
     path: "/otslezhivanie-sroka-registratsii-domenov/",
+    seoTitle: "Проверка срока регистрации домена и напоминания",
+    seoDescription:
+      "Следите за сроком регистрации доменов и DNS: дата окончания, дни до продления и напоминания в Telegram и email до просрочки.",
     title: "Отслеживание срока регистрации доменов",
     h1: "Срок регистрации доменов — до просрочки, не после",
     description:
@@ -318,6 +394,9 @@ export const BASE_MODULE_PAGES: ModulePage[] = [
   {
     slug: "analiz-teksta",
     path: "/analiz-teksta/",
+    seoTitle: "Анализ текста онлайн: тошнота, водность, облако слов",
+    seoDescription:
+      "Проверьте текст онлайн: тошнота и водность, облако слов, повторы, морфология и закон Ципфа. Что исправить перед публикацией.",
     title: "Анализ текста",
     h1: "Анализ текста",
     description: "Качество текста, облака слов, морфология, закон Ципфа.",
@@ -328,6 +407,9 @@ export const BASE_MODULE_PAGES: ModulePage[] = [
   {
     slug: "klasterizator-klyuchevykh-slov",
     path: "/klasterizator-klyuchevykh-slov/",
+    seoTitle: "Кластеризация запросов онлайн по ТОПу — Soft и Hard",
+    seoDescription:
+      "Кластеризатор ядра по выдаче Яндекса и Google: группы по пересечению URL, Soft/Hard, ручной редактор, выгрузка CSV и XLS.",
     title: "Кластеризатор ключевых слов",
     h1: "Кластеры по выдаче — не по словам в Excel",
     description:

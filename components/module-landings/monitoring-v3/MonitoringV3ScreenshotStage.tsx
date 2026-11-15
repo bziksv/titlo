@@ -36,7 +36,7 @@ export function MonitoringV3ScreenshotStage({
               <span className="h-3 w-3 rounded-full bg-amber-500/80" />
               <span className="h-3 w-3 rounded-full bg-emerald-500/80" />
               <span className="ml-3 flex-1 truncate rounded-md bg-black/30 px-3 py-1 font-mono text-xs text-slate-500">
-                lk.redbox.su · мониторинг
+                cabinet.titlo.ru · мониторинг
               </span>
             </div>
             <div className="relative aspect-[16/10] overflow-hidden rounded-b-2xl border border-white/15 border-t-0 bg-[#0a0f1a] shadow-2xl shadow-brand-900/40">

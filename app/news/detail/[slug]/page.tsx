@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { NewsArticle } from "@/components/NewsArticle";
 import { PageShell } from "@/components/PageShell";
 import { NEWS_ITEMS, getNewsBySlug } from "@/lib/content/news";
+import { canonicalMetadata } from "@/lib/seo";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -15,7 +16,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const item = getNewsBySlug(slug);
   if (!item) return {};
-  return { title: item.title, description: item.excerpt };
+  return {
+    title: item.title,
+    description: item.excerpt,
+    ...canonicalMetadata(`/news/detail/${slug}/`),
+  };
 }
 
 export default async function NewsDetailPage({ params }: Props) {

@@ -5,8 +5,10 @@ import { ContentSections } from "@/components/ContentSections";
 import { PageShell } from "@/components/PageShell";
 import { getSitePage } from "@/lib/content/site-pages.generated";
 import { publicCopy } from "@/lib/public-copy";
+import { canonicalMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = {
+  ...canonicalMetadata("/about/"),
   title: "О сервисе Титло — история развития",
   description:
     "О компании Титло: инструменты для SEO, история с 2015 года, команда в Воронеже.",

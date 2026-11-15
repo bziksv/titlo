@@ -3,8 +3,10 @@ import { ContactForm } from "@/components/ContactForm";
 import { OfficeYandexMap } from "@/components/OfficeYandexMap";
 import { PageShell } from "@/components/PageShell";
 import { BANK, CONTACT_LEAD, OFFICES, REQUISITES, SUPPORT } from "@/lib/content/contact";
+import { canonicalMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = {
+  ...canonicalMetadata("/contact/"),
   title: "Контакты",
   description: "Контакты Титло: офис в Воронеже, поддержка, реквизиты.",
 };

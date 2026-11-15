@@ -18,6 +18,7 @@ import {
 import { ModuleV2Landing } from "@/components/module-landings/ModuleV2Landing";
 import { ModuleV3Landing } from "@/components/module-landings/ModuleV3Landing";
 import { renderModuleLanding } from "@/lib/render-module-landing";
+import { canonicalMetadata } from "@/lib/seo";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -25,14 +26,25 @@ export function generateStaticParams() {
   return getAllModuleSlugs().map((slug) => ({ slug }));
 }
 
+/** LAB-копии (*-v1 / *-v2 / *-v3) → slug публичного лендинга для canonical. */
+function canonicalModuleSlug(slug: string): string {
+  if (!isLabModuleSlug(slug)) return slug;
+  if (/^monitoring-pozicii-v\d$/.test(slug)) return "monitoring-pozicii-sayta";
+  const base = slug.replace(/-v\d$/, "");
+  return getBaseModuleBySlug(base) ? base : slug;
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const mod = getModuleBySlug(slug);
   if (!mod) return {};
+  const isLab = isLabModuleSlug(slug);
+  const canonicalSlug = canonicalModuleSlug(slug);
   return {
-    title: mod.title,
-    description: mod.description,
-    ...(isLabModuleSlug(slug)
+    title: isLab ? mod.title : (mod.seoTitle ?? mod.title),
+    description: isLab ? mod.description : (mod.seoDescription ?? mod.description),
+    ...canonicalMetadata(`/${canonicalSlug}/`),
+    ...(isLab
       ? { robots: { index: false, follow: false, googleBot: { index: false, follow: false } } }
       : {}),
   };

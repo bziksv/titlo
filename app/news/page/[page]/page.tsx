@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
 import { NewsList } from "@/components/NewsList";
 import { getNewsPage, getNewsTotalPages } from "@/lib/content/news";
+import { canonicalMetadata } from "@/lib/seo";
 
 type Props = {
   params: Promise<{ page: string }>;
@@ -23,6 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `Новости — страница ${n}`,
     description: `Новости и обновления сервиса Титло, страница ${n}.`,
+    ...canonicalMetadata(`/news/page/${n}/`),
   };
 }
 

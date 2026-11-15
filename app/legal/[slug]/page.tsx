@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { LegalHtml } from "@/components/LegalHtml";
 import { PageShell } from "@/components/PageShell";
 import { getAllLegalSlugs, getLegalBySlug } from "@/lib/content/legal";
+import { canonicalMetadata } from "@/lib/seo";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -17,6 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: doc.metaTitle,
     robots: { index: true, follow: true },
+    ...canonicalMetadata(`/legal/${slug}/`),
   };
 }
 

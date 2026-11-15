@@ -96,7 +96,7 @@ function orbit(...nodes: ModuleV2OrbitNode[]): readonly ModuleV2OrbitNode[] {
 export const MODULE_V2_OVERRIDES: Record<string, ModuleV2Override> = {
   "analiz-relevantnosti": {
     eyebrow: "Сравнение с ТОПом",
-    headline: "Релевантность страницы — в одном отчёте",
+    headline: "Анализ релевантности страницы — в одном отчёте",
     cta: "Запустить анализ релевантности",
     showSearchEngines: true,
     painGain: {
@@ -178,7 +178,7 @@ export const MODULE_V2_OVERRIDES: Record<string, ModuleV2Override> = {
 
   "analiz-konkurentov": {
     eyebrow: "Центр разведки по выдаче",
-    headline: "Карта конкурентов по вашим ключам",
+    headline: "Анализ конкурентов по вашим ключам",
     cta: "Собрать матрицу конкурентов",
     showSearchEngines: true,
     painGain: {
@@ -209,7 +209,7 @@ export const MODULE_V2_OVERRIDES: Record<string, ModuleV2Override> = {
 
   "monitoring-saytov": {
     eyebrow: "Доступность сайта",
-    headline: "Uptime и алерты — до жалобы клиента",
+    headline: "Мониторинг доступности сайта — до жалобы клиента",
     cta: "Настроить мониторинг сайта",
     painGain: {
       painTitle: "Без проверки по расписанию",
@@ -284,7 +284,7 @@ export const MODULE_V2_OVERRIDES: Record<string, ModuleV2Override> = {
 
   "proverka-meta-tegov-online": {
     eyebrow: "SEO и разметка",
-    headline: "Мониторинг мета-тегов вашего сайта с автоматическими проверками и историей изменений",
+    headline: "Проверка мета-тегов онлайн — с историей изменений",
     cta: "Проверить мета-теги",
     painGain: {
       painTitle: "Без автоматизации",
@@ -359,7 +359,7 @@ export const MODULE_V2_OVERRIDES: Record<string, ModuleV2Override> = {
 
   "generator_slov": {
     eyebrow: "Комбинации фраз",
-    headline: "Семантика из блоков — за минуту",
+    headline: "Генератор ключевых фраз — комбинации за минуту",
     cta: "Собрать комбинации фраз",
     painGain: {
       painTitle: "Без комбинатора",
@@ -433,7 +433,7 @@ export const MODULE_V2_OVERRIDES: Record<string, ModuleV2Override> = {
 
   "podschet-dliny-teksta": {
     eyebrow: "Символы и слова",
-    headline: "Подсчёт длины текста — с пробелами и без",
+    headline: "Подсчёт символов в тексте — с пробелами и без",
     cta: "Подсчитать текст",
     painGain: {
       painTitle: "Без единого счётчика",
@@ -507,7 +507,7 @@ export const MODULE_V2_OVERRIDES: Record<string, ModuleV2Override> = {
 
   "generator-paroley": {
     eyebrow: "Доступы и пароли",
-    headline: "Надёжный пароль — за один клик",
+    headline: "Генератор паролей — надёжный пароль за клик",
     cta: "Сгенерировать пароль",
     painGain: {
       painTitle: "Без генератора",
@@ -577,7 +577,7 @@ export const MODULE_V2_OVERRIDES: Record<string, ModuleV2Override> = {
 
   "sravnenie-spiskov-klyuchevykh-fraz": {
     eyebrow: "Два списка · четыре режима",
-    headline: "Сравнение списков ключевых фраз",
+    headline: "Сравнение списков ключевых фраз онлайн",
     cta: "Сравнить списки фраз",
     painGain: {
       painTitle: "Без быстрой сверки",
@@ -656,7 +656,7 @@ export const MODULE_V2_OVERRIDES: Record<string, ModuleV2Override> = {
 
   "udalenie-dublikatov": {
     eyebrow: "Чистка списков",
-    headline: "Удаление дубликатов из списка фраз и URL",
+    headline: "Удаление дубликатов строк из списка фраз и URL",
     cta: "Очистить список",
     painGain: {
       painTitle: "Без быстрой чистки",
@@ -735,7 +735,7 @@ export const MODULE_V2_OVERRIDES: Record<string, ModuleV2Override> = {
 
   "utm-metki": {
     eyebrow: "Разметка рекламы",
-    headline: "Генератор UTM — страница, метки, готовая ссылка",
+    headline: "Генератор UTM-меток — готовая ссылка за минуту",
     cta: "Собрать UTM-ссылку",
     painGain: {
       painTitle: "Без единого конструктора",
@@ -814,7 +814,7 @@ export const MODULE_V2_OVERRIDES: Record<string, ModuleV2Override> = {
 
   "kalkulyator-roi": {
     eyebrow: "Окупаемость рекламы",
-    headline: "ROI кампании — до запуска и по факту",
+    headline: "Калькулятор ROI рекламы — до запуска и по факту",
     cta: "Посчитать ROI",
     painGain: {
       painTitle: "Без модели в цифрах",
@@ -893,7 +893,7 @@ export const MODULE_V2_OVERRIDES: Record<string, ModuleV2Override> = {
 
   "http-headers": {
     eyebrow: "Ответ сервера",
-    headline: "HTTP-заголовки — код, кэш и HTML в одном отчёте",
+    headline: "Проверка HTTP-заголовков: код, кэш и HTML",
     cta: "Проверить заголовки",
     painGain: {
       painTitle: "Без единой проверки",
@@ -967,7 +967,7 @@ export const MODULE_V2_OVERRIDES: Record<string, ModuleV2Override> = {
 
   "html-redaktor": {
     eyebrow: "Вёрстка и контент",
-    headline: "Визуальный HTML-редактор — код рядом",
+    headline: "Визуальный HTML-редактор онлайн — код рядом",
     cta: "Открыть редактор",
     painGain: {
       painTitle: "Без удобного редактора",
@@ -1046,7 +1046,7 @@ export const MODULE_V2_OVERRIDES: Record<string, ModuleV2Override> = {
 
   "vydelenie-unikalnykh-slov-v-tekste": {
     eyebrow: "Центр уникальности",
-    headline: "Уникальные слова — на виду",
+    headline: "Выделение уникальных слов из текста",
     cta: "Выделить уникальные слова",
     painGain: {
       painTitle: "Сравнение двух текстов вручную",
@@ -1075,7 +1075,7 @@ export const MODULE_V2_OVERRIDES: Record<string, ModuleV2Override> = {
 
   "otslezhivanie-ssylok": {
     eyebrow: "Донор и анкор",
-    headline: "Ссылки на месте — до просадки в отчётах",
+    headline: "Мониторинг обратных ссылок — до просадки в отчётах",
     cta: "Открыть отслеживание ссылок",
     showSearchEngines: false,
     painGain: {
@@ -1150,7 +1150,7 @@ export const MODULE_V2_OVERRIDES: Record<string, ModuleV2Override> = {
 
   "otslezhivanie-sroka-registratsii-domenov": {
     eyebrow: "Срок и DNS",
-    headline: "Срок регистрации доменов — до просрочки, не после",
+    headline: "Проверка срока регистрации доменов — до просрочки",
     cta: "Добавить домены",
     painGain: {
       painTitle: "Без единого списка доменов",
@@ -1224,7 +1224,7 @@ export const MODULE_V2_OVERRIDES: Record<string, ModuleV2Override> = {
 
   "analiz-teksta": {
     eyebrow: "Центр качества текста",
-    headline: "Тошнота и вода — в цифрах",
+    headline: "Анализ текста онлайн: тошнота и вода в цифрах",
     cta: "Проанализировать текст",
     painGain: {
       painTitle: "«Плохой текст» без метрик",
@@ -1258,7 +1258,7 @@ export const MODULE_V2_OVERRIDES: Record<string, ModuleV2Override> = {
 
   "klasterizator-klyuchevykh-slov": {
     eyebrow: "Группировка ядра",
-    headline: "Кластеры по выдаче — не по словам в Excel",
+    headline: "Кластеризация запросов по выдаче — не в Excel",
     cta: "Запустить кластеризацию",
     showSearchEngines: true,
     painGain: {
@@ -1413,7 +1413,7 @@ export const MODULE_V2_OVERRIDES: Record<string, ModuleV2Override> = {
 
   "geo-lokalizaciya-kommerciya": {
     eyebrow: "Три метрики по фразе",
-    headline: "Гео, локализация и коммерция — в одном прогоне",
+    headline: "Геозависимость и коммерциализация запросов",
     cta: "Проверить фразы в кабинете",
     showSearchEngines: true,
     hubTitle: "Гео и коммерция",
@@ -1484,7 +1484,7 @@ export const MODULE_V2_OVERRIDES: Record<string, ModuleV2Override> = {
 
   "tipy-saitov-v-vydache": {
     eyebrow: "Срез выдачи по типам",
-    headline: "Типы сайтов в топе — кто занимает выдачу",
+    headline: "Анализ выдачи: какие типы сайтов в ТОПе",
     cta: "Разобрать выдачу в кабинете",
     showSearchEngines: true,
     hubTitle: "Типы сайтов",
@@ -1564,7 +1564,7 @@ export const MODULE_V2_OVERRIDES: Record<string, ModuleV2Override> = {
 
   "zapisi-domena": {
     eyebrow: "Регистрация и DNS",
-    headline: "Записи домена: срок, NS и соседи по IP",
+    headline: "Проверка DNS-записей домена: срок, NS и IP",
     cta: "Проверить домен в кабинете",
     showSearchEngines: false,
     hubTitle: "Записи домена",
@@ -1638,7 +1638,7 @@ export const MODULE_V2_OVERRIDES: Record<string, ModuleV2Override> = {
 
   "sbor-poiskovykh-podskazok": {
     eyebrow: "Хвост из подсказок",
-    headline: "Сбор поисковых подсказок Яндекс и Google",
+    headline: "Парсер поисковых подсказок Яндекса и Google",
     cta: "Собрать подсказки в кабинете",
     showSearchEngines: true,
     hubTitle: "Подсказки",
@@ -1713,7 +1713,7 @@ export const MODULE_V2_OVERRIDES: Record<string, ModuleV2Override> = {
 
   "proverka-indeksacii": {
     eyebrow: "Центр индексации",
-    headline: "Индексация и сниппеты Яндекс и Google",
+    headline: "Проверка индексации страниц в Яндексе и Google",
     cta: "Проверить индексацию в кабинете",
     showSearchEngines: true,
     hubTitle: "Индексация",
@@ -1723,7 +1723,7 @@ export const MODULE_V2_OVERRIDES: Record<string, ModuleV2Override> = {
 
   "proverka-teksta-esenin": {
     eyebrow: "Риск «Баден-Баден»",
-    headline: "Проверка текста Есенин — риск до публикации",
+    headline: "Есенин: проверка текста на «Баден-Баден»",
     cta: "Проверить текст в кабинете",
     showSearchEngines: false,
     painGain: {
@@ -1795,7 +1795,7 @@ export const MODULE_V2_OVERRIDES: Record<string, ModuleV2Override> = {
       { label: "Анализ текста", href: "/analiz-teksta/", role: "Частотность и облака" },
       { label: "Релевантность", href: "/analiz-relevantnosti/", role: "Посадочная vs ТОП" },
       { label: "HTML-редактор", href: "/html-redaktor/", role: "Вёрстка текста" },
-      { label: "Мета-теги", href: "/proverka-meta-tegov/", role: "Title · description" }
+      { label: "Мета-теги", href: "/proverka-meta-tegov-online/", role: "Title · description" }
     ),
     hubTitle: "Есенин",
     heroUi: { keysFooter: "Текст · HTML", dynamicsFooter: "6 вкладок · балл" },

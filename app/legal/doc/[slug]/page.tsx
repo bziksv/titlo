@@ -9,6 +9,7 @@ import {
   LEGAL_PDF_NAV,
   LEGAL_PDF_SCOPE_NOTE,
 } from "@/lib/content/legal-pdfs";
+import { canonicalMetadata } from "@/lib/seo";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -23,6 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: doc.metaTitle,
     robots: { index: true, follow: true },
+    ...canonicalMetadata(`/legal/doc/${slug}/`),
   };
 }
 

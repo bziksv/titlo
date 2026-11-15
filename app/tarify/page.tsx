@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import { PageShell } from "@/components/PageShell";
 import { TariffComparison } from "@/components/TariffComparison";
 import { getSitePage } from "@/lib/content/site-pages.generated";
+import { canonicalMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = {
+  ...canonicalMetadata("/tarify/"),
   title: "Тарифы",
   description: "Тарифные планы Титло: Бесплатный, Оптимальный, Ультимат, Максимум — сравнение лимитов.",
 };

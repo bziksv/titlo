@@ -3,8 +3,10 @@ import Link from "next/link";
 import { CompanyTimeline } from "@/components/CompanyTimeline";
 import { PageShell } from "@/components/PageShell";
 import { COMPANY_TIMELINE } from "@/lib/content/about";
+import { canonicalMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = {
+  ...canonicalMetadata("/news/istoriya-kompanii/"),
   title: "История компании",
   description: "История развития Титло с 2015 года.",
 };

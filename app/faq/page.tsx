@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { PageShell } from "@/components/PageShell";
 import { FAQ_ITEMS } from "@/lib/content/faq";
+import { canonicalMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = {
+  ...canonicalMetadata("/faq/"),
   title: "Вопрос-ответ",
   description: "Частые вопросы о сервисе Титло и личном кабинете.",
 };
