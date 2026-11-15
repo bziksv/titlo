@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { GLOSSARY_PATH, GLOSSARY_TERMS, glossaryTermPath } from "@/lib/content/glossary";
 import { getAllLegalPdfSlugs } from "@/lib/content/legal-pdfs";
 import { getPublicModuleSlugs } from "@/lib/content/modules";
 import { NEWS_ITEMS } from "@/lib/content/news";
@@ -58,5 +59,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.5,
   }));
 
-  return [...staticPages, ...modules, ...legal, ...news];
+  const glossary = [
+    { url: `${BASE}${GLOSSARY_PATH}`, lastModified: now, changeFrequency: "weekly" as const, priority: 0.7 },
+    ...GLOSSARY_TERMS.map((t) => ({
+      url: `${BASE}${glossaryTermPath(t.slug)}`,
+      lastModified: new Date(`${t.dateModified}T00:00:00+03:00`),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+  ];
+
+  return [...staticPages, ...modules, ...glossary, ...legal, ...news];
 }

@@ -226,6 +226,12 @@ export function Header() {
               </div>
           </div>
 
+          <Link
+            href="/slovar/"
+            className={pathname?.startsWith("/slovar") ? navItemActiveClass : navItemClass}
+          >
+            Словарь
+          </Link>
           <Link href="/tarify/" className={navItemClass}>
             Тарифы
           </Link>
@@ -354,6 +360,9 @@ export function Header() {
               <span className="w-[3.75rem] shrink-0" aria-hidden />
             </Link>
             <div className="mt-4 flex flex-col gap-1 border-t border-slate-200 pt-4 pb-6">
+              <Link href="/slovar/" className="rounded-lg px-2 py-2 hover:bg-brand-50" onClick={() => setMobileOpen(false)}>
+                SEO-словарь
+              </Link>
               <Link href="/tarify/" className="rounded-lg px-2 py-2 hover:bg-brand-50" onClick={() => setMobileOpen(false)}>
                 Тарифы
               </Link>

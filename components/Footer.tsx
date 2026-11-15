@@ -32,6 +32,9 @@ export function Footer() {
           <Link href="/about/" className="hover:text-white">
             О компании
           </Link>
+          <Link href="/slovar/" className="hover:text-white">
+            SEO-словарь
+          </Link>
           {LEGAL_NAV.map((link) => (
             <Link key={link.href} href={link.href} className="hover:text-white">
               {link.label}
