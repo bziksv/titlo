@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { GlossaryBlock } from "@/lib/content/glossary";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { GlossaryBlocks } from "@/components/glossary/GlossaryBlocks";
@@ -20,6 +21,32 @@ import {
 import { canonicalMetadata } from "@/lib/seo";
 
 type Props = { params: Promise<{ slug: string }> };
+
+const GRID_WIDE_CARD_WORDS = 70;
+
+/**
+ * Which cards of a two-column grid should span both columns on md+.
+ * Long cards always span; a short card that would otherwise sit alone in its
+ * row (before a wide card or at the end of an odd run) also spans, so the grid
+ * never leaves an empty half-row.
+ */
+function gridCardSpans(blocksList: GlossaryBlock[][]): boolean[] {
+  const wide = blocksList.map((b) => glossaryBlocksWordCount(b) > GRID_WIDE_CARD_WORDS);
+  const spans: boolean[] = [];
+  let col = 0;
+  for (let i = 0; i < wide.length; i++) {
+    if (wide[i]) {
+      spans.push(true);
+      col = 0;
+    } else if (col === 0 && (i + 1 >= wide.length || wide[i + 1])) {
+      spans.push(true);
+    } else {
+      spans.push(false);
+      col = col === 0 ? 1 : 0;
+    }
+  }
+  return spans;
+}
 
 export const dynamicParams = false;
 
@@ -75,6 +102,11 @@ export default async function GlossaryTermPage({ params }: Props) {
     { id: "svyazannye", label: "Связанные термины" },
     ...(term.faq.length ? [{ id: "faq", label: "Частые вопросы" }] : []),
   ];
+  const gridSpans = new Map(
+    term.sections
+      .filter((s) => s.layout === "grid" && s.subsections)
+      .map((s) => [s.id, gridCardSpans((s.subsections ?? []).map((sub) => sub.blocks))] as const),
+  );
 
   const num = (id: string) => toc.findIndex((t) => t.id === id) + 1;
 
@@ -153,12 +185,12 @@ export default async function GlossaryTermPage({ params }: Props) {
                 ) : null}
                 {s.subsections ? (
                   <div className={s.layout === "grid" ? "mt-6 grid gap-4 md:grid-cols-2" : s.layout === "stack" ? "mt-6 space-y-4" : "mt-2"}>
-                    {s.subsections.map((sub) =>
+                    {s.subsections.map((sub, si) =>
                       s.layout === "grid" || s.layout === "stack" ? (
                         <div
                           key={sub.title}
                           className={`min-w-0 rounded-xl border border-slate-200 bg-slate-50/50 p-5 md:p-6 ${
-                            s.layout === "grid" && glossaryBlocksWordCount(sub.blocks) > 70 ? "md:col-span-2" : ""
+                            s.layout === "grid" && gridSpans.get(s.id)?.[si] ? "md:col-span-2" : ""
                           }`}
                         >
                           <h3 className="text-lg font-semibold text-slate-900">{sub.title}</h3>
