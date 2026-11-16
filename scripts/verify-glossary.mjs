@@ -34,7 +34,7 @@ for (const path of ["/slovar/", `/slovar/${slug}/`]) {
     }
     console.log("Article words:", article.text().match(/[\p{L}\p{N}]+(?:[-–][\p{L}\p{N}]+)*/gu)?.length);
     const faq = graphs.find(g => g["@type"] === "FAQPage");
-    assert.equal(faq.mainEntity.length, article.find("details").length);
+    assert.equal(faq.mainEntity.length, article.find("#faq details").length);
   } else {
     assert.equal($("a[data-category]").length, 20, "20 category chips");
   }

@@ -3,9 +3,18 @@
  * Инлайн-разметка в строках: **жирный** и [текст](/href/) — см. components/glossary/RichText.tsx.
  */
 
+export type GlossaryCalloutVariant = "important" | "tip" | "mistake";
+
 export type GlossaryBlock =
   | { type: "p"; text: string }
-  | { type: "ul"; items: string[] }
+  /** check — список с галочками; cards — сетка карточек; mistakes — карточки с ✕ */
+  | { type: "ul"; items: string[]; style?: "check" | "cards" | "mistakes" }
+  /** выделенная врезка: Важно / Совет / Ошибка */
+  | { type: "callout"; variant: GlossaryCalloutVariant; text: string }
+  /** сравнение в две (или больше) колонки */
+  | { type: "compare"; items: { title: string; text: string }[] }
+  /** простая схема «шаг → шаг → шаг» */
+  | { type: "flow"; caption?: string; steps: { label: string; note: string }[] }
   | { type: "steps"; items: { title: string; text: string }[] }
   | {
       type: "table";
@@ -17,6 +26,9 @@ export type GlossaryBlock =
 
 export type GlossarySubsection = { title: string; blocks: GlossaryBlock[] };
 
+/** stack — подразделы как отдельные карточки; grid — карточки в две колонки */
+export type GlossarySectionLayout = "default" | "stack" | "grid";
+
 export type GlossarySection = {
   /** якорь (#id) */
   id: string;
@@ -25,6 +37,7 @@ export type GlossarySection = {
   tocLabel?: string;
   blocks?: GlossaryBlock[];
   subsections?: GlossarySubsection[];
+  layout?: GlossarySectionLayout;
 };
 
 export type GlossaryModuleCta = {
@@ -56,9 +69,9 @@ export type GlossaryTerm = {
   modules: { id: string; title: string; intro: string; items: GlossaryModuleCta[] };
   /** связанные термины (названия); ссылкой становятся только опубликованные */
   related: string[];
+  /** блок «Главное» — короткие выводы в конце статьи */
+  takeaways?: string[];
   faq: GlossaryFaqItem[];
   datePublished: string;
   dateModified: string;
-  /** подпись об источниках данных */
-  sources: string;
 };

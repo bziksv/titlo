@@ -1,6 +1,6 @@
 import { GLOSSARY_CATEGORIES, type GlossaryCategory } from "./plan";
 import { SEMANTICHESKOE_YADRO } from "./terms/semanticheskoe-yadro";
-import type { GlossaryTerm } from "./types";
+import type { GlossaryBlock, GlossaryTerm } from "./types";
 
 export { GLOSSARY_CATEGORIES, GLOSSARY_PLANNED_TOTAL } from "./plan";
 export type { GlossaryCategory } from "./plan";
@@ -27,6 +27,51 @@ export function findPublishedTermPath(name: string): string | undefined {
   const n = norm(name);
   const term = GLOSSARY_TERMS.find((t) => norm(t.term) === n || t.aliases.some((a) => norm(a) === n));
   return term ? glossaryTermPath(term.slug) : undefined;
+}
+
+const WORD_RE = /[\p{L}\p{N}]+(?:[-–][\p{L}\p{N}]+)*/gu;
+const countWords = (s: string) => s.match(WORD_RE)?.length ?? 0;
+
+function blockText(b: GlossaryBlock): string[] {
+  switch (b.type) {
+    case "p":
+      return [b.text];
+    case "ul":
+      return b.items;
+    case "callout":
+      return [b.text];
+    case "compare":
+      return b.items.flatMap((i) => [i.title, i.text]);
+    case "flow":
+      return [b.caption ?? "", ...b.steps.flatMap((st) => [st.label, st.note])];
+    case "steps":
+      return b.items.flatMap((i) => [i.title, i.text]);
+    case "table":
+      return [b.caption, ...b.head, ...b.rows.flat(), b.note ?? ""];
+  }
+}
+
+/** Число слов в наборе блоков (для раскладки: длинные карточки растягиваются на всю ширину). */
+export function glossaryBlocksWordCount(blocks: readonly GlossaryBlock[]): number {
+  return blocks.flatMap(blockText).reduce((n, p) => n + countWords(p), 0);
+}
+
+/** Число слов в тексте статьи термина (определение, разделы, сервисы, FAQ). */
+export function glossaryTermWordCount(t: GlossaryTerm): number {
+  const parts: string[] = [t.h1, t.definition];
+  for (const s of t.sections) {
+    parts.push(s.title, ...(s.blocks ?? []).flatMap(blockText));
+    for (const sub of s.subsections ?? []) parts.push(sub.title, ...sub.blocks.flatMap(blockText));
+  }
+  parts.push(t.modules.title, t.modules.intro, ...t.modules.items.flatMap((m) => [m.title, m.text]));
+  parts.push(...(t.takeaways ?? []), ...t.faq.flatMap((f) => [f.q, f.a]));
+  return parts.reduce((n, p) => n + countWords(p.replace(/\]\([^)]*\)/g, "]")), 0);
+}
+
+/** Время чтения в минутах (~180 слов/мин для русского текста, округление вверх). */
+export const GLOSSARY_WORDS_PER_MINUTE = 180;
+export function glossaryReadingMinutes(t: GlossaryTerm): number {
+  return Math.max(1, Math.ceil(glossaryTermWordCount(t) / GLOSSARY_WORDS_PER_MINUTE));
 }
 
 export function getGlossaryCategory(id: string): GlossaryCategory | undefined {

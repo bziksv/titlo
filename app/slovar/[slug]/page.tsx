@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import { GlossaryBlocks } from "@/components/glossary/GlossaryBlocks";
 import { GlossaryFaq } from "@/components/glossary/GlossaryFaq";
 import { GlossaryTermJsonLd } from "@/components/glossary/GlossaryJsonLd";
+import { GlossaryTocMobile, GlossaryTocSidebar } from "@/components/glossary/GlossaryToc";
+import { RichText } from "@/components/glossary/RichText";
 import {
   findPublishedTermPath,
   getGlossaryCategory,
@@ -11,6 +13,8 @@ import {
   GLOSSARY_NAME,
   GLOSSARY_PATH,
   GLOSSARY_TERMS,
+  glossaryBlocksWordCount,
+  glossaryReadingMinutes,
   glossaryTermPath,
 } from "@/lib/content/glossary";
 import { canonicalMetadata } from "@/lib/seo";
@@ -36,7 +40,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 const sectionCard = "scroll-mt-24 rounded-2xl border border-slate-200/70 bg-white p-6 shadow-sm md:p-10";
-const h2Class = "text-xl font-bold tracking-tight text-slate-900 md:text-2xl";
+const h2Class = "flex items-start gap-3 text-xl font-bold tracking-tight text-slate-900 md:text-2xl";
+
+/** H2 с маленьким номером раздела (тот же номер, что в оглавлении). */
+function SectionHeading({ n, children }: { n: number; children: React.ReactNode }) {
+  return (
+    <h2 className={h2Class}>
+      <span
+        aria-hidden
+        className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-sm font-bold tabular-nums text-brand-700 ring-1 ring-brand-200 md:mt-1"
+      >
+        {n}
+      </span>
+      <span className="min-w-0">{children}</span>
+    </h2>
+  );
+}
 
 function formatDate(iso: string) {
   const [y, m, d] = iso.split("-");
@@ -48,6 +67,7 @@ export default async function GlossaryTermPage({ params }: Props) {
   const term = getGlossaryTerm(slug);
   if (!term) notFound();
   const category = getGlossaryCategory(term.categoryId);
+  const readingMinutes = glossaryReadingMinutes(term);
 
   const toc = [
     ...term.sections.map((s) => ({ id: s.id, label: s.tocLabel ?? s.title })),
@@ -56,17 +76,7 @@ export default async function GlossaryTermPage({ params }: Props) {
     ...(term.faq.length ? [{ id: "faq", label: "Частые вопросы" }] : []),
   ];
 
-  const tocList = (linkClass: string) => (
-    <ol className="mt-3 space-y-1.5 text-sm">
-      {toc.map((t) => (
-        <li key={t.id}>
-          <a className={linkClass} href={`#${t.id}`}>
-            {t.label}
-          </a>
-        </li>
-      ))}
-    </ol>
-  );
+  const num = (id: string) => toc.findIndex((t) => t.id === id) + 1;
 
   return (
     <>
@@ -112,40 +122,87 @@ export default async function GlossaryTermPage({ params }: Props) {
             <h1 className="mt-4 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">{term.h1}</h1>
             <p className="mt-3 text-sm text-slate-500">
               Обновлено <time dateTime={term.dateModified}>{formatDate(term.dateModified)}</time>
+              <span className="mx-2 opacity-60" aria-hidden>
+                ·
+              </span>
+              Время чтения: {readingMinutes} мин
             </p>
 
-            <div className="mt-6 rounded-2xl border border-brand-200 bg-brand-50/60 p-6 shadow-sm md:p-8">
-              <p className="text-xs font-semibold uppercase tracking-wide text-brand-700">Коротко</p>
-              <p className="mt-3 text-[1.05rem] leading-relaxed text-slate-800">{term.definition}</p>
+            <div className="relative mt-6 overflow-hidden rounded-2xl border border-brand-200 bg-gradient-to-br from-brand-50 to-white p-6 shadow-sm md:p-8">
+              <span className="absolute inset-y-0 left-0 w-1.5 bg-brand-600" aria-hidden />
+              <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-brand-700">
+                <svg viewBox="0 0 20 20" className="h-4 w-4" fill="currentColor" aria-hidden>
+                  <path d="M4 3.5A1.5 1.5 0 0 1 5.5 2h6.4c.4 0 .8.2 1.1.4l2.6 2.6c.3.3.4.7.4 1.1v10.4a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 4 16.5v-13ZM7 9a.75.75 0 0 0 0 1.5h6A.75.75 0 0 0 13 9H7Zm0 3a.75.75 0 0 0 0 1.5h4a.75.75 0 0 0 0-1.5H7Z" />
+                </svg>
+                Коротко
+              </p>
+              <p className="mt-3 max-w-[70ch] text-[1.05rem] leading-relaxed text-slate-800 md:text-lg">{term.definition}</p>
             </div>
 
-            <nav aria-label="Содержание" className="mt-6 rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-600 lg:hidden">
-              <p className="font-semibold text-slate-900">На этой странице</p>
-              {tocList("text-brand-600 hover:text-brand-700")}
-            </nav>
+            <div className="mt-6">
+              <GlossaryTocMobile items={toc} />
+            </div>
 
             {term.sections.map((s, i) => (
               <section key={s.id} id={s.id} className={`${i === 0 ? "mt-10" : "mt-8"} ${sectionCard}`}>
-                <h2 className={h2Class}>{s.title}</h2>
+                <SectionHeading n={num(s.id)}>{s.title}</SectionHeading>
                 {s.blocks ? (
                   <div className="mt-6">
                     <GlossaryBlocks blocks={s.blocks} />
                   </div>
                 ) : null}
-                {s.subsections?.map((sub) => (
-                  <div key={sub.title} className="mt-8 first:mt-6">
-                    <h3 className="text-lg font-semibold text-slate-900">{sub.title}</h3>
-                    <div className="mt-3">
-                      <GlossaryBlocks blocks={sub.blocks} />
-                    </div>
+                {s.subsections ? (
+                  <div className={s.layout === "grid" ? "mt-6 grid gap-4 md:grid-cols-2" : s.layout === "stack" ? "mt-6 space-y-4" : "mt-2"}>
+                    {s.subsections.map((sub) =>
+                      s.layout === "grid" || s.layout === "stack" ? (
+                        <div
+                          key={sub.title}
+                          className={`min-w-0 rounded-xl border border-slate-200 bg-slate-50/50 p-5 md:p-6 ${
+                            s.layout === "grid" && glossaryBlocksWordCount(sub.blocks) > 70 ? "md:col-span-2" : ""
+                          }`}
+                        >
+                          <h3 className="text-lg font-semibold text-slate-900">{sub.title}</h3>
+                          <div className="mt-3">
+                            <GlossaryBlocks blocks={sub.blocks} />
+                          </div>
+                        </div>
+                      ) : (
+                        <div key={sub.title} className="mt-6 border-t border-slate-100 pt-6 first:border-t-0 first:pt-0">
+                          <h3 className="text-lg font-semibold text-slate-900">{sub.title}</h3>
+                          <div className="mt-3">
+                            <GlossaryBlocks blocks={sub.blocks} />
+                          </div>
+                        </div>
+                      ),
+                    )}
                   </div>
-                ))}
+                ) : null}
               </section>
             ))}
 
+            {term.takeaways?.length ? (
+              <section aria-labelledby="glavnoe" className="mt-8 rounded-2xl border border-brand-200 bg-brand-600 p-6 text-white shadow-sm md:p-8">
+                <h2 id="glavnoe" className="text-lg font-bold md:text-xl">
+                  Главное
+                </h2>
+                <ul className="mt-4 grid gap-3 sm:grid-cols-2">
+                  {term.takeaways.map((t) => (
+                    <li key={t} className="flex gap-3 rounded-xl bg-white/10 p-4 leading-relaxed text-brand-50">
+                      <svg viewBox="0 0 16 16" className="mt-1 h-4 w-4 shrink-0" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                        <path d="M3.5 8.5l3 3 6-7" />
+                      </svg>
+                      <span>
+                        <RichText text={t} />
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            ) : null}
+
             <section id={term.modules.id} className={`mt-8 ${sectionCard}`}>
-              <h2 className={h2Class}>{term.modules.title}</h2>
-              <p className="mt-6 text-base leading-relaxed text-slate-600 md:text-[1.0625rem]">{term.modules.intro}</p>
+              <SectionHeading n={num(term.modules.id)}>{term.modules.title}</SectionHeading>
+              <p className="mt-6 max-w-[70ch] text-base leading-relaxed text-slate-600 md:text-[1.0625rem]">{term.modules.intro}</p>
               <div className="mt-6 grid gap-4 md:grid-cols-3">
                 {term.modules.items.map((m) => (
                   <Link
@@ -165,7 +222,7 @@ export default async function GlossaryTermPage({ params }: Props) {
             </section>
 
             <section id="svyazannye" className="mt-8 scroll-mt-24">
-              <h2 className={h2Class}>Связанные термины</h2>
+              <SectionHeading n={num("svyazannye")}>Связанные термины</SectionHeading>
               <p className="mt-2 text-sm text-slate-500">Термины без ссылки ещё в работе — ссылки появятся после публикации.</p>
               <ul className="mt-4 grid gap-2 sm:grid-cols-2">
                 {term.related.map((name) => {
@@ -192,21 +249,17 @@ export default async function GlossaryTermPage({ params }: Props) {
 
             {term.faq.length ? (
               <section id="faq" className="mt-10 scroll-mt-24">
-                <h2 className={h2Class}>Частые вопросы</h2>
+                <SectionHeading n={num("faq")}>Частые вопросы</SectionHeading>
                 <div className="mt-6">
                   <GlossaryFaq items={term.faq} />
                 </div>
               </section>
             ) : null}
 
-            <p className="mt-8 text-sm leading-relaxed text-slate-500">{term.sources}</p>
           </article>
 
           <aside className="hidden lg:sticky lg:top-24 lg:block">
-            <nav aria-label="Содержание" className="rounded-2xl border border-slate-200/80 bg-white p-4 shadow-sm">
-              <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">На этой странице</p>
-              {tocList("text-slate-700 hover:text-brand-700")}
-            </nav>
+            <GlossaryTocSidebar items={toc} />
             <Link href={GLOSSARY_PATH} className="mt-4 block text-sm font-semibold text-brand-600 hover:text-brand-700">
               ← Ко всем терминам
             </Link>

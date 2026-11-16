@@ -12,12 +12,14 @@ export function GlossaryFaq({ items }: { items: readonly GlossaryFaqItem[] }) {
         >
           <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5 text-left font-semibold text-slate-900 hover:bg-slate-50/80 [&::-webkit-details-marker]:hidden">
             <span className="pr-4">{item.q}</span>
+            {/* Плюс/минус — две полоски, отцентрованные абсолютно (не текстовый глиф: у шрифта своя базовая линия). */}
             <span
               aria-hidden
-              className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-slate-100 text-lg text-slate-600 group-open:bg-brand-600 group-open:text-white"
+              data-faq-icon
+              className="relative h-8 w-8 shrink-0 rounded-full bg-slate-100 text-slate-600 group-open:bg-brand-600 group-open:text-white"
             >
-              <span className="group-open:hidden">+</span>
-              <span className="hidden group-open:inline">−</span>
+              <span className="absolute left-1/2 top-1/2 h-0.5 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-current" />
+              <span className="absolute left-1/2 top-1/2 h-3 w-0.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-current group-open:hidden" />
             </span>
           </summary>
           <div className="border-t border-slate-100 bg-slate-50/50 px-6 py-5 text-[1.05rem] leading-relaxed text-slate-700">{item.a}</div>
