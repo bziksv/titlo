@@ -9,6 +9,7 @@ const TERMS = {
   "chastotnost-zaprosa": ["generator_slov", "sbor-poiskovykh-podskazok", "klasterizator-klyuchevykh-slov"],
   "poiskovye-podskazki": ["sbor-poiskovykh-podskazok", "klasterizator-klyuchevykh-slov", "generator_slov"],
   "intent": ["tipy-saitov-v-vydache", "geo-lokalizaciya-kommerciya", "klasterizator-klyuchevykh-slov"],
+  "geozavisimyy-zapros": ["geo-lokalizaciya-kommerciya", "klasterizator-klyuchevykh-slov", "tipy-saitov-v-vydache"],
 };
 const termPaths = Object.keys(TERMS).map((s) => `/slovar/${s}/`);
 for (const path of ["/slovar/", ...termPaths]) {
