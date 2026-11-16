@@ -48,6 +48,19 @@ export function GlossaryTermJsonLd({ term }: { term: GlossaryTerm }) {
         "@context": "https://schema.org",
         "@graph": [
           {
+            "@type": "WebPage",
+            "@id": `${url}#webpage`,
+            url,
+            name: term.h1,
+            description: term.seoDescription,
+            inLanguage: "ru-RU",
+            datePublished: term.datePublished,
+            dateModified: term.dateModified,
+            isPartOf: { "@id": `${base()}/#website` },
+            mainEntity: { "@id": `${url}#term` },
+            breadcrumb: { "@id": `${url}#breadcrumb` },
+          },
+          {
             "@type": "DefinedTerm",
             "@id": `${url}#term`,
             name: term.term,

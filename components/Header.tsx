@@ -134,6 +134,7 @@ export function Header() {
               type="button"
               className={companyOpen ? navItemActiveClass : navItemClass}
               aria-expanded={companyOpen}
+              aria-controls="header-company"
               aria-haspopup="true"
               onFocus={() => {
                 setCompanyOpen(true);
@@ -145,8 +146,7 @@ export function Header() {
             >
               Компания
             </button>
-            {companyOpen && (
-              <div className={`${dropdownAnchorClass} min-w-[180px]`}>
+              <div id="header-company" hidden={!companyOpen} className={`${dropdownAnchorClass} min-w-[180px]`}>
                 <div className={`${dropdownPanelClass} py-2`}>
                   {NAV_COMPANY.map((item) => (
                     <Link
@@ -163,7 +163,6 @@ export function Header() {
                   ))}
                 </div>
               </div>
-            )}
           </div>
 
           <div
@@ -265,7 +264,7 @@ export function Header() {
           </a>
           <button
             type="button"
-            className="rounded-lg border border-slate-300 px-2.5 py-1.5 text-sm transition hover:border-brand-300 hover:bg-brand-50"
+            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-slate-300 text-base transition hover:border-brand-300 hover:bg-brand-50"
             onClick={() => setMobileOpen((v) => !v)}
             aria-expanded={mobileOpen}
             aria-controls="header-mobile-menu"
@@ -297,7 +296,7 @@ export function Header() {
             </Link>
             <button
               type="button"
-              className="rounded-lg border border-slate-300 px-2.5 py-1.5 text-sm transition hover:border-brand-300 hover:bg-brand-50"
+              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-slate-300 text-base transition hover:border-brand-300 hover:bg-brand-50"
               onClick={() => setMobileOpen(false)}
               aria-label="Закрыть меню"
             >

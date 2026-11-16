@@ -1,4 +1,5 @@
 import { GLOSSARY_CATEGORIES, type GlossaryCategory } from "./plan";
+import { KLASTERIZATSIYA_ZAPROSOV } from "./terms/klasterizatsiya-zaprosov";
 import { SEMANTICHESKOE_YADRO } from "./terms/semanticheskoe-yadro";
 import type { GlossaryBlock, GlossaryTerm } from "./types";
 
@@ -10,7 +11,7 @@ export const GLOSSARY_PATH = "/slovar/";
 export const GLOSSARY_NAME = "SEO-словарь";
 
 /** Опубликованные термины. Новый термин: файл в terms/ + строка здесь. */
-export const GLOSSARY_TERMS: readonly GlossaryTerm[] = [SEMANTICHESKOE_YADRO];
+export const GLOSSARY_TERMS: readonly GlossaryTerm[] = [SEMANTICHESKOE_YADRO, KLASTERIZATSIYA_ZAPROSOV];
 
 export function getGlossaryTerm(slug: string): GlossaryTerm | undefined {
   return GLOSSARY_TERMS.find((t) => t.slug === slug);

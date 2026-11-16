@@ -59,28 +59,38 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const term = getGlossaryTerm(slug);
   if (!term) return {};
   const path = glossaryTermPath(term.slug);
+  const canonical = canonicalMetadata(path, { image: `${path}opengraph-image/`, imageAlt: term.h1 });
   return {
     title: term.seoTitle,
     description: term.seoDescription,
-    ...canonicalMetadata(path, { image: `${path}opengraph-image/`, imageAlt: term.h1 }),
+    ...canonical,
+    openGraph: {
+      ...canonical.openGraph,
+      type: "article",
+      publishedTime: term.datePublished,
+      modifiedTime: term.dateModified,
+    },
   };
 }
 
 const sectionCard = "scroll-mt-24 rounded-2xl border border-slate-200/70 bg-white p-6 shadow-sm md:p-10";
-const h2Class = "flex items-start gap-3 text-xl font-bold tracking-tight text-slate-900 md:text-2xl";
+const h2Class = "min-w-0 text-xl font-bold tracking-tight text-slate-900 md:text-2xl";
 
-/** H2 с маленьким номером раздела (тот же номер, что в оглавлении). */
+/**
+ * H2 с маленьким номером раздела (тот же номер, что в оглавлении).
+ * Номер — соседний элемент, а не часть <h2>: иначе для поисковиков и анализатора
+ * заголовок читается как «3Пример…». Внутри <h2> — только текст заголовка.
+ */
 function SectionHeading({ n, children }: { n: number; children: React.ReactNode }) {
   return (
-    <h2 className={h2Class}>
+    <div className="flex items-start gap-3">
       <span
         aria-hidden
-        className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-sm font-bold tabular-nums text-brand-700 ring-1 ring-brand-200 md:mt-1"
-      >
-        {n}
-      </span>
-      <span className="min-w-0">{children}</span>
-    </h2>
+        data-num={n}
+        className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-sm font-bold tabular-nums text-brand-700 ring-1 ring-brand-200 before:content-[attr(data-num)] md:mt-1"
+      />
+      <h2 className={h2Class}>{children}</h2>{" "}
+    </div>
   );
 }
 
@@ -116,28 +126,22 @@ export default async function GlossaryTermPage({ params }: Props) {
       <div className="border-b border-slate-200 bg-gradient-to-br from-white via-brand-50/30 to-slate-50">
         <div className="mx-auto max-w-6xl px-4 py-6 md:py-8">
           <nav className="text-sm text-slate-500" aria-label="Хлебные крошки">
-            <Link href="/" className="hover:text-brand-700">
-              Главная
-            </Link>
-            <span className="mx-2 opacity-60" aria-hidden>
-              /
-            </span>
-            <Link href={GLOSSARY_PATH} className="hover:text-brand-700">
-              {GLOSSARY_NAME}
-            </Link>
-            <span className="mx-2 opacity-60" aria-hidden>
-              /
-            </span>
-            <span aria-current="page" className="text-slate-700">
-              {term.term}
-            </span>
+            <ol className="flex flex-wrap items-center gap-x-2">
+              <li><Link href="/" className="inline-flex min-h-11 items-center hover:text-brand-700">Главная</Link></li>
+              <li className="flex items-center gap-2 before:content-['/']">
+                <Link href={GLOSSARY_PATH} className="inline-flex min-h-11 items-center hover:text-brand-700">{GLOSSARY_NAME}</Link>
+              </li>
+              <li className="flex min-h-11 items-center gap-2 text-slate-700 before:text-slate-500 before:content-['/']" aria-current="page">
+                {term.term}
+              </li>
+            </ol>
           </nav>
         </div>
       </div>
 
       <div className="mx-auto max-w-6xl px-4 py-8 md:py-12">
         <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,1fr)_16.5rem]">
-          <article className="min-w-0" data-glossary-term={term.slug}>
+          <div role="article" className="min-w-0" data-glossary-term={term.slug}>
             <div className="flex flex-wrap items-center gap-2">
               {category ? (
                 <Link
@@ -167,7 +171,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                   <path d="M4 3.5A1.5 1.5 0 0 1 5.5 2h6.4c.4 0 .8.2 1.1.4l2.6 2.6c.3.3.4.7.4 1.1v10.4a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 4 16.5v-13ZM7 9a.75.75 0 0 0 0 1.5h6A.75.75 0 0 0 13 9H7Zm0 3a.75.75 0 0 0 0 1.5h4a.75.75 0 0 0 0-1.5H7Z" />
                 </svg>
                 Коротко
-              </p>
+              </p>{" "}
               <p className="mt-3 max-w-[70ch] text-[1.05rem] leading-relaxed text-slate-800 md:text-lg">{term.definition}</p>
             </div>
 
@@ -216,7 +220,7 @@ export default async function GlossaryTermPage({ params }: Props) {
               <section aria-labelledby="glavnoe" className="mt-8 rounded-2xl border border-brand-200 bg-brand-600 p-6 text-white shadow-sm md:p-8">
                 <h2 id="glavnoe" className="text-lg font-bold md:text-xl">
                   Главное
-                </h2>
+                </h2>{" "}
                 <ul className="mt-4 grid gap-3 sm:grid-cols-2">
                   {term.takeaways.map((t) => (
                     <li key={t} className="flex gap-3 rounded-xl bg-white/10 p-4 leading-relaxed text-brand-50">
@@ -242,11 +246,11 @@ export default async function GlossaryTermPage({ params }: Props) {
                     href={`/${m.slug}/`}
                     className="group flex flex-col rounded-2xl border border-slate-200/80 bg-slate-50 p-5 transition hover:border-brand-200 hover:bg-white hover:shadow-md"
                   >
-                    <span className="text-xs font-semibold uppercase tracking-wide text-brand-700">Сервис</span>
-                    <span className="mt-2 text-lg font-semibold text-slate-900 group-hover:text-brand-700">{m.title}</span>
-                    <span className="mt-2 flex-1 text-sm leading-relaxed text-slate-600">{m.text}</span>
+                    <span className="text-xs font-semibold uppercase tracking-wide text-brand-700">Сервис</span>{" "}
+                    <span className="mt-2 text-lg font-semibold text-slate-900 group-hover:text-brand-700">{m.title}</span>{" "}
+                    <span className="mt-2 flex-1 text-sm leading-relaxed text-slate-600">{m.text}</span>{" "}
                     <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-600">
-                      Открыть <span aria-hidden>→</span>
+                      Открыть <span aria-hidden className="after:content-['→']" />
                     </span>
                   </Link>
                 ))}
@@ -266,9 +270,7 @@ export default async function GlossaryTermPage({ params }: Props) {
                       {href ? (
                         <Link href={href} className={`${cls} text-slate-800 transition hover:border-brand-200 hover:text-brand-700`}>
                           {name}
-                          <span className="text-brand-600" aria-hidden>
-                            →
-                          </span>
+                          <span className="text-brand-600 after:content-['→']" aria-hidden />
                         </Link>
                       ) : (
                         <span className={`${cls} text-slate-700`}>{name}</span>
@@ -288,13 +290,13 @@ export default async function GlossaryTermPage({ params }: Props) {
               </section>
             ) : null}
 
-          </article>
+          </div>
 
           {/* A div, not the aside element: see the callout comment in GlossaryBlocks. */}
           <div className="hidden lg:sticky lg:top-24 lg:block">
             <GlossaryTocSidebar items={toc} />
             <Link href={GLOSSARY_PATH} className="mt-4 block text-sm font-semibold text-brand-600 hover:text-brand-700">
-              ← Ко всем терминам
+              <span aria-hidden className="before:content-['←']" /> Ко всем терминам
             </Link>
           </div>
         </div>

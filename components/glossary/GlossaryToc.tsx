@@ -74,13 +74,14 @@ function TocList({ items, active, onNavigate }: { items: TocItem[]; active: stri
                 on ? "border-brand-600 bg-brand-50 font-semibold text-brand-700" : "border-transparent text-slate-600 hover:bg-slate-50 hover:text-slate-900"
               }`}
             >
+              {/* Номер — через CSS (attr), чтобы текст ссылки был только названием раздела. */}
               <span
-                className={`mt-px flex h-5 w-5 shrink-0 items-center justify-center rounded-md text-[0.7rem] font-bold tabular-nums ${
+                aria-hidden
+                data-num={i + 1}
+                className={`mt-px flex h-5 w-5 shrink-0 items-center justify-center rounded-md text-[0.7rem] font-bold tabular-nums before:content-[attr(data-num)] ${
                   on ? "bg-brand-600 text-white" : "bg-slate-100 text-slate-500"
                 }`}
-              >
-                {i + 1}
-              </span>
+              />
               <span className="min-w-0">{t.label}</span>
             </a>
           </li>
@@ -99,7 +100,7 @@ export function GlossaryTocSidebar({ items }: { items: TocItem[] }) {
     <nav aria-label="Содержание" className="rounded-2xl border border-slate-200/80 bg-white p-4 shadow-sm">
       <div className="flex items-center justify-between gap-2">
         <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Содержание</p>
-        <span className="text-xs tabular-nums text-slate-400">{Math.round(progress * 100)}%</span>
+        <span className="text-xs tabular-nums text-slate-500">{Math.round(progress * 100)}%</span>
       </div>
       <div className="mt-2 h-1 overflow-hidden rounded-full bg-slate-100" aria-hidden>
         <div className="h-full origin-left rounded-full bg-brand-600" style={{ transform: `scaleX(${progress})` }} />
@@ -124,7 +125,7 @@ export function GlossaryTocMobile({ items }: { items: TocItem[] }) {
             <path d="M4 5h12M4 10h12M4 15h8" />
           </svg>
           Содержание
-          <span className="text-sm font-normal text-slate-400">· {items.length}</span>
+          <span className="text-sm font-normal text-slate-500">· {items.length}</span>
         </span>
         <svg viewBox="0 0 20 20" className="h-4 w-4 text-slate-500 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
           <path d="M5 8l5 5 5-5" />

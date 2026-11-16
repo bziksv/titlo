@@ -3,8 +3,13 @@ import assert from "node:assert/strict";
 import { load } from "cheerio";
 const base = (process.env.BASE_URL || "http://localhost:3013").replace(/\/$/, "");
 const origin = process.env.CANONICAL_BASE || "https://titlo.ru";
-const slug = "semanticheskoe-yadro";
-for (const path of ["/slovar/", `/slovar/${slug}/`]) {
+const TERMS = {
+  "semanticheskoe-yadro": ["sbor-poiskovykh-podskazok", "generator_slov", "klasterizator-klyuchevykh-slov"],
+  "klasterizatsiya-zaprosov": ["klasterizator-klyuchevykh-slov", "tipy-saitov-v-vydache", "sbor-poiskovykh-podskazok"],
+};
+const termPaths = Object.keys(TERMS).map((s) => `/slovar/${s}/`);
+for (const path of ["/slovar/", ...termPaths]) {
+  const slug = path.split("/")[2] || "";
   const response = await fetch(base + path);
   assert.equal(response.status, 200, `${path}: HTTP 200`);
   const $ = load(await response.text());
@@ -14,23 +19,33 @@ for (const path of ["/slovar/", `/slovar/${slug}/`]) {
     const data = JSON.parse($(el).text());
     return data["@graph"] || [data];
   });
-  for (const type of ["BreadcrumbList", ...(path.includes(slug) ? ["DefinedTerm", "FAQPage"] : ["DefinedTermSet"])]) {
+  for (const type of ["BreadcrumbList", ...(slug ? ["DefinedTerm", "FAQPage", "WebPage"] : ["DefinedTermSet"])]) {
     assert.ok(graphs.some(g => g["@type"] === type), `${path}: ${type}`);
   }
   assert.ok(JSON.stringify(graphs).includes('"DefinedTermSet"'), `${path}: DefinedTermSet (top-level or inDefinedTermSet)`);
   const links = $('main a[href^="/slovar/"]').toArray().map(el => $(el).attr("href"));
-  assert.ok(links.every(href => ["/slovar/", `/slovar/${slug}/`].includes(href.split("#")[0])), "no unpublished term links");
+  assert.ok(links.every(href => ["/slovar/", ...termPaths].includes(href.split("#")[0])), "no unpublished term links");
   for (const el of $('main a[href^="#"]').toArray()) {
     const id = $(el).attr("href").slice(1);
     assert.ok($(`[id="${id}"]`).length, `anchor exists: ${id}`);
   }
-  if (path.includes(slug)) {
-    const article = $("article[data-glossary-term]");
+  if (slug) {
+    const article = $('[role="article"][data-glossary-term]');
     assert.equal(article.length, 1);
+    assert.equal($("article, aside, address, abbr, audio, area").length, 0, "no a-prefix tags that trigger analyzer link regex");
+    assert.equal($('meta[property="og:type"]').attr("content"), "article");
+    const page = graphs.find((g) => g["@type"] === "WebPage");
+    assert.equal(page.dateModified, article.find("time").attr("datetime"));
+    assert.equal($("#header-company a").length > 0, true, "company links in SSR HTML");
+    assert.equal($('button[aria-controls="header-company"]').length, 1);
     assert.ok(article.find("table tbody tr").length >= 5);
     assert.ok(article.find("details").length >= 3);
-    for (const mod of ["sbor-poiskovykh-podskazok", "generator_slov", "klasterizator-klyuchevykh-slov"]) {
+    for (const mod of TERMS[slug]) {
       assert.ok(article.find(`a[href="/${mod}/"]`).length, `module CTA ${mod}`);
+    }
+    for (const el of $("main h2, main h3, main nav a").toArray()) {
+      const t = $(el).text().trim();
+      assert.ok(t && !/^[\d✕×→+−-]/.test(t), `clean heading/TOC text: «${t}»`);
     }
     console.log("Article words:", article.text().match(/[\p{L}\p{N}]+(?:[-–][\p{L}\p{N}]+)*/gu)?.length);
     const faq = graphs.find(g => g["@type"] === "FAQPage");
@@ -46,5 +61,5 @@ for (const path of ["/slovar/", `/slovar/${slug}/`]) {
   console.log(`PASS ${path}`);
 }
 const sm = await (await fetch(base + "/sitemap.xml")).text();
-for (const path of ["/slovar/", `/slovar/${slug}/`]) assert.ok(sm.includes(origin + path), `sitemap: ${path}`);
+for (const path of ["/slovar/", ...termPaths]) assert.ok(sm.includes(origin + path), `sitemap: ${path}`);
 console.log("PASS sitemap");
