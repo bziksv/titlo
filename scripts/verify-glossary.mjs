@@ -13,6 +13,7 @@ const TERMS = {
   "operatory-wordstat": ["generator_slov", "sbor-poiskovykh-podskazok", "klasterizator-klyuchevykh-slov"],
   "relevantnost": ["analiz-relevantnosti", "analiz-teksta", "klasterizator-klyuchevykh-slov"],
   "lsi-slova": ["analiz-relevantnosti", "sbor-poiskovykh-podskazok", "analiz-teksta"],
+  "tf-idf": ["analiz-relevantnosti", "analiz-teksta"],
 };
 const termPaths = Object.keys(TERMS).map((s) => `/slovar/${s}/`);
 for (const path of ["/slovar/", ...termPaths]) {
