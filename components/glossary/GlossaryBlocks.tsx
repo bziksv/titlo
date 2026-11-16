@@ -111,8 +111,11 @@ export function GlossaryBlocks({ blocks }: { blocks: readonly GlossaryBlock[] })
             );
           case "callout": {
             const c = CALLOUT[b.variant];
+            // A div, not the aside element: Titlo's relevance analyzer strips links with
+            // /<a.*?>.*?<\/a>/, which also matches an "aside" opening tag and swallows
+            // all text up to the next closing link tag.
             return (
-              <aside key={i} className={`max-w-[70ch] rounded-xl border p-4 md:p-5 ${c.box}`}>
+              <div key={i} role="note" className={`max-w-[70ch] rounded-xl border p-4 md:p-5 ${c.box}`}>
                 <p className="flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-slate-900">
                   <span className={`flex h-6 w-6 items-center justify-center rounded-full ${c.badge}`}>{c.icon}</span>
                   {c.label}
@@ -120,7 +123,7 @@ export function GlossaryBlocks({ blocks }: { blocks: readonly GlossaryBlock[] })
                 <p className="mt-2 leading-relaxed text-slate-700">
                   <RichText text={b.text} />
                 </p>
-              </aside>
+              </div>
             );
           }
           case "compare":

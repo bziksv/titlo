@@ -290,12 +290,13 @@ export default async function GlossaryTermPage({ params }: Props) {
 
           </article>
 
-          <aside className="hidden lg:sticky lg:top-24 lg:block">
+          {/* A div, not the aside element: see the callout comment in GlossaryBlocks. */}
+          <div className="hidden lg:sticky lg:top-24 lg:block">
             <GlossaryTocSidebar items={toc} />
             <Link href={GLOSSARY_PATH} className="mt-4 block text-sm font-semibold text-brand-600 hover:text-brand-700">
               ← Ко всем терминам
             </Link>
-          </aside>
+          </div>
         </div>
       </div>
     </>
