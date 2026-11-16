@@ -202,7 +202,7 @@ export function GlossaryBlocks({ blocks }: { blocks: readonly GlossaryBlock[] })
                     <thead className="bg-slate-50 text-xs uppercase tracking-wide text-slate-500">
                       <tr>
                         {b.head.map((h, j) => (
-                          <th key={j} scope="col" className={`px-4 py-2.5 font-semibold ${j === 1 || j === 2 ? "text-right" : ""}`}>
+                          <th key={j} scope="col" className={`px-4 py-2.5 font-semibold ${!b.textOnly && (j === 1 || j === 2) ? "text-right" : ""}`}>
                             {h}{" "}
                           </th>
                         ))}
@@ -215,7 +215,7 @@ export function GlossaryBlocks({ blocks }: { blocks: readonly GlossaryBlock[] })
                             <td
                               key={c}
                               className={`px-4 py-2.5 ${c === 0 ? "font-medium text-slate-900" : "text-slate-600"} ${
-                                c === 1 || c === 2 ? "whitespace-nowrap text-right tabular-nums" : ""
+                                b.textOnly ? "align-top" : c === 1 || c === 2 ? "whitespace-nowrap text-right tabular-nums" : ""
                               }`}
                             >
                               {cell}{" "}

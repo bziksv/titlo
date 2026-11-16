@@ -22,6 +22,8 @@ export type GlossaryBlock =
       head: string[];
       rows: string[][];
       note?: string;
+      /** Текстовая таблица: без числового выравнивания и nowrap во 2–3 колонках. */
+      textOnly?: boolean;
     };
 
 export type GlossarySubsection = { title: string; blocks: GlossaryBlock[] };
