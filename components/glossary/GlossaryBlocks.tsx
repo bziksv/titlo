@@ -195,7 +195,7 @@ export function GlossaryBlocks({ blocks }: { blocks: readonly GlossaryBlock[] })
                 <p aria-hidden className="mb-2 text-xs text-slate-500 after:content-['Таблицу_можно_прокрутить_вбок_→'] md:hidden" />
                 <div className="relative">
                 <div className="overflow-x-auto rounded-xl border border-slate-200" tabIndex={0} aria-label={b.caption}>
-                  <table className="w-full min-w-[640px] border-collapse text-left text-sm">
+                  <table className={`w-full ${b.compact ? "" : "min-w-[640px] "}border-collapse text-left text-sm`}>
                     <caption className="border-b border-slate-200 bg-slate-50 px-4 py-3 text-left font-semibold text-slate-900">
                       {b.caption}
                     </caption>

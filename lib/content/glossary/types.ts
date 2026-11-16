@@ -24,6 +24,8 @@ export type GlossaryBlock =
       note?: string;
       /** Текстовая таблица: без числового выравнивания и nowrap во 2–3 колонках. */
       textOnly?: boolean;
+      /** Узкая таблица (2 колонки): без min-width, на мобильном помещается без прокрутки. */
+      compact?: boolean;
     };
 
 export type GlossarySubsection = { title: string; blocks: GlossaryBlock[] };
