@@ -87,6 +87,7 @@ export function GlossaryBlocks({ blocks }: { blocks: readonly GlossaryBlock[] })
                         </span>
                         <span className="min-w-0 text-[0.95rem] leading-relaxed text-slate-600">
                           {lead ? <strong className="block text-slate-900">{lead}</strong> : null}
+                          {lead ? " " : null}
                           <RichText text={rest} />
                         </span>
                       </li>

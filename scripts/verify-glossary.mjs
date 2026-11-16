@@ -6,6 +6,7 @@ const origin = process.env.CANONICAL_BASE || "https://titlo.ru";
 const TERMS = {
   "semanticheskoe-yadro": ["sbor-poiskovykh-podskazok", "generator_slov", "klasterizator-klyuchevykh-slov"],
   "klasterizatsiya-zaprosov": ["klasterizator-klyuchevykh-slov", "tipy-saitov-v-vydache", "sbor-poiskovykh-podskazok"],
+  "chastotnost-zaprosa": ["generator_slov", "sbor-poiskovykh-podskazok", "klasterizator-klyuchevykh-slov"],
 };
 const termPaths = Object.keys(TERMS).map((s) => `/slovar/${s}/`);
 for (const path of ["/slovar/", ...termPaths]) {
