@@ -39,6 +39,7 @@ const TERMS = {
   "bitye-ssylki": ["audit-sajta", "http-headers", "proverka-indeksacii"],
   "sitemap-xml": ["audit-sajta", "http-headers", "proverka-indeksacii"],
   "kommercheskie-faktory": ["audit-sajta", "monitoring-pozicii-sayta", "geo-lokalizaciya-kommerciya"],
+  "vidimost-sayta": ["monitoring-pozicii-sayta", "tipy-saitov-v-vydache", "sbor-poiskovykh-podskazok"],
   "kod-otveta-servera": ["http-headers", "audit-sajta", "proverka-indeksacii"],
   "utm-metki": ["utm-metki", "kalkulyator-roi", "audit-sajta"],
 };
