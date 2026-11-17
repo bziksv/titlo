@@ -16,6 +16,7 @@ const TERMS = {
   "tf-idf": ["analiz-relevantnosti", "analiz-teksta"],
   "toshnota-teksta": ["analiz-teksta", "proverka-teksta-esenin", "analiz-relevantnosti"],
   "vodnost-teksta": ["analiz-teksta", "proverka-teksta-esenin", "podschet-dliny-teksta"],
+  "baden-baden": ["proverka-teksta-esenin", "analiz-teksta", "analiz-relevantnosti"],
 };
 const termPaths = Object.keys(TERMS).map((s) => `/slovar/${s}/`);
 for (const path of ["/slovar/", ...termPaths]) {

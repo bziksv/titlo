@@ -11,6 +11,7 @@ import { LSI_SLOVA } from "./terms/lsi-slova";
 import { TF_IDF } from "./terms/tf-idf";
 import { TOSHNOTA_TEKSTA } from "./terms/toshnota-teksta";
 import { VODNOST_TEKSTA } from "./terms/vodnost-teksta";
+import { BADEN_BADEN } from "./terms/baden-baden";
 import type { GlossaryBlock, GlossaryTerm } from "./types";
 
 export { GLOSSARY_CATEGORIES, GLOSSARY_PLANNED_TOTAL } from "./plan";
@@ -21,7 +22,7 @@ export const GLOSSARY_PATH = "/slovar/";
 export const GLOSSARY_NAME = "SEO-словарь";
 
 /** Опубликованные термины. Новый термин: файл в terms/ + строка здесь. */
-export const GLOSSARY_TERMS: readonly GlossaryTerm[] = [SEMANTICHESKOE_YADRO, KLASTERIZATSIYA_ZAPROSOV, CHASTOTNOST_ZAPROSA, POISKOVYE_PODSKAZKI, INTENT, GEOZAVISIMYY_ZAPROS, OPERATORY_WORDSTAT, RELEVANTNOST, LSI_SLOVA, TF_IDF, TOSHNOTA_TEKSTA, VODNOST_TEKSTA];
+export const GLOSSARY_TERMS: readonly GlossaryTerm[] = [SEMANTICHESKOE_YADRO, KLASTERIZATSIYA_ZAPROSOV, CHASTOTNOST_ZAPROSA, POISKOVYE_PODSKAZKI, INTENT, GEOZAVISIMYY_ZAPROS, OPERATORY_WORDSTAT, RELEVANTNOST, LSI_SLOVA, TF_IDF, TOSHNOTA_TEKSTA, VODNOST_TEKSTA, BADEN_BADEN];
 
 export function getGlossaryTerm(slug: string): GlossaryTerm | undefined {
   return GLOSSARY_TERMS.find((t) => t.slug === slug);
