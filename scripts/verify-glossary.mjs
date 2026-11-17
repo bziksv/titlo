@@ -23,6 +23,7 @@ const TERMS = {
   "robots-txt": ["audit-sajta", "proverka-indeksacii", "http-headers"],
   "canonical": ["udalenie-dublikatov", "audit-sajta", "proverka-indeksacii"],
   "title": ["proverka-meta-tegov-online", "analiz-teksta", "audit-sajta"],
+  "snippet": ["proverka-meta-tegov-online", "tipy-saitov-v-vydache", "analiz-teksta"],
   "kod-otveta-servera": ["http-headers", "audit-sajta", "proverka-indeksacii"],
   "utm-metki": ["utm-metki", "kalkulyator-roi", "audit-sajta"],
 };
