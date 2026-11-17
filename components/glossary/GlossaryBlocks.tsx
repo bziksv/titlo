@@ -218,7 +218,7 @@ export function GlossaryBlocks({ blocks }: { blocks: readonly GlossaryBlock[] })
                                 b.textOnly ? "align-top" : c === 1 || c === 2 ? "whitespace-nowrap text-right tabular-nums" : ""
                               }`}
                             >
-                              {cell}{" "}
+                              <RichText text={cell} />{" "}
                             </td>
                           ))}
                         </tr>
