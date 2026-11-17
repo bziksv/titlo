@@ -30,6 +30,7 @@ const TERMS = {
   "povedencheskie-faktory": ["proverka-meta-tegov-online", "monitoring-pozicii-sayta", "audit-sajta"],
   "ctr": ["proverka-meta-tegov-online", "tipy-saitov-v-vydache", "monitoring-pozicii-sayta"],
   "poiskovyy-robot": ["proverka-indeksacii", "audit-sajta", "http-headers"],
+  "mikrorazmetka": ["proverka-meta-tegov-online", "tipy-saitov-v-vydache", "audit-sajta"],
   "kod-otveta-servera": ["http-headers", "audit-sajta", "proverka-indeksacii"],
   "utm-metki": ["utm-metki", "kalkulyator-roi", "audit-sajta"],
 };
