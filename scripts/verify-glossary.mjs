@@ -15,6 +15,7 @@ const TERMS = {
   "lsi-slova": ["analiz-relevantnosti", "sbor-poiskovykh-podskazok", "analiz-teksta"],
   "tf-idf": ["analiz-relevantnosti", "analiz-teksta"],
   "toshnota-teksta": ["analiz-teksta", "proverka-teksta-esenin", "analiz-relevantnosti"],
+  "vodnost-teksta": ["analiz-teksta", "proverka-teksta-esenin", "podschet-dliny-teksta"],
 };
 const termPaths = Object.keys(TERMS).map((s) => `/slovar/${s}/`);
 for (const path of ["/slovar/", ...termPaths]) {

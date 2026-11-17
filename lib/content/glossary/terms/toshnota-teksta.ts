@@ -296,7 +296,7 @@ export const TOSHNOTA_TEKSTA: GlossaryTerm = {
       {
         slug: "analiz-teksta",
         title: "Анализ текста",
-        text: "Считает частоту слов, тошноту и водность, помогает найти повторы и аккуратно доработать текст.",
+        text: "Считает частоту слов, тошноту и [водность](/slovar/vodnost-teksta/), помогает найти повторы и аккуратно доработать текст.",
       },
       {
         slug: "proverka-teksta-esenin",

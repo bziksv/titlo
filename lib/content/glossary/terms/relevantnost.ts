@@ -381,7 +381,7 @@ export const RELEVANTNOST: GlossaryTerm = {
       {
         slug: "analiz-teksta",
         title: "Анализ текста",
-        text: "Считает частоту слов, [тошноту](/slovar/toshnota-teksta/) и водность, помогает найти переспам.",
+        text: "Считает частоту слов, [тошноту](/slovar/toshnota-teksta/) и [водность](/slovar/vodnost-teksta/), помогает найти переспам.",
       },
       {
         slug: "klasterizator-klyuchevykh-slov",
