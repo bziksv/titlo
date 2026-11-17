@@ -16,6 +16,7 @@ const TERMS = {
   "tf-idf": ["analiz-relevantnosti", "analiz-teksta"],
   "toshnota-teksta": ["analiz-teksta", "proverka-teksta-esenin", "analiz-relevantnosti"],
   "vodnost-teksta": ["analiz-teksta", "proverka-teksta-esenin", "podschet-dliny-teksta"],
+  "unikalnost-teksta": ["analiz-teksta", "proverka-teksta-esenin", "analiz-relevantnosti"],
   "baden-baden": ["proverka-teksta-esenin", "analiz-teksta", "analiz-relevantnosti"],
   "indeksatsiya": ["proverka-indeksacii", "audit-sajta", "http-headers"],
   "robots-txt": ["audit-sajta", "proverka-indeksacii", "http-headers"],
