@@ -29,6 +29,7 @@ const TERMS = {
   "teg-h1": ["proverka-meta-tegov-online", "analiz-teksta", "audit-sajta"],
   "povedencheskie-faktory": ["proverka-meta-tegov-online", "monitoring-pozicii-sayta", "audit-sajta"],
   "ctr": ["proverka-meta-tegov-online", "tipy-saitov-v-vydache", "monitoring-pozicii-sayta"],
+  "poiskovyy-robot": ["proverka-indeksacii", "audit-sajta", "http-headers"],
   "kod-otveta-servera": ["http-headers", "audit-sajta", "proverka-indeksacii"],
   "utm-metki": ["utm-metki", "kalkulyator-roi", "audit-sajta"],
 };
