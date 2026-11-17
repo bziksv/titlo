@@ -24,6 +24,7 @@ const TERMS = {
   "canonical": ["udalenie-dublikatov", "audit-sajta", "proverka-indeksacii"],
   "title": ["proverka-meta-tegov-online", "analiz-teksta", "audit-sajta"],
   "snippet": ["proverka-meta-tegov-online", "tipy-saitov-v-vydache", "analiz-teksta"],
+  "poiskovaya-vydacha": ["tipy-saitov-v-vydache", "monitoring-pozicii-sayta", "geo-lokalizaciya-kommerciya"],
   "kod-otveta-servera": ["http-headers", "audit-sajta", "proverka-indeksacii"],
   "utm-metki": ["utm-metki", "kalkulyator-roi", "audit-sajta"],
 };
