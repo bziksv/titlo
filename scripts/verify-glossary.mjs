@@ -18,6 +18,7 @@ const TERMS = {
   "vodnost-teksta": ["analiz-teksta", "proverka-teksta-esenin", "podschet-dliny-teksta"],
   "baden-baden": ["proverka-teksta-esenin", "analiz-teksta", "analiz-relevantnosti"],
   "indeksatsiya": ["proverka-indeksacii", "audit-sajta", "http-headers"],
+  "robots-txt": ["audit-sajta", "proverka-indeksacii", "http-headers"],
 };
 const termPaths = Object.keys(TERMS).map((s) => `/slovar/${s}/`);
 for (const path of ["/slovar/", ...termPaths]) {
