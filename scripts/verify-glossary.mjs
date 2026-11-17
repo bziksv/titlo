@@ -19,6 +19,7 @@ const TERMS = {
   "baden-baden": ["proverka-teksta-esenin", "analiz-teksta", "analiz-relevantnosti"],
   "indeksatsiya": ["proverka-indeksacii", "audit-sajta", "http-headers"],
   "robots-txt": ["audit-sajta", "proverka-indeksacii", "http-headers"],
+  "canonical": ["udalenie-dublikatov", "audit-sajta", "proverka-indeksacii"],
 };
 const termPaths = Object.keys(TERMS).map((s) => `/slovar/${s}/`);
 for (const path of ["/slovar/", ...termPaths]) {
