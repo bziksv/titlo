@@ -27,6 +27,7 @@ const TERMS = {
   "poiskovaya-vydacha": ["tipy-saitov-v-vydache", "monitoring-pozicii-sayta", "geo-lokalizaciya-kommerciya"],
   "struktura-sayta": ["klasterizator-klyuchevykh-slov", "audit-sajta", "sbor-poiskovykh-podskazok"],
   "teg-h1": ["proverka-meta-tegov-online", "analiz-teksta", "audit-sajta"],
+  "povedencheskie-faktory": ["proverka-meta-tegov-online", "monitoring-pozicii-sayta", "audit-sajta"],
   "kod-otveta-servera": ["http-headers", "audit-sajta", "proverka-indeksacii"],
   "utm-metki": ["utm-metki", "kalkulyator-roi", "audit-sajta"],
 };

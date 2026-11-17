@@ -22,6 +22,7 @@ import { SNIPPET } from "./terms/snippet";
 import { POISKOVAYA_VYDACHA } from "./terms/poiskovaya-vydacha";
 import { STRUKTURA_SAYTA } from "./terms/struktura-sayta";
 import { TEG_H1 } from "./terms/teg-h1";
+import { POVEDENCHESKIE_FAKTORY } from "./terms/povedencheskie-faktory";
 import { KOD_OTVETA_SERVERA } from "./terms/kod-otveta-servera";
 import { UTM_METKI } from "./terms/utm-metki";
 import type { GlossaryBlock, GlossaryTerm } from "./types";
@@ -34,7 +35,7 @@ export const GLOSSARY_PATH = "/slovar/";
 export const GLOSSARY_NAME = "SEO-словарь";
 
 /** Опубликованные термины. Новый термин: файл в terms/ + строка здесь. */
-export const GLOSSARY_TERMS: readonly GlossaryTerm[] = [SEMANTICHESKOE_YADRO, KLASTERIZATSIYA_ZAPROSOV, CHASTOTNOST_ZAPROSA, POISKOVYE_PODSKAZKI, INTENT, GEOZAVISIMYY_ZAPROS, OPERATORY_WORDSTAT, RELEVANTNOST, LSI_SLOVA, TF_IDF, TOSHNOTA_TEKSTA, VODNOST_TEKSTA, UNIKALNOST_TEKSTA, KLYUCHEVYE_SLOVA, BADEN_BADEN, INDEKSATSIYA, ROBOTS_TXT, CANONICAL, TITLE, SNIPPET, POISKOVAYA_VYDACHA, STRUKTURA_SAYTA, TEG_H1, KOD_OTVETA_SERVERA, UTM_METKI];
+export const GLOSSARY_TERMS: readonly GlossaryTerm[] = [SEMANTICHESKOE_YADRO, KLASTERIZATSIYA_ZAPROSOV, CHASTOTNOST_ZAPROSA, POISKOVYE_PODSKAZKI, INTENT, GEOZAVISIMYY_ZAPROS, OPERATORY_WORDSTAT, RELEVANTNOST, LSI_SLOVA, TF_IDF, TOSHNOTA_TEKSTA, VODNOST_TEKSTA, UNIKALNOST_TEKSTA, KLYUCHEVYE_SLOVA, BADEN_BADEN, INDEKSATSIYA, ROBOTS_TXT, CANONICAL, TITLE, SNIPPET, POISKOVAYA_VYDACHA, STRUKTURA_SAYTA, TEG_H1, POVEDENCHESKIE_FAKTORY, KOD_OTVETA_SERVERA, UTM_METKI];
 
 export function getGlossaryTerm(slug: string): GlossaryTerm | undefined {
   return GLOSSARY_TERMS.find((t) => t.slug === slug);
