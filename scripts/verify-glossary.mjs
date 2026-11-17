@@ -17,6 +17,7 @@ const TERMS = {
   "toshnota-teksta": ["analiz-teksta", "proverka-teksta-esenin", "analiz-relevantnosti"],
   "vodnost-teksta": ["analiz-teksta", "proverka-teksta-esenin", "podschet-dliny-teksta"],
   "unikalnost-teksta": ["analiz-teksta", "proverka-teksta-esenin", "analiz-relevantnosti"],
+  "klyuchevye-slova": ["sbor-poiskovykh-podskazok", "generator_slov", "klasterizator-klyuchevykh-slov"],
   "baden-baden": ["proverka-teksta-esenin", "analiz-teksta", "analiz-relevantnosti"],
   "indeksatsiya": ["proverka-indeksacii", "audit-sajta", "http-headers"],
   "robots-txt": ["audit-sajta", "proverka-indeksacii", "http-headers"],
