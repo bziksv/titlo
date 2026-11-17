@@ -25,6 +25,7 @@ const TERMS = {
   "title": ["proverka-meta-tegov-online", "analiz-teksta", "audit-sajta"],
   "snippet": ["proverka-meta-tegov-online", "tipy-saitov-v-vydache", "analiz-teksta"],
   "poiskovaya-vydacha": ["tipy-saitov-v-vydache", "monitoring-pozicii-sayta", "geo-lokalizaciya-kommerciya"],
+  "struktura-sayta": ["klasterizator-klyuchevykh-slov", "audit-sajta", "sbor-poiskovykh-podskazok"],
   "kod-otveta-servera": ["http-headers", "audit-sajta", "proverka-indeksacii"],
   "utm-metki": ["utm-metki", "kalkulyator-roi", "audit-sajta"],
 };
