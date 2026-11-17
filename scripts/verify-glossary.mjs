@@ -33,6 +33,7 @@ const TERMS = {
   "mikrorazmetka": ["proverka-meta-tegov-online", "tipy-saitov-v-vydache", "audit-sajta"],
   "obratnye-ssylki": ["otslezhivanie-ssylok", "audit-sajta", "monitoring-pozicii-sayta"],
   "nakrutka-pf": ["monitoring-pozicii-sayta", "audit-sajta", "proverka-meta-tegov-online"],
+  "nofollow": ["proverka-meta-tegov-online", "audit-sajta", "otslezhivanie-ssylok"],
   "kod-otveta-servera": ["http-headers", "audit-sajta", "proverka-indeksacii"],
   "utm-metki": ["utm-metki", "kalkulyator-roi", "audit-sajta"],
 };
