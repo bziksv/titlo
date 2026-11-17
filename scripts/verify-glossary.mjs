@@ -22,6 +22,7 @@ const TERMS = {
   "canonical": ["udalenie-dublikatov", "audit-sajta", "proverka-indeksacii"],
   "title": ["proverka-meta-tegov-online", "analiz-teksta", "audit-sajta"],
   "kod-otveta-servera": ["http-headers", "audit-sajta", "proverka-indeksacii"],
+  "utm-metki": ["utm-metki", "kalkulyator-roi", "audit-sajta"],
 };
 const termPaths = Object.keys(TERMS).map((s) => `/slovar/${s}/`);
 for (const path of ["/slovar/", ...termPaths]) {
