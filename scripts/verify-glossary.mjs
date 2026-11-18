@@ -35,6 +35,7 @@ const TERMS = {
   "obratnye-ssylki": ["otslezhivanie-ssylok", "audit-sajta", "monitoring-pozicii-sayta"],
   "nakrutka-pf": ["monitoring-pozicii-sayta", "audit-sajta", "proverka-meta-tegov-online"],
   "nofollow": ["proverka-meta-tegov-online", "audit-sajta", "otslezhivanie-ssylok"],
+  "noindex": ["audit-sajta", "proverka-indeksacii", "proverka-meta-tegov-online"],
   "ankor": ["otslezhivanie-ssylok", "audit-sajta", "monitoring-pozicii-sayta"],
   "posadochnaya-stranica": ["proverka-meta-tegov-online", "audit-sajta", "monitoring-pozicii-sayta"],
   "bitye-ssylki": ["audit-sajta", "http-headers", "proverka-indeksacii"],
