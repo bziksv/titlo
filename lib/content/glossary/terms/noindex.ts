@@ -411,6 +411,7 @@ export const NOINDEX: GlossaryTerm = {
     "Sitemap.xml",
     "Тег Title",
     "Битые ссылки",
+    "Дубли страниц",
   ],
   takeaways: [
     "noindex — директива, которая запрещает поисковым системам держать страницу в индексе. Её задают метатегом robots или заголовком X-Robots-Tag.",

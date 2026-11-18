@@ -39,6 +39,7 @@ const TERMS = {
   "301-redirekt": ["http-headers", "audit-sajta", "proverka-indeksacii"],
   "organicheskiy-trafik": ["monitoring-pozicii-sayta", "audit-sajta", "analiz-relevantnosti"],
   "ranzhirovanie": ["monitoring-pozicii-sayta", "analiz-relevantnosti", "audit-sajta"],
+  "dubli-stranits": ["udalenie-dublikatov", "audit-sajta", "proverka-indeksacii"],
   "ankor": ["otslezhivanie-ssylok", "audit-sajta", "monitoring-pozicii-sayta"],
   "posadochnaya-stranica": ["proverka-meta-tegov-online", "audit-sajta", "monitoring-pozicii-sayta"],
   "bitye-ssylki": ["audit-sajta", "http-headers", "proverka-indeksacii"],
