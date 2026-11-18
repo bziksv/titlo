@@ -46,6 +46,7 @@ const TERMS = {
   "tekstovye-faktory": ["analiz-relevantnosti", "analiz-teksta", "proverka-teksta-esenin"],
   "meta-tegi": ["proverka-meta-tegov-online", "audit-sajta", "proverka-indeksacii"],
   "description": ["proverka-meta-tegov-online", "audit-sajta", "analiz-teksta"],
+  "plotnost-klyuchevykh-slov": ["analiz-teksta", "analiz-relevantnosti", "proverka-teksta-esenin"],
   "ankor": ["otslezhivanie-ssylok", "audit-sajta", "monitoring-pozicii-sayta"],
   "posadochnaya-stranica": ["proverka-meta-tegov-online", "audit-sajta", "monitoring-pozicii-sayta"],
   "bitye-ssylki": ["audit-sajta", "http-headers", "proverka-indeksacii"],
