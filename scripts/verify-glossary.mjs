@@ -41,6 +41,7 @@ const TERMS = {
   "ranzhirovanie": ["monitoring-pozicii-sayta", "analiz-relevantnosti", "audit-sajta"],
   "dubli-stranits": ["udalenie-dublikatov", "audit-sajta", "proverka-indeksacii"],
   "ssylochnaya-massa": ["otslezhivanie-ssylok", "audit-sajta", "monitoring-pozicii-sayta"],
+  "kraud-marketing": ["otslezhivanie-ssylok", "audit-sajta", "monitoring-pozicii-sayta"],
   "ankor": ["otslezhivanie-ssylok", "audit-sajta", "monitoring-pozicii-sayta"],
   "posadochnaya-stranica": ["proverka-meta-tegov-online", "audit-sajta", "monitoring-pozicii-sayta"],
   "bitye-ssylki": ["audit-sajta", "http-headers", "proverka-indeksacii"],

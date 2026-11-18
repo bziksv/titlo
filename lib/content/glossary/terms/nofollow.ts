@@ -337,6 +337,7 @@ export const NOFOLLOW: GlossaryTerm = {
     "Анкор",
     "noindex",
     "Ссылочная масса",
+    "Крауд-маркетинг",
   ],
   takeaways: [
     "Nofollow — значение атрибута rel у ссылки, а не отдельный html-тег и не замена noindex.",
