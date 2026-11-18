@@ -339,6 +339,8 @@ export const NOFOLLOW: GlossaryTerm = {
     "Ссылочная масса",
     "Крауд-маркетинг",
     "Внутренняя перелинковка",
+    "Dofollow",
+    "Минусинск",
   ],
   takeaways: [
     "Nofollow — значение атрибута rel у ссылки, а не отдельный html-тег и не замена noindex.",

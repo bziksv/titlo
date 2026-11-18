@@ -767,6 +767,7 @@ export const DESCRIPTION: GlossaryTerm = {
     "Релевантность",
     "noindex",
     "Микроразметка",
+    "Schema.org",
   ],
   takeaways: [
     "Description — это мета-тег с кратким описанием страницы сайта, которое поисковые системы могут показать в сниппете.",

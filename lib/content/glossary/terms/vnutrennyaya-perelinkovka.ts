@@ -439,6 +439,7 @@ export const VNUTRENNYAYA_PERELINKOVKA: GlossaryTerm = {
     "Код ответа сервера",
     "Nofollow",
     "Обратные ссылки",
+    "Dofollow",
   ],
   takeaways: [
     "Внутренняя перелинковка — это система ссылок между страницами одного сайта, а не внешняя ссылочная масса.",

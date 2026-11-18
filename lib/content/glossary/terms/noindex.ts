@@ -414,6 +414,7 @@ export const NOINDEX: GlossaryTerm = {
     "Дубли страниц",
     "Мета-теги",
     "Description",
+    "HTTP-заголовки",
   ],
   takeaways: [
     "noindex — директива, которая запрещает поисковым системам держать страницу в индексе. Её задают метатегом robots или заголовком X-Robots-Tag.",
