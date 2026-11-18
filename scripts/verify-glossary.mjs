@@ -40,6 +40,7 @@ const TERMS = {
   "sitemap-xml": ["audit-sajta", "http-headers", "proverka-indeksacii"],
   "kommercheskie-faktory": ["audit-sajta", "monitoring-pozicii-sayta", "geo-lokalizaciya-kommerciya"],
   "vidimost-sayta": ["monitoring-pozicii-sayta", "tipy-saitov-v-vydache", "sbor-poiskovykh-podskazok"],
+  "faktory-ranzhirovaniya": ["audit-sajta", "monitoring-pozicii-sayta", "analiz-relevantnosti"],
   "kod-otveta-servera": ["http-headers", "audit-sajta", "proverka-indeksacii"],
   "utm-metki": ["utm-metki", "kalkulyator-roi", "audit-sajta"],
 };
