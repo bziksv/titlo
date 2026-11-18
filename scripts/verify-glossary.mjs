@@ -29,6 +29,7 @@ const TERMS = {
   "teg-h1": ["proverka-meta-tegov-online", "analiz-teksta", "audit-sajta"],
   "povedencheskie-faktory": ["proverka-meta-tegov-online", "monitoring-pozicii-sayta", "audit-sajta"],
   "ctr": ["proverka-meta-tegov-online", "tipy-saitov-v-vydache", "monitoring-pozicii-sayta"],
+  "pokazatel-otkazov": ["audit-sajta", "proverka-meta-tegov-online", "monitoring-pozicii-sayta"],
   "poiskovyy-robot": ["proverka-indeksacii", "audit-sajta", "http-headers"],
   "mikrorazmetka": ["proverka-meta-tegov-online", "tipy-saitov-v-vydache", "audit-sajta"],
   "obratnye-ssylki": ["otslezhivanie-ssylok", "audit-sajta", "monitoring-pozicii-sayta"],
