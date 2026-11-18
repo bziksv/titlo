@@ -394,6 +394,7 @@ export const MIKRORAZMETKA: GlossaryTerm = {
     "Структура сайта",
     "Мета-теги",
     "Description",
+    "E-E-A-T",
   ],
   takeaways: [
     "Микроразметка — способ описать данные страницы структурированно, чаще всего по словарю schema.org.",
