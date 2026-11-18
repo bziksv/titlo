@@ -433,6 +433,7 @@ export const FAKTORY_RANZHIROVANIYA: GlossaryTerm = {
     ],
   },
   related: [
+    "Ранжирование",
     "Поведенческие факторы",
     "Коммерческие факторы",
     "Релевантность",
