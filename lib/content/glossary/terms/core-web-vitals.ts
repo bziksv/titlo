@@ -378,6 +378,8 @@ export const CORE_WEB_VITALS: GlossaryTerm = {
     "Поисковая выдача",
     "CTR",
     "Яндекс Метрика",
+    "Внутренняя оптимизация",
+
   ],
   takeaways: [
     "Core Web Vitals — набор метрик Google о реальном опыте страницы: LCP, INP и CLS.",

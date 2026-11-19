@@ -363,6 +363,8 @@ export const OPERATOR_SITE: GlossaryTerm = {
     "robots.txt",
     "Sitemap.xml",
     "SEO",
+    "Индекс поисковой системы",
+
   ],
   takeaways: [
     "Оператор site: ограничивает поисковую выдачу страницами выбранного сайта или домена.",

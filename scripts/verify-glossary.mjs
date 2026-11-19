@@ -80,6 +80,10 @@ const TERMS = {
   "core-web-vitals": ["audit-sajta", "http-headers", "monitoring-pozicii-sayta"],
   "meta-teg-robots": ["proverka-meta-tegov-online", "audit-sajta", "proverka-indeksacii"],
   "kommercheskiy-zapros": ["sbor-poiskovykh-podskazok", "tipy-saitov-v-vydache", "klasterizator-klyuchevykh-slov"],
+  "vneshnyaya-optimizatsiya": ["audit-sajta", "monitoring-pozicii-sayta", "analiz-relevantnosti"],
+  "indeks-poiskovoy-sistemy": ["proverka-indeksacii", "audit-sajta", "monitoring-pozicii-sayta"],
+  "vnutrennyaya-optimizatsiya": ["audit-sajta", "analiz-teksta", "proverka-meta-tegov-online"],
+  "linkbilding": ["audit-sajta", "monitoring-pozicii-sayta", "analiz-relevantnosti"],
 };
 const termPaths = Object.keys(TERMS).map((s) => `/slovar/${s}/`);
 for (const path of ["/slovar/", ...termPaths]) {
