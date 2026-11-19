@@ -92,6 +92,10 @@ const TERMS = {
   "tekhnicheskaya-optimizatsiya": ["audit-sajta", "proverka-indeksacii", "http-headers"],
   "tekhnicheskiy-audit": ["audit-sajta", "http-headers", "proverka-indeksacii"],
   "direktiva-disallow": ["audit-sajta", "proverka-indeksacii", "http-headers"],
+  "skanirovanie": ["audit-sajta", "http-headers", "proverka-indeksacii"],
+  "kannibalizatsiya-zaprosov": ["klasterizator-klyuchevykh-slov", "monitoring-pozicii-sayta", "analiz-relevantnosti"],
+  "regionalnost": ["geo-lokalizaciya-kommerciya", "monitoring-pozicii-sayta", "audit-sajta"],
+  "domen": ["zapisi-domena", "http-headers", "audit-sajta"],
 };
 const termPaths = Object.keys(TERMS).map((s) => `/slovar/${s}/`);
 for (const path of ["/slovar/", ...termPaths]) {
