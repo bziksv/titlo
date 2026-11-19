@@ -398,7 +398,8 @@ export const MIKRORAZMETKA: GlossaryTerm = {
     "Schema.org",
     "Google Search Console",
     "Alt-текст",
-  ],
+
+    "Расширенный сниппет",  ],
   takeaways: [
     "Микроразметка — способ описать данные страницы структурированно, чаще всего по словарю schema.org.",
     "Основной удобный формат сегодня — JSON-LD; Microdata тоже работает, если свойства привязаны к видимым элементам.",
