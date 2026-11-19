@@ -515,6 +515,8 @@ export const HTTP_ZAGOLOVKI: GlossaryTerm = {
     "Мета-тег robots",
     "Цепочка редиректов",
     "Домен",
+    "X-Robots-Tag",
+    "DNS",
   ],
   takeaways: [
     "HTTP-заголовки — это служебные поля запроса и ответа, а не заголовки статьи и не тег title.",

@@ -401,6 +401,7 @@ export const META_TEG_ROBOTS: GlossaryTerm = {
     "Индекс поисковой системы",
     "Внутренняя оптимизация",
     "Директива Disallow",
+    "X-Robots-Tag",
   ],
   takeaways: [
     "Мета-тег robots — это HTML-указание в head о том, как поисковым системам обрабатывать конкретную страницу.",

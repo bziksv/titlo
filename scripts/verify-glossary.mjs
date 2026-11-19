@@ -96,6 +96,10 @@ const TERMS = {
   "kannibalizatsiya-zaprosov": ["klasterizator-klyuchevykh-slov", "monitoring-pozicii-sayta", "analiz-relevantnosti"],
   "regionalnost": ["geo-lokalizaciya-kommerciya", "monitoring-pozicii-sayta", "audit-sajta"],
   "domen": ["zapisi-domena", "http-headers", "audit-sajta"],
+  "whois": ["zapisi-domena", "http-headers", "audit-sajta"],
+  "dns": ["zapisi-domena", "http-headers", "audit-sajta"],
+  "pereobhod-stranits": ["proverka-indeksacii", "http-headers", "audit-sajta"],
+  "x-robots-tag": ["http-headers", "proverka-meta-tegov-online", "audit-sajta"],
 };
 const termPaths = Object.keys(TERMS).map((s) => `/slovar/${s}/`);
 for (const path of ["/slovar/", ...termPaths]) {
