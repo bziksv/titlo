@@ -18,7 +18,7 @@ export const OPERATOR_SITE: GlossaryTerm = {
   ],
   categoryId: "tekhnicheskiy-seo-i-indeksatsiya",
   h1: "Что такое оператор site:",
-  seoTitle: "Оператор site:: как искать страницы сайта в Google и Яндексе",
+  seoTitle: "Оператор site: как искать страницы сайта в Google и Яндексе",
   seoDescription:
     "Оператор site: показывает, какие страницы выбранного домена поисковая система уже знает и может показать в выдаче. Как им пользоваться, какие есть ограничения и как не сделать ложный вывод об индексе.",
   short:
