@@ -399,6 +399,7 @@ export const MIKRORAZMETKA: GlossaryTerm = {
     "Google Search Console",
     "Alt-текст",
     "Расширенный сниппет",
+    "Карточка товара",
   ],
   takeaways: [
     "Микроразметка — способ описать данные страницы структурированно, чаще всего по словарю schema.org.",

@@ -119,6 +119,11 @@ const TERMS = {
   "karta-relevantnosti": ["klasterizator-klyuchevykh-slov", "analiz-relevantnosti", "monitoring-pozicii-sayta", "proverka-meta-tegov-online"],
   "seo-krauler": ["audit-sajta", "http-headers", "proverka-indeksacii", "proverka-meta-tegov-online"],
   "uptime": ["monitoring-saytov", "http-headers", "otslezhivanie-sroka-registratsii-domenov", "zapisi-domena"],
+  "donor": ["otslezhivanie-ssylok", "proverka-indeksacii", "analiz-konkurentov", "zapisi-domena"],
+  "istochnik-trafika": ["utm-metki", "monitoring-pozicii-sayta", "analiz-konkurentov", "kalkulyator-roi"],
+  "roi": ["kalkulyator-roi", "utm-metki", "monitoring-pozicii-sayta", "analiz-konkurentov"],
+  "kartochka-tovara": ["analiz-relevantnosti", "proverka-meta-tegov-online", "analiz-teksta", "sbor-poiskovykh-podskazok"],
+  "kpi-seo": ["monitoring-pozicii-sayta", "proverka-indeksacii", "audit-sajta", "kalkulyator-roi"],
 };
 const termPaths = Object.keys(TERMS).map((s) => `/slovar/${s}/`);
 for (const path of ["/slovar/", ...termPaths]) {

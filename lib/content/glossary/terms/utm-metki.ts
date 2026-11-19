@@ -336,6 +336,7 @@ export const UTM_METKI: GlossaryTerm = {
     "Источник трафика",
     "Яндекс Метрика",
     "Конверсия",
+    "ROI",
   ],
   takeaways: [
     "UTM-метки — это параметры в URL, по которым аналитика понимает источник, канал и кампанию перехода. Основные три: utm_source, utm_medium и utm_campaign, плюс уточнения utm_content и utm_term.",
