@@ -530,6 +530,7 @@ export const META_TEGI: GlossaryTerm = {
     "Description",
     "Schema.org",
     "Alt-текст",
+    "Мета-тег robots",
   ],
   takeaways: [
     "Мета-теги — это служебные элементы HTML, которые передают поисковым системам и браузерам информацию о странице сайта.",

@@ -78,6 +78,8 @@ const TERMS = {
   "informatsionnyy-zapros": ["sbor-poiskovykh-podskazok", "tipy-saitov-v-vydache", "klasterizator-klyuchevykh-slov"],
   "pereezd-sayta": ["http-headers", "audit-sajta", "proverka-indeksacii"],
   "core-web-vitals": ["audit-sajta", "http-headers", "monitoring-pozicii-sayta"],
+  "meta-teg-robots": ["proverka-meta-tegov-online", "audit-sajta", "proverka-indeksacii"],
+  "kommercheskiy-zapros": ["sbor-poiskovykh-podskazok", "tipy-saitov-v-vydache", "klasterizator-klyuchevykh-slov"],
 };
 const termPaths = Object.keys(TERMS).map((s) => `/slovar/${s}/`);
 for (const path of ["/slovar/", ...termPaths]) {

@@ -664,6 +664,7 @@ export const GOOGLE_SEARCH_CONSOLE: GlossaryTerm = {
     "Оператор site:",
     "Переезд сайта",
     "Core Web Vitals",
+    "Мета-тег robots",
   ],
   takeaways: [
     "Google Search Console — официальный кабинет владельца сайта в поиске Google, а не инструмент, который сам поднимает позиции.",

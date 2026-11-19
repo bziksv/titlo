@@ -512,6 +512,7 @@ export const HTTP_ZAGOLOVKI: GlossaryTerm = {
     "Ошибка 403",
     "Переезд сайта",
     "Core Web Vitals",
+    "Мета-тег robots",
   ],
   takeaways: [
     "HTTP-заголовки — это служебные поля запроса и ответа, а не заголовки статьи и не тег title.",
