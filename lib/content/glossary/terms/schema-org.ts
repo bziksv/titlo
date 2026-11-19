@@ -604,6 +604,7 @@ export const SCHEMA_ORG: GlossaryTerm = {
     "CTR",
     "E-E-A-T",
     "Структура сайта",
+    "Google Search Console",
   ],
   takeaways: [
     "Schema.org — это словарь типов и свойств для структурированных данных, а не отдельный фактор «поставить и вырасти».",

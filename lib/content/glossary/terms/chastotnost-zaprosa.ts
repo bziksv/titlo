@@ -345,6 +345,7 @@ export const CHASTOTNOST_ZAPROSA: GlossaryTerm = {
     "Операторы Wordstat",
     "ВЧ-запрос",
     "НЧ-запрос",
+    "Wordstat",
   ],
   takeaways: [
     "Частотность — сколько раз фразу искали за период, обычно за месяц.",

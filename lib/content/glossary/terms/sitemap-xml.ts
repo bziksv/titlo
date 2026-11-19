@@ -288,6 +288,8 @@ export const SITEMAP_XML: GlossaryTerm = {
     "Внутренняя перелинковка",
     "404 Not Found",
     "HTTP-заголовки",
+    "Яндекс Вебмастер",
+    "Google Search Console",
   ],
   takeaways: [
     "Sitemap.xml — это XML-файл со списком важных URL сайта, который помогает поисковым роботам находить и переобходить страницы.",

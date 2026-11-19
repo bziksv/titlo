@@ -504,6 +504,8 @@ export const INDEKSATSIYA: GlossaryTerm = {
     "404 Not Found",
     "HTTP-заголовки",
     "Dofollow",
+    "Яндекс Вебмастер",
+    "Google Search Console",
   ],
   takeaways: [
     "Индексация сайта — это добавление страниц в базу поисковой системы после обхода роботом; без индекса страница почти не появляется в выдаче.",

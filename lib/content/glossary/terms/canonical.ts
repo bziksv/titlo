@@ -363,6 +363,8 @@ export const CANONICAL: GlossaryTerm = {
     "404 Not Found",
     "Schema.org",
     "HTTP-заголовки",
+    "Яндекс Вебмастер",
+    "Google Search Console",
   ],
   takeaways: [
     "rel canonical указывает поисковым системам основной URL среди похожих или дублированных страниц. Обычно это тег link в секции head с абсолютным https-адресом.",

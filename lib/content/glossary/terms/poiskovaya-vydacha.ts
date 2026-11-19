@@ -395,6 +395,7 @@ export const POISKOVAYA_VYDACHA: GlossaryTerm = {
     "E-E-A-T",
     "Schema.org",
     "Минусинск",
+    "Google Search Console",
   ],
   takeaways: [
     "Поисковая выдача (SERP) — страница результатов Яндекса или Google: органика, реклама и специальные блоки по запросу пользователя.",

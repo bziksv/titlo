@@ -289,6 +289,8 @@ export const POISKOVYY_ROBOT: GlossaryTerm = {
     "404 Not Found",
     "HTTP-заголовки",
     "Dofollow",
+    "Яндекс Вебмастер",
+    "Google Search Console",
   ],
   takeaways: [
     "Поисковый робот (краулер, паук, бот) — программа, которая обходит страницы сайта, сканирует их и передаёт данные в индекс.",

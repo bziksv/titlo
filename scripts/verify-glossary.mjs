@@ -64,6 +64,9 @@ const TERMS = {
   "kommertsializatsiya-zaprosa": ["geo-lokalizaciya-kommerciya", "tipy-saitov-v-vydache", "klasterizator-klyuchevykh-slov"],
   "kod-otveta-servera": ["http-headers", "audit-sajta", "proverka-indeksacii"],
   "utm-metki": ["utm-metki", "kalkulyator-roi", "audit-sajta"],
+  "wordstat": ["sbor-poiskovykh-podskazok", "generator_slov", "klasterizator-klyuchevykh-slov"],
+  "yandeks-vebmaster": ["proverka-indeksacii", "audit-sajta", "monitoring-pozicii-sayta"],
+  "google-search-console": ["proverka-indeksacii", "audit-sajta", "monitoring-pozicii-sayta"],
 };
 const termPaths = Object.keys(TERMS).map((s) => `/slovar/${s}/`);
 for (const path of ["/slovar/", ...termPaths]) {
