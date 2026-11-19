@@ -108,6 +108,10 @@ const TERMS = {
   "nedostatochno-kachestvennaya-stranitsa": ["proverka-indeksacii", "audit-sajta", "analiz-relevantnosti", "analiz-teksta"],
   "srok-registratsii-domena": ["otslezhivanie-sroka-registratsii-domenov", "zapisi-domena", "monitoring-saytov"],
   "domen-vtorogo-urovnya": ["zapisi-domena", "otslezhivanie-sroka-registratsii-domenov", "http-headers"],
+  "konversiya": ["kalkulyator-roi", "utm-metki", "analiz-relevantnosti", "audit-sajta"],
+  "seo-tekst": ["analiz-relevantnosti", "analiz-teksta", "proverka-teksta-esenin", "podschet-dliny-teksta"],
+  "vkhozhdenie-klyucha": ["analiz-relevantnosti", "analiz-teksta", "proverka-meta-tegov-online", "generator_slov"],
+  "simvoly-s-probelami-i-bez": ["podschet-dliny-teksta", "analiz-teksta", "proverka-meta-tegov-online"],
 };
 const termPaths = Object.keys(TERMS).map((s) => `/slovar/${s}/`);
 for (const path of ["/slovar/", ...termPaths]) {
