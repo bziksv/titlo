@@ -402,6 +402,7 @@ export const TEG_H1: GlossaryTerm = {
     "Canonical",
     "Мета-теги",
     "Description",
+    "Alt-текст",
   ],
   takeaways: [
     "H1 — главный заголовок страницы в HTML, заголовок первого уровня. Его видит пользователь на самом документе.",

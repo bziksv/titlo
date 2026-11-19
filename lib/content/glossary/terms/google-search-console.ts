@@ -660,6 +660,8 @@ export const GOOGLE_SEARCH_CONSOLE: GlossaryTerm = {
     "Яндекс Вебмастер",
     "Яндекс Метрика",
     "SEO",
+    "Ошибка 403",
+    "Оператор site:",
   ],
   takeaways: [
     "Google Search Console — официальный кабинет владельца сайта в поиске Google, а не инструмент, который сам поднимает позиции.",

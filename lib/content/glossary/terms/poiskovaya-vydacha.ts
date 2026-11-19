@@ -397,6 +397,8 @@ export const POISKOVAYA_VYDACHA: GlossaryTerm = {
     "Минусинск",
     "Google Search Console",
     "SEO",
+    "Alt-текст",
+    "Оператор site:",
   ],
   takeaways: [
     "Поисковая выдача (SERP) — страница результатов Яндекса или Google: органика, реклама и специальные блоки по запросу пользователя.",

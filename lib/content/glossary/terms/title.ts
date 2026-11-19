@@ -331,6 +331,7 @@ export const TITLE: GlossaryTerm = {
     "Description",
     "Плотность ключевых слов",
     "Schema.org",
+    "Alt-текст",
   ],
   takeaways: [
     "Тег Title — это HTML-заголовок страницы в секции head. Его видят поисковые системы в сниппете и пользователь во вкладке браузера.",
