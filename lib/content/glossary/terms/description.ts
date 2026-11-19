@@ -770,6 +770,7 @@ export const DESCRIPTION: GlossaryTerm = {
     "Schema.org",
     "Alt-текст",
     "Мета-тег robots",
+    "Длина title и description",
   ],
   takeaways: [
     "Description — это мета-тег с кратким описанием страницы сайта, которое поисковые системы могут показать в сниппете.",

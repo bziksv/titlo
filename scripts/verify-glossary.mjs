@@ -100,6 +100,10 @@ const TERMS = {
   "dns": ["zapisi-domena", "http-headers", "audit-sajta"],
   "pereobhod-stranits": ["proverka-indeksacii", "http-headers", "audit-sajta"],
   "x-robots-tag": ["http-headers", "proverka-meta-tegov-online", "audit-sajta"],
+  "top-10": ["monitoring-pozicii-sayta", "analiz-konkurentov", "analiz-relevantnosti"],
+  "dlina-title-i-description": ["podschet-dliny-teksta", "proverka-meta-tegov-online", "audit-sajta"],
+  "malopoleznyy-kontent": ["proverka-indeksacii", "analiz-teksta", "audit-sajta"],
+  "obyom-teksta": ["podschet-dliny-teksta", "analiz-relevantnosti", "analiz-teksta"],
 };
 const termPaths = Object.keys(TERMS).map((s) => `/slovar/${s}/`);
 for (const path of ["/slovar/", ...termPaths]) {
