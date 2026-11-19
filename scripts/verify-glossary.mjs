@@ -104,6 +104,10 @@ const TERMS = {
   "dlina-title-i-description": ["podschet-dliny-teksta", "proverka-meta-tegov-online", "audit-sajta"],
   "malopoleznyy-kontent": ["proverka-indeksacii", "analiz-teksta", "audit-sajta"],
   "obyom-teksta": ["podschet-dliny-teksta", "analiz-relevantnosti", "analiz-teksta"],
+  "pessimizatsiya": ["proverka-teksta-esenin", "monitoring-pozicii-sayta", "otslezhivanie-ssylok", "audit-sajta"],
+  "nedostatochno-kachestvennaya-stranitsa": ["proverka-indeksacii", "audit-sajta", "analiz-relevantnosti", "analiz-teksta"],
+  "srok-registratsii-domena": ["otslezhivanie-sroka-registratsii-domenov", "zapisi-domena", "monitoring-saytov"],
+  "domen-vtorogo-urovnya": ["zapisi-domena", "otslezhivanie-sroka-registratsii-domenov", "http-headers"],
 };
 const termPaths = Object.keys(TERMS).map((s) => `/slovar/${s}/`);
 for (const path of ["/slovar/", ...termPaths]) {
