@@ -112,6 +112,9 @@ const TERMS = {
   "seo-tekst": ["analiz-relevantnosti", "analiz-teksta", "proverka-teksta-esenin", "podschet-dliny-teksta"],
   "vkhozhdenie-klyucha": ["analiz-relevantnosti", "analiz-teksta", "proverka-meta-tegov-online", "generator_slov"],
   "simvoly-s-probelami-i-bez": ["podschet-dliny-teksta", "analiz-teksta", "proverka-meta-tegov-online"],
+  "isklyuchennye-stranitsy": ["proverka-indeksacii", "http-headers", "audit-sajta", "monitoring-pozicii-sayta"],
+  "minus-slova": ["udalenie-dublikatov", "generator_slov", "klasterizator-klyuchevykh-slov", "sbor-poiskovykh-podskazok"],
+  "markernyy-zapros": ["generator_slov", "sbor-poiskovykh-podskazok", "klasterizator-klyuchevykh-slov", "analiz-konkurentov"],
 };
 const termPaths = Object.keys(TERMS).map((s) => `/slovar/${s}/`);
 for (const path of ["/slovar/", ...termPaths]) {

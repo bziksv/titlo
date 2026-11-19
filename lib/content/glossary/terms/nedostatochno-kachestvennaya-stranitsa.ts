@@ -1115,6 +1115,7 @@ export const NEDOSTATOCHNO_KACHESTVENNAYA_STRANITSA: GlossaryTerm = {
   related: [
     "Малополезный контент",
     "Пессимизация",
+    "Исключённые страницы",
     "Яндекс Вебмастер",
     "Индексация сайта",
     "Дубли страниц",
