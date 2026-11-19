@@ -790,6 +790,7 @@ export const DNS: GlossaryTerm = {
     "Google Search Console",
     "Технический аудит",
     "Домен второго уровня",
+    "Uptime",
   ],
   takeaways: [
     "DNS — система, которая переводит доменное имя в IP-адрес и хранит другие настройки домена.",

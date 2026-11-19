@@ -115,6 +115,10 @@ const TERMS = {
   "isklyuchennye-stranitsy": ["proverka-indeksacii", "http-headers", "audit-sajta", "monitoring-pozicii-sayta"],
   "minus-slova": ["udalenie-dublikatov", "generator_slov", "klasterizator-klyuchevykh-slov", "sbor-poiskovykh-podskazok"],
   "markernyy-zapros": ["generator_slov", "sbor-poiskovykh-podskazok", "klasterizator-klyuchevykh-slov", "analiz-konkurentov"],
+  "konkurentnost-zaprosa": ["analiz-konkurentov", "tipy-saitov-v-vydache", "klasterizator-klyuchevykh-slov", "monitoring-pozicii-sayta"],
+  "karta-relevantnosti": ["klasterizator-klyuchevykh-slov", "analiz-relevantnosti", "monitoring-pozicii-sayta", "proverka-meta-tegov-online"],
+  "seo-krauler": ["audit-sajta", "http-headers", "proverka-indeksacii", "proverka-meta-tegov-online"],
+  "uptime": ["monitoring-saytov", "http-headers", "otslezhivanie-sroka-registratsii-domenov", "zapisi-domena"],
 };
 const termPaths = Object.keys(TERMS).map((s) => `/slovar/${s}/`);
 for (const path of ["/slovar/", ...termPaths]) {

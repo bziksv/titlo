@@ -737,6 +737,7 @@ export const SROK_REGISTRATSII_DOMENA: GlossaryTerm = {
   related: [
     "Домен",
     "Домен второго уровня",
+    "Uptime",
     "WHOIS",
     "DNS",
     "Переезд сайта",
