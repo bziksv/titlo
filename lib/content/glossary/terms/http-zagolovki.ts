@@ -510,6 +510,8 @@ export const HTTP_ZAGOLOVKI: GlossaryTerm = {
     "Sitemap.xml",
     "302 редирект",
     "Ошибка 403",
+    "Переезд сайта",
+    "Core Web Vitals",
   ],
   takeaways: [
     "HTTP-заголовки — это служебные поля запроса и ответа, а не заголовки статьи и не тег title.",

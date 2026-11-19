@@ -75,6 +75,9 @@ const TERMS = {
   "alt-tekst": ["proverka-meta-tegov-online", "audit-sajta", "analiz-teksta"],
   "dlinnyy-khvost": ["sbor-poiskovykh-podskazok", "generator_slov", "klasterizator-klyuchevykh-slov"],
   "operator-site": ["proverka-indeksacii", "audit-sajta", "tipy-saitov-v-vydache"],
+  "informatsionnyy-zapros": ["sbor-poiskovykh-podskazok", "tipy-saitov-v-vydache", "klasterizator-klyuchevykh-slov"],
+  "pereezd-sayta": ["http-headers", "audit-sajta", "proverka-indeksacii"],
+  "core-web-vitals": ["audit-sajta", "http-headers", "monitoring-pozicii-sayta"],
 };
 const termPaths = Object.keys(TERMS).map((s) => `/slovar/${s}/`);
 for (const path of ["/slovar/", ...termPaths]) {

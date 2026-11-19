@@ -662,6 +662,8 @@ export const GOOGLE_SEARCH_CONSOLE: GlossaryTerm = {
     "SEO",
     "Ошибка 403",
     "Оператор site:",
+    "Переезд сайта",
+    "Core Web Vitals",
   ],
   takeaways: [
     "Google Search Console — официальный кабинет владельца сайта в поиске Google, а не инструмент, который сам поднимает позиции.",

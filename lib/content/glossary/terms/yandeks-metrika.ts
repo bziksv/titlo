@@ -899,6 +899,7 @@ export const YANDEKS_METRIKA: GlossaryTerm = {
     "Google Search Console",
     "Посадочная страница",
     "Коммерческие факторы",
+    "Core Web Vitals",
   ],
   takeaways: [
     "Яндекс Метрика — система веб-аналитики, которая показывает источники визитов, поведение на сайте и достижение целей.",

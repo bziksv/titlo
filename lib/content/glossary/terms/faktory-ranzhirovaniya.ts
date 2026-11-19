@@ -450,6 +450,7 @@ export const FAKTORY_RANZHIROVANIYA: GlossaryTerm = {
     "Минусинск",
     "SEO",
     "SEO-аудит",
+    "Core Web Vitals",
   ],
   takeaways: [
     "Факторы ранжирования — это группы сигналов, по которым поисковые системы решают, какие страницы показать выше в выдаче.",

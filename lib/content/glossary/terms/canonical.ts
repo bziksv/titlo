@@ -366,6 +366,7 @@ export const CANONICAL: GlossaryTerm = {
     "Яндекс Вебмастер",
     "Google Search Console",
     "302 редирект",
+    "Переезд сайта",
   ],
   takeaways: [
     "rel canonical указывает поисковым системам основной URL среди похожих или дублированных страниц. Обычно это тег link в секции head с абсолютным https-адресом.",

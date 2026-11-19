@@ -399,6 +399,7 @@ export const POISKOVAYA_VYDACHA: GlossaryTerm = {
     "SEO",
     "Alt-текст",
     "Оператор site:",
+    "Core Web Vitals",
   ],
   takeaways: [
     "Поисковая выдача (SERP) — страница результатов Яндекса или Google: органика, реклама и специальные блоки по запросу пользователя.",
