@@ -286,6 +286,7 @@ export const CTR: GlossaryTerm = {
     "Description",
     "E-E-A-T",
     "Schema.org",
+    "Яндекс Метрика",
   ],
   takeaways: [
     "CTR (click-through rate) — показатель кликабельности: доля кликов от числа показов, выраженная в процентах.",

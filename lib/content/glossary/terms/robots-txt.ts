@@ -422,6 +422,7 @@ export const ROBOTS_TXT: GlossaryTerm = {
     "HTTP-заголовки",
     "Яндекс Вебмастер",
     "Google Search Console",
+    "SEO-аудит",
   ],
   takeaways: [
     "robots.txt — это файл в корне сайта, который задаёт правила обхода для поисковых роботов. Его адрес выглядит как https://example.com/robots.txt, и он должен открываться с кодом 200.",

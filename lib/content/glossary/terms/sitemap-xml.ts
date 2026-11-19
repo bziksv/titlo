@@ -290,6 +290,7 @@ export const SITEMAP_XML: GlossaryTerm = {
     "HTTP-заголовки",
     "Яндекс Вебмастер",
     "Google Search Console",
+    "SEO-аудит",
   ],
   takeaways: [
     "Sitemap.xml — это XML-файл со списком важных URL сайта, который помогает поисковым роботам находить и переобходить страницы.",

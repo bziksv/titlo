@@ -67,6 +67,10 @@ const TERMS = {
   "wordstat": ["sbor-poiskovykh-podskazok", "generator_slov", "klasterizator-klyuchevykh-slov"],
   "yandeks-vebmaster": ["proverka-indeksacii", "audit-sajta", "monitoring-pozicii-sayta"],
   "google-search-console": ["proverka-indeksacii", "audit-sajta", "monitoring-pozicii-sayta"],
+  "yandeks-metrika": ["utm-metki", "kalkulyator-roi", "audit-sajta"],
+  "seo": ["sbor-poiskovykh-podskazok", "audit-sajta", "monitoring-pozicii-sayta"],
+  "seo-audit": ["audit-sajta", "proverka-indeksacii", "analiz-relevantnosti"],
+  "302-redirekt": ["http-headers", "audit-sajta", "proverka-indeksacii"],
 };
 const termPaths = Object.keys(TERMS).map((s) => `/slovar/${s}/`);
 for (const path of ["/slovar/", ...termPaths]) {

@@ -515,6 +515,8 @@ export const YANDEKS_VEBMASTER: GlossaryTerm = {
     "Дубли страниц",
     "Canonical",
     "Google Search Console",
+    "Яндекс Метрика",
+    "SEO",
   ],
   takeaways: [
     "Яндекс Вебмастер — официальный кабинет владельца сайта в поисковой системе Яндекса, а не инструмент, который сам поднимает позиции.",
