@@ -1,0 +1,6002 @@
+[
+ {
+  "id": 370,
+  "title": "Canonical Топ rel=canonical, канонический URL https://titlo.ru/slovar/canonical/",
+  "category": "Мета-теги и HTML-разметка",
+  "main_query": "rel canonical",
+  "modules": "proverka-meta-tegov-online audit-sajta proverka-indeksacii",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "17.11.2026"
+ },
+ {
+  "id": 328,
+  "title": "LSI-слова Топ LSI-фразы, тематические слова https://titlo.ru/slovar/lsi-slova/",
+  "category": "Контент и тексты",
+  "main_query": "lsi слова",
+  "modules": "analiz-relevantnosti sbor-poiskovykh-podskazok analiz-teksta",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "17.11.2026"
+ },
+ {
+  "id": 396,
+  "title": "robots.txt Топ роботс https://titlo.ru/slovar/robots-txt/",
+  "category": "Технический SEO и индексация",
+  "main_query": "robots txt",
+  "modules": "audit-sajta proverka-indeksacii http-headers",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "17.11.2026"
+ },
+ {
+  "id": 235,
+  "title": "TF-IDF Топ term frequency – inverse document frequency https://titlo.ru/slovar/tf-idf/",
+  "category": "Ранжирование и факторы",
+  "main_query": "tf idf",
+  "modules": "analiz-relevantnosti analiz-teksta",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "17.11.2026"
+ },
+ {
+  "id": 360,
+  "title": "Title Топ тайтл, заголовок страницы https://titlo.ru/slovar/title/",
+  "category": "Мета-теги и HTML-разметка",
+  "main_query": "тег title",
+  "modules": "proverka-meta-tegov-online podschet-dliny-teksta analiz-relevantnosti",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "18.11.2026"
+ },
+ {
+  "id": 572,
+  "title": "UTM-метки Топ utm-параметры https://titlo.ru/slovar/utm-metki/",
+  "category": "Аналитика, метрики и UTM",
+  "main_query": "utm метки",
+  "modules": "utm-metki kalkulyator-roi",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "17.11.2026"
+ },
+ {
+  "id": 255,
+  "title": "Баден-Баден Топ фильтр за переоптимизацию текстов https://titlo.ru/slovar/baden-baden/",
+  "category": "Алгоритмы и фильтры Яндекса",
+  "main_query": "баден баден яндекс",
+  "modules": "proverka-teksta-esenin analiz-teksta analiz-relevantnosti",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "17.11.2026"
+ },
+ {
+  "id": 320,
+  "title": "Водность текста Топ вода https://titlo.ru/slovar/vodnost-teksta/",
+  "category": "Контент и тексты",
+  "main_query": "водность текста",
+  "modules": "analiz-teksta proverka-teksta-esenin podschet-dliny-teksta",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "17.11.2026"
+ },
+ {
+  "id": 161,
+  "title": "Геозависимый запрос Топ ГЗ https://titlo.ru/slovar/geozavisimyy-zapros/",
+  "category": "Запросы и семантика",
+  "main_query": "геозависимые запросы",
+  "modules": "geo-lokalizaciya-kommerciya klasterizator-klyuchevykh-slov tipy-saitov-v-vydache",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "17.11.2026"
+ },
+ {
+  "id": 393,
+  "title": "Индексация Топ indexing https://titlo.ru/slovar/indeksatsiya/",
+  "category": "Технический SEO и индексация",
+  "main_query": "индексация сайта",
+  "modules": "proverka-indeksacii audit-sajta http-headers",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "17.11.2026"
+ },
+ {
+  "id": 154,
+  "title": "Интент Топ поисковое намерение, search intent https://titlo.ru/slovar/intent/",
+  "category": "Запросы и семантика",
+  "main_query": "интент запроса",
+  "modules": "tipy-saitov-v-vydache klasterizator-klyuchevykh-slov geo-lokalizaciya-kommerciya",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "17.11.2026"
+ },
+ {
+  "id": 191,
+  "title": "Кластеризация запросов Топ группировка семантики https://titlo.ru/slovar/klasterizatsiya-zaprosov/",
+  "category": "Кластеризация и структура сайта",
+  "main_query": "кластеризация запросов",
+  "modules": "klasterizator-klyuchevykh-slov tipy-saitov-v-vydache sbor-poiskovykh-podskazok",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "17.11.2026"
+ },
+ {
+  "id": 474,
+  "title": "Код ответа сервера Топ HTTP status code https://titlo.ru/slovar/kod-otveta-servera/",
+  "category": "HTTP, сервер, домены, хостинг",
+  "main_query": "код ответа сервера",
+  "modules": "http-headers monitoring-saytov audit-sajta",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "17.11.2026"
+ },
+ {
+  "id": 160,
+  "title": "Коммерциализация запроса Топ коммерческость https://titlo.ru/slovar/kommertsializatsiya-zaprosa/",
+  "category": "Запросы и семантика",
+  "main_query": "коммерциализация запроса",
+  "modules": "geo-lokalizaciya-kommerciya tipy-saitov-v-vydache klasterizator-klyuchevykh-slov",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "18.11.2026"
+ },
+ {
+  "id": 142,
+  "title": "Операторы Wordstat Топ кавычки, !, +, [ ], ( ), минус https://titlo.ru/slovar/operatory-wordstat/",
+  "category": "Запросы и семантика",
+  "main_query": "операторы вордстат",
+  "modules": "generator_slov sbor-poiskovykh-podskazok klasterizator-klyuchevykh-slov",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "17.11.2026"
+ },
+ {
+  "id": 169,
+  "title": "Поисковые подсказки Топ саджесты, suggest, автодополнение https://titlo.ru/slovar/poiskovye-podskazki/",
+  "category": "Запросы и семантика",
+  "main_query": "поисковые подсказки",
+  "modules": "sbor-poiskovykh-podskazok klasterizator-klyuchevykh-slov generator_slov",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "17.11.2026"
+ },
+ {
+  "id": 65,
+  "title": "Релевантность Топ relevance https://titlo.ru/slovar/relevantnost/",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "релевантность страницы",
+  "modules": "analiz-relevantnosti analiz-teksta klasterizator-klyuchevykh-slov",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "17.11.2026"
+ },
+ {
+  "id": 136,
+  "title": "Семантическое ядро Топ СЯ, ядро, семантика https://titlo.ru/slovar/semanticheskoe-yadro/",
+  "category": "Запросы и семантика",
+  "main_query": "семантическое ядро",
+  "modules": "sbor-poiskovykh-podskazok generator_slov klasterizator-klyuchevykh-slov",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "17.11.2026"
+ },
+ {
+  "id": 319,
+  "title": "Тошнота текста Топ классическая/академическая тошнота https://titlo.ru/slovar/toshnota-teksta/",
+  "category": "Контент и тексты",
+  "main_query": "тошнота текста",
+  "modules": "analiz-teksta proverka-teksta-esenin analiz-relevantnosti",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "17.11.2026"
+ },
+ {
+  "id": 138,
+  "title": "Частотность запроса Топ частота, frequency https://titlo.ru/slovar/chastotnost-zaprosa/",
+  "category": "Запросы и семантика",
+  "main_query": "частотность запросов",
+  "modules": "generator_slov klasterizator-klyuchevykh-slov sbor-poiskovykh-podskazok",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "17.11.2026"
+ },
+ {
+  "id": 476,
+  "title": "301 редирект постоянный редирект https://titlo.ru/slovar/301-redirekt/",
+  "category": "HTTP, сервер, домены, хостинг",
+  "main_query": "301 редирект",
+  "modules": "http-headers audit-sajta proverka-indeksacii",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "18.11.2026"
+ },
+ {
+  "id": 477,
+  "title": "302 редирект временный редирект https://titlo.ru/slovar/302-redirekt/",
+  "category": "HTTP, сервер, домены, хостинг",
+  "main_query": "302 редирект",
+  "modules": "http-headers audit-sajta proverka-indeksacii",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 480,
+  "title": "404 Not Found https://titlo.ru/slovar/404-not-found/",
+  "category": "HTTP, сервер, домены, хостинг",
+  "main_query": "ошибка 404",
+  "modules": "http-headers audit-sajta proverka-indeksacii",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "18.11.2026"
+ },
+ {
+  "id": 357,
+  "title": "Alt-текст alt изображения https://titlo.ru/slovar/alt-tekst/",
+  "category": "Контент и тексты",
+  "main_query": "тег alt",
+  "modules": "proverka-meta-tegov-online audit-sajta analiz-teksta",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 425,
+  "title": "Core Web Vitals CWV https://titlo.ru/slovar/core-web-vitals/",
+  "category": "Технический SEO и индексация",
+  "main_query": "core web vitals",
+  "modules": "audit-sajta http-headers monitoring-pozicii-sayta",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 584,
+  "title": "CPA цена действия",
+  "category": "Аналитика, метрики и UTM",
+  "main_query": "—",
+  "modules": "kalkulyator-roi",
+  "priority": "P1",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 605,
+  "title": "CPC цена клика",
+  "category": "PPC и контекстная реклама (смежные)",
+  "main_query": "—",
+  "modules": "kalkulyator-roi",
+  "priority": "P1",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 550,
+  "title": "CTR в выдаче кликабельность сниппета https://titlo.ru/slovar/ctr/",
+  "category": "Поведенческие факторы и UX",
+  "main_query": "ctr это в маркетинге",
+  "modules": "proverka-meta-tegov-online tipy-saitov-v-vydache monitoring-pozicii-sayta",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "17.11.2026"
+ },
+ {
+  "id": 499,
+  "title": "DNS система доменных имён https://titlo.ru/slovar/dns/",
+  "category": "HTTP, сервер, домены, хостинг",
+  "main_query": "dns записи",
+  "modules": "zapisi-domena http-headers audit-sajta",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 517,
+  "title": "Dofollow индексируемая ссылка https://titlo.ru/slovar/dofollow/",
+  "category": "Ссылки и внешняя оптимизация",
+  "main_query": "dofollow",
+  "modules": "otslezhivanie-ssylok audit-sajta monitoring-pozicii-sayta",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "18.11.2026"
+ },
+ {
+  "id": 91,
+  "title": "Google Search Console GSC, Серч Консоль https://titlo.ru/slovar/google-search-console/",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "google search console",
+  "modules": "proverka-indeksacii audit-sajta monitoring-pozicii-sayta",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 363,
+  "title": "H1 заголовок первого уровня https://titlo.ru/slovar/teg-h1/",
+  "category": "Мета-теги и HTML-разметка",
+  "main_query": "тег h1",
+  "modules": "proverka-meta-tegov-online analiz-teksta audit-sajta",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "17.11.2026"
+ },
+ {
+  "id": 195,
+  "title": "Hard-кластеризация жёсткая",
+  "category": "Кластеризация и структура сайта",
+  "main_query": "—",
+  "modules": "klasterizator-klyuchevykh-slov",
+  "priority": "P1",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 473,
+  "title": "HTTP-заголовки headers ответа сервера https://titlo.ru/slovar/http-zagolovki/",
+  "category": "HTTP, сервер, домены, хостинг",
+  "main_query": "http заголовки",
+  "modules": "http-headers audit-sajta proverka-indeksacii",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "18.11.2026"
+ },
+ {
+  "id": 589,
+  "title": "KPI SEO https://titlo.ru/slovar/kpi-seo/",
+  "category": "Аналитика, метрики и UTM",
+  "main_query": "kpi seo",
+  "modules": "monitoring-pozicii-sayta proverka-indeksacii audit-sajta kalkulyator-roi",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 368,
+  "title": "nofollow атрибут nofollow (кандидат «N&L») https://titlo.ru/slovar/nofollow/",
+  "category": "Мета-теги и HTML-разметка",
+  "main_query": "nofollow",
+  "modules": "proverka-meta-tegov-online audit-sajta otslezhivanie-ssylok",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "17.11.2026"
+ },
+ {
+  "id": 367,
+  "title": "noindex тег/директива noindex (кандидат «N&L») https://titlo.ru/slovar/noindex/",
+  "category": "Мета-теги и HTML-разметка",
+  "main_query": "noindex",
+  "modules": "audit-sajta proverka-indeksacii proverka-meta-tegov-online",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "18.11.2026"
+ },
+ {
+  "id": 582,
+  "title": "ROI возврат инвестиций https://titlo.ru/slovar/roi/",
+  "category": "Аналитика, метрики и UTM",
+  "main_query": "roi в маркетинге",
+  "modules": "kalkulyator-roi utm-metki monitoring-pozicii-sayta analiz-konkurentov",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 583,
+  "title": "ROMI ROI маркетинга",
+  "category": "Аналитика, метрики и UTM",
+  "main_query": "romi",
+  "modules": "kalkulyator-roi",
+  "priority": "P1",
+  "status": "Идея",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 375,
+  "title": "Schema.org https://titlo.ru/slovar/schema-org/",
+  "category": "Мета-теги и HTML-разметка",
+  "main_query": "schema org",
+  "modules": "proverka-meta-tegov-online audit-sajta analiz-relevantnosti",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "18.11.2026"
+ },
+ {
+  "id": 57,
+  "title": "SEO поисковая оптимизация, Search Engine Optimization https://titlo.ru/slovar/seo/",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "seo оптимизация",
+  "modules": "sbor-poiskovykh-podskazok audit-sajta monitoring-pozicii-sayta",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 636,
+  "title": "SEO интернет-магазина",
+  "category": "E-commerce SEO",
+  "main_query": "—",
+  "modules": "audit-sajta",
+  "priority": "P1",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 81,
+  "title": "SEO-аудит аудит сайта https://titlo.ru/slovar/seo-audit/",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "seo аудит",
+  "modules": "audit-sajta proverka-indeksacii analiz-relevantnosti",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 440,
+  "title": "SEO-краулер Screaming Frog, парсер сайта https://titlo.ru/slovar/seo-krauler/",
+  "category": "Технический SEO и индексация",
+  "main_query": "seo краулер",
+  "modules": "audit-sajta http-headers proverka-indeksacii proverka-meta-tegov-online",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 314,
+  "title": "SEO-текст https://titlo.ru/slovar/seo-tekst/",
+  "category": "Контент и тексты",
+  "main_query": "seo текст",
+  "modules": "analiz-relevantnosti analiz-teksta proverka-teksta-esenin podschet-dliny-teksta",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 402,
+  "title": "Sitemap.xml карта сайта XML https://titlo.ru/slovar/sitemap-xml/",
+  "category": "Технический SEO и индексация",
+  "main_query": "sitemap xml",
+  "modules": "audit-sajta http-headers proverka-indeksacii",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "18.11.2026"
+ },
+ {
+  "id": 194,
+  "title": "Soft-кластеризация мягкая",
+  "category": "Кластеризация и структура сайта",
+  "main_query": "—",
+  "modules": "klasterizator-klyuchevykh-slov",
+  "priority": "P1",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 486,
+  "title": "Uptime время безотказной работы https://titlo.ru/slovar/uptime/",
+  "category": "HTTP, сервер, домены, хостинг",
+  "main_query": "uptime сайта",
+  "modules": "monitoring-saytov http-headers otslezhivanie-sroka-registratsii-domenov zapisi-domena",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 498,
+  "title": "WHOIS https://titlo.ru/slovar/whois/",
+  "category": "HTTP, сервер, домены, хостинг",
+  "main_query": "whois",
+  "modules": "zapisi-domena http-headers audit-sajta",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 102,
+  "title": "Wordstat Вордстат, Яндекс Вордстат https://titlo.ru/slovar/wordstat/",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "вордстат",
+  "modules": "sbor-poiskovykh-podskazok generator_slov klasterizator-klyuchevykh-slov",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 514,
+  "title": "Анкор текст ссылки, anchor https://titlo.ru/slovar/ankor/",
+  "category": "Ссылки и внешняя оптимизация",
+  "main_query": "анкор ссылки",
+  "modules": "otslezhivanie-ssylok audit-sajta monitoring-pozicii-sayta",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "17.11.2026"
+ },
+ {
+  "id": 139,
+  "title": "Базовая частотность широкая частотность",
+  "category": "Запросы и семантика",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P1",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 411,
+  "title": "Битые ссылки broken links, 404 https://titlo.ru/slovar/bitye-ssylki/",
+  "category": "Технический SEO и индексация",
+  "main_query": "битые ссылки",
+  "modules": "audit-sajta http-headers proverka-indeksacii",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "18.11.2026"
+ },
+ {
+  "id": 590,
+  "title": "Видимость по ядру индекс видимости",
+  "category": "Аналитика, метрики и UTM",
+  "main_query": "—",
+  "modules": "monitoring-pozicii-sayta",
+  "priority": "P1",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 70,
+  "title": "Видимость сайта visibility https://titlo.ru/slovar/vidimost-sayta/",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "видимость сайта",
+  "modules": "monitoring-pozicii-sayta tipy-saitov-v-vydache sbor-poiskovykh-podskazok",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "18.11.2026"
+ },
+ {
+  "id": 78,
+  "title": "Внешняя оптимизация off-page SEO https://titlo.ru/slovar/vneshnyaya-optimizatsiya/",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "внешняя оптимизация сайта",
+  "modules": "audit-sajta monitoring-pozicii-sayta analiz-relevantnosti",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 77,
+  "title": "Внутренняя оптимизация on-page SEO https://titlo.ru/slovar/vnutrennyaya-optimizatsiya/",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "внутренняя оптимизация сайта",
+  "modules": "audit-sajta analiz-teksta proverka-meta-tegov-online",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 322,
+  "title": "Вхождение ключа прямое/точное, разбавленное, словоформа https://titlo.ru/slovar/vkhozhdenie-klyucha/",
+  "category": "Контент и тексты",
+  "main_query": "вхождение ключевых слов",
+  "modules": "analiz-relevantnosti analiz-teksta proverka-meta-tegov-online generator_slov",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 162,
+  "title": "Геонезависимый запрос ГНЗ",
+  "category": "Запросы и семантика",
+  "main_query": "—",
+  "modules": "geo-lokalizaciya-kommerciya",
+  "priority": "P1",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 397,
+  "title": "Директива Disallow https://titlo.ru/slovar/direktiva-disallow/",
+  "category": "Технический SEO и индексация",
+  "main_query": "директива disallow",
+  "modules": "audit-sajta proverka-indeksacii http-headers",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 365,
+  "title": "Длина title и description лимиты символов https://titlo.ru/slovar/dlina-title-i-description/",
+  "category": "Мета-теги и HTML-разметка",
+  "main_query": "длина title",
+  "modules": "podschet-dliny-teksta proverka-meta-tegov-online audit-sajta",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 147,
+  "title": "Длинный хвост long tail https://titlo.ru/slovar/dlinnyy-khvost/",
+  "category": "Запросы и семантика",
+  "main_query": "длинный хвост запросов",
+  "modules": "sbor-poiskovykh-podskazok generator_slov klasterizator-klyuchevykh-slov",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 493,
+  "title": "Домен доменное имя https://titlo.ru/slovar/domen/",
+  "category": "HTTP, сервер, домены, хостинг",
+  "main_query": "доменное имя",
+  "modules": "zapisi-domena http-headers audit-sajta",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 512,
+  "title": "Донор сайт-донор https://titlo.ru/slovar/donor/",
+  "category": "Ссылки и внешняя оптимизация",
+  "main_query": "сайт донор ссылок",
+  "modules": "otslezhivanie-ssylok proverka-indeksacii analiz-konkurentov zapisi-domena",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 408,
+  "title": "Дубли страниц дубликаты https://titlo.ru/slovar/dubli-stranits/",
+  "category": "Технический SEO и индексация",
+  "main_query": "дубли страниц",
+  "modules": "udalenie-dublikatov audit-sajta proverka-indeksacii",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "18.11.2026"
+ },
+ {
+  "id": 336,
+  "title": "Дублированный контент duplicate content",
+  "category": "Контент и тексты",
+  "main_query": "—",
+  "modules": "audit-sajta",
+  "priority": "P1",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 99,
+  "title": "ИКС индекс качества сайта Яндекса https://titlo.ru/slovar/iks/",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "индекс качества сайта",
+  "modules": "audit-sajta monitoring-pozicii-sayta analiz-relevantnosti",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 69,
+  "title": "Индекс поисковой системы поисковая база https://titlo.ru/slovar/indeks-poiskovoy-sistemy/",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "индекс поисковой системы",
+  "modules": "proverka-indeksacii audit-sajta monitoring-pozicii-sayta",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 155,
+  "title": "Информационный запрос инфо-запрос https://titlo.ru/slovar/informatsionnyy-zapros/",
+  "category": "Запросы и семантика",
+  "main_query": "информационный запрос",
+  "modules": "sbor-poiskovykh-podskazok tipy-saitov-v-vydache klasterizator-klyuchevykh-slov",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 407,
+  "title": "Исключённые страницы https://titlo.ru/slovar/isklyuchennye-stranitsy/",
+  "category": "Технический SEO и индексация",
+  "main_query": "исключенные страницы вебмастер",
+  "modules": "proverka-indeksacii http-headers audit-sajta monitoring-pozicii-sayta",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 571,
+  "title": "Источник трафика канал трафика https://titlo.ru/slovar/istochnik-trafika/",
+  "category": "Аналитика, метрики и UTM",
+  "main_query": "источники трафика сайта",
+  "modules": "utm-metki monitoring-pozicii-sayta analiz-konkurentov kalkulyator-roi",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 178,
+  "title": "Каннибализация запросов keyword cannibalization https://titlo.ru/slovar/kannibalizatsiya-zaprosov/",
+  "category": "Запросы и семантика",
+  "main_query": "каннибализация запросов",
+  "modules": "klasterizator-klyuchevykh-slov monitoring-pozicii-sayta analiz-relevantnosti",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 201,
+  "title": "Карта релевантности keyword mapping https://titlo.ru/slovar/karta-relevantnosti/",
+  "category": "Кластеризация и структура сайта",
+  "main_query": "карта релевантности",
+  "modules": "klasterizator-klyuchevykh-slov analiz-relevantnosti monitoring-pozicii-sayta proverka-meta-tegov-online",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 637,
+  "title": "Карточка товара https://titlo.ru/slovar/kartochka-tovara/",
+  "category": "E-commerce SEO",
+  "main_query": "seo карточки товара",
+  "modules": "analiz-relevantnosti proverka-meta-tegov-online analiz-teksta sbor-poiskovykh-podskazok",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 638,
+  "title": "Категория/листинг раздел каталога",
+  "category": "E-commerce SEO",
+  "main_query": "—",
+  "modules": "analiz-relevantnosti",
+  "priority": "P1",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 192,
+  "title": "Кластер группа запросов",
+  "category": "Кластеризация и структура сайта",
+  "main_query": "—",
+  "modules": "klasterizator-klyuchevykh-slov",
+  "priority": "P1",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 193,
+  "title": "Кластеризация по ТОПу SERP-кластеризация",
+  "category": "Кластеризация и структура сайта",
+  "main_query": "—",
+  "modules": "klasterizator-klyuchevykh-slov",
+  "priority": "P1",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 134,
+  "title": "Ключевое слово ключ, ключевик, keyword https://titlo.ru/slovar/klyuchevye-slova/",
+  "category": "Запросы и семантика",
+  "main_query": "ключевые слова",
+  "modules": "sbor-poiskovykh-podskazok generator_slov klasterizator-klyuchevykh-slov",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "17.11.2026"
+ },
+ {
+  "id": 172,
+  "title": "Комбинаторика ключевых фраз перемножение, генерация фраз",
+  "category": "Запросы и семантика",
+  "main_query": "—",
+  "modules": "generator_slov",
+  "priority": "P1",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 221,
+  "title": "Коммерческие факторы КФ https://titlo.ru/slovar/kommercheskie-faktory/",
+  "category": "Ранжирование и факторы",
+  "main_query": "коммерческие факторы",
+  "modules": "audit-sajta monitoring-pozicii-sayta geo-lokalizaciya-kommerciya",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "18.11.2026"
+ },
+ {
+  "id": 156,
+  "title": "Коммерческий запрос транзакционный https://titlo.ru/slovar/kommercheskiy-zapros/",
+  "category": "Запросы и семантика",
+  "main_query": "коммерческий запрос seo",
+  "modules": "sbor-poiskovykh-podskazok tipy-saitov-v-vydache klasterizator-klyuchevykh-slov",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 563,
+  "title": "Конверсия CR https://titlo.ru/slovar/konversiya/",
+  "category": "Поведенческие факторы и UX",
+  "main_query": "конверсия сайта",
+  "modules": "kalkulyator-roi utm-metki analiz-relevantnosti audit-sajta",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 179,
+  "title": "Конкурентность запроса keyword difficulty, KD https://titlo.ru/slovar/konkurentnost-zaprosa/",
+  "category": "Запросы и семантика",
+  "main_query": "конкурентность запроса",
+  "modules": "analiz-konkurentov tipy-saitov-v-vydache klasterizator-klyuchevykh-slov monitoring-pozicii-sayta",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 522,
+  "title": "Крауд-маркетинг крауд-ссылки https://titlo.ru/slovar/kraud-marketing/",
+  "category": "Ссылки и внешняя оптимизация",
+  "main_query": "крауд маркетинг",
+  "modules": "otslezhivanie-ssylok audit-sajta monitoring-pozicii-sayta",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "18.11.2026"
+ },
+ {
+  "id": 520,
+  "title": "Линкбилдинг link building, наращивание ссылок https://titlo.ru/slovar/linkbilding/",
+  "category": "Ссылки и внешняя оптимизация",
+  "main_query": "линкбилдинг",
+  "modules": "audit-sajta monitoring-pozicii-sayta analiz-relevantnosti",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 266,
+  "title": "Малополезный контент МПК https://titlo.ru/slovar/malopoleznyy-kontent/",
+  "category": "Алгоритмы и фильтры Яндекса",
+  "main_query": "малополезный контент",
+  "modules": "proverka-indeksacii analiz-teksta audit-sajta",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 149,
+  "title": "Маркерный запрос маркер, маска https://titlo.ru/slovar/markernyy-zapros/",
+  "category": "Запросы и семантика",
+  "main_query": "маркерный запрос",
+  "modules": "generator_slov sbor-poiskovykh-podskazok klasterizator-klyuchevykh-slov analiz-konkurentov",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 366,
+  "title": "Мета-тег robots meta robots https://titlo.ru/slovar/meta-teg-robots/",
+  "category": "Мета-теги и HTML-разметка",
+  "main_query": "мета тег robots",
+  "modules": "proverka-meta-tegov-online audit-sajta proverka-indeksacii",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 359,
+  "title": "Мета-теги meta tags https://titlo.ru/slovar/meta-tegi/",
+  "category": "Мета-теги и HTML-разметка",
+  "main_query": "мета теги",
+  "modules": "proverka-meta-tegov-online audit-sajta proverka-indeksacii",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "18.11.2026"
+ },
+ {
+  "id": 374,
+  "title": "Микроразметка structured data, разметка https://titlo.ru/slovar/mikrorazmetka/",
+  "category": "Мета-теги и HTML-разметка",
+  "main_query": "микроразметка",
+  "modules": "proverka-meta-tegov-online tipy-saitov-v-vydache audit-sajta",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "17.11.2026"
+ },
+ {
+  "id": 151,
+  "title": "Минус-слова стоп-слова для ядра https://titlo.ru/slovar/minus-slova/",
+  "category": "Запросы и семантика",
+  "main_query": "минус слова",
+  "modules": "udalenie-dublikatov generator_slov klasterizator-klyuchevykh-slov sbor-poiskovykh-podskazok",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 256,
+  "title": "Минусинск фильтр за SEO-ссылки https://titlo.ru/slovar/minusinsk/",
+  "category": "Алгоритмы и фильтры Яндекса",
+  "main_query": "фильтр минусинск",
+  "modules": "otslezhivanie-ssylok audit-sajta monitoring-pozicii-sayta",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "18.11.2026"
+ },
+ {
+  "id": 487,
+  "title": "Мониторинг доступности сайта",
+  "category": "HTTP, сервер, домены, хостинг",
+  "main_query": "мониторинг доступности сайта",
+  "modules": "monitoring-saytov",
+  "priority": "P1",
+  "status": "Идея",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 541,
+  "title": "Мониторинг обратных ссылок контроль ссылок",
+  "category": "Ссылки и внешняя оптимизация",
+  "main_query": "—",
+  "modules": "otslezhivanie-ssylok",
+  "priority": "P1",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 556,
+  "title": "Накрутка ПФ накрутка поведенческих https://titlo.ru/slovar/nakrutka-pf/",
+  "category": "Поведенческие факторы и UX",
+  "main_query": "накрутка пф",
+  "modules": "monitoring-pozicii-sayta audit-sajta proverka-meta-tegov-online",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "17.11.2026"
+ },
+ {
+  "id": 267,
+  "title": "Недостаточно качественная страница НКС https://titlo.ru/slovar/nedostatochno-kachestvennaya-stranitsa/",
+  "category": "Алгоритмы и фильтры Яндекса",
+  "main_query": "недостаточно качественная страница",
+  "modules": "proverka-indeksacii audit-sajta analiz-relevantnosti analiz-teksta",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 510,
+  "title": "Обратная ссылка бэклинк, backlink, входящая ссылка https://titlo.ru/slovar/obratnye-ssylki/",
+  "category": "Ссылки и внешняя оптимизация",
+  "main_query": "обратные ссылки",
+  "modules": "otslezhivanie-ssylok audit-sajta monitoring-pozicii-sayta",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "17.11.2026"
+ },
+ {
+  "id": 343,
+  "title": "Объём текста длина текста, знаков без пробелов https://titlo.ru/slovar/obyom-teksta/",
+  "category": "Контент и тексты",
+  "main_query": "объем текста seo",
+  "modules": "podschet-dliny-teksta analiz-relevantnosti analiz-teksta",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 450,
+  "title": "Оператор site: https://titlo.ru/slovar/operator-site/",
+  "category": "Технический SEO и индексация",
+  "main_query": "оператор site",
+  "modules": "proverka-indeksacii audit-sajta tipy-saitov-v-vydache",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 60,
+  "title": "Органический трафик органика, natural search https://titlo.ru/slovar/organicheskiy-trafik/",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "органический трафик",
+  "modules": "monitoring-pozicii-sayta audit-sajta analiz-relevantnosti",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "18.11.2026"
+ },
+ {
+  "id": 594,
+  "title": "Отчёт по SEO SEO-отчёт клиенту",
+  "category": "Аналитика, метрики и UTM",
+  "main_query": "—",
+  "modules": "monitoring-pozicii-sayta",
+  "priority": "P1",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 170,
+  "title": "Парсинг подсказок сбор подсказок",
+  "category": "Запросы и семантика",
+  "main_query": "—",
+  "modules": "sbor-poiskovykh-podskazok",
+  "priority": "P1",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 447,
+  "title": "Переезд сайта смена домена, склейка https://titlo.ru/slovar/pereezd-sayta/",
+  "category": "Технический SEO и индексация",
+  "main_query": "переезд сайта",
+  "modules": "http-headers audit-sajta proverka-indeksacii",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 404,
+  "title": "Переобход страниц переиндексация https://titlo.ru/slovar/pereobhod-stranits/",
+  "category": "Технический SEO и индексация",
+  "main_query": "переобход страниц",
+  "modules": "proverka-indeksacii http-headers audit-sajta",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 230,
+  "title": "Пессимизация понижение в выдаче https://titlo.ru/slovar/pessimizatsiya/",
+  "category": "Ранжирование и факторы",
+  "main_query": "пессимизация сайта",
+  "modules": "proverka-teksta-esenin monitoring-pozicii-sayta otslezhivanie-ssylok audit-sajta",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 222,
+  "title": "Поведенческие факторы ПФ https://titlo.ru/slovar/povedencheskie-faktory/",
+  "category": "Ранжирование и факторы",
+  "main_query": "поведенческие факторы",
+  "modules": "proverka-meta-tegov-online monitoring-pozicii-sayta audit-sajta",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "17.11.2026"
+ },
+ {
+  "id": 73,
+  "title": "Позиция сайта ранг в выдаче https://titlo.ru/slovar/pozitsiya-sayta/",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "позиция сайта",
+  "modules": "monitoring-pozicii-sayta analiz-relevantnosti audit-sajta",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 59,
+  "title": "Поисковая выдача SERP, СЕРП https://titlo.ru/slovar/poiskovaya-vydacha/",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "поисковая выдача",
+  "modules": "tipy-saitov-v-vydache monitoring-pozicii-sayta geo-lokalizaciya-kommerciya",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "17.11.2026"
+ },
+ {
+  "id": 453,
+  "title": "Поисковые операторы search operators https://titlo.ru/slovar/poiskovye-operatory/",
+  "category": "Технический SEO и индексация",
+  "main_query": "поисковые операторы",
+  "modules": "proverka-indeksacii audit-sajta analiz-konkurentov",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 133,
+  "title": "Поисковый запрос ключевой запрос, query",
+  "category": "Запросы и семантика",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P1",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 66,
+  "title": "Поисковый робот краулер, бот, паук, crawler https://titlo.ru/slovar/poiskovyy-robot/",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "поисковый робот",
+  "modules": "proverka-indeksacii audit-sajta http-headers",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "17.11.2026"
+ },
+ {
+  "id": 551,
+  "title": "Показатель отказов bounce rate https://titlo.ru/slovar/pokazatel-otkazov/",
+  "category": "Поведенческие факторы и UX",
+  "main_query": "показатель отказов",
+  "modules": "audit-sajta proverka-meta-tegov-online monitoring-pozicii-sayta",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "18.11.2026"
+ },
+ {
+  "id": 202,
+  "title": "Посадочная страница landing page, посадка, лендинг https://titlo.ru/slovar/posadochnaya-stranica/",
+  "category": "Кластеризация и структура сайта",
+  "main_query": "посадочная страница",
+  "modules": "proverka-meta-tegov-online audit-sajta monitoring-pozicii-sayta",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "17.11.2026"
+ },
+ {
+  "id": 64,
+  "title": "Ранжирование ranking https://titlo.ru/slovar/ranzhirovanie/",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "ранжирование сайта",
+  "modules": "monitoring-pozicii-sayta analiz-relevantnosti audit-sajta",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "18.11.2026"
+ },
+ {
+  "id": 107,
+  "title": "Региональность регион сайта https://titlo.ru/slovar/regionalnost/",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "региональность сайта",
+  "modules": "geo-lokalizaciya-kommerciya monitoring-pozicii-sayta audit-sajta",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 204,
+  "title": "Релевантный URL URL в выдаче по запросу",
+  "category": "Кластеризация и структура сайта",
+  "main_query": "—",
+  "modules": "monitoring-pozicii-sayta",
+  "priority": "P1",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 231,
+  "title": "Санкции фильтры ПС",
+  "category": "Ранжирование и факторы",
+  "main_query": "—",
+  "modules": "proverka-teksta-esenin",
+  "priority": "P1",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 137,
+  "title": "Сбор семантики подбор ключевых слов",
+  "category": "Запросы и семантика",
+  "main_query": "—",
+  "modules": "sbor-poiskovykh-podskazok",
+  "priority": "P1",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 344,
+  "title": "Символы с пробелами и без знаки с пробелами https://titlo.ru/slovar/simvoly-s-probelami-i-bez/",
+  "category": "Контент и тексты",
+  "main_query": "количество символов с пробелами",
+  "modules": "podschet-dliny-teksta analiz-teksta proverka-meta-tegov-online",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 394,
+  "title": "Сканирование обход, crawling https://titlo.ru/slovar/skanirovanie/",
+  "category": "Технический SEO и индексация",
+  "main_query": "сканирование сайта",
+  "modules": "audit-sajta http-headers proverka-indeksacii",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 62,
+  "title": "Сниппет snippet https://titlo.ru/slovar/snippet/",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "сниппет",
+  "modules": "proverka-meta-tegov-online tipy-saitov-v-vydache analiz-teksta",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "17.11.2026"
+ },
+ {
+  "id": 495,
+  "title": "Срок регистрации домена продление домена https://titlo.ru/slovar/srok-registratsii-domena/",
+  "category": "HTTP, сервер, домены, хостинг",
+  "main_query": "срок регистрации домена",
+  "modules": "otslezhivanie-sroka-registratsii-domenov zapisi-domena monitoring-saytov",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 511,
+  "title": "Ссылочная масса ссылочный профиль https://titlo.ru/slovar/ssylochnaya-massa/",
+  "category": "Ссылки и внешняя оптимизация",
+  "main_query": "ссылочная масса",
+  "modules": "otslezhivanie-ssylok audit-sajta monitoring-pozicii-sayta",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "18.11.2026"
+ },
+ {
+  "id": 200,
+  "title": "Структура сайта архитектура сайта https://titlo.ru/slovar/struktura-sayta/",
+  "category": "Кластеризация и структура сайта",
+  "main_query": "структура сайта",
+  "modules": "klasterizator-klyuchevykh-slov audit-sajta sbor-poiskovykh-podskazok",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "17.11.2026"
+ },
+ {
+  "id": 591,
+  "title": "Съём позиций проверка позиций, мониторинг позиций",
+  "category": "Аналитика, метрики и UTM",
+  "main_query": "—",
+  "modules": "monitoring-pozicii-sayta",
+  "priority": "P1",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 218,
+  "title": "Текстовые факторы текстовая релевантность https://titlo.ru/slovar/tekstovye-faktory/",
+  "category": "Ранжирование и факторы",
+  "main_query": "текстовые факторы",
+  "modules": "analiz-relevantnosti analiz-teksta proverka-teksta-esenin",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "18.11.2026"
+ },
+ {
+  "id": 79,
+  "title": "Техническая оптимизация технический SEO, technical SEO https://titlo.ru/slovar/tekhnicheskaya-optimizatsiya/",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "техническая оптимизация сайта",
+  "modules": "audit-sajta proverka-indeksacii http-headers",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 439,
+  "title": "Технический аудит https://titlo.ru/slovar/tekhnicheskiy-audit/",
+  "category": "Технический SEO и индексация",
+  "main_query": "технический аудит сайта",
+  "modules": "audit-sajta http-headers proverka-indeksacii",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 318,
+  "title": "ТЗ на текст техническое задание копирайтеру",
+  "category": "Контент и тексты",
+  "main_query": "—",
+  "modules": "analiz-relevantnosti",
+  "priority": "P1",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 215,
+  "title": "Типы сайтов в выдаче агрегаторы, маркетплейсы, информационные https://titlo.ru/slovar/tipy-saitov-v-vydache/",
+  "category": "Кластеризация и структура сайта",
+  "main_query": "типы сайтов в выдаче",
+  "modules": "tipy-saitov-v-vydache analiz-relevantnosti monitoring-pozicii-sayta",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "18.11.2026"
+ },
+ {
+  "id": 71,
+  "title": "ТОП-10 первая страница выдачи, топ https://titlo.ru/slovar/top-10/",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "топ 10 поисковой выдачи",
+  "modules": "monitoring-pozicii-sayta analiz-konkurentov analiz-relevantnosti",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 141,
+  "title": "Точная частотность \"!восклицательный знак\"",
+  "category": "Запросы и семантика",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P1",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 333,
+  "title": "Уникальность текста антиплагиат https://titlo.ru/slovar/unikalnost-teksta/",
+  "category": "Контент и тексты",
+  "main_query": "уникальность текста",
+  "modules": "analiz-teksta proverka-teksta-esenin analiz-relevantnosti",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "17.11.2026"
+ },
+ {
+  "id": 217,
+  "title": "Факторы ранжирования ranking factors https://titlo.ru/slovar/faktory-ranzhirovaniya/",
+  "category": "Ранжирование и факторы",
+  "main_query": "факторы ранжирования",
+  "modules": "audit-sajta monitoring-pozicii-sayta analiz-relevantnosti",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "18.11.2026"
+ },
+ {
+  "id": 260,
+  "title": "Фильтр за накрутку ПФ ПФ-фильтр",
+  "category": "Алгоритмы и фильтры Яндекса",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P1",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 140,
+  "title": "Фразовая частотность \"кавычки\"",
+  "category": "Запросы и семантика",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P1",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 203,
+  "title": "Целевая страница продвигаемый URL",
+  "category": "Кластеризация и структура сайта",
+  "main_query": "—",
+  "modules": "monitoring-pozicii-sayta",
+  "priority": "P1",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 412,
+  "title": "Цепочка редиректов redirect chain https://titlo.ru/slovar/tsepochka-redirektov/",
+  "category": "Технический SEO и индексация",
+  "main_query": "цепочка редиректов",
+  "modules": "http-headers audit-sajta proverka-indeksacii",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 153,
+  "title": "Чистка семантики фильтрация ядра",
+  "category": "Запросы и семантика",
+  "main_query": "—",
+  "modules": "udalenie-dublikatov",
+  "priority": "P1",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 90,
+  "title": "Яндекс Вебмастер Webmaster https://titlo.ru/slovar/yandeks-vebmaster/",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "яндекс вебмастер",
+  "modules": "proverka-indeksacii audit-sajta monitoring-pozicii-sayta",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 274,
+  "title": "Яндекс Директ Директ",
+  "category": "Алгоритмы и фильтры Яндекса",
+  "main_query": "—",
+  "modules": "utm-metki",
+  "priority": "P1",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 272,
+  "title": "Яндекс Метрика Метрика https://titlo.ru/slovar/yandeks-metrika/",
+  "category": "Алгоритмы и фильтры Яндекса",
+  "main_query": "яндекс метрика",
+  "modules": "utm-metki kalkulyator-roi audit-sajta",
+  "priority": "P1",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 369,
+  "title": "<noindex> Яндекса тег noindex в тексте",
+  "category": "Мета-теги и HTML-разметка",
+  "main_query": "—",
+  "modules": "otslezhivanie-ssylok",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 475,
+  "title": "200 OK",
+  "category": "HTTP, сервер, домены, хостинг",
+  "main_query": "—",
+  "modules": "http-headers",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 478,
+  "title": "304 Not Modified If-Modified-Since",
+  "category": "HTTP, сервер, домены, хостинг",
+  "main_query": "—",
+  "modules": "http-headers",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 481,
+  "title": "410 Gone",
+  "category": "HTTP, сервер, домены, хостинг",
+  "main_query": "—",
+  "modules": "http-headers",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 482,
+  "title": "500 / 503 ошибки сервера",
+  "category": "HTTP, сервер, домены, хостинг",
+  "main_query": "код 500",
+  "modules": "monitoring-saytov",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "17.11.2026"
+ },
+ {
+  "id": 500,
+  "title": "A-запись",
+  "category": "HTTP, сервер, домены, хостинг",
+  "main_query": "—",
+  "modules": "zapisi-domena",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 566,
+  "title": "A/B-тест сплит-тест",
+  "category": "Поведенческие факторы и UX",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 697,
+  "title": "Ahrefs",
+  "category": "Инструменты и сервисы",
+  "main_query": "—",
+  "modules": "otslezhivanie-ssylok",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 296,
+  "title": "AI Overviews AIO, ИИ-обзоры",
+  "category": "Алгоритмы и апдейты Google",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 279,
+  "title": "BERT",
+  "category": "Алгоритмы и апдейты Google",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 586,
+  "title": "CAC стоимость привлечения клиента",
+  "category": "Аналитика, метрики и UTM",
+  "main_query": "—",
+  "modules": "kalkulyator-roi",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 399,
+  "title": "Clean-param директива Яндекса",
+  "category": "Технический SEO и индексация",
+  "main_query": "—",
+  "modules": "audit-sajta",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 428,
+  "title": "CLS Cumulative Layout Shift",
+  "category": "Технический SEO и индексация",
+  "main_query": "—",
+  "modules": "audit-sajta",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 457,
+  "title": "CMS движок, админка",
+  "category": "Технический SEO и индексация",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 282,
+  "title": "Core Update основное обновление",
+  "category": "Алгоритмы и апдейты Google",
+  "main_query": "—",
+  "modules": "monitoring-pozicii-sayta",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 585,
+  "title": "CPL цена лида",
+  "category": "Аналитика, метрики и UTM",
+  "main_query": "—",
+  "modules": "kalkulyator-roi",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 606,
+  "title": "CPM цена за 1000 показов",
+  "category": "PPC и контекстная реклама (смежные)",
+  "main_query": "—",
+  "modules": "kalkulyator-roi",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 607,
+  "title": "CTR рекламы",
+  "category": "PPC и контекстная реклама (смежные)",
+  "main_query": "—",
+  "modules": "kalkulyator-roi",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "17.11.2026"
+ },
+ {
+  "id": 309,
+  "title": "Deduplication дедупликация, нормализация",
+  "category": "Алгоритмы и апдейты Google",
+  "main_query": "—",
+  "modules": "proverka-meta-tegov-online",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 302,
+  "title": "Disavow отклонение ссылок",
+  "category": "Алгоритмы и апдейты Google",
+  "main_query": "—",
+  "modules": "otslezhivanie-ssylok",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 539,
+  "title": "Domain Rating DR (Ahrefs)",
+  "category": "Ссылки и внешняя оптимизация",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 497,
+  "title": "Expired domain просроченный домен",
+  "category": "HTTP, сервер, домены, хостинг",
+  "main_query": "—",
+  "modules": "otslezhivanie-sroka-registratsii-domenov",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 379,
+  "title": "FAQPage разметка",
+  "category": "Мета-теги и HTML-разметка",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 646,
+  "title": "GEO Generative Engine Optimization",
+  "category": "ИИ, нейропоиск и новые форматы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 409,
+  "title": "GET-параметры URL-параметры",
+  "category": "Технический SEO и индексация",
+  "main_query": "—",
+  "modules": "audit-sajta",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 610,
+  "title": "Google Ads AdWords",
+  "category": "PPC и контекстная реклама (смежные)",
+  "main_query": "—",
+  "modules": "utm-metki",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 568,
+  "title": "Google Analytics 4 GA4",
+  "category": "Аналитика, метрики и UTM",
+  "main_query": "—",
+  "modules": "utm-metki",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 312,
+  "title": "Google Autocomplete подсказки Google",
+  "category": "Алгоритмы и апдейты Google",
+  "main_query": "—",
+  "modules": "sbor-poiskovykh-podskazok",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 109,
+  "title": "Google Business Profile Google Мой бизнес",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 276,
+  "title": "Google Penguin Пингвин",
+  "category": "Алгоритмы и апдейты Google",
+  "main_query": "google penguin",
+  "modules": "otslezhivanie-ssylok",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "17.11.2026"
+ },
+ {
+  "id": 68,
+  "title": "Googlebot робот Google",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 281,
+  "title": "Helpful Content Update HCU, полезный контент",
+  "category": "Алгоритмы и апдейты Google",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 371,
+  "title": "Hreflang языковые версии",
+  "category": "Мета-теги и HTML-разметка",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 354,
+  "title": "HTML-разметка текста вёрстка статьи",
+  "category": "Контент и тексты",
+  "main_query": "—",
+  "modules": "html-redaktor",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 446,
+  "title": "HTTPS-переезд переезд на https",
+  "category": "Технический SEO и индексация",
+  "main_query": "—",
+  "modules": "http-headers",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 405,
+  "title": "IndexNow",
+  "category": "Технический SEO и индексация",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 427,
+  "title": "INP Interaction to Next Paint",
+  "category": "Технический SEO и индексация",
+  "main_query": "—",
+  "modules": "audit-sajta",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 491,
+  "title": "IP-адрес",
+  "category": "HTTP, сервер, домены, хостинг",
+  "main_query": "—",
+  "modules": "zapisi-domena",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 419,
+  "title": "JavaScript SEO JS-рендеринг",
+  "category": "Технический SEO и индексация",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 376,
+  "title": "JSON-LD",
+  "category": "Мета-теги и HTML-разметка",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 184,
+  "title": "Key Collector КК, Кей Коллектор",
+  "category": "Запросы и семантика",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 362,
+  "title": "Keywords мета-тег keywords",
+  "category": "Мета-теги и HTML-разметка",
+  "main_query": "мета тег keywords",
+  "modules": "proverka-meta-tegov-online",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "18.11.2026"
+ },
+ {
+  "id": 298,
+  "title": "Knowledge Graph граф знаний",
+  "category": "Алгоритмы и апдейты Google",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 483,
+  "title": "Last-Modified",
+  "category": "HTTP, сервер, домены, хостинг",
+  "main_query": "—",
+  "modules": "http-headers",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 426,
+  "title": "LCP Largest Contentful Paint",
+  "category": "Технический SEO и индексация",
+  "main_query": "—",
+  "modules": "audit-sajta",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 648,
+  "title": "LLM большие языковые модели",
+  "category": "ИИ, нейропоиск и новые форматы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 587,
+  "title": "LTV пожизненная ценность клиента",
+  "category": "Аналитика, метрики и UTM",
+  "main_query": "—",
+  "modules": "kalkulyator-roi",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 301,
+  "title": "Manual Action ручные меры",
+  "category": "Алгоритмы и апдейты Google",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 196,
+  "title": "Middle/Moderate-кластеризация средняя",
+  "category": "Кластеризация и структура сайта",
+  "main_query": "—",
+  "modules": "klasterizator-klyuchevykh-slov",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 106,
+  "title": "Mobile-first индексация mobile-first indexing",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 229,
+  "title": "Mobile-friendly адаптивность как фактор",
+  "category": "Ранжирование и факторы",
+  "main_query": "—",
+  "modules": "audit-sajta",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 501,
+  "title": "MX-запись",
+  "category": "HTTP, сервер, домены, хостинг",
+  "main_query": "—",
+  "modules": "zapisi-domena",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 330,
+  "title": "N-граммы биграммы, триграммы",
+  "category": "Контент и тексты",
+  "main_query": "—",
+  "modules": "analiz-teksta",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 329,
+  "title": "NLP обработка естественного языка (кандидат «N&L»)",
+  "category": "Контент и тексты",
+  "main_query": "—",
+  "modules": "analiz-teksta",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 502,
+  "title": "NS-запись",
+  "category": "HTTP, сервер, домены, хостинг",
+  "main_query": "ns запись dns",
+  "modules": "zapisi-domena",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 372,
+  "title": "Open Graph og-теги",
+  "category": "Мета-теги и HTML-разметка",
+  "main_query": "—",
+  "modules": "proverka-meta-tegov-online",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 286,
+  "title": "Page Experience опыт взаимодействия со страницей",
+  "category": "Алгоритмы и апдейты Google",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 101,
+  "title": "PageRank PR",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 431,
+  "title": "PageSpeed Insights PSI",
+  "category": "Технический SEO и индексация",
+  "main_query": "—",
+  "modules": "audit-sajta",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 528,
+  "title": "PBN сеть сайтов-сателлитов",
+  "category": "Ссылки и внешняя оптимизация",
+  "main_query": "—",
+  "modules": "zapisi-domena",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 300,
+  "title": "People Also Ask PAA, «Похожие вопросы»",
+  "category": "Алгоритмы и апдейты Google",
+  "main_query": "—",
+  "modules": "sbor-poiskovykh-podskazok",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 381,
+  "title": "Product / Offer разметка",
+  "category": "Мета-теги и HTML-разметка",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 124,
+  "title": "Proxima метрика качества Яндекса",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 278,
+  "title": "RankBrain",
+  "category": "Алгоритмы и апдейты Google",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 518,
+  "title": "rel=sponsored",
+  "category": "Ссылки и внешняя оптимизация",
+  "main_query": "—",
+  "modules": "otslezhivanie-ssylok",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 382,
+  "title": "Review / AggregateRating",
+  "category": "Мета-теги и HTML-разметка",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 306,
+  "title": "Scaled Content Abuse масштабный малоценный контент",
+  "category": "Алгоритмы и апдейты Google",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 695,
+  "title": "Screaming Frog",
+  "category": "Инструменты и сервисы",
+  "main_query": "—",
+  "modules": "audit-sajta",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 622,
+  "title": "SEM",
+  "category": "PPC и контекстная реклама (смежные)",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 698,
+  "title": "Semrush",
+  "category": "Инструменты и сервисы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 645,
+  "title": "SEO для маркетплейсов SEO на Ozon/WB",
+  "category": "E-commerce SEO",
+  "main_query": "оптимизация карточек товаров на wildberries",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 315,
+  "title": "SEO-копирайтинг",
+  "category": "Контент и тексты",
+  "main_query": "—",
+  "modules": "analiz-teksta",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 83,
+  "title": "SEO-продвижение",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 80,
+  "title": "SEO-специалист сеошник, оптимизатор",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 82,
+  "title": "SEO-стратегия",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 629,
+  "title": "SERM управление репутацией в поиске",
+  "category": "Локальное SEO и SERP-фичи",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 699,
+  "title": "Serpstat",
+  "category": "Инструменты и сервисы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 305,
+  "title": "Site Reputation Abuse паразитное SEO",
+  "category": "Алгоритмы и апдейты Google",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 442,
+  "title": "Soft 404 мягкая 404",
+  "category": "Технический SEO и индексация",
+  "main_query": "—",
+  "modules": "http-headers",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 506,
+  "title": "SSL-сертификат TLS",
+  "category": "HTTP, сервер, домены, хостинг",
+  "main_query": "—",
+  "modules": "http-headers",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 420,
+  "title": "SSR серверный рендеринг",
+  "category": "Технический SEO и индексация",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 332,
+  "title": "TLP список словосочетаний для текста (Титло)",
+  "category": "Контент и тексты",
+  "main_query": "—",
+  "modules": "analiz-relevantnosti",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 655,
+  "title": "Topical authority тематический авторитет",
+  "category": "ИИ, нейропоиск и новые форматы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 430,
+  "title": "TTFB время до первого байта",
+  "category": "Технический SEO и индексация",
+  "main_query": "—",
+  "modules": "http-headers",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 503,
+  "title": "TXT-запись SPF, DKIM, верификация",
+  "category": "HTTP, сервер, домены, хостинг",
+  "main_query": "txt запись в dns",
+  "modules": "zapisi-domena",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 339,
+  "title": "UGC пользовательский контент",
+  "category": "Контент и тексты",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 575,
+  "title": "utm_campaign",
+  "category": "Аналитика, метрики и UTM",
+  "main_query": "—",
+  "modules": "utm-metki",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 574,
+  "title": "utm_medium",
+  "category": "Аналитика, метрики и UTM",
+  "main_query": "—",
+  "modules": "utm-metki",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 573,
+  "title": "utm_source",
+  "category": "Аналитика, метрики и UTM",
+  "main_query": "—",
+  "modules": "utm-metki",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 558,
+  "title": "UX пользовательский опыт",
+  "category": "Поведенческие факторы и UX",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 611,
+  "title": "VK Реклама myTarget (бывш.)",
+  "category": "PPC и контекстная реклама (смежные)",
+  "main_query": "—",
+  "modules": "utm-metki",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 484,
+  "title": "X-Robots-Tag https://titlo.ru/slovar/x-robots-tag/",
+  "category": "HTTP, сервер, домены, хостинг",
+  "main_query": "x-robots-tag",
+  "modules": "http-headers proverka-meta-tegov-online audit-sajta",
+  "priority": "P2",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 67,
+  "title": "YandexBot робот Яндекса",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 225,
+  "title": "YMYL Your Money Your Life",
+  "category": "Ранжирование и факторы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 115,
+  "title": "Zero-click поиск zero-click search",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 216,
+  "title": "Агрегатор сайт-агрегатор",
+  "category": "Кластеризация и структура сайта",
+  "main_query": "—",
+  "modules": "tipy-saitov-v-vydache",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 433,
+  "title": "Адаптивная вёрстка responsive design",
+  "category": "Технический SEO и индексация",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 513,
+  "title": "Акцептор продвигаемый сайт",
+  "category": "Ссылки и внешняя оптимизация",
+  "main_query": "сайт акцептор",
+  "modules": "otslezhivanie-ssylok",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 180,
+  "title": "Анализ ниши",
+  "category": "Запросы и семантика",
+  "main_query": "—",
+  "modules": "analiz-konkurentov",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 516,
+  "title": "Анкор-лист",
+  "category": "Ссылки и внешняя оптимизация",
+  "main_query": "—",
+  "modules": "otslezhivanie-ssylok",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 93,
+  "title": "Апдейт ап, обновление выдачи",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "—",
+  "modules": "monitoring-pozicii-sayta",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 525,
+  "title": "Арендные ссылки временные ссылки",
+  "category": "Ссылки и внешняя оптимизация",
+  "main_query": "—",
+  "modules": "otslezhivanie-ssylok",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 92,
+  "title": "Асессор оценщик качества, quality rater",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 642,
+  "title": "Ассортимент как фактор",
+  "category": "E-commerce SEO",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 388,
+  "title": "Атрибут rel sponsored, ugc, nofollow",
+  "category": "Мета-теги и HTML-разметка",
+  "main_query": "—",
+  "modules": "otslezhivanie-ssylok",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 578,
+  "title": "Атрибуция модель атрибуции",
+  "category": "Аналитика, метрики и UTM",
+  "main_query": "—",
+  "modules": "utm-metki",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 521,
+  "title": "Аутрич outreach",
+  "category": "Ссылки и внешняя оптимизация",
+  "main_query": "—",
+  "modules": "otslezhivanie-ssylok",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 259,
+  "title": "Аффилиат-фильтр склейка аффилиатов",
+  "category": "Алгоритмы и фильтры Яндекса",
+  "main_query": "—",
+  "modules": "zapisi-domena",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 232,
+  "title": "Бан исключение из индекса",
+  "category": "Ранжирование и факторы",
+  "main_query": "—",
+  "modules": "proverka-indeksacii",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 515,
+  "title": "Безанкорная ссылка URL-ссылка",
+  "category": "Ссылки и внешняя оптимизация",
+  "main_query": "—",
+  "modules": "otslezhivanie-ssylok",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 74,
+  "title": "Белое SEO white hat",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 526,
+  "title": "Биржа ссылок Sape, Miralinks, GoGetLinks",
+  "category": "Ссылки и внешняя оптимизация",
+  "main_query": "—",
+  "modules": "otslezhivanie-ssylok",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 691,
+  "title": "Бот-трафик боты в Метрике",
+  "category": "Сеошный жаргон",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 165,
+  "title": "Брендовый запрос брендовый трафик",
+  "category": "Запросы и семантика",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 114,
+  "title": "Быстрые ответы Яндекса блок ответа",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 567,
+  "title": "Веб-аналитика",
+  "category": "Аналитика, метрики и UTM",
+  "main_query": "—",
+  "modules": "utm-metki",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 273,
+  "title": "Вебвизор Webvisor",
+  "category": "Алгоритмы и фильтры Яндекса",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 524,
+  "title": "Вечные ссылки",
+  "category": "Ссылки и внешняя оптимизация",
+  "main_query": "—",
+  "modules": "otslezhivanie-ssylok",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 569,
+  "title": "Визит сессия",
+  "category": "Аналитика, метрики и UTM",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 207,
+  "title": "Вложенность страниц уровень вложенности, click depth",
+  "category": "Кластеризация и структура сайта",
+  "main_query": "—",
+  "modules": "analiz-konkurentov",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 220,
+  "title": "Внешние факторы ссылочные факторы",
+  "category": "Ранжирование и факторы",
+  "main_query": "—",
+  "modules": "otslezhivanie-ssylok",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 533,
+  "title": "Внешняя ссылка исходящая ссылка",
+  "category": "Ссылки и внешняя оптимизация",
+  "main_query": "—",
+  "modules": "otslezhivanie-ssylok",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 219,
+  "title": "Внутренние факторы",
+  "category": "Ранжирование и факторы",
+  "main_query": "—",
+  "modules": "audit-sajta",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 534,
+  "title": "Внутренняя ссылка",
+  "category": "Ссылки и внешняя оптимизация",
+  "main_query": "—",
+  "modules": "audit-sajta",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 555,
+  "title": "Возврат в выдачу pogo-sticking",
+  "category": "Поведенческие факторы и UX",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 97,
+  "title": "Возраст домена domain age",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "—",
+  "modules": "zapisi-domena",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 600,
+  "title": "Воронка продаж",
+  "category": "Аналитика, метрики и UTM",
+  "main_query": "—",
+  "modules": "kalkulyator-roi",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 552,
+  "title": "Время на сайте длительность визита",
+  "category": "Поведенческие факторы и UX",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 679,
+  "title": "Выпасть из индекса вылет из индекса",
+  "category": "Сеошный жаргон",
+  "main_query": "—",
+  "modules": "proverka-indeksacii",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 348,
+  "title": "Генеративный контент ИИ-тексты, AI-контент",
+  "category": "Контент и тексты",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 624,
+  "title": "Геовыдача локальная выдача",
+  "category": "Локальное SEO и SERP-фичи",
+  "main_query": "—",
+  "modules": "geo-lokalizaciya-kommerciya",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 553,
+  "title": "Глубина просмотра",
+  "category": "Поведенческие факторы и UX",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 416,
+  "title": "Глубина сканирования click depth",
+  "category": "Технический SEO и индексация",
+  "main_query": "—",
+  "modules": "audit-sajta",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 523,
+  "title": "Гостевой пост гостевые статьи",
+  "category": "Ссылки и внешняя оптимизация",
+  "main_query": "—",
+  "modules": "otslezhivanie-ssylok",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 599,
+  "title": "Дашборд dashboard",
+  "category": "Аналитика, метрики и UTM",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 593,
+  "title": "Динамика позиций",
+  "category": "Аналитика, метрики и UTM",
+  "main_query": "—",
+  "modules": "monitoring-pozicii-sayta",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 617,
+  "title": "Динамические параметры Директа {keyword}, {source}",
+  "category": "PPC и контекстная реклама (смежные)",
+  "main_query": "—",
+  "modules": "utm-metki",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 398,
+  "title": "Директива Allow",
+  "category": "Технический SEO и индексация",
+  "main_query": "—",
+  "modules": "audit-sajta",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 751,
+  "title": "Домен второго уровня уровни доменов, полное доменное имя, FQDN https://titlo.ru/slovar/domen-vtorogo-urovnya/",
+  "category": "HTTP, сервер, домены, хостинг",
+  "main_query": "доменное имя второго уровня",
+  "modules": "zapisi-domena otslezhivanie-sroka-registratsii-domenov http-headers",
+  "priority": "P2",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 656,
+  "title": "Дорвей дор",
+  "category": "Чёрное и серое SEO",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 496,
+  "title": "Дроп-домен освобождающийся домен, дроп",
+  "category": "HTTP, сервер, домены, хостинг",
+  "main_query": "—",
+  "modules": "otslezhivanie-sroka-registratsii-domenov",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 588,
+  "title": "ДРР доля рекламных расходов",
+  "category": "Аналитика, метрики и UTM",
+  "main_query": "—",
+  "modules": "kalkulyator-roi",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 268,
+  "title": "Дубли в Вебмастере исключённые дубли",
+  "category": "Алгоритмы и фильтры Яндекса",
+  "main_query": "—",
+  "modules": "proverka-indeksacii",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 350,
+  "title": "Есенин модуль проверки текста Титло",
+  "category": "Контент и тексты",
+  "main_query": "—",
+  "modules": "proverka-teksta-esenin",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 532,
+  "title": "Естественные ссылки натуральные",
+  "category": "Ссылки и внешняя оптимизация",
+  "main_query": "—",
+  "modules": "otslezhivanie-ssylok",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 364,
+  "title": "Заголовки H2–H6 иерархия заголовков",
+  "category": "Мета-теги и HTML-разметка",
+  "main_query": "—",
+  "modules": "proverka-meta-tegov-online",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 331,
+  "title": "Задающие слова тематикозадающие слова",
+  "category": "Контент и тексты",
+  "main_query": "—",
+  "modules": "analiz-relevantnosti",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 326,
+  "title": "Закон Ципфа",
+  "category": "Контент и тексты",
+  "main_query": "—",
+  "modules": "analiz-teksta",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 689,
+  "title": "Закупка ссылок закуп",
+  "category": "Сеошный жаргон",
+  "main_query": "—",
+  "modules": "otslezhivanie-ssylok",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 103,
+  "title": "Зеркало сайта главное зеркало",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "—",
+  "modules": "http-headers",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 454,
+  "title": "Каноническая / неканоническая страница",
+  "category": "Технический SEO и индексация",
+  "main_query": "—",
+  "modules": "proverka-meta-tegov-online",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 658,
+  "title": "Кейворд-стаффинг keyword stuffing",
+  "category": "Чёрное и серое SEO",
+  "main_query": "—",
+  "modules": "proverka-teksta-esenin",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 119,
+  "title": "Клик из поиска",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 438,
+  "title": "Клоакинг cloaking",
+  "category": "Технический SEO и индексация",
+  "main_query": "—",
+  "modules": "http-headers",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 135,
+  "title": "Ключевая фраза key phrase",
+  "category": "Запросы и семантика",
+  "main_query": "—",
+  "modules": "generator_slov",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 238,
+  "title": "Колдунщики и спецблоки SERP features",
+  "category": "Ранжирование и факторы",
+  "main_query": "—",
+  "modules": "tipy-saitov-v-vydache",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 604,
+  "title": "Контекстная реклама PPC",
+  "category": "PPC и контекстная реклама (смежные)",
+  "main_query": "—",
+  "modules": "utm-metki",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 347,
+  "title": "Контент-маркетинг",
+  "category": "Контент и тексты",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 346,
+  "title": "Контент-план",
+  "category": "Контент и тексты",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 206,
+  "title": "Контентный кластер topic cluster",
+  "category": "Кластеризация и структура сайта",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 241,
+  "title": "Королёв алгоритм «Королёв»",
+  "category": "Алгоритмы и фильтры Яндекса",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "17.11.2026"
+ },
+ {
+  "id": 619,
+  "title": "Кросс-минусовка",
+  "category": "PPC и контекстная реклама (смежные)",
+  "main_query": "—",
+  "modules": "sravnenie-spiskov-klyuchevykh-fraz",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 443,
+  "title": "Кэширование cache-control",
+  "category": "Технический SEO и индексация",
+  "main_query": "—",
+  "modules": "http-headers",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 174,
+  "title": "Лемма начальная форма слова",
+  "category": "Запросы и семантика",
+  "main_query": "—",
+  "modules": "vydelenie-unikalnykh-slov-v-tekste",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 175,
+  "title": "Лемматизация приведение к лемме",
+  "category": "Запросы и семантика",
+  "main_query": "—",
+  "modules": "vydelenie-unikalnykh-slov-v-tekste",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 616,
+  "title": "Лендинг одностраничник",
+  "category": "PPC и контекстная реклама (смежные)",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 615,
+  "title": "Лид lead",
+  "category": "PPC и контекстная реклама (смежные)",
+  "main_query": "—",
+  "modules": "kalkulyator-roi",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 436,
+  "title": "Лог-файлы сервера анализ логов",
+  "category": "Технический SEO и индексация",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 163,
+  "title": "Локализация выдачи локальность",
+  "category": "Запросы и семантика",
+  "main_query": "—",
+  "modules": "geo-lokalizaciya-kommerciya",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 623,
+  "title": "Локальное SEO local SEO",
+  "category": "Локальное SEO и SERP-фичи",
+  "main_query": "—",
+  "modules": "geo-lokalizaciya-kommerciya",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 641,
+  "title": "Маркетплейсы в выдаче",
+  "category": "E-commerce SEO",
+  "main_query": "—",
+  "modules": "tipy-saitov-v-vydache",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 150,
+  "title": "Маска запроса базовая фраза",
+  "category": "Запросы и семантика",
+  "main_query": "—",
+  "modules": "generator_slov",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 239,
+  "title": "Матрикснет MatrixNet",
+  "category": "Алгоритмы и фильтры Яндекса",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 146,
+  "title": "Микро-НЧ сверхнизкочастотный запрос",
+  "category": "Запросы и семантика",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 618,
+  "title": "Минус-фразы в Директе",
+  "category": "PPC и контекстная реклама (смежные)",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 104,
+  "title": "Мобильная выдача mobile SERP",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "—",
+  "modules": "monitoring-pozicii-sayta",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 391,
+  "title": "Мониторинг мета-тегов контроль изменений тегов",
+  "category": "Мета-теги и HTML-разметка",
+  "main_query": "—",
+  "modules": "proverka-meta-tegov-online",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 684,
+  "title": "Морда главная страница",
+  "category": "Сеошный жаргон",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 351,
+  "title": "Морфология морфологический анализ",
+  "category": "Контент и тексты",
+  "main_query": "—",
+  "modules": "analiz-teksta",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 157,
+  "title": "Навигационный запрос брендовый навигационный",
+  "category": "Запросы и семантика",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 666,
+  "title": "Негативное SEO negative SEO",
+  "category": "Чёрное и серое SEO",
+  "main_query": "—",
+  "modules": "otslezhivanie-ssylok",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 270,
+  "title": "Нейро Яндекса Нейро, ответы нейросети",
+  "category": "Алгоритмы и фильтры Яндекса",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 258,
+  "title": "Непот-фильтр непот",
+  "category": "Алгоритмы и фильтры Яндекса",
+  "main_query": "—",
+  "modules": "otslezhivanie-ssylok",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 335,
+  "title": "Неуникальный контент копипаст",
+  "category": "Контент и тексты",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 152,
+  "title": "Неявные дубли перестановки слов",
+  "category": "Запросы и семантика",
+  "main_query": "—",
+  "modules": "udalenie-dublikatov",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 113,
+  "title": "Нулевая позиция featured snippet, быстрый ответ",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "нулевая позиция в поисковой выдаче",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "17.11.2026"
+ },
+ {
+  "id": 327,
+  "title": "Облако слов word cloud",
+  "category": "Контент и тексты",
+  "main_query": "—",
+  "modules": "analiz-teksta",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 452,
+  "title": "Оператор inurl/intitle поисковые операторы",
+  "category": "Технический SEO и индексация",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 451,
+  "title": "Оператор url:",
+  "category": "Технический SEO и индексация",
+  "main_query": "—",
+  "modules": "proverka-indeksacii",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 358,
+  "title": "Оптимизация изображений image SEO",
+  "category": "Контент и тексты",
+  "main_query": "—",
+  "modules": "audit-sajta",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 61,
+  "title": "Органический поиск естественная выдача",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 628,
+  "title": "Отзывы и рейтинг репутация",
+  "category": "Локальное SEO и SERP-фичи",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 735,
+  "title": "Ошибка 400",
+  "category": "HTTP, сервер, домены, хостинг",
+  "main_query": "ошибка 400",
+  "modules": "http-headers audit-sajta",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "18.11.2026"
+ },
+ {
+  "id": 734,
+  "title": "Ошибка 403 https://titlo.ru/slovar/oshibka-403/",
+  "category": "HTTP, сервер, домены, хостинг",
+  "main_query": "ошибка 403",
+  "modules": "http-headers audit-sajta proverka-indeksacii",
+  "priority": "P2",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 736,
+  "title": "Ошибка 502",
+  "category": "HTTP, сервер, домены, хостинг",
+  "main_query": "ошибка 502",
+  "modules": "http-headers audit-sajta",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "18.11.2026"
+ },
+ {
+  "id": 211,
+  "title": "Пагинация pagination",
+  "category": "Кластеризация и структура сайта",
+  "main_query": "—",
+  "modules": "audit-sajta",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 240,
+  "title": "Палех алгоритм «Палех»",
+  "category": "Алгоритмы и фильтры Яндекса",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "17.11.2026"
+ },
+ {
+  "id": 713,
+  "title": "Парсер parser",
+  "category": "Инструменты и сервисы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 181,
+  "title": "Пересечение семантики сравнение ядер",
+  "category": "Запросы и семантика",
+  "main_query": "—",
+  "modules": "sravnenie-spiskov-klyuchevykh-fraz",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 96,
+  "title": "Песочница sandbox",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 188,
+  "title": "Подсветка в выдаче выделение слов в сниппете",
+  "category": "Запросы и семантика",
+  "main_query": "—",
+  "modules": "tipy-saitov-v-vydache",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 58,
+  "title": "Поисковая система ПС, поисковик",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 125,
+  "title": "Поисковый алгоритм",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 87,
+  "title": "Поисковый маркетинг SEM",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 118,
+  "title": "Показ в поиске impression",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "—",
+  "modules": "monitoring-pozicii-sayta",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 120,
+  "title": "Популярные запросы (Вебмастер)",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "—",
+  "modules": "monitoring-pozicii-sayta",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 197,
+  "title": "Порог кластеризации степень кластеризации, число общих URL",
+  "category": "Кластеризация и структура сайта",
+  "main_query": "—",
+  "modules": "klasterizator-klyuchevykh-slov",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 674,
+  "title": "Портянка длинный SEO-текст внизу страницы",
+  "category": "Сеошный жаргон",
+  "main_query": "—",
+  "modules": "analiz-teksta",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 554,
+  "title": "Последний клик last click",
+  "category": "Поведенческие факторы и UX",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 595,
+  "title": "Прогноз трафика",
+  "category": "Аналитика, метрики и UTM",
+  "main_query": "—",
+  "modules": "kalkulyator-roi",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 651,
+  "title": "Промпт для SEO ChatGPT для SEO",
+  "category": "ИИ, нейропоиск и новые форматы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 681,
+  "title": "Просадка падение позиций/трафика",
+  "category": "Сеошный жаргон",
+  "main_query": "—",
+  "modules": "monitoring-pozicii-sayta",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 323,
+  "title": "Прямое вхождение точное вхождение",
+  "category": "Контент и тексты",
+  "main_query": "—",
+  "modules": "analiz-relevantnosti",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 683,
+  "title": "Пузомерки SEO-метрики (ИКС, DR и т.п.)",
+  "category": "Сеошный жаргон",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 148,
+  "title": "Пустышки запросы с нулевой точной частотой",
+  "category": "Запросы и семантика",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 324,
+  "title": "Разбавленное вхождение",
+  "category": "Контент и тексты",
+  "main_query": "—",
+  "modules": "analiz-relevantnosti",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 63,
+  "title": "Расширенный сниппет rich snippet, rich results https://titlo.ru/slovar/rasshirennyy-snippet/",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "расширенный сниппет",
+  "modules": "proverka-meta-tegov-online audit-sajta analiz-relevantnosti",
+  "priority": "P2",
+  "status": "Опубликовано",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 494,
+  "title": "Регистратор домена",
+  "category": "HTTP, сервер, домены, хостинг",
+  "main_query": "регистратор доменных имен",
+  "modules": "otslezhivanie-sroka-registratsii-domenov",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 317,
+  "title": "Рерайтинг рерайт",
+  "category": "Контент и тексты",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 614,
+  "title": "Ретаргетинг ремаркетинг",
+  "category": "PPC и контекстная реклама (смежные)",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 612,
+  "title": "РСЯ рекламная сеть Яндекса",
+  "category": "PPC и контекстная реклама (смежные)",
+  "main_query": "—",
+  "modules": "utm-metki",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 634,
+  "title": "Сайтлинки быстрые ссылки",
+  "category": "Локальное SEO и SERP-фичи",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 509,
+  "title": "Сателлит сайт-сателлит",
+  "category": "HTTP, сервер, домены, хостинг",
+  "main_query": "—",
+  "modules": "zapisi-domena",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 171,
+  "title": "Связанные запросы «Люди также ищут», «Похожие запросы»",
+  "category": "Запросы и семантика",
+  "main_query": "—",
+  "modules": "sbor-poiskovykh-podskazok",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 167,
+  "title": "Сезонность запросов seasonality",
+  "category": "Запросы и семантика",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 198,
+  "title": "Семантическая кластеризация по смыслу/леммам",
+  "category": "Кластеризация и структура сайта",
+  "main_query": "—",
+  "modules": "klasterizator-klyuchevykh-slov",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 75,
+  "title": "Серое SEO grey hat",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 415,
+  "title": "Сиротские страницы orphan pages",
+  "category": "Технический SEO и индексация",
+  "main_query": "—",
+  "modules": "audit-sajta",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 580,
+  "title": "Сквозная аналитика",
+  "category": "Аналитика, метрики и UTM",
+  "main_query": "—",
+  "modules": "kalkulyator-roi",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 472,
+  "title": "Сквозная ссылка сквозняк",
+  "category": "Технический SEO и индексация",
+  "main_query": "—",
+  "modules": "audit-sajta",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 448,
+  "title": "Склейка зеркал",
+  "category": "Технический SEO и индексация",
+  "main_query": "—",
+  "modules": "http-headers",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 228,
+  "title": "Скорость загрузки как фактор page speed",
+  "category": "Ранжирование и факторы",
+  "main_query": "—",
+  "modules": "audit-sajta",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 657,
+  "title": "Скрытый текст",
+  "category": "Чёрное и серое SEO",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 173,
+  "title": "Словоформа морфологическая форма",
+  "category": "Запросы и семантика",
+  "main_query": "—",
+  "modules": "vydelenie-unikalnykh-slov-v-tekste",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 159,
+  "title": "Смешанный запрос мультиинтент",
+  "category": "Запросы и семантика",
+  "main_query": "—",
+  "modules": "tipy-saitov-v-vydache",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 449,
+  "title": "Сниппет в выдаче проверка сниппета",
+  "category": "Технический SEO и индексация",
+  "main_query": "—",
+  "modules": "proverka-indeksacii",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 542,
+  "title": "Снятие ссылки донором потерянные ссылки, lost links",
+  "category": "Ссылки и внешняя оптимизация",
+  "main_query": "—",
+  "modules": "otslezhivanie-ssylok",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 492,
+  "title": "Соседи по IP сайты на одном IP",
+  "category": "HTTP, сервер, домены, хостинг",
+  "main_query": "—",
+  "modules": "zapisi-domena",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 182,
+  "title": "Сравнение списков ключей",
+  "category": "Запросы и семантика",
+  "main_query": "—",
+  "modules": "sravnenie-spiskov-klyuchevykh-fraz",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 592,
+  "title": "Средняя позиция",
+  "category": "Аналитика, метрики и UTM",
+  "main_query": "—",
+  "modules": "monitoring-pozicii-sayta",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 537,
+  "title": "Ссылочный вес link juice",
+  "category": "Ссылки и внешняя оптимизация",
+  "main_query": "—",
+  "modules": "otslezhivanie-ssylok",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 529,
+  "title": "Ссылочный взрыв резкий прирост ссылок",
+  "category": "Ссылки и внешняя оптимизация",
+  "main_query": "—",
+  "modules": "otslezhivanie-ssylok",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 530,
+  "title": "Ссылочный спам",
+  "category": "Ссылки и внешняя оптимизация",
+  "main_query": "—",
+  "modules": "otslezhivanie-ssylok",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 418,
+  "title": "Статический вес ссылочный вес внутри сайта",
+  "category": "Технический SEO и индексация",
+  "main_query": "—",
+  "modules": "audit-sajta",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 352,
+  "title": "Стоп-слова служебные слова",
+  "category": "Контент и тексты",
+  "main_query": "—",
+  "modules": "analiz-teksta",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 441,
+  "title": "Страница 404 кастомная 404",
+  "category": "Технический SEO и индексация",
+  "main_query": "страница 404",
+  "modules": "http-headers",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "17.11.2026"
+ },
+ {
+  "id": 122,
+  "title": "Страница в поиске (Вебмастер)",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "—",
+  "modules": "proverka-indeksacii",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 342,
+  "title": "Структура текста H1–H6, списки, таблицы",
+  "category": "Контент и тексты",
+  "main_query": "—",
+  "modules": "podschet-dliny-teksta",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 208,
+  "title": "Тегирование теговые страницы, листинги",
+  "category": "Кластеризация и структура сайта",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 531,
+  "title": "Токсичные ссылки некачественные ссылки",
+  "category": "Ссылки и внешняя оптимизация",
+  "main_query": "—",
+  "modules": "otslezhivanie-ssylok",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 337,
+  "title": "Тонкий контент thin content",
+  "category": "Контент и тексты",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 72,
+  "title": "ТОП-3",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "—",
+  "modules": "monitoring-pozicii-sayta",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 701,
+  "title": "Топвизор Topvisor",
+  "category": "Инструменты и сервисы",
+  "main_query": "—",
+  "modules": "monitoring-pozicii-sayta",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 164,
+  "title": "Топоним гео-модификатор",
+  "category": "Запросы и семантика",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 158,
+  "title": "Транзакционный запрос do-запрос",
+  "category": "Запросы и семантика",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 98,
+  "title": "Траст trust, доверие",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 538,
+  "title": "Траст донора Trust Flow, DR, DA",
+  "category": "Ссылки и внешняя оптимизация",
+  "main_query": "—",
+  "modules": "otslezhivanie-ssylok",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 349,
+  "title": "Тургенев сервис проверки на риск Баден-Бадена",
+  "category": "Контент и тексты",
+  "main_query": "—",
+  "modules": "proverka-teksta-esenin",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 183,
+  "title": "Удаление дубликатов ключей",
+  "category": "Запросы и семантика",
+  "main_query": "—",
+  "modules": "udalenie-dublikatov",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 353,
+  "title": "Уникальные слова текста словарь текста",
+  "category": "Контент и тексты",
+  "main_query": "—",
+  "modules": "vydelenie-unikalnykh-slov-v-tekste",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 570,
+  "title": "Уникальный посетитель",
+  "category": "Аналитика, метрики и UTM",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 209,
+  "title": "Фасетная навигация фильтры каталога",
+  "category": "Кластеризация и структура сайта",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 639,
+  "title": "Фильтры и SEO-страницы фильтров посадочные под фильтры",
+  "category": "E-commerce SEO",
+  "main_query": "—",
+  "modules": "klasterizator-klyuchevykh-slov",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 205,
+  "title": "Хаб-страница pillar page",
+  "category": "Кластеризация и структура сайта",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 210,
+  "title": "Хлебные крошки breadcrumbs",
+  "category": "Кластеризация и структура сайта",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 488,
+  "title": "Хостинг hosting",
+  "category": "HTTP, сервер, домены, хостинг",
+  "main_query": "—",
+  "modules": "zapisi-domena",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 564,
+  "title": "Целевое действие",
+  "category": "Поведенческие факторы и UX",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 186,
+  "title": "Целевой запрос околоцелевой, нецелевой",
+  "category": "Запросы и семантика",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 579,
+  "title": "Цели в Метрике конверсии",
+  "category": "Аналитика, метрики и UTM",
+  "main_query": "яндекс метрика цели",
+  "modules": "utm-metki",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 413,
+  "title": "Циклический редирект redirect loop",
+  "category": "Технический SEO и индексация",
+  "main_query": "—",
+  "modules": "http-headers",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 650,
+  "title": "Цитирование в нейросетях AI visibility",
+  "category": "ИИ, нейропоиск и новые форматы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 76,
+  "title": "Чёрное SEO black hat",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 340,
+  "title": "Читабельность удобочитаемость",
+  "category": "Контент и тексты",
+  "main_query": "—",
+  "modules": "proverka-teksta-esenin",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 212,
+  "title": "ЧПУ человекопонятный URL, SEO-friendly URL",
+  "category": "Кластеризация и структура сайта",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 392,
+  "title": "Шаблоны мета-тегов генерация title",
+  "category": "Мета-теги и HTML-разметка",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 334,
+  "title": "Шинглы шингл",
+  "category": "Контент и тексты",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 682,
+  "title": "Шторм сильные колебания выдачи",
+  "category": "Сеошный жаргон",
+  "main_query": "—",
+  "modules": "monitoring-pozicii-sayta",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 654,
+  "title": "Энтити сущности, entities",
+  "category": "ИИ, нейропоиск и новые форматы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 557,
+  "title": "Юзабилити usability",
+  "category": "Поведенческие факторы и UX",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 625,
+  "title": "Яндекс Карты в выдаче геоколдунщик",
+  "category": "Локальное SEO и SERP-фичи",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 108,
+  "title": "Яндекс Справочник Яндекс Бизнес",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P2",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 479,
+  "title": "307/308 редирект",
+  "category": "HTTP, сервер, домены, хостинг",
+  "main_query": "—",
+  "modules": "http-headers",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 647,
+  "title": "AEO Answer Engine Optimization",
+  "category": "ИИ, нейропоиск и новые форматы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 117,
+  "title": "AhrefsBot и SEO-боты сторонние краулеры",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "—",
+  "modules": "http-headers",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 434,
+  "title": "AMP ускоренные страницы",
+  "category": "Технический SEO и индексация",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 714,
+  "title": "API SEO-сервисов",
+  "category": "Инструменты и сервисы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 704,
+  "title": "Arsenkin Tools",
+  "category": "Инструменты и сервисы",
+  "main_query": "—",
+  "modules": "geo-lokalizaciya-kommerciya",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 383,
+  "title": "Article разметка",
+  "category": "Мета-теги и HTML-разметка",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 132,
+  "title": "ASO оптимизация в сторах приложений",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 116,
+  "title": "Bingbot",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 548,
+  "title": "Black-лист доноров чёрный список",
+  "category": "Ссылки и внешняя оптимизация",
+  "main_query": "—",
+  "modules": "otslezhivanie-ssylok",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 234,
+  "title": "BM25 формула текстовой релевантности",
+  "category": "Ранжирование и факторы",
+  "main_query": "—",
+  "modules": "analiz-relevantnosti",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 380,
+  "title": "BreadcrumbList",
+  "category": "Мета-теги и HTML-разметка",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 490,
+  "title": "CDN сеть доставки контента",
+  "category": "HTTP, сервер, домены, хостинг",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 708,
+  "title": "Checktrust",
+  "category": "Инструменты и сервисы",
+  "main_query": "—",
+  "modules": "otslezhivanie-ssylok",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 504,
+  "title": "CNAME",
+  "category": "HTTP, сервер, домены, хостинг",
+  "main_query": "—",
+  "modules": "zapisi-domena",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 465,
+  "title": "Cookie",
+  "category": "Технический SEO и индексация",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 602,
+  "title": "CPS / CPV",
+  "category": "Аналитика, метрики и UTM",
+  "main_query": "—",
+  "modules": "kalkulyator-roi",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 400,
+  "title": "Crawl-delay",
+  "category": "Технический SEO и индексация",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 421,
+  "title": "CSR клиентский рендеринг",
+  "category": "Технический SEO и индексация",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 462,
+  "title": "CSS",
+  "category": "Технический SEO и индексация",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 361,
+  "title": "Description мета-описание https://titlo.ru/slovar/description/",
+  "category": "Мета-теги и HTML-разметка",
+  "main_query": "мета тег description",
+  "modules": "proverka-meta-tegov-online audit-sajta analiz-teksta",
+  "priority": "P3",
+  "status": "Опубликовано",
+  "updated": "18.11.2026"
+ },
+ {
+  "id": 128,
+  "title": "DMOZ / Яндекс Каталог (закрыты)",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 540,
+  "title": "Domain Authority DA (Moz)",
+  "category": "Ссылки и внешняя оптимизация",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 224,
+  "title": "E-E-A-T опыт, экспертность, авторитетность, доверие https://titlo.ru/slovar/e-e-a-t/",
+  "category": "Ранжирование и факторы",
+  "main_query": "e e a t факторы",
+  "modules": "audit-sajta monitoring-pozicii-sayta analiz-relevantnosti",
+  "priority": "P3",
+  "status": "Опубликовано",
+  "updated": "18.11.2026"
+ },
+ {
+  "id": 507,
+  "title": "EMD exact match domain",
+  "category": "HTTP, сервер, домены, хостинг",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 601,
+  "title": "ER engagement rate",
+  "category": "Аналитика, метрики и UTM",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 307,
+  "title": "Expired Domain Abuse",
+  "category": "Алгоритмы и апдейты Google",
+  "main_query": "—",
+  "modules": "otslezhivanie-sroka-registratsii-domenov",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 385,
+  "title": "Favicon фавикон",
+  "category": "Мета-теги и HTML-разметка",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 429,
+  "title": "FCP First Contentful Paint",
+  "category": "Технический SEO и индексация",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 291,
+  "title": "Fred",
+  "category": "Алгоритмы и апдейты Google",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 311,
+  "title": "Freshness system",
+  "category": "Алгоритмы и апдейты Google",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 470,
+  "title": "FTP/SFTP",
+  "category": "Технический SEO и индексация",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 313,
+  "title": "Google AdSense",
+  "category": "Алгоритмы и апдейты Google",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 288,
+  "title": "Google Caffeine",
+  "category": "Алгоритмы и апдейты Google",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 295,
+  "title": "Google Dance танец Google",
+  "category": "Алгоритмы и апдейты Google",
+  "main_query": "—",
+  "modules": "monitoring-pozicii-sayta",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 293,
+  "title": "Google Florida",
+  "category": "Алгоритмы и апдейты Google",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 277,
+  "title": "Google Hummingbird Колибри",
+  "category": "Алгоритмы и апдейты Google",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 275,
+  "title": "Google Panda Панда",
+  "category": "Алгоритмы и апдейты Google",
+  "main_query": "google panda",
+  "modules": "proverka-teksta-esenin",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "17.11.2026"
+ },
+ {
+  "id": 289,
+  "title": "Google Pigeon",
+  "category": "Алгоритмы и апдейты Google",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 401,
+  "title": "Host (устар.)",
+  "category": "Технический SEO и индексация",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 485,
+  "title": "HSTS",
+  "category": "HTTP, сервер, домены, хостинг",
+  "main_query": "—",
+  "modules": "http-headers",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 463,
+  "title": "HTML",
+  "category": "Технический SEO и индексация",
+  "main_query": "—",
+  "modules": "html-redaktor",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 403,
+  "title": "HTML-карта сайта",
+  "category": "Технический SEO и индексация",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 716,
+  "title": "HTML-редактор онлайн",
+  "category": "Инструменты и сервисы",
+  "main_query": "—",
+  "modules": "html-redaktor",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 461,
+  "title": "iFrame",
+  "category": "Технический SEO и индексация",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 464,
+  "title": "JavaScript",
+  "category": "Технический SEO и индексация",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 700,
+  "title": "Keys.so",
+  "category": "Инструменты и сервисы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 299,
+  "title": "Knowledge Panel панель знаний",
+  "category": "Алгоритмы и апдейты Google",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 424,
+  "title": "Lazy loading ленивая загрузка",
+  "category": "Технический SEO и индексация",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 432,
+  "title": "Lighthouse",
+  "category": "Технический SEO и индексация",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 284,
+  "title": "Link Spam Update",
+  "category": "Алгоритмы и апдейты Google",
+  "main_query": "—",
+  "modules": "otslezhivanie-ssylok",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 649,
+  "title": "llms.txt",
+  "category": "ИИ, нейропоиск и новые форматы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 626,
+  "title": "Local Pack локальная тройка Google",
+  "category": "Локальное SEO и SERP-фичи",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 384,
+  "title": "LocalBusiness разметка",
+  "category": "Мета-теги и HTML-разметка",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 292,
+  "title": "Medic Update",
+  "category": "Алгоритмы и апдейты Google",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 707,
+  "title": "Megaindex",
+  "category": "Инструменты и сервисы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 377,
+  "title": "Microdata",
+  "category": "Мета-теги и HTML-разметка",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 287,
+  "title": "Mobilegeddon",
+  "category": "Алгоритмы и апдейты Google",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 280,
+  "title": "MUM",
+  "category": "Алгоритмы и апдейты Google",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 627,
+  "title": "NAP name, address, phone",
+  "category": "Локальное SEO и SERP-фичи",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 696,
+  "title": "Netpeak Spider",
+  "category": "Инструменты и сервисы",
+  "main_query": "—",
+  "modules": "audit-sajta",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 304,
+  "title": "Neural matching нейронное сопоставление",
+  "category": "Алгоритмы и апдейты Google",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 630,
+  "title": "ORM online reputation management",
+  "category": "Локальное SEO и SERP-фичи",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 644,
+  "title": "Out of stock страницы",
+  "category": "E-commerce SEO",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 670,
+  "title": "PopUnder / кликандер",
+  "category": "Чёрное и серое SEO",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 290,
+  "title": "Possum",
+  "category": "Алгоритмы и апдейты Google",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 285,
+  "title": "Product Reviews Update",
+  "category": "Алгоритмы и апдейты Google",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 752,
+  "title": "PTR-запись обратная запись DNS, reverse DNS",
+  "category": "HTTP, сервер, домены, хостинг",
+  "main_query": "обратная запись dns",
+  "modules": "zapisi-domena",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 378,
+  "title": "RDFa",
+  "category": "Мета-теги и HTML-разметка",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 519,
+  "title": "rel=ugc",
+  "category": "Ссылки и внешняя оптимизация",
+  "main_query": "—",
+  "modules": "otslezhivanie-ssylok",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 308,
+  "title": "Reviews system система отзывов",
+  "category": "Алгоритмы и апдейты Google",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 702,
+  "title": "Rush Analytics",
+  "category": "Инструменты и сервисы",
+  "main_query": "—",
+  "modules": "klasterizator-klyuchevykh-slov",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 709,
+  "title": "Sape / Miralinks / GoGetLinks",
+  "category": "Инструменты и сервисы",
+  "main_query": "—",
+  "modules": "otslezhivanie-ssylok",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 127,
+  "title": "SEO-эффект",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 706,
+  "title": "Seranking",
+  "category": "Инструменты и сервисы",
+  "main_query": "—",
+  "modules": "monitoring-pozicii-sayta",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 297,
+  "title": "SGE Search Generative Experience",
+  "category": "Алгоритмы и апдейты Google",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 310,
+  "title": "Site diversity",
+  "category": "Алгоритмы и апдейты Google",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 131,
+  "title": "SMM",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 130,
+  "title": "SMO",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 505,
+  "title": "SOA",
+  "category": "HTTP, сервер, домены, хостинг",
+  "main_query": "—",
+  "modules": "zapisi-domena",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 423,
+  "title": "SPA и SEO",
+  "category": "Технический SEO и индексация",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 283,
+  "title": "Spam Update",
+  "category": "Алгоритмы и апдейты Google",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 303,
+  "title": "SpamBrain",
+  "category": "Алгоритмы и апдейты Google",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 753,
+  "title": "SRV-запись",
+  "category": "HTTP, сервер, домены, хостинг",
+  "main_query": "srv запись dns",
+  "modules": "zapisi-domena",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 294,
+  "title": "Supplemental Index сопли (жарг.)",
+  "category": "Алгоритмы и апдейты Google",
+  "main_query": "—",
+  "modules": "proverka-indeksacii",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 710,
+  "title": "Text.ru / Advego / Content-Watch проверка уникальности",
+  "category": "Инструменты и сервисы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 373,
+  "title": "Twitter Card",
+  "category": "Мета-теги и HTML-разметка",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 559,
+  "title": "UI",
+  "category": "Поведенческие факторы и UX",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 437,
+  "title": "User-agent",
+  "category": "Технический SEO и индексация",
+  "main_query": "—",
+  "modules": "http-headers",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 576,
+  "title": "utm_content",
+  "category": "Аналитика, метрики и UTM",
+  "main_query": "—",
+  "modules": "utm-metki",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 577,
+  "title": "utm_term",
+  "category": "Аналитика, метрики и UTM",
+  "main_query": "—",
+  "modules": "utm-metki",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 410,
+  "title": "UTM-метки и дубли",
+  "category": "Технический SEO и индексация",
+  "main_query": "—",
+  "modules": "utm-metki",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 489,
+  "title": "VPS/VDS",
+  "category": "HTTP, сервер, домены, хостинг",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 355,
+  "title": "WYSIWYG-редактор визуальный редактор",
+  "category": "Контент и тексты",
+  "main_query": "—",
+  "modules": "html-redaktor",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 466,
+  "title": "XSS",
+  "category": "Технический SEO и индексация",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 254,
+  "title": "Y1 / YATI трансформерная модель Яндекса",
+  "category": "Алгоритмы и фильтры Яндекса",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 535,
+  "title": "Абсолютная ссылка",
+  "category": "Ссылки и внешняя оптимизация",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 756,
+  "title": "Авторский и печатный лист",
+  "category": "Контент и тексты",
+  "main_query": "авторский лист сколько знаков с пробелами",
+  "modules": "podschet-dliny-teksta",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 257,
+  "title": "АГС фильтр за малополезные сайты",
+  "category": "Алгоритмы и фильтры Яндекса",
+  "main_query": "агс яндекс",
+  "modules": "proverka-indeksacii",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "17.11.2026"
+ },
+ {
+  "id": 562,
+  "title": "Айтрекинг eye tracking",
+  "category": "Поведенческие факторы и UX",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 458,
+  "title": "Алиас псевдоним URL",
+  "category": "Технический SEO и индексация",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 271,
+  "title": "Алиса и голосовой поиск",
+  "category": "Алгоритмы и фильтры Яндекса",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 243,
+  "title": "Андромеда алгоритм «Андромеда»",
+  "category": "Алгоритмы и фильтры Яндекса",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 95,
+  "title": "Апдейт ссылочный",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 94,
+  "title": "Апдейт текстовый тАп",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 549,
+  "title": "Апрув одобрение размещения",
+  "category": "Ссылки и внешняя оптимизация",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 251,
+  "title": "Арзамас алгоритм «Арзамас»",
+  "category": "Алгоритмы и фильтры Яндекса",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 609,
+  "title": "Аукцион",
+  "category": "PPC и контекстная реклама (смежные)",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 190,
+  "title": "Аффилированность",
+  "category": "Запросы и семантика",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 469,
+  "title": "Баг ошибка на сайте",
+  "category": "Технический SEO и индексация",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 445,
+  "title": "Безопасность сайта вирусы, взлом",
+  "category": "Технический SEO и индексация",
+  "main_query": "—",
+  "modules": "monitoring-saytov",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 189,
+  "title": "Брендированные ключевые фразы",
+  "category": "Запросы и семантика",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 597,
+  "title": "Брендовый vs небрендовый трафик",
+  "category": "Аналитика, метрики и UTM",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 467,
+  "title": "Брутфорс подбор пароля",
+  "category": "Технический SEO и индексация",
+  "main_query": "—",
+  "modules": "generator-paroley",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 89,
+  "title": "Вебмастер webmaster",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 242,
+  "title": "Вега алгоритм «Вега»",
+  "category": "Алгоритмы и фильтры Яндекса",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 111,
+  "title": "Вертикальный поиск Картинки, Видео, Маркет",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 338,
+  "title": "Вечнозелёный контент evergreen content",
+  "category": "Контент и тексты",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 668,
+  "title": "Взлом и SEO-спам на сайте японский спам",
+  "category": "Чёрное и серое SEO",
+  "main_query": "—",
+  "modules": "monitoring-saytov",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 632,
+  "title": "Видео в выдаче",
+  "category": "Локальное SEO и SERP-фичи",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 671,
+  "title": "Вирусный маркетинг",
+  "category": "Чёрное и серое SEO",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 414,
+  "title": "Висячие узлы страницы без исходящих ссылок",
+  "category": "Технический SEO и индексация",
+  "main_query": "—",
+  "modules": "audit-sajta",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 244,
+  "title": "Владивосток мобильный алгоритм",
+  "category": "Алгоритмы и фильтры Яндекса",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 417,
+  "title": "Внутренняя перелинковка internal linking https://titlo.ru/slovar/vnutrennyaya-perelinkovka/",
+  "category": "Технический SEO и индексация",
+  "main_query": "внутренняя перелинковка",
+  "modules": "audit-sajta otslezhivanie-ssylok proverka-indeksacii",
+  "priority": "P3",
+  "status": "Опубликовано",
+  "updated": "18.11.2026"
+ },
+ {
+  "id": 685,
+  "title": "Внутрянка внутренние страницы",
+  "category": "Сеошный жаргон",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 143,
+  "title": "ВЧ-запрос высокочастотный",
+  "category": "Запросы и семантика",
+  "main_query": "вч запрос",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "17.11.2026"
+ },
+ {
+  "id": 688,
+  "title": "Вылет из ТОПа",
+  "category": "Сеошный жаргон",
+  "main_query": "—",
+  "modules": "monitoring-pozicii-sayta",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 715,
+  "title": "Генератор паролей для доступа к сайтам",
+  "category": "Инструменты и сервисы",
+  "main_query": "—",
+  "modules": "generator-paroley",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 660,
+  "title": "Генерированный текст автоген",
+  "category": "Чёрное и серое SEO",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 711,
+  "title": "Главред",
+  "category": "Инструменты и сервисы",
+  "main_query": "—",
+  "modules": "proverka-teksta-esenin",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 652,
+  "title": "Голосовой поиск voice search",
+  "category": "ИИ, нейропоиск и новые форматы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 676,
+  "title": "ГС некачественный сайт",
+  "category": "Сеошный жаргон",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 105,
+  "title": "Десктопная выдача",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "—",
+  "modules": "monitoring-pozicii-sayta",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 455,
+  "title": "Динамический URL",
+  "category": "Технический SEO и индексация",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 596,
+  "title": "Доля трафика из поиска",
+  "category": "Аналитика, метрики и UTM",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 757,
+  "title": "Доменная зона (домен первого уровня)",
+  "category": "HTTP, сервер, домены, хостинг",
+  "main_query": "доменное имя первого уровня",
+  "modules": "zapisi-domena",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "19.11.2026"
+ },
+ {
+  "id": 123,
+  "title": "Загруженная страница",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "—",
+  "modules": "proverka-indeksacii",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 680,
+  "title": "Залететь в топ",
+  "category": "Сеошный жаргон",
+  "main_query": "—",
+  "modules": "monitoring-pozicii-sayta",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 129,
+  "title": "Интернет-маркетинг",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 250,
+  "title": "Калининград персонализация «Калининград»",
+  "category": "Алгоритмы и фильтры Яндекса",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 468,
+  "title": "Капча CAPTCHA",
+  "category": "Технический SEO и индексация",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 561,
+  "title": "Карта скроллинга",
+  "category": "Поведенческие факторы и UX",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 631,
+  "title": "Картинки в выдаче",
+  "category": "Локальное SEO и SERP-фичи",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 633,
+  "title": "Карусель",
+  "category": "Локальное SEO и SERP-фичи",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 694,
+  "title": "Каталоги сайтов",
+  "category": "Сеошный жаргон",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 236,
+  "title": "Кворум кворум-фильтр",
+  "category": "Ранжирование и факторы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 508,
+  "title": "Кириллический домен .рф",
+  "category": "HTTP, сервер, домены, хостинг",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 663,
+  "title": "Кликджекинг",
+  "category": "Чёрное и серое SEO",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 620,
+  "title": "Кликфрод скликивание",
+  "category": "PPC и контекстная реклама (смежные)",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 613,
+  "title": "КМС контекстно-медийная сеть Google",
+  "category": "PPC и контекстная реклама (смежные)",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 598,
+  "title": "Когортный анализ",
+  "category": "Аналитика, метрики и UTM",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 112,
+  "title": "Колдунщик колдунщики Яндекса",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "—",
+  "modules": "tipy-saitov-v-vydache",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 581,
+  "title": "Коллтрекинг call tracking",
+  "category": "Аналитика, метрики и UTM",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 316,
+  "title": "Копирайтинг",
+  "category": "Контент и тексты",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 248,
+  "title": "Краснодар спектр, алгоритм «Краснодар»",
+  "category": "Алгоритмы и фильтры Яндекса",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 395,
+  "title": "Краулинговый бюджет crawl budget",
+  "category": "Технический SEO и индексация",
+  "main_query": "краулинговый бюджет",
+  "modules": "audit-sajta",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "17.11.2026"
+ },
+ {
+  "id": 692,
+  "title": "Кэш Яндекса / сохранённая копия",
+  "category": "Сеошный жаргон",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 543,
+  "title": "Линкбомбинг google bombing",
+  "category": "Ссылки и внешняя оптимизация",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 345,
+  "title": "Лонгрид longread",
+  "category": "Контент и тексты",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 245,
+  "title": "Магадан алгоритм «Магадан»",
+  "category": "Алгоритмы и фильтры Яндекса",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 356,
+  "title": "Медиаконтент изображения, видео",
+  "category": "Контент и тексты",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 621,
+  "title": "Медийная реклама",
+  "category": "PPC и контекстная реклама (смежные)",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 387,
+  "title": "Мета-тег refresh meta refresh",
+  "category": "Мета-теги и HTML-разметка",
+  "main_query": "—",
+  "modules": "http-headers",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 386,
+  "title": "Мета-тег viewport",
+  "category": "Мета-теги и HTML-разметка",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 253,
+  "title": "Метеор алгоритм «Метеор»",
+  "category": "Алгоритмы и фильтры Яндекса",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 565,
+  "title": "Микроконверсии",
+  "category": "Поведенческие факторы и UX",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 187,
+  "title": "Мультимедийный запрос",
+  "category": "Запросы и семантика",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 213,
+  "title": "Мультирегиональность региональные поддомены",
+  "category": "Кластеризация и структура сайта",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 669,
+  "title": "Муртапузация муртаза-фильтр",
+  "category": "Чёрное и серое SEO",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 705,
+  "title": "Мутаген",
+  "category": "Инструменты и сервисы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 677,
+  "title": "МФА made for adsense",
+  "category": "Сеошный жаргон",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 252,
+  "title": "Находка алгоритм «Находка»",
+  "category": "Алгоритмы и фильтры Яндекса",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 166,
+  "title": "Небрендовый запрос",
+  "category": "Запросы и семантика",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 233,
+  "title": "Нейронные сети в ранжировании нейроранжирование",
+  "category": "Ранжирование и факторы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 145,
+  "title": "НЧ-запрос низкочастотный",
+  "category": "Запросы и семантика",
+  "main_query": "нч запрос",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "17.11.2026"
+ },
+ {
+  "id": 247,
+  "title": "Обнинск алгоритм «Обнинск»",
+  "category": "Алгоритмы и фильтры Яндекса",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ },
+ {
+  "id": 126,
+  "title": "Обратный индекс инвертированный индекс",
+  "category": "Основы SEO и поисковые системы",
+  "main_query": "—",
+  "modules": "—",
+  "priority": "P3",
+  "status": "Идея",
+  "updated": "16.11.2026"
+ }
+]
