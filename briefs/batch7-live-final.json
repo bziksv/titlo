@@ -1,0 +1,442 @@
+[
+ {
+  "slug": "pagespeed-insights",
+  "id": 99148,
+  "rec": {
+   "points": 74.85,
+   "coverage": 39.94,
+   "coverage_tf": 44.01,
+   "width": 100.0,
+   "density": 29.2,
+   "symbols": 18566.0
+  },
+  "ours": {
+   "points": 93.73,
+   "coverage": 48.1,
+   "coverage_tf": 53.49,
+   "width": 100.0,
+   "density": 39.0,
+   "symbols": 28590.0
+  },
+  "fails": [],
+  "sites": 16
+ },
+ {
+  "slug": "pesochnitsa",
+  "id": 99142,
+  "rec": {
+   "points": 71.92,
+   "coverage": 39.94,
+   "coverage_tf": 44.19,
+   "width": 100.0,
+   "density": 24.6,
+   "symbols": 14226.0
+  },
+  "ours": {
+   "points": 92.05,
+   "coverage": 49.2,
+   "coverage_tf": 52.88,
+   "width": 100.0,
+   "density": 36.0,
+   "symbols": 21551.0
+  },
+  "fails": [],
+  "sites": 19
+ },
+ {
+  "slug": "ankor-list",
+  "id": 99141,
+  "rec": {
+   "points": 87.04,
+   "coverage": 47.84,
+   "coverage_tf": 54.39,
+   "width": 100.0,
+   "density": 30.6,
+   "symbols": 19867.0
+  },
+  "ours": {
+   "points": 100.0,
+   "coverage": 53.9,
+   "coverage_tf": 60.62,
+   "width": 100.0,
+   "density": 39.0,
+   "symbols": 27962.0
+  },
+  "fails": [],
+  "sites": 18
+ },
+ {
+  "slug": "vebvizor",
+  "id": 99140,
+  "rec": {
+   "points": 97.12,
+   "coverage": 56.5,
+   "coverage_tf": 59.34,
+   "width": 100.0,
+   "density": 37.4,
+   "symbols": 21382.0
+  },
+  "ours": {
+   "points": 100.0,
+   "coverage": 61.4,
+   "coverage_tf": 64.91,
+   "width": 100.0,
+   "density": 47.0,
+   "symbols": 33901.0
+  },
+  "fails": [],
+  "sites": 19
+ },
+ {
+  "slug": "satellit",
+  "id": 99139,
+  "rec": {
+   "points": 67.86,
+   "coverage": 36.92,
+   "coverage_tf": 38.47,
+   "width": 100.0,
+   "density": 26.4,
+   "symbols": 13949.0
+  },
+  "ours": {
+   "points": 87.85,
+   "coverage": 45.6,
+   "coverage_tf": 50.18,
+   "width": 100.0,
+   "density": 36.0,
+   "symbols": 20904.0
+  },
+  "fails": [],
+  "sites": 19
+ },
+ {
+  "slug": "zerkalo-sayta",
+  "id": 99138,
+  "rec": {
+   "points": 80.52,
+   "coverage": 41.72,
+   "coverage_tf": 49.4,
+   "width": 100.0,
+   "density": 30.4,
+   "symbols": 15193.0
+  },
+  "ours": {
+   "points": 100.0,
+   "coverage": 50.8,
+   "coverage_tf": 60.91,
+   "width": 100.0,
+   "density": 42.0,
+   "symbols": 25345.0
+  },
+  "fails": [],
+  "sites": 10
+ },
+ {
+  "slug": "trast-sayta",
+  "id": 99137,
+  "rec": {
+   "points": 82.12,
+   "coverage": 47.9,
+   "coverage_tf": 51.09,
+   "width": 100.0,
+   "density": 35.2,
+   "symbols": 26918.0
+  },
+  "ours": {
+   "points": 98.35,
+   "coverage": 52.6,
+   "coverage_tf": 54.92,
+   "width": 100.0,
+   "density": 40.0,
+   "symbols": 29486.0
+  },
+  "fails": [],
+  "sites": 20
+ },
+ {
+  "slug": "oshibki-500-503",
+  "id": 99132,
+  "rec": {
+   "points": 90.1,
+   "coverage": 49.12,
+   "coverage_tf": 55.11,
+   "width": 100.0,
+   "density": 32.4,
+   "symbols": 22053.0
+  },
+  "ours": {
+   "points": 100.0,
+   "coverage": 52.4,
+   "coverage_tf": 61.19,
+   "width": 100.0,
+   "density": 40.0,
+   "symbols": 33759.0
+  },
+  "fails": [],
+  "sites": 20
+ },
+ {
+  "slug": "adaptivnaya-verstka",
+  "id": 99131,
+  "rec": {
+   "points": 94.14,
+   "coverage": 52.6,
+   "coverage_tf": 55.66,
+   "width": 100.0,
+   "density": 36.4,
+   "symbols": 25521.0
+  },
+  "ours": {
+   "points": 99.13,
+   "coverage": 52.6,
+   "coverage_tf": 56.1,
+   "width": 100.0,
+   "density": 40.0,
+   "symbols": 32317.0
+  },
+  "fails": [],
+  "sites": 20
+ },
+ {
+  "slug": "keshirovanie",
+  "id": 99130,
+  "rec": {
+   "points": 88.86,
+   "coverage": 49.68,
+   "coverage_tf": 52.85,
+   "width": 100.0,
+   "density": 34.0,
+   "symbols": 23386.0
+  },
+  "ours": {
+   "points": 100.0,
+   "coverage": 57.8,
+   "coverage_tf": 62.4,
+   "width": 100.0,
+   "density": 46.0,
+   "symbols": 31016.0
+  },
+  "fails": [],
+  "sites": 20
+ },
+ {
+  "slug": "monitoring-obratnykh-ssylok",
+  "id": 99127,
+  "rec": {
+   "points": 84.11,
+   "coverage": 48.68,
+   "coverage_tf": 54.89,
+   "width": 100.0,
+   "density": 34.2,
+   "symbols": 23646.0
+  },
+  "ours": {
+   "points": 100.0,
+   "coverage": 58.6,
+   "coverage_tf": 64.37,
+   "width": 100.0,
+   "density": 46.0,
+   "symbols": 33225.0
+  },
+  "fails": [],
+  "sites": 20
+ },
+ {
+  "slug": "hreflang",
+  "id": 99126,
+  "rec": {
+   "points": 77.17,
+   "coverage": 40.78,
+   "coverage_tf": 54.23,
+   "width": 100.0,
+   "density": 31.6,
+   "symbols": 17605.0
+  },
+  "ours": {
+   "points": 100.0,
+   "coverage": 55.6,
+   "coverage_tf": 71.06,
+   "width": 100.0,
+   "density": 48.0,
+   "symbols": 33132.0
+  },
+  "fails": [],
+  "sites": 20
+ },
+ {
+  "slug": "open-graph",
+  "id": 99125,
+  "rec": {
+   "points": 85.39,
+   "coverage": 43.22,
+   "coverage_tf": 55.93,
+   "width": 100.0,
+   "density": 29.6,
+   "symbols": 14939.0
+  },
+  "ours": {
+   "points": 91.37,
+   "coverage": 44.8,
+   "coverage_tf": 58.26,
+   "width": 100.0,
+   "density": 34.0,
+   "symbols": 18929.0
+  },
+  "fails": [],
+  "sites": 19
+ },
+ {
+  "slug": "tz-na-tekst",
+  "id": 99190,
+  "rec": {
+   "points": 95.78,
+   "coverage": 54.24,
+   "coverage_tf": 59.01,
+   "width": 100.0,
+   "density": 38.6,
+   "symbols": 28704.0
+  },
+  "ours": {
+   "points": 100.0,
+   "coverage": 55.2,
+   "coverage_tf": 58.58,
+   "width": 100.0,
+   "density": 41.0,
+   "symbols": 30239.0
+  },
+  "fails": [],
+  "sites": 20
+ },
+ {
+  "slug": "yuzabiliti",
+  "id": 99169,
+  "rec": {
+   "points": 99.55,
+   "coverage": 60.9,
+   "coverage_tf": 62.17,
+   "width": 100.0,
+   "density": 41.6,
+   "symbols": 31919.0
+  },
+  "ours": {
+   "points": 100.0,
+   "coverage": 67.2,
+   "coverage_tf": 68.5,
+   "width": 100.0,
+   "density": 52.0,
+   "symbols": 43172.0
+  },
+  "fails": [],
+  "sites": 19
+ },
+ {
+  "slug": "ssl-sertifikat",
+  "id": 99168,
+  "rec": {
+   "points": 77.11,
+   "coverage": 41.72,
+   "coverage_tf": 46.35,
+   "width": 100.0,
+   "density": 28.2,
+   "symbols": 21315.0
+  },
+  "ours": {
+   "points": 90.05,
+   "coverage": 47.3,
+   "coverage_tf": 51.78,
+   "width": 100.0,
+   "density": 36.0,
+   "symbols": 28510.0
+  },
+  "fails": [],
+  "sites": 20
+ },
+ {
+  "slug": "paginatsiya",
+  "id": 99121,
+  "rec": {
+   "points": 82.53,
+   "coverage": 45.7,
+   "coverage_tf": 49.8,
+   "width": 100.0,
+   "density": 29.2,
+   "symbols": 18673.0
+  },
+  "ours": {
+   "points": 100.0,
+   "coverage": 54.1,
+   "coverage_tf": 60.41,
+   "width": 100.0,
+   "density": 39.0,
+   "symbols": 28310.0
+  },
+  "fails": [],
+  "sites": 20
+ },
+ {
+  "slug": "kombinatorika-klyuchevykh-fraz",
+  "id": 99120,
+  "rec": {
+   "points": 64.58,
+   "coverage": 35.76,
+   "coverage_tf": 34.41,
+   "width": 100.0,
+   "density": 27.8,
+   "symbols": 17719.0
+  },
+  "ours": {
+   "points": 82.33,
+   "coverage": 43.5,
+   "coverage_tf": 45.0,
+   "width": 100.0,
+   "density": 35.0,
+   "symbols": 19252.0
+  },
+  "fails": [],
+  "sites": 17
+ },
+ {
+  "slug": "khlebnye-kroshki",
+  "id": 99119,
+  "rec": {
+   "points": 95.92,
+   "coverage": 53.88,
+   "coverage_tf": 58.84,
+   "width": 100.0,
+   "density": 35.4,
+   "symbols": 21832.0
+  },
+  "ours": {
+   "points": 100.0,
+   "coverage": 59.4,
+   "coverage_tf": 65.37,
+   "width": 100.0,
+   "density": 44.0,
+   "symbols": 31305.0
+  },
+  "fails": [],
+  "sites": 19
+ },
+ {
+  "slug": "chpu",
+  "id": 99118,
+  "rec": {
+   "points": 94.57,
+   "coverage": 55.36,
+   "coverage_tf": 57.17,
+   "width": 100.0,
+   "density": 39.0,
+   "symbols": 21924.0
+  },
+  "ours": {
+   "points": 100.0,
+   "coverage": 62.3,
+   "coverage_tf": 65.2,
+   "width": 100.0,
+   "density": 49.0,
+   "symbols": 31068.0
+  },
+  "fails": [],
+  "sites": 19
+ }
+]

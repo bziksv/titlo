@@ -1,0 +1,594 @@
+Диапазоны для фильтрации таблицы;;;;;;;;;;Фраза;TF-IDF ТОП;TF-IDF ваш сайт;BM25 ТОП;BM25 ваш сайт;Кол-во сайтов;Медианное вхождение;Среднее;На нашем сайте
+pagespeed insights;0.1668;0.0308;0.3221;0.1156;13;12;12;11
+web vitals;0.0823;0.0213;0.3354;0.1085;9;7;5;7
+core web vitals;0.0767;0.0215;0.3364;0.1093;8;7;5;7
+user experience;0.0554;0.00317;0.3403;0.00301;8;5;4;1
+learn more;0.0513;0;0.3409;0;6;3;3;0
+contentful paint;0.0482;0.00642;0.3414;0.00610;10;3;3;2
+скорости загрузки;0.0451;0.0226;0.3418;0.1152;6;3;3;7
+real user;0.0375;0;0.3426;0;3;7;2;0
+google pagespeed;0.0364;0.00329;0.3426;0.00313;6;4;2;1
+field data;0.0364;0;0.3426;0;4;7;2;0
+page speed;0.0353;0.00330;0.3427;0.00313;3;4;2;1
+google pagespeed insights;0.032;0.00333;0.3426;0.00316;6;2;2;1
+lab data;0.032;0.00333;0.3426;0.00316;5;4;2;1
+largest contentful paint;0.0297;0.00335;0.3425;0.00318;9;2;2;1
+оценки производительности;0.0273;0.0135;0.3421;0.094;5;3;2;4
+rating out of stars;0.0273;0;0.3421;0;1;20;2;0
+реальных пользователей;0.0262;0.0169;0.3418;0.1051;5;4;2;5
+web dev;0.0262;0;0.3418;0;5;3;2;0
+скорость сайта;0.0262;0.00338;0.3418;0.00321;4;4;2;1
+interaction to paint;0.025;0.00340;0.3415;0.00323;7;3;2;1
+page load;0.025;0;0.3415;0;5;4;2;0
+first contentful paint;0.0238;0.00341;0.3411;0.00324;7;1;2;1
+chrome user;0.0226;0;0.3405;0;6;3;2;0
+chrome user experience report;0.0201;0;0.339;0;6;2;1;0
+производительности сайта;0.0201;0;0.339;0;4;3;1;0
+веб страниц;0.0201;0.00346;0.339;0.00328;4;3;1;1
+performance score;0.0189;0;0.338;0;5;1;1;0
+learn how;0.0189;0;0.338;0;3;1;1;0
+report crux;0.0176;0;0.3367;0;6;2;1;0
+first byte;0.0176;0;0.3367;0;6;2;1;0
+web performance;0.0176;0;0.3367;0;4;3;1;0
+web vitals metrics;0.0176;0;0.3367;0;4;3;1;0
+interaction to paint inp;0.0163;0;0.3351;0;5;2;1;0
+time to first byte;0.015;0;0.3331;0;6;2;1;0
+largest contentful paint lcp;0.015;0;0.3331;0;6;2;1;0
+user experience report crux;0.015;0;0.3331;0;5;1;1;0
+load time;0.015;0;0.3331;0;4;2;1;0
+загрузки страницы;0.015;0.0212;0.3331;0.1188;4;2;1;6
+performance testing;0.015;0;0.3331;0;2;5;1;0
+speed index;0.0137;0.00356;0.3305;0.00338;6;1;1;1
+blocking time;0.0137;0;0.3305;0;5;1;1;0
+общая оценка;0.0137;0.00356;0.3305;0.00338;3;3;1;1
+core web vitals metrics;0.0137;0;0.3305;0;3;2;1;0
+lighthouse report;0.0137;0;0.3305;0;2;5;1;0
+crux data;0.0137;0;0.3305;0;2;5;1;0
+first contentful paint fcp;0.0124;0;0.3272;0;5;1;1;0
+время загрузки;0.0124;0.00359;0.3272;0.00341;3;2;1;1
+проверить скорость;0.0124;0;0.3272;0;2;4;1;0
+web vitals assessment;0.0124;0;0.3272;0;2;4;1;0
+данные реальных пользователей;0.0124;0.00359;0.3272;0.00341;2;4;1;1
+может быть;0.011;0.00362;0.3228;0.00343;4;2;1;1
+pagespeed insights psi;0.011;0;0.3228;0;4;2;1;0
+website performance;0.011;0;0.3228;0;3;1;1;0
+performance issues;0.011;0;0.3228;0;3;2;1;0
+chrome devtools;0.011;0;0.3228;0;3;2;1;0
+page load time;0.011;0;0.3228;0;3;1;1;0
+how to optimize;0.011;0;0.3228;0;2;4;1;0
+core web vitals assessment;0.011;0;0.3228;0;2;4;1;0
+web pages;0.00960;0;0.3169;0;5;1;1;0
+lcp inp;0.00960;0.00731;0.3169;0.00694;5;1;1;2
+time to interactive;0.00960;0;0.3169;0;4;1;1;0
+версии сайта;0.00960;0;0.3169;0;4;2;1;0
+developers google;0.00960;0;0.3169;0;4;2;1;0
+first byte ttfb;0.00960;0;0.3169;0;4;1;1;0
+how to use;0.00960;0;0.3169;0;3;1;1;0
+мобильных и десктопных;0.00960;0.011;0.3169;0.0104;3;2;1;3
+speed test;0.00960;0;0.3169;0;3;1;1;0
+странице сайта;0.00960;0.00365;0.3169;0.00347;3;2;1;1
+производительности веб страниц;0.00960;0;0.3169;0;3;2;1;0
+speed data;0.00960;0;0.3169;0;2;3;1;0
+chrome extension;0.00960;0;0.3169;0;2;3;1;0
+response time;0.00960;0;0.3169;0;2;3;1;0
+страниц на мобильных;0.00818;0;0.3087;0;4;1;1;0
+оценка pagespeed;0.00818;0;0.3087;0;4;1;1;0
+метрики core web vitals;0.00818;0.0111;0.3087;0.0105;4;1;1;3
+make your website;0.00818;0;0.3087;0;3;2;1;0
+рекомендации по улучшению;0.00818;0;0.3087;0;3;1;1;0
+performance metrics;0.00818;0;0.3087;0;3;1;1;0
+performance data;0.00818;0;0.3087;0;3;1;1;0
+using pagespeed;0.00818;0;0.3087;0;3;1;1;0
+анализа производительности;0.00818;0;0.3087;0;3;2;1;0
+сайт может;0.00818;0;0.3087;0;3;2;1;0
+site speed;0.00818;0;0.3087;0;3;2;1;0
+общую оценку производительности;0.00818;0;0.3087;0;3;1;1;0
+скорость загрузки сайта;0.00818;0;0.3087;0;3;2;1;0
+make the web faster;0.00818;0;0.3087;0;2;3;1;0
+user interactions;0.00818;0;0.3087;0;2;3;1;0
+отчета pagespeed;0.00818;0;0.3087;0;2;3;1;0
+проверка скорости;0.00818;0.0148;0.3087;0.1029;2;3;1;4
+real user experience;0.00818;0;0.3087;0;2;3;1;0
+page speed monitoring;0.00818;0;0.3087;0;2;3;1;0
+индекс скорости загрузки;0.00818;0;0.3087;0;2;3;1;0
+pagespeed insights test;0.00818;0;0.3087;0;2;3;1;0
+server response time;0.00818;0;0.3087;0;2;3;1;0
+make your web;0.00672;0;0.2968;0;4;1;1;0
+largest contentful paint cumulative;0.00672;0;0.2968;0;4;1;1;0
+contentful paint cumulative layout;0.00672;0;0.2968;0;4;1;1;0
+paint cumulative layout shift;0.00672;0.00374;0.2968;0.00355;4;1;1;1
+make your website faster;0.00672;0;0.2968;0;3;1;1;0
+time to interactive tti;0.00672;0;0.2968;0;3;1;1;0
+types of data;0.00672;0;0.2968;0;3;1;1;0
+рекомендации по оптимизации;0.00672;0;0.2968;0;3;1;1;0
+скорость страниц;0.00672;0.00748;0.2968;0.00711;3;1;1;2
+страница стала;0.00672;0.00374;0.2968;0.00355;3;1;1;1
+метрикам lcp;0.00672;0.00748;0.2968;0.00711;3;1;1;2
+оптимизации сайта;0.00672;0;0.2968;0;3;1;1;0
+page seo;0.00672;0;0.2968;0;3;1;1;0
+мобильной версии сайта;0.00672;0;0.2968;0;3;1;1;0
+mobile and desktop;0.00672;0;0.2968;0;2;2;1;0
+загрузки для взаимодействия;0.00672;0;0.2968;0;2;2;1;0
+стили и скрипты;0.00672;0.00748;0.2968;0.00711;2;2;1;2
+lcp и cls;0.00672;0;0.2968;0;2;2;1;0
+сайт загружается;0.00672;0;0.2968;0;2;2;1;0
+ранжирования сайтов;0.00672;0;0.2968;0;2;2;1;0
+производительности страницы;0.00672;0;0.2968;0;2;2;1;0
+debug performance;0.00672;0;0.2968;0;2;2;1;0
+отложенную загрузку;0.00672;0.0187;0.2968;0.1161;2;2;1;5
+ключевые метрики;0.00672;0.00374;0.2968;0.00355;2;2;1;1
+оптимизации скорости;0.00672;0;0.2968;0;2;2;1;0
+года была;0.00672;0;0.2968;0;2;2;1;0
+интерфейс есть;0.00672;0;0.2968;0;2;2;1;0
+api есть;0.00672;0;0.2968;0;2;2;1;0
+using pagespeed insights;0.00672;0;0.2968;0;2;2;1;0
+проверить скорость сайта;0.00672;0;0.2968;0;2;2;1;0
+field data данные;0.00672;0;0.2968;0;2;2;1;0
+initial server response time;0.00672;0;0.2968;0;2;2;1;0
+website speed and performance;0.00672;0;0.2968;0;1;4;1;0
+start a thread;0.00672;0;0.2968;0;1;4;1;0
+check my links;0.00672;0;0.2968;0;1;4;1;0
+collections and content based;0.00520;0;0.2783;0;3;1;1;0
+easy to understand thumb;0.00520;0;0.2783;0;3;1;1;0
+thumb up my problem;0.00520;0;0.2783;0;3;1;1;0
+problem thumb up other;0.00520;0;0.2783;0;3;1;1;0
+thumb up the information;0.00520;0;0.2783;0;3;1;1;0
+information i need thumb;0.00520;0;0.2783;0;3;1;1;0
+need thumb down too;0.00520;0;0.2783;0;3;1;1;0
+thumb down too complicated;0.00520;0;0.2783;0;3;1;1;0
+thumb down samples code;0.00520;0;0.2783;0;3;1;1;0
+issue thumb down other;0.00520;0;0.2783;0;3;1;1;0
+веб страниц на мобильных;0.00520;0;0.2783;0;3;1;1;0
+make your web pages;0.00520;0;0.2783;0;3;1;1;0
+pages fast on all;0.00520;0;0.2783;0;3;1;1;0
+fast on all devices;0.00520;0;0.2783;0;3;1;1;0
+stay with collections;0.00520;0;0.2783;0;3;1;1;0
+website with pagespeed;0.00520;0;0.2783;0;3;1;1;0
+improve your website;0.00520;0;0.2783;0;3;1;1;0
+chrome за последние;0.00520;0;0.2783;0;3;1;1;0
+взаимодействия с пользователем;0.00520;0;0.2783;0;3;1;1;0
+respond to user;0.00520;0;0.2783;0;3;1;1;0
+using google;0.00520;0;0.2783;0;3;1;1;0
+better experience;0.00520;0;0.2783;0;3;1;1;0
+ждать загрузки;0.00520;0;0.2783;0;3;1;1;0
+google chrome;0.00520;0;0.2783;0;3;1;1;0
+бесплатный инструмент;0.00520;0;0.2783;0;3;1;1;0
+fcp время;0.00520;0.00380;0.2783;0.00361;3;1;1;1
+используйте сервис;0.00520;0;0.2783;0;3;1;1;0
+page responds;0.00520;0;0.2783;0;3;1;1;0
+more reliable;0.00520;0;0.2783;0;3;1;1;0
+версии lighthouse;0.00520;0;0.2783;0;3;1;1;0
+insights google;0.00520;0;0.2783;0;3;1;1;0
+влияние скорости загрузки;0.00520;0;0.2783;0;3;1;1;0
+pagespeed insights инструмент;0.00520;0;0.2783;0;3;1;1;0
+web pages fast;0.00520;0;0.2783;0;3;1;1;0
+pagespeed insights api;0.00520;0;0.2783;0;3;1;1;0
+complicated too many steps;0.00520;0;0.2783;0;3;1;1;0
+too many steps thumb;0.00520;0;0.2783;0;3;1;1;0
+contentful paint fcp время;0.00520;0;0.2783;0;3;1;1;0
+инструментом для анализа производительности;0.00520;0;0.2783;0;2;2;1;0
+metrics reported by pagespeed;0.00520;0;0.2783;0;2;2;1;0
+reported by pagespeed insights;0.00520;0;0.2783;0;2;2;1;0
+impact of third party;0.00520;0;0.2783;0;2;2;1;0
+напрямую влияют на ранжирование;0.00520;0;0.2783;0;2;2;1;0
+мобильных и десктопных устройствах;0.00520;0;0.2783;0;2;2;1;0
+suggestions on how;0.00520;0;0.2783;0;2;2;1;0
+data is useful;0.00520;0;0.2783;0;2;2;1;0
+сайта в pagespeed;0.00520;0;0.2783;0;2;2;1;0
+how to increase;0.00520;0;0.2783;0;2;2;1;0
+reduce the impact;0.00520;0;0.2783;0;2;2;1;0
+lcp cls;0.00520;0;0.2783;0;2;2;1;0
+loading speed;0.00520;0;0.2783;0;2;2;1;0
+time performance;0.00520;0;0.2783;0;2;2;1;0
+website performs;0.00520;0;0.2783;0;2;2;1;0
+быстрее сайт;0.00520;0;0.2783;0;2;2;1;0
+скорости работы;0.00520;0;0.2783;0;2;2;1;0
+работы сайта;0.00520;0.00380;0.2783;0.00361;2;2;1;1
+алгоритмы оценки;0.00520;0;0.2783;0;2;2;1;0
+рекомендациям могло;0.00520;0;0.2783;0;2;2;1;0
+загрузки первого;0.00520;0;0.2783;0;2;2;1;0
+сайтов пользователями;0.00520;0;0.2783;0;2;2;1;0
+сайте метрика;0.00520;0;0.2783;0;2;2;1;0
+которые сильнее;0.00520;0;0.2783;0;2;2;1;0
+которые используются;0.00520;0;0.2783;0;2;2;1;0
+мониторинга производительности;0.00520;0;0.2783;0;2;2;1;0
+optimize lcp;0.00520;0;0.2783;0;2;2;1;0
+poor performance;0.00520;0;0.2783;0;2;2;1;0
+одной страницы;0.00520;0.0266;0.2783;0.1356;2;2;1;7
+показатели скорости;0.00520;0;0.2783;0;2;2;1;0
+общую производительность;0.00520;0.00380;0.2783;0.00361;2;2;1;1
+балл производительности;0.00520;0;0.2783;0;2;2;1;0
+good user experience;0.00520;0;0.2783;0;2;2;1;0
+оценки производительности сайтов;0.00520;0;0.2783;0;2;2;1;0
+pagespeed insights которая;0.00520;0;0.2783;0;2;2;1;0
+pagespeed insights score;0.00520;0;0.2783;0;2;2;1;0
+page speed score;0.00520;0;0.2783;0;2;2;1;0
+pagespeed insights get;0.00520;0;0.2783;0;2;2;1;0
+скорость загрузки страницы;0.00520;0.0114;0.2783;0.0108;2;2;1;3
+сервисе pagespeed insights;0.00520;0;0.2783;0;2;2;1;0
+data real user experience;0.00520;0;0.2783;0;2;2;1;0
+google pagespeed insights work;0.00520;0;0.2783;0;2;2;1;0
+lab and field data;0.00520;0;0.2783;0;1;3;1;0
+device and network conditions;0.00520;0;0.2783;0;1;3;1;0
+question about using pagespeed;0.00520;0;0.2783;0;1;3;1;0
+discussion start a thread;0.00520;0;0.2783;0;1;3;1;0
+see for more;0.00520;0;0.2783;0;1;3;1;0
+data in psi;0.00520;0;0.2783;0;1;3;1;0
+lcp and cls;0.00520;0;0.2783;0;1;3;1;0
+page or origin;0.00520;0;0.2783;0;1;3;1;0
+question in english;0.00520;0;0.2783;0;1;3;1;0
+lab data is useful;0.00363;0;0.2468;0;2;1;1;0
+two types of data;0.00363;0;0.2468;0;2;1;1;0
+passes the core web;0.00363;0;0.2468;0;2;1;1;0
+identify and fix performance;0.00363;0;0.2468;0;2;1;1;0
+один из факторов ранжирования;0.00363;0;0.2468;0;2;1;1;0
+страницы на мобильных устройствах;0.00363;0;0.2468;0;2;1;1;0
+позиции в поисковой выдаче;0.00363;0;0.2468;0;2;1;1;0
+website with pagespeed insights;0.00363;0;0.2468;0;2;1;1;0
+insights is a free;0.00363;0;0.2468;0;2;1;1;0
+web vitals and other;0.00363;0;0.2468;0;2;1;1;0
+page respond to user;0.00363;0;0.2468;0;2;1;1;0
+improve your website performance;0.00363;0;0.2468;0;2;1;1;0
+how quickly the browser;0.00363;0;0.2468;0;2;1;1;0
+blocking the main thread;0.00363;0;0.2468;0;2;1;1;0
+takes for the largest;0.00363;0;0.2468;0;2;1;1;0
+how long it took;0.00363;0;0.2468;0;2;1;1;0
+мобильную и десктопную версии;0.00363;0.00389;0.2468;0.00369;2;1;1;1
+скорости загрузки на ранжирование;0.00363;0;0.2468;0;2;1;1;0
+chrome за последние дней;0.00363;0;0.2468;0;2;1;1;0
+отправить ссылку на страницу;0.00363;0;0.2468;0;2;1;1;0
+load and providing;0.00363;0;0.2468;0;2;1;1;0
+information on how;0.00363;0;0.2468;0;2;1;1;0
+provide a good;0.00363;0;0.2468;0;2;1;1;0
+help you build;0.00363;0;0.2468;0;2;1;1;0
+optimize your website;0.00363;0;0.2468;0;2;1;1;0
+measure the speed;0.00363;0;0.2468;0;2;1;1;0
+ensure your site;0.00363;0;0.2468;0;2;1;1;0
+сайтов в году;0.00363;0;0.2468;0;2;1;1;0
+проблемах с производительностью;0.00363;0;0.2468;0;2;1;1;0
+load the results;0.00363;0;0.2468;0;2;1;1;0
+trying to click;0.00363;0;0.2468;0;2;1;1;0
+measures the time;0.00363;0;0.2468;0;2;1;1;0
+time it takes;0.00363;0;0.2468;0;2;1;1;0
+page is loading;0.00363;0;0.2468;0;2;1;1;0
+разработчикам и владельцам;0.00363;0;0.2468;0;2;1;1;0
+ссылку на страницу;0.00363;0.00389;0.2468;0.00369;2;1;1;1
+data for inp;0.00363;0;0.2468;0;2;1;1;0
+key performance;0.00363;0;0.2468;0;2;1;1;0
+more information;0.00363;0;0.2468;0;2;1;1;0
+all user;0.00363;0;0.2468;0;2;1;1;0
+vitals core;0.00363;0;0.2468;0;2;1;1;0
+data sources;0.00363;0;0.2468;0;2;1;1;0
+running lighthouse;0.00363;0;0.2468;0;2;1;1;0
+lighthouse use;0.00363;0;0.2468;0;2;1;1;0
+analyzes page;0.00363;0;0.2468;0;2;1;1;0
+pagespeed score;0.00363;0;0.2468;0;2;1;1;0
+extensions google;0.00363;0;0.2468;0;2;1;1;0
+detailed insights;0.00363;0;0.2468;0;2;1;1;0
+overall performance;0.00363;0;0.2468;0;2;1;1;0
+mobile performance;0.00363;0;0.2468;0;2;1;1;0
+improve user;0.00363;0;0.2468;0;2;1;1;0
+web developers;0.00363;0;0.2468;0;2;1;1;0
+more detailed;0.00363;0;0.2468;0;2;1;1;0
+инструмент pagespeed;0.00363;0;0.2468;0;2;1;1;0
+проверял страницу;0.00363;0.00778;0.2468;0.00739;2;1;1;2
+изображения pagespeed;0.00363;0;0.2468;0;2;1;1;0
+были рекомендации;0.00363;0;0.2468;0;2;1;1;0
+страницы загружаются;0.00363;0.00389;0.2468;0.00369;2;1;1;1
+оценке lighthouse;0.00363;0;0.2468;0;2;1;1;0
+улучшения скорости;0.00363;0;0.2468;0;2;1;1;0
+лет lighthouse;0.00363;0;0.2468;0;2;1;1;0
+содержимого страницы;0.00363;0;0.2468;0;2;1;1;0
+измеряет показатели;0.00363;0;0.2468;0;2;1;1;0
+контента first;0.00363;0;0.2468;0;2;1;1;0
+оценка страницы;0.00363;0.00389;0.2468;0.00369;2;1;1;1
+высокой оценки;0.00363;0;0.2468;0;2;1;1;0
+время которое;0.00363;0;0.2468;0;2;1;1;0
+время необходимое;0.00363;0;0.2468;0;2;1;1;0
+может заметное;0.00363;0;0.2468;0;2;1;1;0
+страницами можно;0.00363;0.00389;0.2468;0.00369;2;1;1;1
+современные инструменты;0.00363;0;0.2468;0;2;1;1;0
+сервис которые;0.00363;0.00778;0.2468;0.00739;2;1;1;2
+будут данные;0.00363;0;0.2468;0;2;1;1;0
+инструментов разработчика;0.00363;0;0.2468;0;2;1;1;0
+другие метрики;0.00363;0.00389;0.2468;0.00369;2;1;1;1
+загрузку шрифтов;0.00363;0;0.2468;0;2;1;1;0
+запросов можете;0.00363;0;0.2468;0;2;1;1;0
+показатели производительности;0.00363;0;0.2468;0;2;1;1;0
+команд которым;0.00363;0.00389;0.2468;0.00369;2;1;1;1
+performance tool;0.00363;0;0.2468;0;2;1;1;0
+traffic pagespeed;0.00363;0;0.2468;0;2;1;1;0
+inp how;0.00363;0;0.2468;0;2;1;1;0
+using chrome;0.00363;0;0.2468;0;2;1;1;0
+performance improvements;0.00363;0;0.2468;0;2;1;1;0
+loading websites;0.00363;0;0.2468;0;2;1;1;0
+visitor experience;0.00363;0;0.2468;0;2;1;1;0
+impacting user;0.00363;0;0.2468;0;2;1;1;0
+how users;0.00363;0;0.2468;0;2;1;1;0
+page layout;0.00363;0;0.2468;0;2;1;1;0
+website more;0.00363;0;0.2468;0;2;1;1;0
+performance related;0.00363;0;0.2468;0;2;1;1;0
+инструмент google;0.00363;0;0.2468;0;2;1;1;0
+пользователю будет;0.00363;0;0.2468;0;2;1;1;0
+оптимизированный сайт;0.00363;0;0.2468;0;2;1;1;0
+измеряет время;0.00363;0;0.2468;0;2;1;1;0
+действия пользователя;0.00363;0.00778;0.2468;0.00739;2;1;1;2
+метрику first;0.00363;0;0.2468;0;2;1;1;0
+которую хотите;0.00363;0.00389;0.2468;0.00369;2;1;1;1
+устройствах скорость;0.00363;0;0.2468;0;2;1;1;0
+google использовать;0.00363;0;0.2468;0;2;1;1;0
+официальное google;0.00363;0;0.2468;0;2;1;1;0
+главной странице;0.00363;0.00389;0.2468;0.00369;2;1;1;1
+google analytics;0.00363;0;0.2468;0;2;1;1;0
+медленная страница;0.00363;0.0156;0.2468;0.1084;2;1;1;4
+сервис бесплатный;0.00363;0.00778;0.2468;0.00739;2;1;1;2
+могла показывать;0.00363;0.00389;0.2468;0.00369;2;1;1;1
+полевые метрики;0.00363;0.0156;0.2468;0.1084;2;1;1;4
+опыт загрузки;0.00363;0;0.2468;0;2;1;1;0
+ttfb оценка;0.00363;0;0.2468;0;2;1;1;0
+производительности lighthouse;0.00363;0;0.2468;0;2;1;1;0
+google performance;0.00363;0;0.2468;0;2;1;1;0
+года google;0.00363;0;0.2468;0;2;1;1;0
+seo стратегия;0.00363;0;0.2468;0;2;1;1;0
+page lab data;0.00363;0;0.2468;0;2;1;1;0
+fcp inp lcp;0.00363;0;0.2468;0;2;1;1;0
+pagespeed insights improve;0.00363;0;0.2468;0;2;1;1;0
+time performance issues;0.00363;0;0.2468;0;2;1;1;0
+optimize site speed;0.00363;0;0.2468;0;2;1;1;0
+pagespeed insights extension;0.00363;0;0.2468;0;2;1;1;0
+interactive tti время;0.00363;0;0.2468;0;2;1;1;0
+оценки производительности страниц;0.00363;0;0.2468;0;2;1;1;0
+page speed insights;0.00363;0.00389;0.2468;0.00369;2;1;1;1
+pagespeed insights provides;0.00363;0;0.2468;0;2;1;1;0
+psi бесплатный инструмент;0.00363;0;0.2468;0;2;1;1;0
+оценивает скорость загрузки;0.00363;0;0.2468;0;2;1;1;0
+показатель напрямую влияет;0.00363;0;0.2468;0;2;1;1;0
+pagespeed insights скорость;0.00363;0;0.2468;0;2;1;1;0
+pagespeed insights начните;0.00363;0;0.2468;0;2;1;1;0
+версия pagespeed insights;0.00363;0;0.2468;0;2;1;1;0
+real user crux data;0.00363;0;0.2468;0;2;1;1;0
+using google pagespeed insights;0.00363;0;0.2468;0;2;1;1;0
+общему оценки производительности сайта;0.00363;0;0.2468;0;2;1;1;0
+набора данных chrome user;0.00363;0;0.2468;0;2;1;1;0
+данных chrome user experience;0.00363;0;0.2468;0;2;1;1;0
+first input delay fid;0.00363;0;0.2468;0;2;1;1;0
+метрике lcp largest contentful;0.00363;0;0.2468;0;2;1;1;0
+pages on both mobile;0.00363;0;0.2468;0;1;2;1;0
+both mobile and desktop;0.00363;0;0.2468;0;1;2;1;0
+mobile and desktop offering;0.00363;0;0.2468;0;1;2;1;0
+best practices and seo;0.00363;0;0.2468;0;1;2;1;0
+needs improvement and poor;0.00363;0;0.2468;0;1;2;1;0
+inp lcp and cls;0.00363;0;0.2468;0;1;2;1;0
+needs improvement or poor;0.00363;0;0.2468;0;1;2;1;0
+percentile for all metrics;0.00363;0;0.2468;0;1;2;1;0
+page or origin level;0.00363;0;0.2468;0;1;2;1;0
+field data in psi;0.00363;0;0.2468;0;1;2;1;0
+see for more info;0.00363;0;0.2468;0;1;2;1;0
+specific question about using;0.00363;0;0.2468;0;1;2;1;0
+pagespeed insights the question;0.00363;0;0.2468;0;1;2;1;0
+english on for general;0.00363;0;0.2468;0;1;2;1;0
+questions feedback and discussion;0.00363;0;0.2468;0;1;2;1;0
+feedback and discussion start;0.00363;0;0.2468;0;1;2;1;0
+stars analyze the performance;0.00363;0;0.2468;0;1;2;1;0
+performance of your webpages;0.00363;0;0.2468;0;1;2;1;0
+webpages and get specific;0.00363;0;0.2468;0;1;2;1;0
+specific suggestions on how;0.00363;0;0.2468;0;1;2;1;0
+optimize them mobile friendly;0.00363;0;0.2468;0;1;2;1;0
+test helps you how;0.00363;0;0.2468;0;1;2;1;0
+helps you how well;0.00363;0;0.2468;0;1;2;1;0
+how well your website;0.00363;0;0.2468;0;1;2;1;0
+well your website performs;0.00363;0;0.2468;0;1;2;1;0
+website performs on mobile;0.00363;0;0.2468;0;1;2;1;0
+performs on mobile devices;0.00363;0;0.2468;0;1;2;1;0
+time in the seo;0.00363;0;0.2468;0;1;2;1;0
+such as on page;0.00363;0;0.2468;0;1;2;1;0
+link checking and more;0.00363;0;0.2468;0;1;2;1;0
+checking and more pagespeed;0.00363;0;0.2468;0;1;2;1;0
+stars a to open;0.00363;0;0.2468;0;1;2;1;0
+open page in google;0.00363;0;0.2468;0;1;2;1;0
+page in google pagespeed;0.00363;0;0.2468;0;1;2;1;0
+history reports and scores;0.00363;0;0.2468;0;1;2;1;0
+scores with chart check;0.00363;0;0.2468;0;1;2;1;0
+chart check my links;0.00363;0;0.2468;0;1;2;1;0
+check my links average;0.00363;0;0.2468;0;1;2;1;0
+stars check my links;0.00363;0;0.2468;0;1;2;1;0
+looks for broken links;0.00363;0;0.2468;0;1;2;1;0
+speed and performance optimization;0.00363;0;0.2468;0;1;2;1;0
+then seo is exactly;0.00363;0;0.2468;0;1;2;1;0
+exactly what you need;0.00363;0;0.2468;0;1;2;1;0
+время загрузки для взаимодействия;0.00363;0;0.2468;0;1;2;1;0
+there a pagespeed insights;0.00363;0;0.2468;0;1;2;1;0
+discover what your real;0.00363;0;0.2468;0;1;2;1;0
+experiencing the crux report;0.00363;0;0.2468;0;1;2;1;0
+performance issues the lighthouse;0.00363;0;0.2468;0;1;2;1;0
+issues the lighthouse report;0.00363;0;0.2468;0;1;2;1;0
+developers can understand;0.00363;0;0.2468;0;1;2;1;0
+pass the assessment;0.00363;0;0.2468;0;1;2;1;0
+url or origin;0.00363;0;0.2468;0;1;2;1;0
+speed of websites;0.00363;0;0.2468;0;1;2;1;0
+webpage and looks;0.00363;0;0.2468;0;1;2;1;0
+изменения в алгоритмах;0.00363;0;0.2468;0;1;2;1;0
+влияет на оценку;0.00363;0;0.2468;0;1;2;1;0
+том как браузер;0.00363;0;0.2468;0;1;2;1;0
+test your website;0.00363;0;0.2468;0;1;2;1;0
+differences between real;0.00363;0;0.2468;0;1;2;1;0
+score on psi;0.00363;0;0.2468;0;1;2;1;0
+score for seo;0.00363;0;0.2468;0;1;2;1;0
+how to pass;0.00363;0;0.2468;0;1;2;1;0
+how to check;0.00363;0;0.2468;0;1;2;1;0
+used to run;0.00363;0;0.2468;0;1;2;1;0
+increase your page;0.00363;0;0.2468;0;1;2;1;0
+score with diagnostic;0.00363;0;0.2468;0;1;2;1;0
+loading this image;0.00363;0;0.2468;0;1;2;1;0
+audit to see;0.00363;0;0.2468;0;1;2;1;0
+how to test;0.00363;0;0.2468;0;1;2;1;0
+seo and accessibility;0.00363;0;0.2468;0;1;2;1;0
+accessibility with pagespeed;0.00363;0;0.2468;0;1;2;1;0
+audit for example;0.00363;0;0.2468;0;1;2;1;0
+monitoring and optimization;0.00363;0;0.2468;0;1;2;1;0
+link docs this site;0.00195;0;0.1834;0;1;1;1;0
+docs this site uses;0.00195;0;0.1834;0;1;1;1;0
+services and to analyze;0.00195;0;0.1834;0;1;1;1;0
+got it a url;0.00195;0;0.1834;0;1;1;1;0
+analyze make your web;0.00195;0;0.1834;0;1;1;1;0
+sign in pagespeed api;0.00195;0;0.1834;0;1;1;1;0
+api about pagespeed insights;0.00195;0;0.1834;0;1;1;1;0
+insights stay with collections;0.00195;0;0.1834;0;1;1;1;0
+based on your page;0.00195;0;0.1834;0;1;1;1;0
+psi assesses the performance;0.00195;0;0.1834;0;1;1;1;0
+performance of web pages;0.00195;0;0.1834;0;1;1;1;0
+web pages on both;0.00195;0;0.1834;0;1;1;1;0
+offering suggestions for optimization;0.00195;0;0.1834;0;1;1;1;0
+optimization by analyzing lab;0.00195;0;0.1834;0;1;1;1;0
+analyzing lab and real;0.00195;0;0.1834;0;1;1;1;0
+lab and real world;0.00195;0;0.1834;0;1;1;1;0
+data psi the chrome;0.00195;0;0.1834;0;1;1;1;0
+psi the chrome user;0.00195;0;0.1834;0;1;1;1;0
+report crux for real;0.00195;0;0.1834;0;1;1;1;0
+crux for real world;0.00195;0;0.1834;0;1;1;1;0
+shift cls and interaction;0.00195;0;0.1834;0;1;1;1;0
+data is through lighthouse;0.00195;0;0.1834;0;1;1;1;0
+page load and providing;0.00195;0;0.1834;0;1;1;1;0
+load and providing diagnostics;0.00195;0;0.1834;0;1;1;1;0
+providing diagnostics on performance;0.00195;0;0.1834;0;1;1;1;0
+diagnostics on performance accessibility;0.00195;0;0.1834;0;1;1;1;0
+practices and seo psi;0.00195;0;0.1834;0;1;1;1;0
+user experiences into good;0.00195;0;0.1834;0;1;1;1;0
+experiences into good needs;0.00195;0;0.1834;0;1;1;1;0
+improvement and poor based;0.00195;0;0.1834;0;1;1;1;0
+poor based on thresholds;0.00195;0;0.1834;0;1;1;1;0
+thresholds for key performance;0.00195;0;0.1834;0;1;1;1;0
+vitals a of critical;0.00195;0;0.1834;0;1;1;1;0
+inp and their assessment;0.00195;0;0.1834;0;1;1;1;0
+assessment the overall page;0.00195;0;0.1834;0;1;1;1;0
+reports on the user;0.00195;0;0.1834;0;1;1;1;0
+experience of a page;0.00195;0;0.1834;0;1;1;1;0
+desktop and mobile devices;0.00195;0;0.1834;0;1;1;1;0
+desktop devices and provides;0.00195;0;0.1834;0;1;1;1;0
+devices and provides suggestions;0.00195;0;0.1834;0;1;1;1;0
+provides suggestions on how;0.00195;0;0.1834;0;1;1;1;0
+page may be improved;0.00195;0;0.1834;0;1;1;1;0
+both lab and field;0.00195;0;0.1834;0;1;1;1;0
+data about a page;0.00195;0;0.1834;0;1;1;1;0
+useful for debugging issues;0.00195;0;0.1834;0;1;1;1;0
+collected in a controlled;0.00195;0;0.1834;0;1;1;1;0
+field data is useful;0.00195;0;0.1834;0;1;1;1;0
+useful for real world;0.00195;0;0.1834;0;1;1;1;0
+more set of metrics;0.00195;0;0.1834;0;1;1;1;0
+set of metrics see;0.00195;0;0.1834;0;1;1;1;0
+metrics see for more;0.00195;0;0.1834;0;1;1;1;0
+see for more information;0.00195;0;0.1834;0;1;1;1;0
+information on the two;0.00195;0;0.1834;0;1;1;1;0
+types of data real;0.00195;0;0.1834;0;1;1;1;0
+experience data in psi;0.00195;0;0.1834;0;1;1;1;0
+lcp and cls experiences;0.00195;0;0.1834;0;1;1;1;0
+experiences over the day;0.00195;0;0.1834;0;1;1;1;0
+collection psi also reports;0.00195;0;0.1834;0;1;1;1;0
+psi also reports experiences;0.00195;0;0.1834;0;1;1;1;0
+experiences for the metric;0.00195;0;0.1834;0;1;1;1;0
+ttfb in to show;0.00195;0;0.1834;0;1;1;1;0
+data for a page;0.00195;0;0.1834;0;1;1;1;0
+there must be sufficient;0.00195;0;0.1834;0;1;1;1;0
+included in the crux;0.00195;0;0.1834;0;1;1;1;0
+crux dataset a page;0.00195;0;0.1834;0;1;1;1;0
+too samples from real;0.00195;0;0.1834;0;1;1;1;0
+samples from real users;0.00195;0;0.1834;0;1;1;1;0
+users when this psi;0.00195;0;0.1834;0;1;1;1;0
+origin level which all;0.00195;0;0.1834;0;1;1;1;0
+level which all user;0.00195;0;0.1834;0;1;1;1;0
+user experiences on all;0.00195;0;0.1834;0;1;1;1;0
+experiences on all pages;0.00195;0;0.1834;0;1;1;1;0
+pages of the website;0.00195;0;0.1834;0;1;1;1;0
+website sometimes the origin;0.00195;0;0.1834;0;1;1;1;0
+data in which case;0.00195;0;0.1834;0;1;1;1;0
+assessing quality of experiences;0.00195;0;0.1834;0;1;1;1;0
+quality of experiences psi;0.00195;0;0.1834;0;1;1;1;0
+experiences psi the quality;0.00195;0;0.1834;0;1;1;1;0
+quality of user experiences;0.00195;0;0.1834;0;1;1;1;0
+user experiences into three;0.00195;0;0.1834;0;1;1;1;0
+experiences into three good;0.00195;0;0.1834;0;1;1;1;0
+improvement or poor psi;0.00195;0;0.1834;0;1;1;1;0
+psi sets the thresholds;0.00195;0;0.1834;0;1;1;1;0
+poor fcp over lcp;0.00195;0;0.1834;0;1;1;1;0
+distribution and metric values;0.00195;0;0.1834;0;1;1;1;0
+values psi a distribution;0.00195;0;0.1834;0;1;1;1;0
+metrics so that developers;0.00195;0;0.1834;0;1;1;1;0
+understand the of experiences;0.00195;0;0.1834;0;1;1;1;0
+experiences for that page;0.00195;0;0.1834;0;1;1;1;0
+distribution is into three;0.00195;0;0.1834;0;1;1;1;0
+green and for example;0.00195;0;0.1834;0;1;1;1;0
+example seeing within lcp;0.00195;0;0.1834;0;1;1;1;0
+seeing within lcp indicates;0.00195;0;0.1834;0;1;1;1;0
+indicates that of all;0.00195;0;0.1834;0;1;1;1;0
+psi reports the percentile;0.00195;0;0.1834;0;1;1;1;0
+all metrics the percentile;0.00195;0;0.1834;0;1;1;1;0
+understand the most user;0.00195;0;0.1834;0;1;1;1;0
+experiences on their site;0.00195;0;0.1834;0;1;1;1;0
+improvement poor by applying;0.00195;0;0.1834;0;1;1;1;0
+applying the thresholds shown;0.00195;0;0.1834;0;1;1;1;0
+thresholds shown above core;0.00195;0;0.1834;0;1;1;1;0
+shown above core web;0.00195;0;0.1834;0;1;1;1;0
+common set of performance;0.00195;0;0.1834;0;1;1;1;0
+set of performance signals;0.00195;0;0.1834;0;1;1;1;0
+signals critical to all;0.00195;0;0.1834;0;1;1;1;0
+critical to all web;0.00195;0;0.1834;0;1;1;1;0
+experiences the core web;0.00195;0;0.1834;0;1;1;1;0
+origin level for aggregations;0.00195;0;0.1834;0;1;1;1;0
+aggregations with sufficient data;0.00195;0;0.1834;0;1;1;1;0
+sufficient data in all;0.00195;0;0.1834;0;1;1;1;0
+data in all three;0.00195;0;0.1834;0;1;1;1;0
+three metrics the aggregation;0.00195;0;0.1834;0;1;1;1;0
+metrics the aggregation passes;0.00195;0;0.1834;0;1;1;1;0
+aggregation passes the core;0.00195;0;0.1834;0;1;1;1;0
+assessment if the percentiles;0.00195;0;0.1834;0;1;1;1;0
+percentiles of all three;0.00195;0;0.1834;0;1;1;1;0
+assessment if the aggregation;0.00195;0;0.1834;0;1;1;1;0
+insufficient data for inp;0.00195;0;0.1834;0;1;1;1;0
+data for inp then;0.00195;0;0.1834;0;1;1;1;0
+cls have insufficient data;0.00195;0;0.1834;0;1;1;1;0
+insufficient data the page;0.00195;0;0.1834;0;1;1;1;0
+level aggregation be assessed;0.00195;0;0.1834;0;1;1;1;0
+aggregation be assessed differences;0.00195;0;0.1834;0;1;1;1;0
+assessed differences between field;0.00195;0;0.1834;0;1;1;1;0
+differences between field data;0.00195;0;0.1834;0;1;1;1;0
+difference between the field;0.00195;0;0.1834;0;1;1;1;0
+psi data is updated;0.00195;0;0.1834;0;1;1;1;0
+data is updated daily;0.00195;0;0.1834;0;1;1;1;0
+daily while the dataset;0.00195;0;0.1834;0;1;1;1;0
+updated and to origin;0.00195;0;0.1834;0;1;1;1;0
+psi uses to analyze;0.00195;0;0.1834;0;1;1;1;0
+url in a simulated;0.00195;0;0.1834;0;1;1;1;0
+environment for the performance;0.00195;0;0.1834;0;1;1;1;0
+practices and seo categories;0.00195;0;0.1834;0;1;1;1;0
+score at the top;0.00195;0;0.1834;0;1;1;1;0
+scores for each category;0.00195;0;0.1834;0;1;1;1;0
+each category by running;0.00195;0;0.1834;0;1;1;1;0
+category by running lighthouse;0.00195;0;0.1834;0;1;1;1;0
+running lighthouse to collect;0.00195;0;0.1834;0;1;1;1;0
+collect and analyze diagnostic;0.00195;0;0.1834;0;1;1;1;0
+information about the page;0.00195;0;0.1834;0;1;1;1;0
+score that needs improvement;0.00195;0;0.1834;0;1;1;1;0
+poor metrics the performance;0.00195;0;0.1834;0;1;1;1;0
+metrics the performance category;0.00195;0;0.1834;0;1;1;1;0
+page performance on different;0.00195;0;0.1834;0;1;1;1;0
+performance on different metrics;0.00195;0;0.1834;0;1;1;1;0
+different metrics and each;0.00195;0;0.1834;0;1;1;1;0
+indicated with a green;0.00195;0;0.1834;0;1;1;1;0
+needs improvement is indicated;0.00195;0;0.1834;0;1;1;1;0
+indicated with a audits;0.00195;0;0.1834;0;1;1;1;0
+audits within each category;0.00195;0;0.1834;0;1;1;1;0
+audits that provide information;0.00195;0;0.1834;0;1;1;1;0
+provide information on how;0.00195;0;0.1834;0;1;1;1;0
+improve the page user;0.00195;0;0.1834;0;1;1;1;0
+detailed of each category;0.00195;0;0.1834;0;1;1;1;0
+audits questions what device;0.00195;0;0.1834;0;1;1;1;0
+lighthouse use to simulate;0.00195;0;0.1834;0;1;1;1;0
+simulate a page load;0.00195;0;0.1834;0;1;1;1;0
+lighthouse simulates the page;0.00195;0;0.1834;0;1;1;1;0
+simulates the page load;0.00195;0;0.1834;0;1;1;1;0
+conditions of a device;0.00195;0;0.1834;0;1;1;1;0
+mobile and an desktop;0.00195;0;0.1834;0;1;1;1;0
+desktop pagespeed also runs;0.00195;0;0.1834;0;1;1;1;0
+runs in a google;0.00195;0;0.1834;0;1;1;1;0
+google that can based;0.00195;0;0.1834;0;1;1;1;0
+based on network conditions;0.00195;0;0.1834;0;1;1;1;0
