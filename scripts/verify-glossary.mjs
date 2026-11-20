@@ -163,6 +163,7 @@ const TERMS = {
   "stranitsy-filtrov": ["klasterizator-klyuchevykh-slov", "audit-sajta", "proverka-indeksacii"],
   "apdeyt": ["monitoring-pozicii-sayta", "analiz-konkurentov", "audit-sajta"],
   "koldunshchiki": ["tipy-saitov-v-vydache", "monitoring-pozicii-sayta", "analiz-relevantnosti"],
+  "keyvord-staffing": ["proverka-teksta-esenin", "analiz-teksta", "proverka-meta-tegov-online"],
 };
 const termPaths = Object.keys(TERMS).map((s) => `/slovar/${s}/`);
 for (const path of ["/slovar/", ...termPaths]) {
