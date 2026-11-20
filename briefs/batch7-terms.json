@@ -1,0 +1,316 @@
+[
+ {
+  "id": 212,
+  "slug": "chpu",
+  "term": "ЧПУ",
+  "categoryId": "klasterizatsiya-i-struktura-sayta",
+  "queries": [
+   "чпу ссылки",
+   "чпу url",
+   "что такое чпу сайта"
+  ],
+  "modules": [
+   "audit-sajta",
+   "http-headers",
+   "proverka-indeksacii"
+  ]
+ },
+ {
+  "id": 210,
+  "slug": "khlebnye-kroshki",
+  "term": "Хлебные крошки",
+  "categoryId": "klasterizatsiya-i-struktura-sayta",
+  "queries": [
+   "хлебные крошки на сайте",
+   "хлебные крошки seo",
+   "навигационная цепочка сайта"
+  ],
+  "modules": [
+   "audit-sajta",
+   "proverka-indeksacii",
+   "proverka-meta-tegov-online"
+  ]
+ },
+ {
+  "id": 211,
+  "slug": "paginatsiya",
+  "term": "Пагинация",
+  "categoryId": "klasterizatsiya-i-struktura-sayta",
+  "queries": [
+   "пагинация seo",
+   "пагинация на сайте",
+   "страницы пагинации"
+  ],
+  "modules": [
+   "audit-sajta",
+   "proverka-indeksacii",
+   "http-headers"
+  ]
+ },
+ {
+  "id": 318,
+  "slug": "tz-na-tekst",
+  "term": "ТЗ на текст",
+  "categoryId": "kontent-i-teksty",
+  "queries": [
+   "тз на seo текст",
+   "тз копирайтеру",
+   "техническое задание на текст"
+  ],
+  "modules": [
+   "analiz-relevantnosti",
+   "analiz-teksta",
+   "podschet-dliny-teksta"
+  ]
+ },
+ {
+  "id": 172,
+  "slug": "kombinatorika-klyuchevykh-fraz",
+  "term": "Комбинаторика ключевых фраз",
+  "categoryId": "zaprosy-i-semantika",
+  "queries": [
+   "комбинаторика ключевых слов",
+   "перемножение ключевых слов",
+   "генератор ключевых фраз"
+  ],
+  "modules": [
+   "generator_slov",
+   "udalenie-dublikatov",
+   "klasterizator-klyuchevykh-slov"
+  ]
+ },
+ {
+  "id": 541,
+  "slug": "monitoring-obratnykh-ssylok",
+  "term": "Мониторинг обратных ссылок",
+  "categoryId": "ssylki-i-vneshnyaya-optimizatsiya",
+  "queries": [
+   "мониторинг обратных ссылок",
+   "проверка обратных ссылок",
+   "отслеживание ссылок на сайт"
+  ],
+  "modules": [
+   "otslezhivanie-ssylok",
+   "audit-sajta",
+   "monitoring-pozicii-sayta"
+  ]
+ },
+ {
+  "id": 371,
+  "slug": "hreflang",
+  "term": "Hreflang",
+  "categoryId": "meta-tegi-i-html-razmetka",
+  "queries": [
+   "атрибут hreflang",
+   "hreflang",
+   "hreflang мультиязычный сайт"
+  ],
+  "modules": [
+   "proverka-meta-tegov-online",
+   "http-headers",
+   "audit-sajta"
+  ]
+ },
+ {
+  "id": 372,
+  "slug": "open-graph",
+  "term": "Open Graph",
+  "categoryId": "meta-tegi-i-html-razmetka",
+  "queries": [
+   "open graph разметка",
+   "og теги",
+   "микроразметка open graph"
+  ],
+  "modules": [
+   "proverka-meta-tegov-online",
+   "audit-sajta"
+  ]
+ },
+ {
+  "id": 506,
+  "slug": "ssl-sertifikat",
+  "term": "SSL-сертификат",
+  "categoryId": "http-server-domeny-khosting",
+  "queries": [
+   "ssl сертификат для сайта",
+   "что такое ssl сертификат",
+   "https сертификат"
+  ],
+  "modules": [
+   "http-headers",
+   "monitoring-saytov",
+   "zapisi-domena"
+  ]
+ },
+ {
+  "id": 557,
+  "slug": "yuzabiliti",
+  "term": "Юзабилити",
+  "categoryId": "povedencheskie-faktory-i-ux",
+  "queries": [
+   "юзабилити сайта",
+   "юзабилити аудит",
+   "что такое юзабилити"
+  ],
+  "modules": [
+   "audit-sajta",
+   "analiz-konkurentov"
+  ]
+ },
+ {
+  "id": 433,
+  "slug": "adaptivnaya-verstka",
+  "term": "Адаптивная вёрстка",
+  "categoryId": "tekhnicheskiy-seo-i-indeksatsiya",
+  "queries": [
+   "адаптивная верстка сайта",
+   "адаптивный дизайн сайта",
+   "мобильная версия сайта"
+  ],
+  "modules": [
+   "audit-sajta",
+   "http-headers"
+  ]
+ },
+ {
+  "id": 431,
+  "slug": "pagespeed-insights",
+  "term": "PageSpeed Insights",
+  "categoryId": "tekhnicheskiy-seo-i-indeksatsiya",
+  "queries": [
+   "pagespeed insights",
+   "проверка скорости сайта google",
+   "скорость загрузки сайта"
+  ],
+  "modules": [
+   "audit-sajta",
+   "http-headers",
+   "monitoring-saytov"
+  ]
+ },
+ {
+  "id": 443,
+  "slug": "keshirovanie",
+  "term": "Кэширование",
+  "categoryId": "tekhnicheskiy-seo-i-indeksatsiya",
+  "queries": [
+   "кэширование сайта",
+   "кэш браузера",
+   "кэширование страниц"
+  ],
+  "modules": [
+   "http-headers",
+   "audit-sajta"
+  ]
+ },
+ {
+  "id": 482,
+  "slug": "oshibki-500-503",
+  "term": "500 / 503 ошибки сервера",
+  "categoryId": "http-server-domeny-khosting",
+  "queries": [
+   "ошибка 500 на сайте",
+   "500 internal server error",
+   "ошибка 503 service unavailable"
+  ],
+  "modules": [
+   "http-headers",
+   "monitoring-saytov",
+   "audit-sajta"
+  ]
+ },
+ {
+  "id": 98,
+  "slug": "trast-sayta",
+  "term": "Траст",
+  "categoryId": "osnovy-seo-i-poiskovye-sistemy",
+  "queries": [
+   "траст сайта",
+   "трастовость сайта",
+   "проверка траста сайта"
+  ],
+  "modules": [
+   "otslezhivanie-ssylok",
+   "zapisi-domena",
+   "monitoring-pozicii-sayta"
+  ]
+ },
+ {
+  "id": 509,
+  "slug": "satellit",
+  "term": "Сателлит",
+  "categoryId": "ssylki-i-vneshnyaya-optimizatsiya",
+  "queries": [
+   "сайт сателлит",
+   "сателлиты seo",
+   "сетка сателлитов"
+  ],
+  "modules": [
+   "zapisi-domena",
+   "otslezhivanie-ssylok"
+  ]
+ },
+ {
+  "id": 516,
+  "slug": "ankor-list",
+  "term": "Анкор-лист",
+  "categoryId": "ssylki-i-vneshnyaya-optimizatsiya",
+  "queries": [
+   "анкор лист",
+   "составление анкор листа",
+   "анкор лист для продвижения"
+  ],
+  "modules": [
+   "otslezhivanie-ssylok",
+   "analiz-konkurentov"
+  ]
+ },
+ {
+  "id": 273,
+  "slug": "vebvizor",
+  "term": "Вебвизор",
+  "categoryId": "analitika-metriki-i-utm",
+  "queries": [
+   "вебвизор яндекс метрика",
+   "вебвизор что это",
+   "вебвизор метрики"
+  ],
+  "modules": [
+   "utm-metki",
+   "audit-sajta",
+   "monitoring-pozicii-sayta"
+  ]
+ },
+ {
+  "id": 103,
+  "slug": "zerkalo-sayta",
+  "term": "Зеркало сайта",
+  "categoryId": "osnovy-seo-i-poiskovye-sistemy",
+  "queries": [
+   "главное зеркало сайта",
+   "зеркало сайта seo",
+   "склейка зеркал"
+  ],
+  "modules": [
+   "http-headers",
+   "zapisi-domena",
+   "proverka-indeksacii"
+  ]
+ },
+ {
+  "id": 96,
+  "slug": "pesochnitsa",
+  "term": "Песочница",
+  "categoryId": "osnovy-seo-i-poiskovye-sistemy",
+  "queries": [
+   "песочница поисковых систем",
+   "песочница google",
+   "сайт в песочнице яндекса"
+  ],
+  "modules": [
+   "monitoring-pozicii-sayta",
+   "proverka-indeksacii",
+   "zapisi-domena"
+  ]
+ }
+]

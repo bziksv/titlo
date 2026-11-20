@@ -1,0 +1,842 @@
+[
+ {
+  "file": "301-redirekt.ts",
+  "slug": "301-redirekt",
+  "term": "301 редирект",
+  "cat": "http-server-domeny-khosting",
+  "h1": "Что такое 301 редирект"
+ },
+ {
+  "file": "302-redirekt.ts",
+  "slug": "302-redirekt",
+  "term": "302 редирект",
+  "cat": "http-server-domeny-khosting",
+  "h1": "Что такое 302 редирект"
+ },
+ {
+  "file": "404-not-found.ts",
+  "slug": "404-not-found",
+  "term": "404 Not Found",
+  "cat": "http-server-domeny-khosting",
+  "h1": "Что такое ошибка 404"
+ },
+ {
+  "file": "alt-tekst.ts",
+  "slug": "alt-tekst",
+  "term": "Alt-текст",
+  "cat": "meta-tegi-i-html-razmetka",
+  "h1": "Что такое alt-текст"
+ },
+ {
+  "file": "ankor.ts",
+  "slug": "ankor",
+  "term": "Анкор",
+  "cat": "ssylki-i-vneshnyaya-optimizatsiya",
+  "h1": "Что такое анкор"
+ },
+ {
+  "file": "baden-baden.ts",
+  "slug": "baden-baden",
+  "term": "Баден-Баден",
+  "cat": "algoritmy-i-filtry-yandeksa",
+  "h1": "Что такое Баден-Баден"
+ },
+ {
+  "file": "bitye-ssylki.ts",
+  "slug": "bitye-ssylki",
+  "term": "Битые ссылки",
+  "cat": "tekhnicheskiy-seo-i-indeksatsiya",
+  "h1": "Что такое битые ссылки"
+ },
+ {
+  "file": "canonical.ts",
+  "slug": "canonical",
+  "term": "Canonical",
+  "cat": "tekhnicheskiy-seo-i-indeksatsiya",
+  "h1": "Что такое rel canonical"
+ },
+ {
+  "file": "chastotnost-zaprosa.ts",
+  "slug": "chastotnost-zaprosa",
+  "term": "Частотность запроса",
+  "cat": "zaprosy-i-semantika",
+  "h1": "Что такое частотность запроса"
+ },
+ {
+  "file": "core-web-vitals.ts",
+  "slug": "core-web-vitals",
+  "term": "Core Web Vitals",
+  "cat": "tekhnicheskiy-seo-i-indeksatsiya",
+  "h1": "Что такое Core Web Vitals"
+ },
+ {
+  "file": "ctr.ts",
+  "slug": "ctr",
+  "term": "CTR",
+  "cat": "analitika-metriki-i-utm",
+  "h1": "Что такое CTR"
+ },
+ {
+  "file": "description.ts",
+  "slug": "description",
+  "term": "Description",
+  "cat": "tekhnicheskiy-seo-i-indeksatsiya",
+  "h1": "Что такое description"
+ },
+ {
+  "file": "direktiva-disallow.ts",
+  "slug": "direktiva-disallow",
+  "term": "Директива Disallow",
+  "cat": "tekhnicheskiy-seo-i-indeksatsiya",
+  "h1": "Что такое директива Disallow в robots.txt"
+ },
+ {
+  "file": "dlina-title-i-description.ts",
+  "slug": "dlina-title-i-description",
+  "term": "Длина title и description",
+  "cat": "meta-tegi-i-html-razmetka",
+  "h1": "Какой должна быть длина title и description"
+ },
+ {
+  "file": "dlinnyy-khvost.ts",
+  "slug": "dlinnyy-khvost",
+  "term": "Длинный хвост",
+  "cat": "zaprosy-i-semantika",
+  "h1": "Что такое длинный хвост"
+ },
+ {
+  "file": "dns.ts",
+  "slug": "dns",
+  "term": "DNS",
+  "cat": "http-server-domeny-khosting",
+  "h1": "Что такое DNS и DNS-записи домена"
+ },
+ {
+  "file": "dofollow.ts",
+  "slug": "dofollow",
+  "term": "Dofollow",
+  "cat": "ssylki-i-vneshnyaya-optimizatsiya",
+  "h1": "Что такое dofollow"
+ },
+ {
+  "file": "domen-vtorogo-urovnya.ts",
+  "slug": "domen-vtorogo-urovnya",
+  "term": "Домен второго уровня",
+  "cat": "http-server-domeny-khosting",
+  "h1": "Что такое домен второго уровня и чем он отличается от доменов других уровней"
+ },
+ {
+  "file": "domen.ts",
+  "slug": "domen",
+  "term": "Домен",
+  "cat": "http-server-domeny-khosting",
+  "h1": "Что такое домен и доменное имя сайта"
+ },
+ {
+  "file": "donor.ts",
+  "slug": "donor",
+  "term": "Донор",
+  "cat": "ssylki-i-vneshnyaya-optimizatsiya",
+  "h1": "Сайт-донор в SEO: что это, как выбрать и проверить донора ссылок"
+ },
+ {
+  "file": "dubli-stranits.ts",
+  "slug": "dubli-stranits",
+  "term": "Дубли страниц",
+  "cat": "tekhnicheskiy-seo-i-indeksatsiya",
+  "h1": "Что такое дубли страниц"
+ },
+ {
+  "file": "e-e-a-t.ts",
+  "slug": "e-e-a-t",
+  "term": "E-E-A-T",
+  "cat": "ranzhirovanie-i-faktory",
+  "h1": "Что такое E-E-A-T"
+ },
+ {
+  "file": "faktory-ranzhirovaniya.ts",
+  "slug": "faktory-ranzhirovaniya",
+  "term": "Факторы ранжирования",
+  "cat": "ranzhirovanie-i-faktory",
+  "h1": "Что такое факторы ранжирования"
+ },
+ {
+  "file": "geozavisimyy-zapros.ts",
+  "slug": "geozavisimyy-zapros",
+  "term": "Геозависимый запрос",
+  "cat": "zaprosy-i-semantika",
+  "h1": "Что такое геозависимые запросы"
+ },
+ {
+  "file": "google-search-console.ts",
+  "slug": "google-search-console",
+  "term": "Google Search Console",
+  "cat": "instrumenty-i-servisy",
+  "h1": "Что такое Google Search Console"
+ },
+ {
+  "file": "http-zagolovki.ts",
+  "slug": "http-zagolovki",
+  "term": "HTTP-заголовки",
+  "cat": "http-server-domeny-khosting",
+  "h1": "Что такое HTTP-заголовки"
+ },
+ {
+  "file": "iks.ts",
+  "slug": "iks",
+  "term": "ИКС",
+  "cat": "algoritmy-i-filtry-yandeksa",
+  "h1": "Что такое ИКС — индекс качества сайта в Яндексе"
+ },
+ {
+  "file": "indeks-poiskovoy-sistemy.ts",
+  "slug": "indeks-poiskovoy-sistemy",
+  "term": "Индекс поисковой системы",
+  "cat": "tekhnicheskiy-seo-i-indeksatsiya",
+  "h1": "Что такое индекс поисковой системы"
+ },
+ {
+  "file": "indeksatsiya.ts",
+  "slug": "indeksatsiya",
+  "term": "Индексация сайта",
+  "cat": "tekhnicheskiy-seo-i-indeksatsiya",
+  "h1": "Что такое индексация сайта"
+ },
+ {
+  "file": "informatsionnyy-zapros.ts",
+  "slug": "informatsionnyy-zapros",
+  "term": "Информационный запрос",
+  "cat": "zaprosy-i-semantika",
+  "h1": "Что такое информационный запрос"
+ },
+ {
+  "file": "intent.ts",
+  "slug": "intent",
+  "term": "Интент",
+  "cat": "zaprosy-i-semantika",
+  "h1": "Что такое интент запроса"
+ },
+ {
+  "file": "isklyuchennye-stranitsy.ts",
+  "slug": "isklyuchennye-stranitsy",
+  "term": "Исключённые страницы",
+  "cat": "tekhnicheskiy-seo-i-indeksatsiya",
+  "h1": "Исключённые страницы в Яндекс Вебмастере: что это, причины и что делать"
+ },
+ {
+  "file": "istochnik-trafika.ts",
+  "slug": "istochnik-trafika",
+  "term": "Источник трафика",
+  "cat": "analitika-metriki-i-utm",
+  "h1": "Источники трафика сайта: какие бывают и как их анализировать"
+ },
+ {
+  "file": "kannibalizatsiya-zaprosov.ts",
+  "slug": "kannibalizatsiya-zaprosov",
+  "term": "Каннибализация запросов",
+  "cat": "zaprosy-i-semantika",
+  "h1": "Что такое каннибализация запросов в SEO и как её устранить"
+ },
+ {
+  "file": "karta-relevantnosti.ts",
+  "slug": "karta-relevantnosti",
+  "term": "Карта релевантности",
+  "cat": "klasterizatsiya-i-struktura-sayta",
+  "h1": "Карта релевантности: что это и как распределить запросы по страницам сайта"
+ },
+ {
+  "file": "kartochka-tovara.ts",
+  "slug": "kartochka-tovara",
+  "term": "Карточка товара",
+  "cat": "kontent-i-teksty",
+  "h1": "Карточка товара: что это и как сделать SEO-оптимизацию для сайта и маркетплейсов"
+ },
+ {
+  "file": "klasterizatsiya-zaprosov.ts",
+  "slug": "klasterizatsiya-zaprosov",
+  "term": "Кластеризация запросов",
+  "cat": "klasterizatsiya-i-struktura-sayta",
+  "h1": "Что такое кластеризация запросов"
+ },
+ {
+  "file": "klyuchevye-slova.ts",
+  "slug": "klyuchevye-slova",
+  "term": "Ключевые слова",
+  "cat": "zaprosy-i-semantika",
+  "h1": "Что такое ключевые слова"
+ },
+ {
+  "file": "kod-otveta-servera.ts",
+  "slug": "kod-otveta-servera",
+  "term": "Код ответа сервера",
+  "cat": "http-server-domeny-khosting",
+  "h1": "Что такое код ответа сервера"
+ },
+ {
+  "file": "kommercheskie-faktory.ts",
+  "slug": "kommercheskie-faktory",
+  "term": "Коммерческие факторы",
+  "cat": "ranzhirovanie-i-faktory",
+  "h1": "Что такое коммерческие факторы"
+ },
+ {
+  "file": "kommercheskiy-zapros.ts",
+  "slug": "kommercheskiy-zapros",
+  "term": "Коммерческий запрос",
+  "cat": "zaprosy-i-semantika",
+  "h1": "Что такое коммерческий запрос"
+ },
+ {
+  "file": "kommertsializatsiya-zaprosa.ts",
+  "slug": "kommertsializatsiya-zaprosa",
+  "term": "Коммерциализация запроса",
+  "cat": "zaprosy-i-semantika",
+  "h1": "Что такое коммерциализация запроса"
+ },
+ {
+  "file": "konkurentnost-zaprosa.ts",
+  "slug": "konkurentnost-zaprosa",
+  "term": "Конкурентность запроса",
+  "cat": "zaprosy-i-semantika",
+  "h1": "Что такое конкурентность запроса и как её определить"
+ },
+ {
+  "file": "konversiya.ts",
+  "slug": "konversiya",
+  "term": "Конверсия",
+  "cat": "analitika-metriki-i-utm",
+  "h1": "Что такое конверсия сайта, как её рассчитать и повысить"
+ },
+ {
+  "file": "kpi-seo.ts",
+  "slug": "kpi-seo",
+  "term": "KPI в SEO",
+  "cat": "analitika-metriki-i-utm",
+  "h1": "KPI в SEO: какие показатели эффективности отслеживать и как их выбрать"
+ },
+ {
+  "file": "kraud-marketing.ts",
+  "slug": "kraud-marketing",
+  "term": "Крауд-маркетинг",
+  "cat": "ssylki-i-vneshnyaya-optimizatsiya",
+  "h1": "Что такое крауд-маркетинг"
+ },
+ {
+  "file": "linkbilding.ts",
+  "slug": "linkbilding",
+  "term": "Линкбилдинг",
+  "cat": "ssylki-i-vneshnyaya-optimizatsiya",
+  "h1": "Что такое линкбилдинг"
+ },
+ {
+  "file": "lsi-slova.ts",
+  "slug": "lsi-slova",
+  "term": "LSI-слова",
+  "cat": "kontent-i-teksty",
+  "h1": "Что такое LSI-слова"
+ },
+ {
+  "file": "malopoleznyy-kontent.ts",
+  "slug": "malopoleznyy-kontent",
+  "term": "Малополезный контент",
+  "cat": "algoritmy-i-filtry-yandeksa",
+  "h1": "Что такое малополезный контент в Яндексе"
+ },
+ {
+  "file": "markernyy-zapros.ts",
+  "slug": "markernyy-zapros",
+  "term": "Маркерный запрос",
+  "cat": "zaprosy-i-semantika",
+  "h1": "Что такое маркерные запросы и как их найти для семантического ядра"
+ },
+ {
+  "file": "meta-teg-robots.ts",
+  "slug": "meta-teg-robots",
+  "term": "Мета-тег robots",
+  "cat": "tekhnicheskiy-seo-i-indeksatsiya",
+  "h1": "Что такое мета-тег robots"
+ },
+ {
+  "file": "meta-tegi.ts",
+  "slug": "meta-tegi",
+  "term": "Мета-теги",
+  "cat": "meta-tegi-i-html-razmetka",
+  "h1": "Что такое мета-теги"
+ },
+ {
+  "file": "mikrorazmetka.ts",
+  "slug": "mikrorazmetka",
+  "term": "Микроразметка",
+  "cat": "meta-tegi-i-html-razmetka",
+  "h1": "Что такое микроразметка"
+ },
+ {
+  "file": "minus-slova.ts",
+  "slug": "minus-slova",
+  "term": "Минус-слова",
+  "cat": "zaprosy-i-semantika",
+  "h1": "Что такое минус-слова и как их подобрать для рекламы и семантики"
+ },
+ {
+  "file": "minusinsk.ts",
+  "slug": "minusinsk",
+  "term": "Минусинск",
+  "cat": "algoritmy-i-filtry-yandeksa",
+  "h1": "Что такое фильтр Минусинск"
+ },
+ {
+  "file": "nakrutka-pf.ts",
+  "slug": "nakrutka-pf",
+  "term": "Накрутка поведенческих факторов",
+  "cat": "povedencheskie-faktory-i-ux",
+  "h1": "Что такое накрутка поведенческих факторов"
+ },
+ {
+  "file": "nedostatochno-kachestvennaya-stranitsa.ts",
+  "slug": "nedostatochno-kachestvennaya-stranitsa",
+  "term": "Недостаточно качественная страница",
+  "cat": "algoritmy-i-filtry-yandeksa",
+  "h1": "Что такое недостаточно качественная страница в Яндексе"
+ },
+ {
+  "file": "nofollow.ts",
+  "slug": "nofollow",
+  "term": "Nofollow",
+  "cat": "meta-tegi-i-html-razmetka",
+  "h1": "Что такое nofollow"
+ },
+ {
+  "file": "noindex.ts",
+  "slug": "noindex",
+  "term": "noindex",
+  "cat": "tekhnicheskiy-seo-i-indeksatsiya",
+  "h1": "Что такое noindex"
+ },
+ {
+  "file": "obratnye-ssylki.ts",
+  "slug": "obratnye-ssylki",
+  "term": "Обратные ссылки",
+  "cat": "ssylki-i-vneshnyaya-optimizatsiya",
+  "h1": "Что такое обратные ссылки"
+ },
+ {
+  "file": "obyom-teksta.ts",
+  "slug": "obyom-teksta",
+  "term": "Объём текста",
+  "cat": "kontent-i-teksty",
+  "h1": "Какой объём текста нужен для SEO"
+ },
+ {
+  "file": "operator-site.ts",
+  "slug": "operator-site",
+  "term": "Оператор site:",
+  "cat": "tekhnicheskiy-seo-i-indeksatsiya",
+  "h1": "Что такое оператор site:"
+ },
+ {
+  "file": "operatory-wordstat.ts",
+  "slug": "operatory-wordstat",
+  "term": "Операторы Wordstat",
+  "cat": "zaprosy-i-semantika",
+  "h1": "Операторы Вордстата: что это и как ими пользоваться"
+ },
+ {
+  "file": "organicheskiy-trafik.ts",
+  "slug": "organicheskiy-trafik",
+  "term": "Органический трафик",
+  "cat": "osnovy-seo-i-poiskovye-sistemy",
+  "h1": "Что такое органический трафик"
+ },
+ {
+  "file": "oshibka-403.ts",
+  "slug": "oshibka-403",
+  "term": "Ошибка 403",
+  "cat": "http-server-domeny-khosting",
+  "h1": "Что такое ошибка 403"
+ },
+ {
+  "file": "pereezd-sayta.ts",
+  "slug": "pereezd-sayta",
+  "term": "Переезд сайта",
+  "cat": "tekhnicheskiy-seo-i-indeksatsiya",
+  "h1": "Что такое переезд сайта"
+ },
+ {
+  "file": "pereobhod-stranits.ts",
+  "slug": "pereobhod-stranits",
+  "term": "Переобход страниц",
+  "cat": "tekhnicheskiy-seo-i-indeksatsiya",
+  "h1": "Что такое переобход страниц"
+ },
+ {
+  "file": "pessimizatsiya.ts",
+  "slug": "pessimizatsiya",
+  "term": "Пессимизация",
+  "cat": "algoritmy-i-filtry-yandeksa",
+  "h1": "Что такое пессимизация сайта в поисковых системах"
+ },
+ {
+  "file": "plotnost-klyuchevykh-slov.ts",
+  "slug": "plotnost-klyuchevykh-slov",
+  "term": "Плотность ключевых слов",
+  "cat": "kontent-i-teksty",
+  "h1": "Что такое плотность ключевых слов"
+ },
+ {
+  "file": "poiskovaya-vydacha.ts",
+  "slug": "poiskovaya-vydacha",
+  "term": "Поисковая выдача",
+  "cat": "osnovy-seo-i-poiskovye-sistemy",
+  "h1": "Что такое поисковая выдача"
+ },
+ {
+  "file": "poiskovye-operatory.ts",
+  "slug": "poiskovye-operatory",
+  "term": "Поисковые операторы",
+  "cat": "instrumenty-i-servisy",
+  "h1": "Что такое поисковые операторы и как ими пользоваться"
+ },
+ {
+  "file": "poiskovye-podskazki.ts",
+  "slug": "poiskovye-podskazki",
+  "term": "Поисковые подсказки",
+  "cat": "zaprosy-i-semantika",
+  "h1": "Что такое поисковые подсказки"
+ },
+ {
+  "file": "poiskovyy-robot.ts",
+  "slug": "poiskovyy-robot",
+  "term": "Поисковый робот",
+  "cat": "osnovy-seo-i-poiskovye-sistemy",
+  "h1": "Что такое поисковый робот"
+ },
+ {
+  "file": "pokazatel-otkazov.ts",
+  "slug": "pokazatel-otkazov",
+  "term": "Показатель отказов",
+  "cat": "povedencheskie-faktory-i-ux",
+  "h1": "Что такое показатель отказов"
+ },
+ {
+  "file": "posadochnaya-stranica.ts",
+  "slug": "posadochnaya-stranica",
+  "term": "Посадочная страница",
+  "cat": "klasterizatsiya-i-struktura-sayta",
+  "h1": "Что такое посадочная страница"
+ },
+ {
+  "file": "povedencheskie-faktory.ts",
+  "slug": "povedencheskie-faktory",
+  "term": "Поведенческие факторы",
+  "cat": "povedencheskie-faktory-i-ux",
+  "h1": "Что такое поведенческие факторы"
+ },
+ {
+  "file": "pozitsiya-sayta.ts",
+  "slug": "pozitsiya-sayta",
+  "term": "Позиция сайта",
+  "cat": "ranzhirovanie-i-faktory",
+  "h1": "Что такое позиция сайта в поисковой выдаче"
+ },
+ {
+  "file": "ranzhirovanie.ts",
+  "slug": "ranzhirovanie",
+  "term": "Ранжирование",
+  "cat": "ranzhirovanie-i-faktory",
+  "h1": "Что такое ранжирование"
+ },
+ {
+  "file": "rasshirennyy-snippet.ts",
+  "slug": "rasshirennyy-snippet",
+  "term": "Расширенный сниппет",
+  "cat": "meta-tegi-i-html-razmetka",
+  "h1": "Что такое расширенный сниппет и как его получить"
+ },
+ {
+  "file": "regionalnost.ts",
+  "slug": "regionalnost",
+  "term": "Региональность",
+  "cat": "ranzhirovanie-i-faktory",
+  "h1": "Что такое региональность сайта и как присвоить сайту регион"
+ },
+ {
+  "file": "relevantnost.ts",
+  "slug": "relevantnost",
+  "term": "Релевантность",
+  "cat": "osnovy-seo-i-poiskovye-sistemy",
+  "h1": "Что такое релевантность страницы"
+ },
+ {
+  "file": "robots-txt.ts",
+  "slug": "robots-txt",
+  "term": "robots.txt",
+  "cat": "tekhnicheskiy-seo-i-indeksatsiya",
+  "h1": "Что такое файл robots.txt"
+ },
+ {
+  "file": "roi.ts",
+  "slug": "roi",
+  "term": "ROI",
+  "cat": "analitika-metriki-i-utm",
+  "h1": "ROI в маркетинге: что это, формула расчета и какой показатель считается хорошим"
+ },
+ {
+  "file": "schema-org.ts",
+  "slug": "schema-org",
+  "term": "Schema.org",
+  "cat": "meta-tegi-i-html-razmetka",
+  "h1": "Что такое Schema.org"
+ },
+ {
+  "file": "semanticheskoe-yadro.ts",
+  "slug": "semanticheskoe-yadro",
+  "term": "Семантическое ядро",
+  "cat": "zaprosy-i-semantika",
+  "h1": "Что такое семантическое ядро"
+ },
+ {
+  "file": "seo-audit.ts",
+  "slug": "seo-audit",
+  "term": "SEO-аудит",
+  "cat": "osnovy-seo-i-poiskovye-sistemy",
+  "h1": "Что такое SEO-аудит"
+ },
+ {
+  "file": "seo-krauler.ts",
+  "slug": "seo-krauler",
+  "term": "SEO-краулер",
+  "cat": "instrumenty-i-servisy",
+  "h1": "Что такое SEO-краулер и как с его помощью проверить сайт"
+ },
+ {
+  "file": "seo-tekst.ts",
+  "slug": "seo-tekst",
+  "term": "SEO-текст",
+  "cat": "kontent-i-teksty",
+  "h1": "Что такое SEO-текст и как написать текст для продвижения сайта"
+ },
+ {
+  "file": "seo.ts",
+  "slug": "seo",
+  "term": "SEO",
+  "cat": "osnovy-seo-i-poiskovye-sistemy",
+  "h1": "Что такое SEO"
+ },
+ {
+  "file": "simvoly-s-probelami-i-bez.ts",
+  "slug": "simvoly-s-probelami-i-bez",
+  "term": "Символы с пробелами и без",
+  "cat": "kontent-i-teksty",
+  "h1": "Символы с пробелами и без пробелов: в чём разница и как посчитать количество знаков"
+ },
+ {
+  "file": "sitemap-xml.ts",
+  "slug": "sitemap-xml",
+  "term": "Sitemap.xml",
+  "cat": "tekhnicheskiy-seo-i-indeksatsiya",
+  "h1": "Что такое sitemap.xml"
+ },
+ {
+  "file": "skanirovanie.ts",
+  "slug": "skanirovanie",
+  "term": "Сканирование",
+  "cat": "tekhnicheskiy-seo-i-indeksatsiya",
+  "h1": "Что такое сканирование сайта"
+ },
+ {
+  "file": "snippet.ts",
+  "slug": "snippet",
+  "term": "Сниппет",
+  "cat": "osnovy-seo-i-poiskovye-sistemy",
+  "h1": "Что такое сниппет"
+ },
+ {
+  "file": "srok-registratsii-domena.ts",
+  "slug": "srok-registratsii-domena",
+  "term": "Срок регистрации домена",
+  "cat": "http-server-domeny-khosting",
+  "h1": "Что такое срок регистрации домена и как его продлить"
+ },
+ {
+  "file": "ssylochnaya-massa.ts",
+  "slug": "ssylochnaya-massa",
+  "term": "Ссылочная масса",
+  "cat": "ssylki-i-vneshnyaya-optimizatsiya",
+  "h1": "Что такое ссылочная масса"
+ },
+ {
+  "file": "struktura-sayta.ts",
+  "slug": "struktura-sayta",
+  "term": "Структура сайта",
+  "cat": "klasterizatsiya-i-struktura-sayta",
+  "h1": "Что такое структура сайта"
+ },
+ {
+  "file": "teg-h1.ts",
+  "slug": "teg-h1",
+  "term": "Тег H1",
+  "cat": "meta-tegi-i-html-razmetka",
+  "h1": "Что такое тег H1"
+ },
+ {
+  "file": "tekhnicheskaya-optimizatsiya.ts",
+  "slug": "tekhnicheskaya-optimizatsiya",
+  "term": "Техническая оптимизация",
+  "cat": "tekhnicheskiy-seo-i-indeksatsiya",
+  "h1": "Что такое техническая оптимизация сайта"
+ },
+ {
+  "file": "tekhnicheskiy-audit.ts",
+  "slug": "tekhnicheskiy-audit",
+  "term": "Технический аудит",
+  "cat": "tekhnicheskiy-seo-i-indeksatsiya",
+  "h1": "Что такое технический аудит сайта и как его провести"
+ },
+ {
+  "file": "tekstovye-faktory.ts",
+  "slug": "tekstovye-faktory",
+  "term": "Текстовые факторы",
+  "cat": "ranzhirovanie-i-faktory",
+  "h1": "Что такое текстовые факторы"
+ },
+ {
+  "file": "tf-idf.ts",
+  "slug": "tf-idf",
+  "term": "TF-IDF",
+  "cat": "ranzhirovanie-i-faktory",
+  "h1": "Что такое TF-IDF"
+ },
+ {
+  "file": "tipy-saitov-v-vydache.ts",
+  "slug": "tipy-saitov-v-vydache",
+  "term": "Типы сайтов в выдаче",
+  "cat": "osnovy-seo-i-poiskovye-sistemy",
+  "h1": "Что такое типы сайтов в выдаче"
+ },
+ {
+  "file": "title.ts",
+  "slug": "title",
+  "term": "Тег Title",
+  "cat": "tekhnicheskiy-seo-i-indeksatsiya",
+  "h1": "Что такое тег Title"
+ },
+ {
+  "file": "top-10.ts",
+  "slug": "top-10",
+  "term": "ТОП-10",
+  "cat": "ranzhirovanie-i-faktory",
+  "h1": "Что такое ТОП-10 поисковой выдачи"
+ },
+ {
+  "file": "toshnota-teksta.ts",
+  "slug": "toshnota-teksta",
+  "term": "Тошнота текста",
+  "cat": "kontent-i-teksty",
+  "h1": "Что такое тошнота текста"
+ },
+ {
+  "file": "tsepochka-redirektov.ts",
+  "slug": "tsepochka-redirektov",
+  "term": "Цепочка редиректов",
+  "cat": "http-server-domeny-khosting",
+  "h1": "Что такое цепочка редиректов и как её исправить"
+ },
+ {
+  "file": "unikalnost-teksta.ts",
+  "slug": "unikalnost-teksta",
+  "term": "Уникальность текста",
+  "cat": "kontent-i-teksty",
+  "h1": "Что такое уникальность текста"
+ },
+ {
+  "file": "uptime.ts",
+  "slug": "uptime",
+  "term": "Uptime",
+  "cat": "http-server-domeny-khosting",
+  "h1": "Что такое uptime сайта и как следить за доступностью"
+ },
+ {
+  "file": "utm-metki.ts",
+  "slug": "utm-metki",
+  "term": "UTM-метки",
+  "cat": "analitika-metriki-i-utm",
+  "h1": "Что такое UTM-метки"
+ },
+ {
+  "file": "vidimost-sayta.ts",
+  "slug": "vidimost-sayta",
+  "term": "Видимость сайта",
+  "cat": "osnovy-seo-i-poiskovye-sistemy",
+  "h1": "Что такое видимость сайта"
+ },
+ {
+  "file": "vkhozhdenie-klyucha.ts",
+  "slug": "vkhozhdenie-klyucha",
+  "term": "Вхождение ключа",
+  "cat": "zaprosy-i-semantika",
+  "h1": "Что такое вхождение ключа и какие бывают вхождения ключевых слов"
+ },
+ {
+  "file": "vneshnyaya-optimizatsiya.ts",
+  "slug": "vneshnyaya-optimizatsiya",
+  "term": "Внешняя оптимизация",
+  "cat": "ssylki-i-vneshnyaya-optimizatsiya",
+  "h1": "Что такое внешняя оптимизация"
+ },
+ {
+  "file": "vnutrennyaya-optimizatsiya.ts",
+  "slug": "vnutrennyaya-optimizatsiya",
+  "term": "Внутренняя оптимизация",
+  "cat": "tekhnicheskiy-seo-i-indeksatsiya",
+  "h1": "Что такое внутренняя оптимизация"
+ },
+ {
+  "file": "vnutrennyaya-perelinkovka.ts",
+  "slug": "vnutrennyaya-perelinkovka",
+  "term": "Внутренняя перелинковка",
+  "cat": "klasterizatsiya-i-struktura-sayta",
+  "h1": "Что такое внутренняя перелинковка"
+ },
+ {
+  "file": "vodnost-teksta.ts",
+  "slug": "vodnost-teksta",
+  "term": "Водность текста",
+  "cat": "kontent-i-teksty",
+  "h1": "Что такое водность текста"
+ },
+ {
+  "file": "whois.ts",
+  "slug": "whois",
+  "term": "WHOIS",
+  "cat": "http-server-domeny-khosting",
+  "h1": "Что такое WHOIS и как проверить информацию о домене"
+ },
+ {
+  "file": "wordstat.ts",
+  "slug": "wordstat",
+  "term": "Wordstat",
+  "cat": "zaprosy-i-semantika",
+  "h1": "Что такое Wordstat"
+ },
+ {
+  "file": "x-robots-tag.ts",
+  "slug": "x-robots-tag",
+  "term": "X-Robots-Tag",
+  "cat": "tekhnicheskiy-seo-i-indeksatsiya",
+  "h1": "Что такое X-Robots-Tag"
+ },
+ {
+  "file": "yandeks-metrika.ts",
+  "slug": "yandeks-metrika",
+  "term": "Яндекс Метрика",
+  "cat": "analitika-metriki-i-utm",
+  "h1": "Что такое Яндекс Метрика"
+ },
+ {
+  "file": "yandeks-vebmaster.ts",
+  "slug": "yandeks-vebmaster",
+  "term": "Яндекс Вебмастер",
+  "cat": "instrumenty-i-servisy",
+  "h1": "Что такое Яндекс Вебмастер"
+ }
+]
