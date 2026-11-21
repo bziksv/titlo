@@ -193,6 +193,11 @@ const TERMS = {
   "teg-noindex-yandeksa": ["otslezhivanie-ssylok"],
   "clean-param": ["audit-sajta"],
   "https-pereezd": ["http-headers"],
+  "skleyka-zerkal": ["http-headers"],
+  "410-gone": ["http-headers"],
+  "google-analytics-4": ["utm-metki"],
+  "skvoznaya-analitika": ["kalkulyator-roi"],
+  "seo-kopirayting": ["analiz-teksta"],
 };
 
 
