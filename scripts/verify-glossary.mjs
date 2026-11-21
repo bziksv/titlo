@@ -183,6 +183,16 @@ const TERMS = {
   "javascript-seo": ["audit-sajta"],
   "fasetnaya-navigatsiya": ["analiz-relevantnosti", "audit-sajta"],
   "tseli-v-metrike": ["utm-metki"],
+  "chernoe-seo": [],
+  "ymyl": [],
+  "direktiva-allow": ["audit-sajta"],
+  "bystrye-otvety-yandeksa": [],
+  "people-also-ask": ["sbor-poiskovykh-podskazok"],
+  "geonezavisimyy-zapros": ["geo-lokalizaciya-kommerciya"],
+  "tsiklicheskiy-redirekt": ["http-headers"],
+  "teg-noindex-yandeksa": ["otslezhivanie-ssylok"],
+  "clean-param": ["audit-sajta"],
+  "https-pereezd": ["http-headers"],
 };
 
 
