@@ -198,6 +198,11 @@ const TERMS = {
   "google-analytics-4": ["utm-metki"],
   "skvoznaya-analitika": ["kalkulyator-roi"],
   "seo-kopirayting": ["analiz-teksta"],
+  "negativnoe-seo": ["otslezhivanie-ssylok"],
+  "aktseptor": ["otslezhivanie-ssylok"],
+  "autrich": ["otslezhivanie-ssylok"],
+  "google-business-profile": [],
+  "generativnyy-kontent": [],
 };
 
 
