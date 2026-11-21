@@ -181,7 +181,10 @@ const TERMS = {
   "mobile-first-indeksatsiya": ["audit-sajta"],
   "json-ld": [],
   "javascript-seo": ["audit-sajta"],
+  "fasetnaya-navigatsiya": ["analiz-relevantnosti", "audit-sajta"],
+  "tseli-v-metrike": ["utm-metki"],
 };
+
 
 const termPaths = Object.keys(TERMS).map((s) => `/slovar/${s}/`);
 for (const path of ["/slovar/", ...termPaths]) {
