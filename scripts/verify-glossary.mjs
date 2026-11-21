@@ -164,7 +164,25 @@ const TERMS = {
   "apdeyt": ["monitoring-pozicii-sayta", "analiz-konkurentov", "audit-sajta"],
   "koldunshchiki": ["tipy-saitov-v-vydache", "monitoring-pozicii-sayta", "analiz-relevantnosti"],
   "keyvord-staffing": ["proverka-teksta-esenin", "analiz-teksta", "proverka-meta-tegov-online"],
+  "smeshannyy-zapros": ["tipy-saitov-v-vydache"],
+  "chitabelnost": ["proverka-teksta-esenin", "analiz-teksta", "podschet-dliny-teksta"],
+  "staticheskiy-ves": ["audit-sajta"],
+  "skvoznaya-ssylka": ["audit-sajta"],
+  "indexnow": ["proverka-indeksacii"],
+  "navigatsionnyy-zapros": ["tipy-saitov-v-vydache", "sbor-poiskovykh-podskazok"],
+  "brendovyy-zapros": ["tipy-saitov-v-vydache", "sbor-poiskovykh-podskazok"],
+  "stop-slova": ["analiz-teksta"],
+  "tonkiy-kontent": ["proverka-teksta-esenin", "analiz-teksta"],
+  "bezankornaya-ssylka": ["otslezhivanie-ssylok"],
+  "toksichnye-ssylki": ["otslezhivanie-ssylok"],
+  "skrytyy-tekst": ["proverka-teksta-esenin", "proverka-meta-tegov-online"],
+  "dorvey": ["audit-sajta", "otslezhivanie-ssylok"],
+  "saytlinki": ["proverka-meta-tegov-online", "tipy-saitov-v-vydache"],
+  "mobile-first-indeksatsiya": ["audit-sajta"],
+  "json-ld": [],
+  "javascript-seo": ["audit-sajta"],
 };
+
 const termPaths = Object.keys(TERMS).map((s) => `/slovar/${s}/`);
 for (const path of ["/slovar/", ...termPaths]) {
   const slug = path.split("/")[2] || "";
