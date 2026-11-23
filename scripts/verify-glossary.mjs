@@ -203,6 +203,16 @@ const TERMS = {
   "autrich": ["otslezhivanie-ssylok"],
   "google-business-profile": [],
   "generativnyy-kontent": [],
+  "zero-click-poisk": ["monitoring-pozicii-sayta", "tipy-saitov-v-vydache", "analiz-konkurentov"],
+  "beloe-seo": ["audit-sajta", "analiz-teksta", "otslezhivanie-ssylok", "monitoring-pozicii-sayta"],
+  "khab-stranitsa": ["klasterizator-klyuchevykh-slov", "analiz-relevantnosti", "audit-sajta"],
+  "ssr": ["http-headers", "audit-sajta", "proverka-indeksacii"],
+  "asessor": ["analiz-relevantnosti", "audit-sajta", "monitoring-pozicii-sayta"],
+  "log-fayly-servera": ["audit-sajta", "http-headers", "proverka-indeksacii", "monitoring-saytov"],
+  "geovydacha": ["geo-lokalizaciya-kommerciya", "monitoring-pozicii-sayta", "tipy-saitov-v-vydache"],
+  "ai-overviews": ["monitoring-pozicii-sayta", "analiz-relevantnosti", "tipy-saitov-v-vydache"],
+  "nulevaya-pozitsiya": ["monitoring-pozicii-sayta", "analiz-relevantnosti", "proverka-meta-tegov-online"],
+  "faqpage-razmetka": ["sbor-poiskovykh-podskazok", "proverka-meta-tegov-online", "audit-sajta"],
 };
 
 
