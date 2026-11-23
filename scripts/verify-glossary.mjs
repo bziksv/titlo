@@ -221,6 +221,8 @@ const TERMS = {
   "ugc": ["analiz-teksta", "proverka-indeksacii", "audit-sajta"],
   "rerayting": ["analiz-teksta", "analiz-konkurentov", "audit-sajta"],
   "atributsiya": ["utm-metki", "kalkulyator-roi", "monitoring-pozicii-sayta"],
+  "serm": ["monitoring-pozicii-sayta", "tipy-saitov-v-vydache", "analiz-konkurentov"],
+  "neyro-yandeksa": ["analiz-relevantnosti", "monitoring-pozicii-sayta", "sbor-poiskovykh-podskazok", "audit-sajta"],
 };
 
 

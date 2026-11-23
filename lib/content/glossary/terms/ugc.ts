@@ -877,7 +877,7 @@ export const UGC: GlossaryTerm = {
       ]
     },
     {
-      id: "b2b",
+      id: "uslugi-korporativ",
       title: "Пользовательский контент для сферы услуг и корпоративных компаний",
       tocLabel: "Услуги и бизнес",
       blocks: [
