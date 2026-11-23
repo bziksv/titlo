@@ -213,6 +213,14 @@ const TERMS = {
   "ai-overviews": ["monitoring-pozicii-sayta", "analiz-relevantnosti", "tipy-saitov-v-vydache"],
   "nulevaya-pozitsiya": ["monitoring-pozicii-sayta", "analiz-relevantnosti", "proverka-meta-tegov-online"],
   "faqpage-razmetka": ["sbor-poiskovykh-podskazok", "proverka-meta-tegov-online", "audit-sajta"],
+  "transaktsionnyy-zapros": ["tipy-saitov-v-vydache", "geo-lokalizaciya-kommerciya", "klasterizator-klyuchevykh-slov"],
+  "estestvennye-ssylki": ["otslezhivanie-ssylok", "analiz-konkurentov", "audit-sajta"],
+  "gostevoy-post": ["otslezhivanie-ssylok", "analiz-konkurentov", "proverka-indeksacii"],
+  "ttfb": ["http-headers", "monitoring-saytov", "audit-sajta"],
+  "glubina-skanirovaniya": ["audit-sajta", "proverka-indeksacii", "http-headers"],
+  "ugc": ["analiz-teksta", "proverka-indeksacii", "audit-sajta"],
+  "rerayting": ["analiz-teksta", "analiz-konkurentov", "audit-sajta"],
+  "atributsiya": ["utm-metki", "kalkulyator-roi", "monitoring-pozicii-sayta"],
 };
 
 
