@@ -121,12 +121,24 @@ for group in cabinet-titlo-default cabinet-titlo-cluster-child cabinet-titlo-clu
   cabinet-titlo-cluster-wait cabinet-titlo-position cabinet-titlo-relevance \
   cabinet-titlo-monitoring-helper cabinet-titlo-monitoring-change-dates \
   cabinet-titlo-monitoring-wait cabinet-titlo-monitoring-competitors-stat \
-  cabinet-titlo-competitor-analyse cabinet-titlo-ai-generation; do
+  cabinet-titlo-competitor-analyse cabinet-titlo-ai-generation \
+  cabinet-titlo-wordstat; do
   supervisorctl restart "${group}:"* 2>/dev/null || true
 done
 
 curl -sI https://cabinet.titlo.ru/login | head -3
 ```
+
+### Подбор слов Wordstat — первый выкат
+
+Очередь `wordstat`, supervisor-группа `cabinet-titlo-wordstat` (`numprocs=2`). Один раз на сервере:
+
+1. Скопировать блок `[program:cabinet-titlo-wordstat]` из `deploy/supervisor/cabinet-titlo.conf.example` в `/etc/supervisor/conf.d/cabinet-titlo.conf`.
+2. `supervisorctl reread && supervisorctl update` — группа стартует автоматически.
+3. `sudo -u $USER $PHP artisan migrate --force` (таблицы `wordstat_*`).
+4. Smoke: создать проект с одной затравкой, запустить сбор, дождаться статуса «готово».
+
+Дальше группа перезапускается вместе с остальными в `./scripts/deploy-titlo.sh`.
 
 ---
 
