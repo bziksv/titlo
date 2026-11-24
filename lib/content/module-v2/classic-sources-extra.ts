@@ -49,6 +49,11 @@ import {
   INDEX_CHECK_STATS,
 } from "@/lib/content/proverka-indeksacii-page";
 import {
+  TEXT_UNIQUENESS_FAQ,
+  TEXT_UNIQUENESS_HERO,
+  TEXT_UNIQUENESS_STATS,
+} from "@/lib/content/proverka-unikalnosti-teksta-page";
+import {
   ESENIN_TEXT_CHECK_FAQ,
   ESENIN_TEXT_CHECK_HERO,
   ESENIN_TEXT_CHECK_INSIGHTS,
@@ -329,6 +334,75 @@ export const INDEX_CHECK_V2_SOURCE: ClassicV3Source = {
   },
   faq: INDEX_CHECK_FAQ,
   options: ["Яндекс", "Google", "До 500 URL", "CSV"],
+};
+
+export const TEXT_UNIQUENESS_V2_SOURCE: ClassicV3Source = {
+  hero: TEXT_UNIQUENESS_HERO,
+  stats: TEXT_UNIQUENESS_STATS,
+  steps: [
+    {
+      step: "01",
+      title: "Текст",
+      text: "Вставьте текст. В кабинете — от 200 символов, с историей проверок по тарифу.",
+    },
+    {
+      step: "02",
+      title: "Режим",
+      text: "Поиск совпадений по выдаче или сравнение с указанными страницами.",
+    },
+    {
+      step: "03",
+      title: "Отчёт",
+      text: "Процент уникальности, источники и совпавшие фрагменты — чтобы править точечно.",
+    },
+  ],
+  techLayers: [
+    {
+      id: "web",
+      title: "Выдача",
+      short: "Поиск фрагментов",
+      text: "Характерные куски текста ищутся в выдаче, затем сверяются с найденными страницами.",
+    },
+    {
+      id: "url",
+      title: "Свои URL",
+      short: "Список страниц",
+      text: "Сравнение только с указанными адресами, без обхода выдачи.",
+    },
+    {
+      id: "hist",
+      title: "История",
+      short: "По тарифу",
+      text: "Готовые проверки хранятся в кабинете: Бесплатный без истории, дальше 10 / 20 / 50.",
+    },
+  ],
+  grid: [
+    { title: "Два режима", text: "Поиск в интернете или сверка с конкретными страницами." },
+    { title: "Фрагменты", text: "В отчёте видно, какие куски текста уже встречаются." },
+    { title: "Лимит", text: "Зонд выдачи или одна страница — одна проверка в месячном лимите." },
+  ],
+  highlight: {
+    title: "Уникальность до публикации",
+    lead: "Совпадения видны до того, как текст уйдёт в индекс.",
+    bullets: ["Выдача и свои URL", "Совпавшие фрагменты", "История по тарифу"],
+  },
+  insightsMeta: {
+    eyebrow: "Уникальность",
+    title: "Процент и источники",
+    lead: "Текст сравнивается по фрагментам, а не «на глаз».",
+  },
+  screenshots: shots("Проверка уникальности текста"),
+  plain: {
+    title: "Зачем проверять уникальность в Титло",
+    lead: "Один текст — процент уникальности, источники и фрагменты для правки.",
+    items: [
+      { title: "Выдача", text: "Поиск характерных фрагментов и сверка с найденными страницами." },
+      { title: "Свои URL", text: "Сравнение с конкурентом или со своей старой версией." },
+      { title: "Лимиты", text: "Проверки и слоты истории — по тарифу, обновление раз в месяц." },
+    ],
+  },
+  faq: TEXT_UNIQUENESS_FAQ,
+  options: ["Поиск в интернете", "Сравнение с URL", "История", "Фрагменты"],
 };
 
 export const ESENIN_V2_SOURCE: ClassicV3Source = {

@@ -20,6 +20,7 @@ import { SiteTypesDemoWidget } from "@/components/demo/SiteTypesDemoWidget";
 import { DomainRecordsDemoWidget } from "@/components/demo/DomainRecordsDemoWidget";
 import { SearchSuggestionsDemoWidget } from "@/components/demo/SearchSuggestionsDemoWidget";
 import { IndexCheckDemoWidget } from "@/components/demo/IndexCheckDemoWidget";
+import { TextUniquenessDemoWidget } from "@/components/demo/TextUniquenessDemoWidget";
 import { EseninTextCheckDemoWidget } from "@/components/demo/EseninTextCheckDemoWidget";
 import type { ModuleV2DemoWidget } from "@/lib/content/module-v2/types";
 
@@ -115,6 +116,10 @@ const SECTION_COPY: Record<
     title: "Проверьте индексацию без регистрации",
     lead: "Один URL в демо. Пакет до 500 и история сниппетов — после регистрации.",
   },
+  "text-uniqueness": {
+    title: "Проверьте уникальность без регистрации",
+    lead: "Одна страница в демо. Поиск по выдаче, несколько URL и история — в кабинете.",
+  },
   "esenin-text-check": {
     title: "Проверьте текст Есенин без регистрации",
     lead: "Сводный отчёт с подсветкой. Полный HTML-редактор и 6 вкладок — в кабинете.",
@@ -199,6 +204,8 @@ export function ModuleV2DemoSection({ kind }: Props) {
             <SearchSuggestionsDemoWidget />
           ) : kind === "index-check" ? (
             <IndexCheckDemoWidget />
+          ) : kind === "text-uniqueness" ? (
+            <TextUniquenessDemoWidget />
           ) : kind === "esenin-text-check" ? (
             <EseninTextCheckDemoWidget />
           ) : (

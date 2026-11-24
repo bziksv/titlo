@@ -54,6 +54,7 @@ const DEMO_WIDGET_BY_BASE: Partial<Record<string, ModuleV2DemoWidget>> = {
   "zapisi-domena": "domain-records",
   "sbor-poiskovykh-podskazok": "search-suggestions",
   "proverka-indeksacii": "index-check",
+  "proverka-unikalnosti-teksta": "text-uniqueness",
   "proverka-teksta-esenin": "esenin-text-check",
 };
 

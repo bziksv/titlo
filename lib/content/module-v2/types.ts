@@ -90,7 +90,8 @@ export type ModuleV2DemoWidget =
   | "domain-records"
   | "search-suggestions"
   | "index-check"
-  | "esenin-text-check";
+  | "esenin-text-check"
+  | "text-uniqueness";
 
 export type ModuleV2PostReg = {
   eyebrow: string;
