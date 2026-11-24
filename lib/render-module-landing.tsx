@@ -6,6 +6,7 @@ import { AnalizRelevantnostiLanding } from "@/components/module-landings/AnalizR
 import { AnalizKonkurentovLanding } from "@/components/module-landings/AnalizKonkurentovLanding";
 import { HttpHeadersLanding } from "@/components/module-landings/HttpHeadersLanding";
 import { ProverkaIndeksaciiLanding } from "@/components/module-landings/ProverkaIndeksaciiLanding";
+import { ProverkaUnikalnostiTekstaLanding } from "@/components/module-landings/ProverkaUnikalnostiTekstaLanding";
 import { ProverkaTekstaEseninLanding } from "@/components/module-landings/ProverkaTekstaEseninLanding";
 import { SborPoiskovykhPodskazokLanding } from "@/components/module-landings/SborPoiskovykhPodskazokLanding";
 import { ZapisiDomenaLanding } from "@/components/module-landings/ZapisiDomenaLanding";
@@ -52,6 +53,8 @@ export function renderModuleLanding(baseSlug: string, module: ModulePage) {
       return wrapClassic(<AuditSajtaLanding module={module} />);
     case "proverka-indeksacii":
       return wrapClassic(<ProverkaIndeksaciiLanding module={module} />);
+    case "proverka-unikalnosti-teksta":
+      return wrapClassic(<ProverkaUnikalnostiTekstaLanding module={module} />);
     case "proverka-teksta-esenin":
       return wrapClassic(<ProverkaTekstaEseninLanding module={module} />);
     case "sbor-poiskovykh-podskazok":

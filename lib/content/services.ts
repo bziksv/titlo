@@ -79,6 +79,7 @@ const CATEGORY_BY_SLUG: Record<string, ServiceCategoryId> = {
   "otslezhivanie-ssylok": "monitoring",
   "otslezhivanie-sroka-registratsii-domenov": "monitoring",
   "analiz-teksta": "content",
+  "proverka-unikalnosti-teksta": "content",
   "proverka-teksta-esenin": "content",
   "html-redaktor": "content",
   "podschet-dliny-teksta": "content",
