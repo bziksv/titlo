@@ -60,6 +60,7 @@ export const TARIFF_PLANS: TariffPlan[] = [
 export const TARIFF_COMPARE_ROWS = [
   { label: "Анализатор Релевантности Страницы (проверки)", short: "Релевантность", key: "relevance" as const },
   { label: "Анализ текста страницы (проверки / сохранения)", short: "Анализ текста", key: "text" as const },
+  { label: "Проверка уникальности текста (проверки / сохранения)", short: "Уникальность", key: "textUniqueness" as const },
   { label: "Анализ конкурентов (проверки)", short: "Конкуренты", key: "competitors" as const },
   { label: "Типы сайтов в выдаче (проверки / сохранения)", short: "Типы сайтов", key: "siteTypes" as const },
   { label: "Записи домена (проверки / сохранения)", short: "Записи домена", key: "domainRecords" as const },
@@ -90,6 +91,7 @@ export const TARIFF_COMPARE_ROWS = [
 export const TARIFF_COMPARE: Record<string, Record<string, string>> = {
   relevance: { Free: "3", Optimal: "600", Ultimate: "1 500", Maximum: "2 400" },
   text: { Free: "3 / 0", Optimal: "600 / 10", Ultimate: "1 500 / 20", Maximum: "2 400 / 50" },
+  textUniqueness: { Free: "3 / 0", Optimal: "300 / 10", Ultimate: "1 500 / 20", Maximum: "2 400 / 50" },
   competitors: { Free: "3", Optimal: "300", Ultimate: "1 500", Maximum: "2 400" },
   siteTypes: { Free: "3 / 0", Optimal: "300 / 10", Ultimate: "1 500 / 20", Maximum: "2 400 / 50" },
   domainRecords: { Free: "20 / 5", Optimal: "600 / 30", Ultimate: "2 000 / 50", Maximum: "5 000 / 100" },

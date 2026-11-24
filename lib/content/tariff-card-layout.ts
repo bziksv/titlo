@@ -4,6 +4,7 @@ import { TARIFF_COMPARE } from "@/lib/content/tariffs";
 export const TARIFF_CARD_MODULE_ROWS = [
   { key: "relevance", label: "Анализатор релевантности" },
   { key: "text", label: "Анализ текста" },
+  { key: "textUniqueness", label: "Уникальность текста" },
   { key: "competitors", label: "Анализ конкурентов" },
   { key: "siteTypes", label: "Типы сайтов в выдаче" },
   { key: "domainRecords", label: "Записи домена" },
@@ -44,6 +45,7 @@ export function formatTariffCardModuleValue(key: string, raw: string | undefined
     case "cluster":
       return `${raw} проверок/мес`;
     case "text":
+    case "textUniqueness":
     case "siteTypes":
     case "domainRecords":
     case "searchSuggestions":

@@ -13,8 +13,8 @@ export type TimelineItem = {
 export const COMPANY_TIMELINE: TimelineItem[] = [
   {
     date: "11 марта 2015",
-    title: "2015 год — год основания и штат в 3 человека",
-    description: "История компании началась с 2015 года — тогда в команде было три сотрудника.",
+    title: "2015 год — год основания компании",
+    description: "История компании началась в 2015 году.",
     href: "/news/detail/god-osnovaniya-i-shtat-v-3-cheloveka/",
   },
   {
@@ -44,8 +44,8 @@ export const COMPANY_TIMELINE: TimelineItem[] = [
   },
   {
     date: "22 июля 2021",
-    title: "Средний срок сотрудничества 3,5 года, команда 20+ человек",
-    description: "Штат расширился до 20 человек из-за прироста клиентов.",
+    title: "Средний срок сотрудничества превысил 3,5 года",
+    description: "Средний срок сотрудничества с клиентами превысил 3,5 года, команда выросла вместе с числом проектов.",
     href: "/news/detail/sredniy-srok-sotrudnichestva-prevysil-3-5-goda-nas-uzhe-bolee-20-chelovek-v-komande/",
   },
   {

@@ -31,6 +31,7 @@ export const MODULE_ORBIT_CARD: Record<string, Omit<ModuleV2OrbitNode, "href">> 
   "otslezhivanie-ssylok": { label: "Отслеживание ссылок", role: "Донор и анкор" },
   "otslezhivanie-sroka-registratsii-domenov": { label: "Срок регистрации доменов", role: "Напоминания о продлении" },
   "analiz-teksta": { label: "Анализ текста", role: "Тошнота и водность" },
+  "proverka-unikalnosti-teksta": { label: "Уникальность текста", role: "Совпадения и источники" },
   "klasterizator-klyuchevykh-slov": { label: "Кластеризатор", role: "Группировка ядра" },
 };
 
@@ -46,8 +47,9 @@ export const MODULE_RELATED: Record<string, readonly string[]> = {
   "tipy-saitov-v-vydache": ["geo-lokalizaciya-kommerciya", "analiz-konkurentov", "analiz-relevantnosti", "proverka-indeksacii"],
   // Текст и контент
   "analiz-relevantnosti": ["analiz-teksta", "analiz-konkurentov", "proverka-teksta-esenin", "monitoring-pozicii-sayta"],
-  "analiz-teksta": ["proverka-teksta-esenin", "analiz-relevantnosti", "vydelenie-unikalnykh-slov-v-tekste", "podschet-dliny-teksta"],
-  "proverka-teksta-esenin": ["analiz-teksta", "analiz-relevantnosti", "html-redaktor", "podschet-dliny-teksta"],
+  "analiz-teksta": ["proverka-teksta-esenin", "analiz-relevantnosti", "vydelenie-unikalnykh-slov-v-tekste", "proverka-unikalnosti-teksta"],
+  "proverka-teksta-esenin": ["analiz-teksta", "analiz-relevantnosti", "html-redaktor", "proverka-unikalnosti-teksta"],
+  "proverka-unikalnosti-teksta": ["analiz-teksta", "proverka-teksta-esenin", "analiz-relevantnosti", "html-redaktor"],
   "podschet-dliny-teksta": ["proverka-meta-tegov-online", "analiz-teksta", "html-redaktor", "vydelenie-unikalnykh-slov-v-tekste"],
   "vydelenie-unikalnykh-slov-v-tekste": ["analiz-teksta", "udalenie-dublikatov", "sravnenie-spiskov-klyuchevykh-fraz", "podschet-dliny-teksta"],
   "html-redaktor": ["proverka-teksta-esenin", "podschet-dliny-teksta", "analiz-teksta", "proverka-meta-tegov-online"],
