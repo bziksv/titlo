@@ -117,11 +117,12 @@ sudo -u $USER $PHP artisan view:cache
 
 # ОБЯЗАТЕЛЬНО: queue workers держат старый PHP-код в памяти
 sudo -u $USER $PHP artisan queue:restart
-for group in cabinet-titlo-default cabinet-titlo-cluster-child cabinet-titlo-cluster-main \
+for group in cabinet-titlo-default cabinet-titlo-db-optimize cabinet-titlo-cluster-child cabinet-titlo-cluster-main \
   cabinet-titlo-cluster-wait cabinet-titlo-position cabinet-titlo-relevance \
   cabinet-titlo-monitoring-helper cabinet-titlo-monitoring-change-dates \
   cabinet-titlo-monitoring-wait cabinet-titlo-monitoring-competitors-stat \
   cabinet-titlo-competitor-analyse cabinet-titlo-ai-generation \
+  cabinet-titlo-site-audit cabinet-titlo-site-audit-aggregate \
   cabinet-titlo-wordstat; do
   supervisorctl restart "${group}:"* 2>/dev/null || true
 done
