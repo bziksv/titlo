@@ -33,6 +33,7 @@ const MARKETING_SLUG_TO_CABINET_PATH: Record<string, string> = {
   "analiz-teksta": "/text-analyzer",
   "proverka-unikalnosti-teksta": "/text-analyzer",
   "seo-cheklist": "/checklist",
+  "seo-otchety": "/reports",
   "klasterizator-klyuchevykh-slov": "/cluster",
   "audit-sajta": "/site-audit",
 };

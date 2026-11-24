@@ -47,6 +47,7 @@ export const MODULE_NAV_BASE: readonly ModuleNavItem[] = [
   { slug: "analiz-teksta", label: "Анализ текста" },
   { slug: "proverka-unikalnosti-teksta", label: "Проверка уникальности текста" },
   { slug: "seo-cheklist", label: "SEO-чеклист" },
+  { slug: "seo-otchety", label: "SEO-отчёты" },
   { slug: "klasterizator-klyuchevykh-slov", label: "Кластеризатор ключевых слов" },
 ];
 

@@ -33,6 +33,7 @@ export const MODULE_ORBIT_CARD: Record<string, Omit<ModuleV2OrbitNode, "href">> 
   "analiz-teksta": { label: "Анализ текста", role: "Тошнота и водность" },
   "proverka-unikalnosti-teksta": { label: "Уникальность текста", role: "Совпадения и источники" },
   "seo-cheklist": { label: "SEO-чеклист", role: "План работ и команда" },
+  "seo-otchety": { label: "SEO-отчёты", role: "Отчёт клиенту за месяц" },
   "klasterizator-klyuchevykh-slov": { label: "Кластеризатор", role: "Группировка ядра" },
 };
 
@@ -51,7 +52,8 @@ export const MODULE_RELATED: Record<string, readonly string[]> = {
   "analiz-teksta": ["proverka-teksta-esenin", "analiz-relevantnosti", "vydelenie-unikalnykh-slov-v-tekste", "proverka-unikalnosti-teksta"],
   "proverka-teksta-esenin": ["analiz-teksta", "analiz-relevantnosti", "html-redaktor", "proverka-unikalnosti-teksta"],
   "proverka-unikalnosti-teksta": ["analiz-teksta", "proverka-teksta-esenin", "analiz-relevantnosti", "html-redaktor"],
-  "seo-cheklist": ["audit-sajta", "analiz-relevantnosti", "monitoring-pozicii-sayta", "proverka-indeksacii"],
+  "seo-cheklist": ["audit-sajta", "analiz-relevantnosti", "monitoring-pozicii-sayta", "seo-otchety"],
+  "seo-otchety": ["seo-cheklist", "monitoring-pozicii-sayta", "audit-sajta", "analiz-relevantnosti"],
   "podschet-dliny-teksta": ["proverka-meta-tegov-online", "analiz-teksta", "html-redaktor", "vydelenie-unikalnykh-slov-v-tekste"],
   "vydelenie-unikalnykh-slov-v-tekste": ["analiz-teksta", "udalenie-dublikatov", "sravnenie-spiskov-klyuchevykh-fraz", "podschet-dliny-teksta"],
   "html-redaktor": ["proverka-teksta-esenin", "podschet-dliny-teksta", "analiz-teksta", "proverka-meta-tegov-online"],

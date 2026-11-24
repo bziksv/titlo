@@ -29,6 +29,7 @@ const ICONS: Record<string, string> = {
   "analiz-teksta": "📄",
   "proverka-unikalnosti-teksta": "🔏",
   "seo-cheklist": "☑️",
+  "seo-otchety": "📊",
   "klasterizator-klyuchevykh-slov": "🗂️",
 };
 

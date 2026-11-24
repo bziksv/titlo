@@ -81,6 +81,7 @@ const CATEGORY_BY_SLUG: Record<string, ServiceCategoryId> = {
   "analiz-teksta": "content",
   "proverka-unikalnosti-teksta": "content",
   "seo-cheklist": "tools",
+  "seo-otchety": "tools",
   "proverka-teksta-esenin": "content",
   "html-redaktor": "content",
   "podschet-dliny-teksta": "content",
