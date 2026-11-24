@@ -391,7 +391,20 @@ export const TEXT_UNIQUENESS_V2_SOURCE: ClassicV3Source = {
     title: "Процент и источники",
     lead: "Текст сравнивается по фрагментам, а не «на глаз».",
   },
-  screenshots: shots("Проверка уникальности текста"),
+  screenshots: [
+    {
+      src: "/modules/assets/uniqueness-shot-modes.png",
+      caption: "Параметры анализа: текст, URL или пакет",
+    },
+    {
+      src: "/modules/assets/uniqueness-shot-mode.png",
+      caption: "Проверка уникальности включена, виден лимит",
+    },
+    {
+      src: "/modules/assets/uniqueness-shot-text.png",
+      caption: "Текст в редакторе перед проверкой",
+    },
+  ],
   plain: {
     title: "Зачем проверять уникальность в Титло",
     lead: "Один текст — процент уникальности, источники и фрагменты для правки.",
