@@ -26,6 +26,7 @@ import {
   ESENIN_V2_SOURCE,
   INDEX_CHECK_V2_SOURCE,
   TEXT_UNIQUENESS_V2_SOURCE,
+  SEO_CHECKLIST_V2_SOURCE,
   PHRASE_COMMERCE_V2_SOURCE,
   SEARCH_SUGGESTIONS_V2_SOURCE,
   SITE_AUDIT_V2_SOURCE,
@@ -292,6 +293,7 @@ function buildRegistry(getBase: (slug: string) => ModulePage | undefined): Modul
   cfg(getBase, "sbor-poiskovykh-podskazok", SEARCH_SUGGESTIONS_V2_SOURCE),
   cfg(getBase, "proverka-indeksacii", INDEX_CHECK_V2_SOURCE),
   cfg(getBase, "proverka-unikalnosti-teksta", TEXT_UNIQUENESS_V2_SOURCE),
+  cfg(getBase, "seo-cheklist", SEO_CHECKLIST_V2_SOURCE),
   cfg(getBase, "proverka-teksta-esenin", ESENIN_V2_SOURCE),
   ];
 }

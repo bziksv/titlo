@@ -28,6 +28,7 @@ const ICONS: Record<string, string> = {
   "otslezhivanie-sroka-registratsii-domenov": "📅",
   "analiz-teksta": "📄",
   "proverka-unikalnosti-teksta": "🔏",
+  "seo-cheklist": "☑️",
   "klasterizator-klyuchevykh-slov": "🗂️",
 };
 

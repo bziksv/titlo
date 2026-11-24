@@ -419,6 +419,19 @@ export const BASE_MODULE_PAGES: ModulePage[] = [
     features: ["Поиск в интернете", "Сравнение с URL", "История проверок"],
   },
   {
+    slug: "seo-cheklist",
+    path: "/seo-cheklist/",
+    seoTitle: "SEO-чеклист: задачи, роли и учёт времени",
+    seoDescription:
+      "План SEO-работ по сайту: этапы и задачи из шаблона, роли ответственного, PM и аудитора, заметки, таймер и PDF. Команда видит один проект.",
+    title: "SEO-чеклист",
+    h1: "SEO-чеклист",
+    description: "План работ по сайту: этапы, задачи, роли, заметки, таймер и PDF.",
+    lead:
+      "Один сайт — один план. Задачи по этапам, роли в команде, заметки к пунктам, учёт времени и выгрузка в PDF.",
+    features: ["Этапы и задачи", "Роли команды", "Таймер и PDF"],
+  },
+  {
     slug: "klasterizator-klyuchevykh-slov",
     path: "/klasterizator-klyuchevykh-slov/",
     seoTitle: "Кластеризация запросов онлайн по ТОПу — Soft и Hard",

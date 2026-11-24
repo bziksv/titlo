@@ -32,6 +32,7 @@ const MARKETING_SLUG_TO_CABINET_PATH: Record<string, string> = {
   "otslezhivanie-sroka-registratsii-domenov": "/domain-information",
   "analiz-teksta": "/text-analyzer",
   "proverka-unikalnosti-teksta": "/text-analyzer",
+  "seo-cheklist": "/checklist",
   "klasterizator-klyuchevykh-slov": "/cluster",
   "audit-sajta": "/site-audit",
 };
