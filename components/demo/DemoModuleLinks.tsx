@@ -8,7 +8,7 @@ type Props = {
   links: LinkItem[];
 };
 
-export function DemoModuleLinks({ title = "Дальше по пайплайну", links }: Props) {
+export function DemoModuleLinks({ title = "Другие модули", links }: Props) {
   return (
     <div className="rounded-xl border border-slate-200 bg-white p-4">
       <p className="text-sm font-semibold text-slate-900">{title}</p>
