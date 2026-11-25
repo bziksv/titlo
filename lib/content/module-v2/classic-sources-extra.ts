@@ -663,7 +663,7 @@ export const WORDSTAT_V2_SOURCE: ClassicV3Source = {
     {
       step: "03",
       title: "Список",
-      text: "Группы, поиск, сортировка по частоте и выгрузка в Excel. Лишнее можно убрать из списка.",
+      text: "Группы, поиск, сортировка по частоте и выгрузка в Excel. В проекте видно, сколько фраз уже собрано.",
     },
   ],
   techLayers: [
@@ -703,16 +703,16 @@ export const WORDSTAT_V2_SOURCE: ClassicV3Source = {
   },
   screenshots: [
     {
-      src: "/modules/assets/wordstat-shot-projects.png",
-      caption: "Проекты: сайт, группы и сколько фраз уже собрано",
-    },
-    {
       src: "/modules/assets/wordstat-shot-form.png",
       caption: "Фразы, что брать из Wordstat, регион и устройства",
     },
     {
       src: "/modules/assets/wordstat-shot-phrases.png",
       caption: "Группы и фразы с частотой",
+    },
+    {
+      src: "/modules/assets/wordstat-shot-projects.png",
+      caption: "Проекты: сайт, группы и сколько фраз уже собрано",
     },
   ],
   plain: {

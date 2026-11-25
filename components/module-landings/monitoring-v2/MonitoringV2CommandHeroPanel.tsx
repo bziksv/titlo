@@ -106,8 +106,7 @@ export function MonitoringV2CommandHeroPanel({
               keys.src.includes("esenin-shot") ||
               keys.src.includes("cluster-shot") ||
               keys.src.includes("meta-tags-shot") ||
-              keys.src.includes("monitoring-v2-shot") ||
-              keys.src.includes("wordstat-shot")
+              keys.src.includes("monitoring-v2-shot")
                 ? "aspect-[16/10] min-h-[200px]"
                 : "aspect-[739/385] min-h-[180px] sm:min-h-[200px]"
             }`}
@@ -134,8 +133,7 @@ export function MonitoringV2CommandHeroPanel({
               keys.src.includes("esenin-shot") ||
                 keys.src.includes("cluster-shot") ||
                 keys.src.includes("meta-tags-shot") ||
-                keys.src.includes("monitoring-v2-shot") ||
-              keys.src.includes("wordstat-shot")
+                keys.src.includes("monitoring-v2-shot")
                   ? "object-contain object-top"
                   : "object-cover object-left-top"
               }
@@ -173,8 +171,7 @@ export function MonitoringV2CommandHeroPanel({
               dynamics.src.includes("esenin-shot") ||
               dynamics.src.includes("cluster-shot") ||
               dynamics.src.includes("meta-tags-shot") ||
-              dynamics.src.includes("monitoring-v2-shot") ||
-              dynamics.src.includes("wordstat-shot")
+              dynamics.src.includes("monitoring-v2-shot")
                 ? "aspect-[16/9] min-h-[120px]"
                 : "aspect-[1024/260] min-h-[88px] sm:min-h-[110px]"
             }`}
@@ -201,8 +198,7 @@ export function MonitoringV2CommandHeroPanel({
               dynamics.src.includes("esenin-shot") ||
                 dynamics.src.includes("cluster-shot") ||
                 dynamics.src.includes("meta-tags-shot") ||
-                dynamics.src.includes("monitoring-v2-shot") ||
-              dynamics.src.includes("wordstat-shot")
+                dynamics.src.includes("monitoring-v2-shot")
                   ? "object-contain object-top"
                   : "object-cover object-left-top"
               }
