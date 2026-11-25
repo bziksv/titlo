@@ -51,7 +51,7 @@ async function main() {
   console.log("cabinet", page.url());
   await page.waitForSelector(".cabinet-sr-page", { timeout: 60_000 });
   await page.addStyleTag({
-    content: `.main-header,.main-sidebar,aside.main-sidebar,.demo-cabinet-banner,.control-sidebar,.preloader{display:none!important}.content-wrapper{margin-left:0!important}`,
+    content: `.main-header,.main-sidebar,aside.main-sidebar,.demo-cabinet-banner,.control-sidebar,.preloader,.cabinet-module-beta-banner{display:none!important}.content-wrapper{margin-left:0!important}`,
   });
   await shot(page, page.locator(".cabinet-sr-page"), "reports-shot-projects");
 
@@ -60,9 +60,29 @@ async function main() {
     await open.click();
     await page.waitForSelector(".cabinet-sr-board", { timeout: 60_000 });
     await page.addStyleTag({
-      content: `.main-header,.main-sidebar,aside.main-sidebar,.demo-cabinet-banner{display:none!important}.content-wrapper{margin-left:0!important}`,
+      content: `.main-header,.main-sidebar,aside.main-sidebar,.demo-cabinet-banner,.cabinet-module-beta-banner{display:none!important}.content-wrapper{margin-left:0!important}`,
     });
-    await clipPage(page, "reports-shot-project", 980);
+    await page.setViewportSize({ width: 1440, height: 1800 });
+    await page.evaluate(() => window.scrollTo(0, 0));
+    await page.waitForTimeout(300);
+    const clip = await page.evaluate(() => {
+      const root = document.querySelector(".cabinet-sr-page");
+      const warn = [...document.querySelectorAll(".cabinet-sr-page .alert-warning")].find(
+        (el) => el.getBoundingClientRect().height > 40
+      );
+      const r = root.getBoundingClientRect();
+      const bottom = warn ? warn.getBoundingClientRect().bottom : r.bottom;
+      return {
+        x: Math.max(0, Math.floor(r.left)),
+        y: Math.max(0, Math.floor(r.top)),
+        width: Math.ceil(r.width),
+        height: Math.ceil(bottom - r.top + 16),
+      };
+    });
+    console.log("project clip", clip);
+    const raw = path.join(ASSETS, "_raw-reports-shot-project.png");
+    await page.screenshot({ path: raw, type: "png", clip });
+    await saveCover(raw, "reports-shot-project");
   }
 
   await page.goto(`${CABINET}/reports/presets/seo_only/demo`, { waitUntil: "domcontentloaded", timeout: 120_000 });
