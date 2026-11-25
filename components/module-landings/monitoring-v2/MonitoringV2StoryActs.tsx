@@ -40,7 +40,8 @@ function actImageClass(image: string) {
     image.includes("meta-tags-shot") ||
     image.includes("monitoring-v2-shot") ||
     image.includes("wordstat-shot") ||
-    image.includes("reports-shot")
+    image.includes("reports-shot") ||
+    image.includes("checklist-shot")
   )
     return "";
   return "aspect-[739/385] min-h-[240px]";
@@ -68,7 +69,8 @@ function isCabinetShot(image: string) {
     image.includes("meta-tags-shot") ||
     image.includes("monitoring-v2-shot") ||
     image.includes("wordstat-shot") ||
-    image.includes("reports-shot")
+    image.includes("reports-shot") ||
+    image.includes("checklist-shot")
   );
 }
 
