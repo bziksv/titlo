@@ -445,6 +445,19 @@ export const BASE_MODULE_PAGES: ModulePage[] = [
     features: ["Трафик и позиции", "Сравнение периодов", "Ссылка для клиента"],
   },
   {
+    slug: "podbor-slov-wordstat",
+    path: "/podbor-slov-wordstat/",
+    seoTitle: "Подбор слов Wordstat: частота и расширение ядра",
+    seoDescription:
+      "Соберите запросы по своим фразам: частота, группы, похожие формулировки. Список можно вставить из таблицы. Лимит запросов — по тарифу.",
+    title: "Подбор слов Wordstat",
+    h1: "Подбор слов Wordstat",
+    description: "Частота и расширение ядра по вашим фразам, с группами и выгрузкой.",
+    lead:
+      "По списку фраз собираются запросы, где эти слова уже есть, и их частота. Фразы раскладываются по группам.",
+    features: ["Частота по фразам", "Группы", "Расширение списка"],
+  },
+  {
     slug: "klasterizator-klyuchevykh-slov",
     path: "/klasterizator-klyuchevykh-slov/",
     seoTitle: "Кластеризация запросов онлайн по ТОПу — Soft и Hard",

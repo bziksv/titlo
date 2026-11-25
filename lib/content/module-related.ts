@@ -34,15 +34,17 @@ export const MODULE_ORBIT_CARD: Record<string, Omit<ModuleV2OrbitNode, "href">> 
   "proverka-unikalnosti-teksta": { label: "Уникальность текста", role: "Совпадения и источники" },
   "seo-cheklist": { label: "SEO-чеклист", role: "План работ и команда" },
   "seo-otchety": { label: "SEO-отчёты", role: "Отчёт клиенту за месяц" },
+  "podbor-slov-wordstat": { label: "Подбор слов Wordstat", role: "Частота и расширение ядра" },
   "klasterizator-klyuchevykh-slov": { label: "Кластеризатор", role: "Группировка ядра" },
 };
 
 /** 4 соседа на модуль: семантика · текст · позиции/конкуренты · техника · маркетинг. */
 export const MODULE_RELATED: Record<string, readonly string[]> = {
   // Семантика
-  "sbor-poiskovykh-podskazok": ["generator_slov", "klasterizator-klyuchevykh-slov", "udalenie-dublikatov", "geo-lokalizaciya-kommerciya"],
+  "sbor-poiskovykh-podskazok": ["generator_slov", "klasterizator-klyuchevykh-slov", "podbor-slov-wordstat", "geo-lokalizaciya-kommerciya"],
   generator_slov: ["sbor-poiskovykh-podskazok", "udalenie-dublikatov", "sravnenie-spiskov-klyuchevykh-fraz", "klasterizator-klyuchevykh-slov"],
-  "klasterizator-klyuchevykh-slov": ["sbor-poiskovykh-podskazok", "geo-lokalizaciya-kommerciya", "tipy-saitov-v-vydache", "analiz-relevantnosti"],
+  "klasterizator-klyuchevykh-slov": ["sbor-poiskovykh-podskazok", "podbor-slov-wordstat", "geo-lokalizaciya-kommerciya", "analiz-relevantnosti"],
+  "podbor-slov-wordstat": ["sbor-poiskovykh-podskazok", "klasterizator-klyuchevykh-slov", "generator_slov", "udalenie-dublikatov"],
   "udalenie-dublikatov": ["sravnenie-spiskov-klyuchevykh-fraz", "generator_slov", "klasterizator-klyuchevykh-slov", "vydelenie-unikalnykh-slov-v-tekste"],
   "sravnenie-spiskov-klyuchevykh-fraz": ["udalenie-dublikatov", "generator_slov", "vydelenie-unikalnykh-slov-v-tekste", "sbor-poiskovykh-podskazok"],
   "geo-lokalizaciya-kommerciya": ["tipy-saitov-v-vydache", "analiz-konkurentov", "klasterizator-klyuchevykh-slov", "monitoring-pozicii-sayta"],

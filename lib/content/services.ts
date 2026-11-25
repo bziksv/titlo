@@ -87,6 +87,7 @@ const CATEGORY_BY_SLUG: Record<string, ServiceCategoryId> = {
   "podschet-dliny-teksta": "content",
   "vydelenie-unikalnykh-slov-v-tekste": "content",
   "klasterizator-klyuchevykh-slov": "semantics",
+  "podbor-slov-wordstat": "semantics",
   generator_slov: "semantics",
   "sravnenie-spiskov-klyuchevykh-fraz": "semantics",
   "udalenie-dublikatov": "semantics",

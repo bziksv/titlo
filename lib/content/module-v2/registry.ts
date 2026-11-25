@@ -28,6 +28,7 @@ import {
   TEXT_UNIQUENESS_V2_SOURCE,
   SEO_CHECKLIST_V2_SOURCE,
   SEO_REPORTS_V2_SOURCE,
+  WORDSTAT_V2_SOURCE,
   PHRASE_COMMERCE_V2_SOURCE,
   SEARCH_SUGGESTIONS_V2_SOURCE,
   SITE_AUDIT_V2_SOURCE,
@@ -296,6 +297,7 @@ function buildRegistry(getBase: (slug: string) => ModulePage | undefined): Modul
   cfg(getBase, "proverka-unikalnosti-teksta", TEXT_UNIQUENESS_V2_SOURCE),
   cfg(getBase, "seo-cheklist", SEO_CHECKLIST_V2_SOURCE),
   cfg(getBase, "seo-otchety", SEO_REPORTS_V2_SOURCE),
+  cfg(getBase, "podbor-slov-wordstat", WORDSTAT_V2_SOURCE),
   cfg(getBase, "proverka-teksta-esenin", ESENIN_V2_SOURCE),
   ];
 }

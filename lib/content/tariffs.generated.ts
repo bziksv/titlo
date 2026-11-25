@@ -73,6 +73,7 @@ export const TARIFF_COMPARE_ROWS = [
   { label: "Проверка текста Есенин (проверки)", short: "Есенин", key: "eseninTextCheck" as const },
   { label: "Проверка индексации и сниппетов (проверки / сохранения)", short: "Индексация", key: "indexCheck" as const },
   { label: "Кластеризатор (проверки)", short: "Кластеризатор", key: "cluster" as const },
+  { label: "Подбор слов Wordstat (запросов в месяц)", short: "Wordstat", key: "wordstat" as const },
   { label: "Мониторинг сайтов на доступность (проекты)", short: "Мониторинг сайтов", key: "sites" as const },
   { label: "Мониторинг сайтов: оповещения", short: "Сайты: алерты", key: "sitesAlerts" as const },
   { label: "Мониторинг позиций (проверки)", short: "Позиции", key: "positions" as const },
@@ -100,6 +101,7 @@ export const TARIFF_COMPARE: Record<string, Record<string, string>> = {
   eseninTextCheck: { Free: "5", Optimal: "100", Ultimate: "300", Maximum: "700" },
   indexCheck: { Free: "5 / 5", Optimal: "600 / 30", Ultimate: "1 500 / 50", Maximum: "2 400 / 100" },
   cluster: { Free: "50", Optimal: "5 000", Ultimate: "12 000", Maximum: "30 000" },
+  wordstat: { Free: "50", Optimal: "5 000", Ultimate: "12 000", Maximum: "30 000" },
   positions: { Free: "50", Optimal: "20 000", Ultimate: "50 000", Maximum: "120 000" },
   sites: { Free: "1", Optimal: "10", Ultimate: "30", Maximum: "100" },
   sitesAlerts: {

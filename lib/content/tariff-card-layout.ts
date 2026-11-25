@@ -13,6 +13,7 @@ export const TARIFF_CARD_MODULE_ROWS = [
   { key: "eseninTextCheck", label: "Проверка текста Есенин" },
   { key: "indexCheck", label: "Проверка индексации и сниппетов" },
   { key: "cluster", label: "Кластеризатор" },
+  { key: "wordstat", label: "Подбор слов Wordstat" },
   { key: "sites", label: "Мониторинг сайтов" },
   { key: "positions", label: "Мониторинг позиций" },
   { key: "domains", label: "Срок регистрации доменов" },
@@ -44,6 +45,8 @@ export function formatTariffCardModuleValue(key: string, raw: string | undefined
     case "positions":
     case "cluster":
       return `${raw} проверок/мес`;
+    case "wordstat":
+      return `${raw} запросов/мес`;
     case "text":
     case "textUniqueness":
     case "siteTypes":

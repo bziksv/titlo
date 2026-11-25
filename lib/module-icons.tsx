@@ -30,6 +30,7 @@ const ICONS: Record<string, string> = {
   "proverka-unikalnosti-teksta": "🔏",
   "seo-cheklist": "☑️",
   "seo-otchety": "📊",
+  "podbor-slov-wordstat": "📗",
   "klasterizator-klyuchevykh-slov": "🗂️",
 };
 
