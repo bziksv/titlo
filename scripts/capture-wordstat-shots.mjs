@@ -45,14 +45,14 @@ async function main() {
   console.log("list", page.url());
   await page.waitForSelector("#cabinetWskPage", { timeout: 60_000 });
   await page.addStyleTag({
-    content: `.main-header,.main-sidebar,aside.main-sidebar,.demo-cabinet-banner,.preloader{display:none!important}.content-wrapper{margin-left:0!important}`,
+    content: `.main-header,.main-sidebar,aside.main-sidebar,.demo-cabinet-banner,.preloader,.cabinet-module-beta-banner{display:none!important}.content-wrapper{margin-left:0!important}`,
   });
   await shot(page, page.locator("#cabinetWskPage"), "wordstat-shot-projects");
 
   await page.locator('#cabinetWskPage a[href*="/wordstat-keywords/"]').first().click();
   await page.waitForSelector(".cabinet-wsk-collect", { timeout: 60_000 });
   await page.addStyleTag({
-    content: `.main-header,.main-sidebar,aside.main-sidebar,.demo-cabinet-banner{display:none!important}.content-wrapper{margin-left:0!important}`,
+    content: `.main-header,.main-sidebar,aside.main-sidebar,.demo-cabinet-banner,.cabinet-module-beta-banner{display:none!important}.content-wrapper{margin-left:0!important}`,
   });
   await shot(page, page.locator(".cabinet-wsk-collect"), "wordstat-shot-form");
   await page.waitForSelector("[data-wsk-rows] tr", { timeout: 20_000 }).catch(() => {});
