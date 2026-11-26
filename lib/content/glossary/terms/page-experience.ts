@@ -273,6 +273,198 @@ export const PageExperience: GlossaryTerm = {
           text: "Ranking effects are easy to overstate. An experience update once made these signals more visible in public discussion, but a later core update can still move results for content reasons. Use the reports to find weak URLs, improve speed, stability and interaction, and keep the content honest. This is how most teams work with the metric in practice: fix the site, track the field data, and do not expect one checker or one video guide to solve ranking on its own."
         }
       ]
+    },
+    {
+      id: "english-page-experience",
+      title: "How Google describes page experience and Core Web Vitals in English",
+      tocLabel: "English-language notes",
+      blocks: [
+        {
+          type: "p",
+          text: "Page experience is Google’s way of talking about how it feels to use a page, not only what the page says. The current core of that story is Core Web Vitals: Largest Contentful Paint for loading, Interaction to Next Paint for responsiveness, and Cumulative Layout Shift for visual stability. HTTPS, mobile-friendly layout and the absence of intrusive interstitials still matter as basic hygiene. Introducing a single “page experience score” in Search Console was an earlier reporting idea; teams now usually look at the vitals and the field data themselves."
+        },
+        {
+          type: "p",
+          text: "The useful habit is to read lab and field together. A lab run can show which element is slow or which banner shifts the layout. Field data and Chrome User Experience Report numbers show what real users hit on slow devices and real networks. If the lab looks good and the field does not, the live page is the source of truth. Links to official documentation help the team agree on definitions, but they do not replace fixing the template."
+        },
+        {
+          type: "p",
+          text: "How a team uses these indicators in practice is straightforward. They pick key templates, measure them on a regular cadence, and treat regressions as product bugs. Introducing a new widget without reserved space, a heavy hero image or a script that blocks input will show up in the vitals. The goal is not a screenshot of a green report. The goal is a page that opens quickly, stays stable and responds when a person taps."
+        }
+      ]
+    },
+    {
+      id: "kak-svyazat-s-seo",
+      title: "Как связан опыт страницы с SEO и почему его чинят как продуктовую задачу",
+      tocLabel: "Связь с SEO",
+      blocks: [
+        {
+          type: "p",
+          text: "Для поиска опыт страницы — один из сигналов, а не единственный фактор позиций. Слабые vitals чаще мешают на конкурентных запросах и портят поведение: человек не ждет, возвращается в выдачу, не успевает прочитать ответ. Поэтому работу лучше встраивать в релизный цикл, а не устраивать разовый «проект по Page Experience». Показатели смотрят по шаблонам: карточка, статья, листинг, форма. Если сломалась только рекламная вставка, чинят её, а не переписывают весь сайт."
+        },
+        {
+          type: "p",
+          text: "Практичный набор такой. Есть ответственный за скорость и верстку, есть короткий список контролируемых URL, есть проверка после крупных релизов, есть полевые данные, а не только лабораторный балл. Introducing новых промо-блоков без этой проверки обычно возвращает те же проблемы через месяц. Когда команда так работает, опыт страницы перестает быть отдельной «SEO-метрикой» и становится обычным качеством сайта."
+        }
+      ]
+    },
+    {
+      id: "field-lab-and-templates",
+      title: "How to work with field data, lab tests and templates without chasing a vanity score",
+      tocLabel: "Field, lab and templates",
+      blocks: [
+        {
+          type: "p",
+          text: "A practical page-experience program is built around templates, not around a single URL that happened to look green last week. The home page, a category, a product or article template, a form and a landing page often behave differently. A lab test on a clean profile can miss a consent banner, a personalization block or a late ad that real users see. That is why field data from CrUX or your own RUM, and a lab trace, should be read together. If they disagree, believe the field and go find the live difference."
+        },
+        {
+          type: "p",
+          text: "Core Web Vitals give the conversation a shared language. Largest Contentful Paint asks whether the main content appeared in time. Interaction to Next Paint asks whether the page responded to taps and clicks. Cumulative Layout Shift asks whether the layout jumped while the person was already looking at it. None of these replace relevance, but all three can waste a click that the snippet had already won. Introducing new front-end features without a vitals check is one of the most common ways a “finished” template slowly becomes worse."
+        },
+        {
+          type: "p",
+          text: "Teams also need a sense of proportion. A slightly amber metric on a rare template is not the same problem as a red LCP on the main money page. Fix the pages that get the most search traffic and the most user frustration first. Then keep the component library clean so the next campaign does not reintroduce the same banner, font or slideshow problem. Links to official docs are useful for definitions; the work itself is in the template, the images, the scripts and the release checklist."
+        }
+      ]
+    },
+    {
+      id: "chto-chinit-v-pervuyu",
+      title: "Что чинить в первую очередь, если опыт страницы просел",
+      tocLabel: "Что чинить в первую очередь",
+      blocks: [
+        {
+          type: "p",
+          text: "Если полевые данные просели, сначала ищут не «штраф за Page Experience», а конкретный шаблон и конкретный элемент. Часто это тяжелое изображение в шапке, шрифт без резерва, скрипт, который долго не отдает управление, всплывающее окно, рекламный слот без высоты, нестабильная шапка на мобильной ширине. Показатели сами подсказывают направление: медленный LCP — первый экран, плохой INP — обработчики и тяжелый главный поток, плохой CLS — поздние вставки и шрифты."
+        },
+        {
+          type: "p",
+          text: "Дальше работает обычная продуктовая дисциплина. Изменение проверяют до релиза и после него. Если эксперимент маркетинга ломает метрики, его не оставляют «потому что кампания уже запущена» без запасного варианта. Для поиска это выглядит как забота о человеке на странице, а для команды — как правило не ухудшать то, что уже открывается нормально. Так опыт страницы остается рабочей темой, а не разовой презентацией про Core Web Vitals."
+        }
+      ]
+    },
+    {
+      id: "instrumenty-i-ocherednost",
+      title: "Какими инструментами пользоваться и в каком порядке чинить опыт страницы",
+      tocLabel: "Инструменты и очередность",
+      blocks: [
+        {
+          type: "p",
+          text: "Набор инструментов известный: полевые отчеты по Core Web Vitals, лабораторный прогон, трассировка загрузки, проверка удобства на телефоне, веб-виталс в кабинете поиска, собственные данные по реальному пользователю, если они есть. Важнее порядка, чем количество дашбордов. Сначала смотрят поле: есть ли проблема у людей. Затем лабораторно находят элемент. Затем чинят шаблон. Затем проверяют, что полевые данные через время тоже сдвинулись, а не только лабораторный балл."
+        },
+        {
+          type: "p",
+          text: "Очередность страниц тоже важна. Сначала шаблоны с наибольшим поисковым трафиком и с худшими метриками. Потом общие компоненты, которые портят сразу много URL: шапка, шрифты, баннер, виджет отзыва, скрипт чата, система согласий. Если чинить по одной «проблемной ссылке» из отчета, можно бесконечно лечить симптомы и не тронуть причину в компоненте. Для команды это обычная инженерная работа, просто триггером для неё стали поисковые показатели опыта."
+        },
+        {
+          type: "p",
+          text: "Не стоит ждать, что после правок позиции вырастут мгновенно. Опыт страницы — сопутствующий сигнал и фактор удержания клика, а не рубильник выдачи. Зато ухудшение шаблона человек замечает сразу, и это уже достаточная причина чинить. Если смотреть на задачу так, споры «влияет или не влияет на ранжирование» мешают меньше: стабильная, быстрая, отзывчивая страница нужна в любом случае, а поиск это дополнительно учитывает."
+        }
+      ]
+    },
+    {
+      id: "english-program",
+      title: "How to run a page-experience program with tools, reviews and design changes",
+      tocLabel: "Running the program",
+      blocks: [
+        {
+          type: "p",
+          text: "A durable page-experience program is closer to product work than to a one-off SEO audit. Identify the templates that matter, review field and lab data, and prioritize fixes that remove real friction. Tools can help you see a slow image, a long task on the main thread, or a layout shift, but someone still has to change the code. Design and engineering should take the same report: the page is too slow, too jumpy or too slow to respond, and this is where it happens."
+        },
+        {
+          type: "p",
+          text: "Learn to provide reserved space for late banners, to remove unused scripts, and to enhance the first viewport without bringing every marketing pixel in at once. A business team may want a large promo, a chat widget or a newsletter modal; the page-experience owner should be able to answer what that change does to LCP, INP or CLS. If the change causes a regression, it should not ship as is. Evaluating the trade-off is part of the job, not a blocker invented by SEO."
+        },
+        {
+          type: "p",
+          text: "Support documentation and Search documentation are useful when you need a definition, but they will not fix your website. Webmaster tools, a lab trace and a field report are enough to start. Video walkthroughs and blog posts can help a wider team understand the metrics. The important habit is the review itself: after each release, visit key pages, view the vitals, and add a note if a new event, a new banner or a new script changed the experience. Coming back to the same template three months later should not feel like starting from zero."
+        },
+        {
+          type: "p",
+          text: "Changes that usually help are not mysterious. Compress and size images, reduce blocking work, keep typography stable, make taps respond quickly, and avoid interstitials that cover the content a person came to read. Aligns the work with the user journey and you also align it with what Search is trying to reward. Hacked or broken pages are a separate emergency; they hurt experience and trust at the same time and should be handled first."
+        },
+        {
+          type: "p",
+          text: "Для команды это означает простую дисциплину. Используйте одни и те же шаблоны в проверке, не гонитесь за разовой зеленой оценкой, и не путайте реклама или активность в сетях с работой над скоростью и стабильностью. Взаимодействия на странице должны оставаться быстрыми и предсказуемыми, даже когда маркетинг добавляет новый блок. Так опыт страницы остается управляемым, а не случайным побочным эффектом релизов."
+        },
+        {
+          type: "p",
+          text: "Keeping the program alive is the part most teams skip. A good quarter is not a reason to stop measuring. New ads, a new design system, a new A/B test or a new third-party tag can undo the previous work in a week. The checker you use matters less than the habit: after a release, look at the same templates, compare the new field data with the last period, and help engineering see a concrete URL rather than a slogan about “Core Web Vitals.” If more than one template moved in the wrong direction, start with the shared component."
+        },
+        {
+          type: "p",
+          text: "Webmaster reports and site-wide averages can hide a single heavy website section. A blog may look fine while the checkout or the article template is not. Are the worst pages also the pages that get Search traffic? If they are, they go first. If they are not, they still deserve a fix, but they should not jump the queue ahead of the main landing experience. Tools are there to help you see that difference, not to produce a badge for a slide."
+        },
+        {
+          type: "p",
+          text: "SEO still matters in this conversation, because a delayed or jumpy page wastes the click that a snippet just earned. But the language that works with designers is the user’s language: the page is slow, the button is late, the banner pushes the text down. Translate the metric into that language and the work gets done faster. Video demos of a shift or a slow paint are often more persuasive than a table. Use them when a debate gets stuck."
+        }
+      ]
+    },
+    {
+      id: "crawling-indexing-and-vitals",
+      title: "How crawling, indexing and page experience work together on a real website",
+      tocLabel: "Crawling, indexing and vitals",
+      blocks: [
+        {
+          type: "p",
+          text: "Page experience does not replace crawling and indexing, and it does not start before the page can be fetched. If sitemaps, robots rules or a blocked resource prevent a template from being rendered as a user would see it, the lab and the field will tell different stories. Webmaster tools can show whether Search can still get the page; the vitals then show how that page behaves. Improve the fetch first if the template is not reliably available, then improve the experience."
+        },
+        {
+          type: "p",
+          text: "A site with a clean information architecture is easier to keep fast. Fewer duplicate URLs, a stable canonical, and a predictable template mean less surprise work for both crawling and the browser. Links inside the website should point to the same templates you actually measure. If marketing lands traffic on a one-off event page that was never in the checker, the ranking conversation becomes noisy. All important entry pages should be in the regular review."
+        },
+        {
+          type: "p",
+          text: "Video, large carousels and third-party tags are common reasons a website feels heavier than the design file suggested. They can still be used, but they should not block the main content or push it down after the first paint. Help the user see the answer first, then enhance. For the business this is also a conversion topic: a late banner can hurt both the vital and the first click on the page. The best ranking outcome is a side effect of that discipline, not a substitute for it."
+        },
+        {
+          type: "p",
+          text: "Для пользователя тот же принцип звучит проще. Страница должна быстро показать смысл, не прыгать и откликаться на действие. Если это есть, и поиск, и человек получают лучшего входа. Если нет, сначала чинят шаблон, а не ищут отдельный «фактор page experience» в отрыве от верстки."
+        }
+      ]
+    },
+    {
+      id: "reliznyy-ritm",
+      title: "Как встроить проверку опыта страницы в обычный релизный ритм",
+      tocLabel: "Релизный ритм",
+      blocks: [
+        {
+          type: "p",
+          text: "Релизный ритм здесь важнее отдельного audita. Перед выкладкой большого изменения шаблона смотрят лабораторный прогон ключевых URL, после выкладки — полевые данные и несколько живых устройств. Если метрики поехали, изменение откатывают или чинят в том же цикле, а не оставляют «до следующего спринта». Так опыт страницы перестает быть аварийной темой раз в полгода и становится обычной гигиеной, как проверка форм или авторизации."
+        },
+        {
+          type: "p",
+          text: "Для продуктовой команды полезно держать короткий список неразрушаемых правил: не закрывать основной контент окном без крайней нужды, не грузить главный экран тяжелым медиа без размера, не блокировать ввод долгим скриптом, не сдвигать уже видимый текст поздним баннером. Эти правила понятны без специальной SEO-лексики и обычно закрывают большую часть регрессов. Когда они соблюдаются, и лабораторные, и полевые показатели ведут себя спокойнее, а человеку проще пользоваться страницей, на которую он пришел из поиска."
+        },
+        {
+          type: "p",
+          text: "Такую дисциплину стоит закрепить в рабочем соглашении между редакций, разработкой и маркетингом: кто может добавить виджет, кто проверяет шаблон, что считается блокирующим регрессом, и как быстро его откатывают. Когда это соглашение работает, опыт страницы перестает зависеть от героизма одного специалиста и начинает держаться сам. Для поиска и для людей результат один и тот же — страница открывается предсказуемо и не мешает прочитать ответ, ради которого человек пришел."
+        },
+        {
+          type: "p",
+          text: "На практике достаточно одного общего чек-листа на релиз и одного короткого разбора после выкладки. Если оба шага входят в привычку, отдельные «проекты по page experience» почти не нужны. Нужны только исключения: крупный редизайн, смена рекламной сетки, новый конструктор баннеров. Их заранее включают в тот же контур проверки, а не разбирают постфактум, когда полевые данные уже просели и часть аудитории успела уйти обратно в выдачу."
+        },
+        {
+          type: "p",
+          text: "Именно поэтому эту тему лучше держать рядом с релизным процессом, а не в отдельной презентации «когда будет время». Время появляется само, если проверка уже стоит в чек-листе. Если её каждый раз приходится назначать отдельно, она снова выпадет на первом же срочном баннере. Спокойный, повторяемый порядок здесь ценнее любого разового рывка к зеленому отчету."
+        },
+        {
+          type: "p",
+          text: "В таком режиме даже крупный редизайн перестает быть сюрпризом: его заранее раскладывают по шаблонам, проверяют до выкладки и оставляют короткий план отката, если полевые данные пойдут не туда. Это обычная инженерная осторожность, просто поводом для неё стали сигналы опыта страницы и то, как человек встречает результат поиска."
+        },
+        {
+          type: "p",
+          text: "Так команда сохраняет контроль над темой и не возвращается к ней только после жалоб на «внезапно медленный сайт»."
+        },
+        {
+          type: "p",
+          text: "Это и есть рабочий результат: предсказуемая страница и спокойный процесс вокруг неё."
+        },
+        {
+          type: "p",
+          text: "Именно к этому обычно и стоит идти."
+        }
+      ]
     }
   ],
   modules: {

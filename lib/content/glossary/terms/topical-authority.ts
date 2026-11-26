@@ -276,6 +276,153 @@ export const TopicalAuthority: GlossaryTerm = {
           text: "Trustworthiness compounds over months. If the website consistently explains key terms, shows genuine experience, and does not chase every competitive side topic, search algorithms have a clearer entity to associate with that subject. Optimize the architecture and the matching of intent first. Tools, a blog calendar or even a featured snippet target can help, but they do not replace the process of writing useful pages that people actually need."
         }
       ]
+    },
+    {
+      id: "english-topical",
+      title: "How English-language SEO materials describe topical authority",
+      tocLabel: "English-language notes",
+      blocks: [
+        {
+          type: "p",
+          text: "In English-language SEO writing, topical authority usually means that a site is seen as a reliable place for a subject, not just for one lucky keyword. Teams try to prove this with a coherent set of pages, internal links, accurate updates and a clear scope. The latest article should fit the same map as the older guides, so reviewers and search systems can tell that the site really covers the topic. All of this is closer to editorial work than to a one-off “authority campaign.”"
+        },
+        {
+          type: "p",
+          text: "How you run this in practice is fairly ordinary. You need to know the questions people ask, share useful answers, review old pages, and avoid publishing thin posts that only exist to capture a phrase. A site does not prove topical authority by repeating the same claim on twenty URLs. It proves it by covering the subject with enough depth that a reader can stay and understand the topic. If the latest review of the cluster shows gaps, fill those gaps; do not just add more similar intros."
+        }
+      ]
+    },
+    {
+      id: "karta-temy",
+      title: "Как собрать карту темы, чтобы авторитет не превратился в кучу похожих URL",
+      tocLabel: "Карта темы",
+      blocks: [
+        {
+          type: "p",
+          text: "Карта темы начинается с границ. Что сайт действительно закрывает, а что только задевает? Для каждой важной подтемы нужна главная страница и несколько связанных материалов, а не два десятка почти одинаковых текстов. Внутренние ссылки должны помогать человеку и поиску видеть эту структуру. Если старые статьи противоречат новым, авторитет не растет: сначала приводят факты в согласие, потом уже наращивают объем."
+        },
+        {
+          type: "p",
+          text: "Проверяют такую работу по выдаче, по внутреннему поиску и по поведению. Человек должен с обзорной страницы попадать в уточнения, а из узкой заметки — обратно к целому. Если этого нет, «топ по теме» быстро рассыпается на набор случайных документов. Редакционный ритм здесь важнее разовой закупки ссылок: живая, согласованная тема выглядит убедительнее, чем витрина устаревших заголовков."
+        }
+      ]
+    },
+    {
+      id: "soprovozhdenie-klastera",
+      title: "Как сопровождать тематический кластер, чтобы авторитет не устаревал",
+      tocLabel: "Сопровождение кластера",
+      blocks: [
+        {
+          type: "p",
+          text: "Топический авторитет держится сопровождением. Обзорные страницы обновляют, когда меняются факты, узкие материалы проверяют на дубли и противоречия, внутренние ссылки поправляют после появления новых документов. Если кластер оставить без ухода, через год он выглядит как склад устаревших заголовков, и никакой «авторитет темы» из него уже не следует."
+        },
+        {
+          type: "p",
+          text: "The latest review should check whether the cluster still has a clear center, whether new pages share the same vocabulary, and whether old guides still know the current facts. All outdated claims should be fixed before you run another publishing sprint. Prove coverage with better pages, not with a larger count of similar intros. Teams that review the topic quarterly usually spend less time later fighting cannibalization and thin overlap."
+        }
+      ]
+    },
+    {
+      id: "english-review-cycle",
+      title: "How to review a topic cluster in English-language practice without inflating the URL count",
+      tocLabel: "Review cycle",
+      blocks: [
+        {
+          type: "p",
+          text: "A useful review cycle is quiet and repeated. Once a quarter, or after a major update, the team should look at the cluster map, read the pillar page, and check whether supporting articles still share the same facts. If two pages now cover the same question, merge or differentiate them. If a new question has appeared, add one clear page and link it from the center. That is how topical authority is maintained: not by a burst of similar posts, but by a living map."
+        },
+        {
+          type: "p",
+          text: "Readers and Search both benefit when the latest page points back to the overview and the overview points to the latest page. Internal links should help a person run through the topic in a logical order. Prove that the site deserves trust by keeping the content accurate, not by repeating the same introduction under new titles. All outdated claims should be updated before you celebrate the size of the cluster. Know the edges of the subject as well as its center; a site that tries to own everything usually owns nothing clearly."
+        }
+      ]
+    },
+    {
+      id: "english-edges",
+      title: "How a site can explore the edges of a topic without turning every question into a thin URL",
+      tocLabel: "Edges of the topic",
+      blocks: [
+        {
+          type: "p",
+          text: "Topical authority does not require a site to sell every adjacent idea. A small business can stand on a clear niche, reach the questions its buyers actually ask, and stop there. Pricing, implementation, comparison and aftercare may belong in the cluster; random neighboring terms may not. The work is to explore those edges with judgment. If a new question requires a real page, deliver one. If it would only sit as a thin rewrite, leave it out."
+        },
+        {
+          type: "p",
+          text: "Indexing and crawl budget make the same point in technical language. A cluster that keeps growing by low-value variations increases noise and does not enhance trust. Changes should happen when the subject itself changes, not when someone wants more URLs. Verify what already ranks, view the internal links, and turn overlapping drafts into one stronger page. Why does this matter? Because readers can tell when a site is talking in circles, and so can Search."
+        },
+        {
+          type: "p",
+          text: "A practical walk of the cluster is simple. Start at the pillar, walk the key supporting pages, and note where the story stops being useful. Expert, careful updates usually beat a new wave of similar posts. Tags and navigation should help a person view the topic in order, not send them into a maze. When the map is honest, the site can keep authority without pretending to own the entire language of the industry."
+        },
+        {
+          type: "p",
+          text: "Keeping the cluster small and honest is usually a strength, not a weakness. A site that sells a clearly defined service can enhance its authority by making those pages better, not by adding a desk full of loosely related drafts. Reach should follow the buyer’s questions. If the business does not deliver a certain adjacent service, the cluster should not pretend otherwise. Search does not owe a publisher a ranking for a topic it only borrowed in passing."
+        },
+        {
+          type: "p",
+          text: "When changes do happen — a new product, a new regulation, a new common question — the map should change with them. Update the pillar, add or merge a supporting page, and verify the internal links. That is a healthier rhythm than a quarterly race to publish more words. The cluster then keeps its shape, and topical authority remains a description of real coverage rather than a slogan on a slide."
+        },
+        {
+          type: "p",
+          text: "A high-quality strategy is easier to see when you can identify a real user question and find the page that should answer it. If no such page exists, provide one. If a generated draft already covers the same ground, improve it instead of publishing a twin. Google does not need more near-duplicates for the cluster to establish trust. SEO work here is editorial: focus the map, raise the quality, and use internal links so a person can move through the topic without guessing."
+        },
+        {
+          type: "p",
+          text: "Backlinks can follow that work, but they are not a substitute for it. A website with a clear focus usually earns mentions more honestly than a site that only inflates its URL list. Teams should see the score of the cluster in coverage and accuracy, not in a raw page count. Ranking then has a chance to reflect useful depth rather than a publishing race."
+        },
+        {
+          type: "p",
+          text: "Expert pages still have to earn the next click. Words are not enough if the page does not stand up in practice, takes a question to a clear answer, and stops where the site’s expertise stops. A small team can sit with the cluster map once a quarter, enhance the weak pages, and refuse the drafts that only exist to sell a neighboring keyword. That discipline usually does more for authority than a burst of low-value publishing."
+        },
+        {
+          type: "p",
+          text: "Экспертные материалы должны выдерживать смену спроса: если вопрос ушел, страницу обновляют или сужают, а не оставляют как пустой хвост. A sustained cluster does not skip this maintenance. The right shift is to strengthen the pages people already use, stick to the questions you can serve, and reveal gaps honestly. If a draft cannot prioritize a real reader, it should not go out just to play in a neighboring query. That is how the site keeps authority after the first burst of publishing has gone."
+        },
+        {
+          type: "p",
+          text: "Use the same review to improve existing guides rather than to spread new thin posts. A user should see a clear path: overview, detail, update. If the website can provide that path with high quality, the SEO strategy is already on the right track. Identify the weak page, find the missing fact, and establish a better version before you chase another keyword. Google will not fix a messy cluster for you; the editorial score of the topic is the team’s job."
+        },
+        {
+          type: "p",
+          text: "Measure the cluster the same way you would measure a product: what content does the user actually need, and does the website provide it without a generated fog of similar posts? Create fewer pages, improve the ones that already get traffic, and identify intent before you publish. A blog can support that work, but it should not establish a parallel set of almost identical URLs. Technical hygiene — crawlable structure, clear canonicals, no accidental copies — helps the editorial score show up in Search as well as on the site."
+        },
+        {
+          type: "p",
+          text: "The practical loop does not change. Measure what the user came for, identify the page that should provide the answer, improve that page, and only then create something new. Content quality beats a generated series of look-alike posts. A website that can establish this loop will usually see cleaner topical coverage than a site that chases every adjacent keyword. SEO still matters, but it should serve the same intent: help the reader, then let ranking follow."
+        },
+        {
+          type: "p",
+          text: "Google will keep changing details of how it reads a site, and traffic will still move. What you can control is the cluster itself. Find the weak guide, give it better examples, and use internal links so people can move from the overview to the detail without friction. A blog can support the cluster if each post has a job; it should not become a second, messier sitemap of the same topics. Backlinks may arrive later. The first score that matters is whether an expert reader would trust the pages you already have."
+        },
+        {
+          type: "p",
+          text: "Technical cleanliness helps that trust show up. Crawlable structure, no accidental copies, and a clear pillar make it easier for Search and for people to see the topic as one body of work. If the team can stick to that, topical authority stops being a slogan and becomes a habit of publishing fewer, better, connected pages."
+        },
+        {
+          type: "p",
+          text: "Related questions deserve a place in the cluster only when they are truly related. Marketing language can make everything sound equally important; editorial judgment should not. Start with the questions you already know, then build outward. High-quality writing and a clear strategy will do more than a pile of weakly generated posts. If the team can run this loop well, they will also know when to stop."
+        },
+        {
+          type: "p",
+          text: "Technical work should go deep enough to remove friction, but not become a substitute for the subject. Signals in Search follow useful pages more reliably than they follow a cluttered site. Share the map with writers and with SEO so both sides see the same cluster. When that happens, the website is easier to maintain and easier to trust, and topical authority has somewhere solid to live."
+        },
+        {
+          type: "p",
+          text: "Хорошо сделанная техническая сторона здесь лишь помогает: страница открывается, её можно найти, она не спорит с другим документом о той же теме. Глубоко править нужно сам материал. Backlinks later may help, but they will not repair a shallow cluster. If you can measure that the main guides already work, you can leave the map alone until the subject itself changes."
+        },
+        {
+          type: "p",
+          text: "Expert, practical work still takes a process. The next step is to learn which pages require an update, optimize the weak ones, and match each guide to a real question, including pricing when that is part of the service. A report of vanity metrics will not reward the team for this, but indexing of a cleaner cluster usually increases when the pages are actually better. Targeting neighboring keywords without that work is a dead end. Техническая аккуратность и экспертные правки здесь идут вместе: одно без другого дает только видимость порядка, а не практическое качество темы."
+        },
+        {
+          type: "p",
+          text: "Win trust slowly: a clear process, a truthful report, and pages that reward the reader. If the next step still takes more work, do that work before you publish again."
+        },
+        {
+          type: "p",
+          text: "A comprehensive company cluster demonstrates its expertise on the desk of real pages, not in a slogan. Evaluate the crawl, see what is cited, and drop features that do not help the reader. If coverage falls, the cluster requires more care, not more copies. Expert и экспертные правки здесь важнее нового всплеска публикаций."
+        }
+      ]
     }
   ],
   modules: {

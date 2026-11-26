@@ -313,6 +313,106 @@ export const CLS: GlossaryTerm = {
           text: "A short checklist helps editors and developers talk about the same issues. Ensure images have a placeholder of the expected size. Do not swap a fallback font for a much larger one in the first screen. Reduce unexpected movement around a button or a form, because a late shift can affect visitors and cause a mis-click. Layout shifts occur at some distance from the trigger, so calculate which container actually moved, not only the element that loaded. These are common, practical steps; they do not require a special blog of “secret CLS solutions”, just careful rendering on the pages people use."
         }
       ]
+    },
+    {
+      id: "kak-chitat-polevye-dannye",
+      title: "Как читать полевые данные CLS и не путать их с лабораторным прогоном",
+      tocLabel: "Полевые данные",
+      blocks: [
+        {
+          type: "p",
+          text: "Лабораторный прогон удобен, чтобы найти конкретный прыжок: картинка без размера, шрифт, баннер, вставка рекламы, позднее появление формы. Полевые данные показывают, что происходит у реальных пользователей. Иногда лабораторный отчет уже «зеленый», а в поле CLS все еще плохой, потому что живая реклама, согласие на cookies или меленный экран не попали в тест. Поэтому смотрят оба источника и чинят то, что портит реальный просмотр."
+        },
+        {
+          type: "p",
+          text: "How teams use the metric in practice is straightforward. They measure CLS on key templates, compare lab and field, and then fix the components that shift the page. A good score is the result of reserved size, stable fonts, and fewer late insertions above the fold. More tests help only if someone actually changes the layout afterward. Have a short list of pages, not a one-off screenshot, and re-measure after each release."
+        }
+      ]
+    },
+    {
+      id: "typichnye-regessy",
+      title: "Какие регрессы чаще всего возвращают плохой CLS после «уже починенной» верстки",
+      tocLabel: "Типичные регрессы",
+      blocks: [
+        {
+          type: "p",
+          text: "После удачной правки CLS часто возвращается вместе с новым виджетом, промо-баннером, отзывах в карусели или отложенной загрузкой шрифта. Команде стоит держать проверку в релизном цикле: ключевые шаблоны прогоняют заново, а не надеются, что старое исправление живет вечно. Если маркетинг добавляет блок в шапку, для него сразу резервируют место. Иначе визуальная стабильность снова ломается, и метрика падает без видимой «большой» переделки сайта."
+        },
+        {
+          type: "p",
+          text: "Продвижение тут ни при чем в прямом смысле: поиск учитывает опыт страницы, но причина все равно в верстке. Лучше чинить сдвиг как проблему удобства. Когда макет стабилен, выигрывает и пользователь, и оценка Core Web Vitals. Если после релиза полевые данные не улучшаются, ищут расхождение между тестовой и боевой страницей: другая реклама, другой A/B-блок, другой размер экрана."
+        }
+      ]
+    },
+    {
+      id: "rezervisovanie-mesta",
+      title: "Как заранее резервировать место под картинки, шрифты и баннеры",
+      tocLabel: "Резервирование места",
+      blocks: [
+        {
+          type: "p",
+          text: "Самый надежный способ удержать CLS — заранее резервировать место. У изображений указывают размер, у контейнера рекламы задают высоту, для веб-шрифтов продумывают, как текст выглядит до загрузки, чтобы строка не прыгала. How you measure the result matters: check the same page before and after the change, on mobile and desktop, and see whether the layout is still stable when late banners appear. If the shift is gone in the lab but users still see a jump, look at the live page, not only the test profile."
+        },
+        {
+          type: "p",
+          text: "Продвижение страницы не заменит эту работу. Если блок в отзывах или в рассылочном баннере вставляется без места, метрика снова падает. Лучше править шаблон один раз и проверять его в каждом релизе, чем каждый месяц заново искать «непонятный» сдвиг."
+        },
+        {
+          type: "p",
+          text: "В релизном чек-листе достаточно нескольких пунктов: размеры изображений заданы, баннеры имеют резерв, шрифты не сдвигают строку, поздние блоки не появляются над уже прочитанным текстом. Если после этого лабораторный и полевой CLS расходятся, смотрят боевые скрипты и рекламу, а не только «чистый» тестовый профиль. Такая привычка обычно удерживает метрику лучше, чем разовый поход за «зеленой» оценкой."
+        },
+        {
+          type: "p",
+          text: "How can a team keep a good CLS over time? Use a short release check, measure the key templates again, and keep reserved size for late banners. The lab and the field are both useful: this is how you see whether a new widget has shifted the page for real users. More design work is not always the answer; often the fix is already known and just needs to stay in the component library."
+        },
+        {
+          type: "p",
+          text: "CLS is part of the page experience story, not a separate vanity score. The tools are useful when they show which element moved and how often this happens for users. If the website has a good lab result but the field still looks weak, the experience is not finished. Use the same templates, check banners and fonts, and keep the fix in the design system so the next release does not bring the shift back."
+        }
+      ]
+    },
+    {
+      id: "layout-slots-and-viewport",
+      title: "How reserved slots, viewport and late requests affect the CLS value",
+      tocLabel: "Layout slots and viewport",
+      blocks: [
+        {
+          type: "p",
+          text: "The CLS value rises when something is served into the viewport after the first paint and pushes already visible content. A late request for an image, a font, an ad slot or a consent window may lead to a shift if the page did not provide reserved space. Developers should tell the browser the size in advance: width and height on images, min-height on ad slots, stable font fallback. This does not remove every risk, but it does prevent the most common jumps."
+        },
+        {
+          type: "p",
+          text: "Learn to look at which element moved, not only at the final number. Support teams and developers can use the same report: the position of the shift, the element, and whether it happened after a user action or on its own. Avoid inserting new blocks above existing text. Reduce late banners, optimize font loading, and open optional windows in a way that does not shove the layout. If a shift does occur, less improvisation in the template usually helps more than another general article about Core Web Vitals."
+        },
+        {
+          type: "p",
+          text: "Разработчик шаблона и человек, который запускает рекламу, должны смотреть один и тот же параметр. Если источник сдвига — расширение, виджет отзывов или окно подписки, его чинят там, а не «в целом по сайту». Указанными размерами и стабильным слотом обычно закрывают большую часть проблем. Рассылку и промо лучше сразу сажать в заранее предусмотренное место, иначе метрика снова падает после удачной итерации."
+        },
+        {
+          type: "p",
+          text: "A required check after any template update is simple: did a new block change the position of existing content? If ads are served late, if an updated font file does not provide a stable fallback, or if a cookie window is opened without a reserved slot, the impact shows up in CLS. Developers should know this pattern and improve the component before it reaches production. The largest shifts often come from a single late insertion, not from “the whole site is broken.” Tell the team which element moved; that is usually enough to lead the fix."
+        },
+        {
+          type: "p",
+          text: "Не любой новый блок сам по себе вреден. Вреден тот, из-за которого уже видимые элементы смещаются. Разработчик и редактор смотрят один параметр: нашлось ли место заранее. Источник сдвига может быть расширением, окном подписки, рассылку в шапке или блоком «статьи» без высоты. Указанными размерами и стабильным слотом это обычно закрывают. All late banners should get the same treatment, not only the first one someone happened to notice."
+        },
+        {
+          type: "p",
+          text: "If you want to improve the field score, avoid surprises in the first viewport and reduce late layout work. Optimize image dimensions, prevent font swaps that shove lines, and keep optional UI below or in a reserved slot. Less movement is the goal, not a prettier report. A stable page experience helps users and keeps the CLS value from oscillating after every marketing experiment."
+        },
+        {
+          type: "p",
+          text: "Чтобы оценка не прыгала после любой новой вставки, расширение и всплывающее окно нужно закладывать в макет сразу. Указанными размерами это делать проще, чем потом искать, почему сместился блок рассылку. Продвижение страницы здесь ни при чем: сначала стабильность, потом уже эксперименты."
+        },
+        {
+          type: "p",
+          text: "Teams should ensure they can calculate the effect of a change and may also keep a free test page for banners. If the layout is stable, CLS stays quiet; if not, fix the slot before the next campaign."
+        },
+        {
+          type: "p",
+          text: "Make sure late UI cannot move the article. A cookie window, an extension block or any free promo slot should be reserved, so the page does not have to recalculate the layout in front of the user."
+        }
+      ]
     }
   ],
   modules: {

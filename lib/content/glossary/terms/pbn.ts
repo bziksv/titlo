@@ -347,6 +347,52 @@ export const Pbn: GlossaryTerm = {
           text: "Необходимо отдельно держать внимание на том, как сеть используется в интернет-продвижении: если площадки нужны только чтобы найти дополнительные ссылки, а полной самостоятельной ценности у них нет, схема уже видна по роли сайтов, а не по названию услуги."
         }
       ]
+    },
+    {
+      id: "english-docs-pbn",
+      title: "How English-language SEO materials describe a private blog network",
+      tocLabel: "English-language notes",
+      blocks: [
+        {
+          type: "p",
+          text: "In English-language SEO materials a private blog network is usually described as a set of sites created or acquired to pass link signals to a money site. The sites may look like independent blogs, but they often share ownership, hosting patterns, or the same link building plan. Google and other search systems treat this as a link scheme when the network exists to manipulate rankings rather than to publish useful work. That is why a PBN is a risk, not a neutral “site portfolio.”"
+        },
+        {
+          type: "p",
+          text: "How teams check for a network is fairly consistent. They look at who owns the domains, whether the sites use the same hosting or analytics, whether the content is thin, and whether links point in a tight circle to one target site. The best service pitch that promises “high quality PBN links” does not change the underlying problem: the links are still arranged. A broken or expired domain used only to place a link is a common warning sign. If you need to get a link, it should come from a real publication, not from a private inventory of blogs."
+        },
+        {
+          type: "p",
+          text: "This is also why buying a “ready-made network” does not remove the risk. You may get access to more domains, but you also inherit their history, their neighbors, and any previous link patterns. Quality here is not a marketing word for cheap posts. If the sites cannot stand on their own as websites with a real audience, they are a liability. Help the business instead by reviewing the current backlink profile, disavowing or removing arranged links where needed, and investing in pages and mentions that can be explained honestly."
+        }
+      ]
+    },
+    {
+      id: "prakticheskaya-proverka-pbn",
+      title: "Как практически проверять, не тянет ли сайт чужую или свою сеть",
+      tocLabel: "Практическая проверка",
+      blocks: [
+        {
+          type: "p",
+          text: "Практическая проверка начинается с фактов, а не с ярлыка. Смотрят доноров: общие хостинги, одинаковые шаблоны, пустые блоги, резкий набор ссылок с новых доменов, анкоры под коммерческий запрос, взаимные кольца. Если такие следы есть, сначала фиксируют список, затем решают, что снимать, что оставлять, и как это объяснить в comms и в кабинете поиска. Заявка на пересмотр или письмо «мы не виноваты» без разбора доноров обычно ничего не дает."
+        },
+        {
+          type: "p",
+          text: "Люди, которые ведут ссылочную работу, должны понимать границу между нормальным упоминанием и сетью. Полезный гостевой материал на живом сайте и пачка однотипных блогов — разные вещи. Если сомневаетесь, задайте простой вопрос: существовал бы этот сайт, если бы с него нельзя было поставить ссылку на продвигаемую страницу? Если ответ «нет», это уже не издательский проект, а элемент схемы."
+        },
+        {
+          type: "p",
+          text: "The practical rule is simple. If the domains, hosting and templates are shared, if the sites are not real websites, and if the only use of the network is link building, this is still a private blog network. Google does not need the name “PBN” in a report to treat arranged links as a scheme. Are the pages written for readers, or are they built to host a link? That question is usually enough. Teams that want a durable SEO profile use mentions they can explain, not a private inventory of domains."
+        },
+        {
+          type: "p",
+          text: "How you check a suspected network does not require a special service pitch. Get the list of linking domains, find their owners, see whether the sites share hosting, and check whether the pages were written to help a reader or only to sell a link. The best “high quality” offer is still a problem if you can buy the link from a private inventory. New domains, broken archives, a recycled name and thin posts are common warning signs. All of this work is ordinary due diligence, not a hunt for a magic filter name. If the sites cannot stand as real websites, do not use them for SEO."
+        },
+        {
+          type: "p",
+          text: "The links in such a network are the whole point, and that is why the risk stays even when the sites look different at first glance. If domains and hosting are reused, if pages are not written for people, and if the website exists only to pass a signal, search quality systems will treat the pattern as arranged. Use this as a simple internal test before anyone buys another “safe” package. Building a durable profile takes longer, but it does not depend on a private set of blogs."
+        }
+      ]
     }
   ],
   modules: {
