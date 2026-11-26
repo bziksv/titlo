@@ -371,6 +371,82 @@ export const LCP: GlossaryTerm = {
       ]
     },
     {
+      id: "iz-chego-sostoit-otsenka",
+      title: "Из каких частей складывается время Largest Contentful Paint",
+      tocLabel: "Части LCP",
+      blocks: [
+        {
+          type: "p",
+          text: "Чтобы улучшить LCP, полезно смотреть не только итоговый LCP time, но и составные части. Обычно выделяют время до начала загрузки LCP resource, саму resource load, и element render delay — паузу между тем, как ресурс уже доступен, и тем, как LCP element наконец рисуется. Если долго едет картинка, работают над размером и приоритетом. Если LCP image приехала быстро, а элемент всё равно появляется поздно, чаще мешают render blocking стили, шрифт или скрипт, который откладывает отрисовку главного блока."
+        },
+        {
+          type: "p",
+          text: "Для image-based LCP смотрят img element или background image, который стал largest element в области просмотра. Для текстового LCP чаще важен момент, когда готов HTML document и веб-шрифт не задерживает заголовок. «Good LCP» в документации Core Web Vitals ориентируется на полевой опыт: метрика должна быть приемлемой у большинства визитов, а не только в одном лабораторном прогоне."
+        }
+      ]
+    },
+    {
+      id: "kak-merit-i-chitat",
+      title: "Как измерять LCP в лаборатории, в поле и в коде",
+      tocLabel: "Как измерять точнее",
+      blocks: [
+        {
+          type: "p",
+          text: "Лабораторный замер в [PageSpeed Insights](/slovar/pagespeed-insights/) или аналогичном отчёте полезен, чтобы увидеть LCP candidate и понять, какой элемент система считает главным. Полевой LCP score из [Core Web Vitals](/slovar/core-web-vitals/) показывает, как страница ведёт себя у живых пользователей. Эти цифры не обязаны совпадать: лаборатория идёт по одному сценарию, а в поле зависят сеть, устройство и кэш."
+        },
+        {
+          type: "p",
+          text: "Если нужно разобрать конкретный заход, LCP можно снять в JavaScript через Performance API и логировать LCP element, render time и URL ресурса. Так видно, не сменился ли кандидат после баннера или поздней картинки, и не грузится ли LCP image слишком поздно из-за lazy loading. Оптимизация тогда точечная: начать loading as early as possible для настоящего LCP resource, убрать лишний render-blocking и не откладывать main content ради второстепенных блоков."
+        }
+      ]
+    },
+    {
+      id: "typichnye-oshibki-lcp",
+      title: "Какие ошибки чаще всего портят LCP на рабочих страницах",
+      tocLabel: "Частые ошибки",
+      blocks: [
+        {
+          type: "p",
+          text: "Типичный сбой такой: команда смотрит лабораторный отчёт, видит плохой LCP и начинает сжимать все картинки подряд, хотя LCP candidate — это заголовок, который ждёт веб-шрифт, или блок, который появляется только после скрипта. Другая частая ошибка — повесить lazy loading на hero-изображение. Для фоновых картинок ниже сгиба это уместно, для LCP image — нет: браузер и так не должен откладывать largest element."
+        },
+        {
+          type: "p",
+          text: "Ещё один слабый сценарий — править только лабораторный page load и не смотреть поле. В лаборатории страница открывается «с нуля», без своего кэша и с одним размером окна. В поле часть заходов уже быстрые, зато на слабом устройстве LCP resource грузится долго. Поэтому улучшения проверяют и по полевому LCP score, и по тому, не появился ли новый кандидат после баннера, всплывающего окна или поздней подгрузки основного блока."
+        }
+      ]
+    },
+    {
+      id: "kak-chitat-angliyskie-formuly",
+      title: "Как в документации называют части LCP и типичные рекомендации",
+      tocLabel: "Английские формулировки",
+      blocks: [
+        {
+          type: "p",
+          text: "В англоязычных отчётах и в web.dev LCP чаще разбирают так: first find the LCP element, then see whether the LCP resource started loading early enough, and finally check the render delay. A common note is that you should not use lazy loading on the hero image if this image is the LCP candidate. For a background image the same rule applies when that image is the largest element in the viewport."
+        },
+        {
+          type: "p",
+          text: "If you look at a lab report, it may provide a screenshot and a link to the current LCP resource. Field data can tell a different story: some visits are fast, other visits on a slow network have a much longer resource load. This is why one lab run does not always explain the field LCP score. When you build a fix, measure LCP again after the change and confirm that the same element is still considered the LCP element."
+        },
+        {
+          type: "p",
+          text: "How to optimize depends on the case. For an image-based LCP, reduce the size, set a sensible fetch priority, and make sure the HTML document can discover the resource early. For a text LCP, web font and render-blocking CSS may matter more than image compression. In each audit it helps to write down the element, the URL, and whether the delay is load time or render time, so the next pass does not start from zero."
+        },
+        {
+          type: "p",
+          text: "В рабочих аудитах эти английские имена частей удобно держать рядом с русским разбором. Сначала фиксируют, what the LCP element is, then whether the resource load or the render delay is the main issue. This same checklist should be reused on mobile and desktop, because the largest element is not always the same. If the lab result and the field score disagree, look at more visits, not only one example, and see whether a late banner or a font change now makes another element the LCP candidate."
+        },
+        {
+          type: "p",
+          text: "Есть и прикладная шпаргалка на смешанном языке, которой удобно пользоваться в отчёте. These are the questions that usually help: what is the LCP element, does this page use lazy loading on it, and do we have a new candidate after the last render? If the field показатель is still weak, get more than one lab run and compare ways — способы ускорить resource load и способы убрать render delay. This checklist is more stable than a single screenshot and does not replace a normal разбор продвижения страницы, если медленный LCP сам по себе отпугивает человека."
+        },
+        {
+          type: "p",
+          text: "Ещё один короткий ориентир: lab and field are different, but they are both useful. If images are compressed and fonts are loaded reasonably, the LCP показатель usually moves. Use this list when you have several templates: the home page, an article, and a category view may all use different LCP elements, so the same fix will not always work. Note what you changed, then get a new measurement."
+        }
+      ]
+    },
+    {
       id: "chastye-voprosy",
       title: "Частые вопросы о LCP",
       tocLabel: "Вопросы"

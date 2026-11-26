@@ -318,6 +318,48 @@ export const CORE_UPDATE: GlossaryTerm = {
       ]
     },
     {
+      id: "gde-smotret-anonsy",
+      title: "Где Google объявляет Core Update и как это читать",
+      tocLabel: "Где смотрят анонсы",
+      blocks: [
+        {
+          type: "p",
+          text: "Анонсы broad core updates Google публикует в Search Status Dashboard и сопровождает короткими заметками в Search Central. Формулировки обычно общие: это broad core update, оно раскатывается несколько дней, и сразу после запуска не стоит делать поспешных выводов. Имеет смысл подождать как минимум одну полную неделю после того, как update completed, и только потом сравнивать недели в [Google Search Console](/slovar/google-search-console/)."
+        },
+        {
+          type: "p",
+          text: "Не каждое движение в выдаче связано с Google Core Update. Рядом могут идти spam update, более узкие ranking updates или собственные изменения сайта. Поэтому дату из дашборда сверяют с тем, затронуты ли разные типы поиска, несколько разделов или только один URL, и не совпал ли спад с техническим сбоем. Если Google announced core update, это повод перечитать качество страниц и полезность контента, а не автоматически переписать все тексты."
+        },
+        {
+          type: "p",
+          text: "Отдельные месяцы в отраслевых обзорах часто всплывают только потому, что именно тогда вышло обновление. Сами по себе названия вроде «December core update» или «March core update» ничего не предписывают: смотрят описание в Search Central и свою статистику, а не календарь ради календаря."
+        },
+        {
+          type: "p",
+          text: "Если после обновления просели только страницы со слабым или собранным ради трафика текстом, это ближе к вопросу helpful content, чем к «случайному штрафу». Имеет смысл оценить, отвечает ли материал на запрос, есть ли на нём опыт и ясный вывод, не дублирует ли он десяток соседних URL. Переписывать всё подряд в первую неделю раскатки обычно рано: сначала смотрят, закончилось ли обновление, и сравнивают устойчивые недели, а не отдельные дни."
+        }
+      ]
+    },
+    {
+      id: "kak-chitat-status-dashboard",
+      title: "Как читать формулировки Search Status Dashboard без лишней паники",
+      tocLabel: "Как читать дашборд",
+      blocks: [
+        {
+          type: "p",
+          text: "On the Search Status dashboard a core update is usually marked as a broad core update, then as rolling out, and later as finished or completed. This timeline matters more than a single news headline. If you assess impact the same day Google has announced the update, the picture is often incomplete: the update may still be rolling, and Search Console data can lag."
+        },
+        {
+          type: "p",
+          text: "A practical way to look at this is to wait at least one full week after the rollout has finished, then compare a stable period with the previous weeks. Ask what changed on the site in the same window, and whether the drop is visible across many queries or only in one small set of pages. How people land on the article, the intent of the query, and the usefulness of the content often explain more than the calendar date of the update."
+        },
+        {
+          type: "p",
+          text: "Google Search Central also repeats a policy-level point: there is no special “core update fix” form, and a site should not rewrite everything at once only because an update is in the news. The work is to assess weak pages, improve them, and give the next updates time to take effect."
+        }
+      ]
+    },
+    {
       id: "chastye-voprosy",
       title: "Частые вопросы о Core Update",
       tocLabel: "Вопросы"

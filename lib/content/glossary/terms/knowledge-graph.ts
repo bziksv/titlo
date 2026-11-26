@@ -167,6 +167,71 @@ export const KNOWLEDGE_GRAPH: GlossaryTerm = {
       ]
     },
     {
+      id: "entities-i-api",
+      title: "Как устроены сущности Knowledge Graph и зачем существует Search API",
+      tocLabel: "Сущности и API",
+      blocks: [
+        {
+          type: "p",
+          text: "Google Knowledge Graph — это сеть взаимосвязанных сущностей: людей, организаций, мест, произведений и других объектов, а не просто набор строк. Знаменитая формула «things, not strings» как раз про это: поисковая система пытается понять, о каком объекте речь, и как он связан с другими. В выдаче это часто видно по knowledge panel: название, тип сущности, краткие факты и ссылки на связанные объекты."
+        },
+        {
+          type: "p",
+          text: "Для разработчиков у Google есть Knowledge Graph Search API. Он позволяет искать сущности, получать идентификаторы и читать связанные описания. Это не «кнопка, которая добавляет сайт в граф», а инструмент для работы с уже известными объектами. Попасть в knowledge panel по-прежнему помогают узнаваемость бренда, согласованные данные на сайте и в справочниках, [микроразметка](/slovar/mikrorazmetka/) на базе schema.org и страницы, где ясно сказано, о какой сущности идёт речь."
+        }
+      ]
+    },
+    {
+      id: "kak-saytu-pomoch",
+      title: "Что на сайте помогает Google связать страницу с нужной сущностью",
+      tocLabel: "Что делать на сайте",
+      blocks: [
+        {
+          type: "p",
+          text: "На практике полезны одни и те же сигналы. В тексте и заголовках однозначно назван объект, а не только общее слово. Есть структурированные данные, которые описывают организацию, товар, человека или произведение без противоречий с видимым текстом. Одинаковые написание, адрес и ссылки на официальные профили повторяются там, где это уместно. Если у объекта есть несколько имён, страница аккуратно это объясняет, а не путает сущности."
+        },
+        {
+          type: "p",
+          text: "Knowledge Graph не заменяет обычное ранжирование документов. Даже при хорошей карточке знания поисковая выдача по-прежнему состоит из результатов поиска, и сайт должен отвечать на запрос. Поэтому работу с сущностями сочетают с ясным контентом, нормальной [схемой сайта](/slovar/struktura-sayta/) и аккуратными данными, а не ждут, что API или разовая публикация сами «пропишут» бренд в графе."
+        },
+        {
+          type: "p",
+          text: "Отдельно стоит помнить про расхождение имён и языков. Если компания, продукт или человек по-разному названы на русском и английском, в карточках и на внешних площадках, поисковой системе сложнее собрать одну сущность. Аккуратные подписи, одинаковые официальные названия и ссылки между связанными страницами помогают сильнее, чем разовые упоминания «мы тоже в Knowledge Graph»."
+        }
+      ]
+    },
+    {
+      id: "how-docs-describe-graph",
+      title: "Как официальные материалы описывают Knowledge Graph и Search API",
+      tocLabel: "Как это описывают в документации",
+      blocks: [
+        {
+          type: "p",
+          text: "Google describes the Knowledge Graph as a network of interconnected entities: people, places, organizations, and things, not just strings in a query. The knowledge panel in search results is one visible way this graph can appear. To understand a company or a person, Google uses many sources: official sites, structured data, public catalogs, and other trusted pages. This is why consistent names, links, and schema.org markup help more than a one-off mention."
+        },
+        {
+          type: "p",
+          text: "The Knowledge Graph Search API is a developer tool. To get started, you look up an entity and can retrieve identifiers and related information. It does not by itself add a website to the graph, and it should not be confused with Google Cloud product pages that often sit near these queries in search. Using the API is useful when you already work with entities and need a stable ID, not when you only want a knowledge panel at any cost."
+        },
+        {
+          type: "p",
+          text: "If you build content for people and for search, write clearly what the page is about, how this entity relates to other entities, and where a user can verify the facts. Helpful content, clean data, and visible relationships between pages do more for understanding than a isolated English keyword list. Developers sometimes also map organization or product types in structured data so the same name, URL, and description appear in the text and in the markup."
+        },
+        {
+          type: "p",
+          text: "На практике это сводится к нескольким проверкам. The page should make the entity obvious in the visible content, not only in markup. If you use schema.org, the same name, description and URL have to match the text. Search results and the knowledge panel then have a better chance to connect this page with the right entity. How people describe the company in other languages also matters: keep the official name stable so the graph can link these mentions together."
+        },
+        {
+          type: "p",
+          text: "Короткий рабочий список тоже лучше держать на виду. See the knowledge panel, see the official name, and see whether all visible facts are consistent with the markup. If the content and the structured data are saying different things, search is less likely to get a clean entity. New pages should reuse the same official name rather than invent a more marketable label. These checks are simple, but they improve the chance that the graph can identify the brand and connect this content with the right entity."
+        },
+        {
+          type: "p",
+          text: "See also whether all key facts are on the same page and whether new mentions use the same official name. The API provides an ID, but the public page still has to deliver clear content so search can get the entity right. These steps are more reliable than hoping the graph already knows the brand."
+        }
+      ]
+    },
+    {
       id: "chastye-voprosy",
       title: "Частые вопросы о Knowledge Graph",
       tocLabel: "Вопросы"
