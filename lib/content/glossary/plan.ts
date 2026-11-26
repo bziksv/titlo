@@ -39,7 +39,7 @@ export const GLOSSARY_CATEGORIES: readonly GlossaryCategory[] = [
     id: "algoritmy-i-apdeyty-google",
     label: "Алгоритмы и апдейты Google",
     plannedCount: 39,
-    upcoming: ["Google Panda", "Google Penguin", "RankBrain", "BERT", "Helpful Content Update", "Core Update", "Page Experience", "AI Overviews", "Knowledge Graph", "People Also Ask", "Manual Action", "Disavow"],
+    upcoming: ["Google Panda", "Google Penguin", "RankBrain", "BERT", "Core Update", "AI Overviews", "Knowledge Graph", "People Also Ask", "Disavow"],
   },
   {
     id: "kontent-i-teksty",
@@ -75,7 +75,7 @@ export const GLOSSARY_CATEGORIES: readonly GlossaryCategory[] = [
     id: "povedencheskie-faktory-i-ux",
     label: "Поведенческие факторы и UX",
     plannedCount: 17,
-    upcoming: ["CTR в выдаче", "Показатель отказов", "Накрутка ПФ", "Конверсия", "Время на сайте", "Глубина просмотра", "Последний клик", "Возврат в выдачу", "Юзабилити", "UX", "Целевое действие", "A/B-тест"],
+    upcoming: ["CTR в выдаче", "Показатель отказов", "Накрутка ПФ", "Конверсия", "Время на сайте", "Последний клик", "Возврат в выдачу", "Юзабилити", "UX", "Целевое действие", "A/B-тест"],
   },
   {
     id: "analitika-metriki-i-utm",
@@ -99,13 +99,13 @@ export const GLOSSARY_CATEGORIES: readonly GlossaryCategory[] = [
     id: "e-commerce-seo",
     label: "E-commerce SEO",
     plannedCount: 10,
-    upcoming: ["SEO интернет-магазина", "Карточка товара", "Категория/листинг", "Фильтры и SEO-страницы фильтров", "Маркетплейсы в выдаче", "Ассортимент как фактор", "SEO для маркетплейсов", "Товарные фиды", "Цены и наличие", "Out of stock страницы"],
+    upcoming: ["SEO интернет-магазина", "Карточка товара", "Категория/листинг", "Фильтры и SEO-страницы фильтров", "Ассортимент как фактор", "SEO для маркетплейсов", "Товарные фиды", "Цены и наличие", "Out of stock страницы"],
   },
   {
     id: "ii-neyropoisk-i-novye-formaty",
     label: "ИИ, нейропоиск и новые форматы",
     plannedCount: 10,
-    upcoming: ["GEO", "LLM", "Цитирование в нейросетях", "Промпт для SEO", "Энтити", "Topical authority", "AEO", "llms.txt", "Голосовой поиск", "Семантический поиск"],
+    upcoming: ["Цитирование в нейросетях", "Промпт для SEO", "AEO", "llms.txt", "Голосовой поиск", "Семантический поиск"],
   },
   {
     id: "chernoe-i-seroe-seo",
@@ -117,7 +117,7 @@ export const GLOSSARY_CATEGORIES: readonly GlossaryCategory[] = [
     id: "seoshnyy-zhargon",
     label: "Сеошный жаргон",
     plannedCount: 22,
-    upcoming: ["Портянка", "Выпасть из индекса", "Просадка", "Шторм", "Пузомерки", "Морда", "Закупка ссылок", "Бот-трафик", "ТЗшка", "Простыня", "ГС", "МФА"],
+    upcoming: ["Портянка", "Выпасть из индекса", "Просадка", "Шторм", "Пузомерки", "Морда", "Закупка ссылок", "ТЗшка", "Простыня", "ГС", "МФА"],
   },
   {
     id: "instrumenty-i-servisy",
