@@ -152,6 +152,170 @@ export const SiteReputationAbuse: GlossaryTerm = {
       ]
     },
     {
+      id: "eea-izmeneniya",
+      title: "Что изменилось в политике для Европейской экономической зоны",
+      tocLabel: "Изменения для EEA",
+      blocks: [
+        {
+          type: "p",
+          text: "В ноябре 2025 года Европейская комиссия открыла разбирательство по Digital Markets Act. По данным комиссии, Google на основании этой политики понижал в выдаче сайты новостных медиа и других издателей, если на них есть контент коммерческих партнёров, а для издателей это распространённый и законный способ монетизации. Комиссия проверяла, соблюдает ли Google требование справедливых, разумных и недискриминационных условий доступа к поиску."
+        },
+        {
+          type: "p",
+          text: "28 августа 2026 года Google объявил в блоге Search Central об изменении подхода в EEA, то есть в Европейской экономической зоне. С 30 августа ручные меры по этой политике действуют по-разному в зависимости от того, где находится пользователь. Вне EEA ручная мера, как и раньше, напрямую влияет на выдачу для затронутой части сайта, а остальной сайт не страдает. Для пользователей внутри EEA эффект ручной меры не применяется: затронутый раздел может быть отделён в системах Google от основного домена и со временем ранжироваться самостоятельно, на собственных сигналах."
+        },
+        {
+          type: "p",
+          text: "Одновременно в документации политику переименовали: теперь раздел в spam policies называется site reputation policy, хотя в отрасли по-прежнему чаще говорят site reputation abuse. Уведомления о ручной мере, как и раньше, приходят в Search Console, а после запроса на повторную проверку подходящие под условия сайты получили возможность передать спор на медиацию. Для русскоязычного владельца сайта это значит простую вещь: аудитория из России находится вне EEA, поэтому для неё ручная мера по-прежнему работает в полном объёме."
+        },
+        {
+          type: "table",
+          caption: "Как ручная мера по site reputation policy действует в зависимости от региона пользователя",
+          head: ["Ситуация", "Вне EEA", "Внутри EEA"],
+          rows: [
+            ["Раздел признан нарушающим политику", "Ручная мера понижает или убирает затронутые страницы из выдачи", "Ручная мера не применяется к выдаче, раздел отделяется от основного домена"],
+            ["Остальная часть сайта", "Не затрагивается", "Не затрагивается"],
+            ["Как ранжируется сторонний раздел", "Под действием ручной меры", "Самостоятельно, против контента того же типа"],
+            ["Уведомление владельцу", "Отчёт о ручных мерах и сообщения в Search Console", "Отчёт о ручных мерах и сообщения в Search Console"],
+            ["Как оспорить", "Запрос на повторную проверку", "Запрос на повторную проверку, затем медиация для подходящих сайтов"]
+          ],
+          textOnly: true
+        }
+      ]
+    },
+    {
+      id: "kriterii-proverki",
+      title: "По каким признакам Google оценивает сторонний раздел при ручной проверке",
+      tocLabel: "Критерии ручной проверки",
+      blocks: [
+        {
+          type: "p",
+          text: "В обновлённой документации Google подробнее описал, что смотрит человек при ручной проверке. Общая цель — понять, создан ли контент раздела с достаточным участием, редакционным контролем или вкладом хоста, чтобы считать его полностью интегрированным в основной сайт. Проверка применяется глобально, а не только в EEA, и опирается на несколько объективных факторов."
+        },
+        {
+          type: "ul",
+          style: "check",
+          items: [
+            "Оформление: совпадают ли дизайн, вёрстка, типографика и элементы интерфейса раздела с основным доменом.",
+            "Качество: нет ли на страницах проблем, которых нет на основном сайте и которые говорят об отходе от его стандарта.",
+            "Авторство: указан ли автор или ответственный редактор, есть ли явное признание ответственности за контент и нет ли признаков, что заявленное авторство не соответствует действительности.",
+            "Дублирование: не публикуется ли тот же или почти тот же текст на множестве других сайтов."
+          ]
+        },
+        {
+          type: "p",
+          text: "Google отдельно подчёркивает, что ни один из этих признаков сам по себе не является ни необходимым, ни достаточным. В конкретной ситуации одни факторы важнее других, а иногда учитываются и иные доказательства, например если страницы оказываются частью стороннего маркетингового материала для манипуляции ранжированием. Сама по себе публикация чужого контента не нарушает политику: нарушение есть, только если контент размещён главным образом ради уже накопленных сигналов ранжирования хоста."
+        },
+        {
+          type: "p",
+          text: "В документации разобраны три примера. Раздел купонов, сделанный вместе с партнёром на отдельной CMS, но встроенный в главную страницу и навигацию, с раскрытием коммерческого характера и указанием ответственной редакции, скорее всего не получит меру. Статья без автора и ответственного редактора со ссылками на маркетплейс CBD-масел на сайте делового издания, недоступная из тематических разделов и скопированная с сайта продавца, скорее всего получит меру для выдачи вне EEA. Кулинарный раздел новостного сайта с партнёрскими ссылками, который ведёт фрилансер под своим именем при видимом редакционном контроле издания, скорее всего тоже не получит меру."
+        }
+      ]
+    },
+    {
+      id: "english-policy-wording",
+      title: "How the current site reputation policy wording reads in English",
+      tocLabel: "Current English wording",
+      blocks: [
+        {
+          type: "p",
+          text: "The current text in Google Search Central says that the site reputation policy applies where third-party content is published on a host site mainly because of that host's already-established ranking signals, which it has earned primarily from its first-party content. The goal of this tactic is for the content to rank better than it could otherwise on its own. Third-party content is defined as content created by an entity separate from the host site, for example users of that site, freelancers, white-label services and people not employed directly by the host."
+        },
+        {
+          type: "p",
+          text: "The policy lists examples that are not considered inconsistent with it: wire service or press release sites, news publications that syndicate news content from other publications, sites designed for user-generated content such as forums or comment sections, columns, opinion pieces and other editorial work, advertorial or native advertising pages whose purpose is to share content directly with readers rather than to manipulate search rankings, and affiliate links or third-party ad units placed throughout a page when the links are treated appropriately. Google adds that these examples are non-exhaustive."
+        },
+        {
+          type: "p",
+          text: "Google also states that it generally applies a presumption that individual pages, including new pages, match the overall quality of other pages on the domain. If a portion of a site may be out of line with the policy, the site will be subject to human review. The review aims to understand the degree to which the host domain exercises control over the page content: how the content is presented, its quality compared with the main domain, its stated or implied authorship, and whether the same content appears on multiple other sites in identical or near-identical form."
+        },
+        {
+          type: "p",
+          text: "For site owners the practical takeaway has not changed. If a section exists mainly to borrow your domain's reputation, the safest options are to integrate it properly with clear editorial responsibility, move it to a separate domain or remove it from the index. Moving the same content to a new subdomain or subdirectory to keep violating the policy is treated as policy circumvention, which can lead to broader action against the site."
+        }
+      ]
+    },
+    {
+      id: "english-timeline",
+      title: "How the site reputation policy developed over the years",
+      tocLabel: "Policy timeline",
+      blocks: [
+        {
+          type: "p",
+          text: "The problem the policy addresses is older than its name. In January 2014 Matt Cutts, who then led the webspam team at Google, wrote that guest blogging for SEO had become a spammy practice, and that placing articles on other sites mainly to get links was a risky tactic. Over the following years the same idea moved from links to whole sections: instead of buying a link, a third party rented space on a strong domain and published its own pages there, relying on the host's ranking signals to reach the top of search results."
+        },
+        {
+          type: "p",
+          text: "On March 5, 2024, together with the March 2024 core update, Google announced three new spam policies: scaled content abuse, expired domain abuse and site reputation abuse. For the last one Google gave site owners time to make changes and said enforcement would begin on May 5, 2024. In May 2024 the first manual actions under the policy were reported, mostly against coupon, review and affiliate sections on large media and business sites."
+        },
+        {
+          type: "p",
+          text: "On November 19, 2024, Google published a clarification on the Search Central blog. After reviewing cases, the company stated that using third-party content on a site in an attempt to exploit the site's ranking signals is a violation regardless of whether there is first-party involvement or oversight of that content. In other words, a white-label deal or a revenue share with the host does not by itself make such a section acceptable. What matters is why the content is hosted, not who technically publishes it."
+        },
+        {
+          type: "p",
+          text: "On November 13, 2025, the European Commission opened proceedings under the Digital Markets Act, based on indications that the policy was used to demote news media and other publishers when their websites include content from commercial partners. On August 28, 2026, Google announced the adjusted enforcement for the European Economic Area that took effect on August 30, and the documentation now uses the shorter name site reputation policy. Outside the EEA the effects of a manual action stay the same."
+        },
+        {
+          type: "callout",
+          variant: "important",
+          text: "The policy has changed several times since 2024. Before you make decisions about a third-party section, check the current text of the spam policies and the latest notes on the Search Central blog rather than older articles and summaries."
+        }
+      ]
+    },
+    {
+      id: "english-host-checklist",
+      title: "What a host site can check before a human review",
+      tocLabel: "Host checklist",
+      blocks: [
+        {
+          type: "p",
+          text: "Google does not publish a self-assessment form, but the factors in the policy give site owners a practical way to review their own sections. Start with a list of every directory and subdomain that contains third-party content: coupons and deals, product reviews, financial offers, sponsored articles, partner catalogs and any pages created by an outside agency. For each one, record who writes the content, who approves it, when it was created and how people reach it from the main navigation."
+        },
+        {
+          type: "ul",
+          items: [
+            "Presentation: does the section use the same design, formatting and templates as the rest of the site, or does it look like a separate business placed on your domain?",
+            "Quality: would your editors publish these pages under their own standards, or do they include thin text, copied details and outdated deals?",
+            "Authorship: is there a named author or responsible editor, and can readers contact the publisher if an offer or a review is wrong?",
+            "Duplication: do the same words and examples appear on many other sites, which suggests the text is distributed by a third party rather than written for your readers?",
+            "Purpose: would the section still make sense for your audience if it brought no search traffic at all?"
+          ]
+        },
+        {
+          type: "p",
+          text: "If the answers point to a section that exists mainly to target search queries outside your topic, it is better to fix the problem before a review than to wait for a manual action. Typical options include integrating the content with clear editorial responsibility and disclosure, moving it to a separate domain that builds its own reputation, or blocking it from search with noindex and removing it from sitemaps. Blocking in robots.txt alone is not a reliable solution, because Google may still show known URLs without reading the page."
+        },
+        {
+          type: "p",
+          text: "Keep notes on what was changed and when. If a manual action does arrive, the reconsideration request should explain which pages were removed, moved or reworked and what process now prevents similar sections from appearing again. A short, specific report with examples is more useful to the reviewer than general statements that the site follows the guidelines. It also helps to name one person on your team who owns third-party sections and follows policy updates. The main resources for current information are the spam policies page, the Manual actions report in Search Console and the Search Central blog, where Google posts updates about the policy."
+        }
+      ]
+    },
+    {
+      id: "smezhnye-pravila",
+      title: "Чем эта политика отличается от соседних правил о спаме",
+      tocLabel: "Соседние правила",
+      blocks: [
+        {
+          type: "p",
+          text: "В spam policies Google site reputation policy стоит рядом с несколькими правилами, которые легко перепутать. Scaled content abuse описывает массовое создание страниц главным образом ради манипуляции ранжированием, когда контент неоригинален и почти не несёт пользы, причём неважно, как он сделан: вручную, генеративными инструментами или автоматической переработкой чужих материалов. Expired domain abuse — покупка истёкшего домена, чтобы разместить на нём малополезный контент и воспользоваться прежней историей; подробнее об этом в статье про [дроп-домен](/slovar/drop-domen/)."
+        },
+        {
+          type: "p",
+          text: "Разница в том, чью репутацию используют. При злоупотреблении истёкшим доменом сайт целиком переходит к новому владельцу. При site reputation abuse хозяин домена остаётся прежним и продолжает публиковать свой основной контент, а сторонний раздел живёт рядом и опирается на сигналы, которые хост заработал своими материалами. Массовый контент может встречаться в обоих случаях, но сам по себе он описан отдельным правилом и наказывается независимо от того, чей это раздел."
+        },
+        {
+          type: "p",
+          text: "Отдельно в документации описан обход политик, policy circumvention. Если после ручной меры тот же контент переносят на новый поддомен, в другую папку или на соседний сайт, чтобы продолжать нарушение, Google может принять более широкие меры: убрать из выдачи больше разделов сайта или ограничить его участие в отдельных функциях поиска, например в Top Stories и Discover. Поэтому перенос чужой витрины на поддомен без изменения её сути не решает проблему, а только расширяет риск."
+        },
+        {
+          type: "p",
+          text: "Для практики полезно разводить эти ситуации ещё на этапе аудита. Если на сайте сотни однотипных страниц, сгенерированных под запросы, это вопрос масштабированного контента и качества. Если на сильном домене висит партнёрский раздел купонов или финансовых предложений без редакционного участия, это вопрос site reputation policy. Если домен недавно сменил владельца и тему, это ближе к истории с истёкшими доменами. От ответа зависит, какие страницы проверять первыми и что писать в запросе на повторную проверку."
+        }
+      ]
+    },
+    {
       id: "documentaciya-en",
       title: "How Google describes site reputation abuse in English",
       tocLabel: "Документация на английском",

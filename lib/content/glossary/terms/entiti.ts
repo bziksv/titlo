@@ -352,6 +352,65 @@ export const Entiti: GlossaryTerm = {
       ]
     },
     {
+      id: "nlp-i-yazyk",
+      title: "How search engines read entities with natural language processing",
+      tocLabel: "NLP and language",
+      blocks: [
+        {
+          type: "p",
+          text: "Most English-language guides explain entity SEO through natural language processing. Search systems use machine learning models to read the words on a page, identify which entities are mentioned and decide what the text is about. Instead of matching only keywords, they look at context: which other entities appear nearby, how they are described and whether the facts on the page agree with what is already known about them. This is why the same word can refer to different things, and why the surrounding content matters as much as the term itself."
+        },
+        {
+          type: "p",
+          text: "For a website this means that a page should name its main entity early, describe it with specific attributes and connect it to related topics in plain language. Guides from SEO tools and agencies often recommend an entity checker or an NLP API to see which entities a model finds in your text. Such a report is useful as a sanity check, not as a score to chase: if the main entity is missing or the model picks up a different one, the text probably needs a clearer definition, not more keywords."
+        },
+        {
+          type: "p",
+          text: "The same logic now applies to AI Overviews and answers from LLMs. When a model builds an answer, it needs to know which entity a source refers to and whether the source is trustworthy on that topic. Clear naming, consistent facts across your own pages and external profiles, and structured data that matches the visible content make it easier for both search results and generative answers to use your page correctly."
+        }
+      ]
+    },
+    {
+      id: "poshagovyy-podkhod",
+      title: "Как проверить сущности на своём сайте по шагам",
+      tocLabel: "Проверка по шагам",
+      blocks: [
+        {
+          type: "steps",
+          items: [
+            {
+              title: "Составить список главных объектов",
+              text: "Бизнес, бренд, ключевые продукты или услуги, эксперты и авторы, филиал или адрес, если они реально существуют. Для каждого объекта записывают одно официальное название и допустимые варианты написания."
+            },
+            {
+              title: "Найти страницу каждой сущности",
+              text: "У главного объекта должна быть понятная страница на сайте: о компании, карточка продукта, профиль автора. Если сущность упоминается на многих URL, но своей страницы нет, поисковику сложнее связать эти упоминания."
+            },
+            {
+              title: "Сверить факты",
+              text: "Название, адрес, телефон, даты, характеристики продукта и описание компании должны совпадать на сайте, в картах, каталогах и профилях. Расхождения — частая причина, по которой поиск склеивает или путает объекты."
+            },
+            {
+              title: "Проверить структурированные данные",
+              text: "Разметка schema.org должна описывать тот же объект, что видит человек: Organization, Person, Product, LocalBusiness. В свойство sameAs добавляют ссылки на официальные профили, а не на случайные упоминания."
+            },
+            {
+              title: "Связать страницы внутренними ссылками",
+              text: "Статьи, кейсы и карточки ссылаются на страницу сущности с понятным анкором. Это помогает и пользователю, и алгоритму увидеть, что речь об одном и том же объекте."
+            }
+          ]
+        },
+        {
+          type: "p",
+          text: "После такой проверки обычно видно, где сущность размыта: например, бренд называется по-разному в шапке, разметке и профилях, а у эксперта нет страницы с биографией. Исправлять стоит с главного объекта и с тех страниц, которые получают больше показов, а не пытаться разметить всё сразу. Результат смотрят по тому, как поиск показывает бренд и продукты: появляются ли верные расширенные сниппеты, карточка организации и правильные ответы по брендовым запросам."
+        },
+        {
+          type: "p",
+          text: "Повторять такую проверку полезно после заметных изменений: ребрендинга, переезда офиса, запуска новой линейки продуктов или смены ключевых авторов. В этот момент старые факты остаются в каталогах, картах и чужих статьях, и поиск какое-то время видит две версии одного объекта. Чем быстрее обновлены официальные профили, страница о компании и разметка, тем меньше период, когда в выдаче и в ответах систем появляются устаревшие данные. Для небольшого бизнеса это часто важнее, чем любые новые тексты: одна согласованная карточка организации даёт больше, чем десяток статей с упоминанием бренда."
+        }
+      ]
+    },
+    {
       id: "oshibki-entity",
       title: "Какие ошибки чаще всего мешают работе с сущностями",
       tocLabel: "Частые ошибки",

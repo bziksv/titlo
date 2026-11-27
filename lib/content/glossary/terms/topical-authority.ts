@@ -423,6 +423,48 @@ export const TopicalAuthority: GlossaryTerm = {
           text: "A comprehensive company cluster demonstrates its expertise on the desk of real pages, not in a slogan. Evaluate the crawl, see what is cited, and drop features that do not help the reader. If coverage falls, the cluster requires more care, not more copies. Expert и экспертные правки здесь важнее нового всплеска публикаций."
         }
       ]
+    },
+    {
+      id: "english-measure-progress",
+      title: "How SEO teams track topical authority growth without a single score",
+      tocLabel: "Tracking progress",
+      blocks: [
+        {
+          type: "p",
+          text: "Because Google does not publish a topical authority score, teams usually track it through a number of indirect signals. The most common ones are the share of keywords in the topic where the site ranks in the top positions, the breadth of queries that bring impressions, and how quickly new content in the same cluster starts to rank. If a new piece on a related subtopic reaches page one faster than earlier articles did, that is often read as a sign that search engines already treat the site as a credible source on the subject."
+        },
+        {
+          type: "p",
+          text: "A practical approach is to monitor the whole topic, not individual pages. Group the keywords by subtopic, check rankings and impressions for each group in Search Console, and compare the overall picture month to month. Growth that is spread across many related queries means the content covers the topic in depth. Growth that is tied to one page means the site still depends on an isolated asset. Teams also look at internal search, time on page and how often users move from one article to another within the cluster."
+        },
+        {
+          type: "p",
+          text: "It is worth being careful with third-party ratings. Tools can estimate visibility for a niche or compare your site with competing domains, but these numbers are models, not the way Google weighs sources. They are useful for decisions about where to invest effort: which subtopics are missing, where competitors outrank you and which pages need an update. They should not replace the basic question of whether your content genuinely answers what users in that space want to know."
+        }
+      ]
+    },
+    {
+      id: "english-content-plan",
+      title: "How to plan content so a site becomes recognized for a topic",
+      tocLabel: "Planning content",
+      blocks: [
+        {
+          type: "p",
+          text: "Most guides start with a topical map. You define the core topic, list the main subtopics and the questions users ask about each one, and then decide which questions deserve a dedicated page and which belong inside a broader article. The map should include informational queries, comparisons, definitions and, where it fits, commercial pages. This framework helps a team see the gaps before writing and avoids publishing several pieces that compete for the same keyword."
+        },
+        {
+          type: "p",
+          text: "The second step is a realistic publishing schedule. Building authority takes time, and a steady flow of useful content usually works better than a burst of articles followed by months of silence. Each new piece should link to the pillar page and to closely related articles, with anchor text that describes the subtopic. Internal links are how both users and crawlers discover the structure, so they are part of the content plan, not an afterthought."
+        },
+        {
+          type: "p",
+          text: "The third step is quality control. Original insights, first-hand experience, clear authorship and accurate references make content more valuable than another summary of what already ranks. For a business site this can mean case studies, data from your own work or a professional point of view that competitors do not offer. Content that is thin, duplicated or written only to include more keywords tends to weaken the cluster instead of building it."
+        },
+        {
+          type: "p",
+          text: "Finally, keep the topic narrow enough to cover completely. A site that tries to rank for every marketing or SEO question at once spreads its effort too wide. It is usually a better strategy to build depth in one area, earn links and citations there, and then expand into adjacent topics once the first cluster performs well. That way growth reinforces itself instead of starting from zero with each new subject."
+        }
+      ]
     }
   ],
   modules: {
@@ -485,5 +527,5 @@ export const TopicalAuthority: GlossaryTerm = {
     }
   ],
   datePublished: "2026-11-26",
-  dateModified: "2026-11-26"
+  dateModified: "2026-11-27"
 };
