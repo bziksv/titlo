@@ -254,12 +254,41 @@ export const SiteReputationAbuse: GlossaryTerm = {
         },
         {
           type: "p",
-          text: "On November 13, 2025, the European Commission opened proceedings under the Digital Markets Act, and on August 28, 2026, Google announced the adjusted enforcement for the European Economic Area described above, together with the shorter name site reputation policy."
+          text: "On November 13, 2025, the European Commission opened proceedings under the Digital Markets Act, based on indications that the policy was used to demote news media and other publishers when their websites include content from commercial partners. On August 28, 2026, Google announced the adjusted enforcement for the European Economic Area that took effect on August 30, and the documentation now uses the shorter name site reputation policy. Outside the EEA the effects of a manual action stay the same."
         },
         {
           type: "callout",
           variant: "important",
           text: "The policy has changed several times since 2024. Before you make decisions about a third-party section, check the current text of the spam policies and the latest notes on the Search Central blog rather than older articles and summaries."
+        }
+      ]
+    },
+    {
+      id: "english-host-checklist",
+      title: "What a host site can check before a human review",
+      tocLabel: "Host checklist",
+      blocks: [
+        {
+          type: "p",
+          text: "Google does not publish a self-assessment form, but the factors in the policy give site owners a practical way to review their own sections. Start with a list of every directory and subdomain that contains third-party content: coupons and deals, product reviews, financial offers, sponsored articles, partner catalogs and any pages created by an outside agency. For each one, record who writes the content, who approves it, when it was created and how people reach it from the main navigation."
+        },
+        {
+          type: "ul",
+          items: [
+            "Presentation: does the section use the same design, formatting and templates as the rest of the site, or does it look like a separate business placed on your domain?",
+            "Quality: would your editors publish these pages under their own standards, or do they include thin text, copied details and outdated deals?",
+            "Authorship: is there a named author or responsible editor, and can readers contact the publisher if an offer or a review is wrong?",
+            "Duplication: do the same words and examples appear on many other sites, which suggests the text is distributed by a third party rather than written for your readers?",
+            "Purpose: would the section still make sense for your audience if it brought no search traffic at all?"
+          ]
+        },
+        {
+          type: "p",
+          text: "If the answers point to a section that exists mainly to target search queries outside your topic, it is better to fix the problem before a review than to wait for a manual action. Typical options include integrating the content with clear editorial responsibility and disclosure, moving it to a separate domain that builds its own reputation, or blocking it from search with noindex and removing it from sitemaps. Blocking in robots.txt alone is not a reliable solution, because Google may still show known URLs without reading the page."
+        },
+        {
+          type: "p",
+          text: "Keep notes on what was changed and when. If a manual action does arrive, the reconsideration request should explain which pages were removed, moved or reworked and what process now prevents similar sections from appearing again. A short, specific report with examples is more useful to the reviewer than general statements that the site follows the guidelines. It also helps to name one person on your team who owns third-party sections and follows policy updates. The main resources for current information are the spam policies page, the Manual actions report in Search Console and the Search Central blog, where Google posts updates about the policy."
         }
       ]
     },
@@ -389,6 +418,29 @@ export const SiteReputationAbuse: GlossaryTerm = {
       ]
     },
     {
+      id: "english-inventory",
+      title: "How webmasters can inventory domains, sitemaps and third-party sections",
+      tocLabel: "Inventory and sitemaps",
+      blocks: [
+        {
+          type: "p",
+          text: "A practical starting point for site reputation abuse is an inventory. List every host, subdomain and major directory that Search can see, including properties that only appear in sitemaps. Webmasters should know who publishes there, what the section is about, and whether the content is first-party. If a partner needs a place to build commercial pages, that place should usually be their own site, not a corner of yours. More traffic from a rented cluster does not mean the arrangement is safe."
+        },
+        {
+          type: "p",
+          text: "Official Search spam documentation and blog releases explain the line in more detail, but the operational test is simple. Would users of this site expect to find these pages here? Does the section lead people into a product, topic or service that has little to do with the host? Is the content treated as editorial, or is it a stand-alone machine for results in another niche? If you need a rich set of commercial pages that do not belong, do not place them on a trusted host just because it already ranks."
+        },
+        {
+          type: "p",
+          text: "Technical traces can help the review. Different CMS, different analytics, unusual redirects, a separate sitemap and a sudden list of new URLs in a language or topic the site never covered are all reasons to look closer. A mobile-only or subdomain rollout can hide the same pattern from a casual walk of the main menu. Learn to view the site the way Search does: hosts, sitemaps, the URL list, and the actual pages, not only the homepage. One neglected subdomain is enough to create a problem for the whole brand."
+        },
+        {
+          type: "p",
+          text: "Support materials also remind publishers that third-party content is not forbidden as such. What the policy means to stop is the borrowing of reputation. Measures can include removing the section, noindexing it, cutting internal links, and making sure it no longer appears in sitemaps. If a roll-back is required, document it. Search systems and users both benefit when a respected site stays on its own thematic territory."
+        }
+      ]
+    },
+    {
       id: "tematicheskaya-granica",
       title: "Как держать тематическую границу сайта и не сдавать репутацию под чужие запросы",
       tocLabel: "Тематическая граница",
@@ -400,6 +452,79 @@ export const SiteReputationAbuse: GlossaryTerm = {
         {
           type: "p",
           text: "Адрес раздела, его место в навигации и его содержание должны помогать человеку, а не маскировать витрину. Если раздел нельзя честно показать в меню как свой сервис, его не стоит держать ради позиций. Ресурс, который бережет имя, выигрывает вдолгую больше, чем на коротком всплеске чужого кластера."
+        }
+      ]
+    },
+    {
+      id: "english-questions-sra",
+      title: "Questions publishers ask about site reputation abuse after the policy became public",
+      tocLabel: "Questions publishers ask",
+      blocks: [
+        {
+          type: "p",
+          text: "Publishers often ask whether a single sponsored article can trigger the policy. In most ordinary cases a clearly labeled, on-topic piece is not what this rule is about. The risk rises when a host opens a whole section, subdomain or expired property and lets a third party fill it with pages whose only job is to rank. Search is looking at the pattern and the purpose, not at a one-off label."
+        },
+        {
+          type: "p",
+          text: "Another common question is whether moving the same cluster to a new subdirectory is enough. If the content still borrows the host’s reputation and still has little to do with the site, a new path is not a strategy. The safer response is to take the cluster off the trusted domain. Webmasters can then help the partner launch on a property they actually own. Users, Search results and the host brand are all clearer after that split."
+        },
+        {
+          type: "p",
+          text: "A third question is how to prove a cleanup if the pages were already indexed. Keep a list, remove or noindex the URLs, drop them from sitemaps, cut internal links, and give Search time to recrawl. More urgency in emails will not replace that work. The host should also make sure the same publishing access cannot silently return a month later. Policy risk of this kind is as much about access control as it is about the last URL."
+        },
+        {
+          type: "p",
+          text: "Если после очистки в выдаче еще какое-то время висят старые сниппеты, это не обязательно знак, что раздел «не закрыли». Сначала проверяют, доступны ли URL, отдают ли они контент, не остались ли они в карте сайта. Уже потом, если живые страницы исчезли, ждут переобхода. Для репутации домена важнее фактическое отсутствие чужого кластера, чем мгновенное исчезновение всех сохраненных ссылок."
+        }
+      ]
+    },
+    {
+      id: "access-and-recrawl",
+      title: "How access control and recrawl matter after a third-party cluster is removed",
+      tocLabel: "Access control and recrawl",
+      blocks: [
+        {
+          type: "p",
+          text: "Cleanup is not finished when the first batch of URLs returns a 404. Access control has to change too, otherwise a partner can publish again next month under a slightly different path. Webmaster and site-security owners should review who can create subdomains, upload sitemaps and add sections to the CMS. If those doors stay open, the same pattern will return. Search then has to recrawl a problem the host already thought was over."
+        },
+        {
+          type: "p",
+          text: "A recrawl plan is ordinary. Update sitemaps, keep a list of removed URLs, make sure internal links no longer point into the cluster, and give Search time. Features like parameter variations and old campaign landing pages should be in that list if they were part of the same arrangement. Hacked or forgotten accounts deserve the same pass: a section does not have to be a formal partnership to abuse a host’s reputation. Central ownership of the domain, not a loose collection of side deals, is what keeps the site in its own topical lane."
+        },
+        {
+          type: "p",
+          text: "Publishers sometimes hope a soft noindex will be enough while the partner “winds down.” That can be a short transitional step, but it is not the end state if the pages do not belong. The safer end state is removal or a clearly isolated property that does not inherit the host’s name. Users are not helped by a quiet corner of a trusted site that exists only to rank. The brand is not helped either. Get the cluster off the domain, then keep the access tight."
+        },
+        {
+          type: "p",
+          text: "После очистки полезно еще раз пройти инвентарь поддоменов и разделов, чтобы убедиться, что не осталось «запасного» входа. Если такой вход находится, его закрывают сразу, не откладывая до следующего квартального обзора. Репутация домена держится не заявлением, а отсутствием чужого кластера в живом индексе."
+        },
+        {
+          type: "p",
+          text: "Практически это означает еще один спокойный цикл после формального закрытия раздела. Через некоторое время снова смотрят индекс, карту сайта, поддомены и входные ссылки. Если чужие URL еще открываются, их добивают. Если все чисто, оставляют короткий запрет в внутренней политике и не возвращаются к схеме, даже если партнер предлагает «более аккуратный» формат того же самого. Для основного сайта такой отказ обычно дешевле, чем еще один инцидент с репутацией домена."
+        },
+        {
+          type: "p",
+          text: "Для редакции полезно сохранить публичную логику: какие партнерские форматы остаются допустимыми, как они подписываются, и где проходит граница темы. Тогда следующий коммерческий эксперимент можно оценить заранее, а не разбирать уже после того, как он попал в индекс. Пользователи тоже выигрывают: на знакомом домене они снова встречают ожидаемое содержание, а не чужую витрину под привычным именем."
+        }
+      ]
+    },
+    {
+      id: "tools-data-and-reports",
+      title: "How tools, data and reports help a host find leftover third-party pages",
+      tocLabel: "Tools, data and reports",
+      blocks: [
+        {
+          type: "p",
+          text: "Webmaster tools, sitemap data and a simple crawl report are usually enough to find leftover third-party pages after a cleanup. Google Search documentation is useful for the policy line; the website’s own URL list is useful for the work. If a video walkthrough helps a wider team see the difference between the main site and a rented section, use it. The point is not a presentation. The point is to see whether other hosts, parameters or generated landing pages still belong to the same arrangement."
+        },
+        {
+          type: "p",
+          text: "Using these tools once is not enough. Central owners should look again after recrawl windows, after CMS releases, and after a partner says the work is done. Features like automatic sitemap dumps can quietly reintroduce URLs that were already removed. A hacked or forgotten publishing account can do the same. Building a short recurring check into the webmaster routine is safer than trusting a single cleanup ticket."
+        },
+        {
+          type: "p",
+          text: "A short recurring report is worth more than a dramatic one-off audit. Look at the website hosts, the sitemap data, and any new sections that appeared since the last check. If tools still show pages that were supposed to be gone, fix them before the next Search pass. Using the same checklist each month makes leftover generated or partner URLs harder to miss. Other teams can read that report too, so the rule stays visible: this website is not a platform for renting reputation."
         }
       ]
     },
