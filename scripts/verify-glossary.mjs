@@ -281,6 +281,21 @@ const TERMS = {
   "rankbrain": ["analiz-relevantnosti", "klasterizator-klyuchevykh-slov"],
   "bert-google": ["analiz-relevantnosti", "klasterizator-klyuchevykh-slov"],
   "scaled-content-abuse": ["klasterizator-klyuchevykh-slov", "analiz-relevantnosti"],
+  "zakon-tsipfa": ["analiz-teksta", "analiz-relevantnosti"],
+  "n-grammy": ["analiz-teksta", "analiz-relevantnosti"],
+  "shingly": ["analiz-teksta", "analiz-relevantnosti"],
+  "vechnozelenyy-kontent": ["monitoring-pozicii-sayta", "analiz-relevantnosti"],
+  "longrid": ["analiz-relevantnosti", "analiz-teksta"],
+  "microdata": ["proverka-meta-tegov-online", "audit-sajta"],
+  "favicon": ["proverka-meta-tegov-online", "http-headers"],
+  "meta-viewport": ["proverka-meta-tegov-online", "audit-sajta"],
+  "semanticheskaya-verstka": ["proverka-meta-tegov-online", "audit-sajta"],
+  "crawl-delay": ["audit-sajta", "monitoring-saytov"],
+  "prerendering": ["http-headers", "proverka-indeksacii"],
+  "lazy-loading": ["audit-sajta"],
+  "fcp": ["http-headers", "audit-sajta"],
+  "lighthouse": ["audit-sajta", "http-headers"],
+  "amp-stranitsy": ["http-headers", "proverka-indeksacii"],
 };
 
 
