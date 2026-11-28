@@ -564,6 +564,80 @@ export const PASSAGE_RANKING: GlossaryTerm = {
               text: "If the answers are yes, the page is easy to understand for both people and search systems. Passage ranking can then help a long, useful article appear for specific questions that one of its sections answers well."
             }
           ]
+        },
+        {
+          title: "Passage ranking in practice: a short guide for site owners",
+          blocks: [
+            {
+              type: "p",
+              text: "This guide covers the practical side of the system. The algorithm does not give a website a new signal to chase, so there is no tool that can \"optimize\" a page for passages directly. What a site owner can do is improve the way a long document is written, so that every part of the page can be understood on its own, in its own context."
+            },
+            {
+              type: "p",
+              text: "Start with a simple audit. Open a page, list the questions a visitor might ask, and find the section that answers each one. If a single section tries to answer several different questions, split it. If a question has no answer at all, create a new section with a clear heading. The main topic stays the same, while the subtopics get their own place on the page."
+            },
+            {
+              type: "table",
+              caption: "Technical checks that keep passages visible to search systems",
+              head: [],
+              rows: [
+                [
+                  "Check",
+                  "Why it matters"
+                ],
+                [
+                  "crawling and robots rules",
+                  "the page and its sections must be available to the crawler, not blocked by robots.txt or meta tags"
+                ],
+                [
+                  "rendering and JavaScript",
+                  "text that appears only after scripts run should be present in the rendered HTML"
+                ],
+                [
+                  "title and headings",
+                  "each heading should describe the section below it, with the key phrase used naturally"
+                ],
+                [
+                  "canonical, redirect and URL",
+                  "one page should be reachable at one clean URL, without chains of redirect"
+                ],
+                [
+                  "sitemap and internal link",
+                  "important long pages should be in the sitemap and linked from related pages"
+                ],
+                [
+                  "structured data markup",
+                  "markup helps to describe the page type, but it is not a ranking requirement for passages"
+                ]
+              ],
+              textOnly: true
+            }
+          ]
+        },
+        {
+          title: "Related ideas and how they differ",
+          blocks: [
+            {
+              type: "p",
+              text: "Passage ranking is not the same as featured snippets. A snippet shows a short answer taken from a page, while the ranking system only decides how well the page matches a query. Another system announced at the same time deals with subtopics: neural models help the engine understand the different aspects of one broad interest, for example, which sections of a guide talk about tools, and which talk about costs or examples. Both ideas rely on context, meaning that the words around a phrase matter as much as the phrase itself."
+            },
+            {
+              type: "p",
+              text: "For content teams this suggests a few simple habits. Write for people first and give a direct answer early in each section. Keep one idea per paragraph. Add examples, data and a source where a claim needs one. Update old posts when facts change, and review pages that get traffic for a single section while the rest of the document is ignored. That pattern is a hint that the page may need a dedicated article for the topic."
+            },
+            {
+              type: "ul",
+              items: [
+                "Give each key question its own heading and a clear first sentence",
+                "Use lists and tables where the answer has several steps or values",
+                "Avoid long blocks of text that mix different subtopics",
+                "Track queries in Search Console to see which passage brings the click",
+                "Do not rely on automated or generated text to fill sections without real information",
+                "Review the page after each update to make sure the structure still works"
+              ],
+              style: "check"
+            }
+          ]
         }
       ]
     },

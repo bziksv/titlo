@@ -280,6 +280,353 @@ export const BERT_GOOGLE: GlossaryTerm = {
       ]
     },
     {
+      id: "predobuchenie",
+      title: "Как обучают BERT: два задания предобучения",
+      tocLabel: "Предобучение",
+      blocks: [
+        {
+          type: "p",
+          text: "В оригинальной статье Devlin и соавторов предобучение BERT построено на двух заданиях. Оба выполняются на больших текстовых корпусах без разметки: авторы использовали BooksCorpus и англоязычную Википедию. Благодаря этому модель получает общее понимание языка, а затем её можно настроить под конкретную задачу."
+        },
+        {
+          type: "table",
+          caption: "Задания предобучения BERT",
+          head: [],
+          rows: [
+            [
+              "Задание",
+              "Что происходит",
+              "Что получает модель"
+            ],
+            [
+              "Masked language model, MLM",
+              "часть токенов во входном тексте скрывается, модель предсказывает скрытые слова",
+              "понимание слова по контексту слева и справа"
+            ],
+            [
+              "Next sentence prediction, NSP",
+              "модели дают два предложения, она определяет, идёт ли второе за первым",
+              "понимание связи между предложениями"
+            ],
+            [
+              "WordPiece",
+              "слова разбиваются на частые части, словарь ограничен по размеру",
+              "работа с редкими словами и словоформами"
+            ],
+            [
+              "Служебные токены",
+              "[CLS] открывает последовательность, [SEP] разделяет предложения, [MASK] обозначает скрытое слово",
+              "единый формат входных данных"
+            ],
+            [
+              "Fine-tuning",
+              "к предобученной модели добавляется небольшой выходной слой и она обучается на размеченных данных",
+              "точность на конкретной задаче"
+            ]
+          ],
+          textOnly: true
+        },
+        {
+          type: "p",
+          text: "При маскировании в статье скрывается около пятнадцати процентов токенов. Чаще всего вместо слова ставится [MASK], иногда слово заменяется случайным, а иногда остаётся без изменений. Так модель не привыкает полагаться на один маркер и учится понимать контекст при любых входных данных."
+        }
+      ]
+    },
+    {
+      id: "vkhod",
+      title: "Что получает на вход модель BERT",
+      tocLabel: "Входные данные",
+      blocks: [
+        {
+          type: "p",
+          text: "Для каждого токена на входе BERT складываются три вектора: вектор самого токена, вектор сегмента и вектор позиции. Вектор сегмента показывает, к какому из двух предложений относится токен, а вектор позиции подсказывает порядок слов, потому что механизм внимания сам по себе порядок не различает. Максимальная длина последовательности в оригинальной модели ограничена: длинный текст нужно разбивать на части или обрезать."
+        },
+        {
+          type: "p",
+          text: "Выход модели — набор векторов, по одному на каждый токен. Для задач классификации обычно берут вектор первого токена [CLS], а для задач разметки слов, например поиска имён, используют векторы отдельных токенов. Эти векторы называют contextual embeddings, то есть контекстными представлениями: одно и то же слово получает разное представление в зависимости от соседних слов."
+        }
+      ]
+    },
+    {
+      id: "zadachi",
+      title: "Для каких задач используют BERT",
+      tocLabel: "Задачи",
+      blocks: [
+        {
+          type: "p",
+          text: "BERT не отвечает на запросы сам, он создаёт представления текста, которые затем используют в разных задачах. Для проверки качества исследователи применяют стандартные наборы данных: GLUE для общего понимания языка, SQuAD для ответов на вопросы по тексту, MultiNLI для определения логической связи предложений."
+        },
+        {
+          type: "table",
+          caption: "Типичные задачи и наборы данных",
+          head: [],
+          rows: [
+            [
+              "Задача",
+              "Что нужно получить",
+              "Пример набора данных"
+            ],
+            [
+              "Классификация текста",
+              "отнести текст к одной из категорий",
+              "отзывы, обращения, новости"
+            ],
+            [
+              "Question answering",
+              "найти ответ на вопрос в тексте",
+              "SQuAD"
+            ],
+            [
+              "Определение связи предложений",
+              "понять, следует ли одно предложение из другого",
+              "MultiNLI"
+            ],
+            [
+              "Разметка слов",
+              "выделить в тексте имена, организации, даты",
+              "наборы для named entity recognition"
+            ],
+            [
+              "Сравнение предложений",
+              "оценить смысловую близость",
+              "наборы для semantic similarity"
+            ],
+            [
+              "Поиск и ранжирование",
+              "оценить релевантность документа запросу",
+              "наборы для passage retrieval"
+            ]
+          ],
+          textOnly: true
+        },
+        {
+          type: "p",
+          text: "В статье авторы сообщали, что BERT улучшил результаты на одиннадцати задачах обработки естественного языка: общий показатель GLUE вырос до 80,5 процента, точность на MultiNLI достигла 86,7 процента, а на SQuAD версии 1.1 показатель F1 составил 93,2. Эти цифры относятся к моменту публикации 2018 года, сегодня их превосходят более новые модели."
+        }
+      ]
+    },
+    {
+      id: "zapusk",
+      title: "Как запустить и дообучить BERT самостоятельно",
+      tocLabel: "Запуск",
+      blocks: [
+        {
+          type: "p",
+          text: "Код и предобученные модели Google опубликовал в открытом репозитории. Для запуска нужны файл словаря, конфигурация модели и контрольная точка. По описанию в репозитории, результаты статьи по дообучению можно воспроизвести не больше чем за час на одном Cloud TPU или за несколько часов на GPU. Обучение с нуля намного дороже и требует вычислительных ресурсов, которые есть не у каждой команды."
+        },
+        {
+          type: "steps",
+          items: [
+            {
+              title: "Скачайте модель",
+              text: "выберите версию BERT, подходящую по языку и размеру"
+            },
+            {
+              title: "Подготовьте данные",
+              text: "разметьте набор примеров для вашей задачи и сохраните в нужном формате"
+            },
+            {
+              title: "Запустите дообучение",
+              text: "укажите путь к файлу словаря, конфигурации, контрольной точке и каталогу данных"
+            },
+            {
+              title: "Задайте параметры",
+              text: "подберите длину последовательности, размер пакета, скорость обучения и число эпох"
+            },
+            {
+              title: "Проверьте результат",
+              text: "сравните качество на отложенной выборке с базовым вариантом"
+            },
+            {
+              title: "Сохраните модель",
+              text: "используйте обученную модель для предсказаний в своём сервисе"
+            }
+          ]
+        },
+        {
+          type: "table",
+          caption: "Основные параметры запуска дообучения",
+          head: [],
+          rows: [
+            [
+              "Параметр",
+              "Что задаёт"
+            ],
+            [
+              "vocab_file",
+              "файл словаря токенов"
+            ],
+            [
+              "bert_config_file",
+              "конфигурацию модели: слои, размер, число голов внимания"
+            ],
+            [
+              "init_checkpoint",
+              "контрольную точку, с которой начинается обучение"
+            ],
+            [
+              "max_seq_length",
+              "максимальную длину последовательности"
+            ],
+            [
+              "train_batch_size",
+              "размер пакета примеров"
+            ],
+            [
+              "learning_rate",
+              "скорость обучения"
+            ],
+            [
+              "output_dir",
+              "каталог для результатов и контрольных точек"
+            ]
+          ],
+          textOnly: true
+        },
+        {
+          type: "p",
+          text: "Для работы с моделью также используют библиотеки Hugging Face Transformers, TensorFlow и PyTorch: там BERT доступен в несколько строк кода. Чтобы ускорить обучение и вывод результатов, применяют GPU и TPU, а для промышленного использования — оптимизированные библиотеки для inference, например NVIDIA TensorRT."
+        }
+      ]
+    },
+    {
+      id: "potomki",
+      title: "Модели на основе BERT",
+      tocLabel: "Потомки BERT",
+      blocks: [
+        {
+          type: "p",
+          text: "После появления BERT исследователи предложили множество улучшений: убрать задание NSP, увеличить объём данных, уменьшить размер модели, ускорить обучение. Сегодня существуют версии BERT для разных языков, в том числе русского, и более лёгкие версии для мобильных устройств."
+        },
+        {
+          type: "table",
+          caption: "Известные модели на основе BERT",
+          head: [],
+          rows: [
+            [
+              "Модель",
+              "Чем отличается"
+            ],
+            [
+              "RoBERTa",
+              "обучена дольше на большем объёме данных, без задания NSP"
+            ],
+            [
+              "DistilBERT",
+              "уменьшенная и более быстрая версия, получена методом дистилляции"
+            ],
+            [
+              "ALBERT",
+              "меньше параметров за счёт общих весов между слоями"
+            ],
+            [
+              "Multilingual BERT",
+              "одна модель для текстов на множестве языков"
+            ],
+            [
+              "RuBERT",
+              "вариант BERT для русского языка"
+            ],
+            [
+              "ModernBERT",
+              "современная версия с более длинным контекстом и ускоренной работой"
+            ]
+          ],
+          textOnly: true
+        }
+      ]
+    },
+    {
+      id: "ogranicheniya",
+      title: "Ограничения BERT",
+      tocLabel: "Ограничения",
+      blocks: [
+        {
+          type: "p",
+          text: "BERT — это кодировщик, а не генератор текста. Он хорошо понимает смысл и подходит для поиска, классификации и извлечения информации, но не пишет связные ответы, как большие генеративные модели. Ограничена и длина входа: длинные документы приходится делить на фрагменты. Кроме того, модель требует много памяти и вычислительных ресурсов, а её предсказания зависят от данных, на которых она училась."
+        },
+        {
+          type: "ul",
+          items: [
+            "Считать BERT алгоритмом, под который можно оптимизировать сайт",
+            "Ожидать от BERT генерации текста",
+            "Использовать модель без проверки качества на своих данных",
+            "Подавать на вход слишком длинные тексты без разбиения",
+            "Забывать, что для разных языков нужны разные модели"
+          ],
+          style: "mistakes"
+        }
+      ]
+    },
+    {
+      id: "english-bert",
+      title: "BERT в англоязычных источниках",
+      tocLabel: "Англоязычная сводка",
+      blocks: [
+        {
+          type: "p",
+          text: "Основные материалы о модели написаны на английском: статья исследователей Google, репозиторий с кодом, блог Google о поиске, документация облачных платформ и описания для разработчиков. Ниже — краткая сводка на английском, чтобы проще было читать первоисточники."
+        }
+      ],
+      subsections: [
+        {
+          title: "What BERT is and how it works",
+          blocks: [
+            {
+              type: "p",
+              text: "BERT, which stands for Bidirectional Encoder Representations from Transformers, is a deep learning model for natural language processing. The paper was written by Jacob Devlin, Ming-Wei Chang, Kenton Lee and Kristina Toutanova, researchers at Google. The model was released as open source in 2018, so developers and researchers can download the code, run the model and test it on their own data."
+            },
+            {
+              type: "p",
+              text: "The main idea is simple. Earlier language models read text in one direction, from left to right. BERT reads the whole sequence at once, so every word is understood in the context of all the other words: both the words on the left and the words on the right. This is called a bidirectional model, and it is the reason why the model understands the meaning of a word in a sentence much better than a single word vector could."
+            }
+          ]
+        },
+        {
+          title: "How the model is trained",
+          blocks: [
+            {
+              type: "p",
+              text: "Training has two steps. In pre-training, the model learns general language from a large corpus of unlabeled text. It predicts masked words and learns whether one sentence follows another. In fine-tuning, the same model is adapted to a specific task with labeled examples. This approach is called transfer learning: the expensive part is done once, and a small team can then create a model for question answering, text classification or sentiment analysis with a modest amount of data."
+            },
+            {
+              type: "p",
+              text: "The architecture is a stack of transformer encoder layers. Each layer has several attention heads that look at the relations between tokens in the input sequence. The base version has twelve layers and about one hundred ten million parameters, while the large version has twenty-four layers and about three hundred forty million parameters. More parameters usually mean higher accuracy, but they also require more memory and computing power."
+            }
+          ]
+        },
+        {
+          title: "Where BERT is used",
+          blocks: [
+            {
+              type: "p",
+              text: "BERT is used in search systems, chatbots, customer support, document analysis and many other services. Google announced that BERT helps Search understand queries and results better, especially long, conversational questions where small words such as prepositions change the meaning. For other companies, the model is a building block: it can be connected to a project through open source tools and run on a GPU in a data center or in the cloud."
+            },
+            {
+              type: "ul",
+              items: [
+                "The model can be used for text classification, question answering and named entity recognition",
+                "Pre-trained versions are available for different languages and sizes",
+                "GPUs and TPUs make training and inference faster",
+                "Optimized software helps to reduce latency in production systems",
+                "The state of the art keeps moving, and newer models often outperform the original BERT"
+              ],
+              style: "check"
+            }
+          ]
+        },
+        {
+          title: "Limits and challenges",
+          blocks: [
+            {
+              type: "p",
+              text: "The original model has a limited input length, so long documents must be split into several parts. It also cannot generate text on its own: it is an encoder, designed to understand input rather than to write new content. Teams that apply BERT in a real project should test the quality on their own datasets, check privacy and security requirements, and think about the cost of the infrastructure needed to run it at scale."
+            }
+          ]
+        }
+      ]
+    },
+    {
       id: "vliyanie-na-seo",
       title: "Что BERT изменил в SEO",
       tocLabel: "Влияние на SEO",
